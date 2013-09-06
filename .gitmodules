@@ -1,0 +1,4 @@
+
+[submodule "include/PHP-cast-to-type"]
+	path = include/PHP-cast-to-type
+	url = https://github.com/jrfnl/PHP-cast-to-type.git
