@@ -82,7 +82,7 @@ ul {
 
 code {
 	border-left: 1px solid #CC0000;
-	padding: 1px 2px 1px 4px;
+	padding: 1px 2px 1px 6px;
 	font-size: 90%;
 	color: #000000;
 	background-color: #EEEEEE;
@@ -106,7 +106,7 @@ div.head #main-menu {
 	margin-right: 0;
 }
 
-div.head a.toplink {
+div.head a.top-link {
 	display: block;
 	float: left;
 	-moz-box-shadow: 4px 5px 6px 0 #363436;
@@ -134,20 +134,20 @@ div.head a.toplink {
 	text-align: center;
 	text-shadow: 1px 1px 0px #cccccc;
 }
-div.head a.toplink:hover {
+div.head a.top-link:hover {
 	background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #b6bdb6), color-stop(1, #f9f9f9) );
 	background: -moz-linear-gradient( center top, #b6bdb6 5%, #f9f9f9 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#b6bdb6', endColorstr='#f9f9f9');
 	background-color: #b6bdb6;
 }
-div.head a.toplink:active {
+div.head a.top-link:active {
 	position: relative;
 	top: 2px;
 }
 
-div.head a.toplink:visited,
-div.head a.toplink:active,
-div.head a.toplink:hover {
+div.head a.top-link:visited,
+div.head a.top-link:active,
+div.head a.top-link:hover {
 	color: #CC0000;
 	text-decoration: none;
 }
@@ -172,7 +172,7 @@ div.content #main-menu p {
 	padding: 5px 0 15px 0;
 }
 
-div.content a.toplink {
+div.content a.top-link {
 	display: block;
 	float: left;
 	-moz-box-shadow: 4px 5px 6px 0 #363436;
@@ -197,20 +197,20 @@ div.content a.toplink {
 }
 
 
-div.content a.toplink:hover {
+div.content a.top-link:hover {
 	background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #b00303), color-stop(1, #fa867f) );
 	background: -moz-linear-gradient( center top, #b00303 5%, #fa867f 100% );
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b00303', endColorstr='#fa867f');
 	background-color: #b00303;
 }
-div.content a.toplink:active {
+div.content a.top-link:active {
 	position: relative;
 	top: 2px;
 }
 
-div.content a.toplink:visited,
-div.content a.toplink:active,
-div.content a.toplink:hover {
+div.content a.top-link:visited,
+div.content a.top-link:active,
+div.content a.top-link:hover {
 	color: #fcfffc;
 	text-decoration: none;
 }
@@ -262,13 +262,13 @@ div#tabs {
 
 
 
-h2#phpversion {
+h2#php-version {
 	font-size: 9pt;
 	font-weight: normal;
 	text-align: center;
 	float: right;
 	width: 120px;
-	margin: -45px 5px 10px 10px;
+	margin: -58px 5px 10px 10px;
 	padding: 8px 12px;
 /*	border: 1px solid #CC0000;*/
 	background-color: #E8F7F6;
@@ -279,17 +279,24 @@ h2#phpversion {
 	border-radius: 8px;
 }
 
-h2#phpversion strong {
+h2#php-version strong {
 	display: block;
 	padding-top: 5px;
 	font-size: 12pt;
 	color: green;
 }
 
-h2#phpversion span {
+h2#php-version span {
 	display: block;
 	margin-top: 5px;
 	font-size: 85%;
+}
+
+
+.fright {
+	display: block;
+	float: right;
+	padding-right: 6px;
 }
 
 
@@ -310,6 +317,16 @@ thead th,
 tfoot th {
 	text-align: center;
 }
+
+.ui-widget-content thead th a,
+.ui-widget-content tfoot th a,
+.thfloat th a,
+.thfloat th a {
+	color: #CC0000 !important;
+}
+
+
+
 tbody th {
 	text-align: left;
 }
@@ -319,7 +336,7 @@ th.label-col {
 
 td {
 	font-size: 7pt;
-	margin: 0px;
+	margin: 0;
 	padding: 2px;
 	border-right: 1px solid #C0C0C0;
 	border-bottom: 1px solid #C0C0C0;
@@ -411,6 +428,10 @@ td {
     overflow: visible;
 }
 
+.ui-accordion .ui-accordion-header {
+	margin-top: 5px;
+}
+
 #accordion ol {
 /*	padding-bottom: 20px;*/
 	margin-bottom: 20px;
@@ -428,7 +449,7 @@ td {
 /********
  * Tooltips
  ********/
-.thtooltip {
+.th-tooltip {
 	min-width: 100px;
 	width: auto;
 }
@@ -450,13 +471,13 @@ code {
 	color: white;
 	background-color: green;
 }
-.nopass {
+.no-pass {
 	font-weight: bold;
 	color: white;
 	background-color: red;
 }
 
-p.pass, p.nopass {
+p.pass, p.no-pass {
 	margin: 1px 0;
 	padding: 4px 0;
 }

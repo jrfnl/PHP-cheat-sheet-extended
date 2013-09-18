@@ -1,17 +1,19 @@
 <?php
 
-error_reporting( E_ALL );
+error_reporting( E_ALL ^ E_STRICT );
 //@ini_set( 'log_errors', false );
 
+define( 'APP_DIR', dirname( __FILE__ ) );
 
-include_once( 'include/xvardump.php' );
-include_once( 'include/functions.php' );
+
+include_once( APP_DIR . '/include/xvardump.php' );
+include_once( APP_DIR . '/include/functions.php' );
 set_error_handler( 'do_handle_errors' );
 
 
 if ( !defined( 'PHP_VERSION_ID' ) ) {
 	$version = PHP_VERSION;
-	define( 'PHP_VERSION_ID', ( $version{0} * 10000 + $version{2} * 100 + $version{4} ) );
+	define( 'PHP_VERSION_ID', (int) ( $version{0} * 10000 + $version{2} * 100 + $version{4} ) );
 }
 
 // Use C locale for Ctype functions
@@ -49,8 +51,8 @@ else if ( isset( $_GET['type'] ) && $_GET['type'] === 'test' ) {
 $class = 'Vartype' . ucfirst( $type );
 $file  = 'class.vartype-' . $type . '.php';
 
-if ( isset( $type ) && file_exists( $file ) ) {
-	include_once( $file );
+if ( isset( $type ) && file_exists( APP_DIR . '/' . $file ) ) {
+	include_once( APP_DIR . '/' . $file );
 	$current_tests = new $class();
 	
 	$tab = null;
@@ -62,21 +64,22 @@ if ( isset( $type ) && file_exists( $file ) ) {
 		$current_tests->run_test( $tab );
 	}
 	else {
-		include_once( 'page/header.php' );
+		include_once( APP_DIR . '/page/header.php' );
 		
 		$all = false;
-		if ( isset( $_GET['all'] ) && $_GET['all'] === 1 ) {
+		if ( isset( $_GET['all'] ) && $_GET['all'] === '1' ) {
+			// Hidden feature - pre-load all tabs, slow, but useful for source compare
 			$all = true;
 		}
-		$current_tests->do_page( /*$tab,*/ $all );
+		$current_tests->do_page( $all );
 
-		include_once( 'page/footer.php');
+		include_once( APP_DIR . '/page/footer.php');
 	}
 }
 else {
-	include_once( 'page/header.php' );
-	include_once( 'page/cheat-sheet-menu.php' );
-	include_once( 'page/footer.php');
+	include_once( APP_DIR . '/page/header.php' );
+	include_once( APP_DIR . '/page/cheat-sheet-menu.php' );
+	include_once( APP_DIR . '/page/footer.php');
 }
 
 

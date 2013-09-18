@@ -1,18 +1,22 @@
 jQuery(document).ready(function() {
 //jQuery(function() {
 
+	// Declare variables
+	var myTabs;
+	var tabPanels;
+
+
 	// Collapsible notes at top of page
-	var icons = {
-		header: 'ui-icon-circle-arrow-e',
-		activeHeader: 'ui-icon-circle-arrow-s'
-	};
 	jQuery('#accordion').accordion({
 		active: false,
 		collapsible: true,
-		icons: icons,
+		icons: {
+			header: 'ui-icon-circle-arrow-e',
+			activeHeader: 'ui-icon-circle-arrow-s'
+		},
 		heightStyle: 'content'
 	});
-/*
+/* Possible alternative icons:
 ui-icon-alert
 ui-icon-info
 ui-icon-notice
@@ -21,39 +25,100 @@ ui-icon-help
 ui-icon-plus
 ui-icon-minus
 
-ui-icon-plusthick
-ui-icon-minusthick
-
 ui-icon-circle-plus
 ui-icon-circle-minus
 */
 
 
 	// Tabbed interface
-	var myTabs = jQuery('#tabs');
-	var tabsTotal  = myTabs.find('li a').length;
-	var tabsLoaded = 1;
-
-
+	myTabs = jQuery('#tabs');
 	myTabs.tabs({
+		beforeActivate: function( event, ui ) {
+			// Remove floating table headers from old panel
+			var oldId = ui.oldPanel.find('table').attr('id');
+			if( oldId ) {
+				jQuery('#'+oldId).thfloat('destroy');
+			}
+		},
+		activate: function( event, ui ) {
+			var tableId;
+			var tabHref;
+			var tabTitle;
+
+			// (Re-)attach floating table headers for activated panel
+			tableId = ui.newPanel.find('table').attr('id');
+			if( tableId ) {
+				jQuery('#'+tableId).thfloat({
+					side : 'head',
+					onShow: function(table, block) {
+						// Remove hover and sticky classes as they will otherwise not stay consistant
+						block.find('th').css( 'background', '' );
+					}
+				}).thfloat({
+					side : 'foot',
+					onShow: function(table, block) {
+						// Remove hover and sticky classes as they will otherwise not stay consistant
+						block.find('th').css( 'background', '' );
+					}
+				});
+				// Remove hover and sticky classes as they will otherwise not stay consistant
+//				jQuery('.thfloat th').removeClass('hover sticky').css( 'background', '' );
+			}
+
+			// Change the location bar url to the selected tab to enable reloading to the currently
+			// selected tab and avoid the location bar change causing the page to reload
+			tabHref = ui.newTab.find('a').attr('href');
+			if( tabHref && tabHref.indexOf('&all=1') == -1 ) {
+				tabHref = tabHref.substring( 0, tabHref.indexOf('&do=') );
+				tabTitle = jQuery(this).text();
+				tabTitle = jQuery('title').text()+' - '+tabTitle;
+				history.pushState('notrelevant', tabTitle, tabHref );
+			}
+		},
 		beforeLoad: function( event, ui ) {
-			// Show spinner if tab hasn't been loaded yet
 			if( ui.panel.html() == '' ) {
-				ui.panel.html('<div class="spinner"><img src="page/ajax-loader.gif" /></div>');
+				// Show spinner if tab hasn't been loaded yet
+				ui.panel.html('<div class="spinner"><img src="./page/ajax-loader.gif" /></div>');
+				// Show error message if ajax loading of content failed
+				ui.jqXHR.error(function() {
+					ui.panel.html('An error occurred while loading the table. Please try again. If it keeps failing, please inform the site owner.');
+				});
+				return true;
 			}
 			else {
 				// Ok, html has already loaded, no need to request it again.
 				return false;
 			}
-			// Show error message if ajax loading of content failed
-            ui.jqXHR.error(function() {
-                ui.panel.html('An error occured while loading the table. Please try again. If it keeps failing, please inform the site owner.');
-            });
 		},
-	    cache : true
+	    cache : true,
+	    load: function( event, ui ) {
+			// Attach floating table headers for panel loaded via Ajax
+			var tableId = ui.panel.find('table').attr( 'id' );
+				jQuery('#'+tableId).thfloat({
+					side : 'head',
+					onShow: function(table, block) {
+						// Remove hover and sticky classes as they will otherwise not stay consistant
+						block.find('th').css( 'background', '' );
+					}
+				}).thfloat({
+					side : 'foot',
+					onShow: function(table, block) {
+						// Remove hover and sticky classes as they will otherwise not stay consistant
+						block.find('th').css( 'background', '' );
+					}
+				});
+			// Remove hover and sticky classes as they will otherwise not stay consistant
+//			jQuery('.thfloat th').removeClass('hover sticky').css( 'background', '' );
+		}
 	});
 
 
+	// Pre-load tabs on mouse-over
+	// Not sure if this actually is a good idea as it often blocks a mouse click to work
+	// while a pre-load is running
+/*
+	var tabsTotal  = myTabs.find('li a').length;
+	var tabsLoaded = 1;
 
 	myTabs.on('mouseover.preload', '.ui-tabs-nav li a', function(event){
 		var tabId = jQuery(this).attr('id');
@@ -74,94 +139,83 @@ ui-icon-circle-minus
 		}
 		/*else {
 			console.log( 'Loaded '+tabsLoaded+' tabs out of '+ tabsTotal );
-		}*/
-	});
+		}* /
+	});*/
 
 
 
-	// Change the location bar url to the selected tab to enable reloading to the tab where you where
-	// and avoid the location bar change causing the page to reload
-	myTabs.on('click', 'ul.ui-tabs-nav a', function() { // when tab is shown update the URL
-		var tabHref = jQuery(this).attr('href');
-		tabHref = tabHref.substring( 0, tabHref.indexOf('&do=') );
-		var tabTitle = jQuery(this).text();
-		tabTitle = jQuery('title').text()+' - '+tabTitle;
-		history.pushState('notrelevant', tabTitle, tabHref );
-		//return false;
-	});
 
 
 	// Tooltips for long table column headers
-	jQuery('.ui-tabs-panel th').tooltip({
-		tooltipClass: 'thtooltip',
-		content: create_tooltip( jQuery( this ) )
-	});
-
-	function create_tooltip( element ) {
-//		var element = jQuery( this );
-		if ( element.is( '[title]' ) ) {
-			var ttip = element.attr( 'title' );
-			ttip = ttip.replace(/\n/g, '<br />');
-			ttip = ttip.replace(/\t/g, '&nbsp;&nbsp;&nbsp;&nbsp;');
-			return ttip;
+	// @todo improve....
+	jQuery('.ui-tabs-panel th [title]').tooltip({
+		tooltipClass: 'th-tooltip',
+		content: function() {
+			var element = jQuery( this );
+			var toolTip;
+//			if ( element.is( '[title]' ) ) {
+				toolTip = element.attr( 'title' );
+//				toolTip = toolTip.replace(/&lt;/g, '<');
+//				toolTip = toolTip.replace(/&gt;/g, '>');
+//				toolTip = toolTip.replace(/=>/g, '=&gt;');
+//				toolTip = toolTip.replace(/&quot;/g, '"');
+				toolTip = toolTip.replace(/\n/g, '<br />');
+				toolTip = toolTip.replace(/\t/g, '&nbsp;&nbsp;&nbsp;&nbsp;');
+				return toolTip;
+//			}
 		}
-	}
-
+	});
 
 
 	// Highlight table row and column
-	var tabPanels = jQuery('.ui-tabs-panel');
+	tabPanels = jQuery('.ui-tabs-panel');
+
 	tabPanels.on('mouseenter', 'td, th', function() {
 		var idx = jQuery(this).parent().children('td,th').index( jQuery(this))+1;
-		var ridx = jQuery(this).parent().parent().children('tr').index( jQuery(this).parent())+1;
-		if (ridx > 1) { jQuery(this).parent().addClass('hover'); }
+		var rowIdx = jQuery(this).parent().parent().children('tr').index( jQuery(this).parent())+1;
+		if (rowIdx > 1) { jQuery(this).parent().addClass('hover'); }
 		if (idx > 1) {
 			jQuery('.ui-tabs-panel td:nth-child('+idx+')').addClass('hover');
 			jQuery('.ui-tabs-panel th:nth-child('+idx+')').addClass('hover');
+			jQuery('.thfloat th:nth-child('+idx+')').addClass('hover');
 		}
 	});
 	tabPanels.on('mouseleave', 'td, th', function() {
 		var idx = jQuery(this).parent().children('td,th').index( jQuery(this))+1;
-		var ridx = jQuery(this).parent().parent().children('tr').index( jQuery(this).parent())+1;
-		if (ridx > 1) { jQuery(this).parent().removeClass('hover'); }
+		var rowIdx = jQuery(this).parent().parent().children('tr').index( jQuery(this).parent())+1;
+		if (rowIdx > 1) { jQuery(this).parent().removeClass('hover'); }
 		if ( idx > 1 ) {
 			jQuery('.ui-tabs-panel td:nth-child('+idx+')').removeClass('hover');
 			jQuery('.ui-tabs-panel th:nth-child('+idx+')').removeClass('hover');
+			jQuery('.thfloat th:nth-child('+idx+')').removeClass('hover');
 		}
 	});
-	
-	
 
 
-	// Sticky highlighting
+	// Sticky table row and column highlighting
 	tabPanels.on('click', 'td, th', function() {
 		var idx = jQuery(this).parent().children('td,th').index( jQuery(this))+1;
-		var ridx = jQuery(this).parent().parent().children('tr').index( jQuery(this).parent())+1;
+		var rowIdx = jQuery(this).parent().parent().children('tr').index( jQuery(this).parent())+1;
+
 		var tCells = jQuery('.ui-tabs-panel td:nth-child('+idx+')');
 		var tHeaders = jQuery('.ui-tabs-panel th:nth-child('+idx+')');
+		var fHeaders = jQuery('.thfloat th:nth-child('+idx+')');
 
 		if( jQuery(this).parent().hasClass('sticky') || jQuery('td:nth-child('+idx+')').hasClass('sticky') || jQuery('th:nth-child('+idx+')').hasClass('sticky') ) {
-			if ( ridx > 1 ) { jQuery(this).parent().removeClass('sticky'); }
+			if ( rowIdx > 1 ) { jQuery(this).parent().removeClass('sticky'); }
 			if ( idx > 1 ) {
 				tCells.removeClass('sticky');
 				tHeaders.removeClass('sticky');
+				fHeaders.removeClass('sticky');
 			}
 		}
 		else {
-			if (ridx > 1) { jQuery(this).parent().addClass('sticky'); }
+			if (rowIdx > 1) { jQuery(this).parent().addClass('sticky'); }
 			if (idx > 1) {
 				tCells.addClass('sticky');
 				tHeaders.addClass('sticky');
+				fHeaders.addClass('sticky');
 			}
 		}
 	});
-	
 });
-
-function show_props(obj, objName) {
-	var result = '';
-	for (var i in obj) {
-		result += objName + '.' + i + ' = ' + obj[i] + "\n";
-	}
-	return result;
-}
