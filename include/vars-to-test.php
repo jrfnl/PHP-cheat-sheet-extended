@@ -24,6 +24,7 @@ $test_array = array(
 	'f4'	=>	-1.3,
 	'f5'	=>	acos( 1.01 ), // is_nan
 	'f6'	=>	log( 0 ), // is_infinite
+	'f7'	=>	1.2345E8, // exponent notation float
 
 	'se'	=>	'',
 
@@ -77,10 +78,17 @@ $test_array = array(
 	'o1'	=>	new TestObject(),
 	'o2'	=>	new TestObjectToString(),
 
-	'r1'	=>	imagecreatetruecolor( 10, 10 ),
-
+	'r1'	=>	fopen( APP_DIR . '/include/resource.txt', 'r' ),
 
 );
+
+if ( PHP_VERSION_ID >= 50400 ) {
+	$test_array['ia']	= 0b0111001; // binary integer 57
+}
+
+if ( extension_loaded( 'gd' ) ) {
+	$test_array['r2']	=	imagecreatetruecolor( 10, 10 );
+}
 
 if ( extension_loaded( 'SPL_Types' ) ) {
 	if ( class_exists( 'SplBool' ) ) {
@@ -101,19 +109,19 @@ if ( extension_loaded( 'SPL_Types' ) ) {
 }
 
 
-$label_array = array(
-	'i8'	=>	'hex int: 0xCC00F9',
-	'i9'	=>	'octal: 0123',
-//	'f5'	=>	'acos(1.01)',
-//	'f6'	=>	'log(0)',
-	'sm'	=> '"\f\t\r\n"',
-	'so'	=> '"\x7f\t\r\n"',
+$legend_array = array(
+	'i8'	=>	'$x = 0xCC00F9; // hexadecimal integer',
+	'i9'	=>	'$x = 0123; // octal integer',
+	'ia'	=>	'$x = 0b0111001; // binary integer',
+	'f5'	=>	'$x = acos(1.01); // = NAN',
+	'f6'	=>	'$x = log(0); // = infinite',
+	'f7'	=>	'$x = 1.2345E8; // exponent notation float',
+	'sj'	=>	'$x = "123, \"str\"\r\n";',
+	'sm'	=>	'$x = "\f\t\r\n";',
+	'so'	=>	'$x = "\x7f\t\r\n"',
 );
 
 
-$key_array   = array();
-$key_array[] = 'notset';
-$key_array   = array_merge( $key_array, array_keys( $test_array ) );
 
 
 
