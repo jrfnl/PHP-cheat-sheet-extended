@@ -1,7 +1,10 @@
 ﻿<?php
 
-include_once( 'class.vartype.php' );
+include_once( APP_DIR . '/class.vartype.php' );
 
+/**
+ *
+ */
 class VartypeTest extends Vartype {
 
 	var $tests = array(
@@ -226,104 +229,44 @@ class VartypeTest extends Vartype {
 			'url'	=>	'http://php.net/language.types.type-juggling',
 			'arg'	=>	'$x',
 			'function'	=>	'
-				if ( PHP_VERSION_ID >= \'50000\' ) {
-					try {
-						if ( !is_array( $x ) ) {
-							$x = $x + 0;
-							if ( is_int( $x ) ) {
-								pr_int( $x );
-							}
-							else if ( is_float( $x ) ) {
-								pr_flt( $x );
-							}
-							else {
-								pr_var( $x, \'\', true, true );
-							}
-						}
-						else {
-							trigger_error( \'Unsupported operand types\', E_USER_ERROR );
-						}
+				if ( !is_array( $x ) ) {
+					$x = $x + 0;
+					if ( is_int( $x ) ) {
+						pr_int( $x );
 					}
-					catch( Exception $e ) {
-						$message = $e->getMessage();
-						$key = array_search( $message, $GLOBALS[\'encountered_errors\'] );
-						if ( $key === false ) {
-							$GLOBALS[\'encountered_errors\'][] = $message;
-							$key = array_search( $message, $GLOBALS[\'encountered_errors\'] );
-						}
-						print \'<span class="error">Fatal error <a href="#\' . $GLOBALS[\'test\']. \'-errors">#\' . ( $key + 1 ) . \'</a></span>\';
+					else if ( is_float( $x ) ) {
+						pr_flt( $x );
+					}
+					else {
+						pr_var( $x, \'\', true, true );
 					}
 				}
 				else {
-					if ( !is_array( $x ) ) {
-						$x = $x + 0;
-						if ( is_int( $x ) ) {
-							pr_int( $x );
-						}
-						else if ( is_float( $x ) ) {
-							pr_flt( $x );
-						}
-						else {
-							pr_var( $x, \'\', true, true );
-						}
-					}
-					else {
-						trigger_error( \'Unsupported operand types\', E_USER_ERROR );
-					}
+					trigger_error( \'Unsupported operand types\', E_USER_ERROR );
 				}
-			',
+			', // Note: has PHP5 equivalent in class.vartype-php5.php
 		),
 		'juggle_flt' =>	array(
 			'title'	=>	'$x&nbsp;+&nbsp;0.0',
 			'url'	=>	'http://php.net/language.types.type-juggling',
 			'arg'	=>	'$x',
 			'function'	=> '
-				if ( PHP_VERSION_ID >= \'50000\' ) {
-					try {
-						if ( !is_array( $x ) ) {
-							$r = $x + 0.0;
-							if ( is_float( $r ) ) {
-								pr_flt( $r );
-							}
-							else if ( is_int( $r ) ) {
-								pr_int( $r );
-							}
-							else {
-								pr_var( $r, \'\', true, true );
-							}
-						}
-						else {
-							trigger_error( \'Unsupported operand types\', E_USER_ERROR );
-						}
+				if ( !is_array( $x ) ) {
+					$r = $x + 0.0;
+					if ( is_float( $r ) ) {
+						pr_flt( $r );
 					}
-					catch( Exception $e ) {
-						$message = $e->getMessage();
-						$key = array_search( $message, $GLOBALS[\'encountered_errors\'] );
-						if ( $key === false ) {
-							$GLOBALS[\'encountered_errors\'][] = $message;
-							$key = array_search( $message, $GLOBALS[\'encountered_errors\'] );
-						}
-						print \'<span class="error">Fatal error <a href="#\' . $GLOBALS[\'test\']. \'-errors">#\' . ( $key + 1 ) . \'</a></span>\';
+					else if ( is_int( $r ) ) {
+						pr_int( $r );
+					}
+					else {
+						pr_var( $r, \'\', true, true );
 					}
 				}
 				else {
-					if ( !is_array( $x ) ) {
-						$r = $x + 0.0;
-						if ( is_float( $r ) ) {
-							pr_flt( $r );
-						}
-						else if ( is_int( $r ) ) {
-							pr_int( $r );
-						}
-						else {
-							pr_var( $r, \'\', true, true );
-						}
-					}
-					else {
-						trigger_error( \'Unsupported operand types\', E_USER_ERROR );
-					}
+					trigger_error( \'Unsupported operand types\', E_USER_ERROR );
 				}
-			',
+			', // Note: has PHP5 equivalent in class.vartype-php5.php
 		),
 		'juggle_str' =>	array(
 			'title'	=>	'$x&nbsp;.&nbsp;\'\'',
@@ -388,123 +331,121 @@ class VartypeTest extends Vartype {
 		 * Using CastToType class
 		 * https://github.com/jrfnl/PHP-cast-to-type.git
 		 */
-		'casttotype_array' =>	array(
+		'cast_to_type_array' =>	array(
 			'title'	=>	'CastToType::_array (&nbsp;$x&nbsp;)',
 			'url'	=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'	=>	'$x',
-			'function'	=>	'include_once( \'include/PHP-cast-to-type/class.cast-to-type.php\' ); pr_var( CastToType::_array( $x ), \'\', true, true );',
+			'function'	=>	'include_once( APP_DIR . \'/include/PHP-cast-to-type/class.cast-to-type.php\' ); pr_var( CastToType::_array( $x ), \'\', true, true );',
 			'notes'	=>	array(
 				'<p>Uses an external library</p>',
 			),
 		),
-		'casttotype_bool' =>	array(
+		'cast_to_type_bool' =>	array(
 			'title'	=>	'CastToType::_bool (&nbsp;$x&nbsp;)',
 			'url'	=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'	=>	'$x',
-			'function'	=>	'include_once( \'include/PHP-cast-to-type/class.cast-to-type.php\' ); $r = CastToType::_bool( $x ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); }',
+			'function'	=>	'include_once( APP_DIR . \'/include/PHP-cast-to-type/class.cast-to-type.php\' ); $r = CastToType::_bool( $x ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'	=>	array(
 				'<p>Uses an <a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">external library</a></p>',
 			),
 		),
-		'casttotype_float' =>	array(
+		'cast_to_type_float' =>	array(
 			'title'	=>	'CastToType::_float (&nbsp;$x&nbsp;)',
 			'url'	=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'	=>	'$x',
-			'function'	=>	'include_once( \'include/PHP-cast-to-type/class.cast-to-type.php\' ); $r = CastToType::_float( $x ); if ( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); }',
+			'function'	=>	'include_once( APP_DIR . \'/include/PHP-cast-to-type/class.cast-to-type.php\' ); $r = CastToType::_float( $x ); if ( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'	=>	array(
 				'<p>Uses an <a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">external library</a></p>',
 			),
 		),
-		'casttotype_int' =>	array(
+		'cast_to_type_int' =>	array(
 			'title'	=>	'CastToType::_int (&nbsp;$x&nbsp;)',
 			'url'	=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'	=>	'$x',
-			'function'	=>	'include_once( \'include/PHP-cast-to-type/class.cast-to-type.php\' ); $r = CastToType::_int( $x ); if ( is_int( $r ) ) { pr_int( $r ); } else { pr_var( $r, \'\', true, true ); }',
+			'function'	=>	'include_once( APP_DIR . \'/include/PHP-cast-to-type/class.cast-to-type.php\' ); $r = CastToType::_int( $x ); if ( is_int( $r ) ) { pr_int( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'	=>	array(
 				'<p>Uses an <a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">external library</a></p>',
 			),
 		),
-		'casttotype_null' =>	array(
+		'cast_to_type_null' =>	array(
 			'title'	=>	'CastToType::_null (&nbsp;$x&nbsp;)',
 			'url'	=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'	=>	'$x',
-			'function'	=>	'include_once( \'include/PHP-cast-to-type/class.cast-to-type.php\' ); pr_var( CastToType::_null( $x ), \'\', true, true );',
+			'function'	=>	'include_once( APP_DIR . \'/include/PHP-cast-to-type/class.cast-to-type.php\' ); pr_var( CastToType::_null( $x ), \'\', true, true );',
 			'notes'	=>	array(
 				'<p>Uses an <a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">external library</a></p>',
 			),
 		),
-		'casttotype_object' =>	array(
+		'cast_to_type_object' =>	array(
 			'title'	=>	'CastToType::_object (&nbsp;$x&nbsp;)',
 			'url'	=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'	=>	'$x',
-			'function'	=>	'include_once( \'include/PHP-cast-to-type/class.cast-to-type.php\' ); pr_var( CastToType::_object( $x ), \'\', true, true );',
+			'function'	=>	'include_once( APP_DIR . \'/include/PHP-cast-to-type/class.cast-to-type.php\' ); pr_var( CastToType::_object( $x ), \'\', true, true );',
 			'notes'	=>	array(
 				'<p>Uses an <a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">external library</a></p>',
 			),
 		),
-		'casttotype_string' =>	array(
+		'cast_to_type_string' =>	array(
 			'title'	=>	'CastToType::_string (&nbsp;$x&nbsp;)',
 			'url'	=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'	=>	'$x',
-			'function'	=>	'include_once( \'include/PHP-cast-to-type/class.cast-to-type.php\' ); $r = CastToType::_string( $x ); if ( is_string( $r ) ) { pr_str( $r ); } else { pr_var( $r, \'\', true, true ); }',
+			'function'	=>	'include_once( APP_DIR . \'/include/PHP-cast-to-type/class.cast-to-type.php\' ); $r = CastToType::_string( $x ); if ( is_string( $r ) ) { pr_str( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'	=>	array(
 				'<p>Uses an <a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">external library</a></p>',
 			),
 		),
 		
 
-		// @todo update titles
-		// @todo test recursion
-		'casttotype_array_not_empty' =>	array(
+		'cast_to_type_array_not_empty' =>	array(
 			'title'	=>	'CastToType::_array (&nbsp;$x, false&nbsp;)',
 			'url'	=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'	=>	'$x',
-			'function'	=>	'include_once( \'include/PHP-cast-to-type/class.cast-to-type.php\' ); pr_var( CastToType::_array( $x, false ), \'\', true, true );',
+			'function'	=>	'include_once( APP_DIR . \'/include/PHP-cast-to-type/class.cast-to-type.php\' ); pr_var( CastToType::_array( $x, false ), \'\', true, true );',
 			'notes'	=>	array(
 				'<p>Uses an external library</p>',
 			),
 		),
-		'casttotype_bool_not_empty_recurse_arrays' =>	array(
+		'cast_to_type_bool_not_empty_recurse_arrays' =>	array(
 			'title'	=>	'CastToType::_bool (&nbsp;$x, false, false&nbsp;)',
 			'url'	=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'	=>	'$x',
-			'function'	=>	'include_once( \'include/PHP-cast-to-type/class.cast-to-type.php\' ); $r = CastToType::_bool( $x, false, false ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); }',
+			'function'	=>	'include_once( APP_DIR . \'/include/PHP-cast-to-type/class.cast-to-type.php\' ); $r = CastToType::_bool( $x, false, false ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'	=>	array(
 				'<p>Uses an <a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">external library</a></p>',
 			),
 		),
-		'casttotype_float_not_empty_recurse_arrays' =>	array(
+		'cast_to_type_float_not_empty_recurse_arrays' =>	array(
 			'title'	=>	'CastToType::_float (&nbsp;$x, false, false&nbsp;)',
 			'url'	=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'	=>	'$x',
-			'function'	=>	'include_once( \'include/PHP-cast-to-type/class.cast-to-type.php\' ); $r = CastToType::_float( $x, false, false ); if ( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); }',
+			'function'	=>	'include_once( APP_DIR . \'/include/PHP-cast-to-type/class.cast-to-type.php\' ); $r = CastToType::_float( $x, false, false ); if ( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'	=>	array(
 				'<p>Uses an <a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">external library</a></p>',
 			),
 		),
-		'casttotype_int_not_empty_recurse_arrays' =>	array(
+		'cast_to_type_int_not_empty_recurse_arrays' =>	array(
 			'title'	=>	'CastToType::_int (&nbsp;$x, false, false&nbsp;)',
 			'url'	=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'	=>	'$x',
-			'function'	=>	'include_once( \'include/PHP-cast-to-type/class.cast-to-type.php\' ); $r = CastToType::_int( $x, false, false ); if ( is_int( $r ) ) { pr_int( $r ); } else { pr_var( $r, \'\', true, true ); }',
+			'function'	=>	'include_once( APP_DIR . \'/include/PHP-cast-to-type/class.cast-to-type.php\' ); $r = CastToType::_int( $x, false, false ); if ( is_int( $r ) ) { pr_int( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'	=>	array(
 				'<p>Uses an <a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">external library</a></p>',
 			),
 		),
-		'casttotype_object_not_empty' =>	array(
+		'cast_to_type_object_not_empty' =>	array(
 			'title'	=>	'CastToType::_object (&nbsp;$x, false&nbsp;)',
 			'url'	=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'	=>	'$x',
-			'function'	=>	'include_once( \'include/PHP-cast-to-type/class.cast-to-type.php\' ); pr_var( CastToType::_object( $x, false ), \'\', true, true );',
+			'function'	=>	'include_once( APP_DIR . \'/include/PHP-cast-to-type/class.cast-to-type.php\' ); pr_var( CastToType::_object( $x, false ), \'\', true, true );',
 			'notes'	=>	array(
 				'<p>Uses an <a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">external library</a></p>',
 			),
 		),
-		'casttotype_string_not_empty_recurse_arrays' =>	array(
+		'cast_to_type_string_not_empty_recurse_arrays' =>	array(
 			'title'	=>	'CastToType::_string (&nbsp;$x, false, false&nbsp;)',
 			'url'	=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'	=>	'$x',
-			'function'	=>	'include_once( \'include/PHP-cast-to-type/class.cast-to-type.php\' ); $r = CastToType::_string( $x, false, false ); if ( is_string( $r ) ) { pr_str( $r ); } else { pr_var( $r, \'\', true, true ); }',
+			'function'	=>	'include_once( APP_DIR . \'/include/PHP-cast-to-type/class.cast-to-type.php\' ); $r = CastToType::_string( $x, false, false ); if ( is_string( $r ) ) { pr_str( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'	=>	array(
 				'<p>Uses an <a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">external library</a></p>',
 			),
@@ -550,7 +491,7 @@ class VartypeTest extends Vartype {
 			'title'	=>	'strlen()',
 			'url'	=>	'http://php.net/strlen',
 			'arg'	=>	'$x',
-			'function'	=>	'pr_int( strlen( $x ) );',
+			'function'	=>	'$r = strlen( $x ); if( is_int( $r ) ) { pr_int( $r ); } else { pr_var( $r, \'\', true, true ); }',
 		),
 		'count_chars' =>	array(
 			'title'	=>	'count_chars (&hellip;)',
@@ -570,8 +511,21 @@ class VartypeTest extends Vartype {
 			'title'	=>	'mb_strlen()',
 			'url'	=>	'http://php.net/mb-strlen',
 			'arg'	=>	'$x',
-			'function'	=>	'if ( function_exists( \'mb_strlen\' ) ) { $r = mb_strlen( $x, \'UTF-8\' ); if ( is_int( $r ) ) { pr_int( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'E: mbstring extension not installed\'; }',
+			'function'	=>	'if ( function_exists( \'mb_strlen\' ) ) { $r = mb_strlen( $x, \'UTF-8\' ); if ( is_int( $r ) ) { pr_int( $r ); } else if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'E: mbstring extension not installed\'; }',
 		),
+		'trim' =>	array(
+			'title'	=>	'trim()',
+			'url'	=>	'http://php.net/trim',
+			'arg'	=>	'$x',
+			'function'	=>	'pr_var( trim( $x ), \'\', true, true );',
+		),
+		'char_access' =>	array(
+			'title'	=>	'$x{2}',
+			'url'	=>	'http://www.php.net/manual/en/language.types.string.php#language.types.string.substr',
+			'arg'	=>	'$x',
+			'function'	=>	'if ( !is_object( $x ) ) { pr_var( $x{2}, \'\', true, true ); } else { $class = get_class( $x ); trigger_error( \'Cannot use object of type \' . $class . \' as array\', E_USER_ERROR ); unset( $class ); }',
+		),
+
 
 
 		/**
@@ -639,7 +593,7 @@ class VartypeTest extends Vartype {
 			'title'	=>	'array_key_exists (&nbsp;0,&nbsp;$x&nbsp;)',
 			'url'	=>	'http://php.net/array_key_exists',
 			'arg'	=>	'$x',
-			'function'	=>	'if ( function_exists( \'array_key_exists\' ) ) { pr_bool( array_key_exists( 0, $x ) ); } else { print \'E: not available (PHP 4.0.7+)\'; }',
+			'function'	=>	'if ( function_exists( \'array_key_exists\' ) ) { $r = array_key_exists( 0, $x ); if( is_bool( $r ) ) { pr_bool( array_key_exists( 0, $x ) ); } else { pr_var( $r, \'\', true, true ); } } else { print \'E: not available (PHP 4.0.7+)\'; }',
 			'notes'	=>	array(
 				'<p>
 					Whether to use <code>isset()</code> or <code>array_key_exists()</code> depends on what you want to know:
@@ -730,7 +684,7 @@ class VartypeTest extends Vartype {
 			'title'	=>	'instanceof TestObject',
 			'url'	=>	'http://php.net/language.operators.type',
 			'arg'	=>	'$x',
-			'function'	=>	'if ( PHP_VERSION_ID >= 50000 ) { $c = \'TestObject\'; $r = ( $x instanceof $c ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'E: not available (PHP 5.0+)\'; }',
+			'function'	=>	'print \'E: not available (PHP 5.0+)\';',  // Note: has PHP5 equivalent in class.vartype-php5.php
 		),
 		'get_class' => array(
 			'title'	=>	'get_class()',
@@ -1733,7 +1687,7 @@ FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0
 			'target'	=>	null,
 		),
 		
-		'typetesting'	=>	array(
+		'type_testing'	=>	array(
 			'title'	=>	'is_&hellip;()',
 			'tests'	=>	array(
 				'gettype',
@@ -1765,8 +1719,8 @@ FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0
 
 
 		
-/*		'typecasting'	=>	array(
-			'title'	=>	'Typecasting',
+/*		'type_casting'	=>	array(
+			'title'	=>	'Type casting',
 			'tests'	=>	array(
 //				'gettype',
 				'settype_null',
@@ -1813,7 +1767,7 @@ FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0
 				'settype_null',
 				'unset',
 				'f_unset',
-				'casttotype_null',
+				'cast_to_type_null',
 
 				'isset',
 				'empty',
@@ -1829,7 +1783,7 @@ FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0
 				'null_cmp_rv_loose_str',
 				'null_cmp_rv_strict_str',*/
 			),
-			'break_at'	=>	array( 'casttotype_null', 'empty', 'null_cmp_strict_str', 'null_cmp_rv_strict_str', ),
+			'break_at'	=>	array( 'cast_to_type_null', 'empty', 'null_cmp_strict_str', 'null_cmp_rv_strict_str', ),
 			'good'		=>	array( 'is_null', 'null_cmp_strict', 'null_cmp_rv_strict', ),
 			'best'		=>	array( 'isset', ),
 			'urls'		=>	array(),
@@ -1845,8 +1799,8 @@ FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0
 				'bool',
 				'filter_combined_bool',
 				'filter_combined_bool_null',
-				'casttotype_bool',
-				'casttotype_bool_not_empty_recurse_arrays',
+				'cast_to_type_bool',
+				'cast_to_type_bool_not_empty_recurse_arrays',
 
 				'is_bool',
 
@@ -1884,8 +1838,8 @@ FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0
 				'if_not_var',
 
 			),
-			'break_at'	=>	array( 'casttotype_bool_not_empty_recurse_arrays', 'is_bool', 'bool_cmp_true_loose_str', 'bool_cmp_rv_true_strict_str', 'bool_cmp_false_loose_str', 'bool_cmp_rv_false_strict_str', 'if_not_var', ),
-			'good'		=>	array( 'casttotype_bool', 'casttotype_bool_not_empty_recurse_arrays', 'filter_combined_bool_null', 'is_bool', 'bool_cmp_true_strict', 'bool_cmp_false_strict', ),
+			'break_at'	=>	array( 'cast_to_type_bool_not_empty_recurse_arrays', 'is_bool', 'bool_cmp_true_loose_str', 'bool_cmp_rv_true_strict_str', 'bool_cmp_false_loose_str', 'bool_cmp_rv_false_strict_str', 'if_not_var', ),
+			'good'		=>	array( 'cast_to_type_bool', 'cast_to_type_bool_not_empty_recurse_arrays', 'filter_combined_bool_null', 'is_bool', 'bool_cmp_true_strict', 'bool_cmp_false_strict', ),
 			'best'		=>	array(),
 			'urls'		=>	array(),
 			'book_url'	=>	'http://php.net/types.comparisons',
@@ -1902,8 +1856,8 @@ FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0
 				'juggle_int',
 				'filter_combined_int',
 				'filter_combined_int_null',
-				'casttotype_int',
-				'casttotype_int_not_empty_recurse_arrays',
+				'cast_to_type_int',
+				'cast_to_type_int_not_empty_recurse_arrays',
 
 				'empty',
 				'is_int',
@@ -1924,8 +1878,8 @@ FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0
 				'int_cmp_lte0',
 */
 			),
-			'break_at'	=>	array( 'casttotype_int_not_empty_recurse_arrays', 'preg_int', 'is_numeric', 'int_cmp_lte0', ),
-			'good'		=>	array( 'casttotype_int', 'casttotype_int_not_empty_recurse_arrays', 'filter_combined_int_null', 'is_int', ),
+			'break_at'	=>	array( 'cast_to_type_int_not_empty_recurse_arrays', 'preg_int', 'is_numeric', 'int_cmp_lte0', ),
+			'good'		=>	array( 'cast_to_type_int', 'cast_to_type_int_not_empty_recurse_arrays', 'filter_combined_int_null', 'is_int', ),
 			'best'		=>	array(),
 			'urls'		=>	array(),
 			'book_url'	=>	'http://php.net/book.var',
@@ -1943,8 +1897,8 @@ FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0
 				'juggle_flt',
 				'filter_combined_float',
 				'filter_combined_float_null',
-				'casttotype_float',
-				'casttotype_float_not_empty_recurse_arrays',
+				'cast_to_type_float',
+				'cast_to_type_float_not_empty_recurse_arrays',
 
 				'empty',
 				'is_float',
@@ -1960,8 +1914,8 @@ FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0
 				'is_infinite',
 */
 			),
-			'break_at'	=>	array( 'casttotype_float_not_empty_recurse_arrays', 'preg_float', 'is_numeric', 'is_infinite', ),
-			'good'		=>	array( 'casttotype_float', 'casttotype_float_not_empty_recurse_arrays', 'filter_combined_float_null', 'is_float', ),
+			'break_at'	=>	array( 'cast_to_type_float_not_empty_recurse_arrays', 'preg_float', 'is_numeric', 'is_infinite', ),
+			'good'		=>	array( 'cast_to_type_float', 'cast_to_type_float_not_empty_recurse_arrays', 'filter_combined_float_null', 'is_float', ),
 			'best'		=>	array(),
 			'urls'		=>	array(),
 			'book_url'	=>	'http://php.net/book.var',
@@ -2009,12 +1963,12 @@ FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0
 				'juggle_str',
 				'filter_combined_string',
 				'filter_combined_string_null',
-				'casttotype_string',
-				'casttotype_string_not_empty_recurse_arrays',
+				'cast_to_type_string',
+				'cast_to_type_string_not_empty_recurse_arrays',
 
 			),
-			'break_at'	=>	array( 'casttotype_string_not_empty_recurse_arrays', ),
-			'good'		=>	array( 'casttotype_string', 'casttotype_string_not_empty_recurse_arrays', 'filter_combined_string_null', 'is_string', 'ctype_alpha', 'mb_strlen' ),
+			'break_at'	=>	array( 'cast_to_type_string_not_empty_recurse_arrays', ),
+			'good'		=>	array( 'cast_to_type_string', 'cast_to_type_string_not_empty_recurse_arrays', 'filter_combined_string_null', 'is_string', 'ctype_alpha', 'mb_strlen' ),
 			'best'		=>	array(),
 			'urls'		=>	array(),
 			'book_url'	=>	'http://php.net/book.strings',
@@ -2044,9 +1998,13 @@ FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0
 				'count_chars',
 				'mb_strlen',
 
+				'char_access',
+
+				'trim',
+
 			),
-			'break_at'	=>	array( 'casttotype_string', 'is_string', 'str_cmp_empty_strict', 'preg_word', 'mb_strlen', ),
-			'good'		=>	array( 'casttotype_string', 'filter_combined_string_null', 'is_string', 'ctype_alpha', 'mb_strlen' ),
+			'break_at'	=>	array( 'cast_to_type_string', 'is_string', 'str_cmp_empty_strict', 'preg_word', 'mb_strlen', 'char_access', 'trim', ),
+			'good'		=>	array( 'cast_to_type_string', 'filter_combined_string_null', 'is_string', 'ctype_alpha', 'mb_strlen' ),
 			'best'		=>	array(),
 			'urls'		=>	array(),
 			'book_url'	=>	'http://php.net/book.strings',
@@ -2058,8 +2016,8 @@ FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0
 			'tests'	=>	array(
 				'settype_array',
 				'array',
-				'casttotype_array',
-				'casttotype_array_not_empty',
+				'cast_to_type_array',
+				'cast_to_type_array_not_empty',
 
 				'is_array',
 				'count',
@@ -2076,8 +2034,8 @@ FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0
 				'array_filter',
 
 			),
-			'break_at'	=>	array( 'casttotype_array_not_empty', 'count', 'count_mt_0', 'isset_foo', 'array_filter', ),
-			'good'		=>	array( 'casttotype_array', 'casttotype_array_not_empty', 'is_array' ),
+			'break_at'	=>	array( 'cast_to_type_array_not_empty', 'count', 'count_mt_0', 'isset_foo', 'array_filter', ),
+			'good'		=>	array( 'cast_to_type_array', 'cast_to_type_array_not_empty', 'is_array' ),
 			'best'		=>	array(),
 			'urls'		=>	array(),
 			'book_url'	=>	'http://php.net/book.array',
@@ -2090,8 +2048,8 @@ FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0
 			'tests'	=>	array(
 				'settype_object',
 				'object',
-				'casttotype_object',
-				'casttotype_object_not_empty',
+				'cast_to_type_object',
+				'cast_to_type_object_not_empty',
 				
 				'is_object',
 				'is_a',
@@ -2102,8 +2060,8 @@ FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0
 				'is_subclass_of',
 
 			),
-			'break_at'	=>	array( 'casttotype_object', 'casttotype_object_not_empty', 'instanceof', 'is_subclass_of', ),
-			'good'		=>	array( 'casttotype_object', 'casttotype_object_not_empty', 'is_object' ),
+			'break_at'	=>	array( 'cast_to_type_object', 'cast_to_type_object_not_empty', 'instanceof', 'is_subclass_of', ),
+			'good'		=>	array( 'cast_to_type_object', 'cast_to_type_object_not_empty', 'is_object' ),
 			'best'		=>	array(),
 			'urls'		=>	array(),
 			'book_url'	=>	'http://php.net/book.classobj',
@@ -2149,8 +2107,9 @@ FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0
 			'book_url'	=>	'http://php.net/language.operators.arithmetic',
 			'target'	=>	'',
 		),
-
-
+	);
+	
+	var $ctype_test_group = array(
 		'ctype'	=>	array(
 			'title'	=>	'ctype extension',
 			'tests'	=>	array(
@@ -2176,9 +2135,10 @@ FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0
 			'book_url'	=>	'http://php.net/book.ctype',
 			'target'	=>	's',
 		),
+	);
+	
 
-
-
+	var $filter_test_group = array(
 		'filters' => array(
 			'title'	=>	'filter extension',
 			'tests'	=>	array(
@@ -2207,12 +2167,21 @@ FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0
 			'book_url'	=>	'http://php.net/book.filter',
 			'target'	=>	'',
 		),
-
-
 	);
 
 
+	/**
+	 *
+	 */
 	function __construct() {
+		
+		if ( extension_loaded( 'ctype' ) ) {
+			$this->test_groups = array_merge( $this->test_groups, $this->ctype_test_group );
+		}
+
+		if ( extension_loaded( 'filter' ) ) {
+			$this->test_groups = array_merge( $this->test_groups, $this->filter_test_group );
+		}
 
 		/**
 		 * Adjust float regex tests to use the correct decimal point character
@@ -2243,7 +2212,29 @@ FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0
 			}
 		}
 		unset( $preg_point );
-
+		
+/*		//temp - testing where php 4 goes wrong
+		$temp = array(
+//			'general',
+//			'type_testing',
+	/*		'type_casting',* /
+//			'null',
+//			'bool',
+			'integer',
+			'float',
+			'numeric',
+			'string1',
+			'string2',
+			'array',
+			'object',
+			'resources',
+			'arithmetic',
+			'ctype',
+		);
+		foreach( $temp as $key ) {
+			unset( $this->test_groups[$key] );
+		}
+*/
 		parent::__construct();
 	}
 
@@ -2252,7 +2243,15 @@ FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0
 	}
 
 
-	static function filter_combined( $value, $expected = null, $filter = FILTER_DEFAULT, $flags = null, $options = null ) {
+//	static function filter_combined( $value, $expected = null, $filter = FILTER_DEFAULT, $flags = null, $options = null ) {
+	/**
+	 * @param      $value
+	 * @param null $expected
+	 * @param int  $filter
+	 * @param null $flags
+	 * @param null $options
+	 */
+	function filter_combined( $value, $expected = null, $filter = FILTER_DEFAULT, $flags = null, $options = null ) {
 		
 		if ( function_exists( 'filter_var' ) && function_exists( 'filter_var_array' ) ) {
 			if ( !is_array( $value ) ) {
