@@ -22,17 +22,23 @@ header( 'Content-type: text/html; charset=utf-8' );
 	<meta name="robots" content="index,follow" />
 	<meta name="revisit-after" content="4 weeks" />
 
+<?php
+if( isset( $type ) ): ?>
 	<link type="text/css" rel="stylesheet" href="./<?php if ( isset( $dir ) ) print $dir; ?>page/jquery-css/jquery-ui.min.css" />
 	<link type="text/css" rel="stylesheet" href="./<?php if ( isset( $dir ) ) print $dir; ?>page/jquery-css/jquery.ui.theme.css" />
+<?php
+endif; ?>
 	<link type="text/css" rel="stylesheet" href="./<?php if ( isset( $dir ) ) print $dir; ?>page/style<?php if ( isset( $min ) ) print $min; ?>.css" />
 
-
+<?php
+if( isset( $type ) ): ?>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 
 	<!-- floating table headers -->
 	<script type="text/javascript" src="./<?php if ( isset( $dir ) ) print $dir; ?>page/jquery.thfloat-0.7.2<?php if ( isset( $min ) ) print $min; ?>.js"></script>
-
+<?php
+endif; ?>
 	<script type="text/javascript" src="./<?php if ( isset( $dir ) ) print $dir; ?>page/interaction<?php if ( isset( $min ) ) print $min; ?>.js"></script>
 
 
