@@ -17,7 +17,7 @@
  * @author	Juliette Reinders Folmer, {@link http://www.adviesenzo.nl/ Advies en zo} -
  *  <xvardump@adviesenzo.nl>
  *
- * @version	1.6
+ * @version	1.7
  * @since	2009-09-30 // Last changed: by Juliette Reinders Folmer
  * @copyright	Advies en zo, Meedenken en -doen �2005-2009
  * @license http://www.opensource.org/licenses/lgpl-license.php GNU Lesser General Public License
@@ -29,37 +29,20 @@
 
 define( 'XVARDUMP_SPACE_LONG',		'&nbsp;&nbsp;&nbsp;&nbsp;' );
 define( 'XVARDUMP_SPACE_SHORT',		'&nbsp;&nbsp;' );
-//define( 'XVARDUMP_COLOR_BCKGR',		'transparent' );
-define( 'XVARDUMP_COLOR_STRING',	'#336600' );
-//define( 'XVARDUMP_COLOR_INT',		'#FF0000' );
-define( 'XVARDUMP_COLOR_INT',		'#0066FF' );
-define( 'XVARDUMP_COLOR_INT_0',		'#FF0000' );
-define( 'XVARDUMP_COLOR_FLOAT',		'#990033' );
-define( 'XVARDUMP_COLOR_BOOL',		'#000099' );
-define( 'XVARDUMP_COLOR_B_TRUE',	'#336600' );
-define( 'XVARDUMP_COLOR_B_FALSE',	'#FF0000' );
-define( 'XVARDUMP_COLOR_RESOURCE',	'#666666' );
-define( 'XVARDUMP_COLOR_NULL',		'#666666' );
+
+define( 'XVARDUMP_CLASS_STRING',	'string' );
+define( 'XVARDUMP_CLASS_INT',		'int' );
+define( 'XVARDUMP_CLASS_INT_0',		'int-0' );
+define( 'XVARDUMP_CLASS_FLOAT',		'float' );
+define( 'XVARDUMP_CLASS_BOOL',		'bool' );
+define( 'XVARDUMP_CLASS_B_TRUE',	'b-true' );
+define( 'XVARDUMP_CLASS_B_FALSE',	'b-false' );
+define( 'XVARDUMP_CLASS_RESOURCE',	'resource' );
+define( 'XVARDUMP_CLASS_NULL',		'null' );
 
 
-/**
- * Function to log the debug info and value of a variable to the error log
- * without displaying it to the screen.
- *
- * This function will temporarily overwrite the 'display_errors' ini value.
- *
- * @uses	get_var()
- * @see		pr_var()
- */
-function log_var_to_errorlog( $var, $title = '', $escape = true, $short = false, $space = '' ) {
-	$display_value = ini_get( 'display_errors' );
-	ini_set( 'display_errors', 0 );
 
-	$debug_info = get_var( $var, $title, $escape, $short, $space );
-	trigger_error( $debug_info, E_USER_NOTICE );
 
-	ini_set( 'display_errors', $display_value );
-}
 
 
 /**
@@ -127,13 +110,13 @@ function pr_var( $var, $title = '', $escape = true, $short = false, $space = '',
 				print  ' ';
 				switch ( true ) {
 					case ( is_string( $key ) ) :
-						print '<span style="color: ' . XVARDUMP_COLOR_STRING . ';"><b><i>(string)</i></b></span>';
+						print '<b class="' . XVARDUMP_CLASS_STRING . '"><i>(string)</i></b>';
 						break;
 					case ( is_int( $key ) ) :
-						print '<span style="color: ' . XVARDUMP_COLOR_INT . ';"><b><i>(int)</i></b></span>';
+						print '<b class="' . XVARDUMP_CLASS_INT . '"><i>(int)</i></b>';
 						break;
 					case ( is_float( $key ) ) :
-						print '<span style="color: ' . XVARDUMP_COLOR_FLOAT . ';"><b><i>(float)</i></b></span>';
+						print '<b class="' . XVARDUMP_CLASS_FLOAT . '"><i>(float)</i></b>';
 						break;
 					default:
 						print '(unknown)';
@@ -146,7 +129,7 @@ function pr_var( $var, $title = '', $escape = true, $short = false, $space = '',
 		print $space . ")<br />\n\n";
 	}
 	else if ( is_string( $var ) ) {
-		print '<span style="color: ' . XVARDUMP_COLOR_STRING . ';">';
+		print '<span class="' . XVARDUMP_CLASS_STRING . '">';
 		if ( $short !== true ) {
 			print '<b><i>string[' . strlen( $var ) . ']</i></b> : ';
 		}
@@ -155,29 +138,27 @@ function pr_var( $var, $title = '', $escape = true, $short = false, $space = '',
 			. "&rsquo;</span><br />\n";
 	}
 	else if ( is_bool( $var ) ) {
-		print '<span style="color: ' . XVARDUMP_COLOR_BOOL . ';">';
-		print ( ( $short !== true ) ? '<b><i>bool</i></b> : ' . $var . ' ( = ' : '<b><i>b</i></b> ');
-		print '<i>'
-			. ( ( $var === false ) ? '<span style="color: ' . XVARDUMP_COLOR_B_FALSE . ';">false</span>' : ( ( $var === true ) ? '<span style="color: ' . XVARDUMP_COLOR_B_TRUE . ';">true</span>' : 'undetermined' ) );
-		print '</i>' . ( ( $short !== true ) ? ' )' : '' );
-		print "</span><br />\n";
+		print ( ( $short !== true ) ? '<span class="' . XVARDUMP_CLASS_BOOL . '"><b><i>bool</i></b> : ' . $var . ' ( = ' : '<b class="' . XVARDUMP_CLASS_BOOL . '"><i>b</i></b> ');
+		print ( ( $var === false ) ? '<i class="' . XVARDUMP_CLASS_B_FALSE . '">false</i>' : ( ( $var === true ) ? '<i class="' . XVARDUMP_CLASS_B_TRUE . '">true</i>' : '<i>undetermined</i>' ) );
+		print ( ( $short !== true ) ? ' )</span>' : '' );
+		print "<br />\n";
 	}
 	else if ( is_int( $var ) ) {
-		print '<span style="color: ' . XVARDUMP_COLOR_INT . ';">';
+		print '<span class="' . XVARDUMP_CLASS_INT . '">';
 		if ( $short !== true ) {
 			print '<b><i>int</i></b> : ';
 		}
-		print ( ( $var === 0 ) ? '<b style="color: ' . XVARDUMP_COLOR_INT_0 . ';">' . $var . '</b>' : $var ) . "</span><br />\n";
+		print ( ( $var === 0 ) ? '<b class="' . XVARDUMP_CLASS_INT_0 . '">' . $var . '</b>' : $var ) . "</span><br />\n";
 	}
 	else if ( is_float( $var ) ) {
-		print '<span style="color: ' . XVARDUMP_COLOR_FLOAT . ';">';
+		print '<span class="' . XVARDUMP_CLASS_FLOAT . '">';
 		if ( $short !== true ) {
 			print '<b><i>float</i></b> : ';
 		}
 		print $var . "</span><br />\n";
 	}
 	else if ( is_null( $var ) ) {
-		print '<span style="color: ' . XVARDUMP_COLOR_NULL . ';">';
+		print '<span class="' . XVARDUMP_CLASS_NULL . '">';
 		if ( $short !== true ) {
 			print '<b><i>';
 		}
@@ -194,7 +175,7 @@ function pr_var( $var, $title = '', $escape = true, $short = false, $space = '',
 		}
 	}
 	else if ( is_resource( $var ) ) {
-		print '<span style="color: ' . XVARDUMP_COLOR_RESOURCE . ';">';
+		print '<span class="' . XVARDUMP_CLASS_RESOURCE . '">';
 		if ( $short !== true ) {
 			print '<b><i>resource</i></b> : ';
 		}
@@ -217,8 +198,6 @@ function pr_var( $var, $title = '', $escape = true, $short = false, $space = '',
 
 /**
  * Internal function to print debug info on an object
- *
- * @todo get object properties to show the variable type on one line with the 'property'
  *
  * @internal
  * @uses	pr_var()
@@ -269,12 +248,24 @@ function dump_all() {
 function pr_string( $var ) {
 	pr_str( $var );
 }
+
+/**
+ * @param $var
+ */
 function pr_boolean( $var ) {
 	pr_bool( $var );
 }
+
+/**
+ * @param $var
+ */
 function pr_integer( $var ) {
 	pr_int( $var );
 }
+
+/**
+ * @param $var
+ */
 function pr_float( $var ) {
 	pr_flt( $var );
 }
@@ -287,7 +278,7 @@ function pr_float( $var ) {
  */
 function pr_str( $var ) {
 	if ( is_string( $var ) ) {
-		print '<span style="color: ' . XVARDUMP_COLOR_STRING . ';">&lsquo;' . str_replace( '  ', ' &nbsp;', $var ) . "&rsquo;</span>\n";
+		print '<span class="' . XVARDUMP_CLASS_STRING . '">&lsquo;' . str_replace( '  ', ' &nbsp;', $var ) . "&rsquo;</span>\n";
 	}
 	else {
 		print 'E: not a string';
@@ -302,10 +293,10 @@ function pr_str( $var ) {
 function pr_bool( $var ) {
 	if ( is_bool( $var ) ) {
 		if ( $var === false ) {
-			print '<span style="color: ' . XVARDUMP_COLOR_B_FALSE . ';">' . 'false' . "</span>\n";
+			print '<span class="' . XVARDUMP_CLASS_B_FALSE . '">' . 'false' . "</span>\n";
 		}
 		else if ( $var === true ) {
-			print '<span style="color: ' . XVARDUMP_COLOR_B_TRUE . ';">' . 'true' . "</span>\n";
+			print '<span class="' . XVARDUMP_CLASS_B_TRUE . '">' . 'true' . "</span>\n";
 		}
 		else {
 			print 'E: boolean value undetermined';
@@ -325,10 +316,10 @@ function pr_bool( $var ) {
 function pr_int( $var ) {
 	if ( is_int( $var ) ) {
 		if ( $var === 0 ) {
-			print '<span style="color: ' . XVARDUMP_COLOR_INT_0 . ';">' . $var . "</span>\n";
+			print '<span class="' . XVARDUMP_CLASS_INT_0 . '">' . $var . "</span>\n";
 		}
 		else {
-			print '<span style="color: ' . XVARDUMP_COLOR_INT . ';">' . $var . "</span>\n";
+			print '<span class="' . XVARDUMP_CLASS_INT . '">' . $var . "</span>\n";
 		}
 	}
 	else {
@@ -344,78 +335,11 @@ function pr_int( $var ) {
  */
 function pr_flt( $var ) {
 	if ( is_float( $var ) ) {
-		print '<span style="color: ' . XVARDUMP_COLOR_FLOAT . ';">' . $var . "</span>\n";
+		print '<span class="' . XVARDUMP_CLASS_FLOAT . '">' . $var . "</span>\n";
 	}
 	else {
 		print 'E: not a float';
 	}
 }
 
-
-
-/**
- * Extended string comparison for debugging purposes
- *
- * @uses pr_var()
- *
- * @param	string	$string1
- * @param 	string	$string2
- */
-function extended_string_compare( $string1, $string2 ) {
-
-	pr_var( $string1, 'string1', true, false );
-	pr_var( $string2, 'string2', true, false );
-
-	$compared = strcmp( $string1, $string2 );
-	print '<h3>strcmp</h3>result from php strcmp is ' . $compared . '<br><br>';
-
-	$count1 = count_chars( $string1, 1 );
-	$count2 = count_chars( $string2, 1 );
-
-	print '<h3>count_char compare based on string1</h3><table class="stringcmp">';
-	print '<tr><th>key</th><th># in string1</th><th># in string2</th><th>char</th></tr>';
-	foreach ( $count1 as $key => $value ) {
-		if ( isset( $count2[$key] ) === true && $value != $count2[$key] ) {
-			$char = chr( $key );
-			print '<tr><td>' . $key . '</td><td>' . $value . '</td><td>' . $count2[$key] . '</td><td>' . $char . '</td></tr>';
-		}
-		else if ( isset( $count2[$key] ) === false ) {
-			$char = chr( $key );
-			print '<tr><td>' . $key . '</td><td>' . $value . '</td><td> - </td><td>' . $char . '</td></tr>';
-		}
-	}
-	print '</table>';
-
-	print '<h3>count_char compare based on string2</h3><table class="stringcmp">';
-	print '<tr><th>key</th><th># in string1</th><th># in string2</th><th>char</th></tr>';
-	foreach ( $count2 as $key => $value ) {
-		if ( isset( $count1[$key] ) === true && $value != $count1[$key] ) {
-			$char = chr( $key );
-			print '<tr><td>' . $key . '</td><td>' . $count1[$key] . '</td><td>' . $value . '</td><td>' . $char . '</td></tr>';
-		}
-		else if ( isset( $count1[$key] ) === false ) {
-			$char = chr( $key );
-			print '<tr><td>' . $key . '</td><td> - </td><td>' . $value . '</td><td>' . $char . '</td></tr>';
-		}
-	}
-	print '</table>';
-
-
-	print '<h3>character for character compare</h3><table class="stringcmp">';
-	print '<tr><th>i</th><th>char string1</th><th>ord string1</th><th>chr string1</th><th>char string2</th><th>ord string2</th><th>chr string2</th><th>same ?</th></tr>';
-	$max = ( strlen( $string1 ) > strlen( $string2 ) ) ? strlen( $string1 ) : strlen( $string2 );
-	for ( $i = 0; $i < $max; $i++ ) {
-		$char1 = substr( $string1, $i , 1 );
-		$char2 = substr( $string2, $i , 1 );
-		$ord1  = ord( $char1 );
-		$ord2  = ord( $char2 );
-		$chr1  = chr( $ord1 );
-		$chr2  = chr( $ord2 );
-		$color = ( $ord1 === $ord2 && $chr1 === $chr2 ) ? '008000' : '00FFFF';
-		print '<tr><td>' . $i . '</td><td>' . $char1 . '</td><td>' . $ord1 . '</td><td>' . $chr1 . '</td><td>' . $char2 . '</td><td>' . $ord2 . '</td><td>' . $chr2 . '</td><td style="color: #000000; background-color: #' . $color . ';">&nbsp;</td></tr>';
-	}
-	print '</table>';
-}
-
-/** EOF **/
 ?>

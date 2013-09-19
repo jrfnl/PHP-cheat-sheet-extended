@@ -457,6 +457,39 @@ td {
 
 
 /********
+ * Var printing
+ ********/
+.string {
+	color: #336600;
+}
+.int {
+	color: #0066FF;
+}
+.int-0 {
+	color: #FF0000;
+}
+.float {
+	color: #990033;
+}
+.bool {
+	color: #000099;
+}
+.b-true {
+	color: #336600;
+}
+.b-false {
+	color: #FF0000;
+}
+.resource {
+	color: #666666;
+}
+.null {
+	color: #666666;
+}
+
+
+
+/********
  * Quiz
  ********/
 code {
