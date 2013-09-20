@@ -89,7 +89,7 @@ if ( isset( $type ) ):
 				<li>Tests with Ctype and strcmp-type functions use the system default C locale. Results may vary for other locales.</li>
 				<li>Some tests might seem a bit &lsquo;silly&rsquo;, for instance testing with <code>=== 'null'</code>. The reason for adding these tests can be divided into two categories:
 					<ol>
-						<li>Data received from databases and $_POST/$_GET/etc variables are always received as strings (<em>unless a potentially used database abstraction layer changes this</em>). So sometimes testing for a string value where a non-string variable type would be more logical, can actually make sense. </li>
+						<li>Data received from databases and $_POST/$_GET/etc variables are always received as strings (<em>unless a potentially used database abstraction layer changes this</em>). So sometimes testing for a string value where a non-string variable type would be more logical, can actually make sense.</li>
 						<li>Some are unfortunately regularly encountered in code and added here to illustrate why not to use them.</li>
 					</ol>
 				</li>
@@ -137,14 +137,14 @@ if ( isset( $type ) ):
 				<li>In <strong><em>test tables</em></strong>, the left top table header indicates the type of tests. Both this header as well as most column headers link to their respective relevant PHP Manual pages.</li>
 				<li>A &Dagger; with a number next to a column header means there is a (linked) footnote for that entry at the bottom of the page.</li>
 				<li>When you mouse-over the table the row and column you are at are <span class="hover">highlighted</span>. To help you compare specific columns/rows, you can click on any cell to mark the column and row which the cell intersects for <span class="sticky">extra highlighting</span>. Click again to remove this sticky highlight.</li>
-				<li>If there is a definite <em>best</em> way for doing something, the column will be highlighted in <span class="best">green</span>. Other <em>good</em> ways will be highlighted in <span class="good">light green</span>.
+<?php	/*		<li>If there is a definite <em>best</em> way for doing something, the column will be highlighted in <span class="best">green</span>. Other <em>good</em> ways will be highlighted in <span class="good">light green</span>.
 					<br /><br />Best will normally have been determined by combining:
 					<ol>
 						<li>The results.</li>
 						<li>Consistency of results across PHP versions.</li>
 						<li>Speed benchmark if several method are equally good.</li>
 					</ol>
-				</li>
+				</li>*/ ?>
 			</ul>
 
 			<h4>Legend to the color coding</h4>

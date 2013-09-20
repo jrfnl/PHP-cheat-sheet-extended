@@ -624,7 +624,18 @@ class VartypeTest extends Vartype {
 			'arg'	=>	'$x',
 			'function'	=>	'pr_var( array_count_values( $x ), \'\', true, true );',
 		),
-		
+		'array_access_simple' =>	array(
+			'title'	=>	'$x[\'foo\']',
+			'url'	=>	'http://www.php.net/manual/en/language.types.array.php',
+			'arg'	=>	'$x',
+			'function'	=>	'if ( !is_object( $x ) ) { pr_var( $x[\'foo\'], \'\', true, true ); } else { $class = get_class( $x ); trigger_error( \'Cannot use object of type \' . $class . \' as array\', E_USER_ERROR ); unset( $class ); }',
+		),
+		'array_access_multidim' =>	array(
+			'title'	=>	'$x[\'foo\'][\'bar\']',
+			'url'	=>	'http://www.php.net/manual/en/language.types.array.php',
+			'arg'	=>	'$x',
+			'function'	=>	'if ( !is_object( $x ) ) { pr_var( $x[\'foo\'][\'bar\'], \'\', true, true ); } else { $class = get_class( $x ); trigger_error( \'Cannot use object of type \' . $class . \' as array\', E_USER_ERROR ); unset( $class ); }',
+		),
 
 
 		'array_filter' =>	array(
@@ -1632,39 +1643,9 @@ else {
 				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
 		),
-		
-//FILTER_SANITIZE_SPECIAL_CHARS
-//FILTER_SANITIZE_FULL_SPECIAL_CHARS
-//VartypeTest::filter_combined( $value, $expected = null, $filter = FILTER_DEFAULT, $flags = FILTER_FLAG_NONE, $options = null )
-
-/*
-FILTER_VALIDATE_FLOAT 	"float" 	decimal 	FILTER_FLAG_ALLOW_THOUSAND 	Validates value as float.
-FILTER_VALIDATE_INT 	"int" 	min_range, max_range 	FILTER_FLAG_ALLOW_OCTAL, FILTER_FLAG_ALLOW_HEX 	Validates value as integer, optionally from the specified range.
-
-FILTER_SANITIZE_NUMBER_FLOAT 	"number_float" 	  	FILTER_FLAG_ALLOW_FRACTION, FILTER_FLAG_ALLOW_THOUSAND, FILTER_FLAG_ALLOW_SCIENTIFIC 	Remove all characters except digits, +- and optionally .,eE.
-FILTER_SANITIZE_NUMBER_INT 	"number_int" 	  	  	Remove all characters except digits, plus and minus sign. 
-
-FILTER_SANITIZE_STRING 	"string" 	  	FILTER_FLAG_NO_ENCODE_QUOTES, FILTER_FLAG_STRIP_LOW, FILTER_FLAG_STRIP_HIGH, FILTER_FLAG_ENCODE_LOW, FILTER_FLAG_ENCODE_HIGH, FILTER_FLAG_ENCODE_AMP 	Strip tags, optionally strip or encode special characters.
-
-FILTER_FLAG_STRIP_LOW 	FILTER_SANITIZE_ENCODED, FILTER_SANITIZE_SPECIAL_CHARS, FILTER_SANITIZE_STRING, FILTER_UNSAFE_RAW 	Strips characters that has a numerical value <32.
-FILTER_FLAG_STRIP_HIGH 	FILTER_SANITIZE_ENCODED, FILTER_SANITIZE_SPECIAL_CHARS, FILTER_SANITIZE_STRING, FILTER_UNSAFE_RAW 	Strips characters that has a numerical value >127.
-FILTER_FLAG_ALLOW_FRACTION 	FILTER_SANITIZE_NUMBER_FLOAT 	Allows a period (.) as a fractional separator in numbers.
-FILTER_FLAG_ALLOW_THOUSAND 	FILTER_SANITIZE_NUMBER_FLOAT, FILTER_VALIDATE_FLOAT 	Allows a comma (,) as a thousands separator in numbers.
-FILTER_FLAG_ALLOW_SCIENTIFIC 	FILTER_SANITIZE_NUMBER_FLOAT 	Allows an e or E for scientific notation in numbers.
-FILTER_FLAG_NO_ENCODE_QUOTES 	FILTER_SANITIZE_STRING 	If this flag is present, single (') and double (") quotes will not be encoded.
-FILTER_FLAG_ENCODE_LOW 	FILTER_SANITIZE_ENCODED, FILTER_SANITIZE_STRING, FILTER_SANITIZE_RAW 	Encodes all characters with a numerical value <32.
-FILTER_FLAG_ENCODE_HIGH 	FILTER_SANITIZE_ENCODED, FILTER_SANITIZE_SPECIAL_CHARS, FILTER_SANITIZE_STRING, FILTER_SANITIZE_RAW 	Encodes all characters with a numerical value >127.
-FILTER_FLAG_ENCODE_AMP 	FILTER_SANITIZE_STRING, FILTER_SANITIZE_RAW 	Encodes ampersands (&).
-FILTER_NULL_ON_FAILURE 	FILTER_VALIDATE_BOOLEAN 	Returns NULL for unrecognized boolean values.
-FILTER_FLAG_ALLOW_OCTAL 	FILTER_VALIDATE_INT 	Regards inputs starting with a zero (0) as octal numbers. This only allows the succeeding digits to be 0-7.
-FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0X as hexadecimal numbers. This only allows succeeding characters to be a-fA-F0-9. 
-
-*/
-
-
-
 
 	);
+
 
 	var $test_groups = array(
 
@@ -1693,11 +1674,13 @@ FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0
 				'gettype',
 
 				'is_null',
+
 				'is_scalar',
 				'is_bool',
 				'is_int',
 				'is_float',
 				'is_string',
+
 				'is_array',
 				'is_object',
 				'is_resource',
@@ -1708,7 +1691,7 @@ FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0
 				'is_numeric',
 
 			),
-			'break_at'	=>	array( 'gettype', 'is_resource', 'is_callable', 'is_numeric', ),
+			'break_at'	=>	array( 'gettype', 'is_null', 'is_string', 'is_resource', 'is_callable', 'is_numeric', ),
 			'good'		=>	array(),
 			'best'		=>	array(),
 			'urls'		=>	array(),
@@ -1784,8 +1767,10 @@ FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0
 				'null_cmp_rv_strict_str',*/
 			),
 			'break_at'	=>	array( 'cast_to_type_null', 'empty', 'null_cmp_strict_str', 'null_cmp_rv_strict_str', ),
-			'good'		=>	array( 'is_null', 'null_cmp_strict', 'null_cmp_rv_strict', ),
-			'best'		=>	array( 'isset', ),
+//			'good'		=>	array( 'is_null', 'null_cmp_strict', 'null_cmp_rv_strict', ),
+			'good'		=>	array(),
+//			'best'		=>	array( 'isset', ),
+			'best'		=>	array(),
 			'urls'		=>	array(),
 			'book_url'	=>	'http://php.net/types.comparisons',
 			'target'	=>	'n',
@@ -1799,7 +1784,7 @@ FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0
 				'bool',
 				'filter_combined_bool',
 				'filter_combined_bool_null',
-				'cast_to_type_bool',
+//				'cast_to_type_bool',
 				'cast_to_type_bool_not_empty_recurse_arrays',
 
 				'is_bool',
@@ -1839,7 +1824,8 @@ FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0
 
 			),
 			'break_at'	=>	array( 'cast_to_type_bool_not_empty_recurse_arrays', 'is_bool', 'bool_cmp_true_loose_str', 'bool_cmp_rv_true_strict_str', 'bool_cmp_false_loose_str', 'bool_cmp_rv_false_strict_str', 'if_not_var', ),
-			'good'		=>	array( 'cast_to_type_bool', 'cast_to_type_bool_not_empty_recurse_arrays', 'filter_combined_bool_null', 'is_bool', 'bool_cmp_true_strict', 'bool_cmp_false_strict', ),
+//			'good'		=>	array( 'cast_to_type_bool', 'cast_to_type_bool_not_empty_recurse_arrays', 'filter_combined_bool_null', 'is_bool', 'bool_cmp_true_strict', 'bool_cmp_false_strict', ),
+			'good'		=>	array(),
 			'best'		=>	array(),
 			'urls'		=>	array(),
 			'book_url'	=>	'http://php.net/types.comparisons',
@@ -1856,7 +1842,7 @@ FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0
 				'juggle_int',
 				'filter_combined_int',
 				'filter_combined_int_null',
-				'cast_to_type_int',
+//				'cast_to_type_int',
 				'cast_to_type_int_not_empty_recurse_arrays',
 
 				'empty',
@@ -1878,8 +1864,9 @@ FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0
 				'int_cmp_lte0',
 */
 			),
-			'break_at'	=>	array( 'cast_to_type_int_not_empty_recurse_arrays', 'preg_int', 'is_numeric', 'int_cmp_lte0', ),
-			'good'		=>	array( 'cast_to_type_int', 'cast_to_type_int_not_empty_recurse_arrays', 'filter_combined_int_null', 'is_int', ),
+			'break_at'	=>	array( 'cast_to_type_int_not_empty_recurse_arrays', 'preg_int', ),
+//			'good'		=>	array( 'cast_to_type_int', 'cast_to_type_int_not_empty_recurse_arrays', 'filter_combined_int_null', 'is_int', ),
+			'good'		=>	array(),
 			'best'		=>	array(),
 			'urls'		=>	array(),
 			'book_url'	=>	'http://php.net/book.var',
@@ -1897,7 +1884,7 @@ FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0
 				'juggle_flt',
 				'filter_combined_float',
 				'filter_combined_float_null',
-				'cast_to_type_float',
+//				'cast_to_type_float',
 				'cast_to_type_float_not_empty_recurse_arrays',
 
 				'empty',
@@ -1908,14 +1895,10 @@ FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0
 //				'preg_digit_float_pos',
 //				'preg_digit_float',
 
-/*				'is_numeric',
-				'is_nan',
-				'is_finite',
-				'is_infinite',
-*/
 			),
-			'break_at'	=>	array( 'cast_to_type_float_not_empty_recurse_arrays', 'preg_float', 'is_numeric', 'is_infinite', ),
-			'good'		=>	array( 'cast_to_type_float', 'cast_to_type_float_not_empty_recurse_arrays', 'filter_combined_float_null', 'is_float', ),
+			'break_at'	=>	array( 'cast_to_type_float_not_empty_recurse_arrays', 'preg_float', ),
+//			'good'		=>	array( 'cast_to_type_float', 'cast_to_type_float_not_empty_recurse_arrays', 'filter_combined_float_null', 'is_float', ),
+			'good'		=>	array(),
 			'best'		=>	array(),
 			'urls'		=>	array(),
 			'book_url'	=>	'http://php.net/book.var',
@@ -1963,12 +1946,13 @@ FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0
 				'juggle_str',
 				'filter_combined_string',
 				'filter_combined_string_null',
-				'cast_to_type_string',
+//				'cast_to_type_string',
 				'cast_to_type_string_not_empty_recurse_arrays',
 
 			),
 			'break_at'	=>	array( 'cast_to_type_string_not_empty_recurse_arrays', ),
-			'good'		=>	array( 'cast_to_type_string', 'cast_to_type_string_not_empty_recurse_arrays', 'filter_combined_string_null', 'is_string', 'ctype_alpha', 'mb_strlen' ),
+//			'good'		=>	array( 'cast_to_type_string', 'cast_to_type_string_not_empty_recurse_arrays', 'filter_combined_string_null', ),
+			'good'		=>	array(),
 			'best'		=>	array(),
 			'urls'		=>	array(),
 			'book_url'	=>	'http://php.net/book.strings',
@@ -2003,39 +1987,57 @@ FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0
 				'trim',
 
 			),
-			'break_at'	=>	array( 'cast_to_type_string', 'is_string', 'str_cmp_empty_strict', 'preg_word', 'mb_strlen', 'char_access', 'trim', ),
-			'good'		=>	array( 'cast_to_type_string', 'filter_combined_string_null', 'is_string', 'ctype_alpha', 'mb_strlen' ),
+			'break_at'	=>	array( 'is_string', 'str_cmp_empty_strict', 'preg_word', 'mb_strlen', 'char_access', 'trim', ),
+//			'good'		=>	array( 'is_string', 'ctype_alpha', 'mb_strlen' ),
+			'good'		=>	array(),
 			'best'		=>	array(),
 			'urls'		=>	array(),
 			'book_url'	=>	'http://php.net/book.strings',
 			'target'	=>	's',
 		),
 
-		'array'	=>	array(
-			'title'	=>	'Arrays',
+		'array1'	=>	array(
+			'title'	=>	'Array casting',
 			'tests'	=>	array(
 				'settype_array',
 				'array',
-				'cast_to_type_array',
+//				'cast_to_type_array',
 				'cast_to_type_array_not_empty',
 
+			),
+			'break_at'	=>	array( 'cast_to_type_array_not_empty', ),
+//			'good'		=>	array( 'cast_to_type_array', 'cast_to_type_array_not_empty', ),
+			'good'		=>	array(),
+			'best'		=>	array(),
+			'urls'		=>	array(),
+			'book_url'	=>	'http://php.net/book.array',
+			'target'	=>	'a',
+		),
+		
+		
+		'array2'	=>	array(
+			'title'	=>	'Array testing',
+			'tests'	=>	array(
 				'is_array',
 				'count',
 
 				'empty',
 				'count_mt_0',
-				
+
 				'isset_0',
 				'array_key_exists',
 				'isset_foo',
 				
 				'key',
 				'current',
-				'array_filter',
+				'array_access_simple',
+				'array_access_multidim',
 
+				'array_filter',
 			),
-			'break_at'	=>	array( 'cast_to_type_array_not_empty', 'count', 'count_mt_0', 'isset_foo', 'array_filter', ),
-			'good'		=>	array( 'cast_to_type_array', 'cast_to_type_array_not_empty', 'is_array' ),
+			'break_at'	=>	array( 'count', 'count_mt_0', 'isset_foo', 'array_access_multidim', 'array_filter', ),
+//			'good'		=>	array( 'cast_to_type_array', 'cast_to_type_array_not_empty', ),
+			'good'		=>	array(),
 			'best'		=>	array(),
 			'urls'		=>	array(),
 			'book_url'	=>	'http://php.net/book.array',
@@ -2048,7 +2050,7 @@ FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0
 			'tests'	=>	array(
 				'settype_object',
 				'object',
-				'cast_to_type_object',
+//				'cast_to_type_object',
 				'cast_to_type_object_not_empty',
 				
 				'is_object',
@@ -2061,7 +2063,8 @@ FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0
 
 			),
 			'break_at'	=>	array( 'cast_to_type_object', 'cast_to_type_object_not_empty', 'instanceof', 'is_subclass_of', ),
-			'good'		=>	array( 'cast_to_type_object', 'cast_to_type_object_not_empty', 'is_object' ),
+//			'good'		=>	array( 'cast_to_type_object', 'cast_to_type_object_not_empty', 'is_object' ),
+			'good'		=>	array(),
 			'best'		=>	array(),
 			'urls'		=>	array(),
 			'book_url'	=>	'http://php.net/book.classobj',
@@ -2094,6 +2097,7 @@ FILTER_FLAG_ALLOW_HEX 	FILTER_VALIDATE_INT 	Regards inputs starting with 0x or 0
 				'post_decrement',
 
 				'arithmetic_negate',
+				'juggle_int',
 				'arithmetic_subtract',
 				'arithmetic_multiply',
 				'arithmetic_divide',
