@@ -94,7 +94,7 @@ class Vartype {
 	 * @return mixed|null
 	 */
 	function get_test_group( $test_group = null ) {
-		$key = key( $this->test_groups ); // get first item in array;
+		$key = key( $this->test_groups ); // set the first test group as the default if no test group given;
 		if ( isset( $test_group ) && isset( $this->test_groups[$test_group] ) ) {
 			$key = $test_group;
 		}
@@ -126,13 +126,12 @@ class Vartype {
 		$this->test_data   = $test_array;
 		$this->test_legend = $legend_array;
 
-		/*
-		array_merge various arrays depending on test group
-		array_splice( $key_array, 28, 12 );
-		array_splice( $key_array, 34, 2 );
-		*/
+		// Merge testgroup specific variables into the test array
+		if( isset( $extra_variables[$test_group] ) && $extra_variables[$test_group] !== array() ) {
+			$this->test_data = array_merge( $this->test_data, $extra_variables[$test_group] );
+		}
 
-		$keys = array_keys( $test_array );
+		$keys = array_keys( $this->test_data );
 		usort( $keys, array( $this, 'sort_test_data' ) );
 
 
@@ -151,8 +150,22 @@ class Vartype {
 	 * @return int
 	 */
 	function sort_test_data( $a, $b ) {
-		$primary_order   = array( 'n', 'b', 'i', 'f', 's', 'a', 'o', 'r', 'p' );
-		$secondary_order = array( 'e', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' );
+		$primary_order   = array(
+			'n', // null
+			'b', // boolean
+			'i', // integer
+			'f', // float
+			's', // string
+			'a', // array
+			'o', // object
+			'r', // resource
+			'p', // SPL_Types object
+		);
+		$secondary_order = array(
+			'e', // empty
+			'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+			'a', 'b', 'c', 'd', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+		);
 		
 		$primary_a = array_search( substr( $a, 0, 1 ), $primary_order, true );
 		$primary_b = array_search( substr( $b, 0, 1 ), $primary_order, true );
@@ -167,9 +180,8 @@ class Vartype {
 		if ( $secondary_a !== $secondary_b ) {
 			return ( $secondary_a < $secondary_b ) ? -1 : 1;
 		}
-		else {
-			return 0;
-		}
+
+		return 0;
 	}
 
 
