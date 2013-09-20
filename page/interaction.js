@@ -51,17 +51,17 @@ ui-icon-circle-minus
 				jQuery('#'+tableId).thfloat({
 					side : 'head',
 					onShow: function(table, block) {
-						// Remove hover and sticky classes as they will otherwise not stay consistant
+						// Remove hover and sticky classes as they will otherwise not stay consistent
 						block.find('th').css( 'background', '' );
 					}
 				}).thfloat({
 					side : 'foot',
 					onShow: function(table, block) {
-						// Remove hover and sticky classes as they will otherwise not stay consistant
+						// Remove hover and sticky classes as they will otherwise not stay consistent
 						block.find('th').css( 'background', '' );
 					}
 				});
-				// Remove hover and sticky classes as they will otherwise not stay consistant
+				// Remove hover and sticky classes as they will otherwise not stay consistent
 //				jQuery('.thfloat th').removeClass('hover sticky').css( 'background', '' );
 			}
 
@@ -97,13 +97,13 @@ ui-icon-circle-minus
 				jQuery('#'+tableId).thfloat({
 					side : 'head',
 					onShow: function(table, block) {
-						// Remove hover and sticky classes as they will otherwise not stay consistant
+						// Remove hover and sticky classes as they will otherwise not stay consistent
 						block.find('th').css( 'background', '' );
 					}
 				}).thfloat({
 					side : 'foot',
 					onShow: function(table, block) {
-						// Remove hover and sticky classes as they will otherwise not stay consistant
+						// Remove hover and sticky classes as they will otherwise not stay consistent
 						block.find('th').css( 'background', '' );
 					}
 				});
