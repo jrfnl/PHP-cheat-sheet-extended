@@ -126,8 +126,8 @@ class Vartype {
 		$this->test_data   = $test_array;
 		$this->test_legend = $legend_array;
 
-		// Merge testgroup specific variables into the test array
-		if( isset( $extra_variables[$test_group] ) && $extra_variables[$test_group] !== array() ) {
+		// Merge test group specific variables into the test array
+		if ( isset( $extra_variables[$test_group] ) && $extra_variables[$test_group] !== array() ) {
 			$this->test_data = array_merge( $this->test_data, $extra_variables[$test_group] );
 		}
 
@@ -164,7 +164,7 @@ class Vartype {
 		$secondary_order = array(
 			'e', // empty
 			'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-			'a', 'b', 'c', 'd', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+			'a', 'b', 'c', 'd', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
 		);
 		
 		$primary_a = array_search( substr( $a, 0, 1 ), $primary_order, true );
@@ -263,10 +263,6 @@ class Vartype {
 			}
 
 
-//			$header = $this->create_table_header( $test_group );
-
-//			$this->print_tabletop( $header );
-
 			$this->print_tabletop( $test_group );
 
 			$last_key = null;
@@ -277,14 +273,9 @@ class Vartype {
 
 				$type = substr( $key, 0, 1 );
 
-/*				$hr_key = array_search( $type, $this->header_repeat );
-				if ( $hr_key !== false && $type !== $last_key ) {
-					print $header;
-				}
-*/
 				$class = array();
 				if ( $type !== $last_key ) {
-					$class[]  = 'newvartype';
+					$class[]  = 'new-var-type';
 					$last_key = $type;
 				}
 				if ( isset( $this->test_groups[$test_group]['target'] ) && $this->test_groups[$test_group]['target'] === $type ) {
@@ -413,9 +404,8 @@ class Vartype {
 
 
 	/**
-	 * @param $header
+	 * @param $test_group
 	 */
-//	function print_tabletop( $header ) {
 	function print_tabletop( $test_group ) {
 
 		$header = $this->create_table_header( $test_group );
@@ -437,10 +427,10 @@ class Vartype {
 	 */
 	function print_row_cells( $value, $test_group ) {
 
-		foreach ( $this->test_groups[$test_group]['tests'] as $test ) {
+		foreach ( $this->test_groups[$test_group]['tests'] as $key => $test ) {
 			$GLOBALS['has_error'] = array();
 
-			$class = array();
+			$class = array( $key );
 			if ( in_array( $test, $this->test_groups[$test_group]['best'] ) ) {
 				$class[] = 'best';
 			}
@@ -452,8 +442,7 @@ class Vartype {
 			}
 
 			if ( count( $class ) === 0 ) {
-				print '
-					<td>';
+				print '					<td>';
 			}
 			else {
 				print '
@@ -473,8 +462,7 @@ class Vartype {
 				}
 			}
 
-			print '
-					</td>';
+			print '					</td>';
 
 			unset( $class, $GLOBALS['has_error'] );
 		}

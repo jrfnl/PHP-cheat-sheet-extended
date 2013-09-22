@@ -44,7 +44,7 @@ class VartypePHP5 {
 		'juggle_int' =>	array(
 			'function'	=>	'
 				try {
-					if ( !is_array( $x ) ) {
+					if ( !is_array( $x ) && ( PHP_VERSION_ID > 50005 || !is_object( $x ) ) ) {
 						$x = $x + 0;
 						if ( is_int( $x ) ) {
 							pr_int( $x );
@@ -74,7 +74,7 @@ class VartypePHP5 {
 		'juggle_flt' =>	array(
 			'function'	=> '
 				try {
-					if ( !is_array( $x ) ) {
+					if ( !is_array( $x ) && ( PHP_VERSION_ID > 50005 || !is_object( $x ) ) ) {
 						$r = $x + 0.0;
 						if ( is_float( $r ) ) {
 							pr_flt( $r );

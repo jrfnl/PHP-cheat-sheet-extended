@@ -219,12 +219,6 @@ class VartypeCompare extends Vartype {
 		print '
 	<div class="tables">';
 
-		// Get & Slim down test array
-		// @todo set this up to be flexible from within the tests
-/*		include( APP_DIR . '/include/vars-to-test.php' );
-//		array_splice( $key_array, 28, 13 );
-//		array_splice( $key_array, 34, 2 );
-*/
 		
 		$this->set_test_data();
 
@@ -253,30 +247,21 @@ class VartypeCompare extends Vartype {
 			print '
 		<div id="' . $test . '">';
 
-//			$header = $this->create_table_header( $test );
-
-//			$this->print_tabletop( $header );
 
 			$this->print_tabletop( $test );
-			
-			
+
+
 			$last_key = null;
 
 			foreach ( $this->test_data_keys as $key1 ) {
 				$value1 = $this->test_data[$key1];
-//				$label  = ( isset( $this->test_labels[$key1] ) ? $this->test_labels[$key1] : $value1 );
 				$legend = ( isset( $this->test_legend[$key1] ) ? '<sup class="fright"><a href="#var-legend-' . $key1 . '">&dagger;' . $key1 . '</a></sup>' : '' );
 
 				$type = substr( $key1, 0, 1 );
 
-/*				$hr_key = array_search( $type, $this->header_repeat );
-				if ( $hr_key !== false && $type !== $last_key ) {
-					print $header;
-				}
-*/
 				$class = array();
 				if ( $type !== $last_key ) {
-					$class[]  = 'newvartype';
+					$class[]  = 'new-var-type';
 					$last_key = $type;
 				}
 
@@ -295,7 +280,7 @@ class VartypeCompare extends Vartype {
 				print '
 					</th>';
 
-				$this->print_row_cells( $value1, $test );
+				$this->print_row_cells( $value1, $key1, $test );
 
 				print '
 					<th>' . $legend;
@@ -371,8 +356,8 @@ class VartypeCompare extends Vartype {
 			pr_var( $value, '', false, true, '' );
 			$label = ob_get_clean();
 
-			// @todo: improve upon - preverably in a way that the tooltip is fully HTML capable
-			// at the very least move to seperate method (duplicate code)
+			// @todo: improve upon - preferably in a way that the tooltip is fully HTML capable
+			// at the very least move to separate method (duplicate code)
 			if ( strpos( $label, 'Object: ' ) !== false ) {
 				$label = str_replace( '&nbsp;', ' ', $label );
 				$label = str_replace( "\n", '', $label );
@@ -417,23 +402,31 @@ class VartypeCompare extends Vartype {
 
 	/**
 	 * @param $value1
+	 * @param $key1
 	 * @param $test
+	 *
+	 * @return void
 	 */
-	function print_row_cells( $value1, $test ) {
-		
+	function print_row_cells( $value1, $key1, $test ) {
+
 		foreach ( $this->test_data_keys as $i => $key2 ) {
 			$GLOBALS['has_error'] = array();
 
 			$value2 = $this->test_data[$key2];
 
-			$class = '';
+			$class = array( 'value1-' . $key1, 'value2-' . $key2 );
 			if ( !isset( $this->test_data_keys[$i + 1] ) || substr( $key2, 0, 1 ) !== substr( $this->test_data_keys[$i + 1], 0, 1 ) ) {
-				$class = ' class="end"';
+				$class[] = 'end';
 			}
 
+			if ( count( $class ) === 0 ) {
+				print '					<td>';
+			}
+			else {
+				print '
+					<td class="' . implode( ' ', $class ) . '">';
+			}
 
-			print '
-				<td' . $class . '>';
 
 			$this->tests[$test]['test']( $value1, $value2 );
 
@@ -445,8 +438,7 @@ class VartypeCompare extends Vartype {
 				}
 			}
 
-			print '
-					</td>';
+			print '					</td>';
 
 			unset( $GLOBALS['has_error'], $value2, $type, $class );
 		}

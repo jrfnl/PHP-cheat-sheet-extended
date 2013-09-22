@@ -2,10 +2,10 @@
 
 if ( !defined( 'E_STRICT' ) )			define( 'E_STRICT', 2048 );
 error_reporting( E_ALL & ~E_STRICT );
-//@ini_set( 'log_errors', false );
+@ini_set( 'log_errors', false );
+
 
 define( 'APP_DIR', dirname( __FILE__ ) );
-
 
 include_once( APP_DIR . '/include/xvardump.php' );
 include_once( APP_DIR . '/include/functions.php' );
