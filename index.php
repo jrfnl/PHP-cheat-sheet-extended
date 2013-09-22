@@ -1,6 +1,7 @@
 <?php
 
-error_reporting( E_ALL ^ E_STRICT );
+if ( !defined( 'E_STRICT' ) )			define( 'E_STRICT', 2048 );
+error_reporting( E_ALL & ~E_STRICT );
 //@ini_set( 'log_errors', false );
 
 define( 'APP_DIR', dirname( __FILE__ ) );
@@ -21,8 +22,8 @@ setlocale( LC_CTYPE, 'C' );
 
 
 // Minified js & css ?
-$min = '';
-//$min = '.min';
+//$min = '';
+$min = '.min';
 
 // js & css directory change ?
 $dir = '';

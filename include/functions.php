@@ -34,44 +34,6 @@ class TestObjectToString extends TestObject {
 }
 
 
-/**
- * @return bool|float
- */
-function median() {
-	$args = func_get_args();
-
-	switch ( func_num_args() ) {
-		case 0:
-			trigger_error( 'median() requires at least one parameter', E_USER_WARNING );
-			return false;
-			break;
-
-		case 1:
-			$args = array_pop( $args );
-			// fall through
-
-		default:
-			if ( is_array( $args ) === false ) {
-				trigger_error( 'median() requires a list of numbers to operate on or an array of numbers', E_USER_NOTICE );
-				return false;
-			}
-
-			sort( $args );
-
-			$n = count( $args );
-			$h = intval( $n / 2 );
-
-			if ( $n % 2 == 0 ) {
-				$median = ( $args[$h] + $args[$h - 1] ) / 2;
-			}
-			else {
-				$median = $args[$h];
-			}
-			break;
-	}
-	return $median;
-}
-
 
 
 /**
@@ -93,59 +55,50 @@ function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
 		case E_COMPILE_ERROR: // 64 //
 			$type  = 'Fatal error';
 			$class = 'error';
-//			$show  = false;
 			break;
 		case E_USER_ERROR: // 256 //
 			$type  = 'Fatal error';
 			$class = 'error';
-//			$show  = true;
 			break;
 		case E_WARNING: // 2 //
 		case E_CORE_WARNING: // 32 //
 		case E_COMPILE_WARNING: // 128 //
 			$type  = 'Warning';
 			$class = 'warning';
-//			$show  = false;
 			break;
 		case E_USER_WARNING: // 512 //
 			$type  = 'Warning';
 			$class = 'warning';
-//			$show  = true;
 			break;
 		case E_PARSE: // 4 //
 			$type  = 'Parse error';
 			$class = 'error';
-//			$show  = false;
 			break;
 		case E_NOTICE: // 8 //
 		case E_USER_NOTICE: // 1024 //
 			$type  = 'Notice';
 			$class = 'notice';
-//			$show  = true;
 			break;
 		case E_STRICT: // 2048 //
 			$type  = 'Strict warning';
 			$class = 'warning';
-//			$show  = true;
 			break;
 		case E_RECOVERABLE_ERROR: // 4096 //
 			$type  = '(Catchable) Fatal error';
 			$class = 'error';
-//			$show  = true;
 			break;
 		case E_DEPRECATED: // 8192 //
 		case E_USER_DEPRECATED: // 16384 //
 			$type  = 'Deprecated';
 			$class = 'notice';
-//			$show  = true;
 			break;
 		default:
-			$type  = 'Unknown error ($errno)';
+			$type  = 'Unknown error ( ' . $error_no . ' )';
 			$class = 'error';
-//			$show  = true;
 			break;
 	}
 	
+
 	// Group some messages
 	$search = array(
 		'array_key_exists() expects parameter 2 to be array',
@@ -176,24 +129,6 @@ function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
 		'bcmod() expects parameter 2 to be string',
 	);
 
-/*
-Notice: Object of class stdClass could not be converted to int
-Notice: Object of class TestObject could not be converted to int
-Notice: Object of class TestObjectToString could not be converted to int
-Notice: Object of class stdClass could not be converted to double
-Notice: Object of class TestObject could not be converted to double
-Notice: Object of class TestObjectToString could not be converted to double
-
-(Catchable) Fatal error: Object of class stdClass could not be converted to string
-Notice: Object of class stdClass to string conversion
-(Catchable) Fatal error: Object of class TestObject could not be converted to string
-Notice: Object of class TestObject to string conversion
-
-Fatal error: Cannot use object of type stdClass as array
-Fatal error: Cannot use object of type TestObject as array
-Fatal error: Cannot use object of type TestObjectToString as array
-*/
-
 	$replace = array(
 		'array_key_exists() expects parameter 2 to be array, <em>null/boolean/integer/double/string/object/resource</em> given',
 		'key() expects parameter 1 to be array, <em>null/boolean/integer/double/string/object/resource</em> given',
@@ -223,44 +158,70 @@ Fatal error: Cannot use object of type TestObjectToString as array
 		'bcmod() expects parameter 2 to be string, <em>array/object/resource</em> given',
 	);
 
+	// Group some more messages
+	$preg_search  = array(
+		'`^Object of class [A-Za-z]+ could not be converted to (int|double|string)$`',
+		'`^Object of class [A-Za-z]+ to string conversion$`',
+		'`^Cannot use object of type [A-Za-z]+ as array$`',
+	);
+	$preg_replace = array(
+		'Object of class <em>stdClass/TestObject/TestObjectToString</em> could not be converted to $1',
+		'Object of class <em>stdClass/TestObject/TestObjectToString</em> to string conversion',
+		'Cannot use object of type <em>stdClass/TestObject/TestObjectToString</em> as array',
+	);
 
 
-	foreach( $search as $k => $s ) {
-		if( strpos( $error_str, $s ) === 0 ) {
+	foreach ( $search as $k => $s ) {
+		if ( strpos( $error_str, $s ) === 0 ) {
 			$error_str = $replace[$k];
 			break;
 		}
 	}
+	$error_str = preg_replace( $preg_search, $preg_replace, $error_str );
+
+
+
 
 
 
 	$message = '<span class="' . $class . '">' . $type . '</span>: ' . $error_str;
 
 	if ( isset( $GLOBALS['encountered_errors'] ) ) {
-		$key = array_search( $message, $GLOBALS['encountered_errors'] );
-		if ( $key === false ) {
-			$GLOBALS['encountered_errors'][] = $message;
+		// Ignore strict warnings (can't avoid having them if I want to keep this sheet working with PHP4)
+		if ( $error_no !== E_STRICT ) {
 			$key = array_search( $message, $GLOBALS['encountered_errors'] );
-		}
-		
-		if ( $class === 'notice' ) {
-			$GLOBALS['has_error'][]['msg'] = ' (&nbsp;<span class="notice"><a href="#' . $GLOBALS['test']. '-errors">#' . ( $key + 1 ) . '</a></span>&nbsp;)';
-			return;
-		}
-		else if ( $class === 'warning' ) {
-			$GLOBALS['has_error'][]['msg'] = ' (&nbsp;<span class="warning"><a href="#' . $GLOBALS['test']. '-errors">#' . ( $key + 1 ) . '</a></span>&nbsp;)';
-			return;
-		}
-		else if ( $class === 'error' ) {
-			$GLOBALS['has_error'][]['msg'] = ' <span class="error">' . $type . ' (&nbsp;<a href="#' . $GLOBALS['test']. '-errors">#' . ( $key + 1 ) . '</a>&nbsp;)</span>';
-			return;
+			if ( $key === false ) {
+				$GLOBALS['encountered_errors'][] = $message;
+				$key = array_search( $message, $GLOBALS['encountered_errors'] );
+			}
+
+			if ( $class === 'notice' ) {
+				$GLOBALS['has_error'][]['msg'] = ' (&nbsp;<span class="notice"><a href="#' . $GLOBALS['test']. '-errors">#' . ( $key + 1 ) . '</a></span>&nbsp;)';
+				return;
+			}
+			else if ( $class === 'warning' ) {
+				$GLOBALS['has_error'][]['msg'] = ' (&nbsp;<span class="warning"><a href="#' . $GLOBALS['test']. '-errors">#' . ( $key + 1 ) . '</a></span>&nbsp;)';
+				return;
+			}
+			else if ( $class === 'error' ) {
+				$GLOBALS['has_error'][]['msg'] = ' <span class="error">' . $type . ' (&nbsp;<a href="#' . $GLOBALS['test']. '-errors">#' . ( $key + 1 ) . '</a>&nbsp;)</span>';
+				return;
+			}
+			else {
+				print $message . ' in ' . $error_file . ' on line ' . $error_line . "<br />\n";
+			}
 		}
 		else {
-			print $message . ' in ' . $error_file . ' on line ' . $error_line . "<br />\n";
+			return;
 		}
 	}
 	else {
-		print $message . ' in ' . $error_file . ' on line ' . $error_line . "<br />\n";
+		if ( $error_no !== E_STRICT ) {
+			print $message . ' in ' . $error_file . ' on line ' . $error_line . "<br />\n";
+		}
+		else {
+			return;
+		}
 	}
 
 	return false; // Make sure it plays nice with other error handlers (remove if no other error handlers are set)

@@ -1,3 +1,4 @@
+/* Stylesheet for PHP cheat sheets */
 body {
 	margin: 0;
 	padding: 0;
@@ -132,7 +133,7 @@ div.head a.top-link {
 /*	width: 170px; */
 	max-width: 170px;
 	text-align: center;
-	text-shadow: 1px 1px 0px #cccccc;
+	text-shadow: 1px 1px 0 #cccccc;
 }
 div.head a.top-link:hover {
 	background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #b6bdb6), color-stop(1, #f9f9f9) );
@@ -193,7 +194,7 @@ div.content a.top-link {
 	font-weight: bold;
 	width: 200px;
 	text-align: center;
-	text-shadow: 1px 1px 0px #810e05;
+	text-shadow: 1px 1px 0 #810e05;
 }
 
 
@@ -371,7 +372,7 @@ td {
 	color: #FF0000 !important;
 	font-weight: bold;
 }
-.newvartype td, .newvartype th {
+.new-var-type td, .new-var-type th {
 	border-top: 1px solid #000000;
 }
 

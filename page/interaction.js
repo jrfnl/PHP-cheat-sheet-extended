@@ -1,3 +1,4 @@
+/* Javascript interaction for PHP cheat sheets */
 jQuery(document).ready(function() {
 //jQuery(function() {
 
@@ -72,7 +73,7 @@ ui-icon-circle-minus
 				tabHref = tabHref.substring( 0, tabHref.indexOf('&do=') );
 				tabTitle = jQuery(this).text();
 				tabTitle = jQuery('title').text()+' - '+tabTitle;
-				history.pushState('notrelevant', tabTitle, tabHref );
+				history.pushState(null, tabTitle, tabHref );
 			}
 		},
 		beforeLoad: function( event, ui ) {
@@ -107,7 +108,7 @@ ui-icon-circle-minus
 						block.find('th').css( 'background', '' );
 					}
 				});
-			// Remove hover and sticky classes as they will otherwise not stay consistant
+			// Remove hover and sticky classes as they will otherwise not stay consistent
 //			jQuery('.thfloat th').removeClass('hover sticky').css( 'background', '' );
 		}
 	});
