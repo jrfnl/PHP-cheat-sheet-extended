@@ -62,21 +62,23 @@ endif; ?>
 			<a href="index.php?type=arithmetic" class="top-link<?php if ( $type === 'arithmetic' ) print ' top-active'; ?>">Variable Arithmetic<br />Cheat sheet</a>
 			<a href="index.php?type=test" class="top-link<?php if ( $type === 'test' ) print ' top-active'; ?>">Variable Testing<br />Cheat sheet</a>
 		</div>
-		<?php
+<?php
 	endif;
-	?>
+?>
 </div>
 
 
 <div class="content">
 
 	<h1><?php print htmlspecialchars( $page_title, ENT_QUOTES, 'UTF-8' ); ?></h1>
-
+<?php if ( $page_title !== 'PHP Variable comparison and type testing cheat sheets' ): ?>
 	<h2 id="php-version">
 		This page has been generated with <strong>PHP <?php print htmlspecialchars( PHP_VERSION, ENT_QUOTES, 'UTF-8' ); ?></strong>
 		<span>Browse <a href="./static_results">other versions</a>.</span>
 	</h2>
-
+<?php
+endif;
+?>
 <?php
 if ( isset( $type ) ):
 ?>

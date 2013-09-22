@@ -1,5 +1,6 @@
 # Enable Directory Browsing
-Options +Indexes
+#Options +Indexes +FollowSymLinks
+Options +Indexes +MultiViews +FollowSymlinks
 
 # Prevent users from viewing htaccess / htpasswd files
 # Prevent users from viewing logfiles
@@ -7,3 +8,9 @@ Options +Indexes
  Order Allow,Deny
  Deny from all
 </FilesMatch>
+
+# DIRECTORY CUSTOMIZATION
+<IfModule mod_autoindex.c>
+ IndexOptions IgnoreCase FancyIndexing FoldersFirst NameWidth=* DescriptionWidth=*
+</IfModule>
+

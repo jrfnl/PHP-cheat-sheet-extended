@@ -2233,14 +2233,9 @@ else {
 		 */
 		// Try & get decimal point for use in float operations
 		if ( !defined( 'DECIMAL_POINT' ) ) {
-			if ( function_exists( 'nl_langinfo' ) && nl_langinfo( 'DECIMAL_POINT' ) !== false ) {
-				define( 'DECIMAL_POINT', nl_langinfo( 'DECIMAL_POINT' ) );
-			}
-			else {
-				$locale_info = localeconv();
-				define( 'DECIMAL_POINT', $locale_info['decimal_point'] );
-				unset( $locale_info );
-			}
+			$locale_info = localeconv();
+			define( 'DECIMAL_POINT', $locale_info['decimal_point'] );
+			unset( $locale_info );
 		}
 		// Prep decimal point for use in regex
 		$preg_point = ( ( defined( 'DECIMAL_POINT' ) ) ? preg_quote( DECIMAL_POINT, '`' ) : preg_quote( '.,', '`' ) );
