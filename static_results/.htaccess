@@ -1,0 +1,9 @@
+# Enable Directory Browsing
+Options +Indexes
+
+# Prevent users from viewing htaccess / htpasswd files
+# Prevent users from viewing logfiles
+<FilesMatch "\.(htaccess|htpasswd|ini|phps|log)$">
+ Order Allow,Deny
+ Deny from all
+</FilesMatch>
