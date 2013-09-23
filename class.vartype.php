@@ -430,7 +430,7 @@ class Vartype {
 		foreach ( $this->test_groups[$test_group]['tests'] as $key => $test ) {
 			$GLOBALS['has_error'] = array();
 
-			$class = array( $key );
+			$class = array( $test );
 			if ( in_array( $test, $this->test_groups[$test_group]['best'] ) ) {
 				$class[] = 'best';
 			}
