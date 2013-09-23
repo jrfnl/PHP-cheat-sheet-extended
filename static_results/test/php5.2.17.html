@@ -1,9 +1,8 @@
-﻿
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en">
 <head>
-	<title>PHP Variable Testing Cheat Sheet</title>
+	<title>PHP Variable Testing Cheat Sheet - tests run on: PHP5.2.17</title>
 
 	<meta name="description" content="Extended PHP Cheat sheets for variable comparisons and variable type testing." />
 	<meta name="keywords" content="php, cheat sheet, blueshoes, variable, type juggling, comparison, testing" />
@@ -46,18 +45,16 @@
 			<a href="./../../index.php?type=arithmetic" class="top-link">Variable Arithmetic<br />Cheat sheet</a>
 			<a href="./../../index.php?type=test" class="top-link">Variable Testing<br />Cheat sheet</a>
 		</div>
-		</div>
+</div>
 
 
 <div class="content">
 
 	<h1>PHP Variable Testing Cheat Sheet</h1>
-
 	<h2 id="php-version">
 		This page has been generated with <strong>PHP 5.2.17</strong>
 		<span>Browse <a href="./../../static_results">other versions</a>.</span>
 	</h2>
-
 	<div id="accordion">
 		<h3>Important notes on the comparisons and tests:</h3>
 		<div>
@@ -121,7 +118,7 @@
 		<h3>Legend / How to use the tables:</h3>
 		<div>
 			<ul>
-				<li>The error level for this test sheet has been set to <code>E_ALL ^ E_STRICT</code>. All errors are caught and referenced (with #links) in the tables with details of the error messages (if any) below each table. Similar error messages are grouped together for your convenience.</li>
+				<li>The error level for this test sheet has been set to <code>E_ALL &amp; ~E_STRICT</code>. All errors are caught and referenced (with #links) in the tables with details of the error messages (if any) below each table. Similar error messages are grouped together for your convenience.</li>
 				<li>Some column labels have been shortened to avoid them taking undue space. These are indicated by a <code>&hellip;</code>. If you mouse-over the column label you will see the full variable/test information.</li>
 				<li>In <strong><em>comparison tables</em></strong>, the left-top table header will indicate the comparison used and link to the relevant page in the PHP Manual.</li>
 				<li>In <strong><em>test tables</em></strong>, the left top table header indicates the type of tests. Both this header as well as most column headers link to their respective relevant PHP Manual pages.</li>
@@ -164,7 +161,7 @@
 				</tr>
 				<tr>
 					<th>Resources:</th>
-					<td><span class="resource">Resource id #12</span><br />
+					<td><span class="resource">Resource id #11</span><br />
 </td>
 				</tr>
 			</table>
@@ -1100,7 +1097,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #14 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #13 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="0 end"><span class="string">&lsquo;resource&rsquo;</span>
@@ -1115,7 +1112,119 @@
 					</td>
 					<td class="5 end"><span class="b-true">true</span>
 					</td>
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #14 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #13 ( = <i>RESOURCE</i> )</span><br />
+
+					</th>
+				</tr>
+				<tr class="new-var-type">
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0 end"><span class="string">&lsquo;object&rsquo;</span>
+					</td>
+					<td class="1"><span class="b-true">true</span>
+					</td>
+					<td class="2"><span class="b-false">false</span>
+					</td>
+					<td class="3"><span class="b-true">true</span>
+					</td>
+					<td class="4"><span class="b-false">false</span>
+					</td>
+					<td class="5 end"><span class="b-false">false</span>
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+				</tr>
+				<tr>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0 end"><span class="string">&lsquo;object&rsquo;</span>
+					</td>
+					<td class="1"><span class="b-false">false</span>
+					</td>
+					<td class="2"><span class="b-false">false</span>
+					</td>
+					<td class="3"><span class="b-true">true</span>
+					</td>
+					<td class="4"><span class="b-true">true</span>
+					</td>
+					<td class="5 end"><span class="b-true">true</span>
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+				</tr>
+				<tr>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int"><b><i>int</i></b> : 94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0 end"><span class="string">&lsquo;object&rsquo;</span>
+					</td>
+					<td class="1"><span class="b-false">false</span>
+					</td>
+					<td class="2"><span class="b-false">false</span>
+					</td>
+					<td class="3"><span class="b-true">true</span>
+					</td>
+					<td class="4"><span class="b-true">true</span>
+					</td>
+					<td class="5 end"><span class="b-true">true</span>
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int"><b><i>int</i></b> : 94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
 
 					</th>
 				</tr>
@@ -2569,7 +2678,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #17 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="0 end"><span class="string">&lsquo;resource&rsquo;</span>
@@ -2596,7 +2705,155 @@
 					</td>
 					<td class="11 end"><span class="b-false">false</span>
 					</td>
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #17 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+
+					</th>
+				</tr>
+				<tr class="new-var-type">
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0 end"><span class="string">&lsquo;object&rsquo;</span>
+					</td>
+					<td class="1 end"><span class="b-false">false</span>
+					</td>
+					<td class="2"><span class="b-false">false</span>
+					</td>
+					<td class="3"><span class="b-false">false</span>
+					</td>
+					<td class="4"><span class="b-false">false</span>
+					</td>
+					<td class="5"><span class="b-false">false</span>
+					</td>
+					<td class="6 end"><span class="b-false">false</span>
+					</td>
+					<td class="7"><span class="b-false">false</span>
+					</td>
+					<td class="8"><span class="b-true">true</span>
+					</td>
+					<td class="9 end"><span class="b-false">false</span>
+					</td>
+					<td class="10 end"><span class="b-false">false</span>
+					</td>
+					<td class="11 end"><span class="b-false">false</span>
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+				</tr>
+				<tr>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0 end"><span class="string">&lsquo;object&rsquo;</span>
+					</td>
+					<td class="1 end"><span class="b-false">false</span>
+					</td>
+					<td class="2"><span class="b-false">false</span>
+					</td>
+					<td class="3"><span class="b-false">false</span>
+					</td>
+					<td class="4"><span class="b-false">false</span>
+					</td>
+					<td class="5"><span class="b-false">false</span>
+					</td>
+					<td class="6 end"><span class="b-false">false</span>
+					</td>
+					<td class="7"><span class="b-false">false</span>
+					</td>
+					<td class="8"><span class="b-true">true</span>
+					</td>
+					<td class="9 end"><span class="b-false">false</span>
+					</td>
+					<td class="10 end"><span class="b-false">false</span>
+					</td>
+					<td class="11 end"><span class="b-false">false</span>
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+				</tr>
+				<tr>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int"><b><i>int</i></b> : 94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0 end"><span class="string">&lsquo;object&rsquo;</span>
+					</td>
+					<td class="1 end"><span class="b-false">false</span>
+					</td>
+					<td class="2"><span class="b-false">false</span>
+					</td>
+					<td class="3"><span class="b-false">false</span>
+					</td>
+					<td class="4"><span class="b-false">false</span>
+					</td>
+					<td class="5"><span class="b-false">false</span>
+					</td>
+					<td class="6 end"><span class="b-false">false</span>
+					</td>
+					<td class="7"><span class="b-false">false</span>
+					</td>
+					<td class="8"><span class="b-true">true</span>
+					</td>
+					<td class="9 end"><span class="b-false">false</span>
+					</td>
+					<td class="10 end"><span class="b-false">false</span>
+					</td>
+					<td class="11 end"><span class="b-false">false</span>
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int"><b><i>int</i></b> : 94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
 
 					</th>
 				</tr>
@@ -3934,7 +4191,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #20 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #17 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="0"><span class="null">null</span>
@@ -3959,7 +4216,149 @@
 					</td>
 					<td class="10 end"><span class="b-false">false</span>
 					</td>
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #20 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #17 ( = <i>RESOURCE</i> )</span><br />
+
+					</th>
+				</tr>
+				<tr class="new-var-type">
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0"><span class="null">null</span>
+					</td>
+					<td class="1"><span class="null">null</span>
+					</td>
+					<td class="2"><span class="null">null</span>
+<br /> (&nbsp;<span class="notice"><a href="#null-errors">#2</a></span>&nbsp;)					</td>
+					<td class="3 end"><span class="null">null</span>
+					</td>
+					<td class="4"><span class="b-true">true</span>
+					</td>
+					<td class="5 end"><span class="b-true">true</span>
+					</td>
+					<td class="6"><span class="b-false">false</span>
+					</td>
+					<td class="7"><span class="b-false">false</span>
+					</td>
+					<td class="8"><span class="b-false">false</span>
+					</td>
+					<td class="9"><span class="b-false">false</span>
+					</td>
+					<td class="10 end"><span class="b-false">false</span>
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+				</tr>
+				<tr>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0"><span class="null">null</span>
+					</td>
+					<td class="1"><span class="null">null</span>
+					</td>
+					<td class="2"><span class="null">null</span>
+<br /> (&nbsp;<span class="notice"><a href="#null-errors">#2</a></span>&nbsp;)					</td>
+					<td class="3 end"><span class="null">null</span>
+					</td>
+					<td class="4"><span class="b-true">true</span>
+					</td>
+					<td class="5 end"><span class="b-false">false</span>
+					</td>
+					<td class="6"><span class="b-false">false</span>
+					</td>
+					<td class="7"><span class="b-false">false</span>
+					</td>
+					<td class="8"><span class="b-false">false</span>
+					</td>
+					<td class="9"><span class="b-true">true</span>
+					</td>
+					<td class="10 end"><span class="b-false">false</span>
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+				</tr>
+				<tr>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int"><b><i>int</i></b> : 94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0"><span class="null">null</span>
+					</td>
+					<td class="1"><span class="null">null</span>
+					</td>
+					<td class="2"><span class="null">null</span>
+<br /> (&nbsp;<span class="notice"><a href="#null-errors">#2</a></span>&nbsp;)					</td>
+					<td class="3 end"><span class="null">null</span>
+					</td>
+					<td class="4"><span class="b-true">true</span>
+					</td>
+					<td class="5 end"><span class="b-false">false</span>
+					</td>
+					<td class="6"><span class="b-false">false</span>
+					</td>
+					<td class="7"><span class="b-false">false</span>
+					</td>
+					<td class="8"><span class="b-false">false</span>
+					</td>
+					<td class="9"><span class="b-false">false</span>
+					</td>
+					<td class="10 end"><span class="b-false">false</span>
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int"><b><i>int</i></b> : 94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
 
 					</th>
 				</tr>
@@ -5947,7 +6346,7 @@ else {
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #25 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #21 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="0"><span class="b-true">true</span>
@@ -5982,7 +6381,179 @@ else {
 					</td>
 					<td class="15 end"><span class="b-false">false</span>
 					</td>
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #25 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #21 ( = <i>RESOURCE</i> )</span><br />
+
+					</th>
+				</tr>
+				<tr class="new-var-type">
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0"><span class="b-false">false</span>
+					</td>
+					<td class="1"><span class="b-false">false</span>
+					</td>
+					<td class="2"><span class="b-false">false</span>
+					</td>
+					<td class="3"><span class="b-false">false</span>
+					</td>
+					<td class="4 end"><span class="b-false">false</span>
+					</td>
+					<td class="5 end"><span class="b-false">false</span>
+					</td>
+					<td class="6"><span class="b-false">false</span>
+					</td>
+					<td class="7"><span class="b-false">false</span>
+					</td>
+					<td class="8"><span class="b-false">false</span>
+					</td>
+					<td class="9 end"><span class="b-false">false</span>
+					</td>
+					<td class="10"><span class="b-true">true</span>
+					</td>
+					<td class="11"><span class="b-false">false</span>
+					</td>
+					<td class="12"><span class="b-true">true</span>
+					</td>
+					<td class="13 end"><span class="b-false">false</span>
+					</td>
+					<td class="14"><span class="b-false">false</span>
+					</td>
+					<td class="15 end"><span class="b-true">true</span>
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+				</tr>
+				<tr>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0"><span class="b-true">true</span>
+					</td>
+					<td class="1"><span class="b-true">true</span>
+					</td>
+					<td class="2"><span class="b-false">false</span>
+					</td>
+					<td class="3"><span class="b-false">false</span>
+					</td>
+					<td class="4 end"><span class="b-true">true</span>
+					</td>
+					<td class="5 end"><span class="b-false">false</span>
+					</td>
+					<td class="6"><span class="b-true">true</span>
+					</td>
+					<td class="7"><span class="b-false">false</span>
+					</td>
+					<td class="8"><span class="b-true">true</span>
+					</td>
+					<td class="9 end"><span class="b-true">true</span>
+					</td>
+					<td class="10"><span class="b-false">false</span>
+					</td>
+					<td class="11"><span class="b-false">false</span>
+					</td>
+					<td class="12"><span class="b-false">false</span>
+					</td>
+					<td class="13 end"><span class="b-true">true</span>
+					</td>
+					<td class="14"><span class="b-true">true</span>
+					</td>
+					<td class="15 end"><span class="b-false">false</span>
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+				</tr>
+				<tr>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int"><b><i>int</i></b> : 94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0"><span class="b-true">true</span>
+					</td>
+					<td class="1"><span class="b-true">true</span>
+					</td>
+					<td class="2"><span class="b-false">false</span>
+					</td>
+					<td class="3"><span class="b-false">false</span>
+					</td>
+					<td class="4 end"><span class="null">null</span>
+					</td>
+					<td class="5 end"><span class="b-false">false</span>
+					</td>
+					<td class="6"><span class="b-true">true</span>
+					</td>
+					<td class="7"><span class="b-false">false</span>
+					</td>
+					<td class="8"><span class="b-false">false</span>
+					</td>
+					<td class="9 end"><span class="b-false">false</span>
+					</td>
+					<td class="10"><span class="b-false">false</span>
+					</td>
+					<td class="11"><span class="b-false">false</span>
+					</td>
+					<td class="12"><span class="b-false">false</span>
+					</td>
+					<td class="13 end"><span class="b-false">false</span>
+					</td>
+					<td class="14"><span class="b-true">true</span>
+					</td>
+					<td class="15 end"><span class="b-false">false</span>
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int"><b><i>int</i></b> : 94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
 
 					</th>
 				</tr>
@@ -7472,16 +8043,16 @@ else {
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #28 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #23 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
-					<td class="0"><span class="int">28</span>
+					<td class="0"><span class="int">23</span>
 					</td>
-					<td class="1"><span class="int">28</span>
+					<td class="1"><span class="int">23</span>
 					</td>
-					<td class="2"><span class="int">28</span>
+					<td class="2"><span class="int">23</span>
 					</td>
-					<td class="3"><span class="int">28</span>
+					<td class="3"><span class="int">23</span>
 					</td>
 					<td class="4"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
 					</td>
@@ -7497,7 +8068,161 @@ else {
 					</td>
 					<td class="10">Error<br /> (&nbsp;<span class="warning"><a href="#integer-errors">#3</a></span>&nbsp;)					</td>
 					<td class="11 end">Error<br /> (&nbsp;<span class="warning"><a href="#integer-errors">#3</a></span>&nbsp;)					</td>
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #28 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #23 ( = <i>RESOURCE</i> )</span><br />
+
+					</th>
+				</tr>
+				<tr class="new-var-type">
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0"><span class="int-0">0</span>
+					</td>
+					<td class="1"><span class="int-0">0</span>
+					</td>
+					<td class="2"><span class="int-0">0</span>
+					</td>
+					<td class="3"><span class="error">Fatal error <a href="#integer-errors">#5</a></span>					</td>
+					<td class="4"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="5"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="6 end"><span class="null">null</span>
+					</td>
+					<td class="7"><span class="b-true">true</span>
+					</td>
+					<td class="8"><span class="b-false">false</span>
+					</td>
+					<td class="9"><span class="b-false">false</span>
+					</td>
+					<td class="10"><span class="b-false">false</span>
+					</td>
+					<td class="11 end"><span class="b-false">false</span>
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+				</tr>
+				<tr>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0"><span class="int">1</span>
+					</td>
+					<td class="1"><span class="int">1</span>
+					</td>
+					<td class="2"><span class="int">1</span>
+					</td>
+					<td class="3"><span class="error">Fatal error <a href="#integer-errors">#5</a></span>					</td>
+					<td class="4"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="5"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="6 end"><span class="null">null</span>
+					</td>
+					<td class="7"><span class="b-false">false</span>
+					</td>
+					<td class="8"><span class="b-false">false</span>
+					</td>
+					<td class="9"><span class="b-false">false</span>
+					</td>
+					<td class="10"><span class="b-true">true</span>
+					</td>
+					<td class="11 end"><span class="b-true">true</span>
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+				</tr>
+				<tr>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int"><b><i>int</i></b> : 94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0"><span class="int">94</span>
+					</td>
+					<td class="1"><span class="int">94</span>
+					</td>
+					<td class="2"><span class="int">94</span>
+					</td>
+					<td class="3">Object: 
+(<br />
+&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int">94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;)<br />
+
+)<br />
+
+					</td>
+					<td class="4"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="5"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="6 end"><span class="int">94</span>
+					</td>
+					<td class="7"><span class="b-false">false</span>
+					</td>
+					<td class="8"><span class="b-false">false</span>
+					</td>
+					<td class="9"><span class="b-false">false</span>
+					</td>
+					<td class="10"><span class="b-true">true</span>
+					</td>
+					<td class="11 end"><span class="b-true">true</span>
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int"><b><i>int</i></b> : 94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
 
 					</th>
 				</tr>
@@ -7508,6 +8233,7 @@ else {
 				<li><span class="error">Fatal error</span>: Unsupported operand types</li>
 				<li><span class="warning">Warning</span>: preg_match() expects parameter 2 to be string, <em>array/object/resource</em> given</li>
 				<li><span class="notice">Notice</span>: Object of class <em>stdClass/TestObject/TestObjectToString</em> could not be converted to int</li>
+				<li>Value not a const in enum SplBool</li>
 			</ol>
 			<div id="integer-note1" class="note-appendix">
 				<sup>&Dagger; 1</sup> <p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>
@@ -8989,16 +9715,16 @@ else {
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #31 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #25 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
-					<td class="0"><span class="float">31</span>
+					<td class="0"><span class="float">25</span>
 					</td>
-					<td class="1"><span class="float">31</span>
+					<td class="1"><span class="float">25</span>
 					</td>
-					<td class="2"><span class="float">31</span>
+					<td class="2"><span class="float">25</span>
 					</td>
-					<td class="3"><span class="float">31</span>
+					<td class="3"><span class="float">25</span>
 					</td>
 					<td class="4"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
 					</td>
@@ -9014,7 +9740,155 @@ else {
 					</td>
 					<td class="10">Error<br /> (&nbsp;<span class="warning"><a href="#float-errors">#3</a></span>&nbsp;)					</td>
 					<td class="11 end">Error<br /> (&nbsp;<span class="warning"><a href="#float-errors">#3</a></span>&nbsp;)					</td>
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #31 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #25 ( = <i>RESOURCE</i> )</span><br />
+
+					</th>
+				</tr>
+				<tr class="new-var-type">
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0"><span class="float">0</span>
+					</td>
+					<td class="1"><span class="float">0</span>
+					</td>
+					<td class="2"><span class="float">0</span>
+					</td>
+					<td class="3"><span class="float">0</span>
+					</td>
+					<td class="4"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="5"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="6 end"><span class="null">null</span>
+					</td>
+					<td class="7"><span class="b-true">true</span>
+					</td>
+					<td class="8"><span class="b-false">false</span>
+					</td>
+					<td class="9"><span class="b-false">false</span>
+					</td>
+					<td class="10"><span class="b-false">false</span>
+					</td>
+					<td class="11 end"><span class="b-false">false</span>
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+				</tr>
+				<tr>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0"><span class="float">1</span>
+					</td>
+					<td class="1"><span class="float">1</span>
+					</td>
+					<td class="2"><span class="float">1</span>
+					</td>
+					<td class="3"><span class="float">1</span>
+					</td>
+					<td class="4"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="5"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="6 end"><span class="float">1</span>
+					</td>
+					<td class="7"><span class="b-false">false</span>
+					</td>
+					<td class="8"><span class="b-false">false</span>
+					</td>
+					<td class="9"><span class="b-false">false</span>
+					</td>
+					<td class="10"><span class="b-true">true</span>
+					</td>
+					<td class="11 end"><span class="b-true">true</span>
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+				</tr>
+				<tr>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int"><b><i>int</i></b> : 94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0"><span class="float">94</span>
+					</td>
+					<td class="1"><span class="float">94</span>
+					</td>
+					<td class="2"><span class="float">94</span>
+					</td>
+					<td class="3"><span class="float">94</span>
+					</td>
+					<td class="4"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="5"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="6 end"><span class="float">94</span>
+					</td>
+					<td class="7"><span class="b-false">false</span>
+					</td>
+					<td class="8"><span class="b-false">false</span>
+					</td>
+					<td class="9"><span class="b-false">false</span>
+					</td>
+					<td class="10"><span class="b-true">true</span>
+					</td>
+					<td class="11 end"><span class="b-true">true</span>
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int"><b><i>int</i></b> : 94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
 
 					</th>
 				</tr>
@@ -10705,7 +11579,7 @@ else {
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #34 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #27 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="0 end"><span class="b-false">false</span>
@@ -10732,13 +11606,179 @@ else {
 <br /> (&nbsp;<span class="warning"><a href="#numeric-errors">#3</a></span>&nbsp;)					</td>
 					<td class="11 end"><span class="null">null</span>
 <br /> (&nbsp;<span class="warning"><a href="#numeric-errors">#4</a></span>&nbsp;)					</td>
-					<td class="12"><span class="float">34</span>
+					<td class="12"><span class="float">27</span>
 					</td>
-					<td class="13"><span class="float">34</span>
+					<td class="13"><span class="float">27</span>
 					</td>
-					<td class="14 end"><span class="float">34</span>
+					<td class="14 end"><span class="float">27</span>
 					</td>
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #34 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #27 ( = <i>RESOURCE</i> )</span><br />
+
+					</th>
+				</tr>
+				<tr class="new-var-type">
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0 end"><span class="b-false">false</span>
+					</td>
+					<td class="1"><span class="b-false">false</span>
+					</td>
+					<td class="2"><span class="b-true">true</span>
+					</td>
+					<td class="3"><span class="b-true">true</span>
+					</td>
+					<td class="4"><span class="b-false">false</span>
+					</td>
+					<td class="5"><span class="b-false">false</span>
+					</td>
+					<td class="6"><span class="b-true">true</span>
+					</td>
+					<td class="7"><span class="b-false">false</span>
+					</td>
+					<td class="8 end"><span class="b-true">true</span>
+					</td>
+					<td class="9"><span class="null">null</span>
+<br /> (&nbsp;<span class="warning"><a href="#numeric-errors">#2</a></span>&nbsp;)					</td>
+					<td class="10"><span class="null">null</span>
+<br /> (&nbsp;<span class="warning"><a href="#numeric-errors">#3</a></span>&nbsp;)					</td>
+					<td class="11 end"><span class="null">null</span>
+<br /> (&nbsp;<span class="warning"><a href="#numeric-errors">#4</a></span>&nbsp;)					</td>
+					<td class="12"><span class="float">0</span>
+					</td>
+					<td class="13"><span class="float">0</span>
+					</td>
+					<td class="14 end"><span class="float">0</span>
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+				</tr>
+				<tr>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0 end"><span class="b-false">false</span>
+					</td>
+					<td class="1"><span class="b-true">true</span>
+					</td>
+					<td class="2"><span class="b-true">true</span>
+					</td>
+					<td class="3"><span class="b-false">false</span>
+					</td>
+					<td class="4"><span class="b-false">false</span>
+					</td>
+					<td class="5"><span class="b-true">true</span>
+					</td>
+					<td class="6"><span class="b-true">true</span>
+					</td>
+					<td class="7"><span class="b-false">false</span>
+					</td>
+					<td class="8 end"><span class="b-false">false</span>
+					</td>
+					<td class="9"><span class="null">null</span>
+<br /> (&nbsp;<span class="warning"><a href="#numeric-errors">#2</a></span>&nbsp;)					</td>
+					<td class="10"><span class="null">null</span>
+<br /> (&nbsp;<span class="warning"><a href="#numeric-errors">#3</a></span>&nbsp;)					</td>
+					<td class="11 end"><span class="null">null</span>
+<br /> (&nbsp;<span class="warning"><a href="#numeric-errors">#4</a></span>&nbsp;)					</td>
+					<td class="12"><span class="float">1</span>
+					</td>
+					<td class="13"><span class="float">1</span>
+					</td>
+					<td class="14 end"><span class="float">1</span>
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+				</tr>
+				<tr>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int"><b><i>int</i></b> : 94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0 end"><span class="b-false">false</span>
+					</td>
+					<td class="1"><span class="b-true">true</span>
+					</td>
+					<td class="2"><span class="b-true">true</span>
+					</td>
+					<td class="3"><span class="b-false">false</span>
+					</td>
+					<td class="4"><span class="b-false">false</span>
+					</td>
+					<td class="5"><span class="b-true">true</span>
+					</td>
+					<td class="6"><span class="b-true">true</span>
+					</td>
+					<td class="7"><span class="b-false">false</span>
+					</td>
+					<td class="8 end"><span class="b-false">false</span>
+					</td>
+					<td class="9"><span class="null">null</span>
+<br /> (&nbsp;<span class="warning"><a href="#numeric-errors">#2</a></span>&nbsp;)					</td>
+					<td class="10"><span class="null">null</span>
+<br /> (&nbsp;<span class="warning"><a href="#numeric-errors">#3</a></span>&nbsp;)					</td>
+					<td class="11 end"><span class="null">null</span>
+<br /> (&nbsp;<span class="warning"><a href="#numeric-errors">#4</a></span>&nbsp;)					</td>
+					<td class="12"><span class="float">94</span>
+					</td>
+					<td class="13"><span class="float">94</span>
+					</td>
+					<td class="14 end"><span class="float">94</span>
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int"><b><i>int</i></b> : 94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
 
 					</th>
 				</tr>
@@ -11810,24 +12850,142 @@ else {
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #37 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #29 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
-					<td class="0"><span class="string">&lsquo;Resource id #37&rsquo;</span>
+					<td class="0"><span class="string">&lsquo;Resource id #29&rsquo;</span>
 					</td>
-					<td class="1"><span class="string">&lsquo;Resource id #37&rsquo;</span>
+					<td class="1"><span class="string">&lsquo;Resource id #29&rsquo;</span>
 					</td>
-					<td class="2"><span class="string">&lsquo;Resource id #37&rsquo;</span>
+					<td class="2"><span class="string">&lsquo;Resource id #29&rsquo;</span>
 					</td>
-					<td class="3"><span class="string">&lsquo;Resource id #37 &rsquo;</span>
+					<td class="3"><span class="string">&lsquo;Resource id #29 &rsquo;</span>
 					</td>
-					<td class="4"><span class="string">&lsquo;Resource id #37&rsquo;</span>
+					<td class="4"><span class="string">&lsquo;Resource id #29&rsquo;</span>
 					</td>
-					<td class="5"><span class="string">&lsquo;Resource id #37&rsquo;</span>
+					<td class="5"><span class="string">&lsquo;Resource id #29&rsquo;</span>
 					</td>
 					<td class="6 end"><span class="null">null</span>
 					</td>
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #37 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #29 ( = <i>RESOURCE</i> )</span><br />
+
+					</th>
+				</tr>
+				<tr class="new-var-type">
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0"><span class="string">&lsquo;&rsquo;</span>
+					</td>
+					<td class="1"><span class="string">&lsquo;&rsquo;</span>
+					</td>
+					<td class="2"><span class="string">&lsquo;&rsquo;</span>
+					</td>
+					<td class="3"><span class="string">&lsquo; &rsquo;</span>
+					</td>
+					<td class="4"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="5"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="6 end"><span class="null">null</span>
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+				</tr>
+				<tr>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0"><span class="string">&lsquo;1&rsquo;</span>
+					</td>
+					<td class="1"><span class="string">&lsquo;1&rsquo;</span>
+					</td>
+					<td class="2"><span class="string">&lsquo;1&rsquo;</span>
+					</td>
+					<td class="3"><span class="string">&lsquo;1 &rsquo;</span>
+					</td>
+					<td class="4"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="5"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="6 end"><span class="null">null</span>
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+				</tr>
+				<tr>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int"><b><i>int</i></b> : 94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0"><span class="string">&lsquo;94&rsquo;</span>
+					</td>
+					<td class="1"><span class="string">&lsquo;94&rsquo;</span>
+					</td>
+					<td class="2"><span class="string">&lsquo;94&rsquo;</span>
+					</td>
+					<td class="3"><span class="string">&lsquo;94 &rsquo;</span>
+					</td>
+					<td class="4"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="5"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="6 end"><span class="string">&lsquo;94&rsquo;</span>
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int"><b><i>int</i></b> : 94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
 
 					</th>
 				</tr>
@@ -11844,7 +13002,7 @@ else {
 			</div>
 				
 			<div id="string1-note2" class="note-appendix">
-				<sup>&Dagger; 2</sup> <p>For PHP &lt; 5.2.0, the <code>__toString()</code> method was available to echo/print statements, so casting to string would still result in <code>Object</code>.
+				<sup>&Dagger; 2</sup> <p>Before PHP &lt; 5.2.0, the <code>__toString()</code> method was only available to echo/print statements, so casting to string would still result in <code>Object</code>, even when the object contained a <code>__toString()</code> method.</p>
 			</div>
 				
 			<div id="string1-note3" class="note-appendix">
@@ -13458,7 +14616,7 @@ else {
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #40 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #31 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="0 end"><span class="b-false">false</span>
@@ -13484,9 +14642,166 @@ else {
 <br /> (&nbsp;<span class="warning"><a href="#string2-errors">#5</a></span>&nbsp;)					</td>
 					<td class="12 end"><span class="null">null</span>
 					</td>
-					<td class="13 end"><span class="string">&lsquo;Resource id #40&rsquo;</span><br />
+					<td class="13 end"><span class="string">&lsquo;Resource id #31&rsquo;</span><br />
 					</td>
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #40 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #31 ( = <i>RESOURCE</i> )</span><br />
+
+					</th>
+				</tr>
+				<tr class="new-var-type">
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0 end"><span class="b-false">false</span>
+					</td>
+					<td class="1"><span class="b-true">true</span>
+					</td>
+					<td class="2"><span class="b-true">true</span>
+					</td>
+					<td class="3 end"><span class="b-false">false</span>
+					</td>
+					<td class="4"><span class="b-false">false</span>
+					</td>
+					<td class="5"><span class="b-false">false</span>
+					</td>
+					<td class="6"><span class="b-false">false</span>
+					</td>
+					<td class="7"><span class="b-false">false</span>
+					</td>
+					<td class="8 end"><span class="b-false">false</span>
+					</td>
+					<td class="9"><span class="int-0">0</span>
+					</td>
+					<td class="10"><span class="int"><b class="int-0">0</b></span><br />
+					</td>
+					<td class="11 end"><span class="int-0">0</span>
+					</td>
+					<td class="12 end"><br /> <span class="error">Fatal error (&nbsp;<a href="#string2-errors">#9</a>&nbsp;)</span>					</td>
+					<td class="13 end"><span class="string">&lsquo;&rsquo;</span><br />
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+				</tr>
+				<tr>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0 end"><span class="b-false">false</span>
+					</td>
+					<td class="1"><span class="b-false">false</span>
+					</td>
+					<td class="2"><span class="b-false">false</span>
+					</td>
+					<td class="3 end"><span class="b-false">false</span>
+					</td>
+					<td class="4"><span class="b-false">false</span>
+					</td>
+					<td class="5"><span class="b-false">false</span>
+					</td>
+					<td class="6"><span class="b-false">false</span>
+					</td>
+					<td class="7"><span class="b-true">true</span>
+					</td>
+					<td class="8 end"><span class="b-true">true</span>
+					</td>
+					<td class="9"><span class="int">1</span>
+					</td>
+					<td class="10"><span class="int">1</span><br />
+					</td>
+					<td class="11 end"><span class="int">1</span>
+					</td>
+					<td class="12 end"><br /> <span class="error">Fatal error (&nbsp;<a href="#string2-errors">#9</a>&nbsp;)</span>					</td>
+					<td class="13 end"><span class="string">&lsquo;1&rsquo;</span><br />
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+				</tr>
+				<tr>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int"><b><i>int</i></b> : 94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0 end"><span class="b-false">false</span>
+					</td>
+					<td class="1"><span class="b-false">false</span>
+					</td>
+					<td class="2"><span class="b-false">false</span>
+					</td>
+					<td class="3 end"><span class="b-false">false</span>
+					</td>
+					<td class="4"><span class="b-false">false</span>
+					</td>
+					<td class="5"><span class="b-false">false</span>
+					</td>
+					<td class="6"><span class="b-false">false</span>
+					</td>
+					<td class="7"><span class="b-true">true</span>
+					</td>
+					<td class="8 end"><span class="b-true">true</span>
+					</td>
+					<td class="9"><span class="int">2</span>
+					</td>
+					<td class="10"><span class="int">2</span><br />
+					</td>
+					<td class="11 end"><span class="int">2</span>
+					</td>
+					<td class="12 end"><br /> <span class="error">Fatal error (&nbsp;<a href="#string2-errors">#9</a>&nbsp;)</span>					</td>
+					<td class="13 end"><span class="string">&lsquo;94&rsquo;</span><br />
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int"><b><i>int</i></b> : 94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
 
 					</th>
 				</tr>
@@ -14535,25 +15850,146 @@ else {
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #43 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #33 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="0">Array: (<br />
-&nbsp;&nbsp;[0] => <span class="resource">Resource id #43</span><br />
+&nbsp;&nbsp;[0] => <span class="resource">Resource id #33</span><br />
 )<br />
 
 					</td>
 					<td class="1">Array: (<br />
-&nbsp;&nbsp;[0] => <span class="resource">Resource id #43</span><br />
+&nbsp;&nbsp;[0] => <span class="resource">Resource id #33</span><br />
 )<br />
 
 					</td>
 					<td class="2 end">Array: (<br />
-&nbsp;&nbsp;[0] => <span class="resource">Resource id #43</span><br />
+&nbsp;&nbsp;[0] => <span class="resource">Resource id #33</span><br />
 )<br />
 
 					</td>
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #43 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #33 ( = <i>RESOURCE</i> )</span><br />
+
+					</th>
+				</tr>
+				<tr class="new-var-type">
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0">Array: (<br />
+&nbsp;&nbsp;[__default] => <b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+)<br />
+
+					</td>
+					<td class="1">Array: (<br />
+&nbsp;&nbsp;[__default] => <b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+)<br />
+
+					</td>
+					<td class="2 end">Array: (<br />
+&nbsp;&nbsp;[__default] => <b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+)<br />
+
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+				</tr>
+				<tr>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0">Array: (<br />
+&nbsp;&nbsp;[__default] => <b class="bool"><i>b</i></b> <i class="b-true">true</i><br />
+)<br />
+
+					</td>
+					<td class="1">Array: (<br />
+&nbsp;&nbsp;[__default] => <b class="bool"><i>b</i></b> <i class="b-true">true</i><br />
+)<br />
+
+					</td>
+					<td class="2 end">Array: (<br />
+&nbsp;&nbsp;[__default] => <b class="bool"><i>b</i></b> <i class="b-true">true</i><br />
+)<br />
+
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+				</tr>
+				<tr>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int"><b><i>int</i></b> : 94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0">Array: (<br />
+&nbsp;&nbsp;[__default] => <span class="int">94</span><br />
+)<br />
+
+					</td>
+					<td class="1">Array: (<br />
+&nbsp;&nbsp;[__default] => <span class="int">94</span><br />
+)<br />
+
+					</td>
+					<td class="2 end">Array: (<br />
+&nbsp;&nbsp;[__default] => <span class="int">94</span><br />
+)<br />
+
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int"><b><i>int</i></b> : 94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
 
 					</th>
 				</tr>
@@ -16009,7 +17445,7 @@ else {
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #46 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #35 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="0"><span class="b-false">false</span>
@@ -16036,7 +17472,143 @@ else {
 					</td>
 					<td class="11 end"><span class="null">null</span>
 <br /> (&nbsp;<span class="warning"><a href="#array2-errors">#5</a></span>&nbsp;)					</td>
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #46 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #35 ( = <i>RESOURCE</i> )</span><br />
+
+					</th>
+				</tr>
+				<tr class="new-var-type">
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0"><span class="b-false">false</span>
+					</td>
+					<td class="1 end"><span class="int">1</span>
+					</td>
+					<td class="2"><span class="b-true">true</span>
+					</td>
+					<td class="3 end"><span class="b-true">true</span>
+					</td>
+					<td class="4"><br /> <span class="error">Fatal error (&nbsp;<a href="#array2-errors">#9</a>&nbsp;)</span>					</td>
+					<td class="5"><span class="b-false">false</span>
+					</td>
+					<td class="6 end"><br /> <span class="error">Fatal error (&nbsp;<a href="#array2-errors">#9</a>&nbsp;)</span>					</td>
+					<td class="7"><span class="string">&lsquo;__default&rsquo;</span><br />
+					</td>
+					<td class="8"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="9"><br /> <span class="error">Fatal error (&nbsp;<a href="#array2-errors">#9</a>&nbsp;)</span>					</td>
+					<td class="10 end"><br /> <span class="error">Fatal error (&nbsp;<a href="#array2-errors">#9</a>&nbsp;)</span>					</td>
+					<td class="11 end"><span class="null">null</span>
+<br /> (&nbsp;<span class="warning"><a href="#array2-errors">#5</a></span>&nbsp;)					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+				</tr>
+				<tr>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0"><span class="b-false">false</span>
+					</td>
+					<td class="1 end"><span class="int">1</span>
+					</td>
+					<td class="2"><span class="b-false">false</span>
+					</td>
+					<td class="3 end"><span class="b-true">true</span>
+					</td>
+					<td class="4"><br /> <span class="error">Fatal error (&nbsp;<a href="#array2-errors">#9</a>&nbsp;)</span>					</td>
+					<td class="5"><span class="b-false">false</span>
+					</td>
+					<td class="6 end"><br /> <span class="error">Fatal error (&nbsp;<a href="#array2-errors">#9</a>&nbsp;)</span>					</td>
+					<td class="7"><span class="string">&lsquo;__default&rsquo;</span><br />
+					</td>
+					<td class="8"><b class="bool"><i>b</i></b> <i class="b-true">true</i><br />
+					</td>
+					<td class="9"><br /> <span class="error">Fatal error (&nbsp;<a href="#array2-errors">#9</a>&nbsp;)</span>					</td>
+					<td class="10 end"><br /> <span class="error">Fatal error (&nbsp;<a href="#array2-errors">#9</a>&nbsp;)</span>					</td>
+					<td class="11 end"><span class="null">null</span>
+<br /> (&nbsp;<span class="warning"><a href="#array2-errors">#5</a></span>&nbsp;)					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+				</tr>
+				<tr>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int"><b><i>int</i></b> : 94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0"><span class="b-false">false</span>
+					</td>
+					<td class="1 end"><span class="int">1</span>
+					</td>
+					<td class="2"><span class="b-false">false</span>
+					</td>
+					<td class="3 end"><span class="b-true">true</span>
+					</td>
+					<td class="4"><br /> <span class="error">Fatal error (&nbsp;<a href="#array2-errors">#9</a>&nbsp;)</span>					</td>
+					<td class="5"><span class="b-false">false</span>
+					</td>
+					<td class="6 end"><br /> <span class="error">Fatal error (&nbsp;<a href="#array2-errors">#9</a>&nbsp;)</span>					</td>
+					<td class="7"><span class="string">&lsquo;__default&rsquo;</span><br />
+					</td>
+					<td class="8"><span class="int">94</span><br />
+					</td>
+					<td class="9"><br /> <span class="error">Fatal error (&nbsp;<a href="#array2-errors">#9</a>&nbsp;)</span>					</td>
+					<td class="10 end"><br /> <span class="error">Fatal error (&nbsp;<a href="#array2-errors">#9</a>&nbsp;)</span>					</td>
+					<td class="11 end"><span class="null">null</span>
+<br /> (&nbsp;<span class="warning"><a href="#array2-errors">#5</a></span>&nbsp;)					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int"><b><i>int</i></b> : 94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
 
 					</th>
 				</tr>
@@ -18229,13 +19801,13 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #49 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #37 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="0">Object: 
 (<br />
 &nbsp;&nbsp;<b><i>Class</i></b>: stdClass (<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: scalar = <span class="resource">Resource id #49</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: scalar = <span class="resource">Resource id #37</span><br />
 &nbsp;&nbsp;)<br />
 
 )<br />
@@ -18244,7 +19816,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					<td class="1">Object: 
 (<br />
 &nbsp;&nbsp;<b><i>Class</i></b>: stdClass (<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: scalar = <span class="resource">Resource id #49</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: scalar = <span class="resource">Resource id #37</span><br />
 &nbsp;&nbsp;)<br />
 
 )<br />
@@ -18253,7 +19825,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					<td class="2 end">Object: 
 (<br />
 &nbsp;&nbsp;<b><i>Class</i></b>: stdClass (<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: scalar = <span class="resource">Resource id #49</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: scalar = <span class="resource">Resource id #37</span><br />
 &nbsp;&nbsp;)<br />
 
 )<br />
@@ -18271,7 +19843,215 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="8 end"><span class="b-false">false</span>
 					</td>
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #49 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #37 ( = <i>RESOURCE</i> )</span><br />
+
+					</th>
+				</tr>
+				<tr class="new-var-type">
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0">Object: 
+(<br />
+&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;)<br />
+
+)<br />
+
+					</td>
+					<td class="1">Object: 
+(<br />
+&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;)<br />
+
+)<br />
+
+					</td>
+					<td class="2 end">Object: 
+(<br />
+&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;)<br />
+
+)<br />
+
+					</td>
+					<td class="3"><span class="b-true">true</span>
+					</td>
+					<td class="4"><span class="b-false">false</span>
+					</td>
+					<td class="5 end"><span class="b-false">false</span>
+					</td>
+					<td class="6"><span class="string">&lsquo;SplBool&rsquo;</span><br />
+					</td>
+					<td class="7"><span class="string">&lsquo;SplEnum&rsquo;</span><br />
+					</td>
+					<td class="8 end"><span class="b-false">false</span>
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+				</tr>
+				<tr>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0">Object: 
+(<br />
+&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <b class="bool"><i>b</i></b> <i class="b-true">true</i><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;)<br />
+
+)<br />
+
+					</td>
+					<td class="1">Object: 
+(<br />
+&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <b class="bool"><i>b</i></b> <i class="b-true">true</i><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;)<br />
+
+)<br />
+
+					</td>
+					<td class="2 end">Object: 
+(<br />
+&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <b class="bool"><i>b</i></b> <i class="b-true">true</i><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;)<br />
+
+)<br />
+
+					</td>
+					<td class="3"><span class="b-true">true</span>
+					</td>
+					<td class="4"><span class="b-false">false</span>
+					</td>
+					<td class="5 end"><span class="b-false">false</span>
+					</td>
+					<td class="6"><span class="string">&lsquo;SplBool&rsquo;</span><br />
+					</td>
+					<td class="7"><span class="string">&lsquo;SplEnum&rsquo;</span><br />
+					</td>
+					<td class="8 end"><span class="b-false">false</span>
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+				</tr>
+				<tr>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int"><b><i>int</i></b> : 94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0">Object: 
+(<br />
+&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int">94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;)<br />
+
+)<br />
+
+					</td>
+					<td class="1">Object: 
+(<br />
+&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int">94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;)<br />
+
+)<br />
+
+					</td>
+					<td class="2 end">Object: 
+(<br />
+&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int">94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;)<br />
+
+)<br />
+
+					</td>
+					<td class="3"><span class="b-true">true</span>
+					</td>
+					<td class="4"><span class="b-false">false</span>
+					</td>
+					<td class="5 end"><span class="b-false">false</span>
+					</td>
+					<td class="6"><span class="string">&lsquo;SplInt&rsquo;</span><br />
+					</td>
+					<td class="7"><span class="string">&lsquo;SplType&rsquo;</span><br />
+					</td>
+					<td class="8 end"><span class="b-false">false</span>
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int"><b><i>int</i></b> : 94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
 
 					</th>
 				</tr>
@@ -18858,26 +20638,102 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</th>
 				</tr>
 				<tr class="new-var-type target">
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #52 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #39 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="0 end"><span class="b-true">true</span>
 					</td>
 					<td class="1 end"><span class="string">&lsquo;stream&rsquo;</span>
 					</td>
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #52 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #39 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
-				<tr class="target">
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #53 ( = <i>RESOURCE</i> )</span><br />
+				<tr class="new-var-type">
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
 
 					</th>
-					<td class="0 end"><span class="b-true">true</span>
+					<td class="0 end"><span class="b-false">false</span>
 					</td>
-					<td class="1 end"><span class="string">&lsquo;gd&rsquo;</span>
+					<td class="1 end"><span class="b-false">false</span>
+<br /> (&nbsp;<span class="warning"><a href="#resources-errors">#2</a></span>&nbsp;)					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+				</tr>
+				<tr>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0 end"><span class="b-false">false</span>
 					</td>
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #53 ( = <i>RESOURCE</i> )</span><br />
+					<td class="1 end"><span class="b-false">false</span>
+<br /> (&nbsp;<span class="warning"><a href="#resources-errors">#2</a></span>&nbsp;)					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+				</tr>
+				<tr>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int"><b><i>int</i></b> : 94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0 end"><span class="b-false">false</span>
+					</td>
+					<td class="1 end"><span class="b-false">false</span>
+<br /> (&nbsp;<span class="warning"><a href="#resources-errors">#2</a></span>&nbsp;)					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int"><b><i>int</i></b> : 94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
 
 					</th>
 				</tr>
@@ -20237,30 +22093,276 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #55 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #41 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
-					<td class="0"><span class="resource">Resource id #55</span><br />
+					<td class="0"><span class="resource">Resource id #41</span><br />
 					</td>
-					<td class="1"><span class="resource">Resource id #55</span><br />
+					<td class="1"><span class="resource">Resource id #41</span><br />
 					</td>
-					<td class="2"><span class="resource">Resource id #55</span><br />
+					<td class="2"><span class="resource">Resource id #41</span><br />
 					</td>
-					<td class="3 end"><span class="resource">Resource id #55</span><br />
+					<td class="3 end"><span class="resource">Resource id #41</span><br />
 					</td>
-					<td class="4"><span class="int">-55</span><br />
+					<td class="4"><span class="int">-41</span><br />
 					</td>
-					<td class="5"><span class="int">55</span>
+					<td class="5"><span class="int">41</span>
 					</td>
-					<td class="6"><span class="int">55</span><br />
+					<td class="6"><span class="int">41</span><br />
 					</td>
-					<td class="7"><span class="int">55</span><br />
+					<td class="7"><span class="int">41</span><br />
 					</td>
-					<td class="8"><span class="int">55</span><br />
+					<td class="8"><span class="int">41</span><br />
 					</td>
 					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
 					</td>
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #55 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #41 ( = <i>RESOURCE</i> )</span><br />
+
+					</th>
+				</tr>
+				<tr class="new-var-type">
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0">Object: 
+(<br />
+&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;)<br />
+
+)<br />
+
+					</td>
+					<td class="1">Object: 
+(<br />
+&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;)<br />
+
+)<br />
+
+					</td>
+					<td class="2">Object: 
+(<br />
+&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;)<br />
+
+)<br />
+
+					</td>
+					<td class="3 end">Object: 
+(<br />
+&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;)<br />
+
+)<br />
+
+					</td>
+					<td class="4"><span class="int"><b class="int-0">0</b></span><br />
+					</td>
+					<td class="5"><span class="error">Fatal error <a href="#arithmetic-errors">#4</a></span>					</td>
+					<td class="6"><span class="int"><b class="int-0">0</b></span><br />
+					</td>
+					<td class="7"><span class="int"><b class="int-0">0</b></span><br />
+					</td>
+					<td class="8"><span class="int"><b class="int-0">0</b></span><br />
+					</td>
+					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+				</tr>
+				<tr>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0">Object: 
+(<br />
+&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <b class="bool"><i>b</i></b> <i class="b-true">true</i><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;)<br />
+
+)<br />
+
+					</td>
+					<td class="1">Object: 
+(<br />
+&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <b class="bool"><i>b</i></b> <i class="b-true">true</i><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;)<br />
+
+)<br />
+
+					</td>
+					<td class="2">Object: 
+(<br />
+&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <b class="bool"><i>b</i></b> <i class="b-true">true</i><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;)<br />
+
+)<br />
+
+					</td>
+					<td class="3 end">Object: 
+(<br />
+&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <b class="bool"><i>b</i></b> <i class="b-true">true</i><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;)<br />
+
+)<br />
+
+					</td>
+					<td class="4"><span class="int">-1</span><br />
+					</td>
+					<td class="5"><span class="error">Fatal error <a href="#arithmetic-errors">#4</a></span>					</td>
+					<td class="6"><span class="int">1</span><br />
+					</td>
+					<td class="7"><span class="int">1</span><br />
+					</td>
+					<td class="8"><span class="int">1</span><br />
+					</td>
+					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+				</tr>
+				<tr>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int"><b><i>int</i></b> : 94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0">Object: 
+(<br />
+&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int">95</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;)<br />
+
+)<br />
+
+					</td>
+					<td class="1">Object: 
+(<br />
+&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int">96</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;)<br />
+
+)<br />
+
+					</td>
+					<td class="2">Object: 
+(<br />
+&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int">95</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;)<br />
+
+)<br />
+
+					</td>
+					<td class="3 end">Object: 
+(<br />
+&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int">94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;)<br />
+
+)<br />
+
+					</td>
+					<td class="4"><span class="int">-94</span><br />
+					</td>
+					<td class="5">Object: 
+(<br />
+&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int">94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;)<br />
+
+)<br />
+
+					</td>
+					<td class="6"><span class="int">94</span><br />
+					</td>
+					<td class="7"><span class="int">94</span><br />
+					</td>
+					<td class="8"><span class="int">94</span><br />
+					</td>
+					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int"><b><i>int</i></b> : 94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
 
 					</th>
 				</tr>
@@ -20270,6 +22372,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 				<li><span class="notice">Notice</span>: Undefined index:  notset</li>
 				<li><span class="error">Fatal error</span>: Unsupported operand types</li>
 				<li><span class="notice">Notice</span>: Object of class <em>stdClass/TestObject/TestObjectToString</em> could not be converted to int</li>
+				<li>Value not a const in enum SplBool</li>
 			</ol>
 			<div id="arithmetic-note1" class="note-appendix">
 				<sup>&Dagger; 1</sup> <p>Please take note: using the in-/decrementors on SplInt and SplFloat objects may give unexpected (inconsistent) results....</p>
@@ -21940,7 +24043,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #58 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #43 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="0"><span class="b-false">false</span>
@@ -21965,7 +24068,149 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="10 end"><span class="b-false">false</span>
 					</td>
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #58 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #43 ( = <i>RESOURCE</i> )</span><br />
+
+					</th>
+				</tr>
+				<tr class="new-var-type">
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0"><span class="b-false">false</span>
+					</td>
+					<td class="1 end"><span class="b-false">false</span>
+					</td>
+					<td class="2"><span class="b-false">false</span>
+					</td>
+					<td class="3"><span class="b-false">false</span>
+					</td>
+					<td class="4"><span class="b-false">false</span>
+					</td>
+					<td class="5 end"><span class="b-false">false</span>
+					</td>
+					<td class="6"><span class="b-false">false</span>
+					</td>
+					<td class="7 end"><span class="b-false">false</span>
+					</td>
+					<td class="8"><span class="b-false">false</span>
+					</td>
+					<td class="9"><span class="b-false">false</span>
+					</td>
+					<td class="10 end"><span class="b-false">false</span>
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+				</tr>
+				<tr>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0"><span class="b-false">false</span>
+					</td>
+					<td class="1 end"><span class="b-false">false</span>
+					</td>
+					<td class="2"><span class="b-false">false</span>
+					</td>
+					<td class="3"><span class="b-false">false</span>
+					</td>
+					<td class="4"><span class="b-false">false</span>
+					</td>
+					<td class="5 end"><span class="b-false">false</span>
+					</td>
+					<td class="6"><span class="b-false">false</span>
+					</td>
+					<td class="7 end"><span class="b-false">false</span>
+					</td>
+					<td class="8"><span class="b-false">false</span>
+					</td>
+					<td class="9"><span class="b-false">false</span>
+					</td>
+					<td class="10 end"><span class="b-false">false</span>
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+				</tr>
+				<tr>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int"><b><i>int</i></b> : 94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0"><span class="b-false">false</span>
+					</td>
+					<td class="1 end"><span class="b-false">false</span>
+					</td>
+					<td class="2"><span class="b-false">false</span>
+					</td>
+					<td class="3"><span class="b-false">false</span>
+					</td>
+					<td class="4"><span class="b-false">false</span>
+					</td>
+					<td class="5 end"><span class="b-false">false</span>
+					</td>
+					<td class="6"><span class="b-false">false</span>
+					</td>
+					<td class="7 end"><span class="b-false">false</span>
+					</td>
+					<td class="8"><span class="b-false">false</span>
+					</td>
+					<td class="9"><span class="b-false">false</span>
+					</td>
+					<td class="10 end"><span class="b-false">false</span>
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int"><b><i>int</i></b> : 94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
 
 					</th>
 				</tr>
@@ -23394,7 +25639,7 @@ else {
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #61 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #45 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="0 end"><span class="null">null</span>
@@ -23405,15 +25650,139 @@ else {
 					</td>
 					<td class="3"><span class="null">null</span>
 					</td>
-					<td class="4 end"><span class="string">&lsquo;61&rsquo;</span><br />
+					<td class="4 end"><span class="string">&lsquo;45&rsquo;</span><br />
 					</td>
 					<td class="5"><span class="null">null</span>
 					</td>
-					<td class="6"><span class="string">&lsquo;61&rsquo;</span><br />
+					<td class="6"><span class="string">&lsquo;45&rsquo;</span><br />
 					</td>
-					<td class="7 end"><span class="string">&lsquo;ee61&rsquo;</span><br />
+					<td class="7 end"><span class="string">&lsquo;ee45&rsquo;</span><br />
 					</td>
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #61 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #45 ( = <i>RESOURCE</i> )</span><br />
+
+					</th>
+				</tr>
+				<tr class="new-var-type">
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0 end"><span class="b-false">false</span>
+					</td>
+					<td class="1"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="2"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="3"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="4 end"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="5"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="6"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="7 end"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+				</tr>
+				<tr>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0 end"><span class="b-false">false</span>
+					</td>
+					<td class="1"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="2"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="3"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="4 end"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="5"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="6"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="7 end"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+				</tr>
+				<tr>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int"><b><i>int</i></b> : 94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0 end"><span class="b-false">false</span>
+					</td>
+					<td class="1"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="2"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="3"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="4 end"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="5"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="6"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="7 end"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int"><b><i>int</i></b> : 94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
 
 					</th>
 				</tr>
@@ -24448,21 +26817,130 @@ else {
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #64 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #47 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
-					<td class="0"><span class="string">&lsquo;Resource id #64&rsquo;</span>
+					<td class="0"><span class="string">&lsquo;Resource id #47&rsquo;</span>
 					</td>
-					<td class="1"><span class="string">&lsquo;Resource id #64&rsquo;</span>
+					<td class="1"><span class="string">&lsquo;Resource id #47&rsquo;</span>
 					</td>
-					<td class="2"><span class="string">&lsquo;Resource id #64&rsquo;</span>
+					<td class="2"><span class="string">&lsquo;Resource id #47&rsquo;</span>
 					</td>
-					<td class="3"><span class="string">&lsquo;Resource id #64&rsquo;</span>
+					<td class="3"><span class="string">&lsquo;Resource id #47&rsquo;</span>
 					</td>
-					<td class="4"><span class="string">&lsquo;Resource id #64&rsquo;</span>
+					<td class="4"><span class="string">&lsquo;Resource id #47&rsquo;</span>
 					</td>
 					<td class="5 end">E: not available (PHP 5.3.3+)					</td>
-					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #64 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #47 ( = <i>RESOURCE</i> )</span><br />
+
+					</th>
+				</tr>
+				<tr class="new-var-type">
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="1"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="2"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="3"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="4"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="5 end">E: not available (PHP 5.3.3+)					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+				</tr>
+				<tr>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="1"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="2"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="3"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="4"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="5 end">E: not available (PHP 5.3.3+)					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplBool (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: getConstList<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+				</tr>
+				<tr>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int"><b><i>int</i></b> : 94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
+
+					</th>
+					<td class="0"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="1"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="2"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="3"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="4"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
+					</td>
+					<td class="5 end">E: not available (PHP 5.3.3+)					</td>
+					<th>$x = Object: 
+(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: SplInt (<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: __default = <span class="int"><b><i>int</i></b> : 94</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>method</i></b>: __construct<br />
+&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+
+)<br />
+
 
 					</th>
 				</tr>
