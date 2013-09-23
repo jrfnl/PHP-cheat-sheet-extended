@@ -158,16 +158,18 @@ function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
 		'bcmod() expects parameter 2 to be string, <em>array/object/resource</em> given',
 	);
 
-	// Group some more messages
+	// Group some more messages and make error message links work
 	$preg_search  = array(
 		'`^Object of class [A-Za-z]+ could not be converted to (int|double|string)$`',
 		'`^Object of class [A-Za-z]+ to string conversion$`',
 		'`^Cannot use object of type [A-Za-z]+ as array$`',
+		'`<a href=(["\'])function\.`',
 	);
 	$preg_replace = array(
 		'Object of class <em>stdClass/TestObject/TestObjectToString</em> could not be converted to $1',
 		'Object of class <em>stdClass/TestObject/TestObjectToString</em> to string conversion',
 		'Cannot use object of type <em>stdClass/TestObject/TestObjectToString</em> as array',
+		'<a href=$1http://php.net/function.',
 	);
 
 
