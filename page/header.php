@@ -9,7 +9,7 @@ header( 'Content-type: text/html; charset=utf-8' );
 		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en">
 <head>
-	<title><?php print htmlspecialchars( $page_title, ENT_QUOTES, 'UTF-8' ); ?></title>
+	<title><?php print htmlspecialchars( $page_title, ENT_QUOTES, 'UTF-8' ) . ' - tests run on: PHP' . htmlspecialchars( PHP_VERSION, ENT_QUOTES, 'UTF-8' ); ?></title>
 
 	<meta name="description" content="Extended PHP Cheat sheets for variable comparisons and variable type testing." />
 	<meta name="keywords" content="php, cheat sheet, blueshoes, variable, type juggling, comparison, testing" />
