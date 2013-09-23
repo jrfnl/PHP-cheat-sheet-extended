@@ -47,6 +47,8 @@ else if ( isset( $_GET['type'] ) && $_GET['type'] === 'test' ) {
 }
 
 
+/* ***** Send headers ***** */
+header( 'Content-type: text/html; charset=utf-8' );
 
 
 $class = 'Vartype' . ucfirst( $type );
