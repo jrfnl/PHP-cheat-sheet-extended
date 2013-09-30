@@ -1299,7 +1299,6 @@ else {
 			'arg'	=>	'$x',
 			'function'	=>	'if ( extension_loaded( \'filter\' ) ) { VartypeTest::filter_combined( $x, \'bool\', FILTER_VALIDATE_BOOLEAN ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
 		),
-		// Note: PHP 5.2.11: bool false will result in null!!!
 		'filter_combined_bool_null' =>	array(
 			'title'	=>	'filter_var (&hellip;)',
 			'tooltip' => '

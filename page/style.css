@@ -83,7 +83,8 @@ ul {
 
 code {
 	border-left: 1px solid #CC0000;
-	padding: 1px 2px 1px 6px;
+	margin-left: 2px;
+	padding: 1px 2px 1px 4px;
 	font-size: 90%;
 	color: #000000;
 	background-color: #EEEEEE;
