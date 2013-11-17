@@ -262,15 +262,16 @@ div#tabs {
 	margin-bottom: 12px;
 }
 
+div#sidebar {
+	float: right;
+	margin: -58px 0px 10px 10px;
+}
 
-
-h2#php-version {
+div#sidebar h2 {
 	font-size: 9pt;
 	font-weight: normal;
 	text-align: center;
-	float: right;
-	width: 120px;
-	margin: -58px 5px 10px 10px;
+	width: 125px;
 	padding: 8px 12px;
 /*	border: 1px solid #CC0000;*/
 	background-color: #E8F7F6;
@@ -281,19 +282,32 @@ h2#php-version {
 	border-radius: 8px;
 }
 
-h2#php-version strong {
+div#sidebar h2#php-version {
+	margin-top: 0px;
+}
+
+div#sidebar h2#php-version strong {
 	display: block;
 	padding-top: 5px;
 	font-size: 12pt;
 	color: green;
 }
 
-h2#php-version span {
+div#sidebar h2 span {
 	display: block;
 	margin-top: 5px;
 	font-size: 85%;
 }
 
+
+div#sidebar h2#too-much {
+	background-color: #FFFFCC;
+	border: 2px solid #FFCC66;
+}
+
+div#sidebar h2#too-much span {
+	font-size: 100%;
+}
 
 .fright {
 	display: block;

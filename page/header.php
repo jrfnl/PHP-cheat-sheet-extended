@@ -25,13 +25,19 @@ endif; ?>
 
 <?php
 if ( isset( $type ) ): ?>
+	<!-- jQuery via CDN with local fall-back -->
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script>(window.jQuery) || document.write('<script src="./<?php if ( isset( $dir ) ) print $dir; ?>page/jquery-css/jquery-1.10.2<?php if ( isset( $min ) ) print $min; ?>.js">\x3C/script>')</script>
+
+	<!-- jQueryUI via CDN with local fall-back -->
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<script>(window.jQuery) || document.write('<script src="./<?php if ( isset( $dir ) ) print $dir; ?>page/jquery-css/jquery-ui-1.10.3<?php if ( isset( $min ) ) print $min; ?>.js">\x3C/script>')</script>
 
 	<!-- floating table headers -->
 	<script type="text/javascript" src="./<?php if ( isset( $dir ) ) print $dir; ?>page/jquery.thfloat-0.7.2<?php if ( isset( $min ) ) print $min; ?>.js"></script>
 <?php
 endif; ?>
+	<!-- custom js -->
 	<script type="text/javascript" src="./<?php if ( isset( $dir ) ) print $dir; ?>page/interaction<?php if ( isset( $min ) ) print $min; ?>.js"></script>
 
 
@@ -65,10 +71,19 @@ endif; ?>
 
 	<h1><?php print htmlspecialchars( $page_title, ENT_QUOTES, 'UTF-8' ); ?></h1>
 <?php if ( $page_title !== 'PHP Variable comparison and type testing cheat sheets' ): ?>
-	<h2 id="php-version">
-		This page has been generated with <strong>PHP <?php print htmlspecialchars( PHP_VERSION, ENT_QUOTES, 'UTF-8' ); ?></strong>
-		<span>Browse <a href="./static_results">other versions</a>.</span>
-	</h2>
+	<div id="sidebar">
+
+		<h2 id="php-version">
+			This page has been generated with <strong>PHP <?php print htmlspecialchars( PHP_VERSION, ENT_QUOTES, 'UTF-8' ); ?></strong>
+			<span>Browse <a href="./static_results">other versions</a>.</span>
+		</h2>
+	
+		<h2 id="too-much">
+			Bit too much for you ?
+			<span><a href="http://www.google.com/search?q=fluffy+animals&tbm=isch" target="_blank">Take a break and rest your eyes</a>.</span>
+		</h2>
+
+	</div>
 <?php
 endif;
 ?>
