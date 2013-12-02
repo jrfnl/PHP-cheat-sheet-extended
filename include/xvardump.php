@@ -101,32 +101,37 @@ function pr_var( $var, $title = '', $escape = true, $short = false, $space = '',
 	}
 
 	if ( is_array( $var ) ) {
-		print 'Array: ' . $space . "(<br />\n";
-		$spacing = ( ( $short !== true ) ? $space . XVARDUMP_SPACE_LONG : $space . XVARDUMP_SPACE_SHORT );
-//		$spacing = $space . XVARDUMP_SPACE_SHORT;
-		foreach ( $var as $key => $value ) {
-			print $spacing . '[' . ( $escape === true ? htmlentities( $key, ENT_QUOTES ): $key );
-			if ( $short !== true ) {
-				print  ' ';
-				switch ( true ) {
-					case ( is_string( $key ) ) :
-						print '<b class="' . XVARDUMP_CLASS_STRING . '"><i>(string)</i></b>';
-						break;
-					case ( is_int( $key ) ) :
-						print '<b class="' . XVARDUMP_CLASS_INT . '"><i>(int)</i></b>';
-						break;
-					case ( is_float( $key ) ) :
-						print '<b class="' . XVARDUMP_CLASS_FLOAT . '"><i>(float)</i></b>';
-						break;
-					default:
-						print '(unknown)';
-						break;
+		if( $var !== array() ) {
+			print 'Array: ' . $space . "(<br />\n";
+			$spacing = ( ( $short !== true ) ? $space . XVARDUMP_SPACE_LONG : $space . XVARDUMP_SPACE_SHORT );
+	//		$spacing = $space . XVARDUMP_SPACE_SHORT;
+			foreach ( $var as $key => $value ) {
+				print $spacing . '[' . ( $escape === true ? htmlentities( $key, ENT_QUOTES ): $key );
+				if ( $short !== true ) {
+					print  ' ';
+					switch ( true ) {
+						case ( is_string( $key ) ) :
+							print '<b class="' . XVARDUMP_CLASS_STRING . '"><i>(string)</i></b>';
+							break;
+						case ( is_int( $key ) ) :
+							print '<b class="' . XVARDUMP_CLASS_INT . '"><i>(int)</i></b>';
+							break;
+						case ( is_float( $key ) ) :
+							print '<b class="' . XVARDUMP_CLASS_FLOAT . '"><i>(float)</i></b>';
+							break;
+						default:
+							print '(unknown)';
+							break;
+					}
 				}
+				print '] => ';
+				pr_var( $value, '', $escape, $short, $spacing, true );
 			}
-			print '] => ';
-			pr_var( $value, '', $escape, $short, $spacing, true );
+			print $space . ")<br />\n\n";
 		}
-		print $space . ")<br />\n\n";
+		else {
+			print 'array()<br />';
+		}
 	}
 	else if ( is_string( $var ) ) {
 		print '<span class="' . XVARDUMP_CLASS_STRING . '">';
@@ -210,24 +215,28 @@ function pr_var( $var, $title = '', $escape = true, $short = false, $space = '',
 function object_info( $obj, $escape, $short, $space ) {
 	print $space . '<b><i>Class</i></b>: ' . get_class( $obj ) . " (<br />\n";
 	$spacing = ( ( $short !== true ) ? $space . XVARDUMP_SPACE_LONG : $space . XVARDUMP_SPACE_SHORT );
-	$ov = get_object_vars( $obj );
-	foreach ( $ov as $var => $val ) {
-		if ( is_array( $val ) ) {
-			print $spacing . '<b><i>property</i></b>: ' . $var . "<b><i> (array)</i></b>\n";
-			pr_var( $val, '', $escape, $short, $spacing );
-		}
-		else {
-			print $spacing . '<b><i>property</i></b>: ' . $var . ' = ';
-			pr_var( $val, '', $escape, $short, $spacing );
+	$properties = get_object_vars( $obj );
+	if( is_array( $properties ) && $properties !== array() ) {
+		foreach ( $properties as $var => $val ) {
+			if ( is_array( $val ) ) {
+				print $spacing . '<b><i>property</i></b>: ' . $var . "<b><i> (array)</i></b>\n";
+				pr_var( $val, '', $escape, $short, $spacing );
+			}
+			else {
+				print $spacing . '<b><i>property</i></b>: ' . $var . ' = ';
+				pr_var( $val, '', $escape, $short, $spacing );
+			}
 		}
 	}
-	unset( $ov, $var, $val );
+	unset( $properties, $var, $val );
 
-	$om = get_class_methods( $obj );
-	foreach ( $om as $method ) {
-		print $spacing . '<b><i>method</i></b>: ' . $method . "<br />\n";
+	$methods = get_class_methods( $obj );
+	if( is_array( $methods ) && $methods !== array() ) {
+		foreach ( $methods as $method ) {
+			print $spacing . '<b><i>method</i></b>: ' . $method . "<br />\n";
+		}
 	}
-	unset( $om );
+	unset( $methods, $method );
 	print $space . ")<br />\n\n";
 }
 
