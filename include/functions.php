@@ -41,13 +41,13 @@ class TestObjectToString extends TestObject {
  */
 
 function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
-	if ( !( error_reporting() & $error_no ) )
+	if ( ! ( error_reporting() & $error_no ) )
 		return;
 
-	if ( !defined( 'E_STRICT' ) )			define( 'E_STRICT', 2048 );
-	if ( !defined( 'E_RECOVERABLE_ERROR' ) ) define( 'E_RECOVERABLE_ERROR', 4096 );
-	if ( !defined( 'E_DEPRECATED' ) )		define( 'E_DEPRECATED', 8192 );
-	if ( !defined( 'E_USER_DEPRECATED' ) )	define( 'E_USER_DEPRECATED', 16384 );
+	if ( ! defined( 'E_STRICT' ) )				define( 'E_STRICT', 2048 );
+	if ( ! defined( 'E_RECOVERABLE_ERROR' ) )	define( 'E_RECOVERABLE_ERROR', 4096 );
+	if ( ! defined( 'E_DEPRECATED' ) )			define( 'E_DEPRECATED', 8192 );
+	if ( ! defined( 'E_USER_DEPRECATED' ) )		define( 'E_USER_DEPRECATED', 16384 );
 
 	switch ( $error_no ){
 		case E_ERROR: // 1 //

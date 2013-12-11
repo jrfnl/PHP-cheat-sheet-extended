@@ -60,7 +60,7 @@ class Vartype {
 
 		// Create the actual test functions
 		foreach ( $this->tests as $key => $array ) {
-//pr_var( $key, 'Creating test for:', true );
+			// pr_var( $key, 'Creating test for:', true );
 			$this->tests[$key]['test'] = create_function( $array['arg'], $array['function'] );
 		}
 	}

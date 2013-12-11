@@ -29,21 +29,21 @@ class VartypeArithmetic extends VartypeCompare {
 			'tooltip'		=> '$a == -$b',
 			'url'			=> 'http://php.net/language.operators.arithmetic',
 			'arg'			=> '$a, $b',
-			'function'		=>	'if ( ( !is_array( $a ) && !is_array( $b ) ) && ( !is_object( $a ) && !is_object( $b ) ) ) { pr_bool( $a == -$b ); } else if ( PHP_VERSION_ID >= 50006 && ( !is_array( $a ) && !is_array( $b ) ) && ( is_object( $a ) || is_object( $b ) ) ) { pr_bool( $a == -$b ); } else { trigger_error( \'Unsupported operand types\', E_USER_ERROR ); }',
+			'function'		=>	'if ( ( ! is_array( $a ) && ! is_array( $b ) ) && ( ! is_object( $a ) && ! is_object( $b ) ) ) { pr_bool( $a == -$b ); } else if ( PHP_VERSION_ID >= 50006 && ( ! is_array( $a ) && ! is_array( $b ) ) && ( is_object( $a ) || is_object( $b ) ) ) { pr_bool( $a == -$b ); } else { trigger_error( \'Unsupported operand types\', E_USER_ERROR ); }',
 		),
 		'negate_strict'			=> array(
 			'title'			=> 'negate strict&hellip;',
 			'tooltip'		=> '$a === -$b',
 			'url'			=> 'http://php.net/language.operators.arithmetic',
 			'arg'			=> '$a, $b',
-			'function'		=>	'if ( ( !is_array( $a ) && !is_array( $b ) ) && ( !is_object( $a ) && !is_object( $b ) ) ) { pr_bool( $a === -$b ); } else if ( PHP_VERSION_ID >= 50006 && ( !is_array( $a ) && !is_array( $b ) ) && ( is_object( $a ) || is_object( $b ) ) ) { pr_bool( $a === -$b ); } else { trigger_error( \'Unsupported operand types\', E_USER_ERROR ); }',
+			'function'		=>	'if ( ( ! is_array( $a ) && ! is_array( $b ) ) && ( ! is_object( $a ) && ! is_object( $b ) ) ) { pr_bool( $a === -$b ); } else if ( PHP_VERSION_ID >= 50006 && ( ! is_array( $a ) && ! is_array( $b ) ) && ( is_object( $a ) || is_object( $b ) ) ) { pr_bool( $a === -$b ); } else { trigger_error( \'Unsupported operand types\', E_USER_ERROR ); }',
 		),
 		'sum'				=> array(
 			'title'			=> '+',
 			'tooltip'		=> '$a + $b',
 			'url'			=> 'http://php.net/language.operators.arithmetic',
 			'arg'			=> '$a, $b',
-			'function'		=>	'if ( ( ( !is_array( $a ) && !is_array( $b ) || ( is_array( $a ) && is_array( $b ) ) ) ) && ( !is_object( $a ) && !is_object( $b ) ) ) { pr_var( $a + $b, \'\', true, true ); } else if ( PHP_VERSION_ID >= 50006 && ( !is_array( $a ) && !is_array( $b ) ) && ( is_object( $a ) || is_object( $b ) ) ) { pr_var( $a + $b, \'\', true, true ); } else { trigger_error( \'Unsupported operand types\', E_USER_ERROR ); }',
+			'function'		=>	'if ( ( ( ! is_array( $a ) && ! is_array( $b ) || ( is_array( $a ) && is_array( $b ) ) ) ) && ( ! is_object( $a ) && ! is_object( $b ) ) ) { pr_var( $a + $b, \'\', true, true ); } else if ( PHP_VERSION_ID >= 50006 && ( ! is_array( $a ) && ! is_array( $b ) ) && ( is_object( $a ) || is_object( $b ) ) ) { pr_var( $a + $b, \'\', true, true ); } else { trigger_error( \'Unsupported operand types\', E_USER_ERROR ); }',
 			'notes'			=> array(
 				'<p>Take note of the fact that <code> + </code> is a valid <a href="http://php.net/language.operators.array" target="_blank">array operator</a>.</p>',
 			),
@@ -53,21 +53,21 @@ class VartypeArithmetic extends VartypeCompare {
 			'tooltip'		=> '$a - $b',
 			'url'			=> 'http://php.net/language.operators.arithmetic',
 			'arg'			=> '$a, $b',
-			'function'		=>	'if ( ( !is_array( $a ) && !is_array( $b ) ) && ( !is_object( $a ) && !is_object( $b ) ) ) { pr_var( $a - $b, \'\', true, true ); } else if ( PHP_VERSION_ID >= 50006 && ( !is_array( $a ) && !is_array( $b ) ) && ( is_object( $a ) || is_object( $b ) ) ) { pr_var( $a - $b, \'\', true, true ); } else { trigger_error( \'Unsupported operand types\', E_USER_ERROR ); }',
+			'function'		=>	'if ( ( ! is_array( $a ) && ! is_array( $b ) ) && ( ! is_object( $a ) && ! is_object( $b ) ) ) { pr_var( $a - $b, \'\', true, true ); } else if ( PHP_VERSION_ID >= 50006 && ( ! is_array( $a ) && ! is_array( $b ) ) && ( is_object( $a ) || is_object( $b ) ) ) { pr_var( $a - $b, \'\', true, true ); } else { trigger_error( \'Unsupported operand types\', E_USER_ERROR ); }',
 		),
 		'multiply'			=> array(
 			'title'			=> '*',
 			'tooltip'		=> '$a * $b',
 			'url'			=> 'http://php.net/language.operators.arithmetic',
 			'arg'			=> '$a, $b',
-			'function'		=>	'if ( ( !is_array( $a ) && !is_array( $b ) ) && ( !is_object( $a ) && !is_object( $b ) ) ) { pr_var( $a * $b, \'\', true, true ); } else if ( PHP_VERSION_ID >= 50006 && ( !is_array( $a ) && !is_array( $b ) ) && ( is_object( $a ) || is_object( $b ) ) ) { pr_var( $a * $b, \'\', true, true ); } else { trigger_error( \'Unsupported operand types\', E_USER_ERROR ); }',
+			'function'		=>	'if ( ( ! is_array( $a ) && ! is_array( $b ) ) && ( ! is_object( $a ) && ! is_object( $b ) ) ) { pr_var( $a * $b, \'\', true, true ); } else if ( PHP_VERSION_ID >= 50006 && ( ! is_array( $a ) && ! is_array( $b ) ) && ( is_object( $a ) || is_object( $b ) ) ) { pr_var( $a * $b, \'\', true, true ); } else { trigger_error( \'Unsupported operand types\', E_USER_ERROR ); }',
 		),
 		'divide'			=> array(
 			'title'			=> '/',
 			'tooltip'		=> '$a / $b',
 			'url'			=> 'http://php.net/language.operators.arithmetic',
 			'arg'			=> '$a, $b',
-			'function'		=>	'if ( ( !is_array( $a ) && !is_array( $b ) ) && ( !is_object( $a ) && !is_object( $b ) ) ) { $r = $a / $b; if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); } } else if ( PHP_VERSION_ID >= 50006 && ( !is_array( $a ) && !is_array( $b ) ) && ( is_object( $a ) || is_object( $b ) ) ) { $r = $a / $b; if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); } } else { trigger_error( \'Unsupported operand types\', E_USER_ERROR ); }',
+			'function'		=>	'if ( ( ! is_array( $a ) && ! is_array( $b ) ) && ( ! is_object( $a ) && ! is_object( $b ) ) ) { $r = $a / $b; if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); } } else if ( PHP_VERSION_ID >= 50006 && ( ! is_array( $a ) && ! is_array( $b ) ) && ( is_object( $a ) || is_object( $b ) ) ) { $r = $a / $b; if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); } } else { trigger_error( \'Unsupported operand types\', E_USER_ERROR ); }',
 		),
 		'modulus'			=> array(
 			'title'			=> '%',
@@ -93,13 +93,13 @@ class VartypeArithmetic extends VartypeCompare {
 	/**
 	 * Calculations with BCMath
 	 */
-/*
-   @todo Maybe add:
-    bcpow - Raise an arbitrary precision number to another
-    bcpowmod - Raise an arbitrary precision number to another, reduced by a specified modulus
-    bcscale - Set default scale parameter for all bc math functions
-    bcsqrt - Get the square root of an arbitrary precision number
-*/
+	/*
+	   @todo Maybe add:
+	    bcpow - Raise an arbitrary precision number to another
+	    bcpowmod - Raise an arbitrary precision number to another, reduced by a specified modulus
+	    bcscale - Set default scale parameter for all bc math functions
+	    bcsqrt - Get the square root of an arbitrary precision number
+	*/
 	var $bcmath_tests = array(
 
 		'bcadd'			=> array(

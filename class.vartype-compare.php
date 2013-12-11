@@ -345,7 +345,7 @@ class VartypeCompare extends Vartype {
 			$value = $this->test_data[$key];
 			
 			$class = '';
-			if ( !isset( $this->test_data_keys[$i + 1] ) || substr( $key, 0, 1 ) !== substr( $this->test_data_keys[$i + 1], 0, 1 ) ) {
+			if ( ! isset( $this->test_data_keys[$i + 1] ) || substr( $key, 0, 1 ) !== substr( $this->test_data_keys[$i + 1], 0, 1 ) ) {
 				$class = ' class="end"';
 			}
 			
@@ -415,7 +415,7 @@ class VartypeCompare extends Vartype {
 			$value2 = $this->test_data[$key2];
 
 			$class = array( 'value1-' . $key1, 'value2-' . $key2 );
-			if ( !isset( $this->test_data_keys[$i + 1] ) || substr( $key2, 0, 1 ) !== substr( $this->test_data_keys[$i + 1], 0, 1 ) ) {
+			if ( ! isset( $this->test_data_keys[$i + 1] ) || substr( $key2, 0, 1 ) !== substr( $this->test_data_keys[$i + 1], 0, 1 ) ) {
 				$class[] = 'end';
 			}
 

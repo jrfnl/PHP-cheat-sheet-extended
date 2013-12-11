@@ -1,6 +1,8 @@
 <?php
 
-if ( !defined( 'E_STRICT' ) )			define( 'E_STRICT', 2048 );
+if ( ! defined( 'E_STRICT' ) ) {
+	define( 'E_STRICT', 2048 );
+}
 error_reporting( E_ALL & ~E_STRICT );
 @ini_set( 'log_errors', false );
 
@@ -12,7 +14,7 @@ include_once( APP_DIR . '/include/functions.php' );
 set_error_handler( 'do_handle_errors' );
 
 
-if ( !defined( 'PHP_VERSION_ID' ) ) {
+if ( ! defined( 'PHP_VERSION_ID' ) ) {
 	$version = PHP_VERSION;
 	define( 'PHP_VERSION_ID', (int) ( $version{0} * 10000 + $version{2} * 100 + $version{4} ) );
 }
