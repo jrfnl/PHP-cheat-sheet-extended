@@ -33,19 +33,26 @@ $dir = '';
 
 
 $type = null;
-$page_title = 'PHP Variable comparison and type testing cheat sheets';
+$page = null;
+$page_title = 'PHP Cheat Sheets';
 
-if ( isset( $_GET['type'] ) && $_GET['type'] === 'compare' ) {
-	$type       = 'compare';
-	$page_title = 'PHP Variable Comparison Cheat Sheet';
-}
-else if ( isset( $_GET['type'] ) && $_GET['type'] === 'arithmetic' ) {
-	$type       = 'arithmetic';
-	$page_title = 'PHP Arithmetic Operations Cheat Sheet';
-}
-else if ( isset( $_GET['type'] ) && $_GET['type'] === 'test' ) {
-	$type       = 'test';
-	$page_title = 'PHP Variable Testing Cheat Sheet';
+if( isset( $_GET['page'] ) ) {
+	if ( $_GET['page'] === 'compare' ) {
+		$type       = 'compare';
+		$page_title = 'PHP Variable Comparison';
+	}
+	else if ( $_GET['page'] === 'arithmetic' ) {
+		$type       = 'arithmetic';
+		$page_title = 'PHP Arithmetic Operations';
+	}
+	else if ( $_GET['page'] === 'test' ) {
+		$type       = 'test';
+		$page_title = 'PHP Variable Testing';
+	}
+	else if ( $_GET['page'] === 'other-cheat-sheets' ) {
+		$page = 'other-cheat-sheets';
+		$page_title = 'More PHP Cheat Sheets';
+	}
 }
 
 
@@ -70,6 +77,7 @@ if ( isset( $type ) && file_exists( APP_DIR . '/' . $file ) ) {
 	}
 	else {
 		include_once( APP_DIR . '/page/header.php' );
+		include_once( APP_DIR . '/page/notes-legend.php' );
 		
 		$all = false;
 		if ( isset( $_GET['all'] ) && $_GET['all'] === '1' ) {
@@ -83,10 +91,21 @@ if ( isset( $type ) && file_exists( APP_DIR . '/' . $file ) ) {
 }
 else {
 	include_once( APP_DIR . '/page/header.php' );
-	include_once( APP_DIR . '/page/cheat-sheet-menu.php' );
+
+	if ( isset( $page ) && $page !== '' ) {
+		if ( file_exists( APP_DIR . '/page/' . $page . '.html' ) ) {
+			include_once( APP_DIR . '/page/' . $page . '.html' );
+		}
+		else if ( file_exists( APP_DIR . '/page/' . $page . '.php' ) ) {
+			include_once( APP_DIR . '/page/' . $page . '.php' );
+		}
+		else {
+			include_once( APP_DIR . '/page/cheat-sheet-menu.php' );
+		}
+	}
+	else {
+		include_once( APP_DIR . '/page/cheat-sheet-menu.php' );
+	}
+
 	include_once( APP_DIR . '/page/footer.php');
 }
-
-
-
-?>

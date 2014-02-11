@@ -204,7 +204,7 @@ class VartypeCompare extends Vartype {
 			}
 			else {
 				print '
-		<li' . ( $GLOBALS['tab'] === $key ? ' class="ui-tabs-active ui-state-active"' : '' ) . ( isset( $test['tooltip'] ) ? ' title="' . $test['tooltip'] . '"' : '' ) . '><a href="index.php?type=' . $GLOBALS['type'] . '&amp;tab=' . $key . '&amp;do=ajax"><strong>' . $test['title'] . '</strong></a></li>';
+		<li' . ( $GLOBALS['tab'] === $key ? ' class="ui-tabs-active ui-state-active"' : '' ) . ( isset( $test['tooltip'] ) ? ' title="' . $test['tooltip'] . '"' : '' ) . '><a href="index.php?page=' . $GLOBALS['type'] . '&amp;tab=' . $key . '&amp;do=ajax"><strong>' . $test['title'] . '</strong></a></li>';
 			}
 		}
 		unset( $key, $test );
