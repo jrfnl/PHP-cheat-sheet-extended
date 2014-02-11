@@ -165,5 +165,3 @@ class VartypeArithmetic extends VartypeCompare {
 		$this->__construct();
 	}
 }
-
-?>

@@ -37,12 +37,13 @@ class TestObjectToString extends TestObject {
 
 
 /**
- * Catch errors to display in table appendix
+ * Catch errors to display in appendix
  */
 
 function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
-	if ( ! ( error_reporting() & $error_no ) )
+	if ( ! ( error_reporting() & $error_no ) ) {
 		return;
+	}
 
 	if ( ! defined( 'E_STRICT' ) )				define( 'E_STRICT', 2048 );
 	if ( ! defined( 'E_RECOVERABLE_ERROR' ) )	define( 'E_RECOVERABLE_ERROR', 4096 );
@@ -228,7 +229,3 @@ function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
 
 	return false; // Make sure it plays nice with other error handlers (remove if no other error handlers are set)
 }
-
-
-
-?>

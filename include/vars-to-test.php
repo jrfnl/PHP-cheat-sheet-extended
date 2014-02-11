@@ -152,5 +152,3 @@ $legend_array = array(
 	'sp'	=>	'$x = "\x7f\t\r\n"',
 );
 
-
-?>

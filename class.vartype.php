@@ -538,5 +538,3 @@ class Vartype {
 		}
 	}
 }
-
-?>

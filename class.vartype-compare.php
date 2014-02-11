@@ -219,7 +219,7 @@ class VartypeCompare extends Vartype {
 		print '
 	<div class="tables">';
 
-		
+
 		$this->set_test_data();
 
 
@@ -461,5 +461,3 @@ class VartypeCompare extends Vartype {
 		}
 	}
 }
-
-?>
