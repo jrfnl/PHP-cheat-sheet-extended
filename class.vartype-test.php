@@ -453,6 +453,15 @@ class VartypeTest extends Vartype {
 
 
 
+		/**
+		 * Absolute numbers
+		 */
+		'abs' =>	array(
+			'title'		=>	'abs()',
+			'url'		=>	'http://php.net/abs',
+			'arg'		=>	'$x',
+			'function'	=>	'$r = abs( $x ); if( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); }',
+		),
 
 
 		/**
@@ -476,6 +485,9 @@ class VartypeTest extends Vartype {
 			'arg'		=>	'$x',
 			'function'	=>	'$r = round( $x ); if( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); }',
 		),
+
+
+
 
 
 		/**
@@ -1868,6 +1880,8 @@ else {
 				//'cast_to_type_int',
 				'cast_to_type_int_not_empty_recurse_arrays',
 
+				'abs',
+
 				'empty',
 				'is_int',
 				'ctype_digit',
@@ -1888,7 +1902,7 @@ else {
 				*/
 
 			),
-			'break_at'	=>	array( 'cast_to_type_int_not_empty_recurse_arrays', 'preg_int', ),
+			'break_at'	=>	array( 'cast_to_type_int_not_empty_recurse_arrays', 'abs', 'preg_int', ),
 			//'good'		=>	array( 'cast_to_type_int', 'cast_to_type_int_not_empty_recurse_arrays', 'filter_combined_int_null', 'is_int', ),
 			'good'		=>	array(),
 			'best'		=>	array(),
@@ -2337,5 +2351,3 @@ else {
 	}
 
 }
-
-?>
