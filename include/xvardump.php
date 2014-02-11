@@ -153,7 +153,7 @@ function pr_var( $var, $title = '', $escape = true, $short = false, $space = '',
 		if ( $short !== true ) {
 			print '<b><i>int</i></b> : ';
 		}
-		print ( ( $var === 0 ) ? '<b class="' . XVARDUMP_CLASS_INT_0 . '">' . $var . '</b>' : $var ) . "</span><br />\n";
+		print ( ( $var === 0 ) ? '<span class="' . XVARDUMP_CLASS_INT_0 . '">' . $var . '</span>' : $var ) . "</span><br />\n";
 	}
 	else if ( is_float( $var ) ) {
 		print '<span class="' . XVARDUMP_CLASS_FLOAT . '">';
@@ -351,4 +351,3 @@ function pr_flt( $var ) {
 	}
 }
 
-?>
