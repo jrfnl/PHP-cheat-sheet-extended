@@ -13,4 +13,3 @@ Options +Indexes +MultiViews +FollowSymlinks
 <IfModule mod_autoindex.c>
  IndexOptions IgnoreCase FancyIndexing FoldersFirst NameWidth=* DescriptionWidth=*
 </IfModule>
-

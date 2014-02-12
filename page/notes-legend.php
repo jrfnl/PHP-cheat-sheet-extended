@@ -1,11 +1,9 @@
 
 	<div id="sidebar">
-
 		<h3 id="php-version">
 			This page has been generated with <strong>PHP <?php print htmlspecialchars( PHP_VERSION, ENT_QUOTES, 'UTF-8' ); ?></strong>
 			<span>Browse <a href="./static_results">other versions</a>.</span>
 		</h3>
-
 	</div>
 
 

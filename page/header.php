@@ -56,11 +56,11 @@ endif; ?>
 
 	<?php
 	if ( isset( $type ) ): ?>
-		<div id="too-much">
-			<a href="http://www.google.com/search?q=fluffy+animals&amp;tbm=isch" target="_blank"><img src="./<?php if ( isset( $dir ) ) print $dir; ?>page/jakobwesthoff_3231273333_2473ef9cdf_s.jpg" width="75" height="75" alt="Fluffy ElePHPant" /></a>
-			<p>Too much ?</p>
-			<p><a href="http://www.google.com/search?q=fluffy+animals&amp;tbm=isch" target="_blank">Take a break and rest your eyes</a>.</p>
-		</div>
+	<div id="too-much">
+		<a href="http://www.google.com/search?q=fluffy+animals&amp;tbm=isch" target="_blank"><img src="./<?php if ( isset( $dir ) ) print $dir; ?>page/jakobwesthoff_3231273333_2473ef9cdf_s.jpg" width="75" height="75" alt="Fluffy ElePHPant" /></a>
+		<p>Too much ?</p>
+		<p><a href="http://www.google.com/search?q=fluffy+animals&amp;tbm=isch" target="_blank">Take a break and rest your eyes</a>.</p>
+	</div>
 <?php
 	endif;
 ?>
@@ -69,14 +69,14 @@ endif; ?>
 
 	<?php
 	if ( isset( $type ) || isset( $page ) ): ?>
-		<div id="main-menu">
-			<ul>
-				<li><a href="index.php?page=compare" class="top-link<?php if ( isset( $type ) && $type === 'compare' ) print ' top-active'; ?>">Variable Comparisons</a></li>
-				<li><a href="index.php?page=arithmetic" class="top-link<?php if ( isset( $type ) && $type === 'arithmetic' ) print ' top-active'; ?>">Variable Arithmetics</a></li>
-				<li><a href="index.php?page=test" class="top-link<?php if ( isset( $type ) && $type === 'test' ) print ' top-active'; ?>">Variable Testing</a></li>
-				<li class="last"><a href="index.php?page=other-cheat-sheets" class="top-link<?php if ( isset( $page ) && $page === 'other-cheat-sheets' ) print ' top-active'; ?>">More cheat sheets</a></li>
-			</ul>
-		</div>
+	<div id="main-menu">
+		<ul>
+			<li><a href="index.php?page=compare" class="top-link<?php if ( isset( $type ) && $type === 'compare' ) print ' top-active'; ?>">Variable Comparisons</a></li>
+			<li><a href="index.php?page=arithmetic" class="top-link<?php if ( isset( $type ) && $type === 'arithmetic' ) print ' top-active'; ?>">Variable Arithmetics</a></li>
+			<li><a href="index.php?page=test" class="top-link<?php if ( isset( $type ) && $type === 'test' ) print ' top-active'; ?>">Variable Testing</a></li>
+			<li class="last"><a href="index.php?page=other-cheat-sheets" class="top-link<?php if ( isset( $page ) && $page === 'other-cheat-sheets' ) print ' top-active'; ?>">More cheat sheets</a></li>
+		</ul>
+	</div>
 <?php
 	endif;
 ?>
