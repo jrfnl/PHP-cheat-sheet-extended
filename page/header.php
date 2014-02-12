@@ -74,7 +74,7 @@ endif; ?>
 			<li><a href="index.php?page=compare" class="top-link<?php if ( isset( $type ) && $type === 'compare' ) print ' top-active'; ?>">Variable Comparisons</a></li>
 			<li><a href="index.php?page=arithmetic" class="top-link<?php if ( isset( $type ) && $type === 'arithmetic' ) print ' top-active'; ?>">Variable Arithmetics</a></li>
 			<li><a href="index.php?page=test" class="top-link<?php if ( isset( $type ) && $type === 'test' ) print ' top-active'; ?>">Variable Testing</a></li>
-			<li class="last"><a href="index.php?page=other-cheat-sheets" class="top-link<?php if ( isset( $page ) && $page === 'other-cheat-sheets' ) print ' top-active'; ?>">More cheat sheets</a></li>
+			<li><a href="index.php?page=other-cheat-sheets" class="top-link<?php if ( isset( $page ) && $page === 'other-cheat-sheets' ) print ' top-active'; ?>">More cheat sheets</a></li>
 		</ul>
 	</div>
 <?php

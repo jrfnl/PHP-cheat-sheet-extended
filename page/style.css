@@ -373,7 +373,18 @@ div#sidebar h3 span {
 	font-size: 85%;
 }
 
+.static-archive div#sidebar h3 {
+	border: 2px solid #CD0A0A;
+}
 
+.static-archive div#sidebar h3#php-version:before {
+	content:"Static archive";
+	display: block;
+	padding-bottom: 2px;
+	color: #CD0A0A;
+	font-size: 120%;
+	font-weight: bold;
+}
 
 
 .fright {
