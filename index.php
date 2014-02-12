@@ -81,7 +81,7 @@ if ( isset( $type ) && file_exists( APP_DIR . '/' . $file ) ) {
 		
 		$all = false;
 		if ( isset( $_GET['all'] ) && $_GET['all'] === '1' ) {
-			// Hidden feature - pre-load all tabs, slow, but useful for source compare
+			// Hidden feature - pre-load all tabs, slow, but useful for source compare & generating of static files
 			$all = true;
 		}
 		$current_tests->do_page( $all );
