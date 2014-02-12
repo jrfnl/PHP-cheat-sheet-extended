@@ -27,8 +27,8 @@ endif; ?>
 <?php
 if ( isset( $type ) ): ?>
 	<!-- jQuery via CDN with local fall-back -->
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script type="text/javascript">(window.jQuery) || document.write('\x3Cscript type="text/javascript" src="./<?php if ( isset( $dir ) ) print $dir; ?>page/jquery-css/jquery-1.10.2<?php if ( isset( $min ) ) print $min; ?>.js">\x3C/script>')</script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script type="text/javascript">(window.jQuery) || document.write('\x3Cscript type="text/javascript" src="./<?php if ( isset( $dir ) ) print $dir; ?>page/jquery-css/jquery-1.11.0<?php if ( isset( $min ) ) print $min; ?>.js">\x3C/script>')</script>
 
 	<!-- jQueryUI via CDN with local fall-back -->
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
