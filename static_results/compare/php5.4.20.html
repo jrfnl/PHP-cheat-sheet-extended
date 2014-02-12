@@ -1,9 +1,15 @@
-﻿
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en">
 <head>
-	<title>PHP Variable Comparison Cheat Sheet</title>
+	<meta http-equiv="Charset" content="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+
+
+
+	<title>PHP Variable Comparison - tests run using PHP 5.4.20 on phpcheatsheets.com</title>
 
 	<meta name="description" content="Extended PHP Cheat sheets for variable comparisons and variable type testing." />
 	<meta name="keywords" content="php, cheat sheet, blueshoes, variable, type juggling, comparison, testing" />
@@ -11,8 +17,6 @@
 	<meta name="copyright" content="Copyright Advies en zo - all rights reserved" />
 	<meta name="language" content="en" />
 	<meta name="distribution" content="global" />
-	<meta http-equiv="Charset" content="utf-8" />
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="robots" content="index,follow" />
 	<meta name="revisit-after" content="4 weeks" />
 
@@ -20,43 +24,66 @@
 	<link type="text/css" rel="stylesheet" href="./../../page/jquery-css/jquery.ui.theme.min.css" />
 	<link type="text/css" rel="stylesheet" href="./../../page/style.min.css" />
 
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<!-- jQuery via CDN with local fall-back -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script type="text/javascript">(window.jQuery) || document.write('\x3Cscript type="text/javascript" src="./page/jquery-css/jquery-1.11.0.min.js">\x3C/script>')</script>
+
+	<!-- jQueryUI via CDN with local fall-back -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+	<script type="text/javascript">(window.jQuery.ui) || document.write('\x3Cscript type="text/javascript" src="./page/jquery-css/jquery-ui-1.10.4.min.js">\x3C/script>')</script>
 
 	<!-- floating table headers -->
 	<script type="text/javascript" src="./../../page/jquery.thfloat-0.7.2.min.js"></script>
+	<!-- custom js -->
 	<script type="text/javascript" src="./../../page/interaction.min.js"></script>
 
 
-	<link rel="start" href="http://www.adviesenzo.nl/index.html" />
-	<link rel="shortcut icon" href="http://www.adviesenzo.nl/favicon.ico" />
-	<link rel="bookmark icon" href="http://www.adviesenzo.nl/favicon.ico" />
-	<link rel="icon" href="http://www.adviesenzo.nl/favicon.ico" type="image/ico" />
+	<link rel="start" href="http://phpcheatsheets.com/index.php" />
+	<link rel="shortcut icon" href="http://phpcheatsheets.com/favicon.ico" />
+	<link rel="bookmark icon" href="http://phpcheatsheets.com/favicon.ico" />
+	<link rel="icon" href="http://phpcheatsheets.com/favicon.ico" type="image/ico" />
 
 
 </head>
 
 
-<body>
+<body class="static-archive">
 <div class="head">
-	<p><a href="http://adviesenzo.nl/"><img src="http://adviesenzo.nl/images/logo_dpi120.gif" width="411" height="80" alt="Logo Advies en zo, Meedenken en -doen" /></a></p>
 
-			<div id="main-menu">
-			<a href="./../../index.php?type=compare" class="top-link">Variable Comparison<br />Cheat sheet</a>
-			<a href="./../../index.php?type=arithmetic" class="top-link">Variable Arithmetic<br />Cheat sheet</a>
-			<a href="./../../index.php?type=test" class="top-link">Variable Testing<br />Cheat sheet</a>
-		</div>
+			<div id="too-much">
+			<a href="http://www.google.com/search?q=fluffy+animals&amp;tbm=isch" target="_blank"><img src="./../../page/jakobwesthoff_3231273333_2473ef9cdf_s.jpg" width="75" height="75" alt="Fluffy ElePHPant" /></a>
+			<p>Too much ?</p>
+			<p><a href="http://www.google.com/search?q=fluffy+animals&amp;tbm=isch" target="_blank">Take a break and rest your eyes</a>.</p>
 		</div>
 
+	<h1><a href="http://phpcheatsheets.com/"><img src="./../../page/php-med-trans.png" width="95" height="51" alt="PHP" /> Cheatsheets</a></h1>
 
-<div class="content">
+	<div id="main-menu">
+		<ul>
+			<li><a href="./../../index.php?page=compare" class="top-link">Variable Comparisons</a></li>
+			<li><a href="./../../index.php?page=arithmetic" class="top-link">Variable Arithmetics</a></li>
+			<li><a href="./../../index.php?page=test" class="top-link">Variable Testing</a></li>
+			<li><a href="./../../index.php?page=other-cheat-sheets" class="top-link">More cheat sheets</a></li>
+			</ul>
+		</div>
+</div>
 
-	<h1>PHP Variable Comparison Cheat Sheet</h1>
+<div class="content-wrapper">
+	<div class="content">
 
-	<h2 id="php-version">
-		This page has been generated with <strong>PHP 5.4.20</strong>
-		<span>Browse <a href="./../../static_results">other versions</a>.</span>
-	</h2>
+		<h2>PHP Variable Comparison</h2>
+
+	
+	<div id="sidebar">
+
+		<h3 id="php-version">
+			This page has been generated with <strong>PHP 5.4.20</strong>
+			<span>Browse <a href="./../../static_results">other versions</a>.</span>
+		</h3>
+
+	</div>
+
+
 
 	<div id="accordion">
 		<h3>Important notes on the comparisons and tests:</h3>
@@ -73,7 +100,7 @@
 				<li><strong>BEWARE</strong>: some variable changing functions will not return a changed value, but will return whether the changing succeeded. You will find this indicated in the function header by the use of <code>$copy</code> (as the test will use a copy of the variable to not influence the other tests in the same table).</li>
 			</ol>
 		</div>
-		
+
 ﻿		<h3>Notes on some variables:</h3>
 		<div>
 			<p>Some of the test variables used, do not print the way they are set, either because they contain invisible characters or because they result in something else, so for your convenience, these are outlined here:</p>
@@ -121,7 +148,7 @@
 		<h3>Legend / How to use the tables:</h3>
 		<div>
 			<ul>
-				<li>The error level for this test sheet has been set to <code>E_ALL ^ E_STRICT</code>. All errors are caught and referenced (with #links) in the tables with details of the error messages (if any) below each table. Similar error messages are grouped together for your convenience.</li>
+				<li>The error level for this test sheet has been set to <code>E_ALL &amp; ~E_STRICT</code>. All errors are caught and referenced (with #links) in the tables with details of the error messages (if any) below each table. Similar error messages are grouped together for your convenience.</li>
 				<li>Some column labels have been shortened to avoid them taking undue space. These are indicated by a <code>&hellip;</code>. If you mouse-over the column label you will see the full variable/test information.</li>
 				<li>In <strong><em>comparison tables</em></strong>, the left-top table header will indicate the comparison used and link to the relevant page in the PHP Manual.</li>
 				<li>In <strong><em>test tables</em></strong>, the left top table header indicates the type of tests. Both this header as well as most column headers link to their respective relevant PHP Manual pages.</li>
@@ -164,13 +191,14 @@
 				</tr>
 				<tr>
 					<th>Resources:</th>
-					<td><span class="resource">Resource id #13</span><br />
+					<td><span class="resource">Resource id #14</span><br />
 </td>
 				</tr>
 			</table>
 		</div>
 
 	</div>
+
 <div id="tabs">
 	<ul>
 		<li><a href="#equal"><strong>==</strong></a></li>
@@ -209,7 +237,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -273,9 +301,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -304,7 +330,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/language.operators.comparison" target="_blank"><strong>==</strong></a></th>
 				</tr>
@@ -322,7 +348,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -386,9 +412,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -417,7 +441,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/language.operators.comparison" target="_blank"><strong>==</strong></a></th>
 				</tr>
@@ -894,7 +918,7 @@
 					</th>
 				</tr>
 				<tr>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 					<td class="value1-i2 value2-notset"><span class="b-true">true</span>
@@ -983,7 +1007,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#equal-errors">#2</a></span>&nbsp;)					</td>
 					<td class="value1-i2 value2-r1 end"><span class="b-false">false</span>
 					</td>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -3902,11 +3926,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<th>array()<br /></th>
 					<td class="value1-ae value2-notset"><span class="b-true">true</span>
 <br /> (&nbsp;<span class="notice"><a href="#equal-errors">#1</a></span>&nbsp;)					</td>
 					<td class="value1-ae value2-n end"><span class="b-true">true</span>
@@ -3993,11 +4013,7 @@
 					</td>
 					<td class="value1-ae value2-r1 end"><span class="b-false">false</span>
 					</td>
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<th>array()<br /></th>
 				</tr>
 				<tr>
 					<th>Array: (<br />
@@ -4432,7 +4448,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="value1-r1 value2-notset"><span class="b-false">false</span>
@@ -4521,7 +4537,7 @@
 					</td>
 					<td class="value1-r1 value2-r1 end"><span class="b-true">true</span>
 					</td>
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -4548,7 +4564,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -4612,9 +4628,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -4643,7 +4657,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/language.operators.comparison" target="_blank"><strong>===</strong></a></th>
 				</tr>
@@ -4661,7 +4675,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -4725,9 +4739,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -4756,7 +4768,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/language.operators.comparison" target="_blank"><strong>===</strong></a></th>
 				</tr>
@@ -5233,7 +5245,7 @@
 					</th>
 				</tr>
 				<tr>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 					<td class="value1-i2 value2-notset"><span class="b-false">false</span>
@@ -5322,7 +5334,7 @@
 					</td>
 					<td class="value1-i2 value2-r1 end"><span class="b-false">false</span>
 					</td>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -8241,11 +8253,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<th>array()<br /></th>
 					<td class="value1-ae value2-notset"><span class="b-false">false</span>
 <br /> (&nbsp;<span class="notice"><a href="#equal_strict-errors">#1</a></span>&nbsp;)					</td>
 					<td class="value1-ae value2-n end"><span class="b-false">false</span>
@@ -8332,11 +8340,7 @@
 					</td>
 					<td class="value1-ae value2-r1 end"><span class="b-false">false</span>
 					</td>
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<th>array()<br /></th>
 				</tr>
 				<tr>
 					<th>Array: (<br />
@@ -8771,7 +8775,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="value1-r1 value2-notset"><span class="b-false">false</span>
@@ -8860,7 +8864,7 @@
 					</td>
 					<td class="value1-r1 value2-r1 end"><span class="b-true">true</span>
 					</td>
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -8885,7 +8889,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -8949,9 +8953,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -8980,7 +8982,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/language.operators.comparison" target="_blank"><strong>!=</strong></a></th>
 				</tr>
@@ -8998,7 +9000,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -9062,9 +9064,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -9093,7 +9093,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/language.operators.comparison" target="_blank"><strong>!=</strong></a></th>
 				</tr>
@@ -9570,7 +9570,7 @@
 					</th>
 				</tr>
 				<tr>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 					<td class="value1-i2 value2-notset"><span class="b-false">false</span>
@@ -9659,7 +9659,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#not_equal-errors">#2</a></span>&nbsp;)					</td>
 					<td class="value1-i2 value2-r1 end"><span class="b-true">true</span>
 					</td>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -12578,11 +12578,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<th>array()<br /></th>
 					<td class="value1-ae value2-notset"><span class="b-false">false</span>
 <br /> (&nbsp;<span class="notice"><a href="#not_equal-errors">#1</a></span>&nbsp;)					</td>
 					<td class="value1-ae value2-n end"><span class="b-false">false</span>
@@ -12669,11 +12665,7 @@
 					</td>
 					<td class="value1-ae value2-r1 end"><span class="b-true">true</span>
 					</td>
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<th>array()<br /></th>
 				</tr>
 				<tr>
 					<th>Array: (<br />
@@ -13108,7 +13100,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="value1-r1 value2-notset"><span class="b-true">true</span>
@@ -13197,7 +13189,7 @@
 					</td>
 					<td class="value1-r1 value2-r1 end"><span class="b-false">false</span>
 					</td>
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -13224,7 +13216,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -13288,9 +13280,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -13319,7 +13309,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/language.operators.comparison" target="_blank"><strong>&lt;&gt;</strong></a></th>
 				</tr>
@@ -13337,7 +13327,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -13401,9 +13391,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -13432,7 +13420,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/language.operators.comparison" target="_blank"><strong>&lt;&gt;</strong></a></th>
 				</tr>
@@ -13909,7 +13897,7 @@
 					</th>
 				</tr>
 				<tr>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 					<td class="value1-i2 value2-notset"><span class="b-false">false</span>
@@ -13998,7 +13986,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#not_equal2-errors">#2</a></span>&nbsp;)					</td>
 					<td class="value1-i2 value2-r1 end"><span class="b-true">true</span>
 					</td>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -16917,11 +16905,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<th>array()<br /></th>
 					<td class="value1-ae value2-notset"><span class="b-false">false</span>
 <br /> (&nbsp;<span class="notice"><a href="#not_equal2-errors">#1</a></span>&nbsp;)					</td>
 					<td class="value1-ae value2-n end"><span class="b-false">false</span>
@@ -17008,11 +16992,7 @@
 					</td>
 					<td class="value1-ae value2-r1 end"><span class="b-true">true</span>
 					</td>
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<th>array()<br /></th>
 				</tr>
 				<tr>
 					<th>Array: (<br />
@@ -17447,7 +17427,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="value1-r1 value2-notset"><span class="b-true">true</span>
@@ -17536,7 +17516,7 @@
 					</td>
 					<td class="value1-r1 value2-r1 end"><span class="b-false">false</span>
 					</td>
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -17563,7 +17543,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -17627,9 +17607,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -17658,7 +17636,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/language.operators.comparison" target="_blank"><strong>!==</strong></a></th>
 				</tr>
@@ -17676,7 +17654,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -17740,9 +17718,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -17771,7 +17747,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/language.operators.comparison" target="_blank"><strong>!==</strong></a></th>
 				</tr>
@@ -18248,7 +18224,7 @@
 					</th>
 				</tr>
 				<tr>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 					<td class="value1-i2 value2-notset"><span class="b-true">true</span>
@@ -18337,7 +18313,7 @@
 					</td>
 					<td class="value1-i2 value2-r1 end"><span class="b-true">true</span>
 					</td>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -21256,11 +21232,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<th>array()<br /></th>
 					<td class="value1-ae value2-notset"><span class="b-true">true</span>
 <br /> (&nbsp;<span class="notice"><a href="#not_equal_strict-errors">#1</a></span>&nbsp;)					</td>
 					<td class="value1-ae value2-n end"><span class="b-true">true</span>
@@ -21347,11 +21319,7 @@
 					</td>
 					<td class="value1-ae value2-r1 end"><span class="b-true">true</span>
 					</td>
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<th>array()<br /></th>
 				</tr>
 				<tr>
 					<th>Array: (<br />
@@ -21786,7 +21754,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="value1-r1 value2-notset"><span class="b-true">true</span>
@@ -21875,7 +21843,7 @@
 					</td>
 					<td class="value1-r1 value2-r1 end"><span class="b-false">false</span>
 					</td>
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -21900,7 +21868,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -21964,9 +21932,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -21995,7 +21961,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/language.operators.comparison" target="_blank"><strong>&lt;</strong></a></th>
 				</tr>
@@ -22013,7 +21979,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -22077,9 +22043,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -22108,7 +22072,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/language.operators.comparison" target="_blank"><strong>&lt;</strong></a></th>
 				</tr>
@@ -22585,7 +22549,7 @@
 					</th>
 				</tr>
 				<tr>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 					<td class="value1-i2 value2-notset"><span class="b-false">false</span>
@@ -22674,7 +22638,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#lt-errors">#2</a></span>&nbsp;)					</td>
 					<td class="value1-i2 value2-r1 end"><span class="b-true">true</span>
 					</td>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -25593,11 +25557,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<th>array()<br /></th>
 					<td class="value1-ae value2-notset"><span class="b-false">false</span>
 <br /> (&nbsp;<span class="notice"><a href="#lt-errors">#1</a></span>&nbsp;)					</td>
 					<td class="value1-ae value2-n end"><span class="b-false">false</span>
@@ -25684,11 +25644,7 @@
 					</td>
 					<td class="value1-ae value2-r1 end"><span class="b-false">false</span>
 					</td>
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<th>array()<br /></th>
 				</tr>
 				<tr>
 					<th>Array: (<br />
@@ -26123,7 +26079,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="value1-r1 value2-notset"><span class="b-false">false</span>
@@ -26212,7 +26168,7 @@
 					</td>
 					<td class="value1-r1 value2-r1 end"><span class="b-false">false</span>
 					</td>
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -26239,7 +26195,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -26303,9 +26259,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -26334,7 +26288,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/language.operators.comparison" target="_blank"><strong>&gt;</strong></a></th>
 				</tr>
@@ -26352,7 +26306,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -26416,9 +26370,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -26447,7 +26399,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/language.operators.comparison" target="_blank"><strong>&gt;</strong></a></th>
 				</tr>
@@ -26924,7 +26876,7 @@
 					</th>
 				</tr>
 				<tr>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 					<td class="value1-i2 value2-notset"><span class="b-false">false</span>
@@ -27013,7 +26965,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#gt-errors">#2</a></span>&nbsp;)					</td>
 					<td class="value1-i2 value2-r1 end"><span class="b-false">false</span>
 					</td>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -29932,11 +29884,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<th>array()<br /></th>
 					<td class="value1-ae value2-notset"><span class="b-false">false</span>
 <br /> (&nbsp;<span class="notice"><a href="#gt-errors">#1</a></span>&nbsp;)					</td>
 					<td class="value1-ae value2-n end"><span class="b-false">false</span>
@@ -30023,11 +29971,7 @@
 					</td>
 					<td class="value1-ae value2-r1 end"><span class="b-true">true</span>
 					</td>
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<th>array()<br /></th>
 				</tr>
 				<tr>
 					<th>Array: (<br />
@@ -30462,7 +30406,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="value1-r1 value2-notset"><span class="b-true">true</span>
@@ -30551,7 +30495,7 @@
 					</td>
 					<td class="value1-r1 value2-r1 end"><span class="b-false">false</span>
 					</td>
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -30578,7 +30522,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -30642,9 +30586,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -30673,7 +30615,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/language.operators.comparison" target="_blank"><strong>&lt;=</strong></a></th>
 				</tr>
@@ -30691,7 +30633,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -30755,9 +30697,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -30786,7 +30726,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/language.operators.comparison" target="_blank"><strong>&lt;=</strong></a></th>
 				</tr>
@@ -31263,7 +31203,7 @@
 					</th>
 				</tr>
 				<tr>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 					<td class="value1-i2 value2-notset"><span class="b-true">true</span>
@@ -31352,7 +31292,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#lte-errors">#2</a></span>&nbsp;)					</td>
 					<td class="value1-i2 value2-r1 end"><span class="b-true">true</span>
 					</td>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -34271,11 +34211,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<th>array()<br /></th>
 					<td class="value1-ae value2-notset"><span class="b-true">true</span>
 <br /> (&nbsp;<span class="notice"><a href="#lte-errors">#1</a></span>&nbsp;)					</td>
 					<td class="value1-ae value2-n end"><span class="b-true">true</span>
@@ -34362,11 +34298,7 @@
 					</td>
 					<td class="value1-ae value2-r1 end"><span class="b-false">false</span>
 					</td>
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<th>array()<br /></th>
 				</tr>
 				<tr>
 					<th>Array: (<br />
@@ -34801,7 +34733,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="value1-r1 value2-notset"><span class="b-false">false</span>
@@ -34890,7 +34822,7 @@
 					</td>
 					<td class="value1-r1 value2-r1 end"><span class="b-true">true</span>
 					</td>
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -34917,7 +34849,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -34981,9 +34913,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -35012,7 +34942,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/language.operators.comparison" target="_blank"><strong>&gt;=</strong></a></th>
 				</tr>
@@ -35030,7 +34960,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -35094,9 +35024,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -35125,7 +35053,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/language.operators.comparison" target="_blank"><strong>&gt;=</strong></a></th>
 				</tr>
@@ -35602,7 +35530,7 @@
 					</th>
 				</tr>
 				<tr>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 					<td class="value1-i2 value2-notset"><span class="b-true">true</span>
@@ -35691,7 +35619,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#gte-errors">#2</a></span>&nbsp;)					</td>
 					<td class="value1-i2 value2-r1 end"><span class="b-false">false</span>
 					</td>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -38610,11 +38538,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<th>array()<br /></th>
 					<td class="value1-ae value2-notset"><span class="b-true">true</span>
 <br /> (&nbsp;<span class="notice"><a href="#gte-errors">#1</a></span>&nbsp;)					</td>
 					<td class="value1-ae value2-n end"><span class="b-true">true</span>
@@ -38701,11 +38625,7 @@
 					</td>
 					<td class="value1-ae value2-r1 end"><span class="b-true">true</span>
 					</td>
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<th>array()<br /></th>
 				</tr>
 				<tr>
 					<th>Array: (<br />
@@ -39140,7 +39060,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="value1-r1 value2-notset"><span class="b-true">true</span>
@@ -39229,7 +39149,7 @@
 					</td>
 					<td class="value1-r1 value2-r1 end"><span class="b-true">true</span>
 					</td>
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -39256,7 +39176,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -39320,9 +39240,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -39351,7 +39269,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/strcmp" target="_blank"><strong>strcmp()</strong></a></th>
 				</tr>
@@ -39369,7 +39287,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -39433,9 +39351,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -39464,7 +39380,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/strcmp" target="_blank"><strong>strcmp()</strong></a></th>
 				</tr>
@@ -39941,7 +39857,7 @@
 					</th>
 				</tr>
 				<tr>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 					<td class="value1-i2 value2-notset"><span class="int">1</span>
@@ -40030,7 +39946,7 @@
 					</td>
 					<td class="value1-i2 value2-r1 end"><span class="null">null</span>
 <br /> (&nbsp;<span class="warning"><a href="#strcmp-errors">#4</a></span>&nbsp;)					</td>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -42949,11 +42865,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<th>array()<br /></th>
 					<td class="value1-ae value2-notset"><span class="null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#strcmp-errors">#1</a></span>&nbsp;)<br /> (&nbsp;<span class="warning"><a href="#strcmp-errors">#5</a></span>&nbsp;)					</td>
 					<td class="value1-ae value2-n end"><span class="null">null</span>
@@ -43040,11 +42952,7 @@
 <br /> (&nbsp;<span class="warning"><a href="#strcmp-errors">#5</a></span>&nbsp;)					</td>
 					<td class="value1-ae value2-r1 end"><span class="null">null</span>
 <br /> (&nbsp;<span class="warning"><a href="#strcmp-errors">#5</a></span>&nbsp;)					</td>
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<th>array()<br /></th>
 				</tr>
 				<tr>
 					<th>Array: (<br />
@@ -43479,7 +43387,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="value1-r1 value2-notset"><span class="null">null</span>
@@ -43568,7 +43476,7 @@
 <br /> (&nbsp;<span class="warning"><a href="#strcmp-errors">#7</a></span>&nbsp;)					</td>
 					<td class="value1-r1 value2-r1 end"><span class="null">null</span>
 <br /> (&nbsp;<span class="warning"><a href="#strcmp-errors">#7</a></span>&nbsp;)					</td>
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -43599,7 +43507,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -43663,9 +43571,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -43694,7 +43600,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/strcasecmp" target="_blank"><strong>strcasecmp()</strong></a></th>
 				</tr>
@@ -43712,7 +43618,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -43776,9 +43682,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -43807,7 +43711,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/strcasecmp" target="_blank"><strong>strcasecmp()</strong></a></th>
 				</tr>
@@ -44284,7 +44188,7 @@
 					</th>
 				</tr>
 				<tr>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 					<td class="value1-i2 value2-notset"><span class="int">1</span>
@@ -44373,7 +44277,7 @@
 					</td>
 					<td class="value1-i2 value2-r1 end"><span class="null">null</span>
 <br /> (&nbsp;<span class="warning"><a href="#strcasecmp-errors">#4</a></span>&nbsp;)					</td>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -47292,11 +47196,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<th>array()<br /></th>
 					<td class="value1-ae value2-notset"><span class="null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#strcasecmp-errors">#1</a></span>&nbsp;)<br /> (&nbsp;<span class="warning"><a href="#strcasecmp-errors">#5</a></span>&nbsp;)					</td>
 					<td class="value1-ae value2-n end"><span class="null">null</span>
@@ -47383,11 +47283,7 @@
 <br /> (&nbsp;<span class="warning"><a href="#strcasecmp-errors">#5</a></span>&nbsp;)					</td>
 					<td class="value1-ae value2-r1 end"><span class="null">null</span>
 <br /> (&nbsp;<span class="warning"><a href="#strcasecmp-errors">#5</a></span>&nbsp;)					</td>
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<th>array()<br /></th>
 				</tr>
 				<tr>
 					<th>Array: (<br />
@@ -47822,7 +47718,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="value1-r1 value2-notset"><span class="null">null</span>
@@ -47911,7 +47807,7 @@
 <br /> (&nbsp;<span class="warning"><a href="#strcasecmp-errors">#7</a></span>&nbsp;)					</td>
 					<td class="value1-r1 value2-r1 end"><span class="null">null</span>
 <br /> (&nbsp;<span class="warning"><a href="#strcasecmp-errors">#7</a></span>&nbsp;)					</td>
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -47942,7 +47838,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -48006,9 +47902,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -48037,7 +47931,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/strnatcmp" target="_blank"><strong>strnatcmp()</strong></a></th>
 				</tr>
@@ -48055,7 +47949,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -48119,9 +48013,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -48150,7 +48042,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/strnatcmp" target="_blank"><strong>strnatcmp()</strong></a></th>
 				</tr>
@@ -48627,7 +48519,7 @@
 					</th>
 				</tr>
 				<tr>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 					<td class="value1-i2 value2-notset"><span class="int">1</span>
@@ -48716,7 +48608,7 @@
 					</td>
 					<td class="value1-i2 value2-r1 end"><span class="null">null</span>
 <br /> (&nbsp;<span class="warning"><a href="#strnatcmp-errors">#4</a></span>&nbsp;)					</td>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -51635,11 +51527,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<th>array()<br /></th>
 					<td class="value1-ae value2-notset"><span class="null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#strnatcmp-errors">#1</a></span>&nbsp;)<br /> (&nbsp;<span class="warning"><a href="#strnatcmp-errors">#5</a></span>&nbsp;)					</td>
 					<td class="value1-ae value2-n end"><span class="null">null</span>
@@ -51726,11 +51614,7 @@
 <br /> (&nbsp;<span class="warning"><a href="#strnatcmp-errors">#5</a></span>&nbsp;)					</td>
 					<td class="value1-ae value2-r1 end"><span class="null">null</span>
 <br /> (&nbsp;<span class="warning"><a href="#strnatcmp-errors">#5</a></span>&nbsp;)					</td>
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<th>array()<br /></th>
 				</tr>
 				<tr>
 					<th>Array: (<br />
@@ -52165,7 +52049,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="value1-r1 value2-notset"><span class="null">null</span>
@@ -52254,7 +52138,7 @@
 <br /> (&nbsp;<span class="warning"><a href="#strnatcmp-errors">#7</a></span>&nbsp;)					</td>
 					<td class="value1-r1 value2-r1 end"><span class="null">null</span>
 <br /> (&nbsp;<span class="warning"><a href="#strnatcmp-errors">#7</a></span>&nbsp;)					</td>
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -52285,7 +52169,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -52349,9 +52233,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -52380,7 +52262,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/strnatcasecmp" target="_blank"><strong>strnatcasecmp()</strong></a></th>
 				</tr>
@@ -52398,7 +52280,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -52462,9 +52344,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -52493,7 +52373,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/strnatcasecmp" target="_blank"><strong>strnatcasecmp()</strong></a></th>
 				</tr>
@@ -52970,7 +52850,7 @@
 					</th>
 				</tr>
 				<tr>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 					<td class="value1-i2 value2-notset"><span class="int">1</span>
@@ -53059,7 +52939,7 @@
 					</td>
 					<td class="value1-i2 value2-r1 end"><span class="null">null</span>
 <br /> (&nbsp;<span class="warning"><a href="#strnatcasecmp-errors">#4</a></span>&nbsp;)					</td>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -55978,11 +55858,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<th>array()<br /></th>
 					<td class="value1-ae value2-notset"><span class="null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#strnatcasecmp-errors">#1</a></span>&nbsp;)<br /> (&nbsp;<span class="warning"><a href="#strnatcasecmp-errors">#5</a></span>&nbsp;)					</td>
 					<td class="value1-ae value2-n end"><span class="null">null</span>
@@ -56069,11 +55945,7 @@
 <br /> (&nbsp;<span class="warning"><a href="#strnatcasecmp-errors">#5</a></span>&nbsp;)					</td>
 					<td class="value1-ae value2-r1 end"><span class="null">null</span>
 <br /> (&nbsp;<span class="warning"><a href="#strnatcasecmp-errors">#5</a></span>&nbsp;)					</td>
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<th>array()<br /></th>
 				</tr>
 				<tr>
 					<th>Array: (<br />
@@ -56508,7 +56380,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="value1-r1 value2-notset"><span class="null">null</span>
@@ -56597,7 +56469,7 @@
 <br /> (&nbsp;<span class="warning"><a href="#strnatcasecmp-errors">#7</a></span>&nbsp;)					</td>
 					<td class="value1-r1 value2-r1 end"><span class="null">null</span>
 <br /> (&nbsp;<span class="warning"><a href="#strnatcasecmp-errors">#7</a></span>&nbsp;)					</td>
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -56628,7 +56500,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -56692,9 +56564,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -56723,7 +56593,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/strcoll" target="_blank"><strong>strcoll()</strong></a></th>
 				</tr>
@@ -56741,7 +56611,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -56805,9 +56675,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -56836,7 +56704,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/strcoll" target="_blank"><strong>strcoll()</strong></a></th>
 				</tr>
@@ -57313,7 +57181,7 @@
 					</th>
 				</tr>
 				<tr>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 					<td class="value1-i2 value2-notset"><span class="int">1</span>
@@ -57402,7 +57270,7 @@
 					</td>
 					<td class="value1-i2 value2-r1 end"><span class="null">null</span>
 <br /> (&nbsp;<span class="warning"><a href="#strcoll-errors">#4</a></span>&nbsp;)					</td>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -60321,11 +60189,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<th>array()<br /></th>
 					<td class="value1-ae value2-notset"><span class="null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#strcoll-errors">#1</a></span>&nbsp;)<br /> (&nbsp;<span class="warning"><a href="#strcoll-errors">#5</a></span>&nbsp;)					</td>
 					<td class="value1-ae value2-n end"><span class="null">null</span>
@@ -60412,11 +60276,7 @@
 <br /> (&nbsp;<span class="warning"><a href="#strcoll-errors">#5</a></span>&nbsp;)					</td>
 					<td class="value1-ae value2-r1 end"><span class="null">null</span>
 <br /> (&nbsp;<span class="warning"><a href="#strcoll-errors">#5</a></span>&nbsp;)					</td>
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<th>array()<br /></th>
 				</tr>
 				<tr>
 					<th>Array: (<br />
@@ -60851,7 +60711,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="value1-r1 value2-notset"><span class="null">null</span>
@@ -60940,7 +60800,7 @@
 <br /> (&nbsp;<span class="warning"><a href="#strcoll-errors">#7</a></span>&nbsp;)					</td>
 					<td class="value1-r1 value2-r1 end"><span class="null">null</span>
 <br /> (&nbsp;<span class="warning"><a href="#strcoll-errors">#7</a></span>&nbsp;)					</td>
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -60971,7 +60831,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -61035,9 +60895,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -61066,7 +60924,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/similar_text" target="_blank"><strong>similar_text()</strong></a></th>
 				</tr>
@@ -61084,7 +60942,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -61148,9 +61006,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -61179,7 +61035,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/similar_text" target="_blank"><strong>similar_text()</strong></a></th>
 				</tr>
@@ -61656,7 +61512,7 @@
 					</th>
 				</tr>
 				<tr>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 					<td class="value1-i2 value2-notset"><span class="int-0">0</span>
@@ -61745,7 +61601,7 @@
 					</td>
 					<td class="value1-i2 value2-r1 end"><span class="null">null</span>
 <br /> (&nbsp;<span class="warning"><a href="#similar_text-errors">#4</a></span>&nbsp;)					</td>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -64664,11 +64520,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<th>array()<br /></th>
 					<td class="value1-ae value2-notset"><span class="null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#similar_text-errors">#1</a></span>&nbsp;)<br /> (&nbsp;<span class="warning"><a href="#similar_text-errors">#5</a></span>&nbsp;)					</td>
 					<td class="value1-ae value2-n end"><span class="null">null</span>
@@ -64755,11 +64607,7 @@
 <br /> (&nbsp;<span class="warning"><a href="#similar_text-errors">#5</a></span>&nbsp;)					</td>
 					<td class="value1-ae value2-r1 end"><span class="null">null</span>
 <br /> (&nbsp;<span class="warning"><a href="#similar_text-errors">#5</a></span>&nbsp;)					</td>
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<th>array()<br /></th>
 				</tr>
 				<tr>
 					<th>Array: (<br />
@@ -65194,7 +65042,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="value1-r1 value2-notset"><span class="null">null</span>
@@ -65283,7 +65131,7 @@
 <br /> (&nbsp;<span class="warning"><a href="#similar_text-errors">#7</a></span>&nbsp;)					</td>
 					<td class="value1-r1 value2-r1 end"><span class="null">null</span>
 <br /> (&nbsp;<span class="warning"><a href="#similar_text-errors">#7</a></span>&nbsp;)					</td>
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -65314,7 +65162,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -65378,9 +65226,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -65409,7 +65255,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/levenshtein" target="_blank"><strong>levenshtein()</strong></a></th>
 				</tr>
@@ -65427,7 +65273,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -65491,9 +65337,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -65522,7 +65366,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/levenshtein" target="_blank"><strong>levenshtein()</strong></a></th>
 				</tr>
@@ -65999,7 +65843,7 @@
 					</th>
 				</tr>
 				<tr>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 					<td class="value1-i2 value2-notset"><span class="int">1</span>
@@ -66088,7 +65932,7 @@
 					</td>
 					<td class="value1-i2 value2-r1 end"><span class="null">null</span>
 <br /> (&nbsp;<span class="warning"><a href="#levenshtein-errors">#4</a></span>&nbsp;)					</td>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -69007,11 +68851,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<th>array()<br /></th>
 					<td class="value1-ae value2-notset"><span class="null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#levenshtein-errors">#1</a></span>&nbsp;)<br /> (&nbsp;<span class="warning"><a href="#levenshtein-errors">#5</a></span>&nbsp;)					</td>
 					<td class="value1-ae value2-n end"><span class="null">null</span>
@@ -69098,11 +68938,7 @@
 <br /> (&nbsp;<span class="warning"><a href="#levenshtein-errors">#5</a></span>&nbsp;)					</td>
 					<td class="value1-ae value2-r1 end"><span class="null">null</span>
 <br /> (&nbsp;<span class="warning"><a href="#levenshtein-errors">#5</a></span>&nbsp;)					</td>
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<th>array()<br /></th>
 				</tr>
 				<tr>
 					<th>Array: (<br />
@@ -69537,7 +69373,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="value1-r1 value2-notset"><span class="null">null</span>
@@ -69626,7 +69462,7 @@
 <br /> (&nbsp;<span class="warning"><a href="#levenshtein-errors">#7</a></span>&nbsp;)					</td>
 					<td class="value1-r1 value2-r1 end"><span class="null">null</span>
 <br /> (&nbsp;<span class="warning"><a href="#levenshtein-errors">#7</a></span>&nbsp;)					</td>
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -69657,7 +69493,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -69721,9 +69557,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -69752,7 +69586,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/bccomp" target="_blank"><strong>bccomp()</strong></a></th>
 				</tr>
@@ -69770,7 +69604,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -69834,9 +69668,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -69865,7 +69697,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/bccomp" target="_blank"><strong>bccomp()</strong></a></th>
 				</tr>
@@ -70342,7 +70174,7 @@
 					</th>
 				</tr>
 				<tr>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 					<td class="value1-i2 value2-notset"><span class="int-0">0</span>
@@ -70431,7 +70263,7 @@
 					</td>
 					<td class="value1-i2 value2-r1 end"><span class="null">null</span>
 <br /> (&nbsp;<span class="warning"><a href="#bccomp-errors">#4</a></span>&nbsp;)					</td>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -73350,11 +73182,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<th>array()<br /></th>
 					<td class="value1-ae value2-notset"><span class="null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#bccomp-errors">#1</a></span>&nbsp;)<br /> (&nbsp;<span class="warning"><a href="#bccomp-errors">#5</a></span>&nbsp;)					</td>
 					<td class="value1-ae value2-n end"><span class="null">null</span>
@@ -73441,11 +73269,7 @@
 <br /> (&nbsp;<span class="warning"><a href="#bccomp-errors">#5</a></span>&nbsp;)					</td>
 					<td class="value1-ae value2-r1 end"><span class="null">null</span>
 <br /> (&nbsp;<span class="warning"><a href="#bccomp-errors">#5</a></span>&nbsp;)					</td>
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<th>array()<br /></th>
 				</tr>
 				<tr>
 					<th>Array: (<br />
@@ -73880,7 +73704,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="value1-r1 value2-notset"><span class="null">null</span>
@@ -73969,7 +73793,7 @@
 <br /> (&nbsp;<span class="warning"><a href="#bccomp-errors">#7</a></span>&nbsp;)					</td>
 					<td class="value1-r1 value2-r1 end"><span class="null">null</span>
 <br /> (&nbsp;<span class="warning"><a href="#bccomp-errors">#7</a></span>&nbsp;)					</td>
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -74000,7 +73824,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -74064,9 +73888,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -74095,7 +73917,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/min" target="_blank"><strong>min()</strong></a> <sup><a href="#min-note1">&Dagger;1</a></sup> <sup><a href="#min-note2">&Dagger;2</a></sup></th>
 				</tr>
@@ -74113,7 +73935,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -74177,9 +73999,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -74208,7 +74028,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/min" target="_blank"><strong>min()</strong></a> <sup><a href="#min-note1">&Dagger;1</a></sup> <sup><a href="#min-note2">&Dagger;2</a></sup></th>
 				</tr>
@@ -74510,7 +74330,7 @@
 					</td>
 					<td class="value1-b2 value2-i1"><b class="bool"><i>b</i></b> <i class="b-true">true</i><br />
 					</td>
-					<td class="value1-b2 value2-i2"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-b2 value2-i2"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-b2 value2-i3"><b class="bool"><i>b</i></b> <i class="b-true">true</i><br />
 					</td>
@@ -74574,10 +74394,7 @@
 					</td>
 					<td class="value1-b2 value2-sv end"><b class="bool"><i>b</i></b> <i class="b-true">true</i><br />
 					</td>
-					<td class="value1-b2 value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-b2 value2-ae">array()<br /></td>
 					<td class="value1-b2 value2-a3"><b class="bool"><i>b</i></b> <i class="b-true">true</i><br />
 					</td>
 					<td class="value1-b2 value2-a4 end"><b class="bool"><i>b</i></b> <i class="b-true">true</i><br />
@@ -74606,7 +74423,7 @@
 					</td>
 					<td class="value1-i1 value2-i1"><span class="int">1</span><br />
 					</td>
-					<td class="value1-i1 value2-i2"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i1 value2-i2"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-i1 value2-i3"><span class="int">-1</span><br />
 					</td>
@@ -74687,36 +74504,36 @@
 					</th>
 				</tr>
 				<tr>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
-					<td class="value1-i2 value2-notset"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-notset"><span class="int"><span class="int-0">0</span></span><br />
 <br /> (&nbsp;<span class="notice"><a href="#min-errors">#1</a></span>&nbsp;)					</td>
-					<td class="value1-i2 value2-n end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-n end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-b1"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-b1"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-b2 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-b2 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-i1"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-i1"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-i2"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-i2"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-i2 value2-i3"><span class="int">-1</span><br />
 					</td>
-					<td class="value1-i2 value2-i5"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-i5"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-i8"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-i8"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-i9"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-i9"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-ia end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-ia end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-f1"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-f1"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-f2"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-f2"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-f3"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-f3"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-i2 value2-f4"><span class="float">-1.3</span><br />
 					</td>
@@ -74724,59 +74541,59 @@
 					</td>
 					<td class="value1-i2 value2-f6"><span class="float">-INF</span><br />
 					</td>
-					<td class="value1-i2 value2-f7 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-f7 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-se"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-se"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-s1"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-s1"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-s2"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-s2"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-s3"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-s3"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-s4"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-s4"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-s5"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-s5"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-i2 value2-s6"><span class="string">&lsquo;-1&rsquo;</span><br />
 					</td>
-					<td class="value1-i2 value2-s7"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-s7"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-s8"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-s8"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-s9"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-s9"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-i2 value2-sa"><span class="string">&lsquo;-1.305&rsquo;</span><br />
 					</td>
-					<td class="value1-i2 value2-sb"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-sb"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-sc"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-sc"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-sd"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-sd"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-sf"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-sf"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-sg"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-sg"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-sh"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-sh"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-su"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-su"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-sv end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-sv end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-ae"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-ae"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-a3"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-a3"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-a4 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-a4 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-oe"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-oe"><span class="int"><span class="int-0">0</span></span><br />
 <br /> (&nbsp;<span class="notice"><a href="#min-errors">#2</a></span>&nbsp;)					</td>
-					<td class="value1-i2 value2-o2 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-o2 end"><span class="int"><span class="int-0">0</span></span><br />
 <br /> (&nbsp;<span class="notice"><a href="#min-errors">#2</a></span>&nbsp;)					</td>
-					<td class="value1-i2 value2-r1 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-r1 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -74888,7 +74705,7 @@
 					</td>
 					<td class="value1-i5 value2-i1"><span class="int">1</span><br />
 					</td>
-					<td class="value1-i5 value2-i2"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i5 value2-i2"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-i5 value2-i3"><span class="int">-1</span><br />
 					</td>
@@ -74979,7 +74796,7 @@
 )<br />
 
 <br /> (&nbsp;<span class="notice"><a href="#min-errors">#2</a></span>&nbsp;)					</td>
-					<td class="value1-i5 value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-i5 value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th><span class="int"><b><i>int</i></b> : 42</span><br />
 
@@ -74999,7 +74816,7 @@
 					</td>
 					<td class="value1-i8 value2-i1"><span class="int">1</span><br />
 					</td>
-					<td class="value1-i8 value2-i2"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i8 value2-i2"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-i8 value2-i3"><span class="int">-1</span><br />
 					</td>
@@ -75090,7 +74907,7 @@
 )<br />
 
 <br /> (&nbsp;<span class="notice"><a href="#min-errors">#2</a></span>&nbsp;)					</td>
-					<td class="value1-i8 value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-i8 value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th><sup class="fright"><a href="#var-legend-i8">&dagger;i8</a></sup><span class="int"><b><i>int</i></b> : 13369593</span><br />
 
@@ -75110,7 +74927,7 @@
 					</td>
 					<td class="value1-i9 value2-i1"><span class="int">1</span><br />
 					</td>
-					<td class="value1-i9 value2-i2"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i9 value2-i2"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-i9 value2-i3"><span class="int">-1</span><br />
 					</td>
@@ -75201,7 +75018,7 @@
 )<br />
 
 <br /> (&nbsp;<span class="notice"><a href="#min-errors">#2</a></span>&nbsp;)					</td>
-					<td class="value1-i9 value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-i9 value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th><sup class="fright"><a href="#var-legend-i9">&dagger;i9</a></sup><span class="int"><b><i>int</i></b> : 83</span><br />
 
@@ -75221,7 +75038,7 @@
 					</td>
 					<td class="value1-ia value2-i1"><span class="int">1</span><br />
 					</td>
-					<td class="value1-ia value2-i2"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-ia value2-i2"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-ia value2-i3"><span class="int">-1</span><br />
 					</td>
@@ -75312,7 +75129,7 @@
 )<br />
 
 <br /> (&nbsp;<span class="notice"><a href="#min-errors">#2</a></span>&nbsp;)					</td>
-					<td class="value1-ia value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-ia value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th><span class="int"><b><i>int</i></b> : 57</span><br />
 
@@ -75332,7 +75149,7 @@
 					</td>
 					<td class="value1-f1 value2-i1"><span class="int">1</span><br />
 					</td>
-					<td class="value1-f1 value2-i2"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-f1 value2-i2"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-f1 value2-i3"><span class="int">-1</span><br />
 					</td>
@@ -75443,7 +75260,7 @@
 					</td>
 					<td class="value1-f2 value2-i1"><span class="float">0.005</span><br />
 					</td>
-					<td class="value1-f2 value2-i2"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-f2 value2-i2"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-f2 value2-i3"><span class="int">-1</span><br />
 					</td>
@@ -75725,7 +75542,7 @@
 					</td>
 					<td class="value1-f5 value2-i1"><span class="int">1</span><br />
 					</td>
-					<td class="value1-f5 value2-i2"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-f5 value2-i2"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-f5 value2-i3"><span class="int">-1</span><br />
 					</td>
@@ -75816,7 +75633,7 @@
 )<br />
 
 <br /> (&nbsp;<span class="notice"><a href="#min-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-f5 value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-f5 value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th><sup class="fright"><a href="#var-legend-f5">&dagger;f5</a></sup><span class="float"><b><i>float</i></b> : NAN</span><br />
 
@@ -75930,7 +75747,7 @@
 					</td>
 					<td class="value1-f7 value2-i1"><span class="int">1</span><br />
 					</td>
-					<td class="value1-f7 value2-i2"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-f7 value2-i2"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-f7 value2-i3"><span class="int">-1</span><br />
 					</td>
@@ -76021,7 +75838,7 @@
 )<br />
 
 <br /> (&nbsp;<span class="notice"><a href="#min-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-f7 value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-f7 value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th><sup class="fright"><a href="#var-legend-f7">&dagger;f7</a></sup><span class="float"><b><i>float</i></b> : 123450000</span><br />
 
@@ -76229,7 +76046,7 @@
 					</td>
 					<td class="value1-s2 value2-i1"><span class="string">&lsquo; 1&rsquo;</span><br />
 					</td>
-					<td class="value1-s2 value2-i2"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-s2 value2-i2"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-s2 value2-i3"><span class="int">-1</span><br />
 					</td>
@@ -76323,7 +76140,7 @@
 					</td>
 					<td class="value1-s3 value2-i1"><span class="int">1</span><br />
 					</td>
-					<td class="value1-s3 value2-i2"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-s3 value2-i2"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-s3 value2-i3"><span class="int">-1</span><br />
 					</td>
@@ -76417,7 +76234,7 @@
 					</td>
 					<td class="value1-s4 value2-i1"><span class="string">&lsquo;1&rsquo;</span><br />
 					</td>
-					<td class="value1-s4 value2-i2"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-s4 value2-i2"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-s4 value2-i3"><span class="int">-1</span><br />
 					</td>
@@ -76699,7 +76516,7 @@
 					</td>
 					<td class="value1-s7 value2-i1"><span class="int">1</span><br />
 					</td>
-					<td class="value1-s7 value2-i2"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-s7 value2-i2"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-s7 value2-i3"><span class="int">-1</span><br />
 					</td>
@@ -76773,7 +76590,7 @@
 					</td>
 					<td class="value1-s7 value2-o2 end"><span class="string">&lsquo;42&rsquo;</span><br />
 					</td>
-					<td class="value1-s7 value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-s7 value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[2]</i></b> : &lsquo;42&rsquo;</span><br />
 
@@ -76793,7 +76610,7 @@
 					</td>
 					<td class="value1-s8 value2-i1"><span class="int">1</span><br />
 					</td>
-					<td class="value1-s8 value2-i2"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-s8 value2-i2"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-s8 value2-i3"><span class="int">-1</span><br />
 					</td>
@@ -77368,7 +77185,7 @@
 					</td>
 					<td class="value1-sf value2-i1"><span class="int">1</span><br />
 					</td>
-					<td class="value1-sf value2-i2"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-sf value2-i2"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-sf value2-i3"><span class="int">-1</span><br />
 					</td>
@@ -77442,7 +77259,7 @@
 					</td>
 					<td class="value1-sf value2-o2 end"><span class="string">&lsquo;123str&rsquo;</span><br />
 					</td>
-					<td class="value1-sf value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-sf value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[6]</i></b> : &lsquo;123str&rsquo;</span><br />
 
@@ -77567,7 +77384,7 @@
 					</td>
 					<td class="value1-sh value2-i1"><span class="int">1</span><br />
 					</td>
-					<td class="value1-sh value2-i2"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-sh value2-i2"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-sh value2-i3"><span class="int">-1</span><br />
 					</td>
@@ -77641,7 +77458,7 @@
 					</td>
 					<td class="value1-sh value2-o2 end"><span class="string">&lsquo;123, &quot;str&quot;&rsquo;</span><br />
 					</td>
-					<td class="value1-sh value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-sh value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[10]</i></b> : &lsquo;123, &quot;str&quot;&rsquo;</span><br />
 
@@ -77661,7 +77478,7 @@
 					</td>
 					<td class="value1-su value2-i1"><span class="int">1</span><br />
 					</td>
-					<td class="value1-su value2-i2"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-su value2-i2"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-su value2-i3"><span class="int">-1</span><br />
 					</td>
@@ -77735,7 +77552,7 @@
 					</td>
 					<td class="value1-su value2-o2 end"><span class="string">&lsquo;0xCC00F9&rsquo;</span><br />
 					</td>
-					<td class="value1-su value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-su value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[8]</i></b> : &lsquo;0xCC00F9&rsquo;</span><br />
 
@@ -77755,7 +77572,7 @@
 					</td>
 					<td class="value1-sv value2-i1"><span class="int">1</span><br />
 					</td>
-					<td class="value1-sv value2-i2"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-sv value2-i2"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-sv value2-i3"><span class="int">-1</span><br />
 					</td>
@@ -77829,37 +77646,21 @@
 					</td>
 					<td class="value1-sv value2-o2 end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</td>
-					<td class="value1-sv value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-sv value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[4]</i></b> : &lsquo;0123&rsquo;</span><br />
 
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
-					<td class="value1-ae value2-notset">Array: (<br />
-)<br />
-
-<br /> (&nbsp;<span class="notice"><a href="#min-errors">#1</a></span>&nbsp;)					</td>
-					<td class="value1-ae value2-n end">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-b1">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-b2 end">Array: (<br />
-)<br />
-
-					</td>
+					<th>array()<br /></th>
+					<td class="value1-ae value2-notset">array()<br /><br /> (&nbsp;<span class="notice"><a href="#min-errors">#1</a></span>&nbsp;)					</td>
+					<td class="value1-ae value2-n end">array()<br /></td>
+					<td class="value1-ae value2-b1">array()<br /></td>
+					<td class="value1-ae value2-b2 end">array()<br /></td>
 					<td class="value1-ae value2-i1"><span class="int">1</span><br />
 					</td>
-					<td class="value1-ae value2-i2"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-ae value2-i2"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-ae value2-i3"><span class="int">-1</span><br />
 					</td>
@@ -77923,33 +77724,14 @@
 					</td>
 					<td class="value1-ae value2-sv end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</td>
-					<td class="value1-ae value2-ae">Array: (<br />
-)<br />
-
+					<td class="value1-ae value2-ae">array()<br /></td>
+					<td class="value1-ae value2-a3">array()<br /></td>
+					<td class="value1-ae value2-a4 end">array()<br /></td>
+					<td class="value1-ae value2-oe">array()<br /></td>
+					<td class="value1-ae value2-o2 end">array()<br /></td>
+					<td class="value1-ae value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
-					<td class="value1-ae value2-a3">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-a4 end">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-oe">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-o2 end">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-r1 end"><span class="resource">Resource id #15</span><br />
-					</td>
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<th>array()<br /></th>
 				</tr>
 				<tr>
 					<th>Array: (<br />
@@ -77971,7 +77753,7 @@
 					</td>
 					<td class="value1-a3 value2-i1"><span class="int">1</span><br />
 					</td>
-					<td class="value1-a3 value2-i2"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-a3 value2-i2"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-a3 value2-i3"><span class="int">-1</span><br />
 					</td>
@@ -78035,10 +77817,7 @@
 					</td>
 					<td class="value1-a3 value2-sv end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</td>
-					<td class="value1-a3 value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-a3 value2-ae">array()<br /></td>
 					<td class="value1-a3 value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -78059,7 +77838,7 @@
 )<br />
 
 					</td>
-					<td class="value1-a3 value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-a3 value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th>Array: (<br />
 &nbsp;&nbsp;&nbsp;&nbsp;[1 <b class="int"><i>(int)</i></b>] => <span class="string"><b><i>string[6]</i></b> : &lsquo;string&rsquo;</span><br />
@@ -78098,7 +77877,7 @@
 					</td>
 					<td class="value1-a4 value2-i1"><span class="int">1</span><br />
 					</td>
-					<td class="value1-a4 value2-i2"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-a4 value2-i2"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-a4 value2-i3"><span class="int">-1</span><br />
 					</td>
@@ -78162,10 +77941,7 @@
 					</td>
 					<td class="value1-a4 value2-sv end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</td>
-					<td class="value1-a4 value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-a4 value2-ae">array()<br /></td>
 					<td class="value1-a4 value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -78201,7 +77977,7 @@
 )<br />
 
 					</td>
-					<td class="value1-a4 value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-a4 value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th>Array: (<br />
 &nbsp;&nbsp;&nbsp;&nbsp;[0 <b class="int"><i>(int)</i></b>] => <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
@@ -78247,7 +78023,7 @@
 )<br />
 
 <br /> (&nbsp;<span class="notice"><a href="#min-errors">#2</a></span>&nbsp;)					</td>
-					<td class="value1-oe value2-i2"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-oe value2-i2"><span class="int"><span class="int-0">0</span></span><br />
 <br /> (&nbsp;<span class="notice"><a href="#min-errors">#2</a></span>&nbsp;)					</td>
 					<td class="value1-oe value2-i3"><span class="int">-1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#min-errors">#2</a></span>&nbsp;)					</td>
@@ -78347,10 +78123,7 @@
 					</td>
 					<td class="value1-oe value2-sv end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</td>
-					<td class="value1-oe value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-oe value2-ae">array()<br /></td>
 					<td class="value1-oe value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -78382,7 +78155,7 @@
 )<br />
 
 					</td>
-					<td class="value1-oe value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-oe value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th>Object: 
 (<br />
@@ -78441,7 +78214,7 @@
 )<br />
 
 <br /> (&nbsp;<span class="notice"><a href="#min-errors">#2</a></span>&nbsp;)					</td>
-					<td class="value1-o2 value2-i2"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-o2 value2-i2"><span class="int"><span class="int-0">0</span></span><br />
 <br /> (&nbsp;<span class="notice"><a href="#min-errors">#2</a></span>&nbsp;)					</td>
 					<td class="value1-o2 value2-i3"><span class="int">-1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#min-errors">#2</a></span>&nbsp;)					</td>
@@ -78593,10 +78366,7 @@
 					</td>
 					<td class="value1-o2 value2-sv end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</td>
-					<td class="value1-o2 value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-o2 value2-ae">array()<br /></td>
 					<td class="value1-o2 value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -78638,7 +78408,7 @@
 )<br />
 
 					</td>
-					<td class="value1-o2 value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-o2 value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th>Object: 
 (<br />
@@ -78656,7 +78426,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="value1-r1 value2-notset"><span class="null">null</span>
@@ -78665,21 +78435,21 @@
 					</td>
 					<td class="value1-r1 value2-b1"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
 					</td>
-					<td class="value1-r1 value2-b2 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-b2 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<td class="value1-r1 value2-i1"><span class="int">1</span><br />
 					</td>
-					<td class="value1-r1 value2-i2"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-r1 value2-i2"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-r1 value2-i3"><span class="int">-1</span><br />
 					</td>
-					<td class="value1-r1 value2-i5"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-i5"><span class="resource">Resource id #16</span><br />
 					</td>
-					<td class="value1-r1 value2-i8"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-i8"><span class="resource">Resource id #16</span><br />
 					</td>
-					<td class="value1-r1 value2-i9"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-i9"><span class="resource">Resource id #16</span><br />
 					</td>
-					<td class="value1-r1 value2-ia end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-ia end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<td class="value1-r1 value2-f1"><span class="float">1.3</span><br />
 					</td>
@@ -78693,7 +78463,7 @@
 					</td>
 					<td class="value1-r1 value2-f6"><span class="float">-INF</span><br />
 					</td>
-					<td class="value1-r1 value2-f7 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-f7 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<td class="value1-r1 value2-se"><span class="string">&lsquo;&rsquo;</span><br />
 					</td>
@@ -78709,7 +78479,7 @@
 					</td>
 					<td class="value1-r1 value2-s6"><span class="string">&lsquo;-1&rsquo;</span><br />
 					</td>
-					<td class="value1-r1 value2-s7"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-s7"><span class="resource">Resource id #16</span><br />
 					</td>
 					<td class="value1-r1 value2-s8"><span class="string">&lsquo;1.3&rsquo;</span><br />
 					</td>
@@ -78723,29 +78493,29 @@
 					</td>
 					<td class="value1-r1 value2-sd"><span class="string">&lsquo;null&rsquo;</span><br />
 					</td>
-					<td class="value1-r1 value2-sf"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-sf"><span class="resource">Resource id #16</span><br />
 					</td>
 					<td class="value1-r1 value2-sg"><span class="string">&lsquo;str123&rsquo;</span><br />
 					</td>
-					<td class="value1-r1 value2-sh"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-sh"><span class="resource">Resource id #16</span><br />
 					</td>
-					<td class="value1-r1 value2-su"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-su"><span class="resource">Resource id #16</span><br />
 					</td>
-					<td class="value1-r1 value2-sv end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-sv end"><span class="resource">Resource id #16</span><br />
 					</td>
-					<td class="value1-r1 value2-ae"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-ae"><span class="resource">Resource id #16</span><br />
 					</td>
-					<td class="value1-r1 value2-a3"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-a3"><span class="resource">Resource id #16</span><br />
 					</td>
-					<td class="value1-r1 value2-a4 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-a4 end"><span class="resource">Resource id #16</span><br />
 					</td>
-					<td class="value1-r1 value2-oe"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-oe"><span class="resource">Resource id #16</span><br />
 					</td>
-					<td class="value1-r1 value2-o2 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-o2 end"><span class="resource">Resource id #16</span><br />
 					</td>
-					<td class="value1-r1 value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -78780,7 +78550,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -78844,9 +78614,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -78875,7 +78643,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/max" target="_blank"><strong>max()</strong></a> <sup><a href="#max-note1">&Dagger;1</a></sup> <sup><a href="#max-note2">&Dagger;2</a></sup></th>
 				</tr>
@@ -78893,7 +78661,7 @@
 					</th>
 					<th><span class="int">1</span><br />
 					</th>
-					<th><span class="int"><b class="int-0">0</b></span><br />
+					<th><span class="int"><span class="int-0">0</span></span><br />
 					</th>
 					<th><span class="int">-1</span><br />
 					</th>
@@ -78957,9 +78725,7 @@
 					</th>
 					<th class="end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</th>
-					<th><span title="Array: (
-)
-">Array(&hellip;)</span>					</th>
+					<th>array()<br /></th>
 					<th><span title="Array: (
   [1] =&gt; &#039;string&#039;
 )
@@ -78988,7 +78754,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #15</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/max" target="_blank"><strong>max()</strong></a> <sup><a href="#max-note1">&Dagger;1</a></sup> <sup><a href="#max-note2">&Dagger;2</a></sup></th>
 				</tr>
@@ -79110,7 +78876,7 @@
 )<br />
 
 					</td>
-					<td class="value1-notset value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-notset value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th><span class="null"><b><i>null</i></b> :  ( = <i>NULL</i> )</span><br />
 
@@ -79232,7 +78998,7 @@
 )<br />
 
 					</td>
-					<td class="value1-n value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-n value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th><span class="null"><b><i>null</i></b> :  ( = <i>NULL</i> )</span><br />
 
@@ -79354,7 +79120,7 @@
 )<br />
 
 					</td>
-					<td class="value1-b1 value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-b1 value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th><span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
 
@@ -79532,10 +79298,7 @@
 					</td>
 					<td class="value1-i1 value2-sv end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</td>
-					<td class="value1-i1 value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-i1 value2-ae">array()<br /></td>
 					<td class="value1-i1 value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -79555,29 +79318,29 @@
 <br /> (&nbsp;<span class="notice"><a href="#max-errors">#2</a></span>&nbsp;)					</td>
 					<td class="value1-i1 value2-o2 end"><span class="int">1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#max-errors">#2</a></span>&nbsp;)					</td>
-					<td class="value1-i1 value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-i1 value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th><span class="int"><b><i>int</i></b> : 1</span><br />
 
 					</th>
 				</tr>
 				<tr>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
-					<td class="value1-i2 value2-notset"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-notset"><span class="int"><span class="int-0">0</span></span><br />
 <br /> (&nbsp;<span class="notice"><a href="#max-errors">#1</a></span>&nbsp;)					</td>
-					<td class="value1-i2 value2-n end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-n end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-b1"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-b1"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-i2 value2-b2 end"><b class="bool"><i>b</i></b> <i class="b-true">true</i><br />
 					</td>
 					<td class="value1-i2 value2-i1"><span class="int">1</span><br />
 					</td>
-					<td class="value1-i2 value2-i2"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-i2"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-i3"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-i3"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-i2 value2-i5"><span class="int">42</span><br />
 					</td>
@@ -79591,19 +79354,19 @@
 					</td>
 					<td class="value1-i2 value2-f2"><span class="float">0.005</span><br />
 					</td>
-					<td class="value1-i2 value2-f3"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-f3"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-f4"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-f4"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-f5"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-f5"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-f6"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-f6"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-i2 value2-f7 end"><span class="float">123450000</span><br />
 					</td>
-					<td class="value1-i2 value2-se"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-se"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-s1"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-s1"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-i2 value2-s2"><span class="string">&lsquo; 1&rsquo;</span><br />
 					</td>
@@ -79611,27 +79374,27 @@
 					</td>
 					<td class="value1-i2 value2-s4"><span class="string">&lsquo;1&rsquo;</span><br />
 					</td>
-					<td class="value1-i2 value2-s5"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-s5"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-s6"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-s6"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-i2 value2-s7"><span class="string">&lsquo;42&rsquo;</span><br />
 					</td>
 					<td class="value1-i2 value2-s8"><span class="string">&lsquo;1.3&rsquo;</span><br />
 					</td>
-					<td class="value1-i2 value2-s9"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-s9"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-sa"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-sa"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-sb"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-sb"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-sc"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-sc"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-i2 value2-sd"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-sd"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-i2 value2-sf"><span class="string">&lsquo;123str&rsquo;</span><br />
 					</td>
-					<td class="value1-i2 value2-sg"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i2 value2-sg"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-i2 value2-sh"><span class="string">&lsquo;123, &quot;str&quot;&rsquo;</span><br />
 					</td>
@@ -79639,10 +79402,7 @@
 					</td>
 					<td class="value1-i2 value2-sv end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</td>
-					<td class="value1-i2 value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-i2 value2-ae">array()<br /></td>
 					<td class="value1-i2 value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -79679,9 +79439,9 @@
 )<br />
 
 <br /> (&nbsp;<span class="notice"><a href="#max-errors">#2</a></span>&nbsp;)					</td>
-					<td class="value1-i2 value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-i2 value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
-					<th><span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -79699,7 +79459,7 @@
 					</td>
 					<td class="value1-i3 value2-i1"><span class="int">1</span><br />
 					</td>
-					<td class="value1-i3 value2-i2"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-i3 value2-i2"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-i3 value2-i3"><span class="int">-1</span><br />
 					</td>
@@ -79763,10 +79523,7 @@
 					</td>
 					<td class="value1-i3 value2-sv end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</td>
-					<td class="value1-i3 value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-i3 value2-ae">array()<br /></td>
 					<td class="value1-i3 value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -79803,7 +79560,7 @@
 )<br />
 
 <br /> (&nbsp;<span class="notice"><a href="#max-errors">#2</a></span>&nbsp;)					</td>
-					<td class="value1-i3 value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-i3 value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th><span class="int"><b><i>int</i></b> : -1</span><br />
 
@@ -79887,10 +79644,7 @@
 					</td>
 					<td class="value1-i5 value2-sv end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</td>
-					<td class="value1-i5 value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-i5 value2-ae">array()<br /></td>
 					<td class="value1-i5 value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -79994,10 +79748,7 @@
 					</td>
 					<td class="value1-i8 value2-sv end"><span class="int">13369593</span><br />
 					</td>
-					<td class="value1-i8 value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-i8 value2-ae">array()<br /></td>
 					<td class="value1-i8 value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -80101,10 +79852,7 @@
 					</td>
 					<td class="value1-i9 value2-sv end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</td>
-					<td class="value1-i9 value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-i9 value2-ae">array()<br /></td>
 					<td class="value1-i9 value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -80208,10 +79956,7 @@
 					</td>
 					<td class="value1-ia value2-sv end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</td>
-					<td class="value1-ia value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-ia value2-ae">array()<br /></td>
 					<td class="value1-ia value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -80315,10 +80060,7 @@
 					</td>
 					<td class="value1-f1 value2-sv end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</td>
-					<td class="value1-f1 value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-f1 value2-ae">array()<br /></td>
 					<td class="value1-f1 value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -80338,7 +80080,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#max-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-f1 value2-o2 end"><span class="float">1.3</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#max-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-f1 value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-f1 value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th><span class="float"><b><i>float</i></b> : 1.3</span><br />
 
@@ -80422,10 +80164,7 @@
 					</td>
 					<td class="value1-f2 value2-sv end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</td>
-					<td class="value1-f2 value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-f2 value2-ae">array()<br /></td>
 					<td class="value1-f2 value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -80462,7 +80201,7 @@
 )<br />
 
 <br /> (&nbsp;<span class="notice"><a href="#max-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-f2 value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-f2 value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th><span class="float"><b><i>float</i></b> : 0.005</span><br />
 
@@ -80546,10 +80285,7 @@
 					</td>
 					<td class="value1-f3 value2-sv end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</td>
-					<td class="value1-f3 value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-f3 value2-ae">array()<br /></td>
 					<td class="value1-f3 value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -80586,7 +80322,7 @@
 )<br />
 
 <br /> (&nbsp;<span class="notice"><a href="#max-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-f3 value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-f3 value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th><span class="float"><b><i>float</i></b> : 0</span><br />
 
@@ -80606,7 +80342,7 @@
 					</td>
 					<td class="value1-f4 value2-i1"><span class="int">1</span><br />
 					</td>
-					<td class="value1-f4 value2-i2"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-f4 value2-i2"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-f4 value2-i3"><span class="int">-1</span><br />
 					</td>
@@ -80670,10 +80406,7 @@
 					</td>
 					<td class="value1-f4 value2-sv end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</td>
-					<td class="value1-f4 value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-f4 value2-ae">array()<br /></td>
 					<td class="value1-f4 value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -80710,7 +80443,7 @@
 )<br />
 
 <br /> (&nbsp;<span class="notice"><a href="#max-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-f4 value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-f4 value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th><span class="float"><b><i>float</i></b> : -1.3</span><br />
 
@@ -80794,10 +80527,7 @@
 					</td>
 					<td class="value1-f5 value2-sv end"><span class="float">NAN</span><br />
 					</td>
-					<td class="value1-f5 value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-f5 value2-ae">array()<br /></td>
 					<td class="value1-f5 value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -80837,7 +80567,7 @@
 					</td>
 					<td class="value1-f6 value2-i1"><span class="int">1</span><br />
 					</td>
-					<td class="value1-f6 value2-i2"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-f6 value2-i2"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-f6 value2-i3"><span class="int">-1</span><br />
 					</td>
@@ -80901,10 +80631,7 @@
 					</td>
 					<td class="value1-f6 value2-sv end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</td>
-					<td class="value1-f6 value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-f6 value2-ae">array()<br /></td>
 					<td class="value1-f6 value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -80941,7 +80668,7 @@
 )<br />
 
 <br /> (&nbsp;<span class="notice"><a href="#max-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-f6 value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-f6 value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th><sup class="fright"><a href="#var-legend-f6">&dagger;f6</a></sup><span class="float"><b><i>float</i></b> : -INF</span><br />
 
@@ -81025,10 +80752,7 @@
 					</td>
 					<td class="value1-f7 value2-sv end"><span class="float">123450000</span><br />
 					</td>
-					<td class="value1-f7 value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-f7 value2-ae">array()<br /></td>
 					<td class="value1-f7 value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -81132,10 +80856,7 @@
 					</td>
 					<td class="value1-se value2-sv end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</td>
-					<td class="value1-se value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-se value2-ae">array()<br /></td>
 					<td class="value1-se value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -81172,7 +80893,7 @@
 )<br />
 
 					</td>
-					<td class="value1-se value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-se value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[0]</i></b> : &lsquo;&rsquo;</span><br />
 
@@ -81256,10 +80977,7 @@
 					</td>
 					<td class="value1-s1 value2-sv end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</td>
-					<td class="value1-s1 value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-s1 value2-ae">array()<br /></td>
 					<td class="value1-s1 value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -81296,7 +81014,7 @@
 )<br />
 
 					</td>
-					<td class="value1-s1 value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-s1 value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[1]</i></b> : &lsquo; &rsquo;</span><br />
 
@@ -81380,10 +81098,7 @@
 					</td>
 					<td class="value1-s2 value2-sv end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</td>
-					<td class="value1-s2 value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-s2 value2-ae">array()<br /></td>
 					<td class="value1-s2 value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -81420,7 +81135,7 @@
 )<br />
 
 					</td>
-					<td class="value1-s2 value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-s2 value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[2]</i></b> : &lsquo; 1&rsquo;</span><br />
 
@@ -81504,10 +81219,7 @@
 					</td>
 					<td class="value1-s3 value2-sv end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</td>
-					<td class="value1-s3 value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-s3 value2-ae">array()<br /></td>
 					<td class="value1-s3 value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -81544,7 +81256,7 @@
 )<br />
 
 					</td>
-					<td class="value1-s3 value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-s3 value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[3]</i></b> : &lsquo; 3 &rsquo;</span><br />
 
@@ -81628,10 +81340,7 @@
 					</td>
 					<td class="value1-s4 value2-sv end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</td>
-					<td class="value1-s4 value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-s4 value2-ae">array()<br /></td>
 					<td class="value1-s4 value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -81668,7 +81377,7 @@
 )<br />
 
 					</td>
-					<td class="value1-s4 value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-s4 value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[1]</i></b> : &lsquo;1&rsquo;</span><br />
 
@@ -81752,10 +81461,7 @@
 					</td>
 					<td class="value1-s5 value2-sv end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</td>
-					<td class="value1-s5 value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-s5 value2-ae">array()<br /></td>
 					<td class="value1-s5 value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -81792,7 +81498,7 @@
 )<br />
 
 					</td>
-					<td class="value1-s5 value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-s5 value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[1]</i></b> : &lsquo;0&rsquo;</span><br />
 
@@ -81812,7 +81518,7 @@
 					</td>
 					<td class="value1-s6 value2-i1"><span class="int">1</span><br />
 					</td>
-					<td class="value1-s6 value2-i2"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-s6 value2-i2"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-s6 value2-i3"><span class="string">&lsquo;-1&rsquo;</span><br />
 					</td>
@@ -81876,10 +81582,7 @@
 					</td>
 					<td class="value1-s6 value2-sv end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</td>
-					<td class="value1-s6 value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-s6 value2-ae">array()<br /></td>
 					<td class="value1-s6 value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -81916,7 +81619,7 @@
 )<br />
 
 					</td>
-					<td class="value1-s6 value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-s6 value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[2]</i></b> : &lsquo;-1&rsquo;</span><br />
 
@@ -82000,10 +81703,7 @@
 					</td>
 					<td class="value1-s7 value2-sv end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</td>
-					<td class="value1-s7 value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-s7 value2-ae">array()<br /></td>
 					<td class="value1-s7 value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -82124,10 +81824,7 @@
 					</td>
 					<td class="value1-s8 value2-sv end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</td>
-					<td class="value1-s8 value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-s8 value2-ae">array()<br /></td>
 					<td class="value1-s8 value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -82164,7 +81861,7 @@
 )<br />
 
 					</td>
-					<td class="value1-s8 value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-s8 value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[3]</i></b> : &lsquo;1.3&rsquo;</span><br />
 
@@ -82248,10 +81945,7 @@
 					</td>
 					<td class="value1-s9 value2-sv end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</td>
-					<td class="value1-s9 value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-s9 value2-ae">array()<br /></td>
 					<td class="value1-s9 value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -82288,7 +81982,7 @@
 )<br />
 
 					</td>
-					<td class="value1-s9 value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-s9 value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[3]</i></b> : &lsquo;0.0&rsquo;</span><br />
 
@@ -82308,7 +82002,7 @@
 					</td>
 					<td class="value1-sa value2-i1"><span class="int">1</span><br />
 					</td>
-					<td class="value1-sa value2-i2"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="value1-sa value2-i2"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-sa value2-i3"><span class="int">-1</span><br />
 					</td>
@@ -82372,10 +82066,7 @@
 					</td>
 					<td class="value1-sa value2-sv end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</td>
-					<td class="value1-sa value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-sa value2-ae">array()<br /></td>
 					<td class="value1-sa value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -82412,7 +82103,7 @@
 )<br />
 
 					</td>
-					<td class="value1-sa value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-sa value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[6]</i></b> : &lsquo;-1.305&rsquo;</span><br />
 
@@ -82496,10 +82187,7 @@
 					</td>
 					<td class="value1-sb value2-sv end"><span class="string">&lsquo;true&rsquo;</span><br />
 					</td>
-					<td class="value1-sb value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-sb value2-ae">array()<br /></td>
 					<td class="value1-sb value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -82525,7 +82213,7 @@
 					</td>
 					<td class="value1-sb value2-o2 end"><span class="string">&lsquo;true&rsquo;</span><br />
 					</td>
-					<td class="value1-sb value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-sb value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[4]</i></b> : &lsquo;true&rsquo;</span><br />
 
@@ -82609,10 +82297,7 @@
 					</td>
 					<td class="value1-sc value2-sv end"><span class="string">&lsquo;false&rsquo;</span><br />
 					</td>
-					<td class="value1-sc value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-sc value2-ae">array()<br /></td>
 					<td class="value1-sc value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -82649,7 +82334,7 @@
 )<br />
 
 					</td>
-					<td class="value1-sc value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-sc value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[5]</i></b> : &lsquo;false&rsquo;</span><br />
 
@@ -82733,10 +82418,7 @@
 					</td>
 					<td class="value1-sd value2-sv end"><span class="string">&lsquo;null&rsquo;</span><br />
 					</td>
-					<td class="value1-sd value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-sd value2-ae">array()<br /></td>
 					<td class="value1-sd value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -82773,7 +82455,7 @@
 )<br />
 
 					</td>
-					<td class="value1-sd value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-sd value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[4]</i></b> : &lsquo;null&rsquo;</span><br />
 
@@ -82857,10 +82539,7 @@
 					</td>
 					<td class="value1-sf value2-sv end"><span class="string">&lsquo;123str&rsquo;</span><br />
 					</td>
-					<td class="value1-sf value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-sf value2-ae">array()<br /></td>
 					<td class="value1-sf value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -82981,10 +82660,7 @@
 					</td>
 					<td class="value1-sg value2-sv end"><span class="string">&lsquo;str123&rsquo;</span><br />
 					</td>
-					<td class="value1-sg value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-sg value2-ae">array()<br /></td>
 					<td class="value1-sg value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -83010,7 +82686,7 @@
 					</td>
 					<td class="value1-sg value2-o2 end"><span class="string">&lsquo;str123&rsquo;</span><br />
 					</td>
-					<td class="value1-sg value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-sg value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[6]</i></b> : &lsquo;str123&rsquo;</span><br />
 
@@ -83094,10 +82770,7 @@
 					</td>
 					<td class="value1-sh value2-sv end"><span class="string">&lsquo;123, &quot;str&quot;&rsquo;</span><br />
 					</td>
-					<td class="value1-sh value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-sh value2-ae">array()<br /></td>
 					<td class="value1-sh value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -83218,10 +82891,7 @@
 					</td>
 					<td class="value1-su value2-sv end"><span class="string">&lsquo;0xCC00F9&rsquo;</span><br />
 					</td>
-					<td class="value1-su value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-su value2-ae">array()<br /></td>
 					<td class="value1-su value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -83342,10 +83012,7 @@
 					</td>
 					<td class="value1-sv value2-sv end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</td>
-					<td class="value1-sv value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-sv value2-ae">array()<br /></td>
 					<td class="value1-sv value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -83389,161 +83056,46 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
-					<td class="value1-ae value2-notset">Array: (<br />
-)<br />
-
-<br /> (&nbsp;<span class="notice"><a href="#max-errors">#1</a></span>&nbsp;)					</td>
-					<td class="value1-ae value2-n end">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-b1">Array: (<br />
-)<br />
-
-					</td>
+					<th>array()<br /></th>
+					<td class="value1-ae value2-notset">array()<br /><br /> (&nbsp;<span class="notice"><a href="#max-errors">#1</a></span>&nbsp;)					</td>
+					<td class="value1-ae value2-n end">array()<br /></td>
+					<td class="value1-ae value2-b1">array()<br /></td>
 					<td class="value1-ae value2-b2 end"><b class="bool"><i>b</i></b> <i class="b-true">true</i><br />
 					</td>
-					<td class="value1-ae value2-i1">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-i2">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-i3">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-i5">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-i8">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-i9">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-ia end">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-f1">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-f2">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-f3">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-f4">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-f5">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-f6">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-f7 end">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-se">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-s1">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-s2">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-s3">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-s4">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-s5">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-s6">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-s7">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-s8">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-s9">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-sa">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-sb">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-sc">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-sd">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-sf">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-sg">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-sh">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-su">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-sv end">Array: (<br />
-)<br />
-
-					</td>
-					<td class="value1-ae value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-ae value2-i1">array()<br /></td>
+					<td class="value1-ae value2-i2">array()<br /></td>
+					<td class="value1-ae value2-i3">array()<br /></td>
+					<td class="value1-ae value2-i5">array()<br /></td>
+					<td class="value1-ae value2-i8">array()<br /></td>
+					<td class="value1-ae value2-i9">array()<br /></td>
+					<td class="value1-ae value2-ia end">array()<br /></td>
+					<td class="value1-ae value2-f1">array()<br /></td>
+					<td class="value1-ae value2-f2">array()<br /></td>
+					<td class="value1-ae value2-f3">array()<br /></td>
+					<td class="value1-ae value2-f4">array()<br /></td>
+					<td class="value1-ae value2-f5">array()<br /></td>
+					<td class="value1-ae value2-f6">array()<br /></td>
+					<td class="value1-ae value2-f7 end">array()<br /></td>
+					<td class="value1-ae value2-se">array()<br /></td>
+					<td class="value1-ae value2-s1">array()<br /></td>
+					<td class="value1-ae value2-s2">array()<br /></td>
+					<td class="value1-ae value2-s3">array()<br /></td>
+					<td class="value1-ae value2-s4">array()<br /></td>
+					<td class="value1-ae value2-s5">array()<br /></td>
+					<td class="value1-ae value2-s6">array()<br /></td>
+					<td class="value1-ae value2-s7">array()<br /></td>
+					<td class="value1-ae value2-s8">array()<br /></td>
+					<td class="value1-ae value2-s9">array()<br /></td>
+					<td class="value1-ae value2-sa">array()<br /></td>
+					<td class="value1-ae value2-sb">array()<br /></td>
+					<td class="value1-ae value2-sc">array()<br /></td>
+					<td class="value1-ae value2-sd">array()<br /></td>
+					<td class="value1-ae value2-sf">array()<br /></td>
+					<td class="value1-ae value2-sg">array()<br /></td>
+					<td class="value1-ae value2-sh">array()<br /></td>
+					<td class="value1-ae value2-su">array()<br /></td>
+					<td class="value1-ae value2-sv end">array()<br /></td>
+					<td class="value1-ae value2-ae">array()<br /></td>
 					<td class="value1-ae value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -83580,15 +83132,8 @@
 )<br />
 
 					</td>
-					<td class="value1-ae value2-r1 end">Array: (<br />
-)<br />
-
-					</td>
-					<th>Array: (<br />
-)<br />
-
-
-					</th>
+					<td class="value1-ae value2-r1 end">array()<br /></td>
+					<th>array()<br /></th>
 				</tr>
 				<tr>
 					<th>Array: (<br />
@@ -85120,22 +84665,22 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
-					<td class="value1-r1 value2-notset"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-notset"><span class="resource">Resource id #16</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#max-errors">#1</a></span>&nbsp;)					</td>
-					<td class="value1-r1 value2-n end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-n end"><span class="resource">Resource id #16</span><br />
 					</td>
-					<td class="value1-r1 value2-b1"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-b1"><span class="resource">Resource id #16</span><br />
 					</td>
-					<td class="value1-r1 value2-b2 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-b2 end"><span class="resource">Resource id #16</span><br />
 					</td>
-					<td class="value1-r1 value2-i1"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-i1"><span class="resource">Resource id #16</span><br />
 					</td>
-					<td class="value1-r1 value2-i2"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-i2"><span class="resource">Resource id #16</span><br />
 					</td>
-					<td class="value1-r1 value2-i3"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-i3"><span class="resource">Resource id #16</span><br />
 					</td>
 					<td class="value1-r1 value2-i5"><span class="int">42</span><br />
 					</td>
@@ -85145,51 +84690,51 @@
 					</td>
 					<td class="value1-r1 value2-ia end"><span class="int">57</span><br />
 					</td>
-					<td class="value1-r1 value2-f1"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-f1"><span class="resource">Resource id #16</span><br />
 					</td>
-					<td class="value1-r1 value2-f2"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-f2"><span class="resource">Resource id #16</span><br />
 					</td>
-					<td class="value1-r1 value2-f3"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-f3"><span class="resource">Resource id #16</span><br />
 					</td>
-					<td class="value1-r1 value2-f4"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-f4"><span class="resource">Resource id #16</span><br />
 					</td>
-					<td class="value1-r1 value2-f5"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-f5"><span class="resource">Resource id #16</span><br />
 					</td>
-					<td class="value1-r1 value2-f6"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-f6"><span class="resource">Resource id #16</span><br />
 					</td>
 					<td class="value1-r1 value2-f7 end"><span class="float">123450000</span><br />
 					</td>
-					<td class="value1-r1 value2-se"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-se"><span class="resource">Resource id #16</span><br />
 					</td>
-					<td class="value1-r1 value2-s1"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-s1"><span class="resource">Resource id #16</span><br />
 					</td>
-					<td class="value1-r1 value2-s2"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-s2"><span class="resource">Resource id #16</span><br />
 					</td>
-					<td class="value1-r1 value2-s3"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-s3"><span class="resource">Resource id #16</span><br />
 					</td>
-					<td class="value1-r1 value2-s4"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-s4"><span class="resource">Resource id #16</span><br />
 					</td>
-					<td class="value1-r1 value2-s5"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-s5"><span class="resource">Resource id #16</span><br />
 					</td>
-					<td class="value1-r1 value2-s6"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-s6"><span class="resource">Resource id #16</span><br />
 					</td>
 					<td class="value1-r1 value2-s7"><span class="string">&lsquo;42&rsquo;</span><br />
 					</td>
-					<td class="value1-r1 value2-s8"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-s8"><span class="resource">Resource id #16</span><br />
 					</td>
-					<td class="value1-r1 value2-s9"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-s9"><span class="resource">Resource id #16</span><br />
 					</td>
-					<td class="value1-r1 value2-sa"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-sa"><span class="resource">Resource id #16</span><br />
 					</td>
-					<td class="value1-r1 value2-sb"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-sb"><span class="resource">Resource id #16</span><br />
 					</td>
-					<td class="value1-r1 value2-sc"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-sc"><span class="resource">Resource id #16</span><br />
 					</td>
-					<td class="value1-r1 value2-sd"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-sd"><span class="resource">Resource id #16</span><br />
 					</td>
 					<td class="value1-r1 value2-sf"><span class="string">&lsquo;123str&rsquo;</span><br />
 					</td>
-					<td class="value1-r1 value2-sg"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-sg"><span class="resource">Resource id #16</span><br />
 					</td>
 					<td class="value1-r1 value2-sh"><span class="string">&lsquo;123, &quot;str&quot;&rsquo;</span><br />
 					</td>
@@ -85197,10 +84742,7 @@
 					</td>
 					<td class="value1-r1 value2-sv end"><span class="string">&lsquo;0123&rsquo;</span><br />
 					</td>
-					<td class="value1-r1 value2-ae">Array: (<br />
-)<br />
-
-					</td>
+					<td class="value1-r1 value2-ae">array()<br /></td>
 					<td class="value1-r1 value2-a3">Array: (<br />
 &nbsp;&nbsp;[1] => <span class="string">&lsquo;string&rsquo;</span><br />
 )<br />
@@ -85237,9 +84779,9 @@
 )<br />
 
 					</td>
-					<td class="value1-r1 value2-r1 end"><span class="resource">Resource id #15</span><br />
+					<td class="value1-r1 value2-r1 end"><span class="resource">Resource id #16</span><br />
 					</td>
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #15 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -85262,12 +84804,13 @@
 		</div>
 	</div></div> <!-- end of tabs -->
 
-</div><!-- end of class content -->
+	</div><!-- end of class content -->
+</div><!-- end of class content-wrapper -->
 
-<div class="footer">
+<div class="footer"><div>
 	<p id="license">This PHP cheat sheet collection is inspired by the <a href="http://www.blueshoes.org/en/developer/php_cheat_sheet/" target="_blank">Blueshoes cheat sheet</a> and licensed under the <a href="http://www.gnu.org/licenses/gpl.html" target="_blank">GPLv3</a> software license. You can view and fork the source on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a>. Pull requests welcome.</p>
-	<p id="copyright">&copy;2006-2013 <a href="http://adviesenzo.nl/">Advies en zo, Meedenken en -doen</a></p>
-</div>
+	<p id="copyright">&copy; 2006-2014 <a href="http://adviesenzo.nl/">Advies en zo, Meedenken en -doen</a></p>
+</div></div>
 
 </body>
 </html>

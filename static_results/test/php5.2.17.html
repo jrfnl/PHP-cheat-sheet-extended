@@ -1,8 +1,13 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en">
 <head>
-	<title>PHP Variable Testing Cheat Sheet - tests run on: PHP5.2.17</title>
+	<meta http-equiv="Charset" content="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+
+	<title>PHP Variable Testing Cheat Sheet - tests run on: PHP5.2.17 on phpcheatsheets.com</title>
 
 	<meta name="description" content="Extended PHP Cheat sheets for variable comparisons and variable type testing." />
 	<meta name="keywords" content="php, cheat sheet, blueshoes, variable, type juggling, comparison, testing" />
@@ -10,8 +15,7 @@
 	<meta name="copyright" content="Copyright Advies en zo - all rights reserved" />
 	<meta name="language" content="en" />
 	<meta name="distribution" content="global" />
-	<meta http-equiv="Charset" content="utf-8" />
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
 	<meta name="robots" content="index,follow" />
 	<meta name="revisit-after" content="4 weeks" />
 
@@ -19,42 +23,62 @@
 	<link type="text/css" rel="stylesheet" href="./../../page/jquery-css/jquery.ui.theme.min.css" />
 	<link type="text/css" rel="stylesheet" href="./../../page/style.min.css" />
 
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<!-- jQuery via CDN with local fall-back -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script type="text/javascript">(window.jQuery) || document.write('\x3Cscript type="text/javascript" src="./../../page/jquery-css/jquery-1.11.0.min.js">\x3C/script>')</script>
+
+	<!-- jQueryUI via CDN with local fall-back -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+	<script type="text/javascript">(window.jQuery.ui) || document.write('\x3Cscript type="text/javascript" src="./../../page/jquery-css/jquery-ui-1.10.4.min.js">\x3C/script>')</script>
+
 
 	<!-- floating table headers -->
 	<script type="text/javascript" src="./../../page/jquery.thfloat-0.7.2.min.js"></script>
 	<script type="text/javascript" src="./../../page/interaction.min.js"></script>
 
 
-	<link rel="start" href="http://www.adviesenzo.nl/index.html" />
-	<link rel="shortcut icon" href="http://www.adviesenzo.nl/favicon.ico" />
-	<link rel="bookmark icon" href="http://www.adviesenzo.nl/favicon.ico" />
-	<link rel="icon" href="http://www.adviesenzo.nl/favicon.ico" type="image/ico" />
+	<link rel="start" href="http://phpcheatsheets.com/index.php" />
+	<link rel="shortcut icon" href="http://phpcheatsheets.com/favicon.ico" />
+	<link rel="bookmark icon" href="http://phpcheatsheets.com/favicon.ico" />
+	<link rel="icon" href="http://phpcheatsheets.com/favicon.ico" type="image/ico" />
 
 
 </head>
 
 
-<body>
+<body class="static-archive">
 <div class="head">
-	<p><a href="http://adviesenzo.nl/"><img src="http://adviesenzo.nl/images/logo_dpi120.gif" width="411" height="80" alt="Logo Advies en zo, Meedenken en -doen" /></a></p>
 
-			<div id="main-menu">
-			<a href="./../../index.php?type=compare" class="top-link">Variable Comparison<br />Cheat sheet</a>
-			<a href="./../../index.php?type=arithmetic" class="top-link">Variable Arithmetic<br />Cheat sheet</a>
-			<a href="./../../index.php?type=test" class="top-link">Variable Testing<br />Cheat sheet</a>
-		</div>
+	<div id="too-much">
+		<a href="http://www.google.com/search?q=fluffy+animals&amp;tbm=isch" target="_blank"><img src="./../../page/jakobwesthoff_3231273333_2473ef9cdf_s.jpg" width="75" height="75" alt="Fluffy ElePHPant" /></a>
+		<p>Too much ?</p>
+		<p><a href="http://www.google.com/search?q=fluffy+animals&amp;tbm=isch" target="_blank">Take a break and rest your eyes</a>.</p>
+	</div>
+
+	<h1><a href="http://phpcheatsheets.com/"><img src="./../../page/php-med-trans.png" width="95" height="51" alt="PHP" /> Cheatsheets</a></h1>
+
+	<div id="main-menu">
+		<ul>
+			<li><a href="./../../index.php?page=compare" class="top-link">Variable Comparisons</a></li>
+			<li><a href="./../../index.php?page=arithmetic" class="top-link">Variable Arithmetics</a></li>
+			<li><a href="./../../index.php?page=test" class="top-link">Variable Testing</a></li>
+			<li><a href="./../../index.php?page=other-cheat-sheets" class="top-link">More cheat sheets</a></li>
+		</ul>
+	</div>
 </div>
 
+<div class="content-wrapper">
+	<div class="content">
 
-<div class="content">
+	<h2>PHP Variable Testing</h2>
 
-	<h1>PHP Variable Testing Cheat Sheet</h1>
-	<h2 id="php-version">
-		This page has been generated with <strong>PHP 5.2.17</strong>
-		<span>Browse <a href="./../../static_results">other versions</a>.</span>
-	</h2>
+	<div id="sidebar">
+		<h3 id="php-version">
+			This page has been generated with <strong>PHP 5.2.17</strong>
+			<span>Browse <a href="./../../static_results">other versions</a>.</span>
+		</h3>
+	</div>
+
 	<div id="accordion">
 		<h3>Important notes on the comparisons and tests:</h3>
 		<div>
@@ -317,7 +341,7 @@
 					</th>
 				</tr>
 				<tr>
-					<th>$x = <span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th>$x = <span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 					<td class="0 end"><span class="string">&lsquo;integer&rsquo;</span>
@@ -332,7 +356,7 @@
 					</td>
 					<td class="5 end"><span class="b-false">false</span>
 					</td>
-					<th>$x = <span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th>$x = <span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -937,11 +961,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = Array: (<br />
-)<br />
-
-
-					</th>
+					<th>$x = array()<br /></th>
 					<td class="0 end"><span class="string">&lsquo;array&rsquo;</span>
 					</td>
 					<td class="1"><span class="b-true">true</span>
@@ -954,11 +974,7 @@
 					</td>
 					<td class="5 end"><span class="b-false">false</span>
 					</td>
-					<th>$x = Array: (<br />
-)<br />
-
-
-					</th>
+					<th>$x = array()<br /></th>
 				</tr>
 				<tr>
 					<th>$x = Array: (<br />
@@ -1434,7 +1450,7 @@
 					</th>
 				</tr>
 				<tr>
-					<th>$x = <span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th>$x = <span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 					<td class="0 end"><span class="string">&lsquo;integer&rsquo;</span>
@@ -1461,7 +1477,7 @@
 					</td>
 					<td class="11 end"><span class="b-true">true</span>
 					</td>
-					<th>$x = <span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th>$x = <span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -2458,11 +2474,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = Array: (<br />
-)<br />
-
-
-					</th>
+					<th>$x = array()<br /></th>
 					<td class="0 end"><span class="string">&lsquo;array&rsquo;</span>
 					</td>
 					<td class="1 end"><span class="b-false">false</span>
@@ -2487,11 +2499,7 @@
 					</td>
 					<td class="11 end"><span class="b-false">false</span>
 					</td>
-					<th>$x = Array: (<br />
-)<br />
-
-
-					</th>
+					<th>$x = array()<br /></th>
 				</tr>
 				<tr>
 					<th>$x = Array: (<br />
@@ -3051,7 +3059,7 @@
 					</th>
 				</tr>
 				<tr>
-					<th>$x = <span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th>$x = <span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 					<td class="0"><span class="null">null</span>
@@ -3076,7 +3084,7 @@
 					</td>
 					<td class="10 end"><span class="b-false">false</span>
 					</td>
-					<th>$x = <span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th>$x = <span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -3981,11 +3989,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = Array: (<br />
-)<br />
-
-
-					</th>
+					<th>$x = array()<br /></th>
 					<td class="0"><span class="null">null</span>
 					</td>
 					<td class="1"><span class="null">null</span>
@@ -4008,11 +4012,7 @@
 					</td>
 					<td class="10 end"><span class="b-false">false</span>
 					</td>
-					<th>$x = Array: (<br />
-)<br />
-
-
-					</th>
+					<th>$x = array()<br /></th>
 				</tr>
 				<tr>
 					<th>$x = Array: (<br />
@@ -4649,7 +4649,7 @@ else {
 					</th>
 				</tr>
 				<tr>
-					<th>$x = <span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th>$x = <span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 					<td class="0"><span class="b-false">false</span>
@@ -4684,7 +4684,7 @@ else {
 					</td>
 					<td class="15 end"><span class="b-true">true</span>
 					</td>
-					<th>$x = <span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th>$x = <span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -6049,23 +6049,13 @@ else {
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = Array: (<br />
-)<br />
-
-
-					</th>
+					<th>$x = array()<br /></th>
 					<td class="0"><span class="b-false">false</span>
 					</td>
 					<td class="1"><span class="b-false">false</span>
 					</td>
-					<td class="2">Array: (<br />
-)<br />
-
-					</td>
-					<td class="3">Array: (<br />
-)<br />
-
-					</td>
+					<td class="2">array()<br /></td>
+					<td class="3">array()<br /></td>
 					<td class="4 end"><span class="null">null</span>
 					</td>
 					<td class="5 end"><span class="b-false">false</span>
@@ -6090,11 +6080,7 @@ else {
 					</td>
 					<td class="15 end"><span class="b-true">true</span>
 					</td>
-					<th>$x = Array: (<br />
-)<br />
-
-
-					</th>
+					<th>$x = array()<br /></th>
 				</tr>
 				<tr>
 					<th>$x = Array: (<br />
@@ -6805,7 +6791,7 @@ else {
 					</th>
 				</tr>
 				<tr class="target">
-					<th>$x = <span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th>$x = <span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 					<td class="0"><span class="int-0">0</span>
@@ -6832,7 +6818,7 @@ else {
 					</td>
 					<td class="11 end"><span class="b-true">true</span>
 					</td>
-					<th>$x = <span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th>$x = <span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -7797,11 +7783,7 @@ else {
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = Array: (<br />
-)<br />
-
-
-					</th>
+					<th>$x = array()<br /></th>
 					<td class="0"><span class="int-0">0</span>
 					</td>
 					<td class="1"><span class="int-0">0</span>
@@ -7809,14 +7791,8 @@ else {
 					<td class="2"><span class="int-0">0</span>
 					</td>
 					<td class="3"><br /> <span class="error">Fatal error (&nbsp;<a href="#integer-errors">#2</a>&nbsp;)</span>					</td>
-					<td class="4">Array: (<br />
-)<br />
-
-					</td>
-					<td class="5">Array: (<br />
-)<br />
-
-					</td>
+					<td class="4">array()<br /></td>
+					<td class="5">array()<br /></td>
 					<td class="6 end"><span class="null">null</span>
 					</td>
 					<td class="7"><span class="b-true">true</span>
@@ -7827,11 +7803,7 @@ else {
 					</td>
 					<td class="10">Error<br /> (&nbsp;<span class="warning"><a href="#integer-errors">#3</a></span>&nbsp;)					</td>
 					<td class="11 end">Error<br /> (&nbsp;<span class="warning"><a href="#integer-errors">#3</a></span>&nbsp;)					</td>
-					<th>$x = Array: (<br />
-)<br />
-
-
-					</th>
+					<th>$x = array()<br /></th>
 				</tr>
 				<tr>
 					<th>$x = Array: (<br />
@@ -8477,7 +8449,7 @@ else {
 					</th>
 				</tr>
 				<tr>
-					<th>$x = <span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th>$x = <span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 					<td class="0"><span class="float">0</span>
@@ -8504,7 +8476,7 @@ else {
 					</td>
 					<td class="11 end"><span class="b-true">true</span>
 					</td>
-					<th>$x = <span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th>$x = <span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -9469,11 +9441,7 @@ else {
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = Array: (<br />
-)<br />
-
-
-					</th>
+					<th>$x = array()<br /></th>
 					<td class="0"><span class="float">0</span>
 					</td>
 					<td class="1"><span class="float">0</span>
@@ -9481,14 +9449,8 @@ else {
 					<td class="2"><span class="float">0</span>
 					</td>
 					<td class="3"><br /> <span class="error">Fatal error (&nbsp;<a href="#float-errors">#2</a>&nbsp;)</span>					</td>
-					<td class="4">Array: (<br />
-)<br />
-
-					</td>
-					<td class="5">Array: (<br />
-)<br />
-
-					</td>
+					<td class="4">array()<br /></td>
+					<td class="5">array()<br /></td>
 					<td class="6 end"><span class="null">null</span>
 					</td>
 					<td class="7"><span class="b-true">true</span>
@@ -9499,11 +9461,7 @@ else {
 					</td>
 					<td class="10">Error<br /> (&nbsp;<span class="warning"><a href="#float-errors">#3</a></span>&nbsp;)					</td>
 					<td class="11 end">Error<br /> (&nbsp;<span class="warning"><a href="#float-errors">#3</a></span>&nbsp;)					</td>
-					<th>$x = Array: (<br />
-)<br />
-
-
-					</th>
+					<th>$x = array()<br /></th>
 				</tr>
 				<tr>
 					<th>$x = Array: (<br />
@@ -10151,7 +10109,7 @@ else {
 					</th>
 				</tr>
 				<tr>
-					<th>$x = <span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th>$x = <span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 					<td class="0 end"><span class="b-true">true</span>
@@ -10184,7 +10142,7 @@ else {
 					</td>
 					<td class="14 end"><span class="float">0</span>
 					</td>
-					<th>$x = <span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th>$x = <span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -11329,11 +11287,7 @@ else {
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = Array: (<br />
-)<br />
-
-
-					</th>
+					<th>$x = array()<br /></th>
 					<td class="0 end"><span class="b-false">false</span>
 					</td>
 					<td class="1"><span class="b-true">true</span>
@@ -11364,11 +11318,7 @@ else {
 					</td>
 					<td class="14 end"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
 					</td>
-					<th>$x = Array: (<br />
-)<br />
-
-
-					</th>
+					<th>$x = array()<br /></th>
 				</tr>
 				<tr>
 					<th>$x = Array: (<br />
@@ -11961,7 +11911,7 @@ else {
 					</th>
 				</tr>
 				<tr>
-					<th>$x = <span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th>$x = <span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 					<td class="0"><span class="string">&lsquo;0&rsquo;</span>
@@ -11978,7 +11928,7 @@ else {
 					</td>
 					<td class="6 end"><span class="string">&lsquo;0&rsquo;</span>
 					</td>
-					<th>$x = <span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th>$x = <span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -12643,11 +12593,7 @@ else {
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = Array: (<br />
-)<br />
-
-
-					</th>
+					<th>$x = array()<br /></th>
 					<td class="0"><span class="string">&lsquo;Array&rsquo;</span>
 <br /> (&nbsp;<span class="notice"><a href="#string1-errors">#2</a></span>&nbsp;)					</td>
 					<td class="1"><span class="string">&lsquo;Array&rsquo;</span>
@@ -12656,21 +12602,11 @@ else {
 					</td>
 					<td class="3"><span class="string">&lsquo;Array &rsquo;</span>
 					</td>
-					<td class="4">Array: (<br />
-)<br />
-
-					</td>
-					<td class="5">Array: (<br />
-)<br />
-
-					</td>
+					<td class="4">array()<br /></td>
+					<td class="5">array()<br /></td>
 					<td class="6 end"><span class="null">null</span>
 					</td>
-					<th>$x = Array: (<br />
-)<br />
-
-
-					</th>
+					<th>$x = array()<br /></th>
 				</tr>
 				<tr>
 					<th>$x = Array: (<br />
@@ -13081,7 +13017,7 @@ else {
 					</td>
 					<td class="9"><span class="int-0">0</span>
 					</td>
-					<td class="10"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="10"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="11 end"><span class="int-0">0</span>
 					</td>
@@ -13117,7 +13053,7 @@ else {
 					</td>
 					<td class="9"><span class="int-0">0</span>
 					</td>
-					<td class="10"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="10"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="11 end"><span class="int-0">0</span>
 					</td>
@@ -13153,7 +13089,7 @@ else {
 					</td>
 					<td class="9"><span class="int-0">0</span>
 					</td>
-					<td class="10"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="10"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="11 end"><span class="int-0">0</span>
 					</td>
@@ -13238,7 +13174,7 @@ else {
 					</th>
 				</tr>
 				<tr>
-					<th>$x = <span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th>$x = <span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 					<td class="0 end"><span class="b-false">false</span>
@@ -13269,7 +13205,7 @@ else {
 					</td>
 					<td class="13 end"><span class="string">&lsquo;0&rsquo;</span><br />
 					</td>
-					<th>$x = <span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th>$x = <span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -13693,7 +13629,7 @@ else {
 					</td>
 					<td class="9"><span class="int-0">0</span>
 					</td>
-					<td class="10"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="10"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="11 end"><span class="int-0">0</span>
 					</td>
@@ -14390,11 +14326,7 @@ else {
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = Array: (<br />
-)<br />
-
-
-					</th>
+					<th>$x = array()<br /></th>
 					<td class="0 end"><span class="b-false">false</span>
 					</td>
 					<td class="1"><span class="b-true">true</span>
@@ -14420,11 +14352,7 @@ else {
 <br /> (&nbsp;<span class="notice"><a href="#string2-errors">#6</a></span>&nbsp;)					</td>
 					<td class="13 end"><span class="string">&lsquo;Array&rsquo;</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#string2-errors">#4</a></span>&nbsp;)					</td>
-					<th>$x = Array: (<br />
-)<br />
-
-
-					</th>
+					<th>$x = array()<br /></th>
 				</tr>
 				<tr>
 					<th>$x = Array: (<br />
@@ -14681,7 +14609,7 @@ else {
 					</td>
 					<td class="9"><span class="int-0">0</span>
 					</td>
-					<td class="10"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="10"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="11 end"><span class="int-0">0</span>
 					</td>
@@ -14849,14 +14777,8 @@ else {
 					<th>$x = <span class="null"><b><i>null</i></b> :  ( = <i>NULL</i> )</span><br />
 
 					</th>
-					<td class="0">Array: (<br />
-)<br />
-
-					</td>
-					<td class="1">Array: (<br />
-)<br />
-
-					</td>
+					<td class="0">array()<br /></td>
+					<td class="1">array()<br /></td>
 					<td class="2 end"><span class="null">null</span>
 					</td>
 					<th>$x = <span class="null"><b><i>null</i></b> :  ( = <i>NULL</i> )</span><br />
@@ -14867,14 +14789,8 @@ else {
 					<th>$x = <span class="null"><b><i>null</i></b> :  ( = <i>NULL</i> )</span><br />
 
 					</th>
-					<td class="0">Array: (<br />
-)<br />
-
-					</td>
-					<td class="1">Array: (<br />
-)<br />
-
-					</td>
+					<td class="0">array()<br /></td>
+					<td class="1">array()<br /></td>
 					<td class="2 end"><span class="null">null</span>
 					</td>
 					<th>$x = <span class="null"><b><i>null</i></b> :  ( = <i>NULL</i> )</span><br />
@@ -14951,25 +14867,25 @@ else {
 					</th>
 				</tr>
 				<tr>
-					<th>$x = <span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th>$x = <span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 					<td class="0">Array: (<br />
-&nbsp;&nbsp;[0] => <span class="int"><b class="int-0">0</b></span><br />
+&nbsp;&nbsp;[0] => <span class="int"><span class="int-0">0</span></span><br />
 )<br />
 
 					</td>
 					<td class="1">Array: (<br />
-&nbsp;&nbsp;[0] => <span class="int"><b class="int-0">0</b></span><br />
+&nbsp;&nbsp;[0] => <span class="int"><span class="int-0">0</span></span><br />
 )<br />
 
 					</td>
 					<td class="2 end">Array: (<br />
-&nbsp;&nbsp;[0] => <span class="int"><b class="int-0">0</b></span><br />
+&nbsp;&nbsp;[0] => <span class="int"><span class="int-0">0</span></span><br />
 )<br />
 
 					</td>
-					<th>$x = <span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th>$x = <span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -15664,26 +15580,12 @@ else {
 					</th>
 				</tr>
 				<tr class="new-var-type target">
-					<th>$x = Array: (<br />
-)<br />
-
-
-					</th>
-					<td class="0">Array: (<br />
-)<br />
-
-					</td>
-					<td class="1">Array: (<br />
-)<br />
-
-					</td>
+					<th>$x = array()<br /></th>
+					<td class="0">array()<br /></td>
+					<td class="1">array()<br /></td>
 					<td class="2 end"><span class="null">null</span>
 					</td>
-					<th>$x = Array: (<br />
-)<br />
-
-
-					</th>
+					<th>$x = array()<br /></th>
 				</tr>
 				<tr class="target">
 					<th>$x = Array: (<br />
@@ -15778,14 +15680,8 @@ else {
 
 
 					</th>
-					<td class="0">Array: (<br />
-)<br />
-
-					</td>
-					<td class="1">Array: (<br />
-)<br />
-
-					</td>
+					<td class="0">array()<br /></td>
+					<td class="1">array()<br /></td>
 					<td class="2 end"><span class="null">null</span>
 					</td>
 					<th>$x = Object: 
@@ -16203,7 +16099,7 @@ else {
 					</th>
 				</tr>
 				<tr>
-					<th>$x = <span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th>$x = <span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 					<td class="0"><span class="b-false">false</span>
@@ -16230,7 +16126,7 @@ else {
 					</td>
 					<td class="11 end"><span class="null">null</span>
 <br /> (&nbsp;<span class="warning"><a href="#array2-errors">#5</a></span>&nbsp;)					</td>
-					<th>$x = <span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th>$x = <span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -17176,11 +17072,7 @@ else {
 					</th>
 				</tr>
 				<tr class="new-var-type target">
-					<th>$x = Array: (<br />
-)<br />
-
-
-					</th>
+					<th>$x = array()<br /></th>
 					<td class="0"><span class="b-true">true</span>
 					</td>
 					<td class="1 end"><span class="int-0">0</span>
@@ -17203,15 +17095,8 @@ else {
 <br /> (&nbsp;<span class="notice"><a href="#array2-errors">#8</a></span>&nbsp;)					</td>
 					<td class="10 end"><span class="null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#array2-errors">#8</a></span>&nbsp;)					</td>
-					<td class="11 end">Array: (<br />
-)<br />
-
-					</td>
-					<th>$x = Array: (<br />
-)<br />
-
-
-					</th>
+					<td class="11 end">array()<br /></td>
+					<th>$x = array()<br /></th>
 				</tr>
 				<tr class="target">
 					<th>$x = Array: (<br />
@@ -17280,7 +17165,7 @@ else {
 					</td>
 					<td class="6 end"><span class="b-false">false</span>
 					</td>
-					<td class="7"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="7"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="8"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
 					</td>
@@ -17894,13 +17779,13 @@ else {
 					</th>
 				</tr>
 				<tr>
-					<th>$x = <span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th>$x = <span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 					<td class="0">Object: 
 (<br />
 &nbsp;&nbsp;<b><i>Class</i></b>: stdClass (<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: scalar = <span class="int"><b class="int-0">0</b></span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: scalar = <span class="int"><span class="int-0">0</span></span><br />
 &nbsp;&nbsp;)<br />
 
 )<br />
@@ -17909,7 +17794,7 @@ else {
 					<td class="1">Object: 
 (<br />
 &nbsp;&nbsp;<b><i>Class</i></b>: stdClass (<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: scalar = <span class="int"><b class="int-0">0</b></span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: scalar = <span class="int"><span class="int-0">0</span></span><br />
 &nbsp;&nbsp;)<br />
 
 )<br />
@@ -17918,7 +17803,7 @@ else {
 					<td class="2 end">Object: 
 (<br />
 &nbsp;&nbsp;<b><i>Class</i></b>: stdClass (<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: scalar = <span class="int"><b class="int-0">0</b></span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: scalar = <span class="int"><span class="int-0">0</span></span><br />
 &nbsp;&nbsp;)<br />
 
 )<br />
@@ -17936,7 +17821,7 @@ else {
 					</td>
 					<td class="8 end"><span class="b-false">false</span>
 					</td>
-					<th>$x = <span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th>$x = <span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -19351,11 +19236,7 @@ else {
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = Array: (<br />
-)<br />
-
-
-					</th>
+					<th>$x = array()<br /></th>
 					<td class="0">Object: 
 (<br />
 &nbsp;&nbsp;<b><i>Class</i></b>: stdClass (<br />
@@ -19386,11 +19267,7 @@ else {
 					</td>
 					<td class="8 end"><span class="b-false">false</span>
 					</td>
-					<th>$x = Array: (<br />
-)<br />
-
-
-					</th>
+					<th>$x = array()<br /></th>
 				</tr>
 				<tr>
 					<th>$x = Array: (<br />
@@ -20146,14 +20023,14 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</th>
 				</tr>
 				<tr>
-					<th>$x = <span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th>$x = <span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 					<td class="0 end"><span class="b-false">false</span>
 					</td>
 					<td class="1 end"><span class="b-false">false</span>
 <br /> (&nbsp;<span class="warning"><a href="#resources-errors">#2</a></span>&nbsp;)					</td>
-					<th>$x = <span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th>$x = <span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -20518,20 +20395,12 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = Array: (<br />
-)<br />
-
-
-					</th>
+					<th>$x = array()<br /></th>
 					<td class="0 end"><span class="b-false">false</span>
 					</td>
 					<td class="1 end"><span class="b-false">false</span>
 <br /> (&nbsp;<span class="warning"><a href="#resources-errors">#2</a></span>&nbsp;)					</td>
-					<th>$x = Array: (<br />
-)<br />
-
-
-					</th>
+					<th>$x = array()<br /></th>
 				</tr>
 				<tr>
 					<th>$x = Array: (<br />
@@ -20791,17 +20660,17 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="3 end"><span class="null">null</span>
 					</td>
-					<td class="4"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="4"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="5"><span class="int-0">0</span>
 					</td>
-					<td class="6"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="6"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="7"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="7"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="8"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="8"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = <span class="null"><b><i>null</i></b> :  ( = <i>NULL</i> )</span><br />
 
@@ -20819,17 +20688,17 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="3 end"><span class="null">null</span>
 					</td>
-					<td class="4"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="4"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="5"><span class="int-0">0</span>
 					</td>
-					<td class="6"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="6"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="7"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="7"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="8"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="8"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = <span class="null"><b><i>null</i></b> :  ( = <i>NULL</i> )</span><br />
 
@@ -20847,17 +20716,17 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="3 end"><b class="bool"><i>b</i></b> <i class="b-false">false</i><br />
 					</td>
-					<td class="4"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="4"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="5"><span class="int-0">0</span>
 					</td>
-					<td class="6"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="6"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="7"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="7"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="8"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="8"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
 
@@ -20885,7 +20754,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="8"><span class="int">1</span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = <span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
 
@@ -20913,14 +20782,14 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="8"><span class="int">1</span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = <span class="int"><b><i>int</i></b> : 1</span><br />
 
 					</th>
 				</tr>
 				<tr>
-					<th>$x = <span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th>$x = <span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 					<td class="0"><span class="int">1</span>
@@ -20931,19 +20800,19 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="3 end"><span class="int-0">0</span>
 					</td>
-					<td class="4"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="4"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="5"><span class="int-0">0</span>
 					</td>
-					<td class="6"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="6"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="7"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="7"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="8"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="8"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<th>$x = <span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th>$x = <span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -20969,7 +20838,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="8"><span class="int">-1</span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = <span class="int"><b><i>int</i></b> : -1</span><br />
 
@@ -20997,7 +20866,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="8"><span class="int">42</span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = <span class="int"><b><i>int</i></b> : 42</span><br />
 
@@ -21025,7 +20894,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="8"><span class="int">13369593</span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th><sup class="fright"><a href="#var-legend-i8">&dagger;i8</a></sup>$x = <span class="int"><b><i>int</i></b> : 13369593</span><br />
 
@@ -21053,7 +20922,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="8"><span class="int">83</span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th><sup class="fright"><a href="#var-legend-i9">&dagger;i9</a></sup>$x = <span class="int"><b><i>int</i></b> : 83</span><br />
 
@@ -21081,7 +20950,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="8"><span class="float">1.3</span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = <span class="float"><b><i>float</i></b> : 1.3</span><br />
 
@@ -21109,7 +20978,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="8"><span class="float">0.005</span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = <span class="float"><b><i>float</i></b> : 0.005</span><br />
 
@@ -21137,7 +21006,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="8"><span class="float">0</span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = <span class="float"><b><i>float</i></b> : 0</span><br />
 
@@ -21165,7 +21034,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="8"><span class="float">-1.3</span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = <span class="float"><b><i>float</i></b> : -1.3</span><br />
 
@@ -21193,7 +21062,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="8"><span class="float">NAN</span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th><sup class="fright"><a href="#var-legend-f5">&dagger;f5</a></sup>$x = <span class="float"><b><i>float</i></b> : NAN</span><br />
 
@@ -21221,7 +21090,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="8"><span class="float">-INF</span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th><sup class="fright"><a href="#var-legend-f6">&dagger;f6</a></sup>$x = <span class="float"><b><i>float</i></b> : -INF</span><br />
 
@@ -21249,7 +21118,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="8"><span class="float">123450000</span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th><sup class="fright"><a href="#var-legend-f7">&dagger;f7</a></sup>$x = <span class="float"><b><i>float</i></b> : 123450000</span><br />
 
@@ -21267,17 +21136,17 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="3 end"><span class="string">&lsquo;&rsquo;</span><br />
 					</td>
-					<td class="4"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="4"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="5"><span class="int-0">0</span>
 					</td>
-					<td class="6"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="6"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="7"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="7"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="8"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="8"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = <span class="string"><b><i>string[0]</i></b> : &lsquo;&rsquo;</span><br />
 
@@ -21295,17 +21164,17 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="3 end"><span class="string">&lsquo; &rsquo;</span><br />
 					</td>
-					<td class="4"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="4"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="5"><span class="int-0">0</span>
 					</td>
-					<td class="6"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="6"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="7"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="7"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="8"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="8"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = <span class="string"><b><i>string[1]</i></b> : &lsquo; &rsquo;</span><br />
 
@@ -21333,7 +21202,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="8"><span class="int">1</span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = <span class="string"><b><i>string[2]</i></b> : &lsquo; 1&rsquo;</span><br />
 
@@ -21361,7 +21230,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="8"><span class="int">3</span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = <span class="string"><b><i>string[3]</i></b> : &lsquo; 3 &rsquo;</span><br />
 
@@ -21389,7 +21258,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="8"><span class="int">1</span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = <span class="string"><b><i>string[1]</i></b> : &lsquo;1&rsquo;</span><br />
 
@@ -21407,17 +21276,17 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="3 end"><span class="string">&lsquo;0&rsquo;</span><br />
 					</td>
-					<td class="4"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="4"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="5"><span class="int-0">0</span>
 					</td>
-					<td class="6"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="6"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="7"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="7"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="8"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="8"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = <span class="string"><b><i>string[1]</i></b> : &lsquo;0&rsquo;</span><br />
 
@@ -21445,7 +21314,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="8"><span class="int">-1</span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = <span class="string"><b><i>string[2]</i></b> : &lsquo;-1&rsquo;</span><br />
 
@@ -21473,7 +21342,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="8"><span class="int">42</span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = <span class="string"><b><i>string[2]</i></b> : &lsquo;42&rsquo;</span><br />
 
@@ -21501,7 +21370,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="8"><span class="float">1.3</span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = <span class="string"><b><i>string[3]</i></b> : &lsquo;1.3&rsquo;</span><br />
 
@@ -21529,7 +21398,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="8"><span class="float">0</span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = <span class="string"><b><i>string[3]</i></b> : &lsquo;0.0&rsquo;</span><br />
 
@@ -21557,7 +21426,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="8"><span class="float">-1.305</span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = <span class="string"><b><i>string[6]</i></b> : &lsquo;-1.305&rsquo;</span><br />
 
@@ -21575,17 +21444,17 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="3 end"><span class="string">&lsquo;true&rsquo;</span><br />
 					</td>
-					<td class="4"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="4"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="5"><span class="int-0">0</span>
 					</td>
-					<td class="6"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="6"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="7"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="7"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="8"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="8"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = <span class="string"><b><i>string[4]</i></b> : &lsquo;true&rsquo;</span><br />
 
@@ -21603,17 +21472,17 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="3 end"><span class="string">&lsquo;false&rsquo;</span><br />
 					</td>
-					<td class="4"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="4"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="5"><span class="int-0">0</span>
 					</td>
-					<td class="6"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="6"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="7"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="7"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="8"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="8"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = <span class="string"><b><i>string[5]</i></b> : &lsquo;false&rsquo;</span><br />
 
@@ -21631,17 +21500,17 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="3 end"><span class="string">&lsquo;null&rsquo;</span><br />
 					</td>
-					<td class="4"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="4"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="5"><span class="int-0">0</span>
 					</td>
-					<td class="6"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="6"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="7"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="7"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="8"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="8"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = <span class="string"><b><i>string[4]</i></b> : &lsquo;null&rsquo;</span><br />
 
@@ -21669,7 +21538,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="8"><span class="int">123</span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = <span class="string"><b><i>string[6]</i></b> : &lsquo;123str&rsquo;</span><br />
 
@@ -21687,17 +21556,17 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="3 end"><span class="string">&lsquo;str123&rsquo;</span><br />
 					</td>
-					<td class="4"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="4"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="5"><span class="int-0">0</span>
 					</td>
-					<td class="6"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="6"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="7"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="7"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="8"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="8"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = <span class="string"><b><i>string[6]</i></b> : &lsquo;str123&rsquo;</span><br />
 
@@ -21725,7 +21594,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="8"><span class="int">123</span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = <span class="string"><b><i>string[10]</i></b> : &lsquo;123, &quot;str&quot;&rsquo;</span><br />
 
@@ -21753,7 +21622,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="8"><span class="int">13369593</span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = <span class="string"><b><i>string[8]</i></b> : &lsquo;0xCC00F9&rsquo;</span><br />
 
@@ -21781,46 +21650,26 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="8"><span class="int">123</span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = <span class="string"><b><i>string[4]</i></b> : &lsquo;0123&rsquo;</span><br />
 
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = Array: (<br />
-)<br />
-
-
-					</th>
-					<td class="0">Array: (<br />
-)<br />
-
-					</td>
-					<td class="1">Array: (<br />
-)<br />
-
-					</td>
-					<td class="2">Array: (<br />
-)<br />
-
-					</td>
-					<td class="3 end">Array: (<br />
-)<br />
-
-					</td>
+					<th>$x = array()<br /></th>
+					<td class="0">array()<br /></td>
+					<td class="1">array()<br /></td>
+					<td class="2">array()<br /></td>
+					<td class="3 end">array()<br /></td>
 					<td class="4"><br /> <span class="error">Fatal error (&nbsp;<a href="#arithmetic-errors">#2</a>&nbsp;)</span>					</td>
 					<td class="5"><br /> <span class="error">Fatal error (&nbsp;<a href="#arithmetic-errors">#2</a>&nbsp;)</span>					</td>
 					<td class="6"><br /> <span class="error">Fatal error (&nbsp;<a href="#arithmetic-errors">#2</a>&nbsp;)</span>					</td>
 					<td class="7"><br /> <span class="error">Fatal error (&nbsp;<a href="#arithmetic-errors">#2</a>&nbsp;)</span>					</td>
 					<td class="8"><br /> <span class="error">Fatal error (&nbsp;<a href="#arithmetic-errors">#2</a>&nbsp;)</span>					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<th>$x = Array: (<br />
-)<br />
-
-
-					</th>
+					<th>$x = array()<br /></th>
 				</tr>
 				<tr>
 					<th>$x = Array: (<br />
@@ -21854,7 +21703,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					<td class="6"><br /> <span class="error">Fatal error (&nbsp;<a href="#arithmetic-errors">#2</a>&nbsp;)</span>					</td>
 					<td class="7"><br /> <span class="error">Fatal error (&nbsp;<a href="#arithmetic-errors">#2</a>&nbsp;)</span>					</td>
 					<td class="8"><br /> <span class="error">Fatal error (&nbsp;<a href="#arithmetic-errors">#2</a>&nbsp;)</span>					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = Array: (<br />
 &nbsp;&nbsp;&nbsp;&nbsp;[1 <b class="int"><i>(int)</i></b>] => <span class="string"><b><i>string[6]</i></b> : &lsquo;string&rsquo;</span><br />
@@ -21920,7 +21769,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					<td class="6"><br /> <span class="error">Fatal error (&nbsp;<a href="#arithmetic-errors">#2</a>&nbsp;)</span>					</td>
 					<td class="7"><br /> <span class="error">Fatal error (&nbsp;<a href="#arithmetic-errors">#2</a>&nbsp;)</span>					</td>
 					<td class="8"><br /> <span class="error">Fatal error (&nbsp;<a href="#arithmetic-errors">#2</a>&nbsp;)</span>					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = Array: (<br />
 &nbsp;&nbsp;&nbsp;&nbsp;[0 <b class="int"><i>(int)</i></b>] => <span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
@@ -21986,7 +21835,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 <br /> (&nbsp;<span class="notice"><a href="#arithmetic-errors">#3</a></span>&nbsp;)					</td>
 					<td class="8"><span class="int">1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#arithmetic-errors">#3</a></span>&nbsp;)					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 <br /> (&nbsp;<span class="notice"><a href="#arithmetic-errors">#3</a></span>&nbsp;)					</td>
 					<th>$x = Object: 
 (<br />
@@ -22075,7 +21924,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 <br /> (&nbsp;<span class="notice"><a href="#arithmetic-errors">#3</a></span>&nbsp;)					</td>
 					<td class="8"><span class="int">1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#arithmetic-errors">#3</a></span>&nbsp;)					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 <br /> (&nbsp;<span class="notice"><a href="#arithmetic-errors">#3</a></span>&nbsp;)					</td>
 					<th>$x = Object: 
 (<br />
@@ -22114,7 +21963,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="8"><span class="int">41</span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = <span class="resource"><b><i>resource</i></b> : Resource id #41 ( = <i>RESOURCE</i> )</span><br />
 
@@ -22177,16 +22026,16 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 )<br />
 
 					</td>
-					<td class="4"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="4"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="5"><span class="error">Fatal error <a href="#arithmetic-errors">#4</a></span>					</td>
-					<td class="6"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="6"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="7"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="7"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="8"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="8"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = Object: 
 (<br />
@@ -22267,7 +22116,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="8"><span class="int">1</span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = Object: 
 (<br />
@@ -22352,7 +22201,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="8"><span class="int">94</span><br />
 					</td>
-					<td class="9 end"><span class="int"><b class="int-0">0</b></span><br />
+					<td class="9 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th>$x = Object: 
 (<br />
@@ -22567,7 +22416,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</th>
 				</tr>
 				<tr>
-					<th>$x = <span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th>$x = <span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 					<td class="0"><span class="b-false">false</span>
@@ -22592,7 +22441,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="10 end"><span class="b-false">false</span>
 					</td>
-					<th>$x = <span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th>$x = <span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -23833,11 +23682,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = Array: (<br />
-)<br />
-
-
-					</th>
+					<th>$x = array()<br /></th>
 					<td class="0"><span class="b-false">false</span>
 					</td>
 					<td class="1 end"><span class="b-false">false</span>
@@ -23860,11 +23705,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="10 end"><span class="b-false">false</span>
 					</td>
-					<th>$x = Array: (<br />
-)<br />
-
-
-					</th>
+					<th>$x = array()<br /></th>
 				</tr>
 				<tr>
 					<th>$x = Array: (<br />
@@ -24491,7 +24332,7 @@ else {
 					</th>
 				</tr>
 				<tr>
-					<th>$x = <span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th>$x = <span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 					<td class="0 end"><span class="b-false">false</span>
@@ -24510,7 +24351,7 @@ else {
 					</td>
 					<td class="7 end"><span class="string">&lsquo;0&rsquo;</span><br />
 					</td>
-					<th>$x = <span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th>$x = <span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -25355,48 +25196,16 @@ else {
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = Array: (<br />
-)<br />
-
-
-					</th>
-					<td class="0 end">Array: (<br />
-)<br />
-
-					</td>
-					<td class="1">Array: (<br />
-)<br />
-
-					</td>
-					<td class="2">Array: (<br />
-)<br />
-
-					</td>
-					<td class="3">Array: (<br />
-)<br />
-
-					</td>
-					<td class="4 end">Array: (<br />
-)<br />
-
-					</td>
-					<td class="5">Array: (<br />
-)<br />
-
-					</td>
-					<td class="6">Array: (<br />
-)<br />
-
-					</td>
-					<td class="7 end">Array: (<br />
-)<br />
-
-					</td>
-					<th>$x = Array: (<br />
-)<br />
-
-
-					</th>
+					<th>$x = array()<br /></th>
+					<td class="0 end">array()<br /></td>
+					<td class="1">array()<br /></td>
+					<td class="2">array()<br /></td>
+					<td class="3">array()<br /></td>
+					<td class="4 end">array()<br /></td>
+					<td class="5">array()<br /></td>
+					<td class="6">array()<br /></td>
+					<td class="7 end">array()<br /></td>
+					<th>$x = array()<br /></th>
 				</tr>
 				<tr>
 					<th>$x = Array: (<br />
@@ -26008,7 +25817,7 @@ else {
 					</th>
 				</tr>
 				<tr>
-					<th>$x = <span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th>$x = <span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 					<td class="0"><span class="string">&lsquo;0&rsquo;</span>
@@ -26022,7 +25831,7 @@ else {
 					<td class="4"><span class="string">&lsquo;0&rsquo;</span>
 					</td>
 					<td class="5 end">E: not available (PHP 5.3.3+)					</td>
-					<th>$x = <span class="int"><b><i>int</i></b> : <b class="int-0">0</b></span><br />
+					<th>$x = <span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
 					</th>
 				</tr>
@@ -26597,37 +26406,14 @@ else {
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = Array: (<br />
-)<br />
-
-
-					</th>
-					<td class="0">Array: (<br />
-)<br />
-
-					</td>
-					<td class="1">Array: (<br />
-)<br />
-
-					</td>
-					<td class="2">Array: (<br />
-)<br />
-
-					</td>
-					<td class="3">Array: (<br />
-)<br />
-
-					</td>
-					<td class="4">Array: (<br />
-)<br />
-
-					</td>
+					<th>$x = array()<br /></th>
+					<td class="0">array()<br /></td>
+					<td class="1">array()<br /></td>
+					<td class="2">array()<br /></td>
+					<td class="3">array()<br /></td>
+					<td class="4">array()<br /></td>
 					<td class="5 end">E: not available (PHP 5.3.3+)					</td>
-					<th>$x = Array: (<br />
-)<br />
-
-
-					</th>
+					<th>$x = array()<br /></th>
 				</tr>
 				<tr>
 					<th>$x = Array: (<br />
@@ -26956,12 +26742,13 @@ else {
 		</div>
 	</div></div> <!-- end of tabs -->
 
-</div><!-- end of class content -->
+	</div><!-- end of class content -->
+</div><!-- end of class content-wrapper -->
 
-<div class="footer">
+<div class="footer"><div>
 	<p id="license">This PHP cheat sheet collection is inspired by the <a href="http://www.blueshoes.org/en/developer/php_cheat_sheet/" target="_blank">Blueshoes cheat sheet</a> and licensed under the <a href="http://www.gnu.org/licenses/gpl.html" target="_blank">GPLv3</a> software license. You can view and fork the source on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a>. Pull requests welcome.</p>
-	<p id="copyright">&copy;2006-2013 <a href="http://adviesenzo.nl/">Advies en zo, Meedenken en -doen</a></p>
-</div>
+	<p id="copyright">&copy; 2006-2014 <a href="http://adviesenzo.nl/">Advies en zo, Meedenken en -doen</a></p>
+</div></div>
 
 </body>
 </html>
