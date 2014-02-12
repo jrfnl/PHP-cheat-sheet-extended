@@ -28,11 +28,11 @@ endif; ?>
 if ( isset( $type ) ): ?>
 	<!-- jQuery via CDN with local fall-back -->
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script>(window.jQuery) || document.write('<script src="./<?php if ( isset( $dir ) ) print $dir; ?>page/jquery-css/jquery-1.10.2<?php if ( isset( $min ) ) print $min; ?>.js">\x3C/script>')</script>
+	<script type="text/javascript">(window.jQuery) || document.write('\x3Cscript type="text/javascript" src="./<?php if ( isset( $dir ) ) print $dir; ?>page/jquery-css/jquery-1.10.2<?php if ( isset( $min ) ) print $min; ?>.js">\x3C/script>')</script>
 
 	<!-- jQueryUI via CDN with local fall-back -->
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-	<script>(window.jQuery) || document.write('<script src="./<?php if ( isset( $dir ) ) print $dir; ?>page/jquery-css/jquery-ui-1.10.4<?php if ( isset( $min ) ) print $min; ?>.js">\x3C/script>')</script>
+	<script type="text/javascript">(window.jQuery.ui) || document.write('\x3Cscript type="text/javascript" src="./<?php if ( isset( $dir ) ) print $dir; ?>page/jquery-css/jquery-ui-1.10.4<?php if ( isset( $min ) ) print $min; ?>.js">\x3C/script>')</script>
 
 	<!-- floating table headers -->
 	<script type="text/javascript" src="./<?php if ( isset( $dir ) ) print $dir; ?>page/jquery.thfloat-0.7.2<?php if ( isset( $min ) ) print $min; ?>.js"></script>
@@ -57,9 +57,9 @@ endif; ?>
 	<?php
 	if ( isset( $type ) ): ?>
 		<div id="too-much">
-			<a href="http://www.google.com/search?q=fluffy+animals&tbm=isch" target="_blank"><img src="./<?php if ( isset( $dir ) ) print $dir; ?>page/jakobwesthoff_3231273333_2473ef9cdf_s.jpg" width="75" height="75" alt="Fluffy ElePHPant" /></a>
+			<a href="http://www.google.com/search?q=fluffy+animals&amp;tbm=isch" target="_blank"><img src="./<?php if ( isset( $dir ) ) print $dir; ?>page/jakobwesthoff_3231273333_2473ef9cdf_s.jpg" width="75" height="75" alt="Fluffy ElePHPant" /></a>
 			<p>Too much ?</p>
-			<p><a href="http://www.google.com/search?q=fluffy+animals&tbm=isch" target="_blank">Take a break and rest your eyes</a>.</p>
+			<p><a href="http://www.google.com/search?q=fluffy+animals&amp;tbm=isch" target="_blank">Take a break and rest your eyes</a>.</p>
 		</div>
 <?php
 	endif;
