@@ -13,7 +13,6 @@ include_once( APP_DIR . '/include/xvardump.php' );
 include_once( APP_DIR . '/include/functions.php' );
 set_error_handler( 'do_handle_errors' );
 
-
 if ( ! defined( 'PHP_VERSION_ID' ) ) {
 	$version = PHP_VERSION;
 	define( 'PHP_VERSION_ID', (int) ( $version{0} * 10000 + $version{2} * 100 + $version{4} ) );
@@ -21,6 +20,11 @@ if ( ! defined( 'PHP_VERSION_ID' ) ) {
 
 // Use C locale for Ctype functions
 setlocale( LC_CTYPE, 'C' );
+
+// Set timezone
+if ( PHP_VERSION_ID > 50100 ) {
+	date_default_timezone_set( 'UTC' );
+}
 
 
 // Minified js & css ?
@@ -37,21 +41,31 @@ $page = null;
 $page_title = 'PHP Cheat Sheets';
 
 if( isset( $_GET['page'] ) ) {
-	if ( $_GET['page'] === 'compare' ) {
-		$type       = 'compare';
-		$page_title = 'PHP Variable Comparison';
-	}
-	else if ( $_GET['page'] === 'arithmetic' ) {
-		$type       = 'arithmetic';
-		$page_title = 'PHP Arithmetic Operations';
-	}
-	else if ( $_GET['page'] === 'test' ) {
-		$type       = 'test';
-		$page_title = 'PHP Variable Testing';
-	}
-	else if ( $_GET['page'] === 'other-cheat-sheets' ) {
-		$page = 'other-cheat-sheets';
-		$page_title = 'More PHP Cheat Sheets';
+	switch ( $_GET['page'] ) {
+		case 'compare':
+			$type       = 'compare';
+			$page_title = 'PHP Variable Comparison';
+			break;
+			
+		case 'arithmetic':
+			$type       = 'arithmetic';
+			$page_title = 'PHP Arithmetic Operations';
+			break;
+
+		case 'test':
+			$type       = 'test';
+			$page_title = 'PHP Variable Testing';
+			break;
+			
+		case 'other-cheat-sheets':
+			$page = 'other-cheat-sheets';
+			$page_title = 'More PHP Cheat Sheets';
+			break;
+
+		case 'about':
+			$page = 'about';
+			$page_title = 'About phpcheatsheets.com';
+			break;
 	}
 }
 

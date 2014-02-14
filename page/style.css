@@ -174,12 +174,17 @@ div.head #main-menu ul {
 
 div.head #main-menu ul li {
 	float: left;
-	width: 24.5%;
+	width: 21.5%;
 	margin: 0px;
 	margin-right: 2px;
 	padding: 0px;
 	border-collapse: collapse;
 }
+
+div.head #main-menu ul li.top-link-small {
+	width: 12%;
+}
+
 
 div.head #main-menu ul li a {
 	display: inline-block;
@@ -266,7 +271,6 @@ div.content a.top-link {
 	text-shadow:1px 1px 0px #224466;
 }
 
-
 div.content a.top-link:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #add6ff), color-stop(1, #5c9bcc) );
 	background:-moz-linear-gradient( center top, #add6ff 5%, #5c9bcc 100% );
@@ -293,9 +297,15 @@ div.content img {
 }
 
 
+div.about,
 ul.linklist {
 	font-size: 110%;
 	line-height: 1.5;
+}
+
+div.about img {
+	text-align: right;
+	margin: 0 60px 20px 20px;
 }
 
 
@@ -315,6 +325,12 @@ div.footer div {
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 	border-radius: 8px;
+}
+
+div.footer p#share {
+	float: right;
+	margin-left: 40px;
+	margin-right: 10px;
 }
 
 

@@ -47,10 +47,7 @@ endif; ?>
 	<link rel="bookmark icon" href="http://phpcheatsheets.com/favicon.ico" />
 	<link rel="icon" href="http://phpcheatsheets.com/favicon.ico" type="image/ico" />
 
-
 </head>
-
-
 <body>
 <div class="head">
 
@@ -75,6 +72,7 @@ endif; ?>
 			<li><a href="index.php?page=arithmetic" class="top-link<?php if ( isset( $type ) && $type === 'arithmetic' ) print ' top-active'; ?>">Variable Arithmetics</a></li>
 			<li><a href="index.php?page=test" class="top-link<?php if ( isset( $type ) && $type === 'test' ) print ' top-active'; ?>">Variable Testing</a></li>
 			<li><a href="index.php?page=other-cheat-sheets" class="top-link<?php if ( isset( $page ) && $page === 'other-cheat-sheets' ) print ' top-active'; ?>">More cheat sheets</a></li>
+			<li class="top-link-small"><a href="index.php?page=about" class="top-link<?php if ( isset( $page ) && $page === 'about' ) print ' top-active'; ?>">About</a></li>
 		</ul>
 	</div>
 <?php
