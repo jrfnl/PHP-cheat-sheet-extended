@@ -5,11 +5,7 @@
 	<meta http-equiv="Charset" content="utf-8" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-
-
-
-
-	<title>PHP Arithmetic Operations - tests run using PHP 5.4.20 on phpcheatsheets.com</title>
+	<title>PHP Arithmetic Operations Cheat Sheet on phpcheatsheets.com</title>
 
 	<meta name="description" content="Extended PHP Cheat sheets for variable comparisons and variable type testing." />
 	<meta name="keywords" content="php, cheat sheet, blueshoes, variable, type juggling, comparison, testing" />
@@ -17,6 +13,7 @@
 	<meta name="copyright" content="Copyright Advies en zo - all rights reserved" />
 	<meta name="language" content="en" />
 	<meta name="distribution" content="global" />
+
 	<meta name="robots" content="index,follow" />
 	<meta name="revisit-after" content="4 weeks" />
 
@@ -26,15 +23,15 @@
 
 	<!-- jQuery via CDN with local fall-back -->
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script type="text/javascript">(window.jQuery) || document.write('\x3Cscript type="text/javascript" src="./page/jquery-css/jquery-1.11.0.min.js">\x3C/script>')</script>
+	<script type="text/javascript">(window.jQuery) || document.write('\x3Cscript type="text/javascript" src="./../../page/jquery-css/jquery-1.11.0.min.js">\x3C/script>')</script>
 
 	<!-- jQueryUI via CDN with local fall-back -->
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-	<script type="text/javascript">(window.jQuery.ui) || document.write('\x3Cscript type="text/javascript" src="./page/jquery-css/jquery-ui-1.10.4.min.js">\x3C/script>')</script>
+	<script type="text/javascript">(window.jQuery.ui) || document.write('\x3Cscript type="text/javascript" src="./../../page/jquery-css/jquery-ui-1.10.4.min.js">\x3C/script>')</script>
+
 
 	<!-- floating table headers -->
 	<script type="text/javascript" src="./../../page/jquery.thfloat-0.7.2.min.js"></script>
-	<!-- custom js -->
 	<script type="text/javascript" src="./../../page/interaction.min.js"></script>
 
 
@@ -50,11 +47,11 @@
 <body class="static-archive">
 <div class="head">
 
-			<div id="too-much">
-			<a href="http://www.google.com/search?q=fluffy+animals&amp;tbm=isch" target="_blank"><img src="./../../page/jakobwesthoff_3231273333_2473ef9cdf_s.jpg" width="75" height="75" alt="Fluffy ElePHPant" /></a>
-			<p>Too much ?</p>
-			<p><a href="http://www.google.com/search?q=fluffy+animals&amp;tbm=isch" target="_blank">Take a break and rest your eyes</a>.</p>
-		</div>
+	<div id="too-much">
+		<a href="http://www.google.com/search?q=fluffy+animals&amp;tbm=isch" target="_blank"><img src="./../../page/jakobwesthoff_3231273333_2473ef9cdf_s.jpg" width="75" height="75" alt="Fluffy ElePHPant" /></a>
+		<p>Too much ?</p>
+		<p><a href="http://www.google.com/search?q=fluffy+animals&amp;tbm=isch" target="_blank">Take a break and rest your eyes</a>.</p>
+	</div>
 
 	<h1><a href="http://phpcheatsheets.com/"><img src="./../../page/php-med-trans.png" width="95" height="51" alt="PHP" /> Cheatsheets</a></h1>
 
@@ -64,25 +61,22 @@
 			<li><a href="./../../index.php?page=arithmetic" class="top-link">Variable Arithmetics</a></li>
 			<li><a href="./../../index.php?page=test" class="top-link">Variable Testing</a></li>
 			<li><a href="./../../index.php?page=other-cheat-sheets" class="top-link">More cheat sheets</a></li>
-			</ul>
-		</div>
+			<li class="top-link-small"><a href="./../../index.php?page=about" class="top-link">About</a></li>
+		</ul>
+	</div>
 </div>
 
 <div class="content-wrapper">
 	<div class="content">
 
-		<h2>PHP Arithmetic Operations</h2>
+	<h2>PHP Arithmetic Operations</h2>
 
-	
 	<div id="sidebar">
-
 		<h3 id="php-version">
 			This page has been generated with <strong>PHP 5.4.20</strong>
 			<span>Browse <a href="./../../static_results">other versions</a>.</span>
 		</h3>
-
 	</div>
-
 
 
 	<div id="accordion">
@@ -100,7 +94,7 @@
 				<li><strong>BEWARE</strong>: some variable changing functions will not return a changed value, but will return whether the changing succeeded. You will find this indicated in the function header by the use of <code>$copy</code> (as the test will use a copy of the variable to not influence the other tests in the same table).</li>
 			</ol>
 		</div>
-
+		
 ﻿		<h3>Notes on some variables:</h3>
 		<div>
 			<p>Some of the test variables used, do not print the way they are set, either because they contain invisible characters or because they result in something else, so for your convenience, these are outlined here:</p>
@@ -191,14 +185,13 @@
 				</tr>
 				<tr>
 					<th>Resources:</th>
-					<td><span class="resource">Resource id #15</span><br />
+					<td><span class="resource">Resource id #14</span><br />
 </td>
 				</tr>
 			</table>
 		</div>
 
 	</div>
-
 <div id="tabs">
 	<ul>
 		<li title="$a == -$b"><a href="#negate"><strong>negate&hellip;</strong></a></li>
@@ -324,7 +317,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #17</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/language.operators.arithmetic" target="_blank" title="$a == -$b"><strong>negate&hellip;</strong></a></th>
 				</tr>
@@ -435,7 +428,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #17</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/language.operators.arithmetic" target="_blank" title="$a == -$b"><strong>negate&hellip;</strong></a></th>
 				</tr>
@@ -4196,7 +4189,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #17 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="value1-r1 value2-notset"><span class="b-false">false</span>
@@ -4282,7 +4275,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#negate-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-r1 value2-r1 end"><span class="b-false">false</span>
 					</td>
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #17 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -4403,7 +4396,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #17</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/language.operators.arithmetic" target="_blank" title="$a === -$b"><strong>negate strict&hellip;</strong></a></th>
 				</tr>
@@ -4514,7 +4507,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #17</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/language.operators.arithmetic" target="_blank" title="$a === -$b"><strong>negate strict&hellip;</strong></a></th>
 				</tr>
@@ -8275,7 +8268,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #17 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="value1-r1 value2-notset"><span class="b-false">false</span>
@@ -8361,7 +8354,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#negate_strict-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-r1 value2-r1 end"><span class="b-false">false</span>
 					</td>
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #17 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -8481,7 +8474,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #17</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/language.operators.arithmetic" target="_blank" title="$a + $b"><strong>+</strong></a> <sup><a href="#sum-note1">&Dagger;1</a></sup></th>
 				</tr>
@@ -8592,7 +8585,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #17</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/language.operators.arithmetic" target="_blank" title="$a + $b"><strong>+</strong></a> <sup><a href="#sum-note1">&Dagger;1</a></sup></th>
 				</tr>
@@ -8683,7 +8676,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-notset value2-o2 end"><span class="int">1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-notset value2-r1 end"><span class="int">17</span><br />
+					<td class="value1-notset value2-r1 end"><span class="int">16</span><br />
 					</td>
 					<th><span class="null"><b><i>null</i></b> :  ( = <i>NULL</i> )</span><br />
 
@@ -8774,7 +8767,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-n value2-o2 end"><span class="int">1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-n value2-r1 end"><span class="int">17</span><br />
+					<td class="value1-n value2-r1 end"><span class="int">16</span><br />
 					</td>
 					<th><span class="null"><b><i>null</i></b> :  ( = <i>NULL</i> )</span><br />
 
@@ -8865,7 +8858,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-b1 value2-o2 end"><span class="int">1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-b1 value2-r1 end"><span class="int">17</span><br />
+					<td class="value1-b1 value2-r1 end"><span class="int">16</span><br />
 					</td>
 					<th><span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
 
@@ -8956,7 +8949,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-b2 value2-o2 end"><span class="int">2</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-b2 value2-r1 end"><span class="int">18</span><br />
+					<td class="value1-b2 value2-r1 end"><span class="int">17</span><br />
 					</td>
 					<th><span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
 
@@ -9047,7 +9040,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-i1 value2-o2 end"><span class="int">2</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-i1 value2-r1 end"><span class="int">18</span><br />
+					<td class="value1-i1 value2-r1 end"><span class="int">17</span><br />
 					</td>
 					<th><span class="int"><b><i>int</i></b> : 1</span><br />
 
@@ -9138,7 +9131,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-i2 value2-o2 end"><span class="int">1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-i2 value2-r1 end"><span class="int">17</span><br />
+					<td class="value1-i2 value2-r1 end"><span class="int">16</span><br />
 					</td>
 					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
@@ -9229,7 +9222,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-i3 value2-o2 end"><span class="int"><span class="int-0">0</span></span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-i3 value2-r1 end"><span class="int">16</span><br />
+					<td class="value1-i3 value2-r1 end"><span class="int">15</span><br />
 					</td>
 					<th><span class="int"><b><i>int</i></b> : -1</span><br />
 
@@ -9320,7 +9313,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-i5 value2-o2 end"><span class="int">43</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-i5 value2-r1 end"><span class="int">59</span><br />
+					<td class="value1-i5 value2-r1 end"><span class="int">58</span><br />
 					</td>
 					<th><span class="int"><b><i>int</i></b> : 42</span><br />
 
@@ -9411,7 +9404,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-i8 value2-o2 end"><span class="int">13369594</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-i8 value2-r1 end"><span class="int">13369610</span><br />
+					<td class="value1-i8 value2-r1 end"><span class="int">13369609</span><br />
 					</td>
 					<th><sup class="fright"><a href="#var-legend-i8">&dagger;i8</a></sup><span class="int"><b><i>int</i></b> : 13369593</span><br />
 
@@ -9502,7 +9495,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-i9 value2-o2 end"><span class="int">84</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-i9 value2-r1 end"><span class="int">100</span><br />
+					<td class="value1-i9 value2-r1 end"><span class="int">99</span><br />
 					</td>
 					<th><sup class="fright"><a href="#var-legend-i9">&dagger;i9</a></sup><span class="int"><b><i>int</i></b> : 83</span><br />
 
@@ -9593,7 +9586,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-ia value2-o2 end"><span class="int">58</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-ia value2-r1 end"><span class="int">74</span><br />
+					<td class="value1-ia value2-r1 end"><span class="int">73</span><br />
 					</td>
 					<th><span class="int"><b><i>int</i></b> : 57</span><br />
 
@@ -9684,7 +9677,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-f1 value2-o2 end"><span class="float">2.3</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-f1 value2-r1 end"><span class="float">18.3</span><br />
+					<td class="value1-f1 value2-r1 end"><span class="float">17.3</span><br />
 					</td>
 					<th><span class="float"><b><i>float</i></b> : 1.3</span><br />
 
@@ -9775,7 +9768,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-f2 value2-o2 end"><span class="float">1.005</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-f2 value2-r1 end"><span class="float">17.005</span><br />
+					<td class="value1-f2 value2-r1 end"><span class="float">16.005</span><br />
 					</td>
 					<th><span class="float"><b><i>float</i></b> : 0.005</span><br />
 
@@ -9866,7 +9859,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-f3 value2-o2 end"><span class="float">1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-f3 value2-r1 end"><span class="float">17</span><br />
+					<td class="value1-f3 value2-r1 end"><span class="float">16</span><br />
 					</td>
 					<th><span class="float"><b><i>float</i></b> : 0</span><br />
 
@@ -9957,7 +9950,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-f4 value2-o2 end"><span class="float">-0.3</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-f4 value2-r1 end"><span class="float">15.7</span><br />
+					<td class="value1-f4 value2-r1 end"><span class="float">14.7</span><br />
 					</td>
 					<th><span class="float"><b><i>float</i></b> : -1.3</span><br />
 
@@ -10230,7 +10223,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-f7 value2-o2 end"><span class="float">123450001</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-f7 value2-r1 end"><span class="float">123450017</span><br />
+					<td class="value1-f7 value2-r1 end"><span class="float">123450016</span><br />
 					</td>
 					<th><sup class="fright"><a href="#var-legend-f7">&dagger;f7</a></sup><span class="float"><b><i>float</i></b> : 123450000</span><br />
 
@@ -10321,7 +10314,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-se value2-o2 end"><span class="int">1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-se value2-r1 end"><span class="int">17</span><br />
+					<td class="value1-se value2-r1 end"><span class="int">16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[0]</i></b> : &lsquo;&rsquo;</span><br />
 
@@ -10412,7 +10405,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-s1 value2-o2 end"><span class="int">1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-s1 value2-r1 end"><span class="int">17</span><br />
+					<td class="value1-s1 value2-r1 end"><span class="int">16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[1]</i></b> : &lsquo; &rsquo;</span><br />
 
@@ -10503,7 +10496,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-s2 value2-o2 end"><span class="int">2</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-s2 value2-r1 end"><span class="int">18</span><br />
+					<td class="value1-s2 value2-r1 end"><span class="int">17</span><br />
 					</td>
 					<th><span class="string"><b><i>string[2]</i></b> : &lsquo; 1&rsquo;</span><br />
 
@@ -10594,7 +10587,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-s3 value2-o2 end"><span class="int">4</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-s3 value2-r1 end"><span class="int">20</span><br />
+					<td class="value1-s3 value2-r1 end"><span class="int">19</span><br />
 					</td>
 					<th><span class="string"><b><i>string[3]</i></b> : &lsquo; 3 &rsquo;</span><br />
 
@@ -10685,7 +10678,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-s4 value2-o2 end"><span class="int">2</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-s4 value2-r1 end"><span class="int">18</span><br />
+					<td class="value1-s4 value2-r1 end"><span class="int">17</span><br />
 					</td>
 					<th><span class="string"><b><i>string[1]</i></b> : &lsquo;1&rsquo;</span><br />
 
@@ -10776,7 +10769,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-s5 value2-o2 end"><span class="int">1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-s5 value2-r1 end"><span class="int">17</span><br />
+					<td class="value1-s5 value2-r1 end"><span class="int">16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[1]</i></b> : &lsquo;0&rsquo;</span><br />
 
@@ -10867,7 +10860,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-s6 value2-o2 end"><span class="int"><span class="int-0">0</span></span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-s6 value2-r1 end"><span class="int">16</span><br />
+					<td class="value1-s6 value2-r1 end"><span class="int">15</span><br />
 					</td>
 					<th><span class="string"><b><i>string[2]</i></b> : &lsquo;-1&rsquo;</span><br />
 
@@ -10958,7 +10951,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-s7 value2-o2 end"><span class="int">43</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-s7 value2-r1 end"><span class="int">59</span><br />
+					<td class="value1-s7 value2-r1 end"><span class="int">58</span><br />
 					</td>
 					<th><span class="string"><b><i>string[2]</i></b> : &lsquo;42&rsquo;</span><br />
 
@@ -11049,7 +11042,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-s8 value2-o2 end"><span class="float">2.3</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-s8 value2-r1 end"><span class="float">18.3</span><br />
+					<td class="value1-s8 value2-r1 end"><span class="float">17.3</span><br />
 					</td>
 					<th><span class="string"><b><i>string[3]</i></b> : &lsquo;1.3&rsquo;</span><br />
 
@@ -11140,7 +11133,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-s9 value2-o2 end"><span class="float">1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-s9 value2-r1 end"><span class="float">17</span><br />
+					<td class="value1-s9 value2-r1 end"><span class="float">16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[3]</i></b> : &lsquo;0.0&rsquo;</span><br />
 
@@ -11231,7 +11224,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-sa value2-o2 end"><span class="float">-0.305</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-sa value2-r1 end"><span class="float">15.695</span><br />
+					<td class="value1-sa value2-r1 end"><span class="float">14.695</span><br />
 					</td>
 					<th><span class="string"><b><i>string[6]</i></b> : &lsquo;-1.305&rsquo;</span><br />
 
@@ -11322,7 +11315,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-sb value2-o2 end"><span class="int">1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-sb value2-r1 end"><span class="int">17</span><br />
+					<td class="value1-sb value2-r1 end"><span class="int">16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[4]</i></b> : &lsquo;true&rsquo;</span><br />
 
@@ -11413,7 +11406,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-sc value2-o2 end"><span class="int">1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-sc value2-r1 end"><span class="int">17</span><br />
+					<td class="value1-sc value2-r1 end"><span class="int">16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[5]</i></b> : &lsquo;false&rsquo;</span><br />
 
@@ -11504,7 +11497,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-sd value2-o2 end"><span class="int">1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-sd value2-r1 end"><span class="int">17</span><br />
+					<td class="value1-sd value2-r1 end"><span class="int">16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[4]</i></b> : &lsquo;null&rsquo;</span><br />
 
@@ -11595,7 +11588,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-sf value2-o2 end"><span class="int">124</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-sf value2-r1 end"><span class="int">140</span><br />
+					<td class="value1-sf value2-r1 end"><span class="int">139</span><br />
 					</td>
 					<th><span class="string"><b><i>string[6]</i></b> : &lsquo;123str&rsquo;</span><br />
 
@@ -11686,7 +11679,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-sg value2-o2 end"><span class="int">1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-sg value2-r1 end"><span class="int">17</span><br />
+					<td class="value1-sg value2-r1 end"><span class="int">16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[6]</i></b> : &lsquo;str123&rsquo;</span><br />
 
@@ -11777,7 +11770,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-sh value2-o2 end"><span class="int">124</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-sh value2-r1 end"><span class="int">140</span><br />
+					<td class="value1-sh value2-r1 end"><span class="int">139</span><br />
 					</td>
 					<th><span class="string"><b><i>string[10]</i></b> : &lsquo;123, &quot;str&quot;&rsquo;</span><br />
 
@@ -11868,7 +11861,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-su value2-o2 end"><span class="int">13369594</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-su value2-r1 end"><span class="int">13369610</span><br />
+					<td class="value1-su value2-r1 end"><span class="int">13369609</span><br />
 					</td>
 					<th><span class="string"><b><i>string[8]</i></b> : &lsquo;0xCC00F9&rsquo;</span><br />
 
@@ -11959,7 +11952,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-sv value2-o2 end"><span class="int">124</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-sv value2-r1 end"><span class="int">140</span><br />
+					<td class="value1-sv value2-r1 end"><span class="int">139</span><br />
 					</td>
 					<th><span class="string"><b><i>string[4]</i></b> : &lsquo;0123&rsquo;</span><br />
 
@@ -12284,7 +12277,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)<br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-oe value2-o2 end"><span class="int">2</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)<br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-oe value2-r1 end"><span class="int">18</span><br />
+					<td class="value1-oe value2-r1 end"><span class="int">17</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<th>Object: 
 (<br />
@@ -12392,7 +12385,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)<br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-o2 value2-o2 end"><span class="int">2</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)<br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-o2 value2-r1 end"><span class="int">18</span><br />
+					<td class="value1-o2 value2-r1 end"><span class="int">17</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
 					<th>Object: 
 (<br />
@@ -12410,93 +12403,93 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #17 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
-					<td class="value1-r1 value2-notset"><span class="int">17</span><br />
+					<td class="value1-r1 value2-notset"><span class="int">16</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#1</a></span>&nbsp;)					</td>
-					<td class="value1-r1 value2-n end"><span class="int">17</span><br />
+					<td class="value1-r1 value2-n end"><span class="int">16</span><br />
 					</td>
-					<td class="value1-r1 value2-b1"><span class="int">17</span><br />
+					<td class="value1-r1 value2-b1"><span class="int">16</span><br />
 					</td>
-					<td class="value1-r1 value2-b2 end"><span class="int">18</span><br />
+					<td class="value1-r1 value2-b2 end"><span class="int">17</span><br />
 					</td>
-					<td class="value1-r1 value2-i1"><span class="int">18</span><br />
+					<td class="value1-r1 value2-i1"><span class="int">17</span><br />
 					</td>
-					<td class="value1-r1 value2-i2"><span class="int">17</span><br />
+					<td class="value1-r1 value2-i2"><span class="int">16</span><br />
 					</td>
-					<td class="value1-r1 value2-i3"><span class="int">16</span><br />
+					<td class="value1-r1 value2-i3"><span class="int">15</span><br />
 					</td>
-					<td class="value1-r1 value2-i5"><span class="int">59</span><br />
+					<td class="value1-r1 value2-i5"><span class="int">58</span><br />
 					</td>
-					<td class="value1-r1 value2-i8"><span class="int">13369610</span><br />
+					<td class="value1-r1 value2-i8"><span class="int">13369609</span><br />
 					</td>
-					<td class="value1-r1 value2-i9"><span class="int">100</span><br />
+					<td class="value1-r1 value2-i9"><span class="int">99</span><br />
 					</td>
-					<td class="value1-r1 value2-ia end"><span class="int">74</span><br />
+					<td class="value1-r1 value2-ia end"><span class="int">73</span><br />
 					</td>
-					<td class="value1-r1 value2-f1"><span class="float">18.3</span><br />
+					<td class="value1-r1 value2-f1"><span class="float">17.3</span><br />
 					</td>
-					<td class="value1-r1 value2-f2"><span class="float">17.005</span><br />
+					<td class="value1-r1 value2-f2"><span class="float">16.005</span><br />
 					</td>
-					<td class="value1-r1 value2-f3"><span class="float">17</span><br />
+					<td class="value1-r1 value2-f3"><span class="float">16</span><br />
 					</td>
-					<td class="value1-r1 value2-f4"><span class="float">15.7</span><br />
+					<td class="value1-r1 value2-f4"><span class="float">14.7</span><br />
 					</td>
 					<td class="value1-r1 value2-f5"><span class="float">NAN</span><br />
 					</td>
 					<td class="value1-r1 value2-f6"><span class="float">-INF</span><br />
 					</td>
-					<td class="value1-r1 value2-f7 end"><span class="float">123450017</span><br />
+					<td class="value1-r1 value2-f7 end"><span class="float">123450016</span><br />
 					</td>
-					<td class="value1-r1 value2-se"><span class="int">17</span><br />
+					<td class="value1-r1 value2-se"><span class="int">16</span><br />
 					</td>
-					<td class="value1-r1 value2-s1"><span class="int">17</span><br />
+					<td class="value1-r1 value2-s1"><span class="int">16</span><br />
 					</td>
-					<td class="value1-r1 value2-s2"><span class="int">18</span><br />
+					<td class="value1-r1 value2-s2"><span class="int">17</span><br />
 					</td>
-					<td class="value1-r1 value2-s3"><span class="int">20</span><br />
+					<td class="value1-r1 value2-s3"><span class="int">19</span><br />
 					</td>
-					<td class="value1-r1 value2-s4"><span class="int">18</span><br />
+					<td class="value1-r1 value2-s4"><span class="int">17</span><br />
 					</td>
-					<td class="value1-r1 value2-s5"><span class="int">17</span><br />
+					<td class="value1-r1 value2-s5"><span class="int">16</span><br />
 					</td>
-					<td class="value1-r1 value2-s6"><span class="int">16</span><br />
+					<td class="value1-r1 value2-s6"><span class="int">15</span><br />
 					</td>
-					<td class="value1-r1 value2-s7"><span class="int">59</span><br />
+					<td class="value1-r1 value2-s7"><span class="int">58</span><br />
 					</td>
-					<td class="value1-r1 value2-s8"><span class="float">18.3</span><br />
+					<td class="value1-r1 value2-s8"><span class="float">17.3</span><br />
 					</td>
-					<td class="value1-r1 value2-s9"><span class="float">17</span><br />
+					<td class="value1-r1 value2-s9"><span class="float">16</span><br />
 					</td>
-					<td class="value1-r1 value2-sa"><span class="float">15.695</span><br />
+					<td class="value1-r1 value2-sa"><span class="float">14.695</span><br />
 					</td>
-					<td class="value1-r1 value2-sb"><span class="int">17</span><br />
+					<td class="value1-r1 value2-sb"><span class="int">16</span><br />
 					</td>
-					<td class="value1-r1 value2-sc"><span class="int">17</span><br />
+					<td class="value1-r1 value2-sc"><span class="int">16</span><br />
 					</td>
-					<td class="value1-r1 value2-sd"><span class="int">17</span><br />
+					<td class="value1-r1 value2-sd"><span class="int">16</span><br />
 					</td>
-					<td class="value1-r1 value2-sf"><span class="int">140</span><br />
+					<td class="value1-r1 value2-sf"><span class="int">139</span><br />
 					</td>
-					<td class="value1-r1 value2-sg"><span class="int">17</span><br />
+					<td class="value1-r1 value2-sg"><span class="int">16</span><br />
 					</td>
-					<td class="value1-r1 value2-sh"><span class="int">140</span><br />
+					<td class="value1-r1 value2-sh"><span class="int">139</span><br />
 					</td>
-					<td class="value1-r1 value2-su"><span class="int">13369610</span><br />
+					<td class="value1-r1 value2-su"><span class="int">13369609</span><br />
 					</td>
-					<td class="value1-r1 value2-sv end"><span class="int">140</span><br />
+					<td class="value1-r1 value2-sv end"><span class="int">139</span><br />
 					</td>
 					<td class="value1-r1 value2-ae"><br /> <span class="error">Fatal error (&nbsp;<a href="#sum-errors">#2</a>&nbsp;)</span>					</td>
 					<td class="value1-r1 value2-a3"><br /> <span class="error">Fatal error (&nbsp;<a href="#sum-errors">#2</a>&nbsp;)</span>					</td>
 					<td class="value1-r1 value2-a4 end"><br /> <span class="error">Fatal error (&nbsp;<a href="#sum-errors">#2</a>&nbsp;)</span>					</td>
-					<td class="value1-r1 value2-oe"><span class="int">18</span><br />
+					<td class="value1-r1 value2-oe"><span class="int">17</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-r1 value2-o2 end"><span class="int">18</span><br />
+					<td class="value1-r1 value2-o2 end"><span class="int">17</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#sum-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-r1 value2-r1 end"><span class="int">34</span><br />
+					<td class="value1-r1 value2-r1 end"><span class="int">32</span><br />
 					</td>
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #17 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -12620,7 +12613,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #17</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/language.operators.arithmetic" target="_blank" title="$a - $b"><strong>-</strong></a></th>
 				</tr>
@@ -12731,7 +12724,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #17</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/language.operators.arithmetic" target="_blank" title="$a - $b"><strong>-</strong></a></th>
 				</tr>
@@ -12822,7 +12815,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-notset value2-o2 end"><span class="int">-1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-notset value2-r1 end"><span class="int">-17</span><br />
+					<td class="value1-notset value2-r1 end"><span class="int">-16</span><br />
 					</td>
 					<th><span class="null"><b><i>null</i></b> :  ( = <i>NULL</i> )</span><br />
 
@@ -12913,7 +12906,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-n value2-o2 end"><span class="int">-1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-n value2-r1 end"><span class="int">-17</span><br />
+					<td class="value1-n value2-r1 end"><span class="int">-16</span><br />
 					</td>
 					<th><span class="null"><b><i>null</i></b> :  ( = <i>NULL</i> )</span><br />
 
@@ -13004,7 +12997,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-b1 value2-o2 end"><span class="int">-1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-b1 value2-r1 end"><span class="int">-17</span><br />
+					<td class="value1-b1 value2-r1 end"><span class="int">-16</span><br />
 					</td>
 					<th><span class="bool"><b><i>bool</i></b> :  ( = <i class="b-false">false</i> )</span><br />
 
@@ -13095,7 +13088,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-b2 value2-o2 end"><span class="int"><span class="int-0">0</span></span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-b2 value2-r1 end"><span class="int">-16</span><br />
+					<td class="value1-b2 value2-r1 end"><span class="int">-15</span><br />
 					</td>
 					<th><span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
 
@@ -13186,7 +13179,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-i1 value2-o2 end"><span class="int"><span class="int-0">0</span></span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-i1 value2-r1 end"><span class="int">-16</span><br />
+					<td class="value1-i1 value2-r1 end"><span class="int">-15</span><br />
 					</td>
 					<th><span class="int"><b><i>int</i></b> : 1</span><br />
 
@@ -13277,7 +13270,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-i2 value2-o2 end"><span class="int">-1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-i2 value2-r1 end"><span class="int">-17</span><br />
+					<td class="value1-i2 value2-r1 end"><span class="int">-16</span><br />
 					</td>
 					<th><span class="int"><b><i>int</i></b> : <span class="int-0">0</span></span><br />
 
@@ -13368,7 +13361,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-i3 value2-o2 end"><span class="int">-2</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-i3 value2-r1 end"><span class="int">-18</span><br />
+					<td class="value1-i3 value2-r1 end"><span class="int">-17</span><br />
 					</td>
 					<th><span class="int"><b><i>int</i></b> : -1</span><br />
 
@@ -13459,7 +13452,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-i5 value2-o2 end"><span class="int">41</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-i5 value2-r1 end"><span class="int">25</span><br />
+					<td class="value1-i5 value2-r1 end"><span class="int">26</span><br />
 					</td>
 					<th><span class="int"><b><i>int</i></b> : 42</span><br />
 
@@ -13550,7 +13543,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-i8 value2-o2 end"><span class="int">13369592</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-i8 value2-r1 end"><span class="int">13369576</span><br />
+					<td class="value1-i8 value2-r1 end"><span class="int">13369577</span><br />
 					</td>
 					<th><sup class="fright"><a href="#var-legend-i8">&dagger;i8</a></sup><span class="int"><b><i>int</i></b> : 13369593</span><br />
 
@@ -13641,7 +13634,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-i9 value2-o2 end"><span class="int">82</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-i9 value2-r1 end"><span class="int">66</span><br />
+					<td class="value1-i9 value2-r1 end"><span class="int">67</span><br />
 					</td>
 					<th><sup class="fright"><a href="#var-legend-i9">&dagger;i9</a></sup><span class="int"><b><i>int</i></b> : 83</span><br />
 
@@ -13732,7 +13725,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-ia value2-o2 end"><span class="int">56</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-ia value2-r1 end"><span class="int">40</span><br />
+					<td class="value1-ia value2-r1 end"><span class="int">41</span><br />
 					</td>
 					<th><span class="int"><b><i>int</i></b> : 57</span><br />
 
@@ -13823,7 +13816,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-f1 value2-o2 end"><span class="float">0.3</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-f1 value2-r1 end"><span class="float">-15.7</span><br />
+					<td class="value1-f1 value2-r1 end"><span class="float">-14.7</span><br />
 					</td>
 					<th><span class="float"><b><i>float</i></b> : 1.3</span><br />
 
@@ -13914,7 +13907,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-f2 value2-o2 end"><span class="float">-0.995</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-f2 value2-r1 end"><span class="float">-16.995</span><br />
+					<td class="value1-f2 value2-r1 end"><span class="float">-15.995</span><br />
 					</td>
 					<th><span class="float"><b><i>float</i></b> : 0.005</span><br />
 
@@ -14005,7 +13998,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-f3 value2-o2 end"><span class="float">-1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-f3 value2-r1 end"><span class="float">-17</span><br />
+					<td class="value1-f3 value2-r1 end"><span class="float">-16</span><br />
 					</td>
 					<th><span class="float"><b><i>float</i></b> : 0</span><br />
 
@@ -14096,7 +14089,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-f4 value2-o2 end"><span class="float">-2.3</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-f4 value2-r1 end"><span class="float">-18.3</span><br />
+					<td class="value1-f4 value2-r1 end"><span class="float">-17.3</span><br />
 					</td>
 					<th><span class="float"><b><i>float</i></b> : -1.3</span><br />
 
@@ -14369,7 +14362,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-f7 value2-o2 end"><span class="float">123449999</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-f7 value2-r1 end"><span class="float">123449983</span><br />
+					<td class="value1-f7 value2-r1 end"><span class="float">123449984</span><br />
 					</td>
 					<th><sup class="fright"><a href="#var-legend-f7">&dagger;f7</a></sup><span class="float"><b><i>float</i></b> : 123450000</span><br />
 
@@ -14460,7 +14453,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-se value2-o2 end"><span class="int">-1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-se value2-r1 end"><span class="int">-17</span><br />
+					<td class="value1-se value2-r1 end"><span class="int">-16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[0]</i></b> : &lsquo;&rsquo;</span><br />
 
@@ -14551,7 +14544,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-s1 value2-o2 end"><span class="int">-1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-s1 value2-r1 end"><span class="int">-17</span><br />
+					<td class="value1-s1 value2-r1 end"><span class="int">-16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[1]</i></b> : &lsquo; &rsquo;</span><br />
 
@@ -14642,7 +14635,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-s2 value2-o2 end"><span class="int"><span class="int-0">0</span></span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-s2 value2-r1 end"><span class="int">-16</span><br />
+					<td class="value1-s2 value2-r1 end"><span class="int">-15</span><br />
 					</td>
 					<th><span class="string"><b><i>string[2]</i></b> : &lsquo; 1&rsquo;</span><br />
 
@@ -14733,7 +14726,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-s3 value2-o2 end"><span class="int">2</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-s3 value2-r1 end"><span class="int">-14</span><br />
+					<td class="value1-s3 value2-r1 end"><span class="int">-13</span><br />
 					</td>
 					<th><span class="string"><b><i>string[3]</i></b> : &lsquo; 3 &rsquo;</span><br />
 
@@ -14824,7 +14817,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-s4 value2-o2 end"><span class="int"><span class="int-0">0</span></span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-s4 value2-r1 end"><span class="int">-16</span><br />
+					<td class="value1-s4 value2-r1 end"><span class="int">-15</span><br />
 					</td>
 					<th><span class="string"><b><i>string[1]</i></b> : &lsquo;1&rsquo;</span><br />
 
@@ -14915,7 +14908,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-s5 value2-o2 end"><span class="int">-1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-s5 value2-r1 end"><span class="int">-17</span><br />
+					<td class="value1-s5 value2-r1 end"><span class="int">-16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[1]</i></b> : &lsquo;0&rsquo;</span><br />
 
@@ -15006,7 +14999,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-s6 value2-o2 end"><span class="int">-2</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-s6 value2-r1 end"><span class="int">-18</span><br />
+					<td class="value1-s6 value2-r1 end"><span class="int">-17</span><br />
 					</td>
 					<th><span class="string"><b><i>string[2]</i></b> : &lsquo;-1&rsquo;</span><br />
 
@@ -15097,7 +15090,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-s7 value2-o2 end"><span class="int">41</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-s7 value2-r1 end"><span class="int">25</span><br />
+					<td class="value1-s7 value2-r1 end"><span class="int">26</span><br />
 					</td>
 					<th><span class="string"><b><i>string[2]</i></b> : &lsquo;42&rsquo;</span><br />
 
@@ -15188,7 +15181,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-s8 value2-o2 end"><span class="float">0.3</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-s8 value2-r1 end"><span class="float">-15.7</span><br />
+					<td class="value1-s8 value2-r1 end"><span class="float">-14.7</span><br />
 					</td>
 					<th><span class="string"><b><i>string[3]</i></b> : &lsquo;1.3&rsquo;</span><br />
 
@@ -15279,7 +15272,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-s9 value2-o2 end"><span class="float">-1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-s9 value2-r1 end"><span class="float">-17</span><br />
+					<td class="value1-s9 value2-r1 end"><span class="float">-16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[3]</i></b> : &lsquo;0.0&rsquo;</span><br />
 
@@ -15370,7 +15363,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-sa value2-o2 end"><span class="float">-2.305</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-sa value2-r1 end"><span class="float">-18.305</span><br />
+					<td class="value1-sa value2-r1 end"><span class="float">-17.305</span><br />
 					</td>
 					<th><span class="string"><b><i>string[6]</i></b> : &lsquo;-1.305&rsquo;</span><br />
 
@@ -15461,7 +15454,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-sb value2-o2 end"><span class="int">-1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-sb value2-r1 end"><span class="int">-17</span><br />
+					<td class="value1-sb value2-r1 end"><span class="int">-16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[4]</i></b> : &lsquo;true&rsquo;</span><br />
 
@@ -15552,7 +15545,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-sc value2-o2 end"><span class="int">-1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-sc value2-r1 end"><span class="int">-17</span><br />
+					<td class="value1-sc value2-r1 end"><span class="int">-16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[5]</i></b> : &lsquo;false&rsquo;</span><br />
 
@@ -15643,7 +15636,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-sd value2-o2 end"><span class="int">-1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-sd value2-r1 end"><span class="int">-17</span><br />
+					<td class="value1-sd value2-r1 end"><span class="int">-16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[4]</i></b> : &lsquo;null&rsquo;</span><br />
 
@@ -15734,7 +15727,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-sf value2-o2 end"><span class="int">122</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-sf value2-r1 end"><span class="int">106</span><br />
+					<td class="value1-sf value2-r1 end"><span class="int">107</span><br />
 					</td>
 					<th><span class="string"><b><i>string[6]</i></b> : &lsquo;123str&rsquo;</span><br />
 
@@ -15825,7 +15818,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-sg value2-o2 end"><span class="int">-1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-sg value2-r1 end"><span class="int">-17</span><br />
+					<td class="value1-sg value2-r1 end"><span class="int">-16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[6]</i></b> : &lsquo;str123&rsquo;</span><br />
 
@@ -15916,7 +15909,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-sh value2-o2 end"><span class="int">122</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-sh value2-r1 end"><span class="int">106</span><br />
+					<td class="value1-sh value2-r1 end"><span class="int">107</span><br />
 					</td>
 					<th><span class="string"><b><i>string[10]</i></b> : &lsquo;123, &quot;str&quot;&rsquo;</span><br />
 
@@ -16007,7 +16000,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-su value2-o2 end"><span class="int">13369592</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-su value2-r1 end"><span class="int">13369576</span><br />
+					<td class="value1-su value2-r1 end"><span class="int">13369577</span><br />
 					</td>
 					<th><span class="string"><b><i>string[8]</i></b> : &lsquo;0xCC00F9&rsquo;</span><br />
 
@@ -16098,7 +16091,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-sv value2-o2 end"><span class="int">122</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-sv value2-r1 end"><span class="int">106</span><br />
+					<td class="value1-sv value2-r1 end"><span class="int">107</span><br />
 					</td>
 					<th><span class="string"><b><i>string[4]</i></b> : &lsquo;0123&rsquo;</span><br />
 
@@ -16366,7 +16359,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)<br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-oe value2-o2 end"><span class="int"><span class="int-0">0</span></span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)<br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-oe value2-r1 end"><span class="int">-16</span><br />
+					<td class="value1-oe value2-r1 end"><span class="int">-15</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<th>Object: 
 (<br />
@@ -16474,7 +16467,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)<br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-o2 value2-o2 end"><span class="int"><span class="int-0">0</span></span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)<br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-o2 value2-r1 end"><span class="int">-16</span><br />
+					<td class="value1-o2 value2-r1 end"><span class="int">-15</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<th>Object: 
 (<br />
@@ -16492,93 +16485,93 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #17 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
-					<td class="value1-r1 value2-notset"><span class="int">17</span><br />
+					<td class="value1-r1 value2-notset"><span class="int">16</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#1</a></span>&nbsp;)					</td>
-					<td class="value1-r1 value2-n end"><span class="int">17</span><br />
+					<td class="value1-r1 value2-n end"><span class="int">16</span><br />
 					</td>
-					<td class="value1-r1 value2-b1"><span class="int">17</span><br />
+					<td class="value1-r1 value2-b1"><span class="int">16</span><br />
 					</td>
-					<td class="value1-r1 value2-b2 end"><span class="int">16</span><br />
+					<td class="value1-r1 value2-b2 end"><span class="int">15</span><br />
 					</td>
-					<td class="value1-r1 value2-i1"><span class="int">16</span><br />
+					<td class="value1-r1 value2-i1"><span class="int">15</span><br />
 					</td>
-					<td class="value1-r1 value2-i2"><span class="int">17</span><br />
+					<td class="value1-r1 value2-i2"><span class="int">16</span><br />
 					</td>
-					<td class="value1-r1 value2-i3"><span class="int">18</span><br />
+					<td class="value1-r1 value2-i3"><span class="int">17</span><br />
 					</td>
-					<td class="value1-r1 value2-i5"><span class="int">-25</span><br />
+					<td class="value1-r1 value2-i5"><span class="int">-26</span><br />
 					</td>
-					<td class="value1-r1 value2-i8"><span class="int">-13369576</span><br />
+					<td class="value1-r1 value2-i8"><span class="int">-13369577</span><br />
 					</td>
-					<td class="value1-r1 value2-i9"><span class="int">-66</span><br />
+					<td class="value1-r1 value2-i9"><span class="int">-67</span><br />
 					</td>
-					<td class="value1-r1 value2-ia end"><span class="int">-40</span><br />
+					<td class="value1-r1 value2-ia end"><span class="int">-41</span><br />
 					</td>
-					<td class="value1-r1 value2-f1"><span class="float">15.7</span><br />
+					<td class="value1-r1 value2-f1"><span class="float">14.7</span><br />
 					</td>
-					<td class="value1-r1 value2-f2"><span class="float">16.995</span><br />
+					<td class="value1-r1 value2-f2"><span class="float">15.995</span><br />
 					</td>
-					<td class="value1-r1 value2-f3"><span class="float">17</span><br />
+					<td class="value1-r1 value2-f3"><span class="float">16</span><br />
 					</td>
-					<td class="value1-r1 value2-f4"><span class="float">18.3</span><br />
+					<td class="value1-r1 value2-f4"><span class="float">17.3</span><br />
 					</td>
 					<td class="value1-r1 value2-f5"><span class="float">NAN</span><br />
 					</td>
 					<td class="value1-r1 value2-f6"><span class="float">INF</span><br />
 					</td>
-					<td class="value1-r1 value2-f7 end"><span class="float">-123449983</span><br />
+					<td class="value1-r1 value2-f7 end"><span class="float">-123449984</span><br />
 					</td>
-					<td class="value1-r1 value2-se"><span class="int">17</span><br />
+					<td class="value1-r1 value2-se"><span class="int">16</span><br />
 					</td>
-					<td class="value1-r1 value2-s1"><span class="int">17</span><br />
+					<td class="value1-r1 value2-s1"><span class="int">16</span><br />
 					</td>
-					<td class="value1-r1 value2-s2"><span class="int">16</span><br />
+					<td class="value1-r1 value2-s2"><span class="int">15</span><br />
 					</td>
-					<td class="value1-r1 value2-s3"><span class="int">14</span><br />
+					<td class="value1-r1 value2-s3"><span class="int">13</span><br />
 					</td>
-					<td class="value1-r1 value2-s4"><span class="int">16</span><br />
+					<td class="value1-r1 value2-s4"><span class="int">15</span><br />
 					</td>
-					<td class="value1-r1 value2-s5"><span class="int">17</span><br />
+					<td class="value1-r1 value2-s5"><span class="int">16</span><br />
 					</td>
-					<td class="value1-r1 value2-s6"><span class="int">18</span><br />
+					<td class="value1-r1 value2-s6"><span class="int">17</span><br />
 					</td>
-					<td class="value1-r1 value2-s7"><span class="int">-25</span><br />
+					<td class="value1-r1 value2-s7"><span class="int">-26</span><br />
 					</td>
-					<td class="value1-r1 value2-s8"><span class="float">15.7</span><br />
+					<td class="value1-r1 value2-s8"><span class="float">14.7</span><br />
 					</td>
-					<td class="value1-r1 value2-s9"><span class="float">17</span><br />
+					<td class="value1-r1 value2-s9"><span class="float">16</span><br />
 					</td>
-					<td class="value1-r1 value2-sa"><span class="float">18.305</span><br />
+					<td class="value1-r1 value2-sa"><span class="float">17.305</span><br />
 					</td>
-					<td class="value1-r1 value2-sb"><span class="int">17</span><br />
+					<td class="value1-r1 value2-sb"><span class="int">16</span><br />
 					</td>
-					<td class="value1-r1 value2-sc"><span class="int">17</span><br />
+					<td class="value1-r1 value2-sc"><span class="int">16</span><br />
 					</td>
-					<td class="value1-r1 value2-sd"><span class="int">17</span><br />
+					<td class="value1-r1 value2-sd"><span class="int">16</span><br />
 					</td>
-					<td class="value1-r1 value2-sf"><span class="int">-106</span><br />
+					<td class="value1-r1 value2-sf"><span class="int">-107</span><br />
 					</td>
-					<td class="value1-r1 value2-sg"><span class="int">17</span><br />
+					<td class="value1-r1 value2-sg"><span class="int">16</span><br />
 					</td>
-					<td class="value1-r1 value2-sh"><span class="int">-106</span><br />
+					<td class="value1-r1 value2-sh"><span class="int">-107</span><br />
 					</td>
-					<td class="value1-r1 value2-su"><span class="int">-13369576</span><br />
+					<td class="value1-r1 value2-su"><span class="int">-13369577</span><br />
 					</td>
-					<td class="value1-r1 value2-sv end"><span class="int">-106</span><br />
+					<td class="value1-r1 value2-sv end"><span class="int">-107</span><br />
 					</td>
 					<td class="value1-r1 value2-ae"><br /> <span class="error">Fatal error (&nbsp;<a href="#subtract-errors">#2</a>&nbsp;)</span>					</td>
 					<td class="value1-r1 value2-a3"><br /> <span class="error">Fatal error (&nbsp;<a href="#subtract-errors">#2</a>&nbsp;)</span>					</td>
 					<td class="value1-r1 value2-a4 end"><br /> <span class="error">Fatal error (&nbsp;<a href="#subtract-errors">#2</a>&nbsp;)</span>					</td>
-					<td class="value1-r1 value2-oe"><span class="int">16</span><br />
+					<td class="value1-r1 value2-oe"><span class="int">15</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-r1 value2-o2 end"><span class="int">16</span><br />
+					<td class="value1-r1 value2-o2 end"><span class="int">15</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#subtract-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-r1 value2-r1 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #17 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -16698,7 +16691,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #17</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/language.operators.arithmetic" target="_blank" title="$a * $b"><strong>*</strong></a></th>
 				</tr>
@@ -16809,7 +16802,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #17</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/language.operators.arithmetic" target="_blank" title="$a * $b"><strong>*</strong></a></th>
 				</tr>
@@ -17173,7 +17166,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-b2 value2-o2 end"><span class="int">1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-b2 value2-r1 end"><span class="int">17</span><br />
+					<td class="value1-b2 value2-r1 end"><span class="int">16</span><br />
 					</td>
 					<th><span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
 
@@ -17264,7 +17257,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-i1 value2-o2 end"><span class="int">1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-i1 value2-r1 end"><span class="int">17</span><br />
+					<td class="value1-i1 value2-r1 end"><span class="int">16</span><br />
 					</td>
 					<th><span class="int"><b><i>int</i></b> : 1</span><br />
 
@@ -17446,7 +17439,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-i3 value2-o2 end"><span class="int">-1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-i3 value2-r1 end"><span class="int">-17</span><br />
+					<td class="value1-i3 value2-r1 end"><span class="int">-16</span><br />
 					</td>
 					<th><span class="int"><b><i>int</i></b> : -1</span><br />
 
@@ -17537,7 +17530,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-i5 value2-o2 end"><span class="int">42</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-i5 value2-r1 end"><span class="int">714</span><br />
+					<td class="value1-i5 value2-r1 end"><span class="int">672</span><br />
 					</td>
 					<th><span class="int"><b><i>int</i></b> : 42</span><br />
 
@@ -17628,7 +17621,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-i8 value2-o2 end"><span class="int">13369593</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-i8 value2-r1 end"><span class="int">227283081</span><br />
+					<td class="value1-i8 value2-r1 end"><span class="int">213913488</span><br />
 					</td>
 					<th><sup class="fright"><a href="#var-legend-i8">&dagger;i8</a></sup><span class="int"><b><i>int</i></b> : 13369593</span><br />
 
@@ -17719,7 +17712,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-i9 value2-o2 end"><span class="int">83</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-i9 value2-r1 end"><span class="int">1411</span><br />
+					<td class="value1-i9 value2-r1 end"><span class="int">1328</span><br />
 					</td>
 					<th><sup class="fright"><a href="#var-legend-i9">&dagger;i9</a></sup><span class="int"><b><i>int</i></b> : 83</span><br />
 
@@ -17810,7 +17803,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-ia value2-o2 end"><span class="int">57</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-ia value2-r1 end"><span class="int">969</span><br />
+					<td class="value1-ia value2-r1 end"><span class="int">912</span><br />
 					</td>
 					<th><span class="int"><b><i>int</i></b> : 57</span><br />
 
@@ -17901,7 +17894,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-f1 value2-o2 end"><span class="float">1.3</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-f1 value2-r1 end"><span class="float">22.1</span><br />
+					<td class="value1-f1 value2-r1 end"><span class="float">20.8</span><br />
 					</td>
 					<th><span class="float"><b><i>float</i></b> : 1.3</span><br />
 
@@ -17992,7 +17985,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-f2 value2-o2 end"><span class="float">0.005</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-f2 value2-r1 end"><span class="float">0.085</span><br />
+					<td class="value1-f2 value2-r1 end"><span class="float">0.08</span><br />
 					</td>
 					<th><span class="float"><b><i>float</i></b> : 0.005</span><br />
 
@@ -18174,7 +18167,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-f4 value2-o2 end"><span class="float">-1.3</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-f4 value2-r1 end"><span class="float">-22.1</span><br />
+					<td class="value1-f4 value2-r1 end"><span class="float">-20.8</span><br />
 					</td>
 					<th><span class="float"><b><i>float</i></b> : -1.3</span><br />
 
@@ -18447,7 +18440,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-f7 value2-o2 end"><span class="float">123450000</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-f7 value2-r1 end"><span class="float">2098650000</span><br />
+					<td class="value1-f7 value2-r1 end"><span class="float">1975200000</span><br />
 					</td>
 					<th><sup class="fright"><a href="#var-legend-f7">&dagger;f7</a></sup><span class="float"><b><i>float</i></b> : 123450000</span><br />
 
@@ -18720,7 +18713,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-s2 value2-o2 end"><span class="int">1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-s2 value2-r1 end"><span class="int">17</span><br />
+					<td class="value1-s2 value2-r1 end"><span class="int">16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[2]</i></b> : &lsquo; 1&rsquo;</span><br />
 
@@ -18811,7 +18804,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-s3 value2-o2 end"><span class="int">3</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-s3 value2-r1 end"><span class="int">51</span><br />
+					<td class="value1-s3 value2-r1 end"><span class="int">48</span><br />
 					</td>
 					<th><span class="string"><b><i>string[3]</i></b> : &lsquo; 3 &rsquo;</span><br />
 
@@ -18902,7 +18895,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-s4 value2-o2 end"><span class="int">1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-s4 value2-r1 end"><span class="int">17</span><br />
+					<td class="value1-s4 value2-r1 end"><span class="int">16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[1]</i></b> : &lsquo;1&rsquo;</span><br />
 
@@ -19084,7 +19077,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-s6 value2-o2 end"><span class="int">-1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-s6 value2-r1 end"><span class="int">-17</span><br />
+					<td class="value1-s6 value2-r1 end"><span class="int">-16</span><br />
 					</td>
 					<th><span class="string"><b><i>string[2]</i></b> : &lsquo;-1&rsquo;</span><br />
 
@@ -19175,7 +19168,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-s7 value2-o2 end"><span class="int">42</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-s7 value2-r1 end"><span class="int">714</span><br />
+					<td class="value1-s7 value2-r1 end"><span class="int">672</span><br />
 					</td>
 					<th><span class="string"><b><i>string[2]</i></b> : &lsquo;42&rsquo;</span><br />
 
@@ -19266,7 +19259,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-s8 value2-o2 end"><span class="float">1.3</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-s8 value2-r1 end"><span class="float">22.1</span><br />
+					<td class="value1-s8 value2-r1 end"><span class="float">20.8</span><br />
 					</td>
 					<th><span class="string"><b><i>string[3]</i></b> : &lsquo;1.3&rsquo;</span><br />
 
@@ -19448,7 +19441,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-sa value2-o2 end"><span class="float">-1.305</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-sa value2-r1 end"><span class="float">-22.185</span><br />
+					<td class="value1-sa value2-r1 end"><span class="float">-20.88</span><br />
 					</td>
 					<th><span class="string"><b><i>string[6]</i></b> : &lsquo;-1.305&rsquo;</span><br />
 
@@ -19812,7 +19805,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-sf value2-o2 end"><span class="int">123</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-sf value2-r1 end"><span class="int">2091</span><br />
+					<td class="value1-sf value2-r1 end"><span class="int">1968</span><br />
 					</td>
 					<th><span class="string"><b><i>string[6]</i></b> : &lsquo;123str&rsquo;</span><br />
 
@@ -19994,7 +19987,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-sh value2-o2 end"><span class="int">123</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-sh value2-r1 end"><span class="int">2091</span><br />
+					<td class="value1-sh value2-r1 end"><span class="int">1968</span><br />
 					</td>
 					<th><span class="string"><b><i>string[10]</i></b> : &lsquo;123, &quot;str&quot;&rsquo;</span><br />
 
@@ -20085,7 +20078,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-su value2-o2 end"><span class="int">13369593</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-su value2-r1 end"><span class="int">227283081</span><br />
+					<td class="value1-su value2-r1 end"><span class="int">213913488</span><br />
 					</td>
 					<th><span class="string"><b><i>string[8]</i></b> : &lsquo;0xCC00F9&rsquo;</span><br />
 
@@ -20176,7 +20169,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-sv value2-o2 end"><span class="int">123</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-sv value2-r1 end"><span class="int">2091</span><br />
+					<td class="value1-sv value2-r1 end"><span class="int">1968</span><br />
 					</td>
 					<th><span class="string"><b><i>string[4]</i></b> : &lsquo;0123&rsquo;</span><br />
 
@@ -20444,7 +20437,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)<br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-oe value2-o2 end"><span class="int">1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)<br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-oe value2-r1 end"><span class="int">17</span><br />
+					<td class="value1-oe value2-r1 end"><span class="int">16</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
 					<th>Object: 
 (<br />
@@ -20552,7 +20545,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)<br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-o2 value2-o2 end"><span class="int">1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)<br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-o2 value2-r1 end"><span class="int">17</span><br />
+					<td class="value1-o2 value2-r1 end"><span class="int">16</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
 					<th>Object: 
 (<br />
@@ -20570,7 +20563,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #17 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="value1-r1 value2-notset"><span class="int"><span class="int-0">0</span></span><br />
@@ -20579,57 +20572,57 @@
 					</td>
 					<td class="value1-r1 value2-b1"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-r1 value2-b2 end"><span class="int">17</span><br />
+					<td class="value1-r1 value2-b2 end"><span class="int">16</span><br />
 					</td>
-					<td class="value1-r1 value2-i1"><span class="int">17</span><br />
+					<td class="value1-r1 value2-i1"><span class="int">16</span><br />
 					</td>
 					<td class="value1-r1 value2-i2"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-r1 value2-i3"><span class="int">-17</span><br />
+					<td class="value1-r1 value2-i3"><span class="int">-16</span><br />
 					</td>
-					<td class="value1-r1 value2-i5"><span class="int">714</span><br />
+					<td class="value1-r1 value2-i5"><span class="int">672</span><br />
 					</td>
-					<td class="value1-r1 value2-i8"><span class="int">227283081</span><br />
+					<td class="value1-r1 value2-i8"><span class="int">213913488</span><br />
 					</td>
-					<td class="value1-r1 value2-i9"><span class="int">1411</span><br />
+					<td class="value1-r1 value2-i9"><span class="int">1328</span><br />
 					</td>
-					<td class="value1-r1 value2-ia end"><span class="int">969</span><br />
+					<td class="value1-r1 value2-ia end"><span class="int">912</span><br />
 					</td>
-					<td class="value1-r1 value2-f1"><span class="float">22.1</span><br />
+					<td class="value1-r1 value2-f1"><span class="float">20.8</span><br />
 					</td>
-					<td class="value1-r1 value2-f2"><span class="float">0.085</span><br />
+					<td class="value1-r1 value2-f2"><span class="float">0.08</span><br />
 					</td>
 					<td class="value1-r1 value2-f3"><span class="float">0</span><br />
 					</td>
-					<td class="value1-r1 value2-f4"><span class="float">-22.1</span><br />
+					<td class="value1-r1 value2-f4"><span class="float">-20.8</span><br />
 					</td>
 					<td class="value1-r1 value2-f5"><span class="float">NAN</span><br />
 					</td>
 					<td class="value1-r1 value2-f6"><span class="float">-INF</span><br />
 					</td>
-					<td class="value1-r1 value2-f7 end"><span class="float">2098650000</span><br />
+					<td class="value1-r1 value2-f7 end"><span class="float">1975200000</span><br />
 					</td>
 					<td class="value1-r1 value2-se"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<td class="value1-r1 value2-s1"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-r1 value2-s2"><span class="int">17</span><br />
+					<td class="value1-r1 value2-s2"><span class="int">16</span><br />
 					</td>
-					<td class="value1-r1 value2-s3"><span class="int">51</span><br />
+					<td class="value1-r1 value2-s3"><span class="int">48</span><br />
 					</td>
-					<td class="value1-r1 value2-s4"><span class="int">17</span><br />
+					<td class="value1-r1 value2-s4"><span class="int">16</span><br />
 					</td>
 					<td class="value1-r1 value2-s5"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-r1 value2-s6"><span class="int">-17</span><br />
+					<td class="value1-r1 value2-s6"><span class="int">-16</span><br />
 					</td>
-					<td class="value1-r1 value2-s7"><span class="int">714</span><br />
+					<td class="value1-r1 value2-s7"><span class="int">672</span><br />
 					</td>
-					<td class="value1-r1 value2-s8"><span class="float">22.1</span><br />
+					<td class="value1-r1 value2-s8"><span class="float">20.8</span><br />
 					</td>
 					<td class="value1-r1 value2-s9"><span class="float">0</span><br />
 					</td>
-					<td class="value1-r1 value2-sa"><span class="float">-22.185</span><br />
+					<td class="value1-r1 value2-sa"><span class="float">-20.88</span><br />
 					</td>
 					<td class="value1-r1 value2-sb"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
@@ -20637,26 +20630,26 @@
 					</td>
 					<td class="value1-r1 value2-sd"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-r1 value2-sf"><span class="int">2091</span><br />
+					<td class="value1-r1 value2-sf"><span class="int">1968</span><br />
 					</td>
 					<td class="value1-r1 value2-sg"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-r1 value2-sh"><span class="int">2091</span><br />
+					<td class="value1-r1 value2-sh"><span class="int">1968</span><br />
 					</td>
-					<td class="value1-r1 value2-su"><span class="int">227283081</span><br />
+					<td class="value1-r1 value2-su"><span class="int">213913488</span><br />
 					</td>
-					<td class="value1-r1 value2-sv end"><span class="int">2091</span><br />
+					<td class="value1-r1 value2-sv end"><span class="int">1968</span><br />
 					</td>
 					<td class="value1-r1 value2-ae"><br /> <span class="error">Fatal error (&nbsp;<a href="#multiply-errors">#2</a>&nbsp;)</span>					</td>
 					<td class="value1-r1 value2-a3"><br /> <span class="error">Fatal error (&nbsp;<a href="#multiply-errors">#2</a>&nbsp;)</span>					</td>
 					<td class="value1-r1 value2-a4 end"><br /> <span class="error">Fatal error (&nbsp;<a href="#multiply-errors">#2</a>&nbsp;)</span>					</td>
-					<td class="value1-r1 value2-oe"><span class="int">17</span><br />
+					<td class="value1-r1 value2-oe"><span class="int">16</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-r1 value2-o2 end"><span class="int">17</span><br />
+					<td class="value1-r1 value2-o2 end"><span class="int">16</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#multiply-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-r1 value2-r1 end"><span class="int">289</span><br />
+					<td class="value1-r1 value2-r1 end"><span class="int">256</span><br />
 					</td>
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #17 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -20776,7 +20769,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #17</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/language.operators.arithmetic" target="_blank" title="$a / $b"><strong>/</strong></a></th>
 				</tr>
@@ -20887,7 +20880,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #17</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/language.operators.arithmetic" target="_blank" title="$a / $b"><strong>/</strong></a></th>
 				</tr>
@@ -21251,7 +21244,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
 					<td class="value1-b2 value2-o2 end"><span class="int">1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
-					<td class="value1-b2 value2-r1 end"><span class="float">0.058823529411765</span><br />
+					<td class="value1-b2 value2-r1 end"><span class="float">0.0625</span><br />
 					</td>
 					<th><span class="bool"><b><i>bool</i></b> : 1 ( = <i class="b-true">true</i> )</span><br />
 
@@ -21342,7 +21335,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
 					<td class="value1-i1 value2-o2 end"><span class="int">1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
-					<td class="value1-i1 value2-r1 end"><span class="float">0.058823529411765</span><br />
+					<td class="value1-i1 value2-r1 end"><span class="float">0.0625</span><br />
 					</td>
 					<th><span class="int"><b><i>int</i></b> : 1</span><br />
 
@@ -21524,7 +21517,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
 					<td class="value1-i3 value2-o2 end"><span class="int">-1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
-					<td class="value1-i3 value2-r1 end"><span class="float">-0.058823529411765</span><br />
+					<td class="value1-i3 value2-r1 end"><span class="float">-0.0625</span><br />
 					</td>
 					<th><span class="int"><b><i>int</i></b> : -1</span><br />
 
@@ -21615,7 +21608,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
 					<td class="value1-i5 value2-o2 end"><span class="int">42</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
-					<td class="value1-i5 value2-r1 end"><span class="float">2.4705882352941</span><br />
+					<td class="value1-i5 value2-r1 end"><span class="float">2.625</span><br />
 					</td>
 					<th><span class="int"><b><i>int</i></b> : 42</span><br />
 
@@ -21706,7 +21699,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
 					<td class="value1-i8 value2-o2 end"><span class="int">13369593</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
-					<td class="value1-i8 value2-r1 end"><span class="float">786446.64705882</span><br />
+					<td class="value1-i8 value2-r1 end"><span class="float">835599.5625</span><br />
 					</td>
 					<th><sup class="fright"><a href="#var-legend-i8">&dagger;i8</a></sup><span class="int"><b><i>int</i></b> : 13369593</span><br />
 
@@ -21797,7 +21790,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
 					<td class="value1-i9 value2-o2 end"><span class="int">83</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
-					<td class="value1-i9 value2-r1 end"><span class="float">4.8823529411765</span><br />
+					<td class="value1-i9 value2-r1 end"><span class="float">5.1875</span><br />
 					</td>
 					<th><sup class="fright"><a href="#var-legend-i9">&dagger;i9</a></sup><span class="int"><b><i>int</i></b> : 83</span><br />
 
@@ -21888,7 +21881,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
 					<td class="value1-ia value2-o2 end"><span class="int">57</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
-					<td class="value1-ia value2-r1 end"><span class="float">3.3529411764706</span><br />
+					<td class="value1-ia value2-r1 end"><span class="float">3.5625</span><br />
 					</td>
 					<th><span class="int"><b><i>int</i></b> : 57</span><br />
 
@@ -21979,7 +21972,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
 					<td class="value1-f1 value2-o2 end"><span class="float">1.3</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
-					<td class="value1-f1 value2-r1 end"><span class="float">0.076470588235294</span><br />
+					<td class="value1-f1 value2-r1 end"><span class="float">0.08125</span><br />
 					</td>
 					<th><span class="float"><b><i>float</i></b> : 1.3</span><br />
 
@@ -22070,7 +22063,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
 					<td class="value1-f2 value2-o2 end"><span class="float">0.005</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
-					<td class="value1-f2 value2-r1 end"><span class="float">0.00029411764705882</span><br />
+					<td class="value1-f2 value2-r1 end"><span class="float">0.0003125</span><br />
 					</td>
 					<th><span class="float"><b><i>float</i></b> : 0.005</span><br />
 
@@ -22252,7 +22245,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
 					<td class="value1-f4 value2-o2 end"><span class="float">-1.3</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
-					<td class="value1-f4 value2-r1 end"><span class="float">-0.076470588235294</span><br />
+					<td class="value1-f4 value2-r1 end"><span class="float">-0.08125</span><br />
 					</td>
 					<th><span class="float"><b><i>float</i></b> : -1.3</span><br />
 
@@ -22525,7 +22518,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
 					<td class="value1-f7 value2-o2 end"><span class="float">123450000</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
-					<td class="value1-f7 value2-r1 end"><span class="float">7261764.7058824</span><br />
+					<td class="value1-f7 value2-r1 end"><span class="float">7715625</span><br />
 					</td>
 					<th><sup class="fright"><a href="#var-legend-f7">&dagger;f7</a></sup><span class="float"><b><i>float</i></b> : 123450000</span><br />
 
@@ -22798,7 +22791,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
 					<td class="value1-s2 value2-o2 end"><span class="int">1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
-					<td class="value1-s2 value2-r1 end"><span class="float">0.058823529411765</span><br />
+					<td class="value1-s2 value2-r1 end"><span class="float">0.0625</span><br />
 					</td>
 					<th><span class="string"><b><i>string[2]</i></b> : &lsquo; 1&rsquo;</span><br />
 
@@ -22889,7 +22882,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
 					<td class="value1-s3 value2-o2 end"><span class="int">3</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
-					<td class="value1-s3 value2-r1 end"><span class="float">0.17647058823529</span><br />
+					<td class="value1-s3 value2-r1 end"><span class="float">0.1875</span><br />
 					</td>
 					<th><span class="string"><b><i>string[3]</i></b> : &lsquo; 3 &rsquo;</span><br />
 
@@ -22980,7 +22973,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
 					<td class="value1-s4 value2-o2 end"><span class="int">1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
-					<td class="value1-s4 value2-r1 end"><span class="float">0.058823529411765</span><br />
+					<td class="value1-s4 value2-r1 end"><span class="float">0.0625</span><br />
 					</td>
 					<th><span class="string"><b><i>string[1]</i></b> : &lsquo;1&rsquo;</span><br />
 
@@ -23162,7 +23155,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
 					<td class="value1-s6 value2-o2 end"><span class="int">-1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
-					<td class="value1-s6 value2-r1 end"><span class="float">-0.058823529411765</span><br />
+					<td class="value1-s6 value2-r1 end"><span class="float">-0.0625</span><br />
 					</td>
 					<th><span class="string"><b><i>string[2]</i></b> : &lsquo;-1&rsquo;</span><br />
 
@@ -23253,7 +23246,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
 					<td class="value1-s7 value2-o2 end"><span class="int">42</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
-					<td class="value1-s7 value2-r1 end"><span class="float">2.4705882352941</span><br />
+					<td class="value1-s7 value2-r1 end"><span class="float">2.625</span><br />
 					</td>
 					<th><span class="string"><b><i>string[2]</i></b> : &lsquo;42&rsquo;</span><br />
 
@@ -23344,7 +23337,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
 					<td class="value1-s8 value2-o2 end"><span class="float">1.3</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
-					<td class="value1-s8 value2-r1 end"><span class="float">0.076470588235294</span><br />
+					<td class="value1-s8 value2-r1 end"><span class="float">0.08125</span><br />
 					</td>
 					<th><span class="string"><b><i>string[3]</i></b> : &lsquo;1.3&rsquo;</span><br />
 
@@ -23526,7 +23519,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
 					<td class="value1-sa value2-o2 end"><span class="float">-1.305</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
-					<td class="value1-sa value2-r1 end"><span class="float">-0.076764705882353</span><br />
+					<td class="value1-sa value2-r1 end"><span class="float">-0.0815625</span><br />
 					</td>
 					<th><span class="string"><b><i>string[6]</i></b> : &lsquo;-1.305&rsquo;</span><br />
 
@@ -23890,7 +23883,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
 					<td class="value1-sf value2-o2 end"><span class="int">123</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
-					<td class="value1-sf value2-r1 end"><span class="float">7.2352941176471</span><br />
+					<td class="value1-sf value2-r1 end"><span class="float">7.6875</span><br />
 					</td>
 					<th><span class="string"><b><i>string[6]</i></b> : &lsquo;123str&rsquo;</span><br />
 
@@ -24072,7 +24065,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
 					<td class="value1-sh value2-o2 end"><span class="int">123</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
-					<td class="value1-sh value2-r1 end"><span class="float">7.2352941176471</span><br />
+					<td class="value1-sh value2-r1 end"><span class="float">7.6875</span><br />
 					</td>
 					<th><span class="string"><b><i>string[10]</i></b> : &lsquo;123, &quot;str&quot;&rsquo;</span><br />
 
@@ -24163,7 +24156,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
 					<td class="value1-su value2-o2 end"><span class="int">13369593</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
-					<td class="value1-su value2-r1 end"><span class="float">786446.64705882</span><br />
+					<td class="value1-su value2-r1 end"><span class="float">835599.5625</span><br />
 					</td>
 					<th><span class="string"><b><i>string[8]</i></b> : &lsquo;0xCC00F9&rsquo;</span><br />
 
@@ -24254,7 +24247,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
 					<td class="value1-sv value2-o2 end"><span class="int">123</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
-					<td class="value1-sv value2-r1 end"><span class="float">7.2352941176471</span><br />
+					<td class="value1-sv value2-r1 end"><span class="float">7.6875</span><br />
 					</td>
 					<th><span class="string"><b><i>string[4]</i></b> : &lsquo;0123&rsquo;</span><br />
 
@@ -24522,7 +24515,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)<br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
 					<td class="value1-oe value2-o2 end"><span class="int">1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)<br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
-					<td class="value1-oe value2-r1 end"><span class="float">0.058823529411765</span><br />
+					<td class="value1-oe value2-r1 end"><span class="float">0.0625</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
 					<th>Object: 
 (<br />
@@ -24630,7 +24623,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)<br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
 					<td class="value1-o2 value2-o2 end"><span class="int">1</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)<br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
-					<td class="value1-o2 value2-r1 end"><span class="float">0.058823529411765</span><br />
+					<td class="value1-o2 value2-r1 end"><span class="float">0.0625</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
 					<th>Object: 
 (<br />
@@ -24648,7 +24641,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #17 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="value1-r1 value2-notset"><span class="b-false">false</span>
@@ -24657,57 +24650,57 @@
 <br /> (&nbsp;<span class="warning"><a href="#divide-errors">#2</a></span>&nbsp;)					</td>
 					<td class="value1-r1 value2-b1"><span class="b-false">false</span>
 <br /> (&nbsp;<span class="warning"><a href="#divide-errors">#2</a></span>&nbsp;)					</td>
-					<td class="value1-r1 value2-b2 end"><span class="int">17</span><br />
+					<td class="value1-r1 value2-b2 end"><span class="int">16</span><br />
 					</td>
-					<td class="value1-r1 value2-i1"><span class="int">17</span><br />
+					<td class="value1-r1 value2-i1"><span class="int">16</span><br />
 					</td>
 					<td class="value1-r1 value2-i2"><span class="b-false">false</span>
 <br /> (&nbsp;<span class="warning"><a href="#divide-errors">#2</a></span>&nbsp;)					</td>
-					<td class="value1-r1 value2-i3"><span class="int">-17</span><br />
+					<td class="value1-r1 value2-i3"><span class="int">-16</span><br />
 					</td>
-					<td class="value1-r1 value2-i5"><span class="float">0.4047619047619</span><br />
+					<td class="value1-r1 value2-i5"><span class="float">0.38095238095238</span><br />
 					</td>
-					<td class="value1-r1 value2-i8"><span class="float">1.2715420731207E-6</span><br />
+					<td class="value1-r1 value2-i8"><span class="float">1.1967454805842E-6</span><br />
 					</td>
-					<td class="value1-r1 value2-i9"><span class="float">0.20481927710843</span><br />
+					<td class="value1-r1 value2-i9"><span class="float">0.19277108433735</span><br />
 					</td>
-					<td class="value1-r1 value2-ia end"><span class="float">0.29824561403509</span><br />
+					<td class="value1-r1 value2-ia end"><span class="float">0.28070175438596</span><br />
 					</td>
-					<td class="value1-r1 value2-f1"><span class="float">13.076923076923</span><br />
+					<td class="value1-r1 value2-f1"><span class="float">12.307692307692</span><br />
 					</td>
-					<td class="value1-r1 value2-f2"><span class="float">3400</span><br />
+					<td class="value1-r1 value2-f2"><span class="float">3200</span><br />
 					</td>
 					<td class="value1-r1 value2-f3"><span class="b-false">false</span>
 <br /> (&nbsp;<span class="warning"><a href="#divide-errors">#2</a></span>&nbsp;)					</td>
-					<td class="value1-r1 value2-f4"><span class="float">-13.076923076923</span><br />
+					<td class="value1-r1 value2-f4"><span class="float">-12.307692307692</span><br />
 					</td>
 					<td class="value1-r1 value2-f5"><span class="float">NAN</span><br />
 					</td>
 					<td class="value1-r1 value2-f6"><span class="float">-0</span><br />
 					</td>
-					<td class="value1-r1 value2-f7 end"><span class="float">1.3770757391657E-7</span><br />
+					<td class="value1-r1 value2-f7 end"><span class="float">1.2960712839206E-7</span><br />
 					</td>
 					<td class="value1-r1 value2-se"><span class="b-false">false</span>
 <br /> (&nbsp;<span class="warning"><a href="#divide-errors">#2</a></span>&nbsp;)					</td>
 					<td class="value1-r1 value2-s1"><span class="b-false">false</span>
 <br /> (&nbsp;<span class="warning"><a href="#divide-errors">#2</a></span>&nbsp;)					</td>
-					<td class="value1-r1 value2-s2"><span class="int">17</span><br />
+					<td class="value1-r1 value2-s2"><span class="int">16</span><br />
 					</td>
-					<td class="value1-r1 value2-s3"><span class="float">5.6666666666667</span><br />
+					<td class="value1-r1 value2-s3"><span class="float">5.3333333333333</span><br />
 					</td>
-					<td class="value1-r1 value2-s4"><span class="int">17</span><br />
+					<td class="value1-r1 value2-s4"><span class="int">16</span><br />
 					</td>
 					<td class="value1-r1 value2-s5"><span class="b-false">false</span>
 <br /> (&nbsp;<span class="warning"><a href="#divide-errors">#2</a></span>&nbsp;)					</td>
-					<td class="value1-r1 value2-s6"><span class="int">-17</span><br />
+					<td class="value1-r1 value2-s6"><span class="int">-16</span><br />
 					</td>
-					<td class="value1-r1 value2-s7"><span class="float">0.4047619047619</span><br />
+					<td class="value1-r1 value2-s7"><span class="float">0.38095238095238</span><br />
 					</td>
-					<td class="value1-r1 value2-s8"><span class="float">13.076923076923</span><br />
+					<td class="value1-r1 value2-s8"><span class="float">12.307692307692</span><br />
 					</td>
 					<td class="value1-r1 value2-s9"><span class="b-false">false</span>
 <br /> (&nbsp;<span class="warning"><a href="#divide-errors">#2</a></span>&nbsp;)					</td>
-					<td class="value1-r1 value2-sa"><span class="float">-13.026819923372</span><br />
+					<td class="value1-r1 value2-sa"><span class="float">-12.260536398467</span><br />
 					</td>
 					<td class="value1-r1 value2-sb"><span class="b-false">false</span>
 <br /> (&nbsp;<span class="warning"><a href="#divide-errors">#2</a></span>&nbsp;)					</td>
@@ -24715,26 +24708,26 @@
 <br /> (&nbsp;<span class="warning"><a href="#divide-errors">#2</a></span>&nbsp;)					</td>
 					<td class="value1-r1 value2-sd"><span class="b-false">false</span>
 <br /> (&nbsp;<span class="warning"><a href="#divide-errors">#2</a></span>&nbsp;)					</td>
-					<td class="value1-r1 value2-sf"><span class="float">0.13821138211382</span><br />
+					<td class="value1-r1 value2-sf"><span class="float">0.13008130081301</span><br />
 					</td>
 					<td class="value1-r1 value2-sg"><span class="b-false">false</span>
 <br /> (&nbsp;<span class="warning"><a href="#divide-errors">#2</a></span>&nbsp;)					</td>
-					<td class="value1-r1 value2-sh"><span class="float">0.13821138211382</span><br />
+					<td class="value1-r1 value2-sh"><span class="float">0.13008130081301</span><br />
 					</td>
-					<td class="value1-r1 value2-su"><span class="float">1.2715420731207E-6</span><br />
+					<td class="value1-r1 value2-su"><span class="float">1.1967454805842E-6</span><br />
 					</td>
-					<td class="value1-r1 value2-sv end"><span class="float">0.13821138211382</span><br />
+					<td class="value1-r1 value2-sv end"><span class="float">0.13008130081301</span><br />
 					</td>
 					<td class="value1-r1 value2-ae"><br /> <span class="error">Fatal error (&nbsp;<a href="#divide-errors">#3</a>&nbsp;)</span>					</td>
 					<td class="value1-r1 value2-a3"><br /> <span class="error">Fatal error (&nbsp;<a href="#divide-errors">#3</a>&nbsp;)</span>					</td>
 					<td class="value1-r1 value2-a4 end"><br /> <span class="error">Fatal error (&nbsp;<a href="#divide-errors">#3</a>&nbsp;)</span>					</td>
-					<td class="value1-r1 value2-oe"><span class="int">17</span><br />
+					<td class="value1-r1 value2-oe"><span class="int">16</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
-					<td class="value1-r1 value2-o2 end"><span class="int">17</span><br />
+					<td class="value1-r1 value2-o2 end"><span class="int">16</span><br />
 <br /> (&nbsp;<span class="notice"><a href="#divide-errors">#4</a></span>&nbsp;)					</td>
 					<td class="value1-r1 value2-r1 end"><span class="int">1</span><br />
 					</td>
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #17 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -24855,7 +24848,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #17</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/language.operators.arithmetic" target="_blank" title="$a % $b"><strong>%</strong></a></th>
 				</tr>
@@ -24966,7 +24959,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #17</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/language.operators.arithmetic" target="_blank" title="$a % $b"><strong>%</strong></a></th>
 				</tr>
@@ -25718,7 +25711,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#modulus-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-i5 value2-o2 end"><span class="int"><span class="int-0">0</span></span><br />
 <br /> (&nbsp;<span class="notice"><a href="#modulus-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-i5 value2-r1 end"><span class="int">8</span><br />
+					<td class="value1-i5 value2-r1 end"><span class="int">10</span><br />
 					</td>
 					<th><span class="int"><b><i>int</i></b> : 42</span><br />
 
@@ -25812,7 +25805,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#modulus-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-i8 value2-o2 end"><span class="int"><span class="int-0">0</span></span><br />
 <br /> (&nbsp;<span class="notice"><a href="#modulus-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-i8 value2-r1 end"><span class="int">11</span><br />
+					<td class="value1-i8 value2-r1 end"><span class="int">9</span><br />
 					</td>
 					<th><sup class="fright"><a href="#var-legend-i8">&dagger;i8</a></sup><span class="int"><b><i>int</i></b> : 13369593</span><br />
 
@@ -25906,7 +25899,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#modulus-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-i9 value2-o2 end"><span class="int"><span class="int-0">0</span></span><br />
 <br /> (&nbsp;<span class="notice"><a href="#modulus-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-i9 value2-r1 end"><span class="int">15</span><br />
+					<td class="value1-i9 value2-r1 end"><span class="int">3</span><br />
 					</td>
 					<th><sup class="fright"><a href="#var-legend-i9">&dagger;i9</a></sup><span class="int"><b><i>int</i></b> : 83</span><br />
 
@@ -26000,7 +25993,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#modulus-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-ia value2-o2 end"><span class="int"><span class="int-0">0</span></span><br />
 <br /> (&nbsp;<span class="notice"><a href="#modulus-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-ia value2-r1 end"><span class="int">6</span><br />
+					<td class="value1-ia value2-r1 end"><span class="int">9</span><br />
 					</td>
 					<th><span class="int"><b><i>int</i></b> : 57</span><br />
 
@@ -26470,7 +26463,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#modulus-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-f5 value2-o2 end"><span class="int"><span class="int-0">0</span></span><br />
 <br /> (&nbsp;<span class="notice"><a href="#modulus-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-f5 value2-r1 end"><span class="int">-9</span><br />
+					<td class="value1-f5 value2-r1 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th><sup class="fright"><a href="#var-legend-f5">&dagger;f5</a></sup><span class="float"><b><i>float</i></b> : NAN</span><br />
 
@@ -26658,7 +26651,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#modulus-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-f7 value2-o2 end"><span class="int"><span class="int-0">0</span></span><br />
 <br /> (&nbsp;<span class="notice"><a href="#modulus-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-f7 value2-r1 end"><span class="int">12</span><br />
+					<td class="value1-f7 value2-r1 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
 					<th><sup class="fright"><a href="#var-legend-f7">&dagger;f7</a></sup><span class="float"><b><i>float</i></b> : 123450000</span><br />
 
@@ -27410,7 +27403,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#modulus-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-s7 value2-o2 end"><span class="int"><span class="int-0">0</span></span><br />
 <br /> (&nbsp;<span class="notice"><a href="#modulus-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-s7 value2-r1 end"><span class="int">8</span><br />
+					<td class="value1-s7 value2-r1 end"><span class="int">10</span><br />
 					</td>
 					<th><span class="string"><b><i>string[2]</i></b> : &lsquo;42&rsquo;</span><br />
 
@@ -28068,7 +28061,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#modulus-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-sf value2-o2 end"><span class="int"><span class="int-0">0</span></span><br />
 <br /> (&nbsp;<span class="notice"><a href="#modulus-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-sf value2-r1 end"><span class="int">4</span><br />
+					<td class="value1-sf value2-r1 end"><span class="int">11</span><br />
 					</td>
 					<th><span class="string"><b><i>string[6]</i></b> : &lsquo;123str&rsquo;</span><br />
 
@@ -28256,7 +28249,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#modulus-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-sh value2-o2 end"><span class="int"><span class="int-0">0</span></span><br />
 <br /> (&nbsp;<span class="notice"><a href="#modulus-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-sh value2-r1 end"><span class="int">4</span><br />
+					<td class="value1-sh value2-r1 end"><span class="int">11</span><br />
 					</td>
 					<th><span class="string"><b><i>string[10]</i></b> : &lsquo;123, &quot;str&quot;&rsquo;</span><br />
 
@@ -28444,7 +28437,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#modulus-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-sv value2-o2 end"><span class="int"><span class="int-0">0</span></span><br />
 <br /> (&nbsp;<span class="notice"><a href="#modulus-errors">#3</a></span>&nbsp;)					</td>
-					<td class="value1-sv value2-r1 end"><span class="int">4</span><br />
+					<td class="value1-sv value2-r1 end"><span class="int">11</span><br />
 					</td>
 					<th><span class="string"><b><i>string[4]</i></b> : &lsquo;0123&rsquo;</span><br />
 
@@ -28973,7 +28966,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #17 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="value1-r1 value2-notset"><span class="b-false">false</span>
@@ -28990,13 +28983,13 @@
 <br /> (&nbsp;<span class="warning"><a href="#modulus-errors">#2</a></span>&nbsp;)					</td>
 					<td class="value1-r1 value2-i3"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-r1 value2-i5"><span class="int">17</span><br />
+					<td class="value1-r1 value2-i5"><span class="int">16</span><br />
 					</td>
-					<td class="value1-r1 value2-i8"><span class="int">17</span><br />
+					<td class="value1-r1 value2-i8"><span class="int">16</span><br />
 					</td>
-					<td class="value1-r1 value2-i9"><span class="int">17</span><br />
+					<td class="value1-r1 value2-i9"><span class="int">16</span><br />
 					</td>
-					<td class="value1-r1 value2-ia end"><span class="int">17</span><br />
+					<td class="value1-r1 value2-ia end"><span class="int">16</span><br />
 					</td>
 					<td class="value1-r1 value2-f1"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
@@ -29006,11 +28999,11 @@
 <br /> (&nbsp;<span class="warning"><a href="#modulus-errors">#2</a></span>&nbsp;)					</td>
 					<td class="value1-r1 value2-f4"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-r1 value2-f5"><span class="int">17</span><br />
+					<td class="value1-r1 value2-f5"><span class="int">16</span><br />
 					</td>
 					<td class="value1-r1 value2-f6"><span class="b-false">false</span>
 <br /> (&nbsp;<span class="warning"><a href="#modulus-errors">#2</a></span>&nbsp;)					</td>
-					<td class="value1-r1 value2-f7 end"><span class="int">17</span><br />
+					<td class="value1-r1 value2-f7 end"><span class="int">16</span><br />
 					</td>
 					<td class="value1-r1 value2-se"><span class="b-false">false</span>
 <br /> (&nbsp;<span class="warning"><a href="#modulus-errors">#2</a></span>&nbsp;)					</td>
@@ -29018,7 +29011,7 @@
 <br /> (&nbsp;<span class="warning"><a href="#modulus-errors">#2</a></span>&nbsp;)					</td>
 					<td class="value1-r1 value2-s2"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-r1 value2-s3"><span class="int">2</span><br />
+					<td class="value1-r1 value2-s3"><span class="int">1</span><br />
 					</td>
 					<td class="value1-r1 value2-s4"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
@@ -29026,7 +29019,7 @@
 <br /> (&nbsp;<span class="warning"><a href="#modulus-errors">#2</a></span>&nbsp;)					</td>
 					<td class="value1-r1 value2-s6"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<td class="value1-r1 value2-s7"><span class="int">17</span><br />
+					<td class="value1-r1 value2-s7"><span class="int">16</span><br />
 					</td>
 					<td class="value1-r1 value2-s8"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
@@ -29040,15 +29033,15 @@
 <br /> (&nbsp;<span class="warning"><a href="#modulus-errors">#2</a></span>&nbsp;)					</td>
 					<td class="value1-r1 value2-sd"><span class="b-false">false</span>
 <br /> (&nbsp;<span class="warning"><a href="#modulus-errors">#2</a></span>&nbsp;)					</td>
-					<td class="value1-r1 value2-sf"><span class="int">17</span><br />
+					<td class="value1-r1 value2-sf"><span class="int">16</span><br />
 					</td>
 					<td class="value1-r1 value2-sg"><span class="b-false">false</span>
 <br /> (&nbsp;<span class="warning"><a href="#modulus-errors">#2</a></span>&nbsp;)					</td>
-					<td class="value1-r1 value2-sh"><span class="int">17</span><br />
+					<td class="value1-r1 value2-sh"><span class="int">16</span><br />
 					</td>
 					<td class="value1-r1 value2-su"><span class="b-false">false</span>
 <br /> (&nbsp;<span class="warning"><a href="#modulus-errors">#2</a></span>&nbsp;)					</td>
-					<td class="value1-r1 value2-sv end"><span class="int">17</span><br />
+					<td class="value1-r1 value2-sv end"><span class="int">16</span><br />
 					</td>
 					<td class="value1-r1 value2-ae"><span class="b-false">false</span>
 <br /> (&nbsp;<span class="warning"><a href="#modulus-errors">#2</a></span>&nbsp;)					</td>
@@ -29062,7 +29055,7 @@
 <br /> (&nbsp;<span class="notice"><a href="#modulus-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-r1 value2-r1 end"><span class="int"><span class="int-0">0</span></span><br />
 					</td>
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #17 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -29182,7 +29175,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #17</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/fmod" target="_blank"><strong>fmod()</strong></a></th>
 				</tr>
@@ -29293,7 +29286,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #17</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/fmod" target="_blank"><strong>fmod()</strong></a></th>
 				</tr>
@@ -33300,7 +33293,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #17 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="value1-r1 value2-notset"><span class="null">null</span>
@@ -33389,7 +33382,7 @@
 <br /> (&nbsp;<span class="warning"><a href="#fmod-errors">#4</a></span>&nbsp;)					</td>
 					<td class="value1-r1 value2-r1 end"><span class="null">null</span>
 <br /> (&nbsp;<span class="warning"><a href="#fmod-errors">#4</a></span>&nbsp;)					</td>
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #17 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -33510,7 +33503,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #17</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/bcadd" target="_blank"><strong>bcadd()</strong></a> <sup><a href="#bcadd-note1">&Dagger;1</a></sup></th>
 				</tr>
@@ -33621,7 +33614,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #17</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/bcadd" target="_blank"><strong>bcadd()</strong></a> <sup><a href="#bcadd-note1">&Dagger;1</a></sup></th>
 				</tr>
@@ -37628,7 +37621,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #17 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="value1-r1 value2-notset"><span class="null">null</span>
@@ -37717,7 +37710,7 @@
 <br /> (&nbsp;<span class="warning"><a href="#bcadd-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-r1 value2-r1 end"><span class="null">null</span>
 <br /> (&nbsp;<span class="warning"><a href="#bcadd-errors">#3</a></span>&nbsp;)					</td>
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #17 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -37841,7 +37834,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #17</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/bcsub" target="_blank"><strong>bcsub()</strong></a> <sup><a href="#bcsub-note1">&Dagger;1</a></sup></th>
 				</tr>
@@ -37952,7 +37945,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #17</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/bcsub" target="_blank"><strong>bcsub()</strong></a> <sup><a href="#bcsub-note1">&Dagger;1</a></sup></th>
 				</tr>
@@ -41959,7 +41952,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #17 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="value1-r1 value2-notset"><span class="null">null</span>
@@ -42048,7 +42041,7 @@
 <br /> (&nbsp;<span class="warning"><a href="#bcsub-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-r1 value2-r1 end"><span class="null">null</span>
 <br /> (&nbsp;<span class="warning"><a href="#bcsub-errors">#3</a></span>&nbsp;)					</td>
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #17 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -42172,7 +42165,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #17</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/bcmul" target="_blank"><strong>bcmul()</strong></a> <sup><a href="#bcmul-note1">&Dagger;1</a></sup></th>
 				</tr>
@@ -42283,7 +42276,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #17</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/bcmul" target="_blank"><strong>bcmul()</strong></a> <sup><a href="#bcmul-note1">&Dagger;1</a></sup></th>
 				</tr>
@@ -46290,7 +46283,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #17 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="value1-r1 value2-notset"><span class="null">null</span>
@@ -46379,7 +46372,7 @@
 <br /> (&nbsp;<span class="warning"><a href="#bcmul-errors">#3</a></span>&nbsp;)					</td>
 					<td class="value1-r1 value2-r1 end"><span class="null">null</span>
 <br /> (&nbsp;<span class="warning"><a href="#bcmul-errors">#3</a></span>&nbsp;)					</td>
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #17 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -46503,7 +46496,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #17</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/bcdiv" target="_blank"><strong>bcdiv()</strong></a> <sup><a href="#bcdiv-note1">&Dagger;1</a></sup></th>
 				</tr>
@@ -46614,7 +46607,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #17</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/bcdiv" target="_blank"><strong>bcdiv()</strong></a> <sup><a href="#bcdiv-note1">&Dagger;1</a></sup></th>
 				</tr>
@@ -50621,7 +50614,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #17 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="value1-r1 value2-notset"><span class="null">null</span>
@@ -50710,7 +50703,7 @@
 <br /> (&nbsp;<span class="warning"><a href="#bcdiv-errors">#4</a></span>&nbsp;)					</td>
 					<td class="value1-r1 value2-r1 end"><span class="null">null</span>
 <br /> (&nbsp;<span class="warning"><a href="#bcdiv-errors">#4</a></span>&nbsp;)					</td>
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #17 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -50835,7 +50828,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #17</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/bcmod" target="_blank"><strong>bcmod()</strong></a> <sup><a href="#bcmod-note1">&Dagger;1</a></sup></th>
 				</tr>
@@ -50946,7 +50939,7 @@
   )
 )
 ">Object(&hellip;)</span>					</th>
-					<th class="end"><span class="resource">Resource id #17</span><br />
+					<th class="end"><span class="resource">Resource id #16</span><br />
 					</th>
 					<th><a href="http://php.net/bcmod" target="_blank"><strong>bcmod()</strong></a> <sup><a href="#bcmod-note1">&Dagger;1</a></sup></th>
 				</tr>
@@ -54953,7 +54946,7 @@
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #17 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="value1-r1 value2-notset"><span class="null">null</span>
@@ -55042,7 +55035,7 @@
 <br /> (&nbsp;<span class="warning"><a href="#bcmod-errors">#4</a></span>&nbsp;)					</td>
 					<td class="value1-r1 value2-r1 end"><span class="null">null</span>
 <br /> (&nbsp;<span class="warning"><a href="#bcmod-errors">#4</a></span>&nbsp;)					</td>
-					<th><span class="resource"><b><i>resource</i></b> : Resource id #17 ( = <i>RESOURCE</i> )</span><br />
+					<th><span class="resource"><b><i>resource</i></b> : Resource id #16 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
