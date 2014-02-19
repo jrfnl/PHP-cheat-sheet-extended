@@ -77,7 +77,7 @@ ui-icon-circle-minus
 			}
 		},
 		beforeLoad: function( event, ui ) {
-			if( ui.panel.html() == '' ) {
+			if( ui.panel.html() === '' ) {
 				// Show spinner if tab hasn't been loaded yet
 				ui.panel.html('<div class="spinner"><img src="./page/ajax-loader-5C9CCC.gif" /></div>');
 				// Show error message if ajax loading of content failed
