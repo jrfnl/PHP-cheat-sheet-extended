@@ -62,7 +62,7 @@ endif; ?>
 	endif;
 ?>
 
-	<h1><a href="http://phpcheatsheets.com/"><img src="./<?php if ( isset( $dir ) ) print $dir; ?>page/php-med-trans.png" width="95" height="51" alt="PHP" /> Cheatsheets</a></h1>
+	<h1><a href="index.php"><img src="./<?php if ( isset( $dir ) ) print $dir; ?>page/php-med-trans.png" width="95" height="51" alt="PHP" /> Cheatsheets</a></h1>
 
 	<?php
 	if ( isset( $type ) || isset( $page ) ): ?>
