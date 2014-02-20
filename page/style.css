@@ -308,6 +308,11 @@ div.about img {
 	margin: 0 60px 20px 20px;
 }
 
+div.about a.li-button img {
+	border: 0px;
+	margin: 0 0 0 20px;
+}
+
 
 
 div.footer {
@@ -329,7 +334,7 @@ div.footer div {
 
 div.footer p#share {
 	float: right;
-	margin-left: 40px;
+	margin-left: 30px;
 	margin-right: 10px;
 }
 
