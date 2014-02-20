@@ -28,8 +28,13 @@ if ( PHP_VERSION_ID > 50100 ) {
 
 
 // Minified js & css ?
-//$min = '';
-$min = '.min';
+if ( ( isset( $_SERVER['HTTP_HOST'] ) && $_SERVER['HTTP_HOST'] === 'phpcheatsheets.com' ) || ( isset( $_SERVER['SERVER_NAME'] ) && $_SERVER['SERVER_NAME'] === 'phpcheatsheets.com' ) ) {
+	$min = '.min';
+}
+else {
+	$min = '';
+}
+
 
 // js & css directory change ?
 $dir = '';
