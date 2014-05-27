@@ -325,8 +325,8 @@ class VartypeTest extends Vartype {
 				'<p>Before PHP &lt; 5.2.0, the <code>__toString()</code> method was only available to echo/print statements, so casting to string would still result in <code>Object</code>, even when the object contained a <code>__toString()</code> method.</p>',
 			),
 		),
-		
-		
+
+
 		/**
 		 * Using CastToType class
 		 * https://github.com/jrfnl/PHP-cast-to-type.git
@@ -344,7 +344,7 @@ class VartypeTest extends Vartype {
 			'title'		=>	'CastToType::_bool (&nbsp;$x&nbsp;)',
 			'url'		=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'		=>	'$x',
-			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); $r = CastToType::_bool( $x ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'&nbsp;\'; }',
+			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); $r = CastToType::_bool( $x ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'&nbsp;\'; }',
 			'notes'		=>	array(
 				'<p>Uses an <a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">external library</a></p>',
 			),
@@ -353,7 +353,7 @@ class VartypeTest extends Vartype {
 			'title'		=>	'CastToType::_float (&nbsp;$x&nbsp;)',
 			'url'		=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'		=>	'$x',
-			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); $r = CastToType::_float( $x ); if ( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'&nbsp;\'; }',
+			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); $r = CastToType::_float( $x ); if ( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'&nbsp;\'; }',
 			'notes'		=>	array(
 				'<p>Uses an <a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">external library</a></p>',
 			),
@@ -362,7 +362,7 @@ class VartypeTest extends Vartype {
 			'title'		=>	'CastToType::_int (&nbsp;$x&nbsp;)',
 			'url'		=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'		=>	'$x',
-			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); $r = CastToType::_int( $x ); if ( is_int( $r ) ) { pr_int( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'&nbsp;\'; }',
+			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); $r = CastToType::_int( $x ); if ( is_int( $r ) ) { pr_int( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'&nbsp;\'; }',
 			'notes'		=>	array(
 				'<p>Uses an <a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">external library</a></p>',
 			),
@@ -371,7 +371,7 @@ class VartypeTest extends Vartype {
 			'title'		=>	'CastToType::_null (&nbsp;$x&nbsp;)',
 			'url'		=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'		=>	'$x',
-			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); pr_var( CastToType::_null( $x ), \'\', true, true ); } else { print \'&nbsp;\'; }',
+			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); pr_var( CastToType::_null( $x ), \'\', true, true ); } else { print \'&nbsp;\'; }',
 			'notes'		=>	array(
 				'<p>Uses an <a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">external library</a></p>',
 			),
@@ -380,7 +380,7 @@ class VartypeTest extends Vartype {
 			'title'		=>	'CastToType::_object (&nbsp;$x&nbsp;)',
 			'url'		=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'		=>	'$x',
-			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); pr_var( CastToType::_object( $x ), \'\', true, true ); } else { print \'&nbsp;\'; }',
+			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); pr_var( CastToType::_object( $x ), \'\', true, true ); } else { print \'&nbsp;\'; }',
 			'notes'		=>	array(
 				'<p>Uses an <a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">external library</a></p>',
 			),
@@ -389,7 +389,7 @@ class VartypeTest extends Vartype {
 			'title'		=>	'CastToType::_string (&nbsp;$x&nbsp;)',
 			'url'		=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'		=>	'$x',
-			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); $r = CastToType::_string( $x ); if ( is_string( $r ) ) { pr_str( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'&nbsp;\'; }',
+			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); $r = CastToType::_string( $x ); if ( is_string( $r ) ) { pr_str( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'&nbsp;\'; }',
 			'notes'		=>	array(
 				'<p>Uses an <a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">external library</a></p>',
 			),
@@ -400,7 +400,7 @@ class VartypeTest extends Vartype {
 			'title'		=>	'CastToType::_array (&nbsp;$x, false&nbsp;)',
 			'url'		=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'		=>	'$x',
-			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); pr_var( CastToType::_array( $x, false ), \'\', true, true ); } else { print \'&nbsp;\'; }',
+			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); pr_var( CastToType::_array( $x, false ), \'\', true, true ); } else { print \'&nbsp;\'; }',
 			'notes'		=>	array(
 				'<p>Uses an external library</p>',
 			),
@@ -409,7 +409,7 @@ class VartypeTest extends Vartype {
 			'title'		=>	'CastToType::_bool (&nbsp;$x, false, false&nbsp;)',
 			'url'		=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'		=>	'$x',
-			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); $r = CastToType::_bool( $x, false, false ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'&nbsp;\'; }',
+			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); $r = CastToType::_bool( $x, false, false ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'&nbsp;\'; }',
 			'notes'		=>	array(
 				'<p>Uses an <a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">external library</a></p>',
 			),
@@ -418,7 +418,7 @@ class VartypeTest extends Vartype {
 			'title'		=>	'CastToType::_float (&nbsp;$x, false, false&nbsp;)',
 			'url'		=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'		=>	'$x',
-			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); $r = CastToType::_float( $x, false, false ); if ( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'&nbsp;\'; }',
+			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); $r = CastToType::_float( $x, false, false ); if ( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'&nbsp;\'; }',
 			'notes'		=>	array(
 				'<p>Uses an <a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">external library</a></p>',
 			),
@@ -427,7 +427,7 @@ class VartypeTest extends Vartype {
 			'title'		=>	'CastToType::_int (&nbsp;$x, false, false&nbsp;)',
 			'url'		=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'		=>	'$x',
-			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); $r = CastToType::_int( $x, false, false ); if ( is_int( $r ) ) { pr_int( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'&nbsp;\'; }',
+			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); $r = CastToType::_int( $x, false, false ); if ( is_int( $r ) ) { pr_int( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'&nbsp;\'; }',
 			'notes'		=>	array(
 				'<p>Uses an <a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">external library</a></p>',
 			),
@@ -436,7 +436,7 @@ class VartypeTest extends Vartype {
 			'title'		=>	'CastToType::_object (&nbsp;$x, false&nbsp;)',
 			'url'		=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'		=>	'$x',
-			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); pr_var( CastToType::_object( $x, false ), \'\', true, true ); } else { print \'&nbsp;\'; }',
+			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); pr_var( CastToType::_object( $x, false ), \'\', true, true ); } else { print \'&nbsp;\'; }',
 			'notes'		=>	array(
 				'<p>Uses an <a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">external library</a></p>',
 			),
@@ -445,7 +445,7 @@ class VartypeTest extends Vartype {
 			'title'		=>	'CastToType::_string (&nbsp;$x, false, false&nbsp;)',
 			'url'		=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'		=>	'$x',
-			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); $r = CastToType::_string( $x, false, false ); if ( is_string( $r ) ) { pr_str( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'&nbsp;\'; }',
+			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); $r = CastToType::_string( $x, false, false ); if ( is_string( $r ) ) { pr_str( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'&nbsp;\'; }',
 			'notes'		=>	array(
 				'<p>Uses an <a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">external library</a></p>',
 			),
