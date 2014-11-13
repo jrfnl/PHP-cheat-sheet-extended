@@ -1,0 +1,7 @@
+# /robots.txt file for http://phpcheatsheets.com/
+
+User-agent: *
+Disallow: /include/
+Disallow: /page/
+
+Crawl-Delay: 20
