@@ -15,7 +15,7 @@ $test_array = array(
 	'i8'	=>	0xCC00F9, // hexadecimal integer
 	'i9'	=>	0123, // octal integer = 57 = char 9
 
-	'f1'	=>	1.3,
+	'f1'	=>	1.8,
 	'f2'	=>	0.005,
 	'f3'	=>	0.0,
 	'f4'	=>	-1.3,
@@ -151,4 +151,3 @@ $legend_array = array(
 	'sn'	=>	'$x = "\f\t\r\n";',
 	'sp'	=>	'$x = "\x7f\t\r\n"',
 );
-
