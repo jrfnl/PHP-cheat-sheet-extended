@@ -85,7 +85,7 @@ $file  = 'class.vartype-' . $type . '.php';
 if ( isset( $type ) && file_exists( APP_DIR . '/' . $file ) ) {
 	include_once( APP_DIR . '/' . $file );
 	$current_tests = new $class();
-	
+
 	$tab = null;
 	if ( isset( $_GET['tab'] ) && $_GET['tab'] !== '' ) {
 		$tab = $_GET['tab'];
