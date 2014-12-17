@@ -144,15 +144,17 @@ class VartypeArithmetic extends VartypeCompare {
 				'<p>For this cheat sheet <code>bcscale()</code> has been set to 3. Remember that the default is 0.</p>',
 			),
 		),
+		/*
 		'bcpow'			=> array(
 			'title'			=> 'bcpow()',
 			'url'			=> 'http://php.net/bcpow',
 			'arg'			=> '$a, $b',
-			'function'		=> '$r = bcpow( $a, $b ); if ( is_string( $r ) ) { pr_str( $r ); } else { pr_var ( $r, \'\', true, true ); }',
+			'function'		=> 'if ( $a != 0 && is_infinite( pow( $a, $b ) ) === false ) { $r = bcpow( $a, $b ); if ( is_string( $r ) ) { pr_str( $r ); } else { pr_var ( $r, \'\', true, true ); } } else { trigger_error( \'would result in INF and will normally exhaust memory\', E_USER_ERROR ); }',
 			'notes'			=> array(
 				'<p>For this cheat sheet <code>bcscale()</code> has been set to 3. Remember that the default is 0.</p>',
 			),
 		),
+		*/
 	);
 
 
