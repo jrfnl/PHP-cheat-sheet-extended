@@ -82,6 +82,9 @@ header( 'Content-type: text/html; charset=utf-8' );
 $class = 'Vartype' . ucfirst( $type );
 $file  = 'class.vartype-' . $type . '.php';
 
+/**
+ * Load a cheatsheet page
+ */
 if ( isset( $type ) && file_exists( APP_DIR . '/' . $file ) ) {
 	include_once( APP_DIR . '/' . $file );
 	$current_tests = new $class();
@@ -91,23 +94,34 @@ if ( isset( $type ) && file_exists( APP_DIR . '/' . $file ) ) {
 		$tab = $_GET['tab'];
 	}
 
+	/**
+	 * Only return the table if it's an ajax call
+	 */
 	if ( isset( $_GET['do'] ) && $_GET['do'] === 'ajax' ) {
 		$current_tests->run_test( $tab );
 	}
+	/**
+	 * Return a full page if not
+	 */
 	else {
 		include_once( APP_DIR . '/page/header.php' );
 		include_once( APP_DIR . '/page/notes-legend.php' );
-		
+
+		/* Hidden feature - pre-load all tabs, slow, but useful for source compare & generating of static files */
 		$all = false;
 		if ( isset( $_GET['all'] ) && $_GET['all'] === '1' ) {
-			// Hidden feature - pre-load all tabs, slow, but useful for source compare & generating of static files
 			$all = true;
+			@ini_set( 'max_execution_time', '180' ); // lengthen allowed execution time
 		}
+
 		$current_tests->do_page( $all );
 
 		include_once( APP_DIR . '/page/footer.php');
 	}
 }
+/**
+ * Load an extraneous page (about, links etc)
+ */
 else {
 	include_once( APP_DIR . '/page/header.php' );
 
