@@ -76,7 +76,6 @@ class VartypeArithmetic extends VartypeCompare {
 			'arg'			=> '$a, $b',
 			'function'		=> '$r = $a % $b; if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); }',
 		),
-		
 
 		'fmod'			=> array(
 			'title'			=> 'fmod()',
@@ -85,7 +84,12 @@ class VartypeArithmetic extends VartypeCompare {
 			'function'		=>	'if ( function_exists( \'fmod\' ) ) { pr_var( fmod( $a, $b ), \'\', true, true ); } else { print \'E: not available (PHP 4.2.0+)\'; }',
 		),
 
-
+		'pow'			=> array(
+			'title'			=> 'pow()',
+			'url'			=> 'http://php.net/pow',
+			'arg'			=> '$a, $b',
+			'function'		=>	'pr_var( pow( $a, $b ), \'\', true, true );',
+		),
 
 	);
 	
@@ -93,13 +97,6 @@ class VartypeArithmetic extends VartypeCompare {
 	/**
 	 * Calculations with BCMath
 	 */
-	/*
-	   @todo Maybe add:
-	    bcpow - Raise an arbitrary precision number to another
-	    bcpowmod - Raise an arbitrary precision number to another, reduced by a specified modulus
-	    bcscale - Set default scale parameter for all bc math functions
-	    bcsqrt - Get the square root of an arbitrary precision number
-	*/
 	var $bcmath_tests = array(
 
 		'bcadd'			=> array(
@@ -147,13 +144,41 @@ class VartypeArithmetic extends VartypeCompare {
 				'<p>For this cheat sheet <code>bcscale()</code> has been set to 3. Remember that the default is 0.</p>',
 			),
 		),
+		'bcpow'			=> array(
+			'title'			=> 'bcpow()',
+			'url'			=> 'http://php.net/bcpow',
+			'arg'			=> '$a, $b',
+			'function'		=> '$r = bcpow( $a, $b ); if ( is_string( $r ) ) { pr_str( $r ); } else { pr_var ( $r, \'\', true, true ); }',
+			'notes'			=> array(
+				'<p>For this cheat sheet <code>bcscale()</code> has been set to 3. Remember that the default is 0.</p>',
+			),
+		),
 	);
+
+
+	/**
+	 * Calculations only available in PHP 5.6+
+	 */
+	var $php56_tests = array(
+		'pow_op'			=>	array(
+			'title'			=>	'**',
+			'url'			=>	'http://php.net/language.operators.arithmetic',
+			'arg'			=>	'$a, $b',
+			'function'		=>	'if ( PHP_VERSION_ID >= 56000 ) { pr_var( $a ** $b ), \'\', true, true ); } else { print \'E: \'**\' operator not available (PHP 5.6+)\'; }',
+		),
+	);
+
 
 
 	/**
 	 *
 	 */
 	function __construct() {
+		if ( PHP_VERSION_ID >= 56000 ) {
+			// Insert at certain position
+			$base = array_splice( $this->tests, 0, 7 );
+			$this->tests = array_merge( $base, $this->php56_tests, $this->tests );
+		}
 		if ( extension_loaded( 'bcmath' ) ) {
 			$this->tests = array_merge( $this->tests, $this->bcmath_tests );
 			bcscale( 3 );
