@@ -267,6 +267,7 @@ div.content a.top-link {
 	font-weight: bold;
 	width: 30%;
 	min-width: 230px;
+	max-width: 345px;
 	text-align: center;
 	text-shadow:1px 1px 0px #224466;
 }
