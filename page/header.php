@@ -5,10 +5,10 @@
 	<meta http-equiv="Charset" content="utf-8" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-	<title><?php print htmlspecialchars( $page_title, ENT_QUOTES, 'UTF-8' ) . ( isset( $type ) ? ' - tests run using PHP ' . htmlspecialchars( PHP_VERSION, ENT_QUOTES, 'UTF-8' ) . ' on phpcheatsheets.com' : '' ); ?></title>
+	<title><?php print htmlspecialchars( $page_title, ENT_QUOTES, 'UTF-8' ) . ( isset( $tab ) ? ' :: ' . $tab : '' ) . ( isset( $type ) ? ' on PHP ' . htmlspecialchars( PHP_VERSION, ENT_QUOTES, 'UTF-8' ) . ' on phpcheatsheets.com' : '' ); ?></title>
 
 	<meta name="description" content="Extended PHP Cheat sheets for variable comparisons and variable type testing." />
-	<meta name="keywords" content="php, cheat sheet, blueshoes, variable, type juggling, comparison, testing" />
+	<meta name="keywords" content="php, cheat sheet, cheatsheets, blueshoes, variable, type juggling, comparison, testing, defensive coding" />
 	<meta name="author" content="Juliette Reinders Folmer, Advies en zo" />
 	<meta name="copyright" content="Copyright Advies en zo - all rights reserved" />
 	<meta name="language" content="en" />
