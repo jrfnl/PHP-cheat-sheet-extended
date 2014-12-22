@@ -5,10 +5,11 @@ jQuery(document).ready(function() {
 	// Declare variables
 	var myTabs;
 	var tabPanels;
-
+	var myAccordion;
 
 	// Collapsible notes at top of page
-	jQuery('#accordion').accordion({
+	myAccordion = jQuery('#accordion');
+	myAccordion.accordion({
 		active: false,
 		collapsible: true,
 		icons: {
@@ -21,7 +22,7 @@ jQuery(document).ready(function() {
 ui-icon-alert
 ui-icon-info
 ui-icon-notice
-ui-icon-help 
+ui-icon-help
 
 ui-icon-plus
 ui-icon-minus
@@ -29,6 +30,12 @@ ui-icon-minus
 ui-icon-circle-plus
 ui-icon-circle-minus
 */
+
+	// Auto-expand relevant accordion legend section when a link refering to text within the section is clicked
+	jQuery('#tabs').on('click', '.fright a', function() {
+		myAccordion.accordion( 'option', 'active', 1 );
+		//myAccordion.accordion( "refresh" );
+	});
 
 
 	// Tabbed interface
