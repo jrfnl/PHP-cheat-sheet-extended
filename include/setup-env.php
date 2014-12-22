@@ -3,6 +3,10 @@
 /**
  * Set up environment
  */
+// Disable xdebug
+if ( extension_loaded( 'xdebug' ) ) {
+	xdebug_disable();
+}
 
 // Set up error reporting
 if ( ! defined( 'E_STRICT' ) ) {

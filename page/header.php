@@ -53,7 +53,16 @@ endif; ?>
 	<link rel="icon" href="http://phpcheatsheets.com/favicon.ico" type="image/ico" />
 
 </head>
+
+<?php
+if ( ! isset( $autogen ) || $autogen !== true ): ?>
 <body>
+<?php
+else: ?>
+<body class="static-archive">
+<?php
+endif; ?>
+
 <div class="head">
 
 	<?php
