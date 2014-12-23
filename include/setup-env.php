@@ -24,6 +24,7 @@ set_error_handler( 'do_handle_errors' );
 if ( ! defined( 'PHP_VERSION_ID' ) ) {
 	$version = PHP_VERSION;
 	define( 'PHP_VERSION_ID', (int) ( $version{0} * 10000 + $version{2} * 100 + $version{4} ) );
+	unset( $version );
 }
 
 // Use C locale for Ctype functions

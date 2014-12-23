@@ -84,7 +84,7 @@ class Vartype {
 		if ( isset( $all ) && $all === true ) {
 			$this->print_tables();
 		}
-		print '</div> <!-- end of tabs -->';
+		print "\n" . '</div><!-- end of div#tabs -->';
 	}
 
 
@@ -238,7 +238,7 @@ class Vartype {
 		unset( $key, $group_settings );
 		
 		print '
-	</div>';
+	</div><!-- end of div.tables -->';
 	}
 
 
@@ -323,7 +323,7 @@ class Vartype {
 
 
 			print '
-		</div>';
+		</div><!-- end of div#' . $test_group . ' -->';
 		}
 		else {
 			trigger_error( 'Unknown test group <b>' . $test_group . '</b>', E_USER_WARNING );
@@ -515,7 +515,7 @@ class Vartype {
 			<div id="' . $test_group . '-note' . ( $key + 1 ) . '" class="note-appendix">
 				<sup>&Dagger; ' . ( $key + 1 ) . '</sup> ' . $note . '
 			</div>
-				';
+';
 			}
 		}
 		$this->table_notes = array(); // Reset property

@@ -8,7 +8,7 @@ include_once( APP_DIR . '/include/setup-env.php' );
  */
 $type = null;
 $page = null;
-$page_title = 'PHP Cheat Sheets';
+$page_title = 'PHP Cheatsheets';
 
 if( isset( $_GET['page'] ) ) {
 	switch ( $_GET['page'] ) {
@@ -29,7 +29,7 @@ if( isset( $_GET['page'] ) ) {
 			
 		case 'other-cheat-sheets':
 			$page = 'other-cheat-sheets';
-			$page_title = 'More PHP Cheat Sheets';
+			$page_title = 'More PHP Cheatsheets';
 			break;
 
 		case 'about':

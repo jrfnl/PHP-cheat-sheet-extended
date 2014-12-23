@@ -3,15 +3,15 @@
 			<p>
 				<a href="index.php?page=compare" class="top-link<?php if ( $type === 'compare' ) print ' top-active'; ?>">
 					Variable&nbsp;Comparison<br />Cheat&nbsp;sheet
-					<img src="./<?php if ( isset( $dir ) ) print $dir; ?>page/screenshot-var-compare.png" width="220" height="220" alt="Variable Comparison Cheatsheet Screenshot" />
+					<img src="./page/screenshot-var-compare.png" width="220" height="220" alt="Variable Comparison Cheatsheet Screenshot" />
 				</a>
 				<a href="index.php?page=arithmetic" class="top-link<?php if ( $type === 'arithmetic' ) print ' top-active'; ?>">
 					Variable&nbsp;Arithmetic<br />Cheat&nbsp;sheet
-					<img src="./<?php if ( isset( $dir ) ) print $dir; ?>page/screenshot-var-arithm.png" width="220" height="220" alt="Variable Arithmetic Cheatsheet Screenshot" />
+					<img src="./page/screenshot-var-arithm.png" width="220" height="220" alt="Variable Arithmetic Cheatsheet Screenshot" />
 				</a>
 				<a href="index.php?page=test" class="top-link<?php if ( $type === 'test' ) print ' top-active'; ?>">
 					Variable&nbsp;Testing<br />Cheat&nbsp;sheet
-					<img src="./<?php if ( isset( $dir ) ) print $dir; ?>page/screenshot-var-tests.png" width="220" height="220" alt="Variable Testing Cheatsheet Screenshot" />
+					<img src="./page/screenshot-var-tests.png" width="220" height="220" alt="Variable Testing Cheatsheet Screenshot" />
 				</a>
 			</p>
 		</div>
