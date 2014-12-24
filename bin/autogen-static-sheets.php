@@ -1,13 +1,6 @@
 <?php
 
 /**
- * Notify user of what we're doing
- */
-echo PHP_EOL . 'Generating static sheets for PHP ' . PHP_VERSION . PHP_EOL;
-echo '----------------------------------------' . PHP_EOL;
-
-
-/**
  * Allow as much memory as possible by default
  */
 if ( extension_loaded( 'suhosin' ) && is_numeric( ini_get( 'suhosin.memory_limit' ) ) ) {
@@ -49,9 +42,14 @@ $failure = 0;
 /**
  * Interpret expected command line argument(s)
  */
-$verbose = false;
-if ( isset( $argv[1] ) && $argv[1] === 'verbose=1' ) {
-	$verbose = true;
+$verbose = 0;
+if ( isset( $argv[1] ) && strpos( $argv[1], 'verbose=' ) === 0 ) {
+	$v = explode( '=', $argv[1] );
+	$v[1] = (int) $v[1];
+	if ( $v[1] === 1 || $v[1] === 2 ) {
+		$verbose = $v[1];
+	}
+	unset( $v );
 }
 
 
@@ -59,31 +57,35 @@ if ( isset( $argv[1] ) && $argv[1] === 'verbose=1' ) {
  * Helper function(s)
  */
 function save_to_file( $filename, $content ) {
+	$msg = '';
+
 	if ( $content !== false && is_string( $content ) && $content !== '' ) {
 		
 		if ( strpos( $content, '</body>' ) !== false ) {
 			$content = fix_content( $content );
 	
 			if ( file_put_contents( $filename, $content ) !== false ) {
-				echo 'SUCCESS - created file : ' . str_replace( APP_DIR, '', $filename );
+				$msg = 'SUCCESS - created file : ' . str_replace( APP_DIR, '', $filename );
 				$GLOBALS['success']++;
 			}
 			else {
-				echo 'FAILED to WRITE file : ' . str_replace( APP_DIR, '', $filename );
+				$msg = 'FAILED to WRITE file : ' . str_replace( APP_DIR, '', $filename );
 				$GLOBALS['failure']++;
 			}
 		}
 		else {
-			echo 'FAILED : FATAL ERROR encountered while generating file : ' . str_replace( APP_DIR, '', $filename );
+			$msg = 'FAILED : FATAL ERROR encountered while generating file : ' . str_replace( APP_DIR, '', $filename );
 			$GLOBALS['failure']++;
 		}
 	}
 	else {
-		echo 'FAILED to GENERATE file : ' . str_replace( APP_DIR, '', $filename );
+		$msg = 'FAILED to GENERATE file : ' . str_replace( APP_DIR, '', $filename );
 		$GLOBALS['failure']++;
 	}
 
-	echo PHP_EOL;
+	if ( $GLOBALS['verbose'] > 0 ) {
+		echo $msg . PHP_EOL;
+	}
 }
 
 function fix_content( $content ) {
@@ -231,7 +233,7 @@ function fix_content( $content ) {
 	);
 	*/
 
-	if( $GLOBALS['verbose'] === false ) {
+	if( $GLOBALS['verbose'] !== 2 ) {
 		$content = str_replace( $search, $replace, $content );
 		$content = preg_replace( $regex_search, $regex_replace, $content );
 	}
@@ -277,6 +279,15 @@ function fix_content( $content ) {
  */
 
 ignore_user_abort( true );
+
+/**
+ * Notify user of what we're doing
+ */
+if ( $verbose > 0 ) {
+	echo PHP_EOL . 'Generating static sheets for PHP ' . PHP_VERSION . PHP_EOL;
+	echo '----------------------------------------' . PHP_EOL;
+}
+
 
 $types = array(
 	'compare'    => 'PHP Variable Comparison',
