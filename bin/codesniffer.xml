@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<ruleset name="PHP Cheatsheets">
+	<description>PHP Cheatsheets rules for PHP_CodeSniffer</description>
+	
+	<exclude-pattern>include/PHP-cast-to-type/*</exclude-pattern>
+
+	<rule ref="WordPress">
+		<exclude name="Generic.Files.LineEndings.InvalidEOLChar" />
+		<exclude name="Squiz.WhiteSpace.SuperfluousWhitespace.EmptyLines" />
+
+		<exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
+
+		<!-- Demanding Yoda conditions is stupid. -->
+		<exclude name="WordPress.PHP.YodaConditions"/>
+
+		<!-- WP specific sniffs which should be ignored -->
+		<exclude name="WordPress.WP.EnqueuedResources" />
+		<exclude name="WordPress.XSS.EscapeOutput" />
+		<exclude name="WordPress.VIP.TimezoneChange" />
+		<exclude name="WordPress.VIP.SuperGlobalInputUsage" />
+		<exclude name="WordPress.VIP.ValidatedSanitizedInput"/>
+		<exclude name="WordPress.VIP.RestrictedFunctions.create_function" />
+		<exclude name="WordPress.VIP.FileSystemWritesDisallow"/>
+	</rule>
+
+	<!--
+	<rule ref="Generic.WhiteSpace.ScopeIndent">
+		<properties>
+			<property name="indent" value="1"/>
+			<property name="tabIndent" value="true"/>
+		</properties>
+	</rule>
+	-->
+
+</ruleset>
