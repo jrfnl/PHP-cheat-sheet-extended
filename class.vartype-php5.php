@@ -4,9 +4,14 @@
  *
  */
 class VartypePHP5 {
-	
+
 	/**
 	 * Tests to be run, add in child class
+	 */
+	/**
+	 * The PHP5 specific tests which will overrule the PHP4 compatible tests
+	 *
+	 * @var array $tests  Multi-dimensional array.
 	 */
 	static public $tests = array(
 		/**
@@ -34,9 +39,9 @@ class VartypePHP5 {
 		'levenshtein'	=> array(
 			'function'		=> 'VartypePHP5::compare_strings( $a, $b, "levenshtein" );',
 		),
-		
-		
-		
+
+
+
 		/**
 		 * Loose type juggling
 		 * @see class.vartype-test.php
@@ -101,8 +106,8 @@ class VartypePHP5 {
 				}
 			',
 		),
-		
-		
+
+
 		/**
 		 * Some object related functions
 		 * @see class.vartype-test.php
@@ -116,14 +121,15 @@ class VartypePHP5 {
 	/**
 	 * Overwrite selected entries in the original test array with the above PHP5 specific function code
 	 *
-	 * @param	array	$test_array
-	 * @return	array
+	 * @param array $test_array
+	 *
+	 * @return array
 	 */
 	static public function merge_tests( $test_array ) {
 
 		foreach ( self::$tests as $key => $array ) {
-			if ( isset( $test_array[$key] ) && ( isset( $test_array[$key]['function'] ) && isset( $array['function'] ) ) ) {
-				$test_array[$key]['function'] = $array['function'];
+			if ( isset( $test_array[ $key ] ) && ( isset( $test_array[ $key ]['function'] ) && isset( $array['function'] ) ) ) {
+				$test_array[ $key ]['function'] = $array['function'];
 			}
 		}
 		return $test_array;
@@ -131,23 +137,27 @@ class VartypePHP5 {
 
 
 	/**
-	 * @param $value
+	 * Ensure we clone an object before using it to avoid contamination by results of previous actions
 	 *
-	 * @return object
+	 * @param mixed $value
+	 *
+	 * @return mixed
 	 */
 	static public function generate_value( $value ) {
 
 		if ( is_object( $value ) ) {
-			$value = clone( $value );
+			$value = clone $value;
 		}
 		return $value;
 	}
 
 
 	/**
-	 * @param $a
-	 * @param $b
-	 * @param $function
+	 * Smarter way to compare strings in PHP5
+	 *
+	 * @param mixed  $a
+	 * @param mixed  $b
+	 * @param string $function
 	 */
 	static public function compare_strings( $a, $b, $function ) {
 
@@ -166,7 +176,7 @@ class VartypePHP5 {
 				$key     = array_search( $message, $GLOBALS['encountered_errors'] );
 				if ( $key === false ) {
 					$GLOBALS['encountered_errors'][] = $message;
-					$key = array_search( $message, $GLOBALS['encountered_errors'] );
+					$key                             = array_search( $message, $GLOBALS['encountered_errors'] );
 				}
 				print '<span class="error">Fatal error <a href="#' . $GLOBALS['test']. '-errors">#' . ( $key + 1 ) . '</a></span>';
 			}
@@ -186,7 +196,7 @@ class VartypePHP5 {
 				$key     = array_search( $message, $GLOBALS['encountered_errors'] );
 				if ( $key === false ) {
 					$GLOBALS['encountered_errors'][] = $message;
-					$key = array_search( $message, $GLOBALS['encountered_errors'] );
+					$key                             = array_search( $message, $GLOBALS['encountered_errors'] );
 				}
 				print '<span class="error">Fatal error <a href="#' . $GLOBALS['test']. '-errors">#' . ( $key + 1 ) . '</a></span>';
 			}
@@ -201,4 +211,6 @@ class VartypePHP5 {
 			}
 		}
 	}
+
+
 }

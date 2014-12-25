@@ -1,7 +1,6 @@
-﻿<?php
+<?php
 
-
-include_once( APP_DIR . '/class.vartype-compare.php' );
+include_once APP_DIR . '/class.vartype-compare.php';
 
 /**
  *
@@ -11,16 +10,17 @@ class VartypeArithmetic extends VartypeCompare {
 	/**
 	 * The tests  to run
 	 *
-	 * @param   array   $tests  Multi-dimensional array.
-	 *                          Possible lower level array keys:
-	 *                          - title     Used as tab title
-	 *                          - tooltip   Additional code sample for tooltip on tab
-	 *                          - url       Relevant PHP Manual page
-	 *                          - arg       Function arguments
-	 *                          - function  Function to run
-	 *                          - Notes     Array of notes on this test
+	 * @var array $tests  Multi-dimensional array.
+	 *                    Possible lower level array keys:
+	 *                    - title     Used as tab title
+	 *                    - tooltip   Additional code sample for tooltip on tab
+	 *                    - url       Relevant PHP Manual page
+	 *                    - arg       Function arguments
+	 *                    - function  Function to run
+	 *                    - Notes     Array of notes on this test
 	 */
 	var $tests = array(
+
 		/**
 		 * Operator based calculations
 		 */
@@ -92,10 +92,12 @@ class VartypeArithmetic extends VartypeCompare {
 		),
 
 	);
-	
-	
+
+
 	/**
 	 * Calculations with BCMath
+	 *
+	 * @var array $bcmath_tests  Multi-dimensional array of BC Math related tests.
 	 */
 	var $bcmath_tests = array(
 
@@ -157,9 +159,10 @@ class VartypeArithmetic extends VartypeCompare {
 		*/
 	);
 
-
 	/**
 	 * Calculations only available in PHP 5.6+
+	 *
+	 * @var array $bcmath_tests  Multi-dimensional array of tests only to be run on PHP 5.6+.
 	 */
 	var $php56_tests = array(
 		'pow_op'			=>	array(
@@ -171,14 +174,13 @@ class VartypeArithmetic extends VartypeCompare {
 	);
 
 
-
 	/**
-	 *
+	 * Constructor
 	 */
 	function __construct() {
 		if ( PHP_VERSION_ID >= 56000 ) {
 			// Insert at certain position
-			$base = array_splice( $this->tests, 0, 7 );
+			$base        = array_splice( $this->tests, 0, 7 );
 			$this->tests = array_merge( $base, $this->php56_tests, $this->tests );
 		}
 		if ( extension_loaded( 'bcmath' ) ) {
@@ -188,6 +190,10 @@ class VartypeArithmetic extends VartypeCompare {
 		parent::__construct();
 	}
 
+
+	/**
+	 * PHP4 Constructor
+	 */
 	function VartypeArithmetic() {
 		$this->__construct();
 	}

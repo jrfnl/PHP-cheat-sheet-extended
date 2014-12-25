@@ -1,7 +1,7 @@
 
 		<div id="sidebar">
 			<h3 id="php-version">
-				This page has been generated with <strong>PHP <?php print htmlspecialchars( PHP_VERSION, ENT_QUOTES, 'UTF-8' ); ?></strong>
+				This page has been generated with <strong>PHP <?php echo htmlspecialchars( PHP_VERSION, ENT_QUOTES, 'UTF-8' ); ?></strong>
 				<span>Browse <a href="./<?php echo $dir; ?>static_results">other versions</a>.</span>
 			</h3>
 		</div>
@@ -24,9 +24,9 @@
 			</div>
 
 <?php
-	include( APP_DIR . '/include/vars-to-test.php' );
-	if ( is_array( $legend_array ) && $legend_array !== array() ):
-?>
+include APP_DIR . '/include/vars-to-test.php';
+if ( is_array( $legend_array ) && $legend_array !== array() ): ?>
+
 			<h3>Notes on some variables:</h3>
 			<div>
 				<p>Some of the test variables used, do not print the way they are set, either because they contain invisible characters or because they result in something else, so for your convenience, these are outlined here:</p>
@@ -34,25 +34,25 @@
 					<tr>
 						<th width="40">&dagger;</th>
 						<th>How the variable is defined:</th>
-<?php //					<th>Will show in the table as:</th> ?>
+<?php	//					<th>Will show in the table as:</th>
+?>
 					</tr>
 
 <?php
-		foreach ( $legend_array as $k => $v ):
-?>
+	foreach ( $legend_array as $k => $v ): ?>
+
 					<tr>
 						<th id="var-legend-<?php echo $k; ?>"><?php echo $k; ?></th>
 						<td><code><?php echo $v; ?></code></td>
-<?php //					<td><?php pr_var( $test_array[$k], '', true, true ); ? ></td> ?>
+<?php 	//				<td><?php pr_var( $test_array[ $k ], '', true, true ); ? ></td>
+?>
 					</tr>
 <?php
-		endforeach;
-?>
+	endforeach; ?>
 				</table>
 			</div>
 <?php
-	endif;
-?>
+endif; ?>
 
 			<h3>Legend / How to use the tables:</h3>
 			<div>
@@ -63,7 +63,8 @@
 					<li>In <strong><em>test tables</em></strong>, the left top table header indicates the type of tests. Both this header as well as most column headers link to their respective relevant PHP Manual pages.</li>
 					<li>A &Dagger; with a number next to a column header means there is a (linked) footnote for that entry at the bottom of the page.</li>
 					<li>When you mouse-over the table the row and column you are at are <span class="hover">highlighted</span>. To help you compare specific columns/rows, you can click on any cell to mark the column and row which the cell intersects for <span class="sticky">extra highlighting</span>. Click again to remove this sticky highlight.</li>
-<?php		/*		<li>If there is a definite <em>best</em> way for doing something, the column will be highlighted in <span class="best">green</span>. Other <em>good</em> ways will be highlighted in <span class="good">light green</span>.
+<?php
+					/*<li>If there is a definite <em>best</em> way for doing something, the column will be highlighted in <span class="best">green</span>. Other <em>good</em> ways will be highlighted in <span class="good">light green</span>.
 						<br /><br />Best will normally have been determined by combining:
 						<ol>
 							<li>The results.</li>

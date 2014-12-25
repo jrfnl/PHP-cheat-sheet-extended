@@ -13,11 +13,11 @@ if ( ! defined( 'E_STRICT' ) ) {
 	define( 'E_STRICT', 2048 );
 }
 error_reporting( E_ALL & ~E_STRICT );
-@ini_set( 'log_errors', false );
+ini_set( 'log_errors', false );
 
 // Set up variable printing & error handling
-include_once( APP_DIR . '/include/xvardump.php' );
-include_once( APP_DIR . '/include/functions.php' );
+include_once APP_DIR . '/include/xvardump.php';
+include_once APP_DIR . '/include/functions.php';
 set_error_handler( 'do_handle_errors' );
 
 // Make sure version id constant is available

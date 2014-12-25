@@ -1,7 +1,7 @@
 <?php
 
 /**
- *
+ * Simple object to use for tests with the object variable type
  */
 class TestObject {
 
@@ -10,7 +10,9 @@ class TestObject {
 
 
 	/**
-	 * @param $var
+	 * Example method
+	 *
+	 * @param string $var
 	 */
 	function print_it( $var ) {
 		print htmlspecialchars( $var );
@@ -18,7 +20,7 @@ class TestObject {
 }
 
 /**
- *
+ * Another simple object to use for tests with the object variable type
  */
 class TestObjectToString extends TestObject {
 
@@ -26,6 +28,8 @@ class TestObjectToString extends TestObject {
 
 
 	/**
+	 * Example __toString method
+	 *
 	 * @return string
 	 */
 	function __toString() {
@@ -33,22 +37,25 @@ class TestObjectToString extends TestObject {
 	}
 }
 
-
-
-
 /**
  * Catch errors to display in appendix
+ *
+ * @param int    $error_no
+ * @param string $error_str
+ * @param string $error_file
+ * @param int    $error_line
+ *
+ * @return mixed
  */
-
 function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
 	if ( ! ( error_reporting() & $error_no ) ) {
 		return;
 	}
 
-	if ( ! defined( 'E_STRICT' ) )				define( 'E_STRICT', 2048 );
-	if ( ! defined( 'E_RECOVERABLE_ERROR' ) )	define( 'E_RECOVERABLE_ERROR', 4096 );
-	if ( ! defined( 'E_DEPRECATED' ) )			define( 'E_DEPRECATED', 8192 );
-	if ( ! defined( 'E_USER_DEPRECATED' ) )		define( 'E_USER_DEPRECATED', 16384 );
+	if ( ! defined( 'E_STRICT' ) )            { define( 'E_STRICT', 2048 ); }
+	if ( ! defined( 'E_RECOVERABLE_ERROR' ) ) { define( 'E_RECOVERABLE_ERROR', 4096 ); }
+	if ( ! defined( 'E_DEPRECATED' ) )        { define( 'E_DEPRECATED', 8192 ); }
+	if ( ! defined( 'E_USER_DEPRECATED' ) )   { define( 'E_USER_DEPRECATED', 16384 ); }
 
 	switch ( $error_no ){
 		case E_ERROR: // 1 //
@@ -57,48 +64,57 @@ function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
 			$type  = 'Fatal error';
 			$class = 'error';
 			break;
+
 		case E_USER_ERROR: // 256 //
 			$type  = 'Fatal error';
 			$class = 'error';
 			break;
+
 		case E_WARNING: // 2 //
 		case E_CORE_WARNING: // 32 //
 		case E_COMPILE_WARNING: // 128 //
 			$type  = 'Warning';
 			$class = 'warning';
 			break;
+
 		case E_USER_WARNING: // 512 //
 			$type  = 'Warning';
 			$class = 'warning';
 			break;
+
 		case E_PARSE: // 4 //
 			$type  = 'Parse error';
 			$class = 'error';
 			break;
+
 		case E_NOTICE: // 8 //
 		case E_USER_NOTICE: // 1024 //
 			$type  = 'Notice';
 			$class = 'notice';
 			break;
+
 		case E_STRICT: // 2048 //
 			$type  = 'Strict warning';
 			$class = 'warning';
 			break;
+
 		case E_RECOVERABLE_ERROR: // 4096 //
 			$type  = '(Catchable) Fatal error';
 			$class = 'error';
 			break;
+
 		case E_DEPRECATED: // 8192 //
 		case E_USER_DEPRECATED: // 16384 //
 			$type  = 'Deprecated';
 			$class = 'notice';
 			break;
+
 		default:
 			$type  = 'Unknown error ( ' . $error_no . ' )';
 			$class = 'error';
 			break;
 	}
-	
+
 
 	// Group some messages
 	$search = array(
@@ -173,18 +189,13 @@ function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
 		'<a href=$1http://php.net/function.',
 	);
 
-
 	foreach ( $search as $k => $s ) {
 		if ( strpos( $error_str, $s ) === 0 ) {
-			$error_str = $replace[$k];
+			$error_str = $replace[ $k ];
 			break;
 		}
 	}
 	$error_str = preg_replace( $preg_search, $preg_replace, $error_str );
-
-
-
-
 
 
 	$message = '<span class="' . $class . '">' . $type . '</span>: ' . $error_str;
@@ -195,7 +206,7 @@ function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
 			$key = array_search( $message, $GLOBALS['encountered_errors'] );
 			if ( $key === false ) {
 				$GLOBALS['encountered_errors'][] = $message;
-				$key = array_search( $message, $GLOBALS['encountered_errors'] );
+				$key                             = array_search( $message, $GLOBALS['encountered_errors'] );
 			}
 
 			if ( $class === 'notice' ) {

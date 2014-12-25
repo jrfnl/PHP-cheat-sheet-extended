@@ -1,8 +1,7 @@
-﻿<?php
-
+<?php
 
 $test_array = array(
-//	'unset'	=>	'this variable will be unset',
+	//'unset'	=>	'this variable will be unset',
 	'n'		=>	null,
 
 	'b1'	=>	false,
@@ -41,18 +40,18 @@ $test_array = array(
 	'sf'	=>	'123str',
 	'sg'	=>	'str123',
 	'sh'	=>	'123, "str"',
-	
+
 	'su'	=>	'0xCC00F9', // is_numeric, filter_var integer allow hex
 	'sv'	=>	'0123', // is_numeric, filter_var integer allow octal, integers
 
 
 	'ae'	=>	array(),
-//	'a0'	=>	array( null ),
-//	'a1'	=>	array( 1 ),
-//	'a2'	=>	array( false ),
+	//'a0'	=>	array( null ),
+	//'a1'	=>	array( 1 ),
+	//'a2'	=>	array( false ),
 	'a3'	=>	array( 1 => 'string' ), // with different key -> array + array
 	'a4'	=>	array( false, 1, 1.3, '123str', 'str123', null ),
-//	'a5'	=>	array( 'a'	=> 'test1', 'b'	=>	'test2', 'numerical key', 'null' => null ),
+	//'a5'	=>	array( 'a'	=> 'test1', 'b'	=>	'test2', 'numerical key', 'null' => null ),
 
 
 	'oe'	=>	new stdClass(),
@@ -63,7 +62,7 @@ $test_array = array(
 );
 
 if ( PHP_VERSION_ID >= 50400 ) {
-	include( APP_DIR . '/include/vars-to-test-php54.php' );
+	include APP_DIR . '/include/vars-to-test-php54.php';
 }
 
 
@@ -83,9 +82,9 @@ if ( extension_loaded( 'SPL_Types' ) ) {
 	}
 }
 
-/**************************************
+/**
  * Test group specific extra variables
- *************************************/
+ */
 $extra_variables = array();
 
 $extra_variables['type_testing'] = array(
@@ -125,7 +124,7 @@ $extra_variables['ctype'] = array(
 	'i4'	=>	10, // char line feed
 	'i6'	=>	111, // char o
 	'i7'	=>	12345,
-	
+
 	'sj'	=>	'123,"str"', // ctype_print, ctype_graph
 	'sk'	=>	"123, \"str\"\r\n", // ctype_print (not in php5.4 ?)
 	'sl'	=>	'AF036C', // ctype_xdigit
@@ -133,14 +132,14 @@ $extra_variables['ctype'] = array(
 	'sn'	=>	"\f\t\r\n", //ctype_space
 	'so'	=>	'*&$()', //ctype_punct
 	'sp'	=>	"\x7f\t\r\n", //ctype_ctrl
-	
+
 	'sz'	=>	'Iñtërnâtiônàlizætiøn', // utf-8 / binary string
 );
 
 
-/**************************************
+/**
  * Variable legend
- *************************************/
+ */
 $legend_array = array(
 	'i8'	=>	'$x = 0xCC00F9; // hexadecimal integer',
 	'i9'	=>	'$x = 0123; // octal integer',

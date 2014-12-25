@@ -1,12 +1,24 @@
-﻿<?php
+<?php
 
-include_once( APP_DIR . '/class.vartype.php' );
+include_once APP_DIR . '/class.vartype.php';
 
 /**
  *
  */
 class VartypeTest extends Vartype {
 
+	/**
+	 * The tests  to run
+	 *
+	 * @var array $tests  Multi-dimensional array.
+	 *                    Possible lower level array keys:
+	 *                    - title     Used as tab title
+	 *                    - tooltip   Additional code sample for tooltip on tab
+	 *                    - url       Relevant PHP Manual page
+	 *                    - arg       Function arguments
+	 *                    - function  Function to run
+	 *                    - Notes     Array of notes on this test
+	 */
 	var $tests = array(
 		'gettype' =>	array(
 			'title'		=>	'gettype()',
@@ -121,7 +133,7 @@ class VartypeTest extends Vartype {
 			'arg'		=>	'$x',
 			'function'	=>	'pr_bool( is_string( $x ) );',
 		),
-		
+
 
 		// Float specific
 		'is_nan' =>	array(
@@ -295,7 +307,7 @@ class VartypeTest extends Vartype {
 			'title'		=>	'settype (&nbsp;$copy, \'float\'&nbsp;)',
 			'url'		=>	'http://php.net/settype',
 			'arg'		=>	'$x',
-			'function'	=>	'if ( PHP_VERSION_ID >= 40200 ) { $pass = settype( $x, \'float\' ); } else { $pass = settype( $x, \'double\' ); } if( $pass === true ) { pr_flt( $x ); } else { print \'FAILED\'; }',
+			'function'	=>	'if ( PHP_VERSION_ID >= 40200 ) { $pass = settype( $x, \'float\' ); } else { $pass = settype( $x, \'double\' ); } if ( $pass === true ) { pr_flt( $x ); } else { print \'FAILED\'; }',
 		),
 		'settype_int' =>	array(
 			'title'		=>	'settype (&nbsp;$copy, \'int\'&nbsp;)',
@@ -335,7 +347,7 @@ class VartypeTest extends Vartype {
 			'title'		=>	'CastToType::_array (&nbsp;$x&nbsp;)',
 			'url'		=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'		=>	'$x',
-			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); pr_var( CastToType::_array( $x ), \'\', true, true ); } else { print \'&nbsp;\'; }',
+			'function'	=>	'if ( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); pr_var( CastToType::_array( $x ), \'\', true, true ); } else { print \'&nbsp;\'; }',
 			'notes'		=>	array(
 				'<p>Uses an external library</p>',
 			),
@@ -344,7 +356,7 @@ class VartypeTest extends Vartype {
 			'title'		=>	'CastToType::_bool (&nbsp;$x&nbsp;)',
 			'url'		=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'		=>	'$x',
-			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); $r = CastToType::_bool( $x ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'&nbsp;\'; }',
+			'function'	=>	'if ( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\'; $r = CastToType::_bool( $x ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'&nbsp;\'; }',
 			'notes'		=>	array(
 				'<p>Uses an <a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">external library</a></p>',
 			),
@@ -353,7 +365,7 @@ class VartypeTest extends Vartype {
 			'title'		=>	'CastToType::_float (&nbsp;$x&nbsp;)',
 			'url'		=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'		=>	'$x',
-			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); $r = CastToType::_float( $x ); if ( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'&nbsp;\'; }',
+			'function'	=>	'if ( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\'; $r = CastToType::_float( $x ); if ( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'&nbsp;\'; }',
 			'notes'		=>	array(
 				'<p>Uses an <a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">external library</a></p>',
 			),
@@ -362,7 +374,7 @@ class VartypeTest extends Vartype {
 			'title'		=>	'CastToType::_int (&nbsp;$x&nbsp;)',
 			'url'		=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'		=>	'$x',
-			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); $r = CastToType::_int( $x ); if ( is_int( $r ) ) { pr_int( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'&nbsp;\'; }',
+			'function'	=>	'if ( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\'; $r = CastToType::_int( $x ); if ( is_int( $r ) ) { pr_int( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'&nbsp;\'; }',
 			'notes'		=>	array(
 				'<p>Uses an <a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">external library</a></p>',
 			),
@@ -371,7 +383,7 @@ class VartypeTest extends Vartype {
 			'title'		=>	'CastToType::_null (&nbsp;$x&nbsp;)',
 			'url'		=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'		=>	'$x',
-			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); pr_var( CastToType::_null( $x ), \'\', true, true ); } else { print \'&nbsp;\'; }',
+			'function'	=>	'if ( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\'; pr_var( CastToType::_null( $x ), \'\', true, true ); } else { print \'&nbsp;\'; }',
 			'notes'		=>	array(
 				'<p>Uses an <a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">external library</a></p>',
 			),
@@ -380,7 +392,7 @@ class VartypeTest extends Vartype {
 			'title'		=>	'CastToType::_object (&nbsp;$x&nbsp;)',
 			'url'		=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'		=>	'$x',
-			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); pr_var( CastToType::_object( $x ), \'\', true, true ); } else { print \'&nbsp;\'; }',
+			'function'	=>	'if ( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\'; pr_var( CastToType::_object( $x ), \'\', true, true ); } else { print \'&nbsp;\'; }',
 			'notes'		=>	array(
 				'<p>Uses an <a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">external library</a></p>',
 			),
@@ -389,18 +401,18 @@ class VartypeTest extends Vartype {
 			'title'		=>	'CastToType::_string (&nbsp;$x&nbsp;)',
 			'url'		=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'		=>	'$x',
-			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); $r = CastToType::_string( $x ); if ( is_string( $r ) ) { pr_str( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'&nbsp;\'; }',
+			'function'	=>	'if ( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\'; $r = CastToType::_string( $x ); if ( is_string( $r ) ) { pr_str( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'&nbsp;\'; }',
 			'notes'		=>	array(
 				'<p>Uses an <a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">external library</a></p>',
 			),
 		),
-		
+
 
 		'cast_to_type_array_not_empty' =>	array(
 			'title'		=>	'CastToType::_array (&nbsp;$x, false&nbsp;)',
 			'url'		=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'		=>	'$x',
-			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); pr_var( CastToType::_array( $x, false ), \'\', true, true ); } else { print \'&nbsp;\'; }',
+			'function'	=>	'if ( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\'; pr_var( CastToType::_array( $x, false ), \'\', true, true ); } else { print \'&nbsp;\'; }',
 			'notes'		=>	array(
 				'<p>Uses an external library</p>',
 			),
@@ -409,7 +421,7 @@ class VartypeTest extends Vartype {
 			'title'		=>	'CastToType::_bool (&nbsp;$x, false, false&nbsp;)',
 			'url'		=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'		=>	'$x',
-			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); $r = CastToType::_bool( $x, false, false ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'&nbsp;\'; }',
+			'function'	=>	'if ( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\'; $r = CastToType::_bool( $x, false, false ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'&nbsp;\'; }',
 			'notes'		=>	array(
 				'<p>Uses an <a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">external library</a></p>',
 			),
@@ -418,7 +430,7 @@ class VartypeTest extends Vartype {
 			'title'		=>	'CastToType::_float (&nbsp;$x, false, false&nbsp;)',
 			'url'		=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'		=>	'$x',
-			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); $r = CastToType::_float( $x, false, false ); if ( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'&nbsp;\'; }',
+			'function'	=>	'if ( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\'; $r = CastToType::_float( $x, false, false ); if ( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'&nbsp;\'; }',
 			'notes'		=>	array(
 				'<p>Uses an <a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">external library</a></p>',
 			),
@@ -427,7 +439,7 @@ class VartypeTest extends Vartype {
 			'title'		=>	'CastToType::_int (&nbsp;$x, false, false&nbsp;)',
 			'url'		=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'		=>	'$x',
-			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); $r = CastToType::_int( $x, false, false ); if ( is_int( $r ) ) { pr_int( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'&nbsp;\'; }',
+			'function'	=>	'if ( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\'; $r = CastToType::_int( $x, false, false ); if ( is_int( $r ) ) { pr_int( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'&nbsp;\'; }',
 			'notes'		=>	array(
 				'<p>Uses an <a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">external library</a></p>',
 			),
@@ -436,7 +448,7 @@ class VartypeTest extends Vartype {
 			'title'		=>	'CastToType::_object (&nbsp;$x, false&nbsp;)',
 			'url'		=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'		=>	'$x',
-			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); pr_var( CastToType::_object( $x, false ), \'\', true, true ); } else { print \'&nbsp;\'; }',
+			'function'	=>	'if ( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\'; pr_var( CastToType::_object( $x, false ), \'\', true, true ); } else { print \'&nbsp;\'; }',
 			'notes'		=>	array(
 				'<p>Uses an <a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">external library</a></p>',
 			),
@@ -445,7 +457,7 @@ class VartypeTest extends Vartype {
 			'title'		=>	'CastToType::_string (&nbsp;$x, false, false&nbsp;)',
 			'url'		=>	'https://github.com/jrfnl/PHP-cast-to-type.git',
 			'arg'		=>	'$x',
-			'function'	=>	'if( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ); $r = CastToType::_string( $x, false, false ); if ( is_string( $r ) ) { pr_str( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'&nbsp;\'; }',
+			'function'	=>	'if ( file_exists( APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\' ) ) { include_once APP_DIR . \'/include/PHP-cast-to-type/cast-to-type.php\'; $r = CastToType::_string( $x, false, false ); if ( is_string( $r ) ) { pr_str( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'&nbsp;\'; }',
 			'notes'		=>	array(
 				'<p>Uses an <a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">external library</a></p>',
 			),
@@ -460,7 +472,7 @@ class VartypeTest extends Vartype {
 			'title'		=>	'abs()',
 			'url'		=>	'http://php.net/abs',
 			'arg'		=>	'$x',
-			'function'	=>	'$r = abs( $x ); if( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); }',
+			'function'	=>	'$r = abs( $x ); if ( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); }',
 		),
 
 
@@ -471,19 +483,19 @@ class VartypeTest extends Vartype {
 			'title'		=>	'floor()',
 			'url'		=>	'http://php.net/floor',
 			'arg'		=>	'$x',
-			'function'	=>	'$r = floor( $x ); if( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); }',
+			'function'	=>	'$r = floor( $x ); if ( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); }',
 		),
 		'ceil' =>	array(
 			'title'		=>	'ceil()',
 			'url'		=>	'http://php.net/ceil',
 			'arg'		=>	'$x',
-			'function'	=>	'$r = ceil( $x ); if( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); }',
+			'function'	=>	'$r = ceil( $x ); if ( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); }',
 		),
 		'round' =>	array(
 			'title'		=>	'round()',
 			'url'		=>	'http://php.net/round',
 			'arg'		=>	'$x',
-			'function'	=>	'$r = round( $x ); if( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); }',
+			'function'	=>	'$r = round( $x ); if ( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); }',
 		),
 
 
@@ -503,7 +515,7 @@ class VartypeTest extends Vartype {
 			'title'		=>	'strlen()',
 			'url'		=>	'http://php.net/strlen',
 			'arg'		=>	'$x',
-			'function'	=>	'$r = strlen( $x ); if( is_int( $r ) ) { pr_int( $r ); } else { pr_var( $r, \'\', true, true ); }',
+			'function'	=>	'$r = strlen( $x ); if ( is_int( $r ) ) { pr_int( $r ); } else { pr_var( $r, \'\', true, true ); }',
 		),
 		'count_chars' =>	array(
 			'title'		=>	'count_chars (&hellip;)',
@@ -577,7 +589,7 @@ class VartypeTest extends Vartype {
 				</p>',
 			),
 		),
-		
+
 		'isset_foo' =>	array(
 			'title'		=>	'isset (&nbsp;$x[\'foo\']&nbsp;)',
 			'url'		=>	'http://php.net/isset',
@@ -605,7 +617,7 @@ class VartypeTest extends Vartype {
 			'title'		=>	'array_key_exists (&nbsp;0,&nbsp;$x&nbsp;)',
 			'url'		=>	'http://php.net/array_key_exists',
 			'arg'		=>	'$x',
-			'function'	=>	'if ( function_exists( \'array_key_exists\' ) ) { $r = array_key_exists( 0, $x ); if( is_bool( $r ) ) { pr_bool( array_key_exists( 0, $x ) ); } else { pr_var( $r, \'\', true, true ); } } else { print \'E: not available (PHP 4.0.7+)\'; }',
+			'function'	=>	'if ( function_exists( \'array_key_exists\' ) ) { $r = array_key_exists( 0, $x ); if ( is_bool( $r ) ) { pr_bool( array_key_exists( 0, $x ) ); } else { pr_var( $r, \'\', true, true ); } } else { print \'E: not available (PHP 4.0.7+)\'; }',
 			'notes'		=>	array(
 				'<p>
 					Whether to use <code>isset()</code> or <code>array_key_exists()</code> depends on what you want to know:
@@ -646,7 +658,7 @@ class VartypeTest extends Vartype {
 			'title'		=>	'$x[\'foo\'][\'bar\']',
 			'url'		=>	'http://www.php.net/manual/en/language.types.array.php',
 			'arg'		=>	'$x',
-			'function'	=>	'if ( ! is_object( $x ) ) { if( ! is_string( $x ) || ( is_string( $x ) && ( PHP_VERSION_ID > 50327 || PHP_VERSION_ID < 50000 ) ) ) { pr_var( $x[\'foo\'][\'bar\'], \'\', true, true ); } else { trigger_error( \'Cannot use string offset as an array\', E_USER_ERROR ); } } else { $class = get_class( $x ); trigger_error( \'Cannot use object of type \' . $class . \' as array\', E_USER_ERROR ); unset( $class ); }',
+			'function'	=>	'if ( ! is_object( $x ) ) { if ( ! is_string( $x ) || ( is_string( $x ) && ( PHP_VERSION_ID > 50327 || PHP_VERSION_ID < 50000 ) ) ) { pr_var( $x[\'foo\'][\'bar\'], \'\', true, true ); } else { trigger_error( \'Cannot use string offset as an array\', E_USER_ERROR ); } } else { $class = get_class( $x ); trigger_error( \'Cannot use object of type \' . $class . \' as array\', E_USER_ERROR ); unset( $class ); }',
 		),
 
 
@@ -713,13 +725,13 @@ class VartypeTest extends Vartype {
 			'title'		=>	'get_class()',
 			'url'		=>	'http://php.net/get_class',
 			'arg'		=>	'$x',
-			'function'	=>	'$r = get_class( $x ); if( ! is_bool( $r ) ) { pr_var( $r, \'\', true, true ); } else { pr_bool( $r ); }',
+			'function'	=>	'$r = get_class( $x ); if ( ! is_bool( $r ) ) { pr_var( $r, \'\', true, true ); } else { pr_bool( $r ); }',
 		),
 		'get_parent_class' => array(
 			'title'		=>	'get_parent_class()',
 			'url'		=>	'http://php.net/get_parent_class',
 			'arg'		=>	'$x',
-			'function'	=>	'$r = get_parent_class( $x ); if( ! is_bool( $r ) ) { pr_var( $r, \'\', true, true ); } else { pr_bool( $r ); }',
+			'function'	=>	'$r = get_parent_class( $x ); if ( ! is_bool( $r ) ) { pr_var( $r, \'\', true, true ); } else { pr_bool( $r ); }',
 		),
 		'is_subclass_of' => array(
 			'title'		=>	'is_subclass_of (&nbsp;$x, \'TestObject\'&nbsp;)',
@@ -737,7 +749,7 @@ class VartypeTest extends Vartype {
 			'title'		=>	'get_resource_type()',
 			'url'		=>	'http://php.net/get_resource_type',
 			'arg'		=>	'$x',
-			'function'	=>	'if( function_exists( \'get_resource_type\' ) ) { $r = get_resource_type( $x ); if( is_string( $r ) ) { pr_str( $r ); } else if( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); } } else {print \'E: not available (PHP 4.0.2+)\'; }',
+			'function'	=>	'if ( function_exists( \'get_resource_type\' ) ) { $r = get_resource_type( $x ); if ( is_string( $r ) ) { pr_str( $r ); } else if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); } } else {print \'E: not available (PHP 4.0.2+)\'; }',
 		),
 
 
@@ -1090,7 +1102,7 @@ class VartypeTest extends Vartype {
 			'arg'		=>	'$x',
 			'function'	=>	'$valid = preg_match( \'`^[\d-]+$`\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); }',
 		),
-		
+
 		// ##PREG_DECIMAL_POINT## is replaced by the locale specific decimal point character in the class constructor
 		'preg_float_pos' =>	array(
 			'title'		=>	'preg_match (`^[0-9##PREG_DECIMAL_POINT##]+$`)',
@@ -1147,7 +1159,7 @@ class VartypeTest extends Vartype {
 			'arg'		=>	'$x',
 			'function'	=>	'$valid = preg_match( \'`^\w+$`u\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); }',
 		),
-		
+
 
 		/**
 		 * CTYPE extension
@@ -1394,8 +1406,8 @@ else {
 				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
 		),
-		
-		
+
+
 		'filter_combined_flt_null_sanitize_allow_x3' =>	array(
 			'title'		=>	'filter_var (&hellip;)',
 			'tooltip'	=>	'
@@ -1497,7 +1509,7 @@ else {
 				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
 		),
-		
+
 		'filter_combined_int_null_sanitize' =>	array(
 			'title'		=>	'filter_var (&hellip;)',
 			'tooltip'	=>	'
@@ -1583,7 +1595,7 @@ else {
 				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
 		),
-		
+
 
 		'filter_combined_str_null_sanitize' =>	array(
 			'title'		=>	'filter_var (&hellip;)',
@@ -1602,8 +1614,8 @@ else {
 				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
 		),
-		
-		
+
+
 		'filter_combined_str_null_sanitize_encode' =>	array(
 			'title'		=>	'filter_var (&hellip;)',
 			'tooltip'	=>	'
@@ -1621,7 +1633,7 @@ else {
 				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
 		),
-		
+
 		'filter_combined_str_null_sanitize_strip' =>	array(
 			'title'		=>	'filter_var (&hellip;)',
 			'tooltip'	=>	'
@@ -1639,7 +1651,7 @@ else {
 				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
 		),
-		
+
 		'filter_combined_str_null_sanitize_special_chars' =>	array(
 			'title'		=>	'filter_var (&hellip;)',
 			'tooltip'	=>	'
@@ -1657,7 +1669,7 @@ else {
 				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
 		),
-		
+
 		'filter_combined_str_null_sanitize_full_special_chars' =>	array(
 			'title'		=>	'filter_var (&hellip;)',
 			'tooltip'	=>	'
@@ -1670,7 +1682,7 @@ else {
  			',
 			'url'		=>	'http://php.net/filter_var',
 			'arg'		=>	'$x',
-			'function'	=>	'if ( extension_loaded( \'filter\' ) ) { if( defined( \'FILTER_SANITIZE_FULL_SPECIAL_CHARS\' ) ) { VartypeTest::filter_combined( $x, \'string\', FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_NULL_ON_FAILURE ); } else { print \'E: not available (PHP 5.3.3+)\'; } } else { print \'E: not available (PHP 5.2.0+)\'; }',
+			'function'	=>	'if ( extension_loaded( \'filter\' ) ) { if ( defined( \'FILTER_SANITIZE_FULL_SPECIAL_CHARS\' ) ) { VartypeTest::filter_combined( $x, \'string\', FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_NULL_ON_FAILURE ); } else { print \'E: not available (PHP 5.3.3+)\'; } } else { print \'E: not available (PHP 5.2.0+)\'; }',
 			'notes'		=> array(
 				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
@@ -1679,8 +1691,10 @@ else {
 	);
 
 
+	/**
+	 * @var array $test_groups Setup the various tests across subsections to be show in individual tabs
+	 */
 	var $test_groups = array(
-
 
 		'general'	=>	array(
 			'title'		=>	'General typing',
@@ -1699,7 +1713,7 @@ else {
 			'book_url'	=>	'http://php.net/types.comparisons',
 			'target'	=>	null,
 		),
-		
+
 		'type_testing'	=>	array(
 			'title'		=>	'is_&hellip;()',
 			'tests'	=>	array(
@@ -1717,7 +1731,7 @@ else {
 				'is_object',
 				'is_resource',
 
-				//'is_binary', //PHP6
+				//'is_binary', //PHP7
 				'is_callable',
 
 				'is_numeric',
@@ -1730,11 +1744,10 @@ else {
 			'book_url'	=>	'http://php.net/ref.var',
 			'target'	=>	null,
 		),
-		
 
 
-		
-		/*'type_casting'	=>	array(
+		/*
+		'type_casting'	=>	array(
 			'title'		=>	'Type casting',
 			'tests'	=>	array(
 				//'gettype',
@@ -1772,10 +1785,10 @@ else {
 			'urls'		=>	array(),
 			'book_url'	=>	'http://php.net/language.types.type-juggling',
 			'target'	=>	null,
-		),*/
+		),
+		*/
 
 
-		
 		'null'	=>	array(
 			'title'		=>	'Null',
 			'tests'	=>	array(
@@ -1793,10 +1806,12 @@ else {
 				'null_cmp_loose_str',
 				'null_cmp_strict_str',
 
-				/*'null_cmp_rv_loose',
+				/*
+				'null_cmp_rv_loose',
 				'null_cmp_rv_strict',
 				'null_cmp_rv_loose_str',
-				'null_cmp_rv_strict_str',*/
+				'null_cmp_rv_strict_str',
+				*/
 			),
 			'break_at'	=>	array( 'cast_to_type_null', 'empty', 'null_cmp_strict_str', 'null_cmp_rv_strict_str', ),
 			//'good'		=>	array( 'is_null', 'null_cmp_strict', 'null_cmp_rv_strict', ),
@@ -1834,7 +1849,8 @@ else {
 				'bool_cmp_rv_true_loose_int',
 				'bool_cmp_rv_true_strict_int',
 				'bool_cmp_rv_true_loose_str',
-				'bool_cmp_rv_true_strict_str',*/
+				'bool_cmp_rv_true_strict_str',
+				*/
 
 				'bool_cmp_false_loose',
 				'bool_cmp_false_strict',
@@ -1849,11 +1865,13 @@ else {
 				'bool_cmp_rv_false_loose_int',
 				'bool_cmp_rv_false_strict_int',
 				'bool_cmp_rv_false_loose_str',
-				'bool_cmp_rv_false_strict_str',*/
+				'bool_cmp_rv_false_strict_str',
+				*/
 
 				/*
 				'var',
-				'not_var',*/
+				'not_var',
+				*/
 				'if_var',
 				'if_not_var',
 
@@ -1891,7 +1909,8 @@ else {
 				//'preg_digit_pos',
 				//'preg_digit',
 
-				/*'int_cmp_gt0',
+				/*
+				'int_cmp_gt0',
 				'int_cmp_gte0',
 				'int_cmp_is0_loose',
 				'int_cmp_is0_strict',
@@ -1911,7 +1930,7 @@ else {
 			'target'	=>	'i',
 		),
 
-		
+
 
 		'float'	=>	array(
 			'title'		=>	'Floats',
@@ -1933,7 +1952,7 @@ else {
 				'preg_float',
 				//'preg_digit_float_pos',
 				//'preg_digit_float',
-				
+
 			),
 			'break_at'	=>	array( 'cast_to_type_float_not_empty_recurse_arrays', 'preg_float', ),
 			//'good'		=>	array( 'cast_to_type_float', 'cast_to_type_float_not_empty_recurse_arrays', 'filter_combined_float_null', 'is_float', ),
@@ -1949,7 +1968,7 @@ else {
 			'title'		=>	'Numeric tests',
 			'tests'	=>	array(
 				'is_numeric',
-				
+
 				'ctype_digit',
 
 				'int_cmp_gt0',
@@ -1964,7 +1983,7 @@ else {
 				'is_nan',
 				'is_finite',
 				'is_infinite',
-				
+
 				'floor',
 				'ceil',
 				'round',
@@ -2005,7 +2024,7 @@ else {
 			'title'		=>	'String tests',
 			'tests'	=>	array(
 				'is_string',
-				
+
 				'empty',
 				'str_cmp_empty_loose',
 				'str_cmp_empty_strict',
@@ -2054,8 +2073,8 @@ else {
 			'book_url'	=>	'http://php.net/book.array',
 			'target'	=>	'a',
 		),
-		
-		
+
+
 		'array2'	=>	array(
 			'title'		=>	'Array testing',
 			'tests'	=>	array(
@@ -2068,7 +2087,7 @@ else {
 				'isset_0',
 				'array_key_exists',
 				'isset_foo',
-				
+
 				'key',
 				'current',
 				'array_access_simple_string',
@@ -2093,7 +2112,7 @@ else {
 				'object',
 				//'cast_to_type_object',
 				'cast_to_type_object_not_empty',
-				
+
 				'is_object',
 				'is_a',
 				'instanceof',
@@ -2153,7 +2172,11 @@ else {
 			'target'	=>	'',
 		),
 	);
-	
+
+
+	/**
+	 * @var array $ctype_test_group Additional testgroup only to be added if the ctype extension is available
+	 */
 	var $ctype_test_group = array(
 		'ctype'	=>	array(
 			'title'		=>	'ctype extension',
@@ -2181,8 +2204,11 @@ else {
 			'target'	=>	's',
 		),
 	);
-	
 
+
+	/**
+	 * @var array $ctype_test_group Additional testgroup only to be added if the filter extension is available
+	 */
 	var $filter_test_group = array(
 		'filters1' => array(
 			'title'		=>	'filter extension - bool/int/float',
@@ -2207,7 +2233,7 @@ else {
 			'book_url'	=>	'http://php.net/book.filter',
 			'target'	=>	'',
 		),
-		
+
 		'filters2' => array(
 			'title'		=>	'filter extension - string',
 			'tests'	=>	array(
@@ -2229,13 +2255,13 @@ else {
 
 
 	/**
-	 *
+	 * Constructor
 	 */
 	function __construct() {
-		
+
 		if ( extension_loaded( 'ctype' ) ) {
 			if ( PHP_VERSION_ID === 50005 ) {
-				unset( 
+				unset(
 					$this->ctype_test_group['ctype']['tests'][6], // ctype_lower
 					$this->ctype_test_group['ctype']['tests'][8], // ctype_cntrl
 					$this->ctype_test_group['ctype']['tests'][9] // ctype_punct
@@ -2258,7 +2284,12 @@ else {
 			unset( $locale_info );
 		}
 		// Prep decimal point for use in regex
-		$preg_point = ( ( defined( 'DECIMAL_POINT' ) ) ? preg_quote( DECIMAL_POINT, '`' ) : preg_quote( '.,', '`' ) );
+		if ( defined( 'DECIMAL_POINT' ) ) {
+			$preg_point = preg_quote( DECIMAL_POINT, '`' );
+		}
+		else {
+			$preg_point = preg_quote( '.,', '`' );
+		}
 
 		$targets = array(
 			'preg_float_pos',
@@ -2267,31 +2298,36 @@ else {
 			'preg_digit_float',
 		);
 		foreach ( $targets as $target ) {
-			foreach ( $this->tests[$target] as $key => $value ) {
-				$this->tests[$target][$key] = str_replace( '##PREG_DECIMAL_POINT##', $preg_point, $value );
+			foreach ( $this->tests[ $target ] as $key => $value ) {
+				$this->tests[ $target ][ $key ] = str_replace( '##PREG_DECIMAL_POINT##', $preg_point, $value );
 			}
 		}
 		unset( $preg_point );
-		
+
 
 		parent::__construct();
 	}
 
+
+	/**
+	 * PHP4 compatibility constructor
+	 */
 	function VartypeTest() {
 		$this->__construct();
 	}
 
 
-
 	/**
-	 * @param      $value
-	 * @param null $expected
-	 * @param int  $filter
-	 * @param null $flags
-	 * @param null $options
+	 * Run tests using the filter extension
+	 *
+	 * @param mixed  $value    Value to test
+	 * @param string $expected Expected variable type of the output of the test
+	 * @param int    $filter   The Filter to apply
+	 * @param mixed  $flags    Which filter flags to apply
+	 * @param mixed  $options  Which options to apply
 	 */
 	function filter_combined( $value, $expected = null, $filter = FILTER_DEFAULT, $flags = null, $options = null ) {
-		
+
 		if ( function_exists( 'filter_var' ) && function_exists( 'filter_var_array' ) ) {
 			if ( ! is_array( $value ) ) {
 				$opt = array();
@@ -2309,18 +2345,22 @@ else {
 					$r = filter_var( $value, $filter );
 				}
 				switch ( true ) {
-					case( $expected === 'bool' && is_bool( $r ) ):
+					case ( $expected === 'bool' && is_bool( $r ) === true ):
 						pr_bool( $r );
 						break;
-					case( $expected === 'int' && is_int( $r ) ):
+
+					case ( $expected === 'int' && is_int( $r ) === true  ):
 						pr_int( $r );
 						break;
-					case( $expected === 'float' && is_float( $r ) ):
+
+					case ( $expected === 'float' && is_float( $r ) === true  ):
 						pr_flt( $r );
 						break;
-					case( $expected === 'string' && is_string( $r ) ):
+
+					case ( $expected === 'string' && is_string( $r ) === true  ):
 						pr_str( $r );
 						break;
+
 					default:
 						pr_var( $r, '', true, true );
 						break;
@@ -2331,14 +2371,14 @@ else {
 					pr_var( filter_var_array( $value, $filter ), '', true, true );
 				}
 				else {
-					$input = array( 'x' => $value );
+					$input      = array( 'x' => $value );
 					$filter_def = array(
 						'x' => array(
 							'filter' => $filter,
 						),
 					);
 					if ( isset( $flags ) ) {
-						$filter_def['x']['flags']	=	FILTER_REQUIRE_ARRAY|$flags;
+						$filter_def['x']['flags'] =	FILTER_REQUIRE_ARRAY | $flags;
 					}
 					if ( isset( $options ) && ( is_array( $options ) && $options !== array() ) ) {
 						$filter_def['x']['options'] = $options;
@@ -2352,5 +2392,4 @@ else {
 			print 'E: not available (PHP 5.2.0+)';
 		}
 	}
-
 }

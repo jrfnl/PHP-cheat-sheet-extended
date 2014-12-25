@@ -5,41 +5,41 @@
  */
 class Vartype {
 
-
 	/**
-	 * Placeholder for test data
+	 * @var array $test_data  Placeholder for test data
 	 */
 	var $test_data = array();
 
 	/**
-	 * Placeholder for test data labels
+	 * @var array $test_legendPlaceholder for test data labels
 	 */
 	var $test_legend = array();
 
 	/**
-	 * Placeholder for test data key array
+	 * @var array $test_data_keysPlaceholder for test data key array
 	 */
 	var $test_data_keys = array();
 
 
 	/**
-	 * At which point in the tables to repeat headers
+	 * @var array $header_repeatAt which point in the tables to repeat headers
 	 */
 	var $header_repeat = array( 's', 'a', 'o', 'p' );
-	
-	
 
 
 	/**
-	 * Tests to be run, add in child class
+	 * @var array $tests Tests to be run, add in child class
 	 */
 	var $tests = array();
 
-	var $test_groups = array();
-	
-	
 	/**
-	 * Placeholder for test notes
+	 * @var array $test_groups
+	 */
+	var $test_groups = array();
+
+
+	/**
+	 * @var array $table_notes Placeholder for test notes
 	 */
 	var $table_notes = array();
 
@@ -54,25 +54,29 @@ class Vartype {
 		 * when running the tests in PHP4
 		 */
 		if ( PHP_VERSION_ID >= 50000 ) {
-			include_once( APP_DIR . '/class.vartype-php5.php' );
+			include_once APP_DIR . '/class.vartype-php5.php';
 			$this->tests = VartypePHP5::merge_tests( $this->tests );
 		}
 
 		// Create the actual test functions
 		foreach ( $this->tests as $key => $array ) {
 			// pr_var( $key, 'Creating test for:', true );
-			$this->tests[$key]['test'] = create_function( $array['arg'], $array['function'] );
+			$this->tests[ $key ]['test'] = create_function( $array['arg'], $array['function'] );
 		}
 	}
 
 
-	/* PHP4 compatibility */
+	/**
+	 * PHP4 compatibility constructor
+	 */
 	function vartype() {
 		$this->__construct();
 	}
 
 
 	/**
+	 * Generate a cheatsheet page
+	 *
 	 * @param bool $all
 	 */
 	function do_page( $all = false ) {
@@ -89,13 +93,15 @@ class Vartype {
 
 
 	/**
-	 * @param null $test_group
+	 * Determine which tests to run
 	 *
-	 * @return mixed|null
+	 * @param string|null $test_group
+	 *
+	 * @return string
 	 */
 	function get_test_group( $test_group = null ) {
 		$key = key( $this->test_groups ); // set the first test group as the default if no test group given;
-		if ( isset( $test_group ) && isset( $this->test_groups[$test_group] ) ) {
+		if ( isset( $test_group ) && isset( $this->test_groups[ $test_group ] ) ) {
 			$key = $test_group;
 		}
 		return $key;
@@ -103,7 +109,9 @@ class Vartype {
 
 
 	/**
-	 * @param null $test_group
+	 * Run all the tests for one specific testgroup
+	 *
+	 * @param string $test_group The current subsection
 	 */
 	function run_test( $test_group = null ) {
 
@@ -116,19 +124,21 @@ class Vartype {
 
 
 	/**
-	 * @param null $test_group
+	 * Prepare the test data (the variables) for use in the tests
+	 *
+	 * @param string $test_group The current subsection
 	 */
 	function set_test_data( $test_group = null ) {
 
 		$GLOBALS['test'] = $test_group;
 
-		include( APP_DIR . '/include/vars-to-test.php' );
+		include APP_DIR . '/include/vars-to-test.php';
 		$this->test_data   = $test_array;
 		$this->test_legend = $legend_array;
 
 		// Merge test group specific variables into the test array
-		if ( isset( $extra_variables[$test_group] ) && $extra_variables[$test_group] !== array() ) {
-			$this->test_data = array_merge( $this->test_data, $extra_variables[$test_group] );
+		if ( isset( $extra_variables[ $test_group ] ) && $extra_variables[ $test_group ] !== array() ) {
+			$this->test_data = array_merge( $this->test_data, $extra_variables[ $test_group ] );
 		}
 
 		$keys = array_keys( $this->test_data );
@@ -144,8 +154,10 @@ class Vartype {
 
 
 	/**
-	 * @param $a
-	 * @param $b
+	 * Sort the test data via a set order - callback method
+	 *
+	 * @param mixed $a
+	 * @param mixed $b
 	 *
 	 * @return int
 	 */
@@ -166,25 +178,28 @@ class Vartype {
 			'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
 			'a', 'b', 'c', 'd', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
 		);
-		
+
 		$primary_a = array_search( substr( $a, 0, 1 ), $primary_order, true );
 		$primary_b = array_search( substr( $b, 0, 1 ), $primary_order, true );
-		
+
 		if ( $primary_a !== $primary_b ) {
-			return ( $primary_a < $primary_b ) ? -1 : 1;
+			return ( $primary_a < $primary_b ) ? -1 : 1; // wpcs: ok
 		}
 
 		$secondary_a = array_search( substr( $a, 1 ), $secondary_order, true );
 		$secondary_b = array_search( substr( $b, 1 ), $secondary_order, true );
 
 		if ( $secondary_a !== $secondary_b ) {
-			return ( $secondary_a < $secondary_b ) ? -1 : 1;
+			return ( $secondary_a < $secondary_b ) ? -1 : 1; // wpcs: ok
 		}
 
 		return 0;
 	}
 
 
+	/**
+	 * Housekeeping
+	 */
 	function clean_up() {
 		if ( isset( $GLOBALS['test_array'] ) && isset( $GLOBALS['test_array']['r1'] ) && is_resource( $GLOBALS['test_array']['r1'] ) ) {
 			fclose( $GLOBALS['test_array']['r1'] );
@@ -202,6 +217,8 @@ class Vartype {
 
 
 	/**
+	 * Generate the subsection tabs for the cheatsheet
+	 *
 	 * @param bool $all
 	 */
 	function print_tabs( $all = false ) {
@@ -210,13 +227,18 @@ class Vartype {
 	<ul>';
 
 		foreach ( $this->test_groups as $key => $test_group ) {
+			$active_class = '';
+			if ( $GLOBALS['tab'] === $key ) {
+				$active_class = ' class="ui-tabs-active ui-state-active"';
+			}
+
 			if ( $all === true ) {
 				print '
 		<li><a href="#' . $key . '"><strong>' . $test_group['title'] . '</strong></a></li>';
 			}
 			else {
 				print '
-		<li' . ( $GLOBALS['tab'] === $key ? ' class="ui-tabs-active ui-state-active"' : '' ) . '><a href="index.php?page=' . $GLOBALS['type'] . '&amp;tab=' . $key . '&amp;do=ajax"><strong>' . $test_group['title'] . '</strong></a></li>';
+		<li' . $active_class . '><a href="index.php?page=' . $GLOBALS['type'] . '&amp;tab=' . $key . '&amp;do=ajax"><strong>' . $test_group['title'] . '</strong></a></li>';
 			}
 		}
 		unset( $key, $test_group );
@@ -226,8 +248,11 @@ class Vartype {
 	}
 
 
+	/**
+	 * Print all tables for the cheatsheet
+	 */
 	function print_tables() {
-		
+
 		print '
 	<div class="tables">';
 
@@ -236,26 +261,28 @@ class Vartype {
 			$this->print_table( $key );
 		}
 		unset( $key, $group_settings );
-		
+
 		print '
 	</div><!-- end of div.tables -->';
 	}
 
 
 	/**
-	 * @param $test_group
+	 * Generate the table for one specific subsection of a cheatsheet
+	 *
+	 * @param string $test_group The current subsection
 	 */
 	function print_table( $test_group ) {
-		
-		if ( isset( $this->test_groups[$test_group] ) ) {
+
+		if ( isset( $this->test_groups[ $test_group ] ) ) {
 			$GLOBALS['encountered_errors'] = array();
-			
+
 			print '
 		<div id="' . $test_group . '">';
 
-			if ( isset( $this->test_groups[$test_group]['urls'] ) && ( is_array( $this->test_groups[$test_group]['urls'] ) && count( $this->test_groups[$test_group]['urls'] ) > 0 ) ) {
+			if ( isset( $this->test_groups[ $test_group ]['urls'] ) && ( is_array( $this->test_groups[ $test_group ]['urls'] ) && count( $this->test_groups[ $test_group ]['urls'] ) > 0 ) ) {
 				print '<p>References:</p><ul>';
-				foreach ( $this->test_groups[$test_group]['urls'] as $url ) {
+				foreach ( $this->test_groups[ $test_group ]['urls'] as $url ) {
 					print '<li><a href="' . $url . '" target="_blank">' . $url . '</a></li>';
 				}
 				unset( $url );
@@ -268,8 +295,11 @@ class Vartype {
 			$last_key = null;
 
 			foreach ( $this->test_data_keys as $key ) {
-				$value  = $this->test_data[$key];
-				$legend = ( isset( $this->test_legend[$key] ) ? '<sup class="fright"><a href="#var-legend-' . $key . '">&dagger;' . $key . '</a></sup>' : '' );
+				$value  = $this->test_data[ $key ];
+				$legend = '';
+				if ( isset( $this->test_legend[ $key ] ) ) {
+					$legend = '<sup class="fright"><a href="#var-legend-' . $key . '">&dagger;' . $key . '</a></sup>';
+				}
 
 				$type = substr( $key, 0, 1 );
 
@@ -278,11 +308,11 @@ class Vartype {
 					$class[]  = 'new-var-type';
 					$last_key = $type;
 				}
-				if ( isset( $this->test_groups[$test_group]['target'] ) && $this->test_groups[$test_group]['target'] === $type ) {
+				if ( isset( $this->test_groups[ $test_group ]['target'] ) && $this->test_groups[ $test_group ]['target'] === $type ) {
 					$class[] = 'target';
 				}
 				unset( $type, $hr_key );
-				
+
 				if ( count( $class ) > 0 ) {
 					print '
 				<tr class="' . implode( ' ', $class ) . '">';
@@ -300,7 +330,7 @@ class Vartype {
 					</th>';
 
 				$this->print_row_cells( $value, $test_group );
-				
+
 				print '
 					<th>' . $legend . '$x = ';
 				pr_var( $value, '', true );
@@ -332,19 +362,21 @@ class Vartype {
 
 
 	/**
-	 * @param $test_group
+	 * Generate the first row of the cheatsheet table
+	 *
+	 * @param string $test_group The current subsection
 	 *
 	 * @return string
 	 */
 	function create_table_header( $test_group ) {
-		
+
 		$this->table_notes = array(); // Make sure we start with an empty array
 
-		if ( isset( $this->test_groups[$test_group]['book_url'] ) && $this->test_groups[$test_group]['book_url'] !== '' ) {
-			$group_label = '<th class="label-col"><a href="' . $this->test_groups[$test_group]['book_url'] . '" target="_blank">' . $this->test_groups[$test_group]['title'] . '</a></th>';
+		if ( isset( $this->test_groups[ $test_group ]['book_url'] ) && $this->test_groups[ $test_group ]['book_url'] !== '' ) {
+			$group_label = '<th class="label-col"><a href="' . $this->test_groups[ $test_group ]['book_url'] . '" target="_blank">' . $this->test_groups[ $test_group ]['title'] . '</a></th>';
 		}
 		else {
-			$group_label = '<th class="label-col">' . $this->test_groups[$test_group]['title'] . '</th>';
+			$group_label = '<th class="label-col">' . $this->test_groups[ $test_group ]['title'] . '</th>';
 		}
 
 
@@ -354,35 +386,35 @@ class Vartype {
 
 
 
-		foreach ( $this->test_groups[$test_group]['tests'] as $test ) {
+		foreach ( $this->test_groups[ $test_group ]['tests'] as $test ) {
 			$class = array();
-			if ( isset( $this->test_groups[$test_group]['best'] ) && in_array( $test, $this->test_groups[$test_group]['best'] ) ) {
+			if ( isset( $this->test_groups[ $test_group ]['best'] ) && in_array( $test, $this->test_groups[ $test_group ]['best'] ) ) {
 				$class[] = 'best';
 			}
-			else if ( isset( $this->test_groups[$test_group]['good'] ) && in_array( $test, $this->test_groups[$test_group]['good'] ) ) {
+			else if ( isset( $this->test_groups[ $test_group ]['good'] ) && in_array( $test, $this->test_groups[ $test_group ]['good'] ) ) {
 				$class[] = 'good';
 			}
-			if ( isset( $this->test_groups[$test_group]['break_at'] ) && in_array( $test, $this->test_groups[$test_group]['break_at'] ) ) {
-				$class[] = ( $class === '' ) ? 'end' : ' end';
+			if ( isset( $this->test_groups[ $test_group ]['break_at'] ) && in_array( $test, $this->test_groups[ $test_group ]['break_at'] ) ) {
+				$class[] = 'end';
 			}
-			
-			$class = ( ( count( $class ) > 0 ) ? ' class="' . implode( ' ', $class ) . '"' : '' );
 
-			$tooltip = ( isset( $this->tests[$test]['tooltip'] ) ? ' title="' . htmlspecialchars( $this->tests[$test]['tooltip'], ENT_QUOTES, 'UTF-8' ) . '"' : '' );
+			$class = ( ( count( $class ) > 0 ) ? ' class="' . implode( ' ', $class ) . '"' : '' ); // wpcs: ok
+
+			$tooltip = ( isset( $this->tests[ $test ]['tooltip'] ) ? ' title="' . htmlspecialchars( $this->tests[ $test ]['tooltip'], ENT_QUOTES, 'UTF-8' ) . '"' : '' );
 
 			$html .= '
 					<th' . $class . '>' .
-					( ( isset( $this->tests[$test]['url'] ) && $this->tests[$test]['url'] !== '' ) ? '<a href="' . $this->tests[$test]['url'] . '" target="_blank"' . $tooltip . '>' : '' ) .
-					$this->tests[$test]['title'] .
-					( ( isset( $this->tests[$test]['url'] ) && $this->tests[$test]['url'] !== '' ) ? '</a>' : '' );
+					( ( isset( $this->tests[ $test ]['url'] ) && $this->tests[ $test ]['url'] !== '' ) ? '<a href="' . $this->tests[ $test ]['url'] . '" target="_blank"' . $tooltip . '>' : '' ) .
+					$this->tests[ $test ]['title'] .
+					( ( isset( $this->tests[ $test ]['url'] ) && $this->tests[ $test ]['url'] !== '' ) ? '</a>' : '' );
 
 
-			if ( isset( $this->tests[$test]['notes'] ) && ( is_array( $this->tests[$test]['notes'] ) && count( $this->tests[$test]['notes'] ) > 0 ) ) {
-				
-				$this->table_notes = array_merge( $this->table_notes, $this->tests[$test]['notes'] );
+			if ( isset( $this->tests[ $test ]['notes'] ) && ( is_array( $this->tests[ $test ]['notes'] ) && count( $this->tests[ $test ]['notes'] ) > 0 ) ) {
+
+				$this->table_notes = array_merge( $this->table_notes, $this->tests[ $test ]['notes'] );
 				$this->table_notes = array_unique( $this->table_notes );
 
-				foreach ( $this->tests[$test]['notes'] as $note ) {
+				foreach ( $this->tests[ $test ]['notes'] as $note ) {
 					$note_id = array_search( $note, $this->table_notes );
 					if ( $note_id !== false ) {
 						$html .= ' <sup><a href="#' . $test_group . '-note' . ( $note_id + 1 ) . '">&Dagger;' . ( $note_id + 1 ) . '</a></sup>';
@@ -404,7 +436,9 @@ class Vartype {
 
 
 	/**
-	 * @param $test_group
+	 * Generate the html for the table top
+	 *
+	 * @param string $test_group The current subsection
 	 */
 	function print_tabletop( $test_group ) {
 
@@ -422,22 +456,24 @@ class Vartype {
 
 
 	/**
-	 * @param $value
-	 * @param $test_group
+	 * Generate a cheatsheet result row
+	 *
+	 * @param mixed  $value      The value this row applies to
+	 * @param string $test_group The current subsection
 	 */
 	function print_row_cells( $value, $test_group ) {
 
-		foreach ( $this->test_groups[$test_group]['tests'] as $key => $test ) {
+		foreach ( $this->test_groups[ $test_group ]['tests'] as $key => $test ) {
 			$GLOBALS['has_error'] = array();
 
 			$class = array( $test );
-			if ( in_array( $test, $this->test_groups[$test_group]['best'] ) ) {
+			if ( in_array( $test, $this->test_groups[ $test_group ]['best'] ) ) {
 				$class[] = 'best';
 			}
-			else if ( in_array( $test, $this->test_groups[$test_group]['good'] ) ) {
+			else if ( in_array( $test, $this->test_groups[ $test_group ]['good'] ) ) {
 				$class[] = 'good';
 			}
-			if ( in_array( $test, $this->test_groups[$test_group]['break_at'] ) ) {
+			if ( in_array( $test, $this->test_groups[ $test_group ]['break_at'] ) ) {
 				$class[] = 'end';
 			}
 
@@ -451,7 +487,7 @@ class Vartype {
 
 
 			$val = $this->generate_value( $value );
-			$this->tests[$test]['test']( $val );
+			$this->tests[ $test ]['test']( $val );
 
 
 			if ( is_array( $GLOBALS['has_error'] ) && count( $GLOBALS['has_error'] ) > 0 ) {
@@ -472,11 +508,13 @@ class Vartype {
 
 	/**
 	 * Get the value to use for the tests
+	 *
 	 * If in PHP5 and the value is an object, it will clone the object so we'll have a 'clean' object
 	 * for each test (not a reference)
 	 *
-	 * @param	mixed	$value
-	 * @return	mixed
+	 * @param mixed $value
+	 *
+	 * @return mixed
 	 */
 	function generate_value( $value ) {
 		if ( method_exists( 'VartypePHP5', 'generate_value' ) ) {
@@ -487,7 +525,9 @@ class Vartype {
 
 
 	/**
-	 * @param $test_group
+	 * Generate footnotes for any errors encountered
+	 *
+	 * @param string $test_group The current subsection
 	 */
 	function print_error_footnotes( $test_group ) {
 		// Encountered errors footnote/appendix
@@ -506,7 +546,9 @@ class Vartype {
 
 
 	/**
-	 * @param $test_group
+	 * Generate footnotes for a test subsection if applicable
+	 *
+	 * @param string $test_group The current subsection
 	 */
 	function print_other_footnotes( $test_group ) {
 		if ( is_array( $this->table_notes ) && count( $this->table_notes ) > 0 ) {
@@ -522,11 +564,12 @@ class Vartype {
 	}
 
 
-	// PHP4 version
 	/**
-	 * @param $a
-	 * @param $b
-	 * @param $function
+	 * Compare strings, compatible with PHP4
+	 *
+	 * @param mixed  $a
+	 * @param mixed  $b
+	 * @param string $function
 	 */
 	function compare_strings( $a, $b, $function ) {
 		$r = $function( $a, $b );

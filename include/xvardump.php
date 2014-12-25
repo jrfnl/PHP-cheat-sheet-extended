@@ -27,37 +27,33 @@
  */
 
 
-define( 'XVARDUMP_SPACE_LONG',		'&nbsp;&nbsp;&nbsp;&nbsp;' );
-define( 'XVARDUMP_SPACE_SHORT',		'&nbsp;&nbsp;' );
+define( 'XVARDUMP_SPACE_LONG',     '&nbsp;&nbsp;&nbsp;&nbsp;' );
+define( 'XVARDUMP_SPACE_SHORT',    '&nbsp;&nbsp;' );
 
-define( 'XVARDUMP_CLASS_STRING',	'string' );
-define( 'XVARDUMP_CLASS_INT',		'int' );
-define( 'XVARDUMP_CLASS_INT_0',		'int-0' );
-define( 'XVARDUMP_CLASS_FLOAT',		'float' );
-define( 'XVARDUMP_CLASS_BOOL',		'bool' );
-define( 'XVARDUMP_CLASS_B_TRUE',	'b-true' );
-define( 'XVARDUMP_CLASS_B_FALSE',	'b-false' );
-define( 'XVARDUMP_CLASS_RESOURCE',	'resource' );
-define( 'XVARDUMP_CLASS_NULL',		'null' );
-
-
-
-
+define( 'XVARDUMP_CLASS_STRING',   'string' );
+define( 'XVARDUMP_CLASS_INT',      'int' );
+define( 'XVARDUMP_CLASS_INT_0',    'int-0' );
+define( 'XVARDUMP_CLASS_FLOAT',    'float' );
+define( 'XVARDUMP_CLASS_BOOL',     'bool' );
+define( 'XVARDUMP_CLASS_B_TRUE',   'b-true' );
+define( 'XVARDUMP_CLASS_B_FALSE',  'b-false' );
+define( 'XVARDUMP_CLASS_RESOURCE', 'resource' );
+define( 'XVARDUMP_CLASS_NULL',     'null' );
 
 
 /**
  * Retrieve the debug info and value of a variable into a string
  *
- * @uses    pr_var()
- * @see     pr_var()
+ * @param mixed  $var
+ * @param string $title
+ * @param bool   $escape
+ * @param bool   $short
+ * @param string $space
  *
- * @param   mixed   $var
- * @param   string  $title
- * @param   bool    $escape
- * @param   bool    $short
- * @param   string  $space
+ * @uses pr_var()
+ * @see pr_var()
  *
- * @return  string  debug info on the variable $var
+ * @return string  debug info on the variable $var
  */
 function get_var( $var, $title = '', $escape = true, $short = false, $space = '' ) {
 	ob_start();
@@ -73,52 +69,55 @@ function get_var( $var, $title = '', $escape = true, $short = false, $space = ''
  * If you like, you can customize the color-coding used by changing the
  * values of the associated CONSTANTS at the top of this file
  *
- * @uses 	object_info()
- *
- * @param	mixed	$var	the variable to print the debug info for
- * @param	string	$title	(optional) If set, prefaces the debug info with
+ * @param mixed  $var   	The variable to print the debug info for
+ * @param string $title		(optional) If set, prefaces the debug info with
  * 							a header containing this title
  * 							Useful if you want to print several states of the
  * 							same variable and you want to keep track of which state
  * 							you are at
- * @param	bool	$escape	(optional) whether or not to escape html entities in
+ * @param bool   $escape	(optional) Whether or not to escape html entities in
  * 							the $var
  * 							Useful if the $var contains html and you want to see
  * 							the source value
  * 							Defaults to true
- * @param	bool	$short	(optional) whether to limit the debug info to color coding
+ * @param bool   $short		(optional) Whether to limit the debug info to color coding
  * 							Defaults to false
- * @param	string	$space	(optional) Internal variable needed to create the proper
+ * @param string $space		(optional) Internal variable needed to create the proper
  * 							spacing for display of arrays and objects
- * @param   bool    $in_array   (optional) Internal pointer for whether or not to use
+ * @param bool   $in_array  (optional) Internal pointer for whether or not to use
  *                          breaks when using short annotation which would give issues
  *                          when displaying arrays
+ *
+ * @uses object_info()
  */
 function pr_var( $var, $title = '', $escape = true, $short = false, $space = '', $in_array = false ) {
 
 	if ( is_string( $title ) && $title !== '' ) {
-		print '<h4 style="clear: both;">' . ( $escape === true ? htmlentities( $title, ENT_QUOTES ) : $title ) . "</h4>\n";
+		print '<h4 style="clear: both;">' . ( ( $escape === true ) ? htmlentities( $title, ENT_QUOTES ) : $title ) . "</h4>\n";
 	}
 
 	if ( is_array( $var ) ) {
 		if ( $var !== array() ) {
 			print 'Array: ' . $space . "(<br />\n";
 			$spacing = ( ( $short !== true ) ? $space . XVARDUMP_SPACE_LONG : $space . XVARDUMP_SPACE_SHORT );
-//			$spacing = $space . XVARDUMP_SPACE_SHORT;
+			//$spacing = $space . XVARDUMP_SPACE_SHORT;
 			foreach ( $var as $key => $value ) {
-				print $spacing . '[' . ( $escape === true ? htmlentities( $key, ENT_QUOTES ): $key );
+				print $spacing . '[' . ( ( $escape === true ) ? htmlentities( $key, ENT_QUOTES ) : $key );
 				if ( $short !== true ) {
-					print  ' ';
+					print ' ';
 					switch ( true ) {
-						case ( is_string( $key ) ) :
+						case ( is_string( $key ) ):
 							print '<b class="' . XVARDUMP_CLASS_STRING . '"><i>(string)</i></b>';
 							break;
-						case ( is_int( $key ) ) :
+
+						case ( is_int( $key ) ):
 							print '<b class="' . XVARDUMP_CLASS_INT . '"><i>(int)</i></b>';
 							break;
-						case ( is_float( $key ) ) :
+
+						case ( is_float( $key ) ):
 							print '<b class="' . XVARDUMP_CLASS_FLOAT . '"><i>(float)</i></b>';
 							break;
+
 						default:
 							print '(unknown)';
 							break;
@@ -201,16 +200,17 @@ function pr_var( $var, $title = '', $escape = true, $short = false, $space = '',
 	}
 }
 
+
 /**
  * Internal function to print debug info on an object
  *
- * @internal
- * @uses	pr_var()
+ * @param object $obj    Object to print debug info on
+ * @param bool   $escape @see pr_var()
+ * @param bool   $short  @see pr_var()
+ * @param string $space  @see pr_var()
  *
- * @param 	object	$obj	object to print debug info on
- * @param 	bool	$short	@see pr_var()
- * @param	bool	$escape	@see pr_var()
- * @param	string	$space	@see pr_var()
+ * @internal
+ * @uses pr_var()
  */
 function object_info( $obj, $escape, $short, $space ) {
 	print $space . '<b><i>Class</i></b>: ' . get_class( $obj ) . " (<br />\n";
@@ -240,6 +240,7 @@ function object_info( $obj, $escape, $short, $space ) {
 	print $space . ")<br />\n\n";
 }
 
+
 /**
  * Function to dump all defined variables
  *
@@ -252,28 +253,39 @@ function dump_all() {
 
 
 /**
- * Catch long function names
+ * Alias for pr_str()
+ *
+ * @param string $var
  */
 function pr_string( $var ) {
 	pr_str( $var );
 }
 
+
 /**
- * @param $var
+ * Alias for pr_bool()
+ *
+ * @param bool $var
  */
 function pr_boolean( $var ) {
 	pr_bool( $var );
 }
 
+
 /**
- * @param $var
+ * Alias for pr_int()
+ *
+ * @param int $var
  */
 function pr_integer( $var ) {
 	pr_int( $var );
 }
 
+
 /**
- * @param $var
+ * Alias for pr_flt()
+ *
+ * @param float $var
  */
 function pr_float( $var ) {
 	pr_flt( $var );
@@ -283,7 +295,7 @@ function pr_float( $var ) {
 /**
  * Shortcut function to print a string variable
  *
- * @param 	string	$var
+ * @param string $var
  */
 function pr_str( $var ) {
 	if ( is_string( $var ) ) {
@@ -294,18 +306,19 @@ function pr_str( $var ) {
 	}
 }
 
+
 /**
  * Shortcut function to print a boolean variable
  *
- * @param	bool	$var
+ * @param bool $var
  */
 function pr_bool( $var ) {
 	if ( is_bool( $var ) ) {
 		if ( $var === false ) {
-			print '<span class="' . XVARDUMP_CLASS_B_FALSE . '">' . 'false' . "</span>\n";
+			print '<span class="' . XVARDUMP_CLASS_B_FALSE . '">false' . "</span>\n";
 		}
 		else if ( $var === true ) {
-			print '<span class="' . XVARDUMP_CLASS_B_TRUE . '">' . 'true' . "</span>\n";
+			print '<span class="' . XVARDUMP_CLASS_B_TRUE . '">true' . "</span>\n";
 		}
 		else {
 			print 'E: boolean value undetermined';
@@ -316,11 +329,13 @@ function pr_bool( $var ) {
 	}
 }
 
+
 /**
  * Shortcut function to print an integer variable
+ *
  * Will print 0 value in red, other values in green
  *
- * @param	int		$var
+ * @param int $var
  */
 function pr_int( $var ) {
 	if ( is_int( $var ) ) {
@@ -340,7 +355,7 @@ function pr_int( $var ) {
 /**
  * Shortcut function to print a float variable
  *
- * @param	float	$var
+ * @param float $var
  */
 function pr_flt( $var ) {
 	if ( is_float( $var ) ) {

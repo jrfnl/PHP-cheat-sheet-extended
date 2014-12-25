@@ -1,7 +1,6 @@
-﻿<?php
+<?php
 
-
-include_once( APP_DIR . '/class.vartype.php' );
+include_once APP_DIR . '/class.vartype.php';
 
 /**
  *
@@ -11,16 +10,17 @@ class VartypeCompare extends Vartype {
 	/**
 	 * The tests  to run
 	 *
-	 * @param   array   $tests  Multi-dimensional array.
-	 *                          Possible lower level array keys:
-	 *                          - title     Used as tab title
-	 *                          - tooltip   Additional code sample for tooltip on tab
-	 *                          - url       Relevant PHP Manual page
-	 *                          - arg       Function arguments
-	 *                          - function  Function to run
-	 *                          - Notes     Array of notes on this test
+	 * @var array $tests  Multi-dimensional array.
+	 *                    Possible lower level array keys:
+	 *                    - title     Used as tab title
+	 *                    - tooltip   Additional code sample for tooltip on tab
+	 *                    - url       Relevant PHP Manual page
+	 *                    - arg       Function arguments
+	 *                    - function  Function to run
+	 *                    - Notes     Array of notes on this test
 	 */
 	var $tests = array(
+
 		/**
 		 * Operator based comparisons
 		 */
@@ -136,7 +136,7 @@ class VartypeCompare extends Vartype {
 			'title'			=> 'bccomp()',
 			'url'			=> 'http://php.net/bccomp',
 			'arg'			=> '$a, $b',
-			'function'		=> 'if( extension_loaded( \'bcmath\' ) ) { $r = bccomp( $a, $b ); if( is_int( $r ) ) { pr_int( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'E: bcmath extension not installed\'; }',
+			'function'		=> 'if ( extension_loaded( \'bcmath\' ) ) { $r = bccomp( $a, $b ); if ( is_int( $r ) ) { pr_int( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'E: bcmath extension not installed\'; }',
 		),
 		'min'			=> array(
 			'title'			=> 'min()',
@@ -164,25 +164,31 @@ class VartypeCompare extends Vartype {
 
 
 	/**
-	 *
+	 * Constructor
 	 */
 	function __construct() {
 		parent::__construct();
 	}
 
+
+	/**
+	 * PHP4 Constructor
+	 */
 	function VartypeCompare() {
 		$this->__construct();
 	}
 
 
 	/**
-	 * @param null $test_group
+	 * Determine which tests to run
 	 *
-	 * @return mixed|null
+	 * @param string|null $test_group
+	 *
+	 * @return string
 	 */
 	function get_test_group( $test_group = null ) {
 		$key = key( $this->tests ); // get first item in array;
-		if ( isset( $test_group ) && isset( $this->tests[$test_group] ) ) {
+		if ( isset( $test_group ) && isset( $this->tests[ $test_group ] ) ) {
 			$key = $test_group;
 		}
 		return $key;
@@ -190,32 +196,47 @@ class VartypeCompare extends Vartype {
 
 
 	/**
+	 * Generate the subsection tabs for the cheatsheet
+	 *
 	 * @param bool $all
 	 */
 	function print_tabs( $all = false ) {
 		// Tabs at top of page
 		print '
 	<ul>';
-	
+
 		foreach ( $this->tests as $key => $test ) {
+			$tooltip = '';
+			if ( isset( $test['tooltip'] ) ) {
+				$tooltip = ' title="' . $test['tooltip'] . '"';
+			}
+
+			$active_class = '';
+			if ( $GLOBALS['tab'] === $key ) {
+				$active_class = ' class="ui-tabs-active ui-state-active"';
+			}
+
 			if ( $all === true ) {
 				print '
-		<li' . ( isset( $test['tooltip'] ) ? ' title="' . $test['tooltip'] . '"' : '' ) . '><a href="#' . $key . '"><strong>' . $test['title'] . '</strong></a></li>';
+		<li' . $tooltip . '><a href="#' . $key . '"><strong>' . $test['title'] . '</strong></a></li>';
 			}
 			else {
 				print '
-		<li' . ( $GLOBALS['tab'] === $key ? ' class="ui-tabs-active ui-state-active"' : '' ) . ( isset( $test['tooltip'] ) ? ' title="' . $test['tooltip'] . '"' : '' ) . '><a href="index.php?page=' . $GLOBALS['type'] . '&amp;tab=' . $key . '&amp;do=ajax"><strong>' . $test['title'] . '</strong></a></li>';
+		<li' . $active_class . $tooltip . '><a href="index.php?page=' . $GLOBALS['type'] . '&amp;tab=' . $key . '&amp;do=ajax"><strong>' . $test['title'] . '</strong></a></li>';
 			}
 		}
-		unset( $key, $test );
+		unset( $key, $test, $tooltip );
 
 		print '
 	</ul>';
 	}
-	
-	
+
+
+	/**
+	 * Print all tables for the cheatsheet
+	 */
 	function print_tables() {
-		
+
 		print '
 	<div class="tables">';
 
@@ -235,13 +256,14 @@ class VartypeCompare extends Vartype {
 	}
 
 
-	// Comparison tables
 	/**
-	 * @param $test
+	 * Generate the table for one specific subsection of a comparison cheatsheet
+	 *
+	 * @param string $test The current subsection
 	 */
 	function print_table( $test ) {
 
-		if ( isset( $this->tests[$test] ) ) {
+		if ( isset( $this->tests[ $test ] ) ) {
 			$GLOBALS['encountered_errors'] = array();
 
 			print '
@@ -254,8 +276,11 @@ class VartypeCompare extends Vartype {
 			$last_key = null;
 
 			foreach ( $this->test_data_keys as $key1 ) {
-				$value1 = $this->test_data[$key1];
-				$legend = ( isset( $this->test_legend[$key1] ) ? '<sup class="fright"><a href="#var-legend-' . $key1 . '">&dagger;' . $key1 . '</a></sup>' : '' );
+				$value1 = $this->test_data[ $key1 ];
+				$legend = '';
+				if ( isset( $this->test_legend[ $key1 ] ) ) {
+					$legend = '<sup class="fright"><a href="#var-legend-' . $key1 . '">&dagger;' . $key1 . '</a></sup>';
+				}
 
 				$type = substr( $key1, 0, 1 );
 
@@ -314,22 +339,28 @@ class VartypeCompare extends Vartype {
 
 
 	/**
-	 * @param $test
+	 * Generate the first row of the cheatsheet table
+	 *
+	 * @param string $test The current subsection
 	 *
 	 * @return string
 	 */
 	function create_table_header( $test ) {
+		$tooltip = '';
+		if ( isset( $this->tests[ $test ]['tooltip'] ) && $this->tests[ $test ]['tooltip'] !== '' ) {
+			$tooltip = ' title="' . $this->tests[ $test ]['tooltip'] . '"';
+		}
 
-		if ( isset( $this->tests[$test]['url'] ) && $this->tests[$test]['url'] !== '' ) {
-			$group_label = '<a href="' . $this->tests[$test]['url'] . '" target="_blank"' . ( ( isset( $this->tests[$test]['tooltip'] ) && $this->tests[$test]['tooltip'] !== '' ) ? ' title="' . $this->tests[$test]['tooltip'] . '"' : '' ) . '><strong>' . $this->tests[$test]['title'] . '</strong></a>';
+		if ( isset( $this->tests[ $test ]['url'] ) && $this->tests[ $test ]['url'] !== '' ) {
+			$group_label = '<a href="' . $this->tests[ $test ]['url'] . '" target="_blank"' . $tooltip . '><strong>' . $this->tests[ $test ]['title'] . '</strong></a>';
 		}
 		else {
-			$group_label = '<a href="' . $this->tests[$test]['url'] . '" target="_blank"' . ( ( isset( $this->tests[$test]['tooltip'] ) && $this->tests[$test]['tooltip'] !== '' ) ? ' title="' . $this->tests[$test]['tooltip'] . '"' : '' ) . '><strong>' . $this->tests[$test]['title'] . '</strong></a>';
+			$group_label = '<a href="' . $this->tests[ $test ]['url'] . '" target="_blank"' . $tooltip . '><strong>' . $this->tests[ $test ]['title'] . '</strong></a>';
 		}
-		
+
 		$notes = '';
-		if ( isset( $this->tests[$test]['notes'] ) && ( is_array( $this->tests[$test]['notes'] ) && count( $this->tests[$test]['notes'] ) > 0 ) ) {
-			foreach ( $this->tests[$test]['notes'] as $key => $note ) {
+		if ( isset( $this->tests[ $test ]['notes'] ) && ( is_array( $this->tests[ $test ]['notes'] ) && count( $this->tests[ $test ]['notes'] ) > 0 ) ) {
+			foreach ( $this->tests[ $test ]['notes'] as $key => $note ) {
 				$notes .= ' <sup><a href="#' . $test . '-note' . ( $key + 1 ) . '">&Dagger;' . ( $key + 1 ) . '</a></sup>';
 			}
 		}
@@ -342,16 +373,16 @@ class VartypeCompare extends Vartype {
 
 		// Top labels
 		foreach ( $this->test_data_keys as $i => $key ) {
-			$value = $this->test_data[$key];
-			
+			$value = $this->test_data[ $key ];
+
 			$class = '';
-			if ( ! isset( $this->test_data_keys[$i + 1] ) || substr( $key, 0, 1 ) !== substr( $this->test_data_keys[$i + 1], 0, 1 ) ) {
+			if ( ! isset( $this->test_data_keys[ ( $i + 1 ) ] ) || substr( $key, 0, 1 ) !== substr( $this->test_data_keys[ ( $i + 1 ) ], 0, 1 ) ) {
 				$class = ' class="end"';
 			}
-			
+
 			$html .= '
 					<th' . $class . '>';
-						
+
 			ob_start();
 			pr_var( $value, '', false, true, '' );
 			$label = ob_get_clean();
@@ -379,7 +410,7 @@ class VartypeCompare extends Vartype {
 
 				$label = strip_tags( $label );
 				$label = htmlspecialchars( $label, ENT_QUOTES, 'UTF-8' );
-	
+
 				$html .= '<span title="' . $label . '">Array(&hellip;)</span>';
 			}
 			else {
@@ -390,32 +421,32 @@ class VartypeCompare extends Vartype {
 			unset( $value, $class, $label );
 		}
 		unset( $i, $key );
-	
-	
+
+
 		$html .= '
 					<th>' . $group_label . $notes . '</th>
 				</tr>';
-	
+
 		return $html;
 	}
 
 
 	/**
-	 * @param $value1
-	 * @param $key1
-	 * @param $test
+	 * Generate a cheatsheet result row
 	 *
-	 * @return void
+	 * @param mixed  $value1 The value this row applies to
+	 * @param string $key1   The array key reference to that value in the testdata array
+	 * @param string $test   The current subsection
 	 */
 	function print_row_cells( $value1, $key1, $test ) {
 
 		foreach ( $this->test_data_keys as $i => $key2 ) {
 			$GLOBALS['has_error'] = array();
 
-			$value2 = $this->test_data[$key2];
+			$value2 = $this->test_data[ $key2 ];
 
 			$class = array( 'value1-' . $key1, 'value2-' . $key2 );
-			if ( ! isset( $this->test_data_keys[$i + 1] ) || substr( $key2, 0, 1 ) !== substr( $this->test_data_keys[$i + 1], 0, 1 ) ) {
+			if ( ! isset( $this->test_data_keys[ ( $i + 1 ) ] ) || substr( $key2, 0, 1 ) !== substr( $this->test_data_keys[ ( $i + 1 ) ], 0, 1 ) ) {
 				$class[] = 'end';
 			}
 
@@ -428,7 +459,7 @@ class VartypeCompare extends Vartype {
 			}
 
 
-			$this->tests[$test]['test']( $value1, $value2 );
+			$this->tests[ $test ]['test']( $value1, $value2 );
 
 			if ( is_array( $GLOBALS['has_error'] ) && count( $GLOBALS['has_error'] ) > 0 ) {
 				foreach ( $GLOBALS['has_error'] as $error ) {
@@ -447,11 +478,13 @@ class VartypeCompare extends Vartype {
 
 
 	/**
-	 * @param $test
+	 * Generate footnotes for a test subsection if applicable
+	 *
+	 * @param string $test The current subsection
 	 */
 	function print_other_footnotes( $test ) {
-		if ( isset( $this->tests[$test]['notes'] ) && ( is_array( $this->tests[$test]['notes'] ) && count( $this->tests[$test]['notes'] ) > 0 ) ) {
-			foreach ( $this->tests[$test]['notes'] as $key => $note ) {
+		if ( isset( $this->tests[ $test ]['notes'] ) && ( is_array( $this->tests[ $test ]['notes'] ) && count( $this->tests[ $test ]['notes'] ) > 0 ) ) {
+			foreach ( $this->tests[ $test ]['notes'] as $key => $note ) {
 				print '
 			<div id="' . $test . '-note' . ( $key + 1 ) . '" class="note-appendix">
 				<sup>&Dagger; ' . ( $key + 1 ) . '</sup> ' . $note . '
