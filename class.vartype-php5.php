@@ -18,26 +18,26 @@ class VartypePHP5 {
 		 * String comparison functions
 		 * @see class.vartype-compare.php
 		 */
-		'strcmp'		=> array(
-			'function'		=> 'VartypePHP5::compare_strings( $a, $b, "strcmp" );',
+		'strcmp'        => array(
+			'function'      => 'VartypePHP5::compare_strings( $a, $b, "strcmp" );',
 		),
-		'strcasecmp'	=> array(
-			'function'		=> 'VartypePHP5::compare_strings( $a, $b, "strcasecmp" );',
+		'strcasecmp'    => array(
+			'function'      => 'VartypePHP5::compare_strings( $a, $b, "strcasecmp" );',
 		),
-		'strnatcmp'		=> array(
-			'function'		=> 'VartypePHP5::compare_strings( $a, $b, "strnatcmp" );',
+		'strnatcmp'     => array(
+			'function'      => 'VartypePHP5::compare_strings( $a, $b, "strnatcmp" );',
 		),
-		'strnatcasecmp'	=> array(
-			'function'		=> 'VartypePHP5::compare_strings( $a, $b, "strnatcasecmp" );',
+		'strnatcasecmp' => array(
+			'function'      => 'VartypePHP5::compare_strings( $a, $b, "strnatcasecmp" );',
 		),
-		'strcoll'		=> array(
-			'function'		=> 'VartypePHP5::compare_strings( $a, $b, "strcoll" );',
+		'strcoll'       => array(
+			'function'      => 'VartypePHP5::compare_strings( $a, $b, "strcoll" );',
 		),
-		'similar_text'	=> array(
-			'function'		=> 'VartypePHP5::compare_strings( $a, $b, "similar_text" );',
+		'similar_text'  => array(
+			'function'      => 'VartypePHP5::compare_strings( $a, $b, "similar_text" );',
 		),
-		'levenshtein'	=> array(
-			'function'		=> 'VartypePHP5::compare_strings( $a, $b, "levenshtein" );',
+		'levenshtein'   => array(
+			'function'      => 'VartypePHP5::compare_strings( $a, $b, "levenshtein" );',
 		),
 
 
@@ -46,8 +46,8 @@ class VartypePHP5 {
 		 * Loose type juggling
 		 * @see class.vartype-test.php
 		 */
-		'juggle_int' =>	array(
-			'function'	=>	'
+		'juggle_int'    => array(
+			'function'      => '
 				try {
 					if ( ! is_array( $x ) && ( PHP_VERSION_ID > 50005 || ! is_object( $x ) ) ) {
 						$x = $x + 0;
@@ -76,8 +76,8 @@ class VartypePHP5 {
 				}
 			',
 		),
-		'juggle_flt' =>	array(
-			'function'	=> '
+		'juggle_flt'    => array(
+			'function'      => '
 				try {
 					if ( ! is_array( $x ) && ( PHP_VERSION_ID > 50005 || ! is_object( $x ) ) ) {
 						$r = $x + 0.0;
@@ -112,8 +112,8 @@ class VartypePHP5 {
 		 * Some object related functions
 		 * @see class.vartype-test.php
 		 */
-		'instanceof' => array(
-			'function'	=>	'$c = \'TestObject\'; $r = ( $x instanceof $c ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); }',
+		'instanceof'    => array(
+			'function'      => '$c = \'TestObject\'; $r = ( $x instanceof $c ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); }',
 		),
 	);
 

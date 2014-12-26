@@ -24,59 +24,59 @@ class VartypeCompare extends Vartype {
 		/**
 		 * Operator based comparisons
 		 */
-		'equal'			=> array(
-			'title'			=> '==',
-			'url'			=> 'http://php.net/language.operators.comparison',
-			'arg'			=> '$a, $b',
-			'function'		=> 'pr_bool( $a==$b );',
+		'equal'         => array(
+			'title'         => '==',
+			'url'           => 'http://php.net/language.operators.comparison',
+			'arg'           => '$a, $b',
+			'function'      => 'pr_bool( $a==$b );',
 		),
-		'equal_strict'	=> array(
-			'title'			=> '===',
-			'url'			=> 'http://php.net/language.operators.comparison',
-			'arg'			=> '$a, $b',
-			'function'		=> 'pr_bool( $a===$b );',
+		'equal_strict'  => array(
+			'title'         => '===',
+			'url'           => 'http://php.net/language.operators.comparison',
+			'arg'           => '$a, $b',
+			'function'      => 'pr_bool( $a===$b );',
 		),
-		'not_equal'		=> array(
-			'title'			=> '!=',
-			'url'			=> 'http://php.net/language.operators.comparison',
-			'arg'			=> '$a, $b',
-			'function'		=> 'pr_bool( $a!=$b );',
+		'not_equal'     => array(
+			'title'         => '!=',
+			'url'           => 'http://php.net/language.operators.comparison',
+			'arg'           => '$a, $b',
+			'function'      => 'pr_bool( $a!=$b );',
 		),
-		'not_equal2'	=> array(
-			'title'			=> '&lt;&gt;',
-			'url'			=> 'http://php.net/language.operators.comparison',
-			'arg'			=> '$a, $b',
-			'function'		=> 'pr_bool( $a<>$b );',
+		'not_equal2'    => array(
+			'title'         => '&lt;&gt;',
+			'url'           => 'http://php.net/language.operators.comparison',
+			'arg'           => '$a, $b',
+			'function'      => 'pr_bool( $a<>$b );',
 		),
-		'not_equal_strict'	=> array(
-			'title'			=> '!==',
-			'url'			=> 'http://php.net/language.operators.comparison',
-			'arg'			=> '$a, $b',
-			'function'		=> 'pr_bool( $a!==$b );',
+		'not_equal_strict'  => array(
+			'title'         => '!==',
+			'url'           => 'http://php.net/language.operators.comparison',
+			'arg'           => '$a, $b',
+			'function'      => 'pr_bool( $a!==$b );',
 		),
-		'lt'			=> array(
-			'title'			=> '&lt;',
-			'url'			=> 'http://php.net/language.operators.comparison',
-			'arg'			=> '$a, $b',
-			'function'		=> 'pr_bool( $a<$b );',
+		'lt'            => array(
+			'title'         => '&lt;',
+			'url'           => 'http://php.net/language.operators.comparison',
+			'arg'           => '$a, $b',
+			'function'      => 'pr_bool( $a<$b );',
 		),
-		'gt'			=> array(
-			'title'			=> '&gt;',
-			'url'			=> 'http://php.net/language.operators.comparison',
-			'arg'			=> '$a, $b',
-			'function'		=> 'pr_bool( $a>$b );',
+		'gt'            => array(
+			'title'         => '&gt;',
+			'url'           => 'http://php.net/language.operators.comparison',
+			'arg'           => '$a, $b',
+			'function'      => 'pr_bool( $a>$b );',
 		),
-		'lte'			=> array(
-			'title'			=> '&lt;=',
-			'url'			=> 'http://php.net/language.operators.comparison',
-			'arg'			=> '$a, $b',
-			'function'		=> 'pr_bool( $a<=$b );',
+		'lte'           => array(
+			'title'         => '&lt;=',
+			'url'           => 'http://php.net/language.operators.comparison',
+			'arg'           => '$a, $b',
+			'function'      => 'pr_bool( $a<=$b );',
 		),
-		'gte'			=> array(
-			'title'			=> '&gt;=',
-			'url'			=> 'http://php.net/language.operators.comparison',
-			'arg'			=> '$a, $b',
-			'function'		=> 'pr_bool( $a>=$b );',
+		'gte'           => array(
+			'title'         => '&gt;=',
+			'url'           => 'http://php.net/language.operators.comparison',
+			'arg'           => '$a, $b',
+			'function'      => 'pr_bool( $a>=$b );',
 		),
 
 
@@ -85,76 +85,76 @@ class VartypeCompare extends Vartype {
 		 *
 		 * Note: all of these functions have a PHP5 equivalent in class.vartype-php5.php
 		 */
-		'strcmp'		=> array(
-			'title'			=> 'strcmp()',
-			'url'			=> 'http://php.net/strcmp',
-			'arg'			=> '$a, $b',
-			'function'		=> 'Vartype::compare_strings( $a, $b, "strcmp" );',
+		'strcmp'        => array(
+			'title'         => 'strcmp()',
+			'url'           => 'http://php.net/strcmp',
+			'arg'           => '$a, $b',
+			'function'      => 'Vartype::compare_strings( $a, $b, "strcmp" );',
 		),
-		'strcasecmp'	=> array(
-			'title'			=> 'strcasecmp()',
-			'url'			=> 'http://php.net/strcasecmp',
-			'arg'			=> '$a, $b',
-			'function'		=> 'Vartype::compare_strings( $a, $b, "strcasecmp" );',
+		'strcasecmp'    => array(
+			'title'         => 'strcasecmp()',
+			'url'           => 'http://php.net/strcasecmp',
+			'arg'           => '$a, $b',
+			'function'      => 'Vartype::compare_strings( $a, $b, "strcasecmp" );',
 		),
-		'strnatcmp'		=> array(
-			'title'			=> 'strnatcmp()',
-			'url'			=> 'http://php.net/strnatcmp',
-			'arg'			=> '$a, $b',
-			'function'		=> 'Vartype::compare_strings( $a, $b, "strnatcmp" );',
+		'strnatcmp'     => array(
+			'title'         => 'strnatcmp()',
+			'url'           => 'http://php.net/strnatcmp',
+			'arg'           => '$a, $b',
+			'function'      => 'Vartype::compare_strings( $a, $b, "strnatcmp" );',
 		),
-		'strnatcasecmp'	=> array(
-			'title'			=> 'strnatcasecmp()',
-			'url'			=> 'http://php.net/strnatcasecmp',
-			'arg'			=> '$a, $b',
-			'function'		=> 'Vartype::compare_strings( $a, $b, "strnatcasecmp" );',
+		'strnatcasecmp' => array(
+			'title'         => 'strnatcasecmp()',
+			'url'           => 'http://php.net/strnatcasecmp',
+			'arg'           => '$a, $b',
+			'function'      => 'Vartype::compare_strings( $a, $b, "strnatcasecmp" );',
 		),
-		'strcoll'		=> array(
-			'title'			=> 'strcoll()',
-			'url'			=> 'http://php.net/strcoll',
-			'arg'			=> '$a, $b',
-			'function'		=> 'Vartype::compare_strings( $a, $b, "strcoll" );',
+		'strcoll'       => array(
+			'title'         => 'strcoll()',
+			'url'           => 'http://php.net/strcoll',
+			'arg'           => '$a, $b',
+			'function'      => 'Vartype::compare_strings( $a, $b, "strcoll" );',
 		),
-		'similar_text'	=> array(
-			'title'			=> 'similar_text()',
-			'url'			=> 'http://php.net/similar_text',
-			'arg'			=> '$a, $b',
-			'function'		=> 'Vartype::compare_strings( $a, $b, "similar_text" );',
+		'similar_text'  => array(
+			'title'         => 'similar_text()',
+			'url'           => 'http://php.net/similar_text',
+			'arg'           => '$a, $b',
+			'function'      => 'Vartype::compare_strings( $a, $b, "similar_text" );',
 		),
-		'levenshtein'	=> array(
-			'title'			=> 'levenshtein()',
-			'url'			=> 'http://php.net/levenshtein',
-			'arg'			=> '$a, $b',
-			'function'		=> 'Vartype::compare_strings( $a, $b, "levenshtein" );',
+		'levenshtein'   => array(
+			'title'         => 'levenshtein()',
+			'url'           => 'http://php.net/levenshtein',
+			'arg'           => '$a, $b',
+			'function'      => 'Vartype::compare_strings( $a, $b, "levenshtein" );',
 		),
 
 
 		/**
 		 * Number comparison functions
 		 */
-		'bccomp'	=> array(
-			'title'			=> 'bccomp()',
-			'url'			=> 'http://php.net/bccomp',
-			'arg'			=> '$a, $b',
-			'function'		=> 'if ( extension_loaded( \'bcmath\' ) ) { $r = bccomp( $a, $b ); if ( is_int( $r ) ) { pr_int( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'E: bcmath extension not installed\'; }',
+		'bccomp'        => array(
+			'title'         => 'bccomp()',
+			'url'           => 'http://php.net/bccomp',
+			'arg'           => '$a, $b',
+			'function'      => 'if ( extension_loaded( \'bcmath\' ) ) { $r = bccomp( $a, $b ); if ( is_int( $r ) ) { pr_int( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'E: bcmath extension not installed\'; }',
 		),
-		'min'			=> array(
-			'title'			=> 'min()',
-			'url'			=> 'http://php.net/min',
-			'arg'			=> '$a, $b',
-			'function'		=> 'pr_var( min( $a, $b ), \'\', true, true );',
-			'notes'			=> array(
+		'min'           => array(
+			'title'         => 'min()',
+			'url'           => 'http://php.net/min',
+			'arg'           => '$a, $b',
+			'function'      => 'pr_var( min( $a, $b ), \'\', true, true );',
+			'notes'         => array(
 				'<p><strong>Please note:</strong> <code>min() / max()</code> will evaluate a non-numeric string as 0 if compared to integer, but still return the string if it\'s seen as the numerically lowest/highest value.</p>',
 				'<p><code>min()</code> If multiple arguments evaluate to 0, will return the lowest alphanumerical string value if any strings are given, else a numeric 0 is returned.</p>',
 			),
 		),
 
-		'max'			=> array(
-			'title'			=> 'max()',
-			'url'			=> 'http://php.net/max',
-			'arg'			=> '$a, $b',
-			'function'		=> 'pr_var( max( $a, $b ), \'\', true, true );',
-			'notes'			=> array(
+		'max'           => array(
+			'title'         => 'max()',
+			'url'           => 'http://php.net/max',
+			'arg'           => '$a, $b',
+			'function'      => 'pr_var( max( $a, $b ), \'\', true, true );',
+			'notes'         => array(
 				'<p><strong>Please note:</strong> <code>min() / max()</code> will evaluate a non-numeric string as 0 if compared to integer, but still return the string if it\'s seen as the numerically lowest/highest value.</p>',
 				'<p><code>max()</code> returns the numerically highest of the parameter values. If multiple values can be considered of the same size, the one that is listed first will be returned.<br />
 				 If <code>max()</code> is given multiple arrays, the longest array is returned. If all the arrays have the same length, <code>max()</code> will use lexicographic ordering to find the return value.</p>',
