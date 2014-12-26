@@ -3,6 +3,8 @@
 	<description>PHP Cheatsheets rules for PHP_CodeSniffer</description>
 	
 	<exclude-pattern>include/PHP-cast-to-type/*</exclude-pattern>
+	<exclude-pattern>phpcs/*</exclude-pattern>
+	<exclude-pattern>wpcs/*</exclude-pattern>
 
 	<rule ref="WordPress">
 		<exclude name="Generic.Files.LineEndings.InvalidEOLChar" />
