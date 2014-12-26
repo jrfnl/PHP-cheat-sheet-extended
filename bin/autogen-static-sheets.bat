@@ -4,6 +4,10 @@
 ::----------------------------------------------------------------------------------
 :: Build script for static PHPCheatSheets
 ::
+:: This script will generate static html files of the PHP cheatsheets for a
+:: select number of PHP version, providing those versions are installed on the
+:: server the script is being run on.
+::
 :: Copyright (c) 2006-2014, Juliette Reinders Folmer <juliette@phpcheatsheets.com>.
 :: All rights reserved.
 ::
@@ -87,27 +91,34 @@ IF NOT EXIST "%_AUTOGEN_SCRIPT_LOCATION%" GOTO :AUTOGEN_SCRIPT_LOCATION_ERROR EL
 :: 5.0        5.0.5     5.0.4
 :: 5.1        5.1.6     5.1.6
 :: 5.2        5.2.17    5.2.17, 5.2.6, 5.2.9
-:: 5.3        5.3.29    5.3.29, 5.3.3, 5.3.28, 5.3.10, 5.3.27
-:: 5.4        5.4.36    5.4.34, 5.4.35, 5.4.4, 5.4.33, 5.4.32
-:: 5.5        5.5.20    5.5.9, 5.5.18, 5.5,19 5.5.17, 5.5.16, 5.5.3 // 5.5.15, 5.5.8
-:: 5.6        5.6.4     5.6.2, 5.6.0, 5.6.3, 5.6.1
+:: 5.3        5.3.29    5.3.29, 5.3.3, 5.3.28, 5.3.10, 5.3.27 (v28 not included in run as 27 + 29 are)
+:: 5.4        5.4.36    5.4.34, 5.4.35, 5.4.4, 5.4.33, 5.4.32 (v33 and 35 not included in run as 32, 34 and 36 are)
+:: 5.5        5.5.20    5.5.9, 5.5.18, 5.5,19 5.5.17, 5.5.16, 5.5.3 (v19 and 17 not included in run as 16, 18 and 20 are)
+:: 5.6        5.6.4     5.6.2, 5.6.0, 5.6.3, 5.6.1 (0, 1, 3 not included as 4 and 2 are and adoption so far is low)
 ::
 :: Ubuntu LTS versions: 5.3.2 (U 10.04), 5.3.10 ( U 12.04), 5.5.9 ( U 14.04 )
 ::
-:: Included for historical reasons (previously generated):
-:: 4.3.9, 4.4.9, 5.0.5, 5.1.6, 5.2.4, 5.2.8, 5.2.14 5.2.17, 5.3.2, 5.3.10, 5.3.27, 5.4.6, 5.4.11, 5.4.13 (live), 5.4.20
+:: Included for historical reasons (previously generated) as no close release is still popular:
+:: 5.4.11, 5.4.20
 ::
+:: No longer included:
+:: Old versions where a release close to it is now more relevant. Redirecting old links to new via .htaccess.
+:: 5.2.4 => 5.2.6
+:: 5.2.8 => 5.2.9
+:: 5.4.6 => 5.4.4
 ::
-:: @internal The code for each FOR loop is the same
+:: To be added when I can (finally) up the PHP version for the live version:
+:: 5.4.13 (currently live)
+::
 ::---------------------------------------------------------------------------------
 
 :: Run autogen for various PHP versions
 :RUN_AUTOGEN
-FOR %%G IN (5.6.4 5.6.3 5.6.2 5.6.1 5.6.0) DO CALL :RUN_AUTOGEN_PHP5 %%G
-FOR %%G IN (5.5.20 5.5.19 5.5.18 5.5.17 5.5.16 5.5.9 5.5.3) DO CALL :RUN_AUTOGEN_PHP5 %%G
-FOR %%G IN (5.4.36 5.4.35 5.4.34 5.4.33 5.4.32 5.4.20 5.4.13 5.4.11 5.4.6 5.4.4) DO CALL :RUN_AUTOGEN_PHP5 %%G
-FOR %%G IN (5.3.29 5.3.28 5.3.27 5.3.10 5.3.3 5.3.2) DO CALL :RUN_AUTOGEN_PHP5 %%G
-FOR %%G IN (5.2.17 5.2.14 5.2.9 5.2.8 5.2.6 5.2.4) DO CALL :RUN_AUTOGEN_PHP5 %%G
+FOR %%G IN (5.6.4 5.6.2) DO CALL :RUN_AUTOGEN_PHP5 %%G
+FOR %%G IN (5.5.20 5.5.18 5.5.16 5.5.9 5.5.3) DO CALL :RUN_AUTOGEN_PHP5 %%G
+FOR %%G IN (5.4.36 5.4.34 5.4.32 5.4.20 5.4.11 5.4.4) DO CALL :RUN_AUTOGEN_PHP5 %%G
+FOR %%G IN (5.3.29 5.3.27 5.3.10 5.3.3 5.3.2) DO CALL :RUN_AUTOGEN_PHP5 %%G
+FOR %%G IN (5.2.17 5.2.9 5.2.6) DO CALL :RUN_AUTOGEN_PHP5 %%G
 FOR %%G IN (5.1.6 5.0.5 5.0.4) DO CALL :RUN_AUTOGEN_PHP5 %%G
 FOR %%G IN (4.4.9 4.3.11 4.3.9) DO CALL :RUN_AUTOGEN_PHP4 %%G
 GOTO :CLOSE
