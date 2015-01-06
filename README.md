@@ -1,6 +1,6 @@
 PHP-cheat-sheet-extended
 ========================
-[![Build Status](https://api.travis-ci.org/jrfnl/PHP-cheat-sheet-extended.png?branch=master)](https://travis-ci.org/jrfnl/PHP-cheat-sheet-extended)
+[![Build Status](https://travis-ci.org/jrfnl/PHP-cheat-sheet-extended.svg?branch=master)](https://travis-ci.org/jrfnl/PHP-cheat-sheet-extended)
 
 ### View these cheat sheets live at [PHPCheatsheets.com](http://phpcheatsheets.com/)
 
