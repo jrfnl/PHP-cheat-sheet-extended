@@ -86,7 +86,7 @@ ui-icon-circle-minus
 		beforeLoad: function( event, ui ) {
 			if( ui.panel.html() === '' ) {
 				// Show spinner if tab hasn't been loaded yet
-				ui.panel.html('<div class="spinner"><img src="./page/ajax-loader-5C9CCC.gif" /></div>');
+				ui.panel.html('<div class="spinner"><img src="./page/images/ajax-loader-5C9CCC.gif" /></div>');
 				// Show error message if ajax loading of content failed
 				ui.jqXHR.error(function() {
 					ui.panel.html('An error occurred while loading the table. Please try again. If it keeps failing, please inform the site owner.');

@@ -79,14 +79,14 @@ endif; ?>
 <?php
 if ( isset( $type ) ): ?>
 	<div id="too-much">
-		<a href="http://www.google.com/search?q=fluffy+animals&amp;tbm=isch" target="_blank"><img src="./<?php echo $dir; ?>page/jakobwesthoff_3231273333_2473ef9cdf_s.jpg" width="75" height="75" alt="Fluffy ElePHPant" /></a>
+		<a href="http://www.google.com/search?q=fluffy+animals&amp;tbm=isch" target="_blank"><img src="./<?php echo $dir; ?>page/images/jakobwesthoff_3231273333_2473ef9cdf_s.jpg" width="75" height="75" alt="Fluffy ElePHPant" /></a>
 		<p>Too much ?</p>
 		<p><a href="http://www.google.com/search?q=fluffy+animals&amp;tbm=isch" target="_blank">Take a break and rest your eyes</a>.</p>
 	</div>
 <?php
 endif; ?>
 
-	<h1><a href="./<?php echo $dir; ?>index.php"><img src="./<?php echo $dir; ?>page/php-med-trans.png" width="95" height="51" alt="PHP" /> Cheatsheets</a></h1>
+	<h1><a href="./<?php echo $dir; ?>index.php"><img src="./<?php echo $dir; ?>page/images/php-med-trans.png" width="95" height="51" alt="PHP" /> Cheatsheets</a></h1>
 
 <?php
 if ( isset( $type ) || isset( $page ) ): ?>
