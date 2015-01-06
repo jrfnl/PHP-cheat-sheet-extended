@@ -96,7 +96,9 @@ IF NOT EXIST "%_AUTOGEN_SCRIPT_LOCATION%" GOTO :AUTOGEN_SCRIPT_LOCATION_ERROR EL
 :: 5.5        5.5.20    5.5.9, 5.5.18, 5.5,19 5.5.17, 5.5.16, 5.5.3 (v19 and 17 not included in run as 16, 18 and 20 are)
 :: 5.6        5.6.4     5.6.2, 5.6.0, 5.6.3, 5.6.1 (0, 1, 3 not included as 4 and 2 are and adoption so far is low)
 ::
-:: Ubuntu LTS versions: 5.3.2 (U 10.04), 5.3.10 ( U 12.04), 5.5.9 ( U 14.04 )
+:: Ubuntu LTS versions: 5.3.2 (U 10.04), 5.3.10 (U 12.04), 5.5.9 (U 14.04)
+:: Debian main releases: 5.3.3 (D 6), 5.4.4 (D 7)
+:: CentOS main releases: 5.1.6 (COS 5.11), 5.3.3 (COS 6.6), 5.4.16 (COS 7.0)
 ::
 :: Included for historical reasons (previously generated) as no close release is still popular:
 :: 5.4.11, 5.4.20
@@ -118,7 +120,7 @@ FOR %%G IN (5.6.4 5.6.2) DO CALL :RUN_AUTOGEN_PHP5 %%G
 FOR %%G IN (5.5.20 5.5.18 5.5.16 5.5.9 5.5.3) DO CALL :RUN_AUTOGEN_PHP5 %%G
 FOR %%G IN (5.4.36 5.4.34 5.4.32 5.4.20 5.4.11 5.4.4) DO CALL :RUN_AUTOGEN_PHP5 %%G
 FOR %%G IN (5.3.29 5.3.27 5.3.10 5.3.3 5.3.2) DO CALL :RUN_AUTOGEN_PHP5 %%G
-FOR %%G IN (5.2.17 5.2.9 5.2.6) DO CALL :RUN_AUTOGEN_PHP5 %%G
+FOR %%G IN (5.2.17 5.2.9-2 5.2.6) DO CALL :RUN_AUTOGEN_PHP5 %%G
 FOR %%G IN (5.1.6 5.0.5 5.0.4) DO CALL :RUN_AUTOGEN_PHP5 %%G
 FOR %%G IN (4.4.9 4.3.11 4.3.9) DO CALL :RUN_AUTOGEN_PHP4 %%G
 GOTO :CLOSE
