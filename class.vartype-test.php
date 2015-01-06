@@ -658,7 +658,7 @@ class VartypeTest extends Vartype {
 			'title'         => '$x[\'foo\'][\'bar\']',
 			'url'           => 'http://www.php.net/manual/en/language.types.array.php',
 			'arg'           => '$x',
-			'function'      => 'if ( ! is_object( $x ) ) { if ( ! is_string( $x ) || ( is_string( $x ) && ( PHP_VERSION_ID > 50327 || PHP_VERSION_ID < 50000 ) ) ) { pr_var( $x[\'foo\'][\'bar\'], \'\', true, true ); } else { trigger_error( \'Cannot use string offset as an array\', E_USER_ERROR ); } } else { $class = get_class( $x ); trigger_error( \'Cannot use object of type \' . $class . \' as array\', E_USER_ERROR ); unset( $class ); }',
+			'function'      => 'if ( ! is_object( $x ) ) { if ( ! is_string( $x ) || ( is_string( $x ) && ( PHP_VERSION_ID > 50350 || PHP_VERSION_ID < 50000 ) ) ) { pr_var( $x[\'foo\'][\'bar\'], \'\', true, true ); } else { trigger_error( \'Cannot use string offset as an array\', E_USER_ERROR ); } } else { $class = get_class( $x ); trigger_error( \'Cannot use object of type \' . $class . \' as array\', E_USER_ERROR ); unset( $class ); }',
 		),
 
 
