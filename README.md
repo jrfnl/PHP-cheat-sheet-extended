@@ -26,10 +26,11 @@ These PHP versions will include:
 * [Always] Latest release for each minor PHP version at the time of (re-)generation of the static sheets
 * [Always] The PHP versions included in [Ubuntu LTS releases](http://distrowatch.com/table.php?distribution=Ubuntu)
 * [Selectively] Popular minor releases based on [worldwide usage statistics](http://w3techs.com/technologies/details/pl-php/all/all) at the time of (re-)generation of the static sheets
-* [Selectively] Previously included versions if other no close minor release will be included
+* [Selectively] Previously included versions if no other close minor release will be included
 
 In general, a balance is sought between significance and variety.
 
 
 #### Credits:
 [Elephpant photo](http://www.flickr.com/photos/jakobwesthoff/3231273333/) by Jacob Westhoff
+[Sad Elephpant photo](http://www.flickr.com/photos/gluek/100179589/) by Gluek
