@@ -7,6 +7,8 @@
 :: This script will generate static html files of the PHP cheatsheets for a
 :: select number of PHP version, providing those versions are installed on the
 :: server the script is being run on.
+:: The script was created with a WAMP installation in mind, but can probably quite
+:: easily be customized for other server configurations.
 ::
 :: Copyright (c) 2006-2014, Juliette Reinders Folmer <juliette@phpcheatsheets.com>.
 :: All rights reserved.
@@ -84,7 +86,7 @@ IF NOT EXIST "%_AUTOGEN_SCRIPT_LOCATION%" GOTO :AUTOGEN_SCRIPT_LOCATION_ERROR EL
 ::---------------------------------------------------------------------------------
 :: Basis for PHP versions used:
 ::
-:: Current latest version and popular versions per minor as of Dec 23, 2014:
+:: Current latest version and popular versions per minor as of Jan 29th, 2015:
 :: PHP minor  Latest    Popular ( ~> 5% )
 :: 4.3        4.3.11    4.3.9
 :: 4.4        4.4.9     4.4.9
@@ -92,9 +94,9 @@ IF NOT EXIST "%_AUTOGEN_SCRIPT_LOCATION%" GOTO :AUTOGEN_SCRIPT_LOCATION_ERROR EL
 :: 5.1        5.1.6     5.1.6
 :: 5.2        5.2.17    5.2.17, 5.2.6, 5.2.9
 :: 5.3        5.3.29    5.3.29, 5.3.3, 5.3.28, 5.3.10, 5.3.27 (v28 not included in run as 27 + 29 are)
-:: 5.4        5.4.36    5.4.34, 5.4.35, 5.4.4, 5.4.33, 5.4.32 (v33 and 35 not included in run as 32, 34 and 36 are)
-:: 5.5        5.5.20    5.5.9, 5.5.18, 5.5,19 5.5.17, 5.5.16, 5.5.3 (v19 and 17 not included in run as 16, 18 and 20 are)
-:: 5.6        5.6.4     5.6.2, 5.6.0, 5.6.3, 5.6.1 (0, 1, 3 not included as 4 and 2 are and adoption so far is low)
+:: 5.4        5.4.37    5.4.35, 5.4.34, 5.4.36, 5.4.4, 5.4.33, 5.4.32 (v32, v34 and 36 not included in run as 33, 35 and 37 are)
+:: 5.5        5.5.21    5.5.9, 5.5.20, 5.5.18, 5.5,19 5.5.17, 5.5.16, 5.5.3 (v19 and 17 not included in run as 16, 18, 20 and 21 are)
+:: 5.6        5.6.5     5.6.4, 5.6.2, 5.6.0, 5.6.3, 5.6.1 (0, 1, 3 not included as 5, 4 and 2 are and adoption so far is low)
 ::
 :: Ubuntu LTS versions: 5.3.2 (U 10.04), 5.3.10 (U 12.04), 5.5.9 (U 14.04)
 :: Debian main releases: 5.3.3 (D 6), 5.4.4 (D 7)
@@ -116,9 +118,9 @@ IF NOT EXIST "%_AUTOGEN_SCRIPT_LOCATION%" GOTO :AUTOGEN_SCRIPT_LOCATION_ERROR EL
 
 :: Run autogen for various PHP versions
 :RUN_AUTOGEN
-FOR %%G IN (5.6.4 5.6.2) DO CALL :RUN_AUTOGEN_PHP5 %%G
-FOR %%G IN (5.5.20 5.5.18 5.5.16 5.5.9 5.5.3) DO CALL :RUN_AUTOGEN_PHP5 %%G
-FOR %%G IN (5.4.36 5.4.34 5.4.32 5.4.20 5.4.11 5.4.4) DO CALL :RUN_AUTOGEN_PHP5 %%G
+FOR %%G IN (5.6.5 5.6.4 5.6.2) DO CALL :RUN_AUTOGEN_PHP5 %%G
+FOR %%G IN (5.5.21 5.5.20 5.5.18 5.5.16 5.5.9 5.5.3) DO CALL :RUN_AUTOGEN_PHP5 %%G
+FOR %%G IN (5.4.37 5.4.35 5.4.33 5.4.20 5.4.16 5.4.11 5.4.4) DO CALL :RUN_AUTOGEN_PHP5 %%G
 FOR %%G IN (5.3.29 5.3.27 5.3.10 5.3.3 5.3.2) DO CALL :RUN_AUTOGEN_PHP5 %%G
 FOR %%G IN (5.2.17 5.2.9-2 5.2.6) DO CALL :RUN_AUTOGEN_PHP5 %%G
 FOR %%G IN (5.1.6 5.0.5 5.0.4) DO CALL :RUN_AUTOGEN_PHP5 %%G
