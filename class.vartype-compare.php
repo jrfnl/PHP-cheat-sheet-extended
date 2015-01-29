@@ -54,25 +54,25 @@ class VartypeCompare extends Vartype {
 			'arg'           => '$a, $b',
 			'function'      => 'pr_bool( $a!==$b );',
 		),
-		'lt'            => array(
+		'less_than'            => array(
 			'title'         => '&lt;',
 			'url'           => 'http://php.net/language.operators.comparison',
 			'arg'           => '$a, $b',
 			'function'      => 'pr_bool( $a<$b );',
 		),
-		'gt'            => array(
+		'greater_than'            => array(
 			'title'         => '&gt;',
 			'url'           => 'http://php.net/language.operators.comparison',
 			'arg'           => '$a, $b',
 			'function'      => 'pr_bool( $a>$b );',
 		),
-		'lte'           => array(
+		'less_than_or_equal'           => array(
 			'title'         => '&lt;=',
 			'url'           => 'http://php.net/language.operators.comparison',
 			'arg'           => '$a, $b',
 			'function'      => 'pr_bool( $a<=$b );',
 		),
-		'gte'           => array(
+		'greater_than_or_equal'           => array(
 			'title'         => '&gt;=',
 			'url'           => 'http://php.net/language.operators.comparison',
 			'arg'           => '$a, $b',

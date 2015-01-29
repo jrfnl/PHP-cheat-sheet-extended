@@ -165,7 +165,7 @@ class VartypeArithmetic extends VartypeCompare {
 	 * @var array $bcmath_tests  Multi-dimensional array of tests only to be run on PHP 5.6+.
 	 */
 	var $php56_tests = array(
-		'pow_op'         => array(
+		'pow_operator'         => array(
 			'title'         => '**',
 			'url'           => 'http://php.net/language.operators.arithmetic',
 			'arg'           => '$a, $b',

@@ -1789,7 +1789,7 @@ else {
 		*/
 
 
-		'null'       => array(
+		'null_tests'       => array(
 			'title'     => 'Null',
 			'tests'     => array(
 				'settype_null',
@@ -1824,7 +1824,7 @@ else {
 		),
 
 
-		'bool'       => array(
+		'boolean_tests'       => array(
 			'title'     => 'Boolean',
 			'tests'     => array(
 				'settype_bool',
@@ -1886,7 +1886,7 @@ else {
 		),
 
 
-		'integer'    => array(
+		'integer_tests'    => array(
 			'title'     => 'Integers',
 			'tests'     => array(
 				'settype_int',
@@ -1932,7 +1932,7 @@ else {
 
 
 
-		'float'      => array(
+		'float_tests'      => array(
 			'title'     => 'Floats',
 			'tests'     => array(
 				'settype_float',
@@ -1964,7 +1964,7 @@ else {
 		),
 
 
-		'numeric'    => array(
+		'numeric_tests'    => array(
 			'title'     => 'Numeric tests',
 			'tests'     => array(
 				'is_numeric',
@@ -1997,7 +1997,7 @@ else {
 		),
 
 
-		'string1'    => array(
+		'string_casting'    => array(
 			'title'     => 'String casting',
 			'tests'	    => array(
 				'settype_string',
@@ -2020,7 +2020,7 @@ else {
 		),
 
 
-		'string2'    => array(
+		'string_tests'    => array(
 			'title'     => 'String tests',
 			'tests'     => array(
 				'is_string',
@@ -2056,7 +2056,7 @@ else {
 			'target'    => 's',
 		),
 
-		'array1'     => array(
+		'array_casting'     => array(
 			'title'     => 'Array casting',
 			'tests'     => array(
 				'settype_array',
@@ -2075,7 +2075,7 @@ else {
 		),
 
 
-		'array2'     => array(
+		'array_tests'     => array(
 			'title'     => 'Array testing',
 			'tests'     => array(
 				'is_array',
@@ -2105,7 +2105,7 @@ else {
 		),
 
 
-		'object'     => array(
+		'object_tests'     => array(
 			'title'     => 'Objects',
 			'tests'     => array(
 				'settype_object',
@@ -2132,7 +2132,7 @@ else {
 		),
 
 
-		'resources'  => array(
+		'resource_tests'  => array(
 			'title'      => 'Resources',
 			'tests'	     => array(
 				'is_resource',
@@ -2178,7 +2178,7 @@ else {
 	 * @var array $ctype_test_group Additional testgroup only to be added if the ctype extension is available
 	 */
 	var $ctype_test_group = array(
-		'ctype'      => array(
+		'ctype_extension'      => array(
 			'title'     => 'ctype extension',
 			'tests'     => array(
 				'ctype_digit',
@@ -2210,7 +2210,7 @@ else {
 	 * @var array $ctype_test_group Additional testgroup only to be added if the filter extension is available
 	 */
 	var $filter_test_group = array(
-		'filters1'   => array(
+		'filter_extension_bool_int_float'   => array(
 			'title'     => 'filter extension - bool/int/float',
 			'tests'	    => array(
 				'filter_combined_bool_null',
@@ -2234,7 +2234,7 @@ else {
 			'target'    => '',
 		),
 
-		'filters2'   => array(
+		'filters_extension_strings'   => array(
 			'title'     => 'filter extension - string',
 			'tests'	    => array(
 				'filter_combined_string_null',
