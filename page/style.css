@@ -395,6 +395,10 @@ div#sidebar h3 span {
 	font-size: 85%;
 }
 
+div#sidebar form#choose-version {
+	margin-top: 5px;
+}
+
 .static-archive div#sidebar h3 {
 	border: 2px solid #CD0A0A;
 }
@@ -616,6 +620,34 @@ div#tabs {
 	color: #666666;
 }
 
+
+/********
+ * 404
+ ********/
+div.content img.e404 {
+	float: right;
+	margin-top: 5px;
+	margin-right: 30px
+}
+.e404 {
+	margin-top: 32px;
+	margin-bottom: 50px;
+}
+.e404 tr th,
+.e404 tr td {
+	background-color: #eeeeec;
+}
+.e404 tr th.e404-title {
+	background-color: #f57900;
+}
+.e404 tr th.e404-title span {
+	background-color: #cc0000;
+	color: #fce94f;
+	font-size: x-large;
+}
+.e404 tr th.e404-cs {
+	background-color: #e9b96e;
+}
 
 
 /********
