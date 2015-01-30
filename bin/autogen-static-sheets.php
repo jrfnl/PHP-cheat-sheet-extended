@@ -196,12 +196,12 @@ foreach ( $types as $type => $page_title ) {
 
 		$tab = null;
 
-		include APP_DIR . '/page/header.php';
-		include APP_DIR . '/page/notes-legend.php';
+		include APP_DIR . '/views/header.php';
+		include APP_DIR . '/views/notes-legend.php';
 
 		$current_tests->do_page( true );
 
-		include APP_DIR . '/page/footer.php';
+		include APP_DIR . '/views/footer.php';
 	}
 
 	$static_page = ob_get_clean();
@@ -218,7 +218,7 @@ if ( is_dir( QUIZ_DIR ) && is_file( QUIZ_DIR . 'quiz.php' ) ) {
 
 	$page_title = 'My quiz test';
 
-	include APP_DIR . '/page/header.php';
+	include APP_DIR . '/views/header.php';
 	include QUIZ_DIR . '/20131005-questions.php';
 
 	if ( PHP_VERSION_ID >= 50000 ) {
@@ -226,7 +226,7 @@ if ( is_dir( QUIZ_DIR ) && is_file( QUIZ_DIR . 'quiz.php' ) ) {
 		spl_question();
 	}
 
-	include APP_DIR . '/page/footer.php';
+	include APP_DIR . '/views/footer.php';
 
 	$static_page = ob_get_clean();
 	$filename    = QUIZ_SAVE_DIR . '/php' . PHP_VERSION . '.html';

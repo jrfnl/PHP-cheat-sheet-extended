@@ -105,8 +105,8 @@ if ( isset( $type ) && file_exists( APP_DIR . '/' . $file ) ) {
 	 * Return a full page if not
 	 */
 	else {
-		include_once APP_DIR . '/page/header.php';
-		include_once APP_DIR . '/page/notes-legend.php';
+		include_once APP_DIR . '/views/header.php';
+		include_once APP_DIR . '/views/notes-legend.php';
 
 		// Hidden feature - pre-load all tabs, slow, but useful for source compare & generating of static files
 		$all = false;
@@ -117,7 +117,7 @@ if ( isset( $type ) && file_exists( APP_DIR . '/' . $file ) ) {
 
 		$current_tests->do_page( $all );
 
-		include_once APP_DIR . '/page/footer.php';
+		include_once APP_DIR . '/views/footer.php';
 	}
 }
 
@@ -125,22 +125,22 @@ if ( isset( $type ) && file_exists( APP_DIR . '/' . $file ) ) {
  * Load an extraneous page (about, links etc)
  */
 else {
-	include_once APP_DIR . '/page/header.php';
+	include_once APP_DIR . '/views/header.php';
 
 	if ( isset( $page ) && $page !== '' ) {
-		if ( file_exists( APP_DIR . '/page/' . $page . '.html' ) ) {
-			include_once APP_DIR . '/page/' . $page . '.html';
+		if ( file_exists( APP_DIR . '/views/' . $page . '.html' ) ) {
+			include_once APP_DIR . '/views/' . $page . '.html';
 		}
-		else if ( file_exists( APP_DIR . '/page/' . $page . '.php' ) ) {
-			include_once APP_DIR . '/page/' . $page . '.php';
+		else if ( file_exists( APP_DIR . '/views/' . $page . '.php' ) ) {
+			include_once APP_DIR . '/views/' . $page . '.php';
 		}
 		else {
-			include_once APP_DIR . '/page/cheat-sheet-menu.php';
+			include_once APP_DIR . '/views/cheat-sheet-menu.php';
 		}
 	}
 	else {
-		include_once APP_DIR . '/page/cheat-sheet-menu.php';
+		include_once APP_DIR . '/views/cheat-sheet-menu.php';
 	}
 
-	include_once APP_DIR . '/page/footer.php';
+	include_once APP_DIR . '/views/footer.php';
 }
