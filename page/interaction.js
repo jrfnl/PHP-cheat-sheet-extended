@@ -6,6 +6,8 @@ jQuery(document).ready(function() {
 	var myTabs;
 	var tabPanels;
 	var myAccordion;
+	var formTabField;
+	var phpvForm;
 
 	// Collapsible notes at top of page
 	myAccordion = jQuery('#accordion');
@@ -36,10 +38,18 @@ ui-icon-circle-minus
 		myAccordion.accordion( 'option', 'active', 1 );
 		//myAccordion.accordion( "refresh" );
 	});
+	
+
+	// Add auto-submit to php version dropdown
+	phpvForm = jQuery('#choose-version');
+	phpvForm.on('change', 'select', function() {
+		phpvForm.submit();
+	});
 
 
 	// Tabbed interface
-	myTabs = jQuery('#tabs');
+	myTabs       = jQuery('#tabs');
+	formTabField = jQuery('#phpv-tab');
 	myTabs.tabs({
 		beforeActivate: function( event, ui ) {
 			// Remove floating table headers from old panel
@@ -52,6 +62,9 @@ ui-icon-circle-minus
 			var tableId;
 			var tabHref;
 			var tabTitle;
+			var tabId;
+			var oldHref;
+			var oldId;
 
 			// (Re-)attach floating table headers for activated panel
 			tableId = ui.newPanel.find('table').attr('id');
@@ -77,10 +90,17 @@ ui-icon-circle-minus
 			// selected tab and avoid the location bar change causing the page to reload
 			tabHref = ui.newTab.find('a').attr('href');
 			if( tabHref && tabHref.indexOf('&all=1') == -1 ) {
-				tabHref = tabHref.substring( 0, tabHref.indexOf('&do=') );
-				tabTitle = jQuery(this).text();
-				tabTitle = jQuery('title').text()+' - '+tabTitle;
+				tabHref  = tabHref.substring( 0, tabHref.indexOf('&do=') );
+				tabId    = tabHref.substring( tabHref.indexOf('&tab=')+5 );
+				oldHref  = ui.oldTab.find('a').attr('href');
+				oldId    = oldHref.substring( oldHref.indexOf('&tab=')+5, oldHref.indexOf('&do=') );
+				tabTitle = jQuery('title').text().replace( ':: '+oldId.replace('_', ' '), ':: '+tabId.replace('_', ' ') );
+				// Add to history
 				history.pushState(null, tabTitle, tabHref );
+				// Change the title bar title
+				jQuery('title').text( tabTitle );
+				// Change the action url for the php version dropdown
+				formTabField.val( tabId );
 			}
 		},
 		beforeLoad: function( event, ui ) {

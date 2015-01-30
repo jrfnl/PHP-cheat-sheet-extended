@@ -240,3 +240,72 @@ function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
 
 	return false; // Make sure it plays nice with other error handlers (remove if no other error handlers are set)
 }
+
+
+/**
+ * Generate dropdown list of available static versions
+ */
+function generate_version_dropdown() {
+
+	$available = glob( APP_DIR . '/static_results/' . $GLOBALS['type'] . '/php*.html' );
+	usort( $available , 'version_compare' );
+	$available = array_reverse( $available );
+
+	$optgroup = 100;
+	$options  = array();
+
+	$options_html          = '';
+	$optgroup_html_pattern = '
+		<optgroup label="PHP %1$s">%2$s' . "\n</optgroup>";
+
+	$regex = sprintf( '`^%1$s/static_results/%2$s/php(([457]\.[0-9]+)\.[0-9-]+)\.html$`',
+		preg_quote( APP_DIR, '`' ),
+		preg_quote( $GLOBALS['type'], '`' )
+	);
+	
+	foreach( $available as $file ) {
+		if ( preg_match( $regex, $file, $match ) ) {
+			if ( $options !== array() && ( version_compare( $optgroup, $match[2], '>' ) && $optgroup !== 100 ) ) {
+				$options_html .= sprintf( $optgroup_html_pattern, $optgroup, implode( "\n", $options ) );
+				$options       = array();
+			}
+			$optgroup  = $match[2];
+
+
+			$selected = '';
+			if( ( isset( $GLOBALS['autogen'] ) && $GLOBALS['autogen'] === true ) && $match[1] === PHP_VERSION ) {
+				$selected = 'selected="selected"';
+			}
+			$options[] = sprintf( '
+			<option value="php%1$s" %2$s>PHP %1$s</option>',
+				htmlspecialchars( $match[1], ENT_QUOTES, 'UTF-8' ),
+				$selected
+			);
+		}
+	}
+	// Add last group
+	if ( $options !== array() ) {
+		$options_html .= sprintf( $optgroup_html_pattern, $optgroup, implode( "\n", $options ) );
+	}
+
+	$dropdown = sprintf( '
+<form action="%6$sindex.php" method="get" id="choose-version">
+	<input type="hidden" name="page" value="%1$s" />
+	<input type="hidden" id="phpv-tab" name="tab" value="%2$s" />
+	<select id="phpversion-dropdown" name="phpversion">
+		<optgroup label="Live">
+			<option value="live" %3$s >PHP %4$s</option>
+		</optgroup>
+		%5$s
+	</select>
+</form>',
+		htmlspecialchars( $GLOBALS['type'], ENT_QUOTES, 'UTF-8' ),
+		htmlspecialchars( $GLOBALS['tab'], ENT_QUOTES, 'UTF-8' ),
+		( ( ! isset( $GLOBALS['autogen'] ) || $GLOBALS['autogen'] !== true ) ? ' selected="selected"' : '' ),
+		htmlspecialchars( PHP_VERSION, ENT_QUOTES, 'UTF-8' ),
+		$options_html,
+		htmlspecialchars( $GLOBALS['dir'], ENT_QUOTES, 'UTF-8' )
+	);
+	
+	return $dropdown;
+}

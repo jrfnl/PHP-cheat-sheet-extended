@@ -1,6 +1,33 @@
 <?php
 
 define( 'APP_DIR', dirname( __FILE__ ) );
+
+/**
+ * Catch requests for static files (which have not been caught by htaccess)
+ */
+if ( ( isset( $_GET['page'] ) && in_array( $_GET['page'], array( 'arithmetic', 'compare', 'test' ), true ) ) && ( isset( $_GET['phpversion'] ) && preg_match( '`^php[457](?:\.[0-9]+){2}(?:-[0-9])?$`', $_GET['phpversion'] ) ) ) {
+	$file = './static_results/' . $_GET['page'] . '/' . $_GET['phpversion'] . '.html';
+	if ( is_file( $file ) ) {
+		
+		$tab = '';
+		if ( isset( $_GET['tab'] ) && preg_match( '`[a-z0-9_-]+`', $_GET['tab'] ) ) {
+			$tab = '#' . $_GET['tab'];
+		}
+
+		$host = $_SERVER['HTTP_HOST'];
+		$url  = 'http://' . $host . '/static_results/' . $_GET['page'] . '/' . $_GET['phpversion'] . '.html' . $tab;
+		header( "Location: $url", true, 301 );
+		exit;
+	}
+	else {
+		// 404 not found
+		$_GET['page'] = 'error';
+		$_GET['e']    = '404';
+	}
+}
+
+
+
 include_once APP_DIR . '/include/setup-env.php';
 
 /**
@@ -8,6 +35,7 @@ include_once APP_DIR . '/include/setup-env.php';
  */
 $type       = null;
 $page       = null;
+$tab        = null;
 $page_title = 'PHP Cheatsheets';
 
 if ( isset( $_GET['page'] ) ) {
@@ -36,6 +64,14 @@ if ( isset( $_GET['page'] ) ) {
 			$page       = 'about';
 			$page_title = 'About phpcheatsheets.com';
 			break;
+
+		case 'error':
+		default:
+			$page       = 'error';
+			$page_title = 'Page not found';
+			$protocol   = ( ( isset( $_SERVER['SERVER_PROTOCOL'] ) && $_SERVER['SERVER_PROTOCOL'] !== '' && preg_match( '`HTTP/1\.[0-9]`', $_SERVER['SERVER_PROTOCOL'] ) ) ? $_SERVER['SERVER_PROTOCOL'] : 'HTTP/1.1' );
+			header( "$protocol 404 Not Found" );
+			break;
 	}
 }
 
@@ -54,7 +90,6 @@ if ( isset( $type ) && file_exists( APP_DIR . '/' . $file ) ) {
 	include_once APP_DIR . '/' . $file;
 	$current_tests = new $class();
 
-	$tab = null;
 	if ( isset( $_GET['tab'] ) && $_GET['tab'] !== '' ) {
 		$tab = $_GET['tab']; // wpcs: ok - validation is done before use in VarType::get_test_group() method
 	}

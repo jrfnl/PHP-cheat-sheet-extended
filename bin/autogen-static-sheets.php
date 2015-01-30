@@ -87,7 +87,7 @@ function save_to_file( $filename, $content ) {
 	}
 
 	if ( $GLOBALS['verbose'] > 0 ) {
-		echo $msg . PHP_EOL;
+		echo $msg, PHP_EOL;
 	}
 }
 
@@ -112,6 +112,10 @@ function fix_content( $content ) {
 		7  => '`<th><span title="Array: \(\s+\)\s+">Array\(&hellip;\)</span>\s+</th>`',
 		8  => '`Array: \(<br />\s+\)<br />\s+`',
 		9  => '`<t([dh])([^>]*)?>array\(\)<br />\s+</t\1>`',
+		// Make sure the correct PHP version nr for the live sheets is shown in the version dropdown
+		10 => '`<option value="live"(?: selected="selected")?>PHP [0-9\.]+</option>`',
+		// Make sure there are no references to the local version left (no regex needed)
+		11 => '`://phpcheatsheets.localdev/`',
 	);
 
 
@@ -122,6 +126,8 @@ function fix_content( $content ) {
 		7  => '<th>array()<br />					</th>',
 		8  => 'array()<br />',
 		9  => '<t$1$2>array()<br /></t$1>',
+		10 => '<option value="live">PHP 5.4.13</option>', // IMPORTANT! Change this if the PHP version on the server changes!!
+		11 => '://phpcheatsheets.com/',
 	);
 
 
@@ -133,14 +139,14 @@ function fix_content( $content ) {
 		 * Verbose output showing how many replacements were done of which type to see if anything should
 		 * be optimized within the html code generation.
 		 */
-		echo PHP_EOL . 'Preparing file content... ' . PHP_EOL;
+		echo PHP_EOL, 'Preparing file content... ', PHP_EOL;
 
 		if ( PHP_VERSION_ID >= 50100 ) {
 			foreach ( $regex_search as $key => $regex ) {
 				$content = preg_replace( $regex, $regex_replace[ $key ], $content, -1, $count );
 
 				if ( $count > 0 ) {
-					echo 'Regex #' . $key . ' : ' . $count . ' replacements made.'  . PHP_EOL;
+					echo 'Regex #', $key, ' : ', $count, ' replacements made.', PHP_EOL;
 				}
 			}
 			unset( $key, $string, $count );
@@ -162,8 +168,8 @@ ignore_user_abort( true );
 
 // Notify user of what we're doing
 if ( $verbose > 0 ) {
-	echo PHP_EOL . 'Generating static sheets for PHP ' . PHP_VERSION . PHP_EOL;
-	echo '----------------------------------------' . PHP_EOL;
+	echo PHP_EOL, 'Generating static sheets for PHP ', PHP_VERSION, PHP_EOL;
+	echo '----------------------------------------', PHP_EOL;
 }
 
 
@@ -229,5 +235,10 @@ if ( is_dir( QUIZ_DIR ) && is_file( QUIZ_DIR . 'quiz.php' ) ) {
 }
 
 ignore_user_abort( false );
+
+if ( $GLOBALS['verbose'] > 0 ) {
+	echo 'exit code';
+	var_dump( ( ( $success * 10 ) + $failure ) );
+}
 
 exit( ( $success * 10 ) + $failure );
