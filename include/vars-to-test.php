@@ -68,6 +68,21 @@ $test_array = array(
 
 );
 
+/**
+ * Variable legend
+ */
+$legend_array = array(
+	'i8'  => '$x = 0xCC00F9; // hexadecimal integer',
+	'i9'  => '$x = 0123; // octal integer',
+	'f5'  => '$x = NAN; // = not a number',
+	'f6'  => '$x = log(0); // = infinite',
+	'f7'  => '$x = 1.2345E8; // exponent notation float',
+	'sk'  => '$x = "123, \"str\"\r\n";',
+	'sn'  => '$x = "\f\t\r\n";',
+	'sp'  => '$x = "\x7f\t\r\n"',
+);
+
+
 if ( PHP_VERSION_ID >= 50400 ) {
 	include APP_DIR . '/include/vars-to-test-php54.php';
 }
@@ -147,19 +162,4 @@ $extra_variables['ctype'] = array(
 	'sp'  => "\x7f\t\r\n", //ctype_ctrl
 
 	'sz'  => 'Iñtërnâtiônàlizætiøn', // utf-8 / binary string
-);
-
-
-/**
- * Variable legend
- */
-$legend_array = array(
-	'i8'  => '$x = 0xCC00F9; // hexadecimal integer',
-	'i9'  => '$x = 0123; // octal integer',
-	'f5'  => '$x = NAN; // = not a number',
-	'f6'  => '$x = log(0); // = infinite',
-	'f7'  => '$x = 1.2345E8; // exponent notation float',
-	'sk'  => '$x = "123, \"str\"\r\n";',
-	'sn'  => '$x = "\f\t\r\n";',
-	'sp'  => '$x = "\x7f\t\r\n"',
 );
