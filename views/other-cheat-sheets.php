@@ -1,4 +1,13 @@
-﻿		<ul class="linklist">
+﻿<?php
+// Prevent direct calls to this file
+if ( ! defined( 'APP_DIR' ) ) {
+	header( 'Status: 403 Forbidden' );
+	header( 'HTTP/1.1 403 Forbidden' );
+	exit();
+}
+?>
+
+		<ul class="linklist">
 			<li><a href="http://www.blueshoes.org/en/developer/php_cheat_sheet/">PHP Cheatsheet</a> by BlueShoes</li>
 			<li><a href="https://www.addedbytes.com/cheat-sheets/php-cheat-sheet/">PHP Cheatsheet v2</a> (<a href="http://www.addedbytes.com/cheat-sheets/php-cheat-sheet-version-1/">v1</a>) by Added Bytes </li>
 			<li><a href="http://overapi.com/php/">PHP Cheatsheet</a> by OverAPI</li>

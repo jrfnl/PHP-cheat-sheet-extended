@@ -1,14 +1,12 @@
 <?php
 
-define( 'APP_DIR', dirname( __FILE__ ) );
-
 /**
  * Catch requests for static files (which have not been caught by htaccess)
  */
 if ( ( isset( $_GET['page'] ) && in_array( $_GET['page'], array( 'arithmetic', 'compare', 'test' ), true ) ) && ( isset( $_GET['phpversion'] ) && preg_match( '`^php[457](?:\.[0-9]+){2}(?:-[0-9])?$`', $_GET['phpversion'] ) ) ) {
 	$file = './static_results/' . $_GET['page'] . '/' . $_GET['phpversion'] . '.html';
 	if ( is_file( $file ) ) {
-		
+
 		$tab = '';
 		if ( isset( $_GET['tab'] ) && preg_match( '`[a-z0-9_-]+`', $_GET['tab'] ) ) {
 			$tab = '#' . $_GET['tab'];
@@ -27,6 +25,7 @@ if ( ( isset( $_GET['page'] ) && in_array( $_GET['page'], array( 'arithmetic', '
 }
 
 
+define( 'APP_DIR', dirname( __FILE__ ) );
 
 include_once APP_DIR . '/include/setup-env.php';
 

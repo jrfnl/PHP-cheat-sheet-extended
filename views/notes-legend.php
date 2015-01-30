@@ -1,3 +1,12 @@
+<?php
+// Prevent direct calls to this file
+if ( ! defined( 'APP_DIR' ) ) {
+	header( 'Status: 403 Forbidden' );
+	header( 'HTTP/1.1 403 Forbidden' );
+	exit();
+}
+?>
+
 		<div id="sidebar">
 			<h3 id="php-version">
 				This page has been generated with <strong>PHP <?php echo htmlspecialchars( PHP_VERSION, ENT_QUOTES, 'UTF-8' ); ?></strong>

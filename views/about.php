@@ -1,3 +1,12 @@
+<?php
+// Prevent direct calls to this file
+if ( ! defined( 'APP_DIR' ) ) {
+	header( 'Status: 403 Forbidden' );
+	header( 'HTTP/1.1 403 Forbidden' );
+	exit();
+}
+?>
+
 		<div class="about">
 			<a href="http://www.flickr.com/photos/87233981@N00/2870136931"><img src="./<?php echo $dir; ?>page/images/juliette_by_chris.png" width="181" height="120" alt="Juliette Reinders Folmer, photo by Chris Shiflett" align="right" /></a>
 

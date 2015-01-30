@@ -26,6 +26,13 @@
  *
  */
 
+// Prevent direct calls to this file
+if ( ! defined( 'APP_DIR' ) ) {
+	header( 'Status: 403 Forbidden' );
+	header( 'HTTP/1.1 403 Forbidden' );
+	exit();
+}
+
 
 define( 'XVARDUMP_SPACE_LONG',     '&nbsp;&nbsp;&nbsp;&nbsp;' );
 define( 'XVARDUMP_SPACE_SHORT',    '&nbsp;&nbsp;' );
