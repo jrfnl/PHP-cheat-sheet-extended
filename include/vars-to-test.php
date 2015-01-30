@@ -19,7 +19,7 @@ $test_array = array(
 	'i3'  => -1,
 	'i5'  => 42, // char *
 	'i8'  => 0xCC00F9, // hexadecimal integer
-	'i9'  => 0123, // octal integer = 57 = char 9
+	'i9'  => 052, // octal integer = 42 = char *
 
 	'f1'  => 1.8,
 	'f2'  => 0.005,
@@ -73,7 +73,7 @@ $test_array = array(
  */
 $legend_array = array(
 	'i8'  => '$x = 0xCC00F9; // hexadecimal integer',
-	'i9'  => '$x = 0123; // octal integer',
+	'i9'  => '$x = 052; // octal integer',
 	'f5'  => '$x = NAN; // = not a number',
 	'f6'  => '$x = log(0); // = infinite',
 	'f7'  => '$x = 1.2345E8; // exponent notation float',
