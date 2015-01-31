@@ -28,7 +28,6 @@ include_once APP_DIR . '/include/setup-env.php';
 
 // Overrule some variables
 $min     = '.min';
-$dir     = '../../';
 $autogen = true;
 
 define( 'SAVE_DIR', APP_DIR . '/static_results' );
@@ -121,7 +120,7 @@ function fix_content( $content ) {
 
 	$regex_replace = array(
 		0  => '<!DOCTYPE html PUBLIC',
-		4  => '			<li$1><a href="./../../index.php?page=$2" class="top-link">$3</a></li>',
+		4  => '			<li$1><a href="' . BASE_URI . 'index.php?page=$2" class="top-link">$3</a></li>',
 		5  => '<a href=$1http://php.net/function.',
 		7  => '<th>array()<br />					</th>',
 		8  => 'array()<br />',

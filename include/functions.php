@@ -250,6 +250,43 @@ function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
 
 
 /**
+ * Determine the base url to use
+ */
+function determine_base_uri() {
+	$valid_hosts = array(
+		'phpcheatsheets.com',
+		'phpcheatsheets.localdev',
+		'localhost',
+	);
+
+	$base_uri = 'http://phpcheatsheets.com/';
+
+	if ( isset( $_SERVER['HTTP_HOST'] ) && in_array( $_SERVER['HTTP_HOST'], $valid_hosts, true ) ) {
+		$base_uri = 'http://' . $_SERVER['HTTP_HOST'] . determine_script_path();
+	}
+	elseif ( isset( $_SERVER['SERVER_NAME'] ) && in_array( $_SERVER['SERVER_NAME'], $valid_hosts, true ) ) {
+		$base_uri = 'http://' . $_SERVER['SERVER_NAME'] . determine_script_path();
+	}
+
+	return $base_uri;
+}
+
+/**
+ * Determine the script path part of the base url
+ */
+function determine_script_path() {
+	if( ! empty( $_SERVER['SCRIPT_NAME'] ) && stripos( $_SERVER['SCRIPT_NAME'], 'index.php' ) !== false ) {
+		return substr( $_SERVER['SCRIPT_NAME'], 0, stripos( $_SERVER['SCRIPT_NAME'], 'index.php' ) );
+	}
+	else if( ! empty( $_SERVER['REQUEST_URI'] ) && stripos( $_SERVER['REQUEST_URI'], 'index.php' ) !== false ) {
+		return substr( $_SERVER['REQUEST_URI'], 0, stripos( $_SERVER['REQUEST_URI'], 'index.php' ) );
+	}
+	else {
+		return '';
+	}
+}
+
+/**
  * Generate dropdown list of available static versions
  */
 function generate_version_dropdown() {
@@ -311,7 +348,7 @@ function generate_version_dropdown() {
 		( ( ! isset( $GLOBALS['autogen'] ) || $GLOBALS['autogen'] !== true ) ? ' selected="selected"' : '' ),
 		htmlspecialchars( PHP_VERSION, ENT_QUOTES, 'UTF-8' ),
 		$options_html,
-		htmlspecialchars( $GLOBALS['dir'], ENT_QUOTES, 'UTF-8' )
+		htmlspecialchars( BASE_URI, ENT_QUOTES, 'UTF-8' )
 	);
 	
 	return $dropdown;

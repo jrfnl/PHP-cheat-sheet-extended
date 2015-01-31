@@ -245,7 +245,7 @@ class Vartype {
 			}
 			else {
 				print '
-		<li' . $active_class . '><a href="index.php?page=' . $GLOBALS['type'] . '&amp;tab=' . $key . '&amp;do=ajax"><strong>' . $test_group['title'] . '</strong></a></li>';
+		<li' . $active_class . '><a href="' . BASE_URI . 'index.php?page=' . $GLOBALS['type'] . '&amp;tab=' . $key . '&amp;do=ajax"><strong>' . $test_group['title'] . '</strong></a></li>';
 			}
 		}
 		unset( $key, $test_group );

@@ -7,7 +7,7 @@ if ( ! defined( 'APP_DIR' ) ) {
 }
 ?>
 
-		<img src="./<?php echo $dir; ?>page/images/gluek_100179589_2f40795a85_m.jpg" width="240" height="180" alt="Sad ElePHPant" class="e404"/>
+		<img src="<?php echo BASE_URI; ?>page/images/gluek_100179589_2f40795a85_m.jpg" width="240" height="180" alt="Sad ElePHPant" class="e404"/>
 		
 		<font size="1"><table class="e404" dir="ltr" border="1" cellspacing="0" cellpadding="1">
 		<tr>

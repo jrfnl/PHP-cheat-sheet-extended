@@ -229,7 +229,7 @@ class VartypeCompare extends Vartype {
 			}
 			else {
 				print '
-		<li' . $active_class . $tooltip . '><a href="index.php?page=' . $GLOBALS['type'] . '&amp;tab=' . $key . '&amp;do=ajax"><strong>' . $test['title'] . '</strong></a></li>';
+		<li' . $active_class . $tooltip . '><a href="' . BASE_URI . 'index.php?page=' . $GLOBALS['type'] . '&amp;tab=' . $key . '&amp;do=ajax"><strong>' . $test['title'] . '</strong></a></li>';
 			}
 		}
 		unset( $key, $test, $tooltip );

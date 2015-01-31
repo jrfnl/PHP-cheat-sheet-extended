@@ -8,7 +8,7 @@ if ( ! defined( 'APP_DIR' ) ) {
 ?>
 
 		<div class="about">
-			<a href="http://www.flickr.com/photos/87233981@N00/2870136931"><img src="./<?php echo $dir; ?>page/images/juliette_by_chris.png" width="181" height="120" alt="Juliette Reinders Folmer, photo by Chris Shiflett" align="right" /></a>
+			<a href="http://www.flickr.com/photos/87233981@N00/2870136931"><img src="<?php echo BASE_URI; ?>page/images/juliette_by_chris.png" width="181" height="120" alt="Juliette Reinders Folmer, photo by Chris Shiflett" align="right" /></a>
 
 			<h3>Who&#8217;s behind this ?</h3>
 			<p>

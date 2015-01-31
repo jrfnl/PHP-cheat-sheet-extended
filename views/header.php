@@ -41,26 +41,26 @@ if ( isset( $type ) ) {
 <?php
 unset( $meta_title );
 if ( isset( $type ) || isset( $page ) ): ?>
-	<link type="text/css" rel="stylesheet" href="./<?php echo $dir; ?>page/jquery-css/jquery-ui<?php echo $min; ?>.css" />
-	<link type="text/css" rel="stylesheet" href="./<?php echo $dir; ?>page/jquery-css/jquery.ui.theme<?php echo $min; ?>.css" />
+	<link type="text/css" rel="stylesheet" href="<?php echo BASE_URI; ?>page/jquery-css/jquery-ui<?php echo $min; ?>.css" />
+	<link type="text/css" rel="stylesheet" href="<?php echo BASE_URI; ?>page/jquery-css/jquery.ui.theme<?php echo $min; ?>.css" />
 <?php
 endif; ?>
-	<link type="text/css" rel="stylesheet" href="./<?php echo $dir; ?>page/style<?php echo $min; ?>.css" />
+	<link type="text/css" rel="stylesheet" href="<?php echo BASE_URI; ?>page/style<?php echo $min; ?>.css" />
 
 <?php
 if ( isset( $type ) || isset( $page ) ): ?>
 	<!-- jQuery via CDN with local fall-back -->
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script type="text/javascript">(window.jQuery) || document.write('\x3Cscript type="text/javascript" src="./<?php echo $dir; ?>page/jquery-css/jquery-1.11.0<?php echo $min; ?>.js">\x3C/script>')</script>
+	<script type="text/javascript">(window.jQuery) || document.write('\x3Cscript type="text/javascript" src="<?php echo BASE_URI; ?>page/jquery-css/jquery-1.11.0<?php echo $min; ?>.js">\x3C/script>')</script>
 
 	<!-- jQueryUI via CDN with local fall-back -->
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-	<script type="text/javascript">(window.jQuery.ui) || document.write('\x3Cscript type="text/javascript" src="./<?php echo $dir; ?>page/jquery-css/jquery-ui-1.10.4<?php echo $min; ?>.js">\x3C/script>')</script>
+	<script type="text/javascript">(window.jQuery.ui) || document.write('\x3Cscript type="text/javascript" src="<?php echo BASE_URI; ?>page/jquery-css/jquery-ui-1.10.4<?php echo $min; ?>.js">\x3C/script>')</script>
 
 	<!-- floating table headers -->
-	<script type="text/javascript" src="./<?php echo $dir; ?>page/jquery.thfloat-0.7.2<?php echo $min; ?>.js"></script>
+	<script type="text/javascript" src="<?php echo BASE_URI; ?>page/jquery.thfloat-0.7.2<?php echo $min; ?>.js"></script>
 	<!-- custom js -->
-	<script type="text/javascript" src="./<?php echo $dir; ?>page/interaction<?php echo $min; ?>.js"></script>
+	<script type="text/javascript" src="<?php echo BASE_URI; ?>page/interaction<?php echo $min; ?>.js"></script>
 <?php
 endif; ?>
 
@@ -86,24 +86,24 @@ endif; ?>
 <?php
 if ( isset( $type ) ): ?>
 	<div id="too-much">
-		<a href="http://www.google.com/search?q=fluffy+animals&amp;tbm=isch" target="_blank"><img src="./<?php echo $dir; ?>page/images/jakobwesthoff_3231273333_2473ef9cdf_s.jpg" width="75" height="75" alt="Fluffy ElePHPant" /></a>
+		<a href="http://www.google.com/search?q=fluffy+animals&amp;tbm=isch" target="_blank"><img src="<?php echo BASE_URI; ?>page/images/jakobwesthoff_3231273333_2473ef9cdf_s.jpg" width="75" height="75" alt="Fluffy ElePHPant" /></a>
 		<p>Too much ?</p>
 		<p><a href="http://www.google.com/search?q=fluffy+animals&amp;tbm=isch" target="_blank">Take a break and rest your eyes</a>.</p>
 	</div>
 <?php
 endif; ?>
 
-	<h1><a href="./<?php echo $dir; ?>index.php"><img src="./<?php echo $dir; ?>page/images/php-med-trans.png" width="95" height="51" alt="PHP" /> Cheatsheets</a></h1>
+	<h1><a href="<?php echo BASE_URI; ?>index.php"><img src="<?php echo BASE_URI; ?>page/images/php-med-trans.png" width="95" height="51" alt="PHP" /> Cheatsheets</a></h1>
 
 <?php
 if ( isset( $type ) || isset( $page ) ): ?>
 	<div id="main-menu">
 		<ul>
-			<li><a href="./<?php echo $dir; ?>index.php?page=compare" class="top-link<?php if ( isset( $type ) && $type === 'compare' ) { echo ' top-active'; } ?>">Variable Comparisons</a></li>
-			<li><a href="./<?php echo $dir; ?>index.php?page=arithmetic" class="top-link<?php if ( isset( $type ) && $type === 'arithmetic' ) { echo ' top-active'; } ?>">Variable Arithmetics</a></li>
-			<li><a href="./<?php echo $dir; ?>index.php?page=test" class="top-link<?php if ( isset( $type ) && $type === 'test' ) { echo ' top-active'; } ?>">Variable Testing</a></li>
-			<li><a href="./<?php echo $dir; ?>index.php?page=other-cheat-sheets" class="top-link<?php if ( isset( $page ) && $page === 'other-cheat-sheets' ) { echo ' top-active'; } ?>">More cheatsheets</a></li>
-			<li class="top-link-small"><a href="./<?php echo $dir; ?>index.php?page=about" class="top-link<?php if ( isset( $page ) && $page === 'about' ) { echo ' top-active'; } ?>">About</a></li>
+			<li><a href="<?php echo BASE_URI; ?>index.php?page=compare" class="top-link<?php if ( isset( $type ) && $type === 'compare' ) { echo ' top-active'; } ?>">Variable Comparisons</a></li>
+			<li><a href="<?php echo BASE_URI; ?>index.php?page=arithmetic" class="top-link<?php if ( isset( $type ) && $type === 'arithmetic' ) { echo ' top-active'; } ?>">Variable Arithmetics</a></li>
+			<li><a href="<?php echo BASE_URI; ?>index.php?page=test" class="top-link<?php if ( isset( $type ) && $type === 'test' ) { echo ' top-active'; } ?>">Variable Testing</a></li>
+			<li><a href="<?php echo BASE_URI; ?>index.php?page=other-cheat-sheets" class="top-link<?php if ( isset( $page ) && $page === 'other-cheat-sheets' ) { echo ' top-active'; } ?>">More cheatsheets</a></li>
+			<li class="top-link-small"><a href="<?php echo BASE_URI; ?>index.php?page=about" class="top-link<?php if ( isset( $page ) && $page === 'about' ) { echo ' top-active'; } ?>">About</a></li>
 		</ul>
 	</div>
 <?php
