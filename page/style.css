@@ -603,31 +603,31 @@ div#tabs {
 /********
  * Var printing
  ********/
-.string {
+.vt-string {
 	color: #336600;
 }
-.int {
+.vt-int {
 	color: #0066FF;
 }
-.int-0 {
+.vt-int-0 {
 	color: #FF0000;
 }
-.float {
+.vt-float {
 	color: #990033;
 }
-.bool {
+.vt-bool {
 	color: #000099;
 }
-.b-true {
+.vt-b-true {
 	color: #336600;
 }
-.b-false {
+.vt-b-false {
 	color: #FF0000;
 }
-.resource {
+.vt-resource {
 	color: #666666;
 }
-.null {
+.vt-null {
 	color: #666666;
 }
 

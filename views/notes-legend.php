@@ -32,9 +32,9 @@ if ( ! defined( 'APP_DIR' ) ) {
 				</ol>
 			</div>
 
-	<?php
-	include APP_DIR . '/include/vars-to-test.php';
-	if ( is_array( $legend_array ) && $legend_array !== array() ) : ?>
+<?php
+include APP_DIR . '/include/vars-to-test.php';
+if ( is_array( $legend_array ) && $legend_array !== array() ) : ?>
 
 			<h3>Notes on some variables:</h3>
 			<div>
@@ -43,25 +43,23 @@ if ( ! defined( 'APP_DIR' ) ) {
 					<tr>
 						<th width="40">&dagger;</th>
 						<th>How the variable is defined:</th>
-	<?php				//<th>Will show in the table as:</th>
-	?>
+<?php					//<th>Will show in the table as:</th>
+?>
 					</tr>
 
-	<?php
-	foreach ( $legend_array as $k => $v ) : ?>
-
+<?php
+foreach ( $legend_array as $k => $v ) : ?>
 					<tr>
 						<th id="var-legend-<?php echo $k; ?>"><?php echo $k; ?></th>
 						<td><code><?php echo $v; ?></code></td>
-	<?php 				//<td><?php pr_var( $test_array[ $k ], '', true, true ); ? ></td>
-	?>
-					</tr>
-	<?php
-	endforeach; ?>
+<?php	 				//<td><?php pr_var( $test_array[ $k ], '', true, true ); ? ></td>
+?>
+					</tr><?php
+endforeach; ?>
 				</table>
 			</div>
-	<?php
-	endif; ?>
+<?php
+endif; ?>
 
 			<h3>Legend / How to use the tables:</h3>
 			<div>

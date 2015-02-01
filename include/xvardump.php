@@ -37,15 +37,15 @@ if ( ! defined( 'APP_DIR' ) ) {
 define( 'XVARDUMP_SPACE_LONG',     '&nbsp;&nbsp;&nbsp;&nbsp;' );
 define( 'XVARDUMP_SPACE_SHORT',    '&nbsp;&nbsp;' );
 
-define( 'XVARDUMP_CLASS_STRING',   'string' );
-define( 'XVARDUMP_CLASS_INT',      'int' );
-define( 'XVARDUMP_CLASS_INT_0',    'int-0' );
-define( 'XVARDUMP_CLASS_FLOAT',    'float' );
-define( 'XVARDUMP_CLASS_BOOL',     'bool' );
-define( 'XVARDUMP_CLASS_B_TRUE',   'b-true' );
-define( 'XVARDUMP_CLASS_B_FALSE',  'b-false' );
-define( 'XVARDUMP_CLASS_RESOURCE', 'resource' );
-define( 'XVARDUMP_CLASS_NULL',     'null' );
+define( 'XVARDUMP_CLASS_STRING',   'vt-string' );
+define( 'XVARDUMP_CLASS_INT',      'vt-int' );
+define( 'XVARDUMP_CLASS_INT_0',    'vt-int-0' );
+define( 'XVARDUMP_CLASS_FLOAT',    'vt-float' );
+define( 'XVARDUMP_CLASS_BOOL',     'vt-bool' );
+define( 'XVARDUMP_CLASS_B_TRUE',   'vt-b-true' );
+define( 'XVARDUMP_CLASS_B_FALSE',  'vt-b-false' );
+define( 'XVARDUMP_CLASS_RESOURCE', 'vt-resource' );
+define( 'XVARDUMP_CLASS_NULL',     'vt-null' );
 
 
 /**

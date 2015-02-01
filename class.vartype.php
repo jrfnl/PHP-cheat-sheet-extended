@@ -517,8 +517,7 @@ class Vartype {
 				}
 			}
 
-			echo '
-					</td>';
+			echo '					</td>';
 
 			unset( $class, $GLOBALS['has_error'] );
 		}
@@ -576,11 +575,10 @@ class Vartype {
 				printf( '
 			<div id="%1$s-note%2$s" class="note-appendix">
 				<sup>&Dagger; %2$s</sup> %3$s
-			</div>
-',
-				$test_group,
-				( $key + 1 ),
-				$note
+			</div>',
+					$test_group,
+					( $key + 1 ),
+					$note
 				);
 			}
 		}

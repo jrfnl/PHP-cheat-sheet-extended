@@ -490,8 +490,7 @@ class VartypeCompare extends Vartype {
 				}
 			}
 
-			echo '
-					</td>';
+			echo '					</td>';
 
 			unset( $GLOBALS['has_error'], $value2, $type, $class );
 		}
@@ -510,11 +509,10 @@ class VartypeCompare extends Vartype {
 				printf( '
 			<div id="%1$s-note%2$s" class="note-appendix">
 				<sup>&Dagger; %2$s</sup> %3$s
-			</div>
-				',
-				$test,
-				( $key + 1 ),
-				$note
+			</div>',
+					$test,
+					( $key + 1 ),
+					$note
 				);
 			}
 		}
