@@ -83,6 +83,22 @@ class VartypeArithmetic extends VartypeCompare {
 			'arg'           => '$a, $b',
 			'function'      => '$r = $a % $b; if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); }',
 		),
+		'pow_operator'         => array(
+			'title'         => '**',
+			'url'           => 'http://php.net/language.operators.arithmetic',
+			'arg'           => '$a, $b',
+			'function'      => 'if ( PHP_VERSION_ID >= 50600 ) { pr_var( $a ** $b, \'\', true, true ); } else { print \'E: \'**\' operator not available (PHP 5.6+)\'; }',
+		),
+
+		
+		// Doesn't really belong in arithmetic, but for now it's the most logical place anyhow
+		'concatenate'        => array(
+			'title'         => '.',
+			'tooltip'       => '$a . $b',
+			'url'           => 'http://php.net/language.operators.string.php',
+			'arg'           => '$a, $b',
+			'function'      => 'pr_var( $a . $b, \'\', true, true );',
+		),
 
 		'fmod'           => array(
 			'title'         => 'fmod()',
@@ -166,29 +182,13 @@ class VartypeArithmetic extends VartypeCompare {
 		*/
 	);
 
-	/**
-	 * Calculations only available in PHP 5.6+
-	 *
-	 * @var array $bcmath_tests  Multi-dimensional array of tests only to be run on PHP 5.6+.
-	 */
-	var $php56_tests = array(
-		'pow_operator'         => array(
-			'title'         => '**',
-			'url'           => 'http://php.net/language.operators.arithmetic',
-			'arg'           => '$a, $b',
-			'function'      => 'if ( PHP_VERSION_ID >= 56000 ) { pr_var( $a ** $b ), \'\', true, true ); } else { print \'E: \'**\' operator not available (PHP 5.6+)\'; }',
-		),
-	);
-
 
 	/**
 	 * Constructor
 	 */
 	function __construct() {
-		if ( PHP_VERSION_ID >= 56000 ) {
-			// Insert at certain position
-			$base        = array_splice( $this->tests, 0, 7 );
-			$this->tests = array_merge( $base, $this->php56_tests, $this->tests );
+		if ( PHP_VERSION_ID < 50600 ) {
+			unset( $this->tests['pow_operator'] );
 		}
 		if ( extension_loaded( 'bcmath' ) ) {
 			$this->tests = array_merge( $this->tests, $this->bcmath_tests );
