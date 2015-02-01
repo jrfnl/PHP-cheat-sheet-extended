@@ -1,0 +1,62 @@
+# .htaccess voor phpcheatsheets.com
+
+Options -Indexes -MultiViews
+
+# Prevent users from opening and reading php include files
+# Prevent users from viewing htaccess / htpasswd files
+# Prevent users from viewing logfiles
+<FilesMatch "\.(htaccess|htpasswd|ini|phps|inc|log|sh|md|bak|bat|yml|gitignore|gitmodules|gitattributes)$">
+ Order Allow,Deny
+ Deny from all
+</FilesMatch>
+
+
+# Do not remove or modify this block! Added by PHP Switcher from cPanel to use an alternate PHP version.
+<IfModule mod_suphp.c>
+  AddHandler application/x-httpd-php-5.4.13 .php
+</IfModule>
+
+
+# Redirects for files which no longer exist
+# 5.2.(0)4 => 5.2.6
+RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.2\.(0)?4\.html$ http://phpcheatsheets.com/static_results/$1/php5.2.6.html
+
+# 5.2.(0)8 => 5.2.9
+RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.2\.(0)?8\.html$ http://phpcheatsheets.com/static_results/$1/php5.2.9.html
+
+# 5.3.02 => 5.3.2
+RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.3\.02\.html$ http://phpcheatsheets.com/static_results/$1/php5.3.2.html
+
+# 5.4.(0)6 => 5.4.4
+RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.4\.(0)?6\.html$ http://phpcheatsheets.com/static_results/$1/php5.4.4.html
+
+
+# Add 404 directives
+ErrorDocument 403 /index.php?page=error&e=403
+ErrorDocument 404 /index.php?page=error&e=404
+
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{REQUEST_METHOD} ^(HEAD|TRACE|DELETE|TRACK|DEBUG) [NC]
+RewriteRule ^(.*)$ - [F,L]
+
+# Redirect GET requests from the dropdown to html files
+RewriteCond %{QUERY_STRING} page=(arithmetic|compare|test)&tab=([a-z0-9_-]+)&phpversion=(php[0-9\.-]+) [NC]
+RewriteRule index.php /static_results/%1/%3.html#%2? [NE,R=301,L]
+
+RewriteCond %{QUERY_STRING} page=(arithmetic|compare|test)&tab=&phpversion=(php[0-9\.-]+) [NC]
+RewriteRule index.php /static_results/%1/%2.html? [R=301,L]
+
+RewriteCond %{QUERY_STRING} page=(arithmetic|compare|test)&phpversion=(php[0-9\.-]+) [NC]
+RewriteRule index.php /static_results/%1/%2.html? [R=301,L]
+
+
+# Redirect pretty urls
+RewriteRule ^(arithmetic|compare|test)/([a-z0-9_-]+)/ajax[/]?$ index.php?page=$1&tab=$2&do=ajax [QSA,NC,L]
+RewriteRule ^(arithmetic|compare|test)/([a-z0-9_-]+)[/]?$ index.php?page=$1&tab=$2 [QSA,NC,L]
+RewriteRule ^(arithmetic|compare|test|other-cheat-sheets|about)[/]?$ index.php?page=$1 [NC,L]
+
+</IfModule>
