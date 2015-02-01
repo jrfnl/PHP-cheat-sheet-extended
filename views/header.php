@@ -90,6 +90,8 @@ if ( isset( $type ) ) : ?>
 	</div>
 <?php
 endif; ?>
+	<!--<a href="http://github.com/jrfnl/PHP-cheat-sheet-extended"><img class="forkme" src="<?php echo BASE_URI; ?>page/images/forkme.png" width="123" height="123" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png"></a>-->
+	<a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" class="forkme" title="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png">&nbsp;</a>
 
 	<h1><a href="<?php echo BASE_URI; ?>"><img src="<?php echo BASE_URI; ?>page/images/php-med-trans.png" width="95" height="51" alt="PHP" /> Cheatsheets</a></h1>
 

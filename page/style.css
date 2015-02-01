@@ -112,13 +112,14 @@ div.head {
 	background-color: #5C9CCC;
 	padding: 12px 0 0 20px;
 /*	width: 100%;*/
-	min-height: 63px;
+	min-height: 90px;
 }
 
 div.head h1 {
-	margin: 0;
+	margin: 12px 0 0 90px;
 	color: #FFFFEE;
 	text-shadow: 2px 3px 5px #828282;
+	height: 70px;
 }
 div.head h1 a,
 div.head h1 a:visited,
@@ -126,6 +127,7 @@ div.head h1 a:active,
 div.head h1 a:hover {
 	color: #FFFFEE;
 	text-decoration: none;
+	padding: 20px 30px 20px 0;
 }
 div.head h1 img {
 	vertical-align: middle;
@@ -159,6 +161,20 @@ div.head div#too-much img {
 	float: right;
 	margin: 0 0 0 5px;
 	padding: 0;
+}
+
+div.head a.forkme {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	height: 110px;
+	width: 110px;
+	background: url("images/forkme.png") no-repeat scroll 50% 60% transparent;
+
 }
 
 div.head #main-menu {
