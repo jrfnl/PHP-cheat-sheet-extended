@@ -79,7 +79,7 @@ class VartypePHP5 {
 						$GLOBALS[\'encountered_errors\'][] = $message;
 						$key = array_search( $message, $GLOBALS[\'encountered_errors\'] );
 					}
-					print \'<span class="error">Fatal error <a href="#\' . $GLOBALS[\'test\']. \'-errors">#\' . ( $key + 1 ) . \'</a></span>\';
+					echo \'<span class="error">Fatal error <a href="#\', $GLOBALS[\'test\'], \'-errors">#\', ( $key + 1 ), \'</a></span>\';
 				}
 			',
 		),
@@ -109,7 +109,7 @@ class VartypePHP5 {
 						$GLOBALS[\'encountered_errors\'][] = $message;
 						$key = array_search( $message, $GLOBALS[\'encountered_errors\'] );
 					}
-					print \'<span class="error">Fatal error <a href="#\' . $GLOBALS[\'test\']. \'-errors">#\' . ( $key + 1 ) . \'</a></span>\';
+					echo \'<span class="error">Fatal error <a href="#\', $GLOBALS[\'test\'], \'-errors">#\', ( $key + 1 ), \'</a></span>\';
 				}
 			',
 		),
@@ -185,7 +185,7 @@ class VartypePHP5 {
 					$GLOBALS['encountered_errors'][] = $message;
 					$key                             = array_search( $message, $GLOBALS['encountered_errors'] );
 				}
-				print '<span class="error">Fatal error <a href="#' . $GLOBALS['test']. '-errors">#' . ( $key + 1 ) . '</a></span>';
+				echo '<span class="error">Fatal error <a href="#', $GLOBALS['test'], '-errors">#', ( $key + 1 ), '</a></span>';
 			}
 		}
 		else if ( PHP_VERSION_ID >= 50200 && ( gettype( $a ) === 'object' || gettype( $b ) === 'object' ) ) {
@@ -205,7 +205,7 @@ class VartypePHP5 {
 					$GLOBALS['encountered_errors'][] = $message;
 					$key                             = array_search( $message, $GLOBALS['encountered_errors'] );
 				}
-				print '<span class="error">Fatal error <a href="#' . $GLOBALS['test']. '-errors">#' . ( $key + 1 ) . '</a></span>';
+				echo '<span class="error">Fatal error <a href="#', $GLOBALS['test'], '-errors">#', ( $key + 1 ), '</a></span>';
 			}
 		}
 		else {

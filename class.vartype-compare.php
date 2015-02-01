@@ -244,7 +244,7 @@ class VartypeCompare extends Vartype {
 	 */
 	function print_tables() {
 
-		print '
+		echo '
 	<div class="tables">';
 
 
@@ -258,7 +258,7 @@ class VartypeCompare extends Vartype {
 		unset( $key, $test_settings );
 		$this->clean_up();
 
-		print '
+		echo '
 	</div>';
 	}
 
@@ -273,8 +273,8 @@ class VartypeCompare extends Vartype {
 		if ( isset( $this->tests[ $test ] ) ) {
 			$GLOBALS['encountered_errors'] = array();
 
-			print '
-		<div id="' . $test . '">';
+			echo '
+		<div id="', $test, '">';
 
 
 			$this->print_tabletop( $test );
@@ -298,36 +298,34 @@ class VartypeCompare extends Vartype {
 				}
 
 				if ( count( $class ) > 0 ) {
-					print '
-				<tr class="' . implode( ' ', $class ) . '">';
+					echo '
+				<tr class="', implode( ' ', $class ), '">';
 				}
 				else {
-					print '
+					echo '
 				<tr>';
 				}
 
-				print '
-					<th>' . $legend;
+				echo '
+					<th>', $legend;
 				pr_var( $value1, '', true );
-				print '
+				echo '
 					</th>';
 
 				$this->print_row_cells( $value1, $key1, $test );
 
-				print '
-					<th>' . $legend;
+				echo '
+					<th>', $legend;
 				pr_var( $value1, '', true );
-				print '
-					</th>';
-
-				print '
+				echo '
+					</th>
 				</tr>';
 
 				unset( $value1, $label, $type, $hr_key, $class );
 			}
 			unset( $key1, $last_key );
 
-			print '
+			echo '
 			</tbody>
 			</table>';
 
@@ -335,7 +333,7 @@ class VartypeCompare extends Vartype {
 			$this->print_error_footnotes( $test );
 			$this->print_other_footnotes( $test );
 
-			print '
+			echo '
 		</div>';
 		}
 		else {
@@ -458,11 +456,12 @@ class VartypeCompare extends Vartype {
 			}
 
 			if ( count( $class ) === 0 ) {
-				print '					<td>';
+				echo '
+					<td>';
 			}
 			else {
-				print '
-					<td class="' . implode( ' ', $class ) . '">';
+				echo '
+					<td class="', implode( ' ', $class ), '">';
 			}
 
 
@@ -471,12 +470,13 @@ class VartypeCompare extends Vartype {
 			if ( is_array( $GLOBALS['has_error'] ) && count( $GLOBALS['has_error'] ) > 0 ) {
 				foreach ( $GLOBALS['has_error'] as $error ) {
 					if ( isset( $error['msg'] ) && $error['msg'] !== '' ) {
-						print '<br />' . $error['msg'];
+						echo '<br />', $error['msg'];
 					}
 				}
 			}
 
-			print '					</td>';
+			echo '
+					</td>';
 
 			unset( $GLOBALS['has_error'], $value2, $type, $class );
 		}
@@ -492,11 +492,15 @@ class VartypeCompare extends Vartype {
 	function print_other_footnotes( $test ) {
 		if ( isset( $this->tests[ $test ]['notes'] ) && ( is_array( $this->tests[ $test ]['notes'] ) && count( $this->tests[ $test ]['notes'] ) > 0 ) ) {
 			foreach ( $this->tests[ $test ]['notes'] as $key => $note ) {
-				print '
-			<div id="' . $test . '-note' . ( $key + 1 ) . '" class="note-appendix">
-				<sup>&Dagger; ' . ( $key + 1 ) . '</sup> ' . $note . '
+				printf( '
+			<div id="%1$s-note%2$s" class="note-appendix">
+				<sup>&Dagger; %2$s</sup> %3$s
 			</div>
-				';
+				',
+				$test,
+				( $key + 1 ),
+				$note
+				);
 			}
 		}
 	}

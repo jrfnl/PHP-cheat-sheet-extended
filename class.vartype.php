@@ -88,14 +88,14 @@ class Vartype {
 	 */
 	function do_page( $all = false ) {
 
-		print '<div id="tabs">';
+		echo '<div id="tabs">';
 
 		$this->print_tabs( $all );
 
 		if ( isset( $all ) && $all === true ) {
 			$this->print_tables();
 		}
-		print "\n" . '</div><!-- end of div#tabs -->';
+		echo "\n", '</div><!-- end of div#tabs -->';
 	}
 
 
@@ -190,14 +190,14 @@ class Vartype {
 		$primary_b = array_search( substr( $b, 0, 1 ), $primary_order, true );
 
 		if ( $primary_a !== $primary_b ) {
-			return ( $primary_a < $primary_b ) ? -1 : 1; // wpcs: ok
+			return ( ( $primary_a < $primary_b ) ? -1 : 1 );
 		}
 
 		$secondary_a = array_search( substr( $a, 1 ), $secondary_order, true );
 		$secondary_b = array_search( substr( $b, 1 ), $secondary_order, true );
 
 		if ( $secondary_a !== $secondary_b ) {
-			return ( $secondary_a < $secondary_b ) ? -1 : 1; // wpcs: ok
+			return ( ( $secondary_a < $secondary_b ) ? -1 : 1 );
 		}
 
 		return 0;
@@ -260,7 +260,7 @@ class Vartype {
 	 */
 	function print_tables() {
 
-		print '
+		echo '
 	<div class="tables">';
 
 		foreach ( $this->test_groups as $key => $group_settings ) {
@@ -269,7 +269,7 @@ class Vartype {
 		}
 		unset( $key, $group_settings );
 
-		print '
+		echo '
 	</div><!-- end of div.tables -->';
 	}
 
@@ -284,16 +284,16 @@ class Vartype {
 		if ( isset( $this->test_groups[ $test_group ] ) ) {
 			$GLOBALS['encountered_errors'] = array();
 
-			print '
-		<div id="' . $test_group . '">';
+			echo'
+		<div id="', $test_group, '">';
 
 			if ( isset( $this->test_groups[ $test_group ]['urls'] ) && ( is_array( $this->test_groups[ $test_group ]['urls'] ) && count( $this->test_groups[ $test_group ]['urls'] ) > 0 ) ) {
-				print '<p>References:</p><ul>';
+				echo '<p>References:</p><ul>';
 				foreach ( $this->test_groups[ $test_group ]['urls'] as $url ) {
-					print '<li><a href="' . $url . '" target="_blank">' . $url . '</a></li>';
+					printf( '<li><a href="%1$s" target="_blank">%1$s</a></li>', $url );
 				}
 				unset( $url );
-				print '</ul>';
+				echo '</ul>';
 			}
 
 
@@ -321,37 +321,35 @@ class Vartype {
 				unset( $type, $hr_key );
 
 				if ( count( $class ) > 0 ) {
-					print '
-				<tr class="' . implode( ' ', $class ) . '">';
+					echo '
+				<tr class="', implode( ' ', $class ), '">';
 				}
 				else {
-					print '
+					echo '
 				<tr>';
 				}
 
 
-				print '
-					<th>' . $legend . '$x = ';
+				echo '
+					<th>', $legend, '$x = ';
 				pr_var( $value, '', true );
-				print '
+				echo '
 					</th>';
 
 				$this->print_row_cells( $value, $test_group );
 
-				print '
-					<th>' . $legend . '$x = ';
+				echo '
+					<th>', $legend, '$x = ';
 				pr_var( $value, '', true );
-				print '
-					</th>';
-
-				print '
+				echo '
+					</th>
 				</tr>';
 
 				unset( $value, $label, $type, $hr_key, $class );
 			}
 			unset( $key, $last_key );
 
-			print '
+			echo '
 			</tbody>
 			</table>';
 
@@ -359,8 +357,8 @@ class Vartype {
 			$this->print_other_footnotes( $test_group );
 
 
-			print '
-		</div><!-- end of div#' . $test_group . ' -->';
+			echo '
+		</div><!-- end of div#', $test_group, ' -->';
 		}
 		else {
 			trigger_error( 'Unknown test group <b>' . $test_group . '</b>', E_USER_WARNING );
@@ -405,8 +403,7 @@ class Vartype {
 				$class[] = 'end';
 			}
 
-			$class = ( ( count( $class ) > 0 ) ? ' class="' . implode( ' ', $class ) . '"' : '' ); // wpcs: ok
-
+			$class   = ( ( count( $class ) > 0 ) ? ' class="' . implode( ' ', $class ) . '"' : '' );
 			$tooltip = ( isset( $this->tests[ $test ]['tooltip'] ) ? ' title="' . htmlspecialchars( $this->tests[ $test ]['tooltip'], ENT_QUOTES, 'UTF-8' ) . '"' : '' );
 
 			$html .= '
@@ -451,12 +448,11 @@ class Vartype {
 
 		$header = $this->create_table_header( $test_group );
 
-		print '
-		<table id="' . $test_group . '-table" cellpadding="0" cellspacing="0" border="0">';
-		print '
-		<thead>' . $header . '
+		echo '
+		<table id="', $test_group, '-table" cellpadding="0" cellspacing="0" border="0">
+		<thead>', $header, '
 		</thead>
-		<tfoot>' . $header . '
+		<tfoot>', $header, '
 		</tfoot>
 		<tbody>';
 	}
@@ -485,11 +481,12 @@ class Vartype {
 			}
 
 			if ( count( $class ) === 0 ) {
-				print '					<td>';
+				echo '
+					<td>';
 			}
 			else {
-				print '
-					<td class="' . implode( ' ', $class ) . '">';
+				echo '
+					<td class="', implode( ' ', $class ), '">';
 			}
 
 
@@ -500,12 +497,13 @@ class Vartype {
 			if ( is_array( $GLOBALS['has_error'] ) && count( $GLOBALS['has_error'] ) > 0 ) {
 				foreach ( $GLOBALS['has_error'] as $error ) {
 					if ( isset( $error['msg'] ) && $error['msg'] !== '' ) {
-						print '<br />' . $error['msg'];
+						echo '<br />', $error['msg'];
 					}
 				}
 			}
 
-			print '					</td>';
+			echo '
+					</td>';
 
 			unset( $class, $GLOBALS['has_error'] );
 		}
@@ -539,13 +537,13 @@ class Vartype {
 	function print_error_footnotes( $test_group ) {
 		// Encountered errors footnote/appendix
 		if ( count( $GLOBALS['encountered_errors'] ) > 0 ) {
-			print '
-			<ol id="' . $test_group . '-errors" class="error-appendix">';
+			echo '
+			<ol id="', $test_group, '-errors" class="error-appendix">';
 			foreach ( $GLOBALS['encountered_errors'] as $error ) {
-				print '
-				<li>' . $error . '</li>';
+				echo '
+				<li>', $error, '</li>';
 			}
-			print '
+			echo '
 			</ol>';
 		}
 		unset( $GLOBALS['encountered_errors'] );
@@ -560,11 +558,15 @@ class Vartype {
 	function print_other_footnotes( $test_group ) {
 		if ( is_array( $this->table_notes ) && count( $this->table_notes ) > 0 ) {
 			foreach ( $this->table_notes as $key => $note ) {
-				print '
-			<div id="' . $test_group . '-note' . ( $key + 1 ) . '" class="note-appendix">
-				<sup>&Dagger; ' . ( $key + 1 ) . '</sup> ' . $note . '
+				printf( '
+			<div id="%1$s-note%2$s" class="note-appendix">
+				<sup>&Dagger; %2$s</sup> %3$s
 			</div>
-';
+',
+				$test_group,
+				( $key + 1 ),
+				$note
+				);
 			}
 		}
 		$this->table_notes = array(); // Reset property

@@ -7,11 +7,12 @@ if ( ! defined( 'APP_DIR' ) ) {
 }
 ?>
 
+	<div id="legend-box">
 		<div id="sidebar">
-			<h3 id="php-version">
-				This page has been generated with <strong>PHP <?php echo htmlspecialchars( PHP_VERSION, ENT_QUOTES, 'UTF-8' ); ?></strong>
-				<?php echo generate_version_dropdown(); ?>
-			</h3>
+			<div id="php-version">
+				<p>This page has been generated with <strong>PHP <?php echo htmlspecialchars( PHP_VERSION, ENT_QUOTES, 'UTF-8' ); ?></strong></p>
+			<?php echo generate_version_dropdown(); ?>
+			</div>
 		</div>
 
 
@@ -31,9 +32,9 @@ if ( ! defined( 'APP_DIR' ) ) {
 				</ol>
 			</div>
 
-<?php
-include APP_DIR . '/include/vars-to-test.php';
-if ( is_array( $legend_array ) && $legend_array !== array() ): ?>
+	<?php
+	include APP_DIR . '/include/vars-to-test.php';
+	if ( is_array( $legend_array ) && $legend_array !== array() ) : ?>
 
 			<h3>Notes on some variables:</h3>
 			<div>
@@ -42,25 +43,25 @@ if ( is_array( $legend_array ) && $legend_array !== array() ): ?>
 					<tr>
 						<th width="40">&dagger;</th>
 						<th>How the variable is defined:</th>
-<?php	//					<th>Will show in the table as:</th>
-?>
+	<?php				//<th>Will show in the table as:</th>
+	?>
 					</tr>
 
-<?php
-	foreach ( $legend_array as $k => $v ): ?>
+	<?php
+	foreach ( $legend_array as $k => $v ) : ?>
 
 					<tr>
 						<th id="var-legend-<?php echo $k; ?>"><?php echo $k; ?></th>
 						<td><code><?php echo $v; ?></code></td>
-<?php 	//				<td><?php pr_var( $test_array[ $k ], '', true, true ); ? ></td>
-?>
+	<?php 				//<td><?php pr_var( $test_array[ $k ], '', true, true ); ? ></td>
+	?>
 					</tr>
-<?php
+	<?php
 	endforeach; ?>
 				</table>
 			</div>
-<?php
-endif; ?>
+	<?php
+	endif; ?>
 
 			<h3>Legend / How to use the tables:</h3>
 			<div>
@@ -72,14 +73,17 @@ endif; ?>
 					<li>A &Dagger; with a number next to a column header means there is a (linked) footnote for that entry at the bottom of the page.</li>
 					<li>When you mouse-over the table the row and column you are at are <span class="hover">highlighted</span>. To help you compare specific columns/rows, you can click on any cell to mark the column and row which the cell intersects for <span class="sticky">extra highlighting</span>. Click again to remove this sticky highlight.</li>
 <?php
-					/*<li>If there is a definite <em>best</em> way for doing something, the column will be highlighted in <span class="best">green</span>. Other <em>good</em> ways will be highlighted in <span class="good">light green</span>.
+
+					/*
+					<li>If there is a definite <em>best</em> way for doing something, the column will be highlighted in <span class="best">green</span>. Other <em>good</em> ways will be highlighted in <span class="good">light green</span>.
 						<br /><br />Best will normally have been determined by combining:
 						<ol>
 							<li>The results.</li>
 							<li>Consistency of results across PHP versions.</li>
 							<li>Speed benchmark if several method are equally good.</li>
 						</ol>
-					</li>*/ ?>
+					</li>
+					*/ ?>
 				</ul>
 
 				<h4>Legend to the color coding</h4>
@@ -116,4 +120,4 @@ endif; ?>
 			</div>
 
 		</div><!-- end of div#accordion -->
-
+	</div><!-- end of div#top-box -->

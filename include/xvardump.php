@@ -76,134 +76,152 @@ function get_var( $var, $title = '', $escape = true, $short = false, $space = ''
  * If you like, you can customize the color-coding used by changing the
  * values of the associated CONSTANTS at the top of this file
  *
- * @param mixed  $var   	The variable to print the debug info for
- * @param string $title		(optional) If set, prefaces the debug info with
- * 							a header containing this title
- * 							Useful if you want to print several states of the
- * 							same variable and you want to keep track of which state
- * 							you are at
- * @param bool   $escape	(optional) Whether or not to escape html entities in
- * 							the $var
- * 							Useful if the $var contains html and you want to see
- * 							the source value
- * 							Defaults to true
- * @param bool   $short		(optional) Whether to limit the debug info to color coding
- * 							Defaults to false
- * @param string $space		(optional) Internal variable needed to create the proper
- * 							spacing for display of arrays and objects
- * @param bool   $in_array  (optional) Internal pointer for whether or not to use
- *                          breaks when using short annotation which would give issues
- *                          when displaying arrays
+ * @param mixed  $var      The variable to print the debug info for
+ * @param string $title	   (optional) If set, prefaces the debug info with
+ *                         a header containing this title
+ *                         Useful if you want to print several states of the
+ *                         same variable and you want to keep track of which state
+ *                         you are at
+ * @param bool   $escape   (optional) Whether or not to escape html entities in
+ *                         the $var
+ *                         Useful if the $var contains html and you want to see
+ *                         the source value
+ *                         Defaults to true
+ * @param bool   $short	   (optional) Whether to limit the debug info to color coding
+ *                         Defaults to false
+ * @param string $space	   (optional) Internal variable needed to create the proper
+ *                         spacing for display of arrays and objects
+ * @param bool   $in_array (optional) Internal pointer for whether or not to use
+ *                         breaks when using short annotation which would give issues
+ *                         when displaying arrays
  *
  * @uses object_info()
  */
 function pr_var( $var, $title = '', $escape = true, $short = false, $space = '', $in_array = false ) {
 
 	if ( is_string( $title ) && $title !== '' ) {
-		print '<h4 style="clear: both;">' . ( ( $escape === true ) ? htmlentities( $title, ENT_QUOTES ) : $title ) . "</h4>\n";
+		echo '<h4 style="clear: both;">', ( ( $escape === true ) ? htmlentities( $title, ENT_QUOTES ) : $title ), "</h4>\n";
 	}
 
 	if ( is_array( $var ) ) {
 		if ( $var !== array() ) {
-			print 'Array: ' . $space . "(<br />\n";
+			echo 'Array: ', $space, "(<br />\n";
 			$spacing = ( ( $short !== true ) ? $space . XVARDUMP_SPACE_LONG : $space . XVARDUMP_SPACE_SHORT );
 			//$spacing = $space . XVARDUMP_SPACE_SHORT;
 			foreach ( $var as $key => $value ) {
-				print $spacing . '[' . ( ( $escape === true ) ? htmlentities( $key, ENT_QUOTES ) : $key );
+				echo $spacing, '[', ( ( $escape === true ) ? htmlentities( $key, ENT_QUOTES ) : $key );
 				if ( $short !== true ) {
-					print ' ';
+					echo ' ';
 					switch ( true ) {
 						case ( is_string( $key ) ):
-							print '<b class="' . XVARDUMP_CLASS_STRING . '"><i>(string)</i></b>';
+							echo '<b class="', XVARDUMP_CLASS_STRING, '"><i>(string)</i></b>';
 							break;
 
 						case ( is_int( $key ) ):
-							print '<b class="' . XVARDUMP_CLASS_INT . '"><i>(int)</i></b>';
+							echo '<b class="', XVARDUMP_CLASS_INT, '"><i>(int)</i></b>';
 							break;
 
 						case ( is_float( $key ) ):
-							print '<b class="' . XVARDUMP_CLASS_FLOAT . '"><i>(float)</i></b>';
+							echo '<b class="', XVARDUMP_CLASS_FLOAT, '"><i>(float)</i></b>';
 							break;
 
 						default:
-							print '(unknown)';
+							echo '(unknown)';
 							break;
 					}
 				}
-				print '] => ';
+				echo '] => ';
 				pr_var( $value, '', $escape, $short, $spacing, true );
 			}
-			print $space . ")<br />\n\n";
+			echo $space, ")<br />\n\n";
 		}
 		else {
-			print 'array()<br />';
+			echo 'array()<br />';
 		}
 	}
 	else if ( is_string( $var ) ) {
-		print '<span class="' . XVARDUMP_CLASS_STRING . '">';
+		echo '<span class="', XVARDUMP_CLASS_STRING, '">';
 		if ( $short !== true ) {
-			print '<b><i>string[' . strlen( $var ) . ']</i></b> : ';
+			echo '<b><i>string[', strlen( $var ), ']</i></b> : ';
 		}
-		print '&lsquo;'
-			. ( ( $escape === true ) ? str_replace( '  ', ' &nbsp;', htmlentities( $var, ENT_QUOTES, 'UTF-8' ) ) : str_replace( '  ', ' &nbsp;', $var ) )
-			. "&rsquo;</span><br />\n";
+		echo '&lsquo;',
+			( ( $escape === true ) ? str_replace( '  ', ' &nbsp;', htmlentities( $var, ENT_QUOTES, 'UTF-8' ) ) : str_replace( '  ', ' &nbsp;', $var ) ),
+			"&rsquo;</span><br />\n";
 	}
 	else if ( is_bool( $var ) ) {
-		print ( ( $short !== true ) ? '<span class="' . XVARDUMP_CLASS_BOOL . '"><b><i>bool</i></b> : ' . $var . ' ( = ' : '<b class="' . XVARDUMP_CLASS_BOOL . '"><i>b</i></b> ');
-		print ( ( $var === false ) ? '<i class="' . XVARDUMP_CLASS_B_FALSE . '">false</i>' : ( ( $var === true ) ? '<i class="' . XVARDUMP_CLASS_B_TRUE . '">true</i>' : '<i>undetermined</i>' ) );
-		print ( ( $short !== true ) ? ' )</span>' : '' );
-		print "<br />\n";
-	}
-	else if ( is_int( $var ) ) {
-		print '<span class="' . XVARDUMP_CLASS_INT . '">';
 		if ( $short !== true ) {
-			print '<b><i>int</i></b> : ';
-		}
-		print ( ( $var === 0 ) ? '<span class="' . XVARDUMP_CLASS_INT_0 . '">' . $var . '</span>' : $var ) . "</span><br />\n";
-	}
-	else if ( is_float( $var ) ) {
-		print '<span class="' . XVARDUMP_CLASS_FLOAT . '">';
-		if ( $short !== true ) {
-			print '<b><i>float</i></b> : ';
-		}
-		print $var . "</span><br />\n";
-	}
-	else if ( is_null( $var ) ) {
-		print '<span class="' . XVARDUMP_CLASS_NULL . '">';
-		if ( $short !== true ) {
-			print '<b><i>';
-		}
-		print 'null';
-		if ( $short !== true ) {
-			print '</i></b> : ' . $var . ' ( = <i>NULL</i> )';
-			print "</span><br />\n";
-		}
-		else if ( $in_array === true ) {
-			print "</span><br />\n";
+			echo '<span class="', XVARDUMP_CLASS_BOOL, '"><b><i>bool</i></b> : ', $var, ' ( = ';
 		}
 		else {
-			print "</span>\n";
+			echo '<b class="', XVARDUMP_CLASS_BOOL, '"><i>b</i></b> ';
+		}
+		if ( $var === false ) {
+			echo '<i class="', XVARDUMP_CLASS_B_FALSE, '">false</i>';
+		}
+		else if ( $var === true ) {
+			echo '<i class="', XVARDUMP_CLASS_B_TRUE, '">true</i>';
+		}
+		else {
+			echo '<i>undetermined</i>';
+		}
+		echo ( ( $short !== true ) ? ' )</span>' : '' );
+		echo "<br />\n";
+	}
+	else if ( is_int( $var ) ) {
+		echo '<span class="', XVARDUMP_CLASS_INT, '">';
+		if ( $short !== true ) {
+			echo '<b><i>int</i></b> : ';
+		}
+		if ( $var === 0 ) {
+			echo '<span class="', XVARDUMP_CLASS_INT_0, '">', $var, '</span>';
+		}
+		else {
+			echo $var;
+		}
+		echo "</span><br />\n";
+	}
+	else if ( is_float( $var ) ) {
+		echo '<span class="', XVARDUMP_CLASS_FLOAT, '">';
+		if ( $short !== true ) {
+			echo '<b><i>float</i></b> : ';
+		}
+		echo $var, "</span><br />\n";
+	}
+	else if ( is_null( $var ) ) {
+		echo '<span class="', XVARDUMP_CLASS_NULL, '">';
+		if ( $short !== true ) {
+			echo '<b><i>';
+		}
+		echo 'null';
+		if ( $short !== true ) {
+			echo '</i></b> : ', $var, ' ( = <i>NULL</i> )', "</span><br />\n";
+		}
+		else if ( $in_array === true ) {
+			echo "</span><br />\n";
+		}
+		else {
+			echo "</span>\n";
 		}
 	}
 	else if ( is_resource( $var ) ) {
-		print '<span class="' . XVARDUMP_CLASS_RESOURCE . '">';
+		echo '<span class="', XVARDUMP_CLASS_RESOURCE, '">';
 		if ( $short !== true ) {
-			print '<b><i>resource</i></b> : ';
+			echo '<b><i>resource</i></b> : ';
 		}
-		print $var;
+		echo $var;
 		if ( $short !== true ) {
-			print ' ( = <i>RESOURCE</i> )';
+			echo ' ( = <i>RESOURCE</i> )';
 		}
-		print "</span><br />\n";
+		echo "</span><br />\n";
 	}
 	else if ( is_object( $var ) ) {
-		print "Object: \n" . $space . "(<br />\n";
+		echo "Object: \n", $space, "(<br />\n";
 		$spacing = ( ( $short !== true ) ? $space . XVARDUMP_SPACE_LONG : $space . XVARDUMP_SPACE_SHORT );
 		object_info( $var, $escape, $short, $spacing );
-		print $space . ")<br />\n\n";
+		echo $space, ")<br />\n\n";
 	}
 	else {
-		print 'I haven&#39;t got a clue what this is: ' . gettype( $var ) . "<br />\n";
+		echo 'I haven&#39;t got a clue what this is: ', gettype( $var ), "<br />\n";
 	}
 }
 
@@ -220,17 +238,17 @@ function pr_var( $var, $title = '', $escape = true, $short = false, $space = '',
  * @uses pr_var()
  */
 function object_info( $obj, $escape, $short, $space ) {
-	print $space . '<b><i>Class</i></b>: ' . get_class( $obj ) . " (<br />\n";
+	echo $space, '<b><i>Class</i></b>: ', get_class( $obj ), " (<br />\n";
 	$spacing    = ( ( $short !== true ) ? $space . XVARDUMP_SPACE_LONG : $space . XVARDUMP_SPACE_SHORT );
 	$properties = get_object_vars( $obj );
 	if ( is_array( $properties ) && $properties !== array() ) {
 		foreach ( $properties as $var => $val ) {
 			if ( is_array( $val ) ) {
-				print $spacing . '<b><i>property</i></b>: ' . $var . "<b><i> (array)</i></b>\n";
+				echo $spacing, '<b><i>property</i></b>: ', $var, "<b><i> (array)</i></b>\n";
 				pr_var( $val, '', $escape, $short, $spacing );
 			}
 			else {
-				print $spacing . '<b><i>property</i></b>: ' . $var . ' = ';
+				echo $spacing, '<b><i>property</i></b>: ', $var, ' = ';
 				pr_var( $val, '', $escape, $short, $spacing );
 			}
 		}
@@ -240,11 +258,11 @@ function object_info( $obj, $escape, $short, $space ) {
 	$methods = get_class_methods( $obj );
 	if ( is_array( $methods ) && $methods !== array() ) {
 		foreach ( $methods as $method ) {
-			print $spacing . '<b><i>method</i></b>: ' . $method . "<br />\n";
+			echo $spacing, '<b><i>method</i></b>: ', $method, "<br />\n";
 		}
 	}
 	unset( $methods, $method );
-	print $space . ")<br />\n\n";
+	echo $space, ")<br />\n\n";
 }
 
 
@@ -306,10 +324,10 @@ function pr_float( $var ) {
  */
 function pr_str( $var ) {
 	if ( is_string( $var ) ) {
-		print '<span class="' . XVARDUMP_CLASS_STRING . '">&lsquo;' . str_replace( '  ', ' &nbsp;', $var ) . "&rsquo;</span>\n";
+		echo '<span class="', XVARDUMP_CLASS_STRING, '">&lsquo;', str_replace( '  ', ' &nbsp;', $var ), "&rsquo;</span>\n";
 	}
 	else {
-		print 'E: not a string';
+		echo 'E: not a string';
 	}
 }
 
@@ -322,17 +340,17 @@ function pr_str( $var ) {
 function pr_bool( $var ) {
 	if ( is_bool( $var ) ) {
 		if ( $var === false ) {
-			print '<span class="' . XVARDUMP_CLASS_B_FALSE . '">false' . "</span>\n";
+			echo '<span class="', XVARDUMP_CLASS_B_FALSE, '">false', "</span>\n";
 		}
 		else if ( $var === true ) {
-			print '<span class="' . XVARDUMP_CLASS_B_TRUE . '">true' . "</span>\n";
+			echo '<span class="', XVARDUMP_CLASS_B_TRUE, '">true', "</span>\n";
 		}
 		else {
-			print 'E: boolean value undetermined';
+			echo 'E: boolean value undetermined';
 		}
 	}
 	else {
-		print 'E: not boolean';
+		echo 'E: not boolean';
 	}
 }
 
@@ -347,14 +365,14 @@ function pr_bool( $var ) {
 function pr_int( $var ) {
 	if ( is_int( $var ) ) {
 		if ( $var === 0 ) {
-			print '<span class="' . XVARDUMP_CLASS_INT_0 . '">' . $var . "</span>\n";
+			echo '<span class="', XVARDUMP_CLASS_INT_0, '">', $var, "</span>\n";
 		}
 		else {
-			print '<span class="' . XVARDUMP_CLASS_INT . '">' . $var . "</span>\n";
+			echo '<span class="', XVARDUMP_CLASS_INT, '">', $var, "</span>\n";
 		}
 	}
 	else {
-		print 'E: not an integer';
+		echo 'E: not an integer';
 	}
 }
 
@@ -366,10 +384,10 @@ function pr_int( $var ) {
  */
 function pr_flt( $var ) {
 	if ( is_float( $var ) ) {
-		print '<span class="' . XVARDUMP_CLASS_FLOAT . '">' . $var . "</span>\n";
+		echo '<span class="', XVARDUMP_CLASS_FLOAT, '">', $var, "</span>\n";
 	}
 	else {
-		print 'E: not a float';
+		echo 'E: not a float';
 	}
 }
 

@@ -2311,7 +2311,6 @@ else {
 		}
 		unset( $preg_point );
 
-
 		parent::__construct();
 	}
 
@@ -2351,6 +2350,7 @@ else {
 				else {
 					$r = filter_var( $value, $filter );
 				}
+
 				switch ( true ) {
 					case ( $expected === 'bool' && is_bool( $r ) === true ):
 						pr_bool( $r );
@@ -2385,7 +2385,7 @@ else {
 						),
 					);
 					if ( isset( $flags ) ) {
-						$filter_def['x']['flags'] =	FILTER_REQUIRE_ARRAY | $flags;
+						$filter_def['x']['flags'] = ( FILTER_REQUIRE_ARRAY | $flags );
 					}
 					if ( isset( $options ) && ( is_array( $options ) && $options !== array() ) ) {
 						$filter_def['x']['options'] = $options;
@@ -2396,7 +2396,7 @@ else {
 			}
 		}
 		else {
-			print 'E: not available (PHP 5.2.0+)';
+			echo 'E: not available (PHP 5.2.0+)';
 		}
 	}
 }

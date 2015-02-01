@@ -90,8 +90,8 @@ if ( PHP_VERSION_ID >= 50400 ) {
 
 if ( extension_loaded( 'SPL_Types' ) ) {
 	if ( class_exists( 'SplBool' ) ) {
-		$test_array['p1'] =	new SplBool( false, true );
-		$test_array['p2'] =	new SplBool( true, true );
+		$test_array['p1'] = new SplBool( false, true );
+		$test_array['p2'] = new SplBool( true, true );
 	}
 	if ( class_exists( 'SplInt' ) ) {
 		$test_array['p5'] = new SplInt( 94 );
@@ -122,8 +122,6 @@ $extra_variables['bool'] = $extra_variables['filters1'] = array(
 );
 
 $extra_variables['filters1']['sl'] = 'AF036C';
-
-
 
 $extra_variables['string2'] = array(
 	'sz'  => 'Iñtërnâtiônàlizætiøn', // utf-8 / binary string

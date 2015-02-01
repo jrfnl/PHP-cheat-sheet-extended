@@ -68,7 +68,7 @@ ui-icon-circle-minus
 			var tableId;
 			var tabHref;
 			var tabTab;
-			var tabTitle = '';
+			var tabTitle;
 
 			/* (Re-)attach floating table headers for activated panel */
 			tableId = ui.newPanel.find('table').attr('id');

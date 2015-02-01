@@ -12,7 +12,14 @@ if ( ! defined( 'APP_DIR' ) ) {
  */
 class TestObject {
 
+	/**
+	 * @var null a property
+	 */
 	var $test1;
+
+	/**
+	 * @var bool another property
+	 */
 	var $test2 = true;
 
 
@@ -22,7 +29,7 @@ class TestObject {
 	 * @param string $var
 	 */
 	function print_it( $var ) {
-		print htmlspecialchars( $var );
+		echo htmlspecialchars( $var );
 	}
 }
 
@@ -31,6 +38,9 @@ class TestObject {
  */
 class TestObjectToString extends TestObject {
 
+	/**
+	 * @var string a third property
+	 */
 	var $test3 = 'some string';
 
 
@@ -229,7 +239,7 @@ function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
 				return;
 			}
 			else {
-				print $message . ' in ' . $error_file . ' on line ' . $error_line . "<br />\n";
+				echo $message, ' in ', $error_file, ' on line ', $error_line, "<br />\n";
 			}
 		}
 		else {
@@ -238,7 +248,7 @@ function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
 	}
 	else {
 		if ( $error_no !== E_STRICT ) {
-			print $message . ' in ' . $error_file . ' on line ' . $error_line . "<br />\n";
+			echo $message, ' in ', $error_file, ' on line ', $error_line, "<br />\n";
 		}
 		else {
 			return;
@@ -271,14 +281,15 @@ function determine_base_uri() {
 	return $base_uri;
 }
 
+
 /**
  * Determine the script path part of the base url
  */
 function determine_script_path() {
-	if( ! empty( $_SERVER['SCRIPT_NAME'] ) && stripos( $_SERVER['SCRIPT_NAME'], 'index.php' ) !== false ) {
+	if ( ! empty( $_SERVER['SCRIPT_NAME'] ) && stripos( $_SERVER['SCRIPT_NAME'], 'index.php' ) !== false ) {
 		return substr( $_SERVER['SCRIPT_NAME'], 0, stripos( $_SERVER['SCRIPT_NAME'], 'index.php' ) );
 	}
-	else if( ! empty( $_SERVER['REQUEST_URI'] ) && stripos( $_SERVER['REQUEST_URI'], 'index.php' ) !== false ) {
+	else if ( ! empty( $_SERVER['REQUEST_URI'] ) && stripos( $_SERVER['REQUEST_URI'], 'index.php' ) !== false ) {
 		return substr( $_SERVER['REQUEST_URI'], 0, stripos( $_SERVER['REQUEST_URI'], 'index.php' ) );
 	}
 	else {
@@ -286,13 +297,14 @@ function determine_script_path() {
 	}
 }
 
+
 /**
  * Generate dropdown list of available static versions
  */
 function generate_version_dropdown() {
 
 	$available = glob( APP_DIR . '/static_results/' . $GLOBALS['type'] . '/php*.html' );
-	usort( $available , 'version_compare' );
+	usort( $available, 'version_compare' );
 	$available = array_reverse( $available );
 
 	$optgroup = 100;
@@ -300,28 +312,28 @@ function generate_version_dropdown() {
 
 	$options_html          = '';
 	$optgroup_html_pattern = '
-		<optgroup label="PHP %1$s">%2$s' . "\n</optgroup>";
+					<optgroup label="PHP %1$s">%2$s' . "\n\t\t\t\t\t</optgroup>";
 
 	$regex = sprintf( '`^%1$s/static_results/%2$s/php(([457]\.[0-9]+)\.[0-9-]+)\.html$`',
 		preg_quote( APP_DIR, '`' ),
 		preg_quote( $GLOBALS['type'], '`' )
 	);
-	
-	foreach( $available as $file ) {
+
+	foreach ( $available as $file ) {
 		if ( preg_match( $regex, $file, $match ) ) {
 			if ( $options !== array() && ( version_compare( $optgroup, $match[2], '>' ) && $optgroup !== 100 ) ) {
 				$options_html .= sprintf( $optgroup_html_pattern, $optgroup, implode( "\n", $options ) );
 				$options       = array();
 			}
-			$optgroup  = $match[2];
+			$optgroup = $match[2];
 
 
 			$selected = '';
-			if( ( isset( $GLOBALS['autogen'] ) && $GLOBALS['autogen'] === true ) && $match[1] === PHP_VERSION ) {
+			if ( ( isset( $GLOBALS['autogen'] ) && $GLOBALS['autogen'] === true ) && $match[1] === PHP_VERSION ) {
 				$selected = 'selected="selected"';
 			}
 			$options[] = sprintf( '
-			<option value="php%1$s" %2$s>PHP %1$s</option>',
+					<option value="php%1$s" %2$s>PHP %1$s</option>',
 				htmlspecialchars( $match[1], ENT_QUOTES, 'UTF-8' ),
 				$selected
 			);
@@ -333,16 +345,16 @@ function generate_version_dropdown() {
 	}
 
 	$dropdown = sprintf( '
-<form action="%6$sindex.php" method="get" id="choose-version">
-	<input type="hidden" name="page" value="%1$s" />
-	<input type="hidden" id="phpv-tab" name="tab" value="%2$s" />
-	<select id="phpversion-dropdown" name="phpversion">
-		<optgroup label="Live">
-			<option value="live" %3$s >PHP %4$s</option>
-		</optgroup>
-		%5$s
-	</select>
-</form>',
+			<form action="%6$sindex.php" method="get" id="choose-version">
+				<input type="hidden" name="page" value="%1$s" />
+				<input type="hidden" id="phpv-tab" name="tab" value="%2$s" />
+				<select id="phpversion-dropdown" name="phpversion">
+					<optgroup label="Live">
+						<option value="live" %3$s >PHP %4$s</option>
+					</optgroup>
+					%5$s
+				</select>
+			</form>',
 		htmlspecialchars( $GLOBALS['type'], ENT_QUOTES, 'UTF-8' ),
 		htmlspecialchars( $GLOBALS['tab'], ENT_QUOTES, 'UTF-8' ),
 		( ( ! isset( $GLOBALS['autogen'] ) || $GLOBALS['autogen'] !== true ) ? ' selected="selected"' : '' ),
@@ -350,6 +362,6 @@ function generate_version_dropdown() {
 		$options_html,
 		htmlspecialchars( BASE_URI, ENT_QUOTES, 'UTF-8' )
 	);
-	
+
 	return $dropdown;
 }

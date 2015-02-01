@@ -110,7 +110,7 @@ code {
 div.head {
 	color: #FFFFFF;
 	background-color: #5C9CCC;
-	padding: 12px 0px 0px 20px;
+	padding: 12px 0 0 20px;
 /*	width: 100%;*/
 	min-height: 63px;
 }
@@ -143,7 +143,7 @@ div.head div#too-much {
 	text-align: center;
 	width: 200px;
 	height: 75px;
-	margin: -5px 8px 6px 0px;
+	margin: -5px 8px 6px 0;
 	padding: 2px 7px;
 /*	border: 1px solid #CC0000;*/
 	-webkit-border-radius: 8px;
@@ -168,16 +168,15 @@ div.head #main-menu {
 }
 
 div.head #main-menu ul {
-	margin: 0px 0px 0px 96px;
+	margin: 0 0 0 96px;
 	list-style: none;
 }
 
 div.head #main-menu ul li {
 	float: left;
 	width: 21.5%;
-	margin: 0px;
-	margin-right: 2px;
-	padding: 0px;
+	margin: 0 2px 0 0;
+	padding: 0;
 	border-collapse: collapse;
 }
 
@@ -221,8 +220,8 @@ div.head li a:hover {
 
 div.content-wrapper {
 	clear: both;
-	margin: 0px;
-	padding: 20px 0px 15px 0px;
+	margin: 0;
+	padding: 20px 0 15px 0;
 	background-color: #FFFFFF;
 }
 
@@ -256,12 +255,12 @@ div.content a.top-link {
 	background:-moz-linear-gradient( center top, #5c9bcc 5%, #add6ff 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5c9bcc', endColorstr='#add6ff');
 	background-color:#5c9bcc;
-	-webkit-border-radius: 33px 33px 0px 0px;
-	-moz-border-radius: 33px 33px 0px 0px;
-	border-radius: 33px 33px 0px 0px;
+	-webkit-border-radius: 33px 33px 0 0;
+	-moz-border-radius: 33px 33px 0 0;
+	border-radius: 33px 33px 0 0;
 	text-indent: -1.72px;
 	color: #ffffee;
-	padding: 20px 0px 0px;
+	padding: 20px 0 0;
 	margin-left: 25px;
 	font-size: 15pt;
 	font-weight: bold;
@@ -269,7 +268,7 @@ div.content a.top-link {
 	min-width: 230px;
 	max-width: 345px;
 	text-align: center;
-	text-shadow:1px 1px 0px #224466;
+	text-shadow:1px 1px 0 #224466;
 }
 
 div.content a.top-link:hover {
@@ -309,8 +308,13 @@ div.about img {
 	margin: 0 60px 20px 20px;
 }
 
+div.about img.about-me {
+	float: right;
+}
+
+
 div.about a.li-button img {
-	border: 0px;
+	border: 0;
 	margin: 0 0 0 20px;
 }
 
@@ -319,12 +323,12 @@ div.about a.li-button img {
 div.footer {
 	clear: both;
 	background-color: #5C9CCC;
-	padding: 12px 0px 10px;
+	padding: 12px 0 10px;
 }
 
 
 div.footer div {
-	margin: 0px 60px 0px 60px;
+	margin: 0 60px 0 60px;
 	padding: 7px 30px 12px;
 	border: 1px solid #EEEEEE;
 	background-color: #FFFFFF;
@@ -363,7 +367,7 @@ div#legend-box {
 
 div#sidebar {
 	float: right;
-	margin: -0px 0px 10px 10px;
+	margin: -0px 0 10px 10px;
 }
 
 div#sidebar div#php-version {
@@ -642,6 +646,7 @@ div.content img.e404 {
 }
 .e404 tr th,
 .e404 tr td {
+	text-align: left;
 	background-color: #eeeeec;
 }
 .e404 tr th.e404-title {
@@ -654,6 +659,19 @@ div.content img.e404 {
 }
 .e404 tr th.e404-cs {
 	background-color: #e9b96e;
+}
+
+.e404 tr.e404-titlerow th:first-child {
+	text-align: center;
+}
+
+.e404 tr td:first-child,
+.e404 tr td:nth-child(2) {
+	text-align: center;
+}
+
+.e404 tr td:nth-child(3) {
+	text-align: right;
 }
 
 

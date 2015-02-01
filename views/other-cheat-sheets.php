@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // Prevent direct calls to this file
 if ( ! defined( 'APP_DIR' ) ) {
 	header( 'Status: 403 Forbidden' );

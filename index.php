@@ -127,10 +127,7 @@ else {
 	include_once APP_DIR . '/views/header.php';
 
 	if ( isset( $page ) && $page !== '' ) {
-		if ( file_exists( APP_DIR . '/views/' . $page . '.html' ) ) {
-			include_once APP_DIR . '/views/' . $page . '.html';
-		}
-		else if ( file_exists( APP_DIR . '/views/' . $page . '.php' ) ) {
+		if ( file_exists( APP_DIR . '/views/' . $page . '.php' ) ) {
 			include_once APP_DIR . '/views/' . $page . '.php';
 		}
 		else {

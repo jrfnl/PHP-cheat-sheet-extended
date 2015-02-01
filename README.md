@@ -10,7 +10,7 @@ Much extended version of the [Blueshoes PHP cheat sheet](http://www.blueshoes.or
 ##### Features:
 * Lots of extra variables being tested
 * Lots of extra comparisons and tests
-* Variable arithmetics
+* Variable arithmetic
 * Results available based on various PHP versions
 
 
