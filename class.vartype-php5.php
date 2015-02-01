@@ -135,7 +135,7 @@ class VartypePHP5 {
 	static public function merge_tests( $test_array ) {
 
 		foreach ( self::$tests as $key => $array ) {
-			if ( isset( $test_array[ $key ] ) && ( isset( $test_array[ $key ]['function'] ) && isset( $array['function'] ) ) ) {
+			if ( isset( $test_array[ $key ], $test_array[ $key ]['function'], $array['function'] ) ) {
 				$test_array[ $key ]['function'] = $array['function'];
 			}
 		}

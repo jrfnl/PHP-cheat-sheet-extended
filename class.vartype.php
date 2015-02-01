@@ -87,7 +87,7 @@ class Vartype {
 	 * @return string
 	 */
 	function get_tab_title() {
-		if ( isset( $GLOBALS['tab'] ) && isset( $this->test_groups[ $GLOBALS['tab'] ]['title'] ) && $this->test_groups[ $GLOBALS['tab'] ]['title'] !== '' ) {
+		if ( isset( $GLOBALS['tab'], $this->test_groups[ $GLOBALS['tab'] ]['title'] ) && $this->test_groups[ $GLOBALS['tab'] ]['title'] !== '' ) {
 			return $this->test_groups[ $GLOBALS['tab'] ]['title'];
 		}
 		else {
@@ -123,7 +123,7 @@ class Vartype {
 	 */
 	function get_test_group( $test_group = null ) {
 		$key = key( $this->test_groups ); // set the first test group as the default if no test group given;
-		if ( isset( $test_group ) && isset( $this->test_groups[ $test_group ] ) ) {
+		if ( isset( $test_group, $this->test_groups[ $test_group ] ) ) {
 			$key = $test_group;
 		}
 		return $key;
@@ -223,16 +223,16 @@ class Vartype {
 	 * Housekeeping
 	 */
 	function clean_up() {
-		if ( isset( $GLOBALS['test_array'] ) && isset( $GLOBALS['test_array']['r1'] ) && is_resource( $GLOBALS['test_array']['r1'] ) ) {
+		if ( isset( $GLOBALS['test_array'], $GLOBALS['test_array']['r1'] ) && is_resource( $GLOBALS['test_array']['r1'] ) ) {
 			fclose( $GLOBALS['test_array']['r1'] );
 		}
-		if ( isset( $GLOBALS['test_array'] ) && isset( $GLOBALS['test_array']['r2'] ) && is_resource( $GLOBALS['test_array']['r2'] ) ) {
+		if ( isset( $GLOBALS['test_array'], $GLOBALS['test_array']['r2'] ) && is_resource( $GLOBALS['test_array']['r2'] ) ) {
 			imagedestroy( $GLOBALS['test_array']['r2'] );
 		}
-		if ( isset( $this->test_data ) && isset( $this->test_data['r1'] ) && is_resource( $this->test_data['r1'] ) ) {
+		if ( isset( $this->test_data, $this->test_data['r1'] ) && is_resource( $this->test_data['r1'] ) ) {
 			fclose( $this->test_data['r1'] );
 		}
-		if ( isset( $this->test_data ) && isset( $this->test_data['r2'] ) && is_resource( $this->test_data['r2'] ) ) {
+		if ( isset( $this->test_data, $this->test_data['r2'] ) && is_resource( $this->test_data['r2'] ) ) {
 			imagedestroy( $this->test_data['r2'] );
 		}
 	}

@@ -192,7 +192,7 @@ class VartypeCompare extends Vartype {
 	 * @return string
 	 */
 	function get_tab_title() {
-		if ( isset( $GLOBALS['tab'] ) && isset( $this->tests[ $GLOBALS['tab'] ]['title'] ) && $this->tests[ $GLOBALS['tab'] ]['title'] !== '' ) {
+		if ( isset( $GLOBALS['tab'], $this->tests[ $GLOBALS['tab'] ]['title'] ) && $this->tests[ $GLOBALS['tab'] ]['title'] !== '' ) {
 			return $this->tests[ $GLOBALS['tab'] ]['title'];
 		}
 		else {
@@ -210,7 +210,7 @@ class VartypeCompare extends Vartype {
 	 */
 	function get_test_group( $test_group = null ) {
 		$key = key( $this->tests ); // get first item in array;
-		if ( isset( $test_group ) && isset( $this->tests[ $test_group ] ) ) {
+		if ( isset( $test_group, $this->tests[ $test_group ] ) ) {
 			$key = $test_group;
 		}
 		return $key;
