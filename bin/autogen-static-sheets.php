@@ -100,11 +100,10 @@ function save_to_file( $filename, $content ) {
  */
 function fix_content( $content ) {
 
+	// @todo Verify which rules are needed in the renewed version
 	$regex_search = array(
 		// Make sure there is nothing before the doctype
 		0  => '`^[^<]+<!DOCTYPE html PUBLIC`',
-		// Remove the top-active class
-		4  => '`\t+(?:<li([^>]*)>)?<a href="[\./]*index\.php\?(?:type|page)=([a-z-]+)" class="top-link(?: top-active)?">([^<]+)(?:<br />Cheat sheet)?</a>(?:</li>)?`',
 		// Make sure any potential links to php.net are properly linked
 		5  => '`<a href=(["\'])function\.`',
 		// Tidy up html whitespace around array prints
@@ -112,21 +111,23 @@ function fix_content( $content ) {
 		8  => '`Array: \(<br />\s+\)<br />\s+`',
 		9  => '`<t([dh])([^>]*)?>array\(\)<br />\s+</t\1>`',
 		// Make sure the correct PHP version nr for the live sheets is shown in the version dropdown
-		10 => '`<option value="live"(?: selected="selected")?>PHP [0-9\.]+</option>`',
+		10 => '`<option value="live"(?: selected="selected")?\s*>PHP [0-9\.]+</option>`',
 		// Make sure there are no references to the local version left (no regex needed)
 		11 => '`://phpcheatsheets.localdev/`',
+		// Make chosen PHP version persistent
+		12 => '`<a href="http://([a-z\.-]+)/(arithmetic|compare|test)/" class="top-link(?: top-active)?">`',
 	);
 
 
 	$regex_replace = array(
 		0  => '<!DOCTYPE html PUBLIC',
-		4  => '			<li$1><a href="' . BASE_URI . 'index.php?page=$2" class="top-link">$3</a></li>',
 		5  => '<a href=$1http://php.net/function.',
 		7  => '<th>array()<br />					</th>',
 		8  => 'array()<br />',
 		9  => '<t$1$2>array()<br /></t$1>',
 		10 => '<option value="live">PHP 5.4.13</option>', // IMPORTANT! Change this if the PHP version on the server changes!!
 		11 => '://phpcheatsheets.com/',
+		12 => '<a href="http://$1/index.php?page=$2&amp;phpversion=php' . PHP_VERSION . '" class="top-link$3">',
 	);
 
 
