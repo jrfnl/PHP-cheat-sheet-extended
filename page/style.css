@@ -586,7 +586,7 @@ div#tabs {
 
 .ui-tabs div.tables .ui-tabs-panel,
 .ui-tabs .ui-tabs-panel {
-	padding: 0;
+	padding: 4px 0 0;
 }
 
 
