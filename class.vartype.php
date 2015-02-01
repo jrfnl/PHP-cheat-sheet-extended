@@ -299,7 +299,7 @@ class Vartype {
 		if ( isset( $this->test_groups[ $test_group ] ) ) {
 			$GLOBALS['encountered_errors'] = array();
 
-			echo'
+			echo '
 		<div id="', $test_group, '">';
 
 			if ( isset( $this->test_groups[ $test_group ]['urls'] ) && ( is_array( $this->test_groups[ $test_group ]['urls'] ) && count( $this->test_groups[ $test_group ]['urls'] ) > 0 ) ) {

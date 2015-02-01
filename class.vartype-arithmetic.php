@@ -90,7 +90,7 @@ class VartypeArithmetic extends VartypeCompare {
 			'function'      => 'if ( PHP_VERSION_ID >= 50600 ) { pr_var( $a ** $b, \'\', true, true ); } else { print \'E: \'**\' operator not available (PHP 5.6+)\'; }',
 		),
 
-		
+
 		// Doesn't really belong in arithmetic, but for now it's the most logical place anyhow
 		'concatenate'        => array(
 			'title'         => '.',

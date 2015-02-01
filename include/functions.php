@@ -330,10 +330,10 @@ function generate_version_dropdown() {
 
 			$selected = '';
 			if ( ( isset( $GLOBALS['autogen'] ) && $GLOBALS['autogen'] === true ) && $match[1] === PHP_VERSION ) {
-				$selected = 'selected="selected"';
+				$selected = ' selected="selected"';
 			}
 			$options[] = sprintf( '
-					<option value="php%1$s" %2$s>PHP %1$s</option>',
+						<option value="php%1$s"%2$s>PHP %1$s</option>',
 				htmlspecialchars( $match[1], ENT_QUOTES, 'UTF-8' ),
 				$selected
 			);

@@ -100,7 +100,7 @@ function save_to_file( $filename, $content ) {
  */
 function fix_content( $content ) {
 
-	// @todo Verify which rules are needed in the renewed version
+	// @todo Verify which rules are still needed in the renewed version
 	$regex_search = array(
 		// Make sure there is nothing before the doctype
 		0  => '`^[^<]+<!DOCTYPE html PUBLIC`',
@@ -116,8 +116,9 @@ function fix_content( $content ) {
 		11 => '`://phpcheatsheets.localdev/`',
 		// Make chosen PHP version persistent
 		12 => '`<a href="http://([a-z\.-]+)/(arithmetic|compare|test)/" class="top-link(?: top-active)?">`',
+		// Make sure any potential links to php.net are properly linked
+		13  => '`\[(http://php\.net/manual/([^\]]+))\]`',
 	);
-
 
 	$regex_replace = array(
 		0  => '<!DOCTYPE html PUBLIC',
@@ -128,6 +129,7 @@ function fix_content( $content ) {
 		10 => '<option value="live">PHP 5.4.13</option>', // IMPORTANT! Change this if the PHP version on the server changes!!
 		11 => '://phpcheatsheets.com/',
 		12 => '<a href="http://$1/index.php?page=$2&amp;phpversion=php' . PHP_VERSION . '" class="top-link$3">',
+		13 => '[<a href="$1">$2</a>]',
 	);
 
 
@@ -237,7 +239,7 @@ if ( is_dir( QUIZ_DIR ) && is_file( QUIZ_DIR . 'quiz.php' ) ) {
 ignore_user_abort( false );
 
 if ( $GLOBALS['verbose'] > 0 ) {
-	echo 'exit code';
+	echo "\nexit code";
 	var_dump( ( ( $success * 10 ) + $failure ) );
 }
 
