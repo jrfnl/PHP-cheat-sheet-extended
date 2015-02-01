@@ -104,6 +104,8 @@ if ( isset( $type ) && file_exists( APP_DIR . '/' . $file ) ) {
 	 * Return a full page if not
 	 */
 	else {
+		$tab_title = $current_tests->get_tab_title();
+
 		include_once APP_DIR . '/views/header.php';
 		include_once APP_DIR . '/views/notes-legend.php';
 

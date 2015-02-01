@@ -187,6 +187,21 @@ class VartypeCompare extends Vartype {
 
 
 	/**
+	 * Get the tab title for the initial tab for use in the page header
+	 *
+	 * @return string
+	 */
+	function get_tab_title() {
+		if ( isset( $GLOBALS['tab'] ) && isset( $this->tests[ $GLOBALS['tab'] ]['title'] ) && $this->tests[ $GLOBALS['tab'] ]['title'] !== '' ) {
+			return $this->tests[ $GLOBALS['tab'] ]['title'];
+		}
+		else {
+			return '';
+		}
+	}
+
+
+	/**
 	 * Determine which tests to run
 	 *
 	 * @param string|null $test_group

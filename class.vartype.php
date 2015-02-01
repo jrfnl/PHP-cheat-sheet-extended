@@ -82,6 +82,21 @@ class Vartype {
 
 
 	/**
+	 * Get the tab title for the initial tab for use in the page header
+	 *
+	 * @return string
+	 */
+	function get_tab_title() {
+		if ( isset( $GLOBALS['tab'] ) && isset( $this->test_groups[ $GLOBALS['tab'] ]['title'] ) && $this->test_groups[ $GLOBALS['tab'] ]['title'] !== '' ) {
+			return $this->test_groups[ $GLOBALS['tab'] ]['title'];
+		}
+		else {
+			return '';
+		}
+	}
+
+
+	/**
 	 * Generate a cheatsheet page
 	 *
 	 * @param bool $all

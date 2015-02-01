@@ -18,11 +18,9 @@ if ( isset( $autogen ) && $autogen === true ) : ?>
 
 <?php
 endif;
-// @todo adjust - title does not change when ajax tabs change, so this is confusing
-// @todo - check to see if we might happen to have the actual tab title available already
 $meta_title = htmlspecialchars( $page_title, ENT_QUOTES, 'UTF-8' );
-if ( isset( $tab ) ) {
-	$meta_title .= ' :: ' . str_replace( '_', ' ', $tab );
+if ( isset( $tab_title ) && $tab_title !== '' ) {
+	$meta_title .= ' :: ' . $tab_title;
 }
 if ( isset( $type ) ) {
 	$meta_title .= ' Cheatsheet for PHP ' . htmlspecialchars( PHP_VERSION, ENT_QUOTES, 'UTF-8' );
