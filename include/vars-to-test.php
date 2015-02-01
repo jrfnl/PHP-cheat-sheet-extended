@@ -21,7 +21,7 @@ $test_array = array(
 	'i8'  => 0xCC00F9, // hexadecimal integer
 	'i9'  => 052, // octal integer = 42 = char *
 
-	'f1'  => 1.8,
+	'f1'  => 1.3,
 	'f2'  => 0.005,
 	'f3'  => 0.0,
 	'f4'  => -1.3,
