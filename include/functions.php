@@ -293,7 +293,7 @@ function determine_script_path() {
 		return substr( $_SERVER['REQUEST_URI'], 0, stripos( $_SERVER['REQUEST_URI'], 'index.php' ) );
 	}
 	else {
-		return '';
+		return '/';
 	}
 }
 
