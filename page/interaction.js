@@ -86,9 +86,11 @@ ui-icon-circle-minus
 						block.find('th').css( 'background', '' );
 					}
 				});
-				// Remove hover and sticky classes as they will otherwise not stay consistent
-//				jQuery('.thfloat th').removeClass('hover sticky').css( 'background', '' );
 			}
+
+			/* Remove hover and sticky classes as they will otherwise not stay consistent */
+			jQuery('.hover, .sticky').removeClass('hover sticky');
+
 
 			/* Change the location bar url to the selected tab to enable reloading to the currently
 			   selected tab and avoid the location bar change causing the page to reload */

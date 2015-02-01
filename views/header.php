@@ -41,7 +41,7 @@ if ( isset( $type ) ) {
 unset( $meta_title );
 if ( isset( $type ) || isset( $page ) ) : ?>
 	<link type="text/css" rel="stylesheet" href="<?php echo BASE_URI; ?>page/jquery-css/jquery-ui<?php echo $min; ?>.css" />
-	<link type="text/css" rel="stylesheet" href="<?php echo BASE_URI; ?>page/jquery-css/jquery.ui.theme<?php echo $min; ?>.css" />
+	<link type="text/css" rel="stylesheet" href="<?php echo BASE_URI; ?>page/jquery-css/jquery-ui.theme<?php echo $min; ?>.css" />
 <?php
 endif; ?>
 	<link type="text/css" rel="stylesheet" href="<?php echo BASE_URI; ?>page/style<?php echo $min; ?>.css" />
@@ -49,12 +49,12 @@ endif; ?>
 <?php
 if ( isset( $type ) || isset( $page ) ) : ?>
 	<!-- jQuery via CDN with local fall-back -->
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script type="text/javascript">(window.jQuery) || document.write('\x3Cscript type="text/javascript" src="<?php echo BASE_URI; ?>page/jquery-css/jquery-1.11.0<?php echo $min; ?>.js">\x3C/script>')</script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script type="text/javascript">(window.jQuery) || document.write('\x3Cscript type="text/javascript" src="<?php echo BASE_URI; ?>page/jquery-css/jquery-1.11.2<?php echo $min; ?>.js">\x3C/script>')</script>
 
 	<!-- jQueryUI via CDN with local fall-back -->
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-	<script type="text/javascript">(window.jQuery.ui) || document.write('\x3Cscript type="text/javascript" src="<?php echo BASE_URI; ?>page/jquery-css/jquery-ui-1.10.4<?php echo $min; ?>.js">\x3C/script>')</script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+	<script type="text/javascript">(window.jQuery.ui) || document.write('\x3Cscript type="text/javascript" src="<?php echo BASE_URI; ?>page/jquery-css/jquery-ui-1.11.2<?php echo $min; ?>.js">\x3C/script>')</script>
 
 	<!-- floating table headers -->
 	<script type="text/javascript" src="<?php echo BASE_URI; ?>page/jquery.thfloat-0.7.2<?php echo $min; ?>.js"></script>
@@ -90,7 +90,6 @@ if ( isset( $type ) ) : ?>
 	</div>
 <?php
 endif; ?>
-	<!--<a href="http://github.com/jrfnl/PHP-cheat-sheet-extended"><img class="forkme" src="<?php echo BASE_URI; ?>page/images/forkme.png" width="123" height="123" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png"></a>-->
 	<a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" class="forkme" title="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png">&nbsp;</a>
 
 	<h1><a href="<?php echo BASE_URI; ?>"><img src="<?php echo BASE_URI; ?>page/images/php-med-trans.png" width="95" height="51" alt="PHP" /> Cheatsheets</a></h1>
