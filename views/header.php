@@ -19,6 +19,7 @@ if ( isset( $autogen ) && $autogen === true ): ?>
 <?php
 endif;
 // @todo adjust - title does not change when ajax tabs change, so this is confusing
+// @todo - check to see if we might happen to have the actual tab title available already
 $meta_title = htmlspecialchars( $page_title, ENT_QUOTES, 'UTF-8' );
 if ( isset( $tab ) ) {
 	$meta_title .= ' :: ' . str_replace( '_', ' ', $tab );
@@ -93,17 +94,17 @@ if ( isset( $type ) ): ?>
 <?php
 endif; ?>
 
-	<h1><a href="<?php echo BASE_URI; ?>index.php"><img src="<?php echo BASE_URI; ?>page/images/php-med-trans.png" width="95" height="51" alt="PHP" /> Cheatsheets</a></h1>
+	<h1><a href="<?php echo BASE_URI; ?>"><img src="<?php echo BASE_URI; ?>page/images/php-med-trans.png" width="95" height="51" alt="PHP" /> Cheatsheets</a></h1>
 
 <?php
 if ( isset( $type ) || isset( $page ) ): ?>
 	<div id="main-menu">
 		<ul>
-			<li><a href="<?php echo BASE_URI; ?>index.php?page=compare" class="top-link<?php if ( isset( $type ) && $type === 'compare' ) { echo ' top-active'; } ?>">Variable Comparisons</a></li>
-			<li><a href="<?php echo BASE_URI; ?>index.php?page=arithmetic" class="top-link<?php if ( isset( $type ) && $type === 'arithmetic' ) { echo ' top-active'; } ?>">Variable Arithmetics</a></li>
-			<li><a href="<?php echo BASE_URI; ?>index.php?page=test" class="top-link<?php if ( isset( $type ) && $type === 'test' ) { echo ' top-active'; } ?>">Variable Testing</a></li>
-			<li><a href="<?php echo BASE_URI; ?>index.php?page=other-cheat-sheets" class="top-link<?php if ( isset( $page ) && $page === 'other-cheat-sheets' ) { echo ' top-active'; } ?>">More cheatsheets</a></li>
-			<li class="top-link-small"><a href="<?php echo BASE_URI; ?>index.php?page=about" class="top-link<?php if ( isset( $page ) && $page === 'about' ) { echo ' top-active'; } ?>">About</a></li>
+			<li><a href="<?php echo BASE_URI; ?>compare/" class="top-link<?php if ( isset( $type ) && $type === 'compare' ) { echo ' top-active'; } ?>">Variable Comparisons</a></li>
+			<li><a href="<?php echo BASE_URI; ?>arithmetic/" class="top-link<?php if ( isset( $type ) && $type === 'arithmetic' ) { echo ' top-active'; } ?>">Variable Arithmetics</a></li>
+			<li><a href="<?php echo BASE_URI; ?>test/" class="top-link<?php if ( isset( $type ) && $type === 'test' ) { echo ' top-active'; } ?>">Variable Testing</a></li>
+			<li><a href="<?php echo BASE_URI; ?>other-cheat-sheets/" class="top-link<?php if ( isset( $page ) && $page === 'other-cheat-sheets' ) { echo ' top-active'; } ?>">More cheatsheets</a></li>
+			<li class="top-link-small"><a href="<?php echo BASE_URI; ?>about/" class="top-link<?php if ( isset( $page ) && $page === 'about' ) { echo ' top-active'; } ?>">About</a></li>
 		</ul>
 	</div>
 <?php

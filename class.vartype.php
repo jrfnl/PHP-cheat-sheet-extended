@@ -230,7 +230,7 @@ class Vartype {
 	 */
 	function print_tabs( $all = false ) {
 		// Tabs at top of page
-		print '
+		echo '
 	<ul>';
 
 		foreach ( $this->test_groups as $key => $test_group ) {
@@ -240,17 +240,17 @@ class Vartype {
 			}
 
 			if ( $all === true ) {
-				print '
-		<li><a href="#' . $key . '"><strong>' . $test_group['title'] . '</strong></a></li>';
+				echo '
+		<li><a href="#', $key, '" data-tab="', $key, '" data-tab-title="', $test_group['title'], '"><strong>', $test_group['title'], '</strong></a></li>';
 			}
 			else {
-				print '
-		<li' . $active_class . '><a href="' . BASE_URI . 'index.php?page=' . $GLOBALS['type'] . '&amp;tab=' . $key . '&amp;do=ajax"><strong>' . $test_group['title'] . '</strong></a></li>';
+				echo '
+		<li', $active_class, '><a href="', BASE_URI, $GLOBALS['type'], '/', $key, '/ajax" data-tab="', $key, '" data-tab-title="', $test_group['title'], '"><strong>'. $test_group['title'], '</strong></a></li>';
 			}
 		}
 		unset( $key, $test_group );
 
-		print '
+		echo '
 	</ul>';
 	}
 

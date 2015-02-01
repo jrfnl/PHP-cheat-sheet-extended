@@ -8,15 +8,15 @@ if ( ! defined( 'APP_DIR' ) ) {
 ?>
 		<div id="main-menu">
 			<p>
-				<a href="<?php echo BASE_URI; ?>index.php?page=compare" class="top-link<?php if ( $type === 'compare' ) { echo ' top-active'; } ?>">
+				<a href="<?php echo BASE_URI; ?>compare/" class="top-link<?php if ( $type === 'compare' ) { echo ' top-active'; } ?>">
 					Variable&nbsp;Comparison<br />Cheat&nbsp;sheet
 					<img src="<?php echo BASE_URI; ?>page/images/screenshot-var-compare.png" width="220" height="220" alt="Variable Comparison Cheatsheet Screenshot" />
 				</a>
-				<a href="<?php echo BASE_URI; ?>index.php?page=arithmetic" class="top-link<?php if ( $type === 'arithmetic' ) { echo ' top-active'; } ?>">
+				<a href="<?php echo BASE_URI; ?>arithmetic/" class="top-link<?php if ( $type === 'arithmetic' ) { echo ' top-active'; } ?>">
 					Variable&nbsp;Arithmetic<br />Cheat&nbsp;sheet
 					<img src="<?php echo BASE_URI; ?>page/images/screenshot-var-arithm.png" width="220" height="220" alt="Variable Arithmetic Cheatsheet Screenshot" />
 				</a>
-				<a href="<?php echo BASE_URI; ?>index.php?page=test" class="top-link<?php if ( $type === 'test' ) { echo ' top-active'; } ?>">
+				<a href="<?php echo BASE_URI; ?>test/" class="top-link<?php if ( $type === 'test' ) { echo ' top-active'; } ?>">
 					Variable&nbsp;Testing<br />Cheat&nbsp;sheet
 					<img src="<?php echo BASE_URI; ?>page/images/screenshot-var-tests.png" width="220" height="220" alt="Variable Testing Cheatsheet Screenshot" />
 				</a>

@@ -357,13 +357,16 @@ div.footer p#share {
 	margin-top: 5px;
 }
 
+div#legend-box {
+	overflow: auto;
+}
 
 div#sidebar {
 	float: right;
 	margin: -0px 0px 10px 10px;
 }
 
-div#sidebar h3 {
+div#sidebar div#php-version {
 	font-size: 9pt;
 	font-weight: normal;
 	text-align: center;
@@ -376,20 +379,18 @@ div#sidebar h3 {
 	-moz-border-radius: 8px;
 	border-radius: 8px;
 	border: 1px solid #5C9CCC;
+	margin: 0;
 }
 
-div#sidebar h3#php-version {
-	margin-top: 0px;
-}
 
-div#sidebar h3#php-version strong {
+div#sidebar div#php-version p strong {
 	display: block;
 	padding-top: 5px;
 	font-size: 12pt;
 	color: #5C9CCC;
 }
 
-div#sidebar h3 span {
+div#sidebar div span {
 	display: block;
 	margin-top: 5px;
 	font-size: 85%;
@@ -399,11 +400,11 @@ div#sidebar form#choose-version {
 	margin-top: 5px;
 }
 
-.static-archive div#sidebar h3 {
+.static-archive div#sidebar div#php-version {
 	border: 2px solid #CD0A0A;
 }
 
-.static-archive div#sidebar h3#php-version:before {
+.static-archive div#sidebar div#php-version:before {
 	content:"Static archive";
 	display: block;
 	padding-bottom: 2px;
@@ -525,6 +526,12 @@ td {
 .spinner {
 	text-align: center;
 	margin: 80px 0;
+	background-image: url("images/ajax-loader-5C9CCC.gif");
+	background-size: 128px 15px;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-color: #5C9CCC;
+	background-attachment: scroll;
 }
 
 

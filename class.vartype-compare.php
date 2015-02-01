@@ -209,7 +209,7 @@ class VartypeCompare extends Vartype {
 	 */
 	function print_tabs( $all = false ) {
 		// Tabs at top of page
-		print '
+		echo '
 	<ul>';
 
 		foreach ( $this->tests as $key => $test ) {
@@ -224,17 +224,17 @@ class VartypeCompare extends Vartype {
 			}
 
 			if ( $all === true ) {
-				print '
-		<li' . $tooltip . '><a href="#' . $key . '"><strong>' . $test['title'] . '</strong></a></li>';
+				echo '
+		<li', $tooltip, '><a href="#', $key, '" data-tab="', $key, '" data-tab-title="', $test['title'], '"><strong>', $test['title'], '</strong></a></li>';
 			}
 			else {
-				print '
-		<li' . $active_class . $tooltip . '><a href="' . BASE_URI . 'index.php?page=' . $GLOBALS['type'] . '&amp;tab=' . $key . '&amp;do=ajax"><strong>' . $test['title'] . '</strong></a></li>';
+				echo '
+		<li', $active_class, $tooltip, '><a href="', BASE_URI, $GLOBALS['type'], '/', $key, '/ajax" data-tab="', $key, '" data-tab-title="', $test['title'], '"><strong>', $test['title'], '</strong></a></li>';
 			}
 		}
 		unset( $key, $test, $tooltip );
 
-		print '
+		echo '
 	</ul>';
 	}
 
