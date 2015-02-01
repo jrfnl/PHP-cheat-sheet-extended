@@ -29,6 +29,12 @@ if ( ! defined( 'APP_DIR' ) ) {
 			<li><a href="http://www.sk89q.com/2010/04/printable-php-security-checklist/">PHP Security Checklist</a> by sk89q</li>
 		</ul>
 
+		<h3>Valuable Best Practices Websites</h3>
+		<ul class="linklist">
+			<li><a href="http://www.phptherightway.com/">PHP The Right Way</a></li>
+			<li><a href="https://github.com/dseguy/clearPHP/blob/master/rules/README.md">Clear PHP</a></li>
+		</ul>
+
 		<div class="important">
 			<p>Do you want to host your PHP Cheatsheet on phpcheatsheets.com ? Want to add a cheatsheet to this list ?</p>
 			<p>Just send in a <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">pull request</a>.</p>
