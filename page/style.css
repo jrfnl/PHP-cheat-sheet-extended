@@ -351,12 +351,25 @@ div.footer div {
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 	border-radius: 8px;
+	overflow: auto;
 }
 
-div.footer p#share {
+div.footer p#share,
+div.footer #paypal-donate {
 	float: right;
 	margin-left: 30px;
 	margin-right: 10px;
+}
+
+div.footer #paypal-donate {
+	border: 0;
+	padding: 20px 30px 0;
+	background-color: transparent;
+}
+
+div.footer p#call-to-donate,
+div.footer p#copyright {
+	margin-top: 10px;
 }
 
 
