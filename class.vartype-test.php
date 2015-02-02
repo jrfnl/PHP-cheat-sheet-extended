@@ -2156,7 +2156,7 @@ else {
 
 
 		'arithmetic' => array(
-			'title'     => 'Arithmetic',
+			'title'     => 'Basic Arithmetic',
 			'tests'	    => array(
 				'pre_increment',
 				'post_increment',
@@ -2186,7 +2186,7 @@ else {
 	 */
 	var $ctype_test_group = array(
 		'ctype_extension'      => array(
-			'title'     => 'ctype extension',
+			'title'     => 'CType Extension',
 			'tests'     => array(
 				'ctype_digit',
 				'ctype_xdigit',
@@ -2218,7 +2218,7 @@ else {
 	 */
 	var $filter_test_group = array(
 		'filter_extension_bool_int_float'   => array(
-			'title'     => 'filter extension - bool/int/float',
+			'title'     => 'Filter Extension - bool/int/float',
 			'tests'	    => array(
 				'filter_combined_bool_null',
 
@@ -2241,8 +2241,8 @@ else {
 			'target'    => '',
 		),
 
-		'filters_extension_strings'   => array(
-			'title'     => 'filter extension - string',
+		'filter_extension_strings'   => array(
+			'title'     => 'Filter Extension - string',
 			'tests'	    => array(
 				'filter_combined_string_null',
 				'filter_combined_str_null_sanitize',
@@ -2269,9 +2269,9 @@ else {
 		if ( extension_loaded( 'ctype' ) ) {
 			if ( PHP_VERSION_ID === 50005 ) {
 				unset(
-					$this->ctype_test_group['ctype']['tests'][6], // ctype_lower
-					$this->ctype_test_group['ctype']['tests'][8], // ctype_cntrl
-					$this->ctype_test_group['ctype']['tests'][9] // ctype_punct
+					$this->ctype_test_group['ctype_extension']['tests'][6], // ctype_lower
+					$this->ctype_test_group['ctype_extension']['tests'][8], // ctype_cntrl
+					$this->ctype_test_group['ctype_extension']['tests'][9] // ctype_punct
 				);
 			}
 			$this->test_groups = array_merge( $this->test_groups, $this->ctype_test_group );

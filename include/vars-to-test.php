@@ -25,9 +25,11 @@ $test_array = array(
 	'f2'  => 0.005,
 	'f3'  => 0.0,
 	'f4'  => -1.3,
-	'f5'  => NAN, // is_nan
-	'f6'  => log( 0 ), // is_infinite
-	'f7'  => 1.2345E8, // exponent notation float
+	'f5'  => acos(8), // is_nan
+	'f6'  => NAN, // is_nan
+	'f7'  => log( 0 ), // is_infinite
+	'f8'  => INF, // is_infinite
+	'f9'  => 1.2345E8, // exponent notation float
 
 	'se'  => '',
 
@@ -74,9 +76,12 @@ $test_array = array(
 $legend_array = array(
 	'i8'  => '$x = 0xCC00F9; // hexadecimal integer',
 	'i9'  => '$x = 052; // octal integer',
-	'f5'  => '$x = NAN; // = not a number',
-	'f6'  => '$x = log(0); // = infinite',
-	'f7'  => '$x = 1.2345E8; // exponent notation float',
+	'ia'  => '$x = 0b0111001; // binary integer (PHP5.4+)',
+	'f5'  => '$x = acos(8); // = NAN',
+	'f6'  => '$x = NAN; // = not a number',
+	'f7'  => '$x = log(0); // = infinite',
+	'f8'  => '$x = INF; // = infinite',
+	'f9'  => '$x = 1.2345E8; // exponent notation float',
 	'sk'  => '$x = "123, \"str\"\r\n";',
 	'sn'  => '$x = "\f\t\r\n";',
 	'sp'  => '$x = "\x7f\t\r\n"',
@@ -114,24 +119,24 @@ $extra_variables['type_testing'] = array(
 );
 
 
-$extra_variables['bool'] = $extra_variables['filters1'] = array(
+$extra_variables['boolean_tests'] = $extra_variables['filter_extension_bool_int_float'] = array(
 	'sq'  => 'on', // filter_var boolean
 	'sr'  => 'off', // filter_var boolean
 	'ss'  => 'yes', // filter_var boolean
 	'st'  => 'no', // filter_var boolean
 );
 
-$extra_variables['filters1']['sl'] = 'AF036C';
+$extra_variables['filter_extension_bool_int_float']['sl'] = 'AF036C';
 
-$extra_variables['string2'] = array(
+$extra_variables['string_tests'] = array(
 	'sz'  => 'Iñtërnâtiônàlizætiøn', // utf-8 / binary string
 );
 
-$extra_variables['object'] = $extra_variables['array2'] = array(
+$extra_variables['object_tests'] = $extra_variables['array_tests'] = array(
 	'o1'  => new TestObject(),
 );
 
-$extra_variables['object']['a6'] = array(
+$extra_variables['object_tests']['a6'] = array(
 	's'  => 'simple',
 	'm'  => array(
 		'test1',
@@ -141,12 +146,12 @@ $extra_variables['object']['a6'] = array(
 
 
 if ( extension_loaded( 'gd' ) ) {
-	$extra_variables['resources'] = array(
+	$extra_variables['resource_tests'] = array(
 		'r2'  => imagecreatetruecolor( 10, 10 ),
 	);
 }
 
-$extra_variables['ctype'] = array(
+$extra_variables['ctype_extension'] = array(
 	'i4'  => 10, // char line feed
 	'i6'  => 111, // char o
 	'i7'  => 12345,
