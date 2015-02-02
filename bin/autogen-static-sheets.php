@@ -111,7 +111,7 @@ function fix_content( $content ) {
 		8  => '`Array: \(<br />\s+\)<br />\s+`',
 		9  => '`<t([dh])([^>]*)?>array\(\)<br />\s+</t\1>`',
 		// Make sure the correct PHP version nr for the live sheets is shown in the version dropdown
-		10 => '`<option value="live"(?: selected="selected")?\s*>PHP [0-9\.]+</option>`',
+		10 => '`<option value="live"(?: selected="selected")?\s*>PHP [0-9\.-]+</option>`',
 		// Make sure there are no references to the local version left (no regex needed)
 		11 => '`://phpcheatsheets.localdev/`',
 		// Make chosen PHP version persistent
@@ -181,6 +181,16 @@ $types = array(
 	'test'       => 'PHP Variable Testing',
 );
 
+if ( is_dir( QUIZ_DIR ) && is_file( QUIZ_DIR . '/quiz.php' ) ) {
+	ob_start();
+
+	include QUIZ_DIR . '/quiz.php';
+
+	$static_page = ob_get_clean();
+	$filename    = QUIZ_SAVE_DIR . '/php' . PHP_VERSION . '.html';
+
+	save_to_file( $filename, $static_page );
+}
 
 foreach ( $types as $type => $page_title ) {
 
@@ -213,28 +223,6 @@ foreach ( $types as $type => $page_title ) {
 }
 unset( $type, $page_title, $class, $file, $current_tests, $tab, $static_page, $filename );
 
-
-
-if ( is_dir( QUIZ_DIR ) && is_file( QUIZ_DIR . 'quiz.php' ) ) {
-	ob_start();
-
-	$page_title = 'My quiz test';
-
-	include APP_DIR . '/views/header.php';
-	include QUIZ_DIR . '/20131005-questions.php';
-
-	if ( PHP_VERSION_ID >= 50000 ) {
-		include QUIZ_DIR . '/20131005-questions-php5.php';
-		spl_question();
-	}
-
-	include APP_DIR . '/views/footer.php';
-
-	$static_page = ob_get_clean();
-	$filename    = QUIZ_SAVE_DIR . '/php' . PHP_VERSION . '.html';
-
-	save_to_file( $filename, $static_page );
-}
 
 ignore_user_abort( false );
 
