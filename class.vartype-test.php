@@ -2267,7 +2267,7 @@ else {
 	function __construct() {
 
 		if ( extension_loaded( 'ctype' ) ) {
-			if ( PHP_VERSION_ID === 50005 ) {
+			if ( PHP_VERSION_ID === 50005 || PHP_VERSION_ID === 50004 ) {
 				unset(
 					$this->ctype_test_group['ctype_extension']['tests'][6], // ctype_lower
 					$this->ctype_test_group['ctype_extension']['tests'][8], // ctype_cntrl
