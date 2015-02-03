@@ -99,7 +99,7 @@ function save_to_file( $filename, $content ) {
  * @return string
  */
 function fix_content( $content ) {
-	
+
 	$search = array(
 		// Make sure there are no references to the local version left
 		0  => '://phpcheatsheets.localdev/',

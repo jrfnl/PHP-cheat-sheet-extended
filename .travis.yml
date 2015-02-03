@@ -44,4 +44,4 @@ script:
     # -n flag: Do not print warnings (shortcut for --warning-severity=0)
     # --standard: Use WordPress as the standard.
     # --extensions: Only sniff PHP files.
-    - $TRAVIS_BUILD_DIR/phpcs/scripts/phpcs -p -s -v . --standard=./bin/codesniffer.xml --extensions=php
+    - $TRAVIS_BUILD_DIR/phpcs/scripts/phpcs -p -s -v -n . --standard=./bin/codesniffer.xml --extensions=php
