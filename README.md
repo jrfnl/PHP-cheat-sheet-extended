@@ -34,3 +34,49 @@ In general, a balance is sought between significance and variety.
 #### Credits:
 [Elephpant photo](http://www.flickr.com/photos/jakobwesthoff/3231273333/) by Jacob Westhoff
 [Sad Elephpant photo](http://www.flickr.com/photos/gluek/100179589/) by Gluek
+
+
+#### Changelog:
+
+##### 1.2 (Feb 2015)
+* New tests:
+	- `pow()` in variable arithmetic
+	- `**` (PHP 5.6+) in variable arithmetic
+	- `.` (concatenation) in variable arithmetic - for want of better place
+* Added two new float variables
+* Lots of usability improvements:
+	- Select PHP version via dropdown
+	- PHP version persists across sheets
+	- Variable legend now auto-expand when user clicks on variable 'footnote' link
+	- 'Pretty' (semantic) urls
+	- Better window titles
+	- Better error handling (404)
+* Static sheets now available in lots more versions (30!), including PHP 5.5, 5.6 which weren't available until now. Retired some older versions which have close versions available anyhow.
+* Fixed:
+	- Variable legend for binary integer was missing
+
+Also:
+* Added donate to charity button
+* Change over to absolute rather than relative urls
+* Minor html and css fixes
+* Script to autogen (nearly) all static sheets
+* Updated cast-to-type submodule
+* Upgraded jQuery and jQuery UI to 1.11.2
+* General tidying up
+
+
+##### 1.1 (Feb 2014) - move to own domain
+* New tests:
+	- `abs()` in variable testing
+* New pages:
+	- 'other cheatsheets'
+	- 'about'
+* New site styling for own domain
+
+Also:
+* Added twitter & LinkedIn share buttons
+* Upgraded jQuery to 1.11.0 and jQuery UI to v 1.10.4
+* Cleaned up HTML
+
+
+##### 1.0 (Sep 2013) - first public version
