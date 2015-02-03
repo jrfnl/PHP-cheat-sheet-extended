@@ -2266,15 +2266,24 @@ else {
 	 */
 	function __construct() {
 
-		if ( extension_loaded( 'ctype' ) ) {
+		if ( extension_loaded( 'ctype' ) && PHP_VERSION_ID !== 40309 ) {
 			if ( PHP_VERSION_ID === 50005 || PHP_VERSION_ID === 50004 ) {
 				unset(
 					$this->ctype_test_group['ctype_extension']['tests'][6], // ctype_lower
 					$this->ctype_test_group['ctype_extension']['tests'][8], // ctype_cntrl
-					$this->ctype_test_group['ctype_extension']['tests'][9] // ctype_punct
+					$this->ctype_test_group['ctype_extension']['tests'][9]  // ctype_punct
 				);
 			}
 			$this->test_groups = array_merge( $this->test_groups, $this->ctype_test_group );
+		}
+		else {
+			unset(
+				$this->test_groups['integer_tests']['tests'][10], // ctype_digit
+				$this->test_groups['float_tests']['tests'][9],    // ctype_digit
+				$this->test_groups['numeric_tests']['tests'][1],  // ctype_digit
+				$this->test_groups['string_tests']['tests'][4],   // ctype_alpha
+				$this->test_groups['string_tests']['tests'][6]   // ctype_alnum
+			);
 		}
 
 		if ( extension_loaded( 'filter' ) ) {

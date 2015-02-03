@@ -303,6 +303,18 @@ function determine_script_path() {
 
 
 /**
+ * PHP4 compat
+ */
+if ( ! function_exists( 'stripos' ) ) {
+	function stripos( $haystack, $needle ) {
+		$haystack = strtolower( $haystack );
+		$needle   = strtolower( $needle );
+		return strpos( $haystack, $needle );
+	}
+}
+
+
+/**
  * Generate dropdown list of available static versions
  */
 function generate_version_dropdown() {
