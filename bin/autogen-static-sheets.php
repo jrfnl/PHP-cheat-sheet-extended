@@ -99,6 +99,17 @@ function save_to_file( $filename, $content ) {
  * @return string
  */
 function fix_content( $content ) {
+	
+	$search = array(
+		// Make sure there are no references to the local version left
+		0  => '://phpcheatsheets.localdev/',
+		1  => '<body>',
+	);
+
+	$replace = array(
+		0  => '://phpcheatsheets.com/',
+		1  => '<body class="static-archive">',
+	);
 
 	// @todo Verify which rules are still needed in the renewed version
 	$regex_search = array(
@@ -112,8 +123,6 @@ function fix_content( $content ) {
 		9  => '`<t([dh])([^>]*)?>array\(\)<br />\s+</t\1>`',
 		// Make sure the correct PHP version nr for the live sheets is shown in the version dropdown
 		10 => '`<option value="live"(?: selected="selected")?\s*>PHP [0-9\.-]+</option>`',
-		// Make sure there are no references to the local version left (no regex needed)
-		11 => '`://phpcheatsheets.localdev/`',
 		// Make chosen PHP version persistent
 		12 => '`<a href="http://([a-z\.-]+)/(arithmetic|compare|test)/" class="top-link(?: top-active)?">`',
 		// Make sure any potential links to php.net are properly linked
@@ -127,13 +136,13 @@ function fix_content( $content ) {
 		8  => 'array()<br />',
 		9  => '<t$1$2>array()<br /></t$1>',
 		10 => '<option value="live">PHP 5.4.13</option>', // IMPORTANT! Change this if the PHP version on the server changes!!
-		11 => '://phpcheatsheets.com/',
 		12 => '<a href="http://$1/index.php?page=$2&amp;phpversion=php' . PHP_VERSION . '" class="top-link$3">',
 		13 => '[<a href="$1">$2</a>]',
 	);
 
 
 	if ( $GLOBALS['verbose'] !== 2 ) {
+		$content = str_replace( $search, $replace, $content );
 		$content = preg_replace( $regex_search, $regex_replace, $content );
 	}
 	else {
@@ -143,6 +152,17 @@ function fix_content( $content ) {
 		 */
 		echo PHP_EOL, 'Preparing file content... ', PHP_EOL;
 
+
+		foreach ( $search as $key => $string ) {
+			$content = str_replace( $string, $replace[ $key ], $content, $count );
+
+			if ( $count > 0 ) {
+				echo 'String #', $key, ' : ', $count, ' replacements made.', PHP_EOL;
+			}
+		}
+		unset( $key, $string, $count );
+
+
 		if ( PHP_VERSION_ID >= 50100 ) {
 			foreach ( $regex_search as $key => $regex ) {
 				$content = preg_replace( $regex, $regex_replace[ $key ], $content, -1, $count );
@@ -151,7 +171,7 @@ function fix_content( $content ) {
 					echo 'Regex #', $key, ' : ', $count, ' replacements made.', PHP_EOL;
 				}
 			}
-			unset( $key, $string, $count );
+			unset( $key, $regex, $count );
 		}
 		else {
 			// The $count parameter does not exist pre-PHP 5.1.0
