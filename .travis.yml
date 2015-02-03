@@ -9,11 +9,14 @@ sudo: false
 language: php
 
 # Declare versions of PHP to use. Use one decimal max.
-php:
-    # aliased to a recent 5.5.x version
-    - "5.5"
+matrix:
+  include:
+    # aliased to a recent 5.6.x version
+    - php: '5.6'
+      env: GTEPHPFIVEFOUR=1
     # Lowest currently possible in travis
-    - "5.2"
+    - php: '5.2'
+      env: LTPHPFIVEFOUR=1
 
 before_script:
     # Install CodeSniffer for WordPress Coding Standards checks.
@@ -34,7 +37,8 @@ before_script:
 # All commands must exit with code 0 on success. Anything else is considered failure.
 script:
     # Search for PHP syntax errors. Ignore the phpcs and wpcs directories.
-    - find -L . -path "./*pcs" -prune -o -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l;
+    - if [[ "$GTEPHPFIVEFOUR" == "1" ]]; then find -L . -path "./*pcs" -prune -o -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l; fi
+    - if [[ "$LTPHPFIVEFOUR" == "1" ]]; then find -L . \( -path "./*pcs" -o -name "*php54.php" \) -prune -o -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l; fi
     # WordPress Coding Standards
     # @link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
     # @link http://pear.php.net/package/PHP_CodeSniffer/
