@@ -1,6 +1,7 @@
 # /robots.txt file for http://phpcheatsheets.com/
 
 User-agent: *
+Sitemap: http://www.example.com/sitemap.xml 
 Disallow: /bin/
 Disallow: /include/
 Disallow: /page/
