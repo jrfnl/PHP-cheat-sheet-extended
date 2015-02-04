@@ -38,6 +38,10 @@ In general, a balance is sought between significance and variety.
 
 #### Changelog:
 
+##### 1.2.0.1 (Feb 2015)
+* Added sitemaps
+
+
 ##### 1.2 (Feb 2015)
 * New tests:
 	- `pow()` in variable arithmetic
