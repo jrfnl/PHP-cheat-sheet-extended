@@ -30,14 +30,19 @@
 :: > autogen-static-sheets.bat -v     # = level 1
 :: > autogen-static-sheets.bat -vv    # = level 2
 ::
+::
+:: @TODO: fix bug where script doesn't run without arguments
+::
 ::----------------------------------------------------------------------------------
 
 ::----------------------------------------------------------------------------------
 :: Please set following to mirror your local environment
 ::----------------------------------------------------------------------------------
 
-IF "%_LOCAL_PHP_BIN_DIR%" == "" SET "_LOCAL_PHP_BIN_DIR=./php.exe"
+IF "%_LOCAL_PHP_BIN_DIR%" == "" SET "_LOCAL_PHP_BIN_DIR=."
 IF "%_AUTOGEN_SCRIPT_LOCATION%" == "" SET "_AUTOGEN_SCRIPT_LOCATION=./path/to/cheatsheets-gitroot/bin/autogen-static-sheets.php"
+IF "%_SITEMAPS_SCRIPT_LOCATION%" == "" SET "_SITEMAPS_SCRIPT_LOCATION=./path/to/cheatsheets-gitroot/bin/generate-sitemaps.php"
+
 
 ::---------------------------------------------------------------------------------
 ::---------------------------------------------------------------------------------
@@ -223,6 +228,18 @@ IF %_PHP_FAILURE% GTR 0 (
 ECHO(
 ECHO Finished static file autogeneration in %hours%:%mins%:%secs%.%ms% (%totalsecs%.%ms%s total)
 ECHO +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+GOTO :SITEMAPS
+
+
+:: Regen sitemap files
+:SITEMAPS
+SET "_CURRENT_PHP_CLI=%_LOCAL_PHP_BIN_DIR%\php5.5.20\php.exe"
+SET "_CURRENT_PHP_INI=%_LOCAL_PHP_BIN_DIR%\php5.5.20\php.ini"
+
+ECHO(
+ECHO(
+ECHO REGENERATING SITEMAPS
+"%_CURRENT_PHP_CLI%" -c "%_CURRENT_PHP_INI%" -f "%_SITEMAPS_SCRIPT_LOCATION%"
 GOTO :END
 
 :END

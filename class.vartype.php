@@ -84,15 +84,28 @@ class Vartype {
 	/**
 	 * Get the tab title for the initial tab for use in the page header
 	 *
+	 * @param string $tab
 	 * @return string
 	 */
-	function get_tab_title() {
-		if ( isset( $GLOBALS['tab'], $this->test_groups[ $GLOBALS['tab'] ]['title'] ) && $this->test_groups[ $GLOBALS['tab'] ]['title'] !== '' ) {
-			return $this->test_groups[ $GLOBALS['tab'] ]['title'];
+	function get_tab_title( $tab ) {
+		if ( isset( $this->test_groups[ $tab ]['title'] ) && is_string( $this->test_groups[ $tab ]['title'] ) && $this->test_groups[ $tab ]['title'] !== '' ) {
+			return $this->test_groups[ $tab ]['title'];
 		}
 		else {
 			return '';
 		}
+	}
+
+
+	/**
+	 * Get a list of all tabs which this class will create
+	 *
+	 * Helper function for the sitemap.
+	 *
+	 * @return array
+	 */
+	function get_tab_list() {
+		return array_keys( $this->test_groups );
 	}
 
 

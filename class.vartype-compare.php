@@ -189,15 +189,28 @@ class VartypeCompare extends Vartype {
 	/**
 	 * Get the tab title for the initial tab for use in the page header
 	 *
+	 * @param string $tab
 	 * @return string
 	 */
-	function get_tab_title() {
-		if ( isset( $GLOBALS['tab'], $this->tests[ $GLOBALS['tab'] ]['title'] ) && $this->tests[ $GLOBALS['tab'] ]['title'] !== '' ) {
-			return $this->tests[ $GLOBALS['tab'] ]['title'];
+	function get_tab_title( $tab ) {
+		if ( isset( $this->tests[ $tab ]['title'] ) && is_string( $this->tests[ $tab ]['title'] ) && $this->tests[ $tab ]['title'] !== '' ) {
+			return $this->tests[ $tab ]['title'];
 		}
 		else {
 			return '';
 		}
+	}
+
+
+	/**
+	 * Get a list of all tabs which this class will create
+	 *
+	 * Helper function for the sitemap.
+	 *
+	 * @return array
+	 */
+	function get_tab_list() {
+		return array_keys( $this->tests );
 	}
 
 
@@ -327,7 +340,7 @@ class VartypeCompare extends Vartype {
 				echo '
 					</th>';
 
-				$this->print_row_cells( $value1, $key1, $test );
+				$this->print_compare_row_cells( $value1, $key1, $test );
 
 				echo '
 					<th>', $legend;
@@ -458,7 +471,7 @@ class VartypeCompare extends Vartype {
 	 * @param string $key1   The array key reference to that value in the testdata array
 	 * @param string $test   The current subsection
 	 */
-	function print_row_cells( $value1, $key1, $test ) {
+	function print_compare_row_cells( $value1, $key1, $test ) {
 
 		foreach ( $this->test_data_keys as $i => $key2 ) {
 			$GLOBALS['has_error'] = array();
