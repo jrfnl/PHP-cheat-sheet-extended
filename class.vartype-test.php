@@ -2266,6 +2266,7 @@ else {
 	 */
 	function __construct() {
 
+		// Work around some bugs in PHP versions having issues with ctype
 		if ( extension_loaded( 'ctype' ) && PHP_VERSION_ID !== 40309 ) {
 			if ( PHP_VERSION_ID === 50005 || PHP_VERSION_ID === 50004 ) {
 				unset(
@@ -2329,6 +2330,24 @@ else {
 	 */
 	function VartypeTest() {
 		$this->__construct();
+	}
+
+
+	/**
+	 * Work around some really weird bug which I haven't been able to track down yet
+	 *
+	 * Bug details: some semi-random text string is shown for the INF constant on the
+	 * object_test sheet in PHP 5.0.x
+	 *
+	 * @param string $test_group The current subsection
+	 */
+	function set_test_data( $test_group = null ) {
+		parent::set_test_data( $test_group );
+
+		if ( ( PHP_VERSION_ID >= 50004 && PHP_VERSION_ID <= 50005 ) && $test_group === 'object_tests' ) {
+			$key = array_search( 'f8', $this->test_data_keys, true );
+			unset( $this->test_data_keys[ $key ], $this->test_data['f8'] );
+		}
 	}
 
 
