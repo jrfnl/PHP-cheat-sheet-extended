@@ -272,8 +272,7 @@ echo 'we have ' . count( $this->entries ) . ' entries' . PHP_EOL;
 	 * Create the ror.xml file
 	 */
 	protected function create_ror_sitemap() {
-		$sitemap = sprintf( '
-<?xml version="1.0" encoding="UTF-8"?>
+		$sitemap = sprintf( '<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:ror="http://rorweb.com/0.1/">
 	<channel>
 		<title>ROR Sitemap for %1$s</title>
