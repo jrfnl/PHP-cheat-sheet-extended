@@ -25,7 +25,7 @@ class VartypePHP5 {
 	 *
 	 * @var array $tests  Multi-dimensional array.
 	 */
-	static public $tests = array(
+	public static $tests = array(
 		/**
 		 * String comparison functions.
 		 * @see class.vartype-compare.php
@@ -137,7 +137,7 @@ class VartypePHP5 {
 	 *
 	 * @return mixed
 	 */
-	static public function generate_value( $value ) {
+	public static function generate_value( $value ) {
 
 		if ( is_object( $value ) ) {
 			$value = clone $value;
@@ -149,30 +149,30 @@ class VartypePHP5 {
 	/**
 	 * Smarter way to compare strings in PHP5.
 	 *
-	 * @param mixed  $a
-	 * @param mixed  $b
+	 * @param mixed  $var1
+	 * @param mixed  $var2
 	 * @param string $function
 	 */
-	static public function compare_strings( $a, $b, $function ) {
+	public static function compare_strings( $var1, $var2, $function ) {
 
-		if ( ( PHP_VERSION_ID >= 50000 && $function === 'levenshtein' ) && ( ( gettype( $a ) === 'array' || gettype( $a ) === 'resource' ) || ( gettype( $b ) === 'array' || gettype( $b ) === 'resource' ) ) ) {
+		if ( ( PHP_VERSION_ID >= 50000 && $function === 'levenshtein' ) && ( ( gettype( $var1 ) === 'array' || gettype( $var1 ) === 'resource' ) || ( gettype( $var2 ) === 'array' || gettype( $var2 ) === 'resource' ) ) ) {
 			try {
-				self::compare_strings_helper( $a, $b, $function );
+				self::compare_strings_helper( $var1, $var2, $function );
 			}
 			catch ( Exception $e ) {
 				self::handle_exception( $e->getMessage() );
 			}
 		}
-		else if ( PHP_VERSION_ID >= 50200 && ( gettype( $a ) === 'object' || gettype( $b ) === 'object' ) ) {
+		else if ( PHP_VERSION_ID >= 50200 && ( gettype( $var1 ) === 'object' || gettype( $var2 ) === 'object' ) ) {
 			try {
-				self::compare_strings_helper( $a, $b, $function );
+				self::compare_strings_helper( $var1, $var2, $function );
 			}
 			catch ( Exception $e ) {
 				self::handle_exception( $e->getMessage() );
 			}
 		}
 		else {
-			self::compare_strings_helper( $a, $b, $function );
+			self::compare_strings_helper( $var1, $var2, $function );
 		}
 	}
 
@@ -180,17 +180,17 @@ class VartypePHP5 {
 	/**
 	 * Helper function for string comparisons.
 	 *
-	 * @param mixed  $a
-	 * @param mixed  $b
+	 * @param mixed  $var1
+	 * @param mixed  $var2
 	 * @param string $function
 	 */
-	static public function compare_strings_helper( $a, $b, $function ) {
-		$r = $function( $a, $b );
-		if ( is_int( $r ) ) {
-			pr_int( $r );
+	public static function compare_strings_helper( $var1, $var2, $function ) {
+		$result = $function( $var1, $var2 );
+		if ( is_int( $result ) ) {
+			pr_int( $result );
 		}
 		else {
-			pr_var( $r, '', true, true );
+			pr_var( $result, '', true, true );
 		}
 	}
 
@@ -200,7 +200,7 @@ class VartypePHP5 {
 	 *
 	 * @param string $message The error message.
 	 */
-	static public function handle_exception( $message ) {
+	public static function handle_exception( $message ) {
 		$key = array_search( $message, $GLOBALS['encountered_errors'] );
 		if ( $key === false ) {
 			$GLOBALS['encountered_errors'][] = $message;
@@ -213,13 +213,13 @@ class VartypePHP5 {
 	/**
 	 * Run tests using the filter extension.
 	 *
-	 * @param mixed  $value    Value to test
-	 * @param string $expected Expected variable type of the output of the test
-	 * @param int    $filter   The Filter to apply
-	 * @param mixed  $flags    Which filter flags to apply
-	 * @param mixed  $options  Which options to apply
+	 * @param mixed       $value    Value to test
+	 * @param string|null $expected Expected variable type of the output of the test
+	 * @param int         $filter   The Filter to apply
+	 * @param mixed|null  $flags    Which filter flags to apply
+	 * @param mixed|null  $options  Which options to apply
 	 */
-	static public function filter_combined( $value, $expected = null, $filter = FILTER_DEFAULT, $flags = null, $options = null ) {
+	public static function filter_combined( $value, $expected = null, $filter = FILTER_DEFAULT, $flags = null, $options = null ) {
 
 		if ( function_exists( 'filter_var' ) && function_exists( 'filter_var_array' ) ) {
 			if ( ! is_array( $value ) ) {
@@ -232,31 +232,31 @@ class VartypePHP5 {
 				}
 
 				if ( $opt !== array() ) {
-					$r = filter_var( $value, $filter, $opt );
+					$result = filter_var( $value, $filter, $opt );
 				}
 				else {
-					$r = filter_var( $value, $filter );
+					$result = filter_var( $value, $filter );
 				}
 
 				switch ( true ) {
-					case ( $expected === 'bool' && is_bool( $r ) === true ):
-						pr_bool( $r );
+					case ( $expected === 'bool' && is_bool( $result ) === true ):
+						pr_bool( $result );
 						break;
 
-					case ( $expected === 'int' && is_int( $r ) === true  ):
-						pr_int( $r );
+					case ( $expected === 'int' && is_int( $result ) === true  ):
+						pr_int( $result );
 						break;
 
-					case ( $expected === 'float' && is_float( $r ) === true  ):
-						pr_flt( $r );
+					case ( $expected === 'float' && is_float( $result ) === true  ):
+						pr_flt( $result );
 						break;
 
-					case ( $expected === 'string' && is_string( $r ) === true  ):
-						pr_str( $r );
+					case ( $expected === 'string' && is_string( $result ) === true  ):
+						pr_str( $result );
 						break;
 
 					default:
-						pr_var( $r, '', true, true );
+						pr_var( $result, '', true, true );
 						break;
 				}
 			}

@@ -174,7 +174,7 @@ class Vartype {
 	/**
 	 * Determine which tests to run.
 	 *
-	 * @param string|null $test_group
+	 * @param string|null $test_group The current subsection
 	 *
 	 * @return string
 	 */
@@ -190,7 +190,7 @@ class Vartype {
 	/**
 	 * Run all the tests for one specific testgroup.
 	 *
-	 * @param string $test_group The current subsection
+	 * @param string|null $test_group The current subsection
 	 */
 	function run_test( $test_group = null ) {
 
@@ -235,12 +235,12 @@ class Vartype {
 	/**
 	 * Sort the test data via a set order - callback method.
 	 *
-	 * @param mixed $a
-	 * @param mixed $b
+	 * @param mixed $var_a
+	 * @param mixed $var_b
 	 *
 	 * @return int
 	 */
-	function sort_test_data( $a, $b ) {
+	function sort_test_data( $var_a, $var_b ) {
 		$primary_order   = array(
 			'n', // null
 			'b', // boolean
@@ -259,15 +259,15 @@ class Vartype {
 			'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
 		);
 
-		$primary_a = array_search( substr( $a, 0, 1 ), $primary_order, true );
-		$primary_b = array_search( substr( $b, 0, 1 ), $primary_order, true );
+		$primary_a = array_search( substr( $var_a, 0, 1 ), $primary_order, true );
+		$primary_b = array_search( substr( $var_b, 0, 1 ), $primary_order, true );
 
 		if ( $primary_a !== $primary_b ) {
 			return ( ( $primary_a < $primary_b ) ? -1 : 1 );
 		}
 
-		$secondary_a = array_search( substr( $a, 1 ), $secondary_order, true );
-		$secondary_b = array_search( substr( $b, 1 ), $secondary_order, true );
+		$secondary_a = array_search( substr( $var_a, 1 ), $secondary_order, true );
+		$secondary_b = array_search( substr( $var_b, 1 ), $secondary_order, true );
 
 		if ( $secondary_a !== $secondary_b ) {
 			return ( ( $secondary_a < $secondary_b ) ? -1 : 1 );
@@ -317,7 +317,7 @@ class Vartype {
 			}
 			else {
 				echo '
-		<li', $active_class, '><a href="', BASE_URI, $GLOBALS['type'], '/', $key, '/ajax" data-tab="', $key, '" data-tab-title="', $test_group['title'], '"><strong>'. $test_group['title'], '</strong></a></li>';
+		<li', $active_class, '><a href="', BASE_URI, $GLOBALS['type'], '/', $key, '/ajax" data-tab="', $key, '" data-tab-title="', $test_group['title'], '"><strong>', $test_group['title'], '</strong></a></li>';
 			}
 		}
 		unset( $key, $test_group );
@@ -499,8 +499,6 @@ class Vartype {
 	 * @return string
 	 */
 	function get_table_header_group_label( $test_group ) {
-		$group_label = '';
-
 		if ( isset( $this->test_groups[ $test_group ]['book_url'] ) && $this->test_groups[ $test_group ]['book_url'] !== '' ) {
 			$group_label = '<th class="label-col"><a href="' . $this->test_groups[ $test_group ]['book_url'] . '" target="_blank">' . $this->test_groups[ $test_group ]['title'] . '</a></th>';
 		}
@@ -691,17 +689,17 @@ class Vartype {
 	/**
 	 * Compare strings, compatible with PHP4.
 	 *
-	 * @param mixed  $a
-	 * @param mixed  $b
+	 * @param mixed  $var1
+	 * @param mixed  $var2
 	 * @param string $function
 	 */
-	function compare_strings( $a, $b, $function ) {
-		$r = $function( $a, $b );
-		if ( is_int( $r ) ) {
-			pr_int( $r );
+	function compare_strings( $var1, $var2, $function ) {
+		$result = $function( $var1, $var2 );
+		if ( is_int( $result ) ) {
+			pr_int( $result );
 		}
 		else {
-			pr_var( $r, '', true, true );
+			pr_var( $result, '', true, true );
 		}
 	}
 }

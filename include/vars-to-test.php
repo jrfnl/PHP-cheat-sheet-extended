@@ -124,7 +124,7 @@ $extra_variables['type_testing'] = array(
 	'si'  => 'is_array', // is_callable
 );
 
-$extra_variables['boolean_tests'] = array(
+$extra_variables['boolean_tests']                         = array(
 	'sq'  => 'on', // filter_var boolean
 	'sr'  => 'off', // filter_var boolean
 	'ss'  => 'yes', // filter_var boolean
@@ -138,9 +138,10 @@ $extra_variables['string_tests'] = array(
 	'sz'  => 'Iñtërnâtiônàlizætiøn', // utf-8 / binary string
 );
 
-$extra_variables['object_tests'] = $extra_variables['array_tests'] = array(
+$extra_variables['array_tests']  = array(
 	'o1'  => new TestObject(),
 );
+$extra_variables['object_tests'] = $extra_variables['array_tests'];
 
 $extra_variables['object_tests']['a6'] = array(
 	's'  => 'simple',

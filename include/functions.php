@@ -73,7 +73,7 @@ class TestObjectToString extends TestObject {
  * @param string $error_file
  * @param int    $error_line
  *
- * @return mixed
+ * @return null|false
  */
 function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
 	if ( ! ( error_reporting() & $error_no ) ) {
@@ -260,6 +260,8 @@ function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
 
 /**
  * Determine the base url to use.
+ *
+ * @return string
  */
 function determine_base_uri() {
 	$valid_hosts = array(
@@ -283,6 +285,8 @@ function determine_base_uri() {
 
 /**
  * Determine the script path part of the base url.
+ *
+ * @return string
  */
 function determine_script_path() {
 	if ( ! empty( $_SERVER['SCRIPT_NAME'] ) && stripos( $_SERVER['SCRIPT_NAME'], 'index.php' ) !== false ) {
@@ -306,6 +310,7 @@ if ( ! function_exists( 'stripos' ) ) {
 	 *
 	 * @param string $haystack
 	 * @param string $needle
+	 *
 	 * @return int|false
 	 */
 	function stripos( $haystack, $needle ) {
@@ -318,6 +323,8 @@ if ( ! function_exists( 'stripos' ) ) {
 
 /**
  * Generate dropdown list of available static versions.
+ *
+ * @return string
  */
 function generate_version_dropdown() {
 

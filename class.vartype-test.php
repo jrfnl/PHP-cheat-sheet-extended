@@ -2374,7 +2374,7 @@ else {
 	 * object_test sheet in PHP 5.0.x.
 	 * Similarly a "Fatal error:  Unknown function:  f8()" is shown just before the array_testing group.
 	 *
-	 * @param string $test_group The current subsection
+	 * @param string|null $test_group The current subsection
 	 */
 	function set_test_data( $test_group = null ) {
 		parent::set_test_data( $test_group );

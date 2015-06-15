@@ -24,7 +24,7 @@ class VartypePHP7 {
 	 *
 	 * @var array $tests  Multi-dimensional array.
 	 */
-	static public $tests = array(
+	public static $tests = array(
 		/**
 		 * Functions where errors have been turned into exceptions
 		 * @see class.vartype-arithmetic.php
@@ -41,17 +41,17 @@ class VartypePHP7 {
 	/**
 	 * PHP7 compatible version of % arithmetics
 	 *
-	 * @param mixed $a
-	 * @param mixed $b
+	 * @param mixed $var1
+	 * @param mixed $var2
 	 */
-	static function do_modulus( $a, $b ) {
+	public static function do_modulus( $var1, $var2 ) {
 		try {
-			$r = ( $a % $b );
-			if ( is_bool( $r ) ) {
-				pr_bool( $r );
+			$result = ( $var1 % $var2 );
+			if ( is_bool( $result ) ) {
+				pr_bool( $result );
 			}
 			else {
-				pr_var( $r, '', true, true );
+				pr_var( $result, '', true, true );
 			}
 		}
 		catch ( Exception $e ) {
@@ -64,13 +64,13 @@ class VartypePHP7 {
 	/**
 	 * PHP7 compatible version of intdiv
 	 *
-	 * @param mixed $a
-	 * @param mixed $b
+	 * @param mixed $var1
+	 * @param mixed $var2
 	 */
-	static function do_intdiv( $a, $b ) {
+	public static function do_intdiv( $var1, $var2 ) {
 		if ( function_exists( 'intdiv' ) ) {
 			try {
-				pr_var( intdiv( $a, $b ), '', true, true );
+				pr_var( intdiv( $var1, $var2 ), '', true, true );
 			}
 			catch ( Exception $e ) {
 				$message = '<span class="error">(Catchable) Fatal error</span>: ' . $e->getMessage();
@@ -91,7 +91,7 @@ class VartypePHP7 {
 	 *
 	 * @param string $message The error message.
 	 */
-	static public function handle_exception( $message ) {
+	public static function handle_exception( $message ) {
 		VartypePHP5::handle_exception( $message );
 	}
 }
