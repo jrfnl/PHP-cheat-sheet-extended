@@ -285,6 +285,7 @@ function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
 function determine_base_uri() {
 	$valid_hosts = array(
 		'phpcheatsheets.com',
+		'phpcheatsheet.com',
 		'phpcheatsheets.localdev',
 		'localhost',
 	);
