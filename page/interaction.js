@@ -103,12 +103,12 @@ ui-icon-circle-minus
 
 				var titleText   = windowTitle.text();
 
-				if( titleText.indexOf( ':: '+oldTitle ) != -1 ) {
+				if( titleText.indexOf( ':: '+oldTitle ) !== -1 ) {
 					titleText = titleText.replace( ':: '+oldTitle, ':: '+tabTitle );
 				}
 				else {
 					var oldTabNoUnderscore = oldTab.replace('_', ' ');
-					if( titleText.indexOf( ':: '+oldTabNoUnderscore ) != -1 ) {
+					if( titleText.indexOf( ':: '+oldTabNoUnderscore ) !== -1 ) {
 						titleText = titleText.replace( ':: '+oldTabNoUnderscore, ':: '+tabTitle );
 					}
 					// This was a generic call, no previous tab selected
@@ -121,7 +121,7 @@ ui-icon-circle-minus
 				// Static sheets
 				if( tabHref.substring( 0, 1 ) === '#' ) {
 					var oldUri = window.location.href;
-					if( oldUri.indexOf('#') != -1 && window.location.hash === '#'+oldTab ) {
+					if( oldUri.indexOf('#') !== -1 && window.location.hash === '#'+oldTab ) {
 						tabHref = oldUri.replace( window.location.hash, tabHref );
 					}
 					else {
