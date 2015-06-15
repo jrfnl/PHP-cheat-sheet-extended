@@ -225,4 +225,80 @@ class VartypePHP5 {
 	}
 
 
+	/**
+	 * Run tests using the filter extension.
+	 *
+	 * @param mixed  $value    Value to test
+	 * @param string $expected Expected variable type of the output of the test
+	 * @param int    $filter   The Filter to apply
+	 * @param mixed  $flags    Which filter flags to apply
+	 * @param mixed  $options  Which options to apply
+	 */
+	static public function filter_combined( $value, $expected = null, $filter = FILTER_DEFAULT, $flags = null, $options = null ) {
+
+		if ( function_exists( 'filter_var' ) && function_exists( 'filter_var_array' ) ) {
+			if ( ! is_array( $value ) ) {
+				$opt = array();
+				if ( isset( $flags ) ) {
+					$opt['flags'] = $flags;
+				}
+				if ( isset( $options ) && ( is_array( $options ) && $options !== array() ) ) {
+					$opt['options'] = $options;
+				}
+
+				if ( $opt !== array() ) {
+					$r = filter_var( $value, $filter, $opt );
+				}
+				else {
+					$r = filter_var( $value, $filter );
+				}
+
+				switch ( true ) {
+					case ( $expected === 'bool' && is_bool( $r ) === true ):
+						pr_bool( $r );
+						break;
+
+					case ( $expected === 'int' && is_int( $r ) === true  ):
+						pr_int( $r );
+						break;
+
+					case ( $expected === 'float' && is_float( $r ) === true  ):
+						pr_flt( $r );
+						break;
+
+					case ( $expected === 'string' && is_string( $r ) === true  ):
+						pr_str( $r );
+						break;
+
+					default:
+						pr_var( $r, '', true, true );
+						break;
+				}
+			}
+			else {
+				if ( ! isset( $flags ) && ! isset( $options ) ) {
+					pr_var( filter_var_array( $value, $filter ), '', true, true );
+				}
+				else {
+					$input      = array( 'x' => $value );
+					$filter_def = array(
+						'x' => array(
+							'filter' => $filter,
+						),
+					);
+					if ( isset( $flags ) ) {
+						$filter_def['x']['flags'] = ( FILTER_REQUIRE_ARRAY | $flags );
+					}
+					if ( isset( $options ) && ( is_array( $options ) && $options !== array() ) ) {
+						$filter_def['x']['options'] = $options;
+					}
+					$output = filter_var_array( $input, $filter_def );
+					pr_var( $output['x'], '', true, true );
+				}
+			}
+		}
+		else {
+			echo 'E: not available (PHP 5.2.0+)';
+		}
+	}
 }
