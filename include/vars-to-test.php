@@ -1,5 +1,11 @@
 <?php
-// Prevent direct calls to this file
+/**
+ * Define test variables.
+ *
+ * @package PHPCheatsheets
+ */
+
+// Prevent direct calls to this file.
 if ( ! defined( 'APP_DIR' ) ) {
 	header( 'Status: 403 Forbidden' );
 	header( 'HTTP/1.1 403 Forbidden' );
@@ -8,7 +14,7 @@ if ( ! defined( 'APP_DIR' ) ) {
 
 
 $test_array = array(
-	//'unset'  => 'this variable will be unset',
+	// 'unset'  => 'this variable will be unset',
 	'n'   => null,
 
 	'b1'  => false,
@@ -55,12 +61,12 @@ $test_array = array(
 
 
 	'ae'  => array(),
-	//'a0'  => array( null ),
-	//'a1'  => array( 1 ),
-	//'a2'  => array( false ),
+	// 'a0'  => array( null ),
+	// 'a1'  => array( 1 ),
+	// 'a2'  => array( false ),
 	'a3'  => array( 1 => 'string' ), // with different key -> array + array
 	'a4'  => array( false, 1, 1.3, '123str', 'str123', null ),
-	//'a5'  => array( 'a' => 'test1', 'b' => 'test2', 'numerical key', 'null' => null ),
+	// 'a5'  => array( 'a' => 'test1', 'b' => 'test2', 'numerical key', 'null' => null ),
 
 
 	'oe'  => new stdClass(),
@@ -71,7 +77,7 @@ $test_array = array(
 );
 
 /**
- * Variable legend
+ * Variable legend.
  */
 $legend_array = array(
 	'i8'  => '$x = 0xCC00F9; // hexadecimal integer',
@@ -110,7 +116,7 @@ if ( extension_loaded( 'SPL_Types' ) ) {
 }
 
 /**
- * Test group specific extra variables
+ * Test group specific extra variables.
  */
 $extra_variables = array();
 
@@ -118,15 +124,15 @@ $extra_variables['type_testing'] = array(
 	'si'  => 'is_array', // is_callable
 );
 
-
-$extra_variables['boolean_tests'] = $extra_variables['filter_extension_bool_int_float'] = array(
+$extra_variables['boolean_tests'] = array(
 	'sq'  => 'on', // filter_var boolean
 	'sr'  => 'off', // filter_var boolean
 	'ss'  => 'yes', // filter_var boolean
 	'st'  => 'no', // filter_var boolean
 );
-
+$extra_variables['filter_extension_bool_int_float']       = $extra_variables['boolean_tests'];
 $extra_variables['filter_extension_bool_int_float']['sl'] = 'AF036C';
+
 
 $extra_variables['string_tests'] = array(
 	'sz'  => 'Iñtërnâtiônàlizætiøn', // utf-8 / binary string
@@ -141,7 +147,7 @@ $extra_variables['object_tests']['a6'] = array(
 	'm'  => array(
 		'test1',
 		'test2',
-	)
+	),
 );
 
 
@@ -160,9 +166,9 @@ $extra_variables['ctype_extension'] = array(
 	'sk'  => "123, \"str\"\r\n", // ctype_print (not in php5.4 ?)
 	'sl'  => 'AF036C', // ctype_xdigit
 	'sm'  => 'FOO', // ctype_upper
-	'sn'  => "\f\t\r\n", //ctype_space
-	'so'  => '*&$()', //ctype_punct
-	'sp'  => "\x7f\t\r\n", //ctype_ctrl
+	'sn'  => "\f\t\r\n", // ctype_space
+	'so'  => '*&$()', // ctype_punct
+	'sp'  => "\x7f\t\r\n", // ctype_ctrl
 
 	'sz'  => 'Iñtërnâtiônàlizætiøn', // utf-8 / binary string
 );

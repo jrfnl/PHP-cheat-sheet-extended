@@ -1,5 +1,11 @@
 <?php
-// Prevent direct calls to this file
+/**
+ * Variable comparison tests.
+ *
+ * @package PHPCheatsheets
+ */
+
+// Prevent direct calls to this file.
 if ( ! defined( 'APP_DIR' ) ) {
 	header( 'Status: 403 Forbidden' );
 	header( 'HTTP/1.1 403 Forbidden' );
@@ -10,12 +16,12 @@ if ( ! defined( 'APP_DIR' ) ) {
 include_once APP_DIR . '/class.vartype.php';
 
 /**
- *
+ * Variable comparison tests.
  */
 class VartypeCompare extends Vartype {
 
 	/**
-	 * The tests  to run
+	 * The tests to run.
 	 *
 	 * @var array $tests  Multi-dimensional array.
 	 *                    Possible lower level array keys:
@@ -29,68 +35,68 @@ class VartypeCompare extends Vartype {
 	var $tests = array(
 
 		/**
-		 * Operator based comparisons
+		 * Operator based comparisons.
 		 */
 		'equal'         => array(
 			'title'         => '==',
 			'url'           => 'http://php.net/language.operators.comparison',
 			'arg'           => '$a, $b',
-			'function'      => 'pr_bool( $a==$b );',
+			'function'      => 'pr_bool( $a == $b );',
 		),
 		'equal_strict'  => array(
 			'title'         => '===',
 			'url'           => 'http://php.net/language.operators.comparison',
 			'arg'           => '$a, $b',
-			'function'      => 'pr_bool( $a===$b );',
+			'function'      => 'pr_bool( $a === $b );',
 		),
 		'not_equal'     => array(
 			'title'         => '!=',
 			'url'           => 'http://php.net/language.operators.comparison',
 			'arg'           => '$a, $b',
-			'function'      => 'pr_bool( $a!=$b );',
+			'function'      => 'pr_bool( $a != $b );',
 		),
 		'not_equal2'    => array(
 			'title'         => '&lt;&gt;',
 			'url'           => 'http://php.net/language.operators.comparison',
 			'arg'           => '$a, $b',
-			'function'      => 'pr_bool( $a<>$b );',
+			'function'      => 'pr_bool( $a <> $b );',
 		),
 		'not_equal_strict'  => array(
 			'title'         => '!==',
 			'url'           => 'http://php.net/language.operators.comparison',
 			'arg'           => '$a, $b',
-			'function'      => 'pr_bool( $a!==$b );',
+			'function'      => 'pr_bool( $a !== $b );',
 		),
 		'less_than'            => array(
 			'title'         => '&lt;',
 			'url'           => 'http://php.net/language.operators.comparison',
 			'arg'           => '$a, $b',
-			'function'      => 'pr_bool( $a<$b );',
+			'function'      => 'pr_bool( $a < $b );',
 		),
 		'greater_than'            => array(
 			'title'         => '&gt;',
 			'url'           => 'http://php.net/language.operators.comparison',
 			'arg'           => '$a, $b',
-			'function'      => 'pr_bool( $a>$b );',
+			'function'      => 'pr_bool( $a > $b );',
 		),
 		'less_than_or_equal'           => array(
 			'title'         => '&lt;=',
 			'url'           => 'http://php.net/language.operators.comparison',
 			'arg'           => '$a, $b',
-			'function'      => 'pr_bool( $a<=$b );',
+			'function'      => 'pr_bool( $a <= $b );',
 		),
 		'greater_than_or_equal'           => array(
 			'title'         => '&gt;=',
 			'url'           => 'http://php.net/language.operators.comparison',
 			'arg'           => '$a, $b',
-			'function'      => 'pr_bool( $a>=$b );',
+			'function'      => 'pr_bool( $a >= $b );',
 		),
 
 
 		/**
-		 * String comparison functions
+		 * String comparison functions.
 		 *
-		 * Note: all of these functions have a PHP5 equivalent in class.vartype-php5.php
+		 * Note: all of these functions have a PHP5 equivalent in class.vartype-php5.php.
 		 */
 		'strcmp'        => array(
 			'title'         => 'strcmp()',
@@ -171,7 +177,7 @@ class VartypeCompare extends Vartype {
 
 
 	/**
-	 * Constructor
+	 * Constructor.
 	 */
 	function __construct() {
 		parent::__construct();
@@ -179,7 +185,7 @@ class VartypeCompare extends Vartype {
 
 
 	/**
-	 * PHP4 Constructor
+	 * PHP4 Constructor.
 	 */
 	function VartypeCompare() {
 		$this->__construct();
@@ -187,7 +193,7 @@ class VartypeCompare extends Vartype {
 
 
 	/**
-	 * Get the tab title for the initial tab for use in the page header
+	 * Get the tab title for the initial tab for use in the page header.
 	 *
 	 * @param string $tab
 	 * @return string
@@ -203,7 +209,7 @@ class VartypeCompare extends Vartype {
 
 
 	/**
-	 * Get a list of all tabs which this class will create
+	 * Get a list of all tabs which this class will create.
 	 *
 	 * Helper function for the sitemap.
 	 *
@@ -215,14 +221,14 @@ class VartypeCompare extends Vartype {
 
 
 	/**
-	 * Determine which tests to run
+	 * Determine which tests to run.
 	 *
 	 * @param string|null $test_group
 	 *
 	 * @return string
 	 */
 	function get_test_group( $test_group = null ) {
-		$key = key( $this->tests ); // get first item in array;
+		$key = key( $this->tests ); // Get first item in array.
 		if ( isset( $test_group, $this->tests[ $test_group ] ) ) {
 			$key = $test_group;
 		}
@@ -231,12 +237,11 @@ class VartypeCompare extends Vartype {
 
 
 	/**
-	 * Generate the subsection tabs for the cheatsheet
+	 * Generate the subsection tabs (at the top of the page) for the cheatsheet.
 	 *
 	 * @param bool $all
 	 */
 	function print_tabs( $all = false ) {
-		// Tabs at top of page
 		echo '
 	<ul>';
 
@@ -268,7 +273,7 @@ class VartypeCompare extends Vartype {
 
 
 	/**
-	 * Print all tables for the cheatsheet
+	 * Print all tables for the cheatsheet.
 	 */
 	function print_tables() {
 
@@ -292,7 +297,7 @@ class VartypeCompare extends Vartype {
 
 
 	/**
-	 * Generate the table for one specific subsection of a comparison cheatsheet
+	 * Generate the table for one specific subsection of a comparison cheatsheet.
 	 *
 	 * @param string $test The current subsection
 	 */
@@ -372,7 +377,7 @@ class VartypeCompare extends Vartype {
 
 
 	/**
-	 * Generate the first row of the cheatsheet table
+	 * Generate the first row of the cheatsheet table.
 	 *
 	 * @param string $test The current subsection
 	 *
@@ -421,7 +426,7 @@ class VartypeCompare extends Vartype {
 			$label = ob_get_clean();
 
 			// @todo: improve upon - preferably in a way that the tooltip is fully HTML capable
-			// at the very least move to separate method (duplicate code)
+			// at the very least move to separate method (duplicate code).
 			if ( strpos( $label, 'Object: ' ) !== false ) {
 				$label = str_replace( '&nbsp;', ' ', $label );
 				$label = str_replace( "\n", '', $label );
@@ -465,7 +470,7 @@ class VartypeCompare extends Vartype {
 
 
 	/**
-	 * Generate a cheatsheet result row
+	 * Generate a cheatsheet result row.
 	 *
 	 * @param mixed  $value1 The value this row applies to
 	 * @param string $key1   The array key reference to that value in the testdata array
@@ -512,7 +517,7 @@ class VartypeCompare extends Vartype {
 
 
 	/**
-	 * Generate footnotes for a test subsection if applicable
+	 * Generate footnotes for a test subsection if applicable.
 	 *
 	 * @param string $test The current subsection
 	 */

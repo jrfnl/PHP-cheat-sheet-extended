@@ -1,5 +1,11 @@
 <?php
-// Prevent direct calls to this file
+/**
+ * PHP 5+ tests.
+ *
+ * @package PHPCheatsheets
+ */
+
+// Prevent direct calls to this file.
 if ( ! defined( 'APP_DIR' ) ) {
 	header( 'Status: 403 Forbidden' );
 	header( 'HTTP/1.1 403 Forbidden' );
@@ -8,21 +14,20 @@ if ( ! defined( 'APP_DIR' ) ) {
 
 
 /**
+ * Overload some tests when using PHP5.
  *
+ * These tests are added in the relevant child class of the Vartype class.
  */
 class VartypePHP5 {
 
 	/**
-	 * Tests to be run, add in child class
-	 */
-	/**
-	 * The PHP5 specific tests which will overrule the PHP4 compatible tests
+	 * The PHP5 specific tests which will overrule the PHP4 compatible tests.
 	 *
 	 * @var array $tests  Multi-dimensional array.
 	 */
 	static public $tests = array(
 		/**
-		 * String comparison functions
+		 * String comparison functions.
 		 * @see class.vartype-compare.php
 		 */
 		'strcmp'        => array(
@@ -50,7 +55,7 @@ class VartypePHP5 {
 
 
 		/**
-		 * Loose type juggling
+		 * Loose type juggling.
 		 * @see class.vartype-test.php
 		 */
 		'juggle_int'    => array(
@@ -72,7 +77,7 @@ class VartypePHP5 {
 						trigger_error( \'Unsupported operand types\', E_USER_ERROR );
 					}
 				}
-				catch( Exception $e ) {
+				catch ( Exception $e ) {
 					$message = $e->getMessage();
 					$key = array_search( $message, $GLOBALS[\'encountered_errors\'] );
 					if ( $key === false ) {
@@ -102,7 +107,7 @@ class VartypePHP5 {
 						trigger_error( \'Unsupported operand types\', E_USER_ERROR );
 					}
 				}
-				catch( Exception $e ) {
+				catch ( Exception $e ) {
 					$message = $e->getMessage();
 					$key = array_search( $message, $GLOBALS[\'encountered_errors\'] );
 					if ( $key === false ) {
@@ -116,7 +121,7 @@ class VartypePHP5 {
 
 
 		/**
-		 * Some object related functions
+		 * Some object related functions.
 		 * @see class.vartype-test.php
 		 */
 		'instanceof'    => array(
@@ -126,7 +131,7 @@ class VartypePHP5 {
 
 
 	/**
-	 * Overwrite selected entries in the original test array with the above PHP5 specific function code
+	 * Overwrite selected entries in the original test array with the above PHP5 specific function code.
 	 *
 	 * @param array $test_array
 	 *
@@ -144,7 +149,7 @@ class VartypePHP5 {
 
 
 	/**
-	 * Ensure we clone an object before using it to avoid contamination by results of previous actions
+	 * Ensure we clone an object before using it to avoid contamination by results of previous actions.
 	 *
 	 * @param mixed $value
 	 *
@@ -160,7 +165,7 @@ class VartypePHP5 {
 
 
 	/**
-	 * Smarter way to compare strings in PHP5
+	 * Smarter way to compare strings in PHP5.
 	 *
 	 * @param mixed  $a
 	 * @param mixed  $b
@@ -178,7 +183,7 @@ class VartypePHP5 {
 					pr_var( $r, '', true, true );
 				}
 			}
-			catch( Exception $e ) {
+			catch ( Exception $e ) {
 				$message = $e->getMessage();
 				$key     = array_search( $message, $GLOBALS['encountered_errors'] );
 				if ( $key === false ) {
@@ -198,7 +203,7 @@ class VartypePHP5 {
 					pr_var( $r, '', true, true );
 				}
 			}
-			catch( Exception $e ) {
+			catch ( Exception $e ) {
 				$message = $e->getMessage();
 				$key     = array_search( $message, $GLOBALS['encountered_errors'] );
 				if ( $key === false ) {

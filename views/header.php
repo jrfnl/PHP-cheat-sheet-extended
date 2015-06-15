@@ -1,5 +1,11 @@
 <?php
-// Prevent direct calls to this file
+/**
+ * Template part: Page header.
+ *
+ * @package PHPCheatsheets
+ */
+
+// Prevent direct calls to this file.
 if ( ! defined( 'APP_DIR' ) ) {
 	header( 'Status: 403 Forbidden' );
 	header( 'HTTP/1.1 403 Forbidden' );
@@ -117,4 +123,4 @@ if ( isset( $type ) || isset( $page ) ) : ?>
 	<h2><?php echo htmlspecialchars( $page_title, ENT_QUOTES, 'UTF-8' ); ?></h2>
 
 <?php
-endif;?>
+endif;

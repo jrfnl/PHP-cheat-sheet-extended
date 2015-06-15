@@ -1,5 +1,11 @@
 <?php
-// Prevent direct calls to this file
+/**
+ * Template part: Table legend.
+ *
+ * @package PHPCheatsheets
+ */
+
+// Prevent direct calls to this file.
 if ( ! defined( 'APP_DIR' ) ) {
 	header( 'Status: 403 Forbidden' );
 	header( 'HTTP/1.1 403 Forbidden' );
@@ -43,8 +49,7 @@ if ( is_array( $legend_array ) && $legend_array !== array() ) : ?>
 					<tr>
 						<th width="40">&dagger;</th>
 						<th>How the variable is defined:</th>
-<?php					//<th>Will show in the table as:</th>
-?>
+<?php					/* <th>Will show in the table as:</th> */ ?>
 					</tr>
 
 <?php
@@ -52,8 +57,7 @@ foreach ( $legend_array as $k => $v ) : ?>
 					<tr>
 						<th id="var-legend-<?php echo $k; ?>"><?php echo $k; ?></th>
 						<td><code><?php echo $v; ?></code></td>
-<?php	 				//<td><?php pr_var( $test_array[ $k ], '', true, true ); ? ></td>
-?>
+<?php					/* <td><?php pr_var( $test_array[ $k ], '', true, true ); ? ></td> */ ?>
 					</tr><?php
 endforeach; ?>
 				</table>

@@ -1,30 +1,39 @@
 <?php
-// Prevent direct calls to this file
+/**
+ * Some generic functions and mock objects for test variables.
+ *
+ * @package PHPCheatsheets
+ */
+
+// Prevent direct calls to this file.
 if ( ! defined( 'APP_DIR' ) ) {
 	header( 'Status: 403 Forbidden' );
 	header( 'HTTP/1.1 403 Forbidden' );
 	exit();
 }
 
-
 /**
- * Simple object to use for tests with the object variable type
+ * Simple object to use for tests with the object variable type.
  */
 class TestObject {
 
 	/**
-	 * @var null a property
+	 * A property.
+	 *
+	 * @var null
 	 */
 	var $test1;
 
 	/**
-	 * @var bool another property
+	 * Another property.
+	 *
+	 * @var bool
 	 */
 	var $test2 = true;
 
 
 	/**
-	 * Example method
+	 * Example method.
 	 *
 	 * @param string $var
 	 */
@@ -34,18 +43,20 @@ class TestObject {
 }
 
 /**
- * Another simple object to use for tests with the object variable type
+ * Another simple object to use for tests with the object variable type.
  */
 class TestObjectToString extends TestObject {
 
 	/**
-	 * @var string a third property
+	 * A third property.
+	 *
+	 * @var string
 	 */
 	var $test3 = 'some string';
 
 
 	/**
-	 * Example __toString method
+	 * Example __toString method.
 	 *
 	 * @return string
 	 */
@@ -55,7 +66,7 @@ class TestObjectToString extends TestObject {
 }
 
 /**
- * Catch errors to display in appendix
+ * Catch errors to display in appendix.
  *
  * @param int    $error_no
  * @param string $error_str
@@ -69,12 +80,20 @@ function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
 		return;
 	}
 
-	if ( ! defined( 'E_STRICT' ) )            { define( 'E_STRICT', 2048 ); }
-	if ( ! defined( 'E_RECOVERABLE_ERROR' ) ) { define( 'E_RECOVERABLE_ERROR', 4096 ); }
-	if ( ! defined( 'E_DEPRECATED' ) )        { define( 'E_DEPRECATED', 8192 ); }
-	if ( ! defined( 'E_USER_DEPRECATED' ) )   { define( 'E_USER_DEPRECATED', 16384 ); }
+	if ( ! defined( 'E_STRICT' ) ) {
+		define( 'E_STRICT', 2048 );
+	}
+	if ( ! defined( 'E_RECOVERABLE_ERROR' ) ) {
+		define( 'E_RECOVERABLE_ERROR', 4096 );
+	}
+	if ( ! defined( 'E_DEPRECATED' ) ) {
+		define( 'E_DEPRECATED', 8192 );
+	}
+	if ( ! defined( 'E_USER_DEPRECATED' ) ) {
+		define( 'E_USER_DEPRECATED', 16384 );
+	}
 
-	switch ( $error_no ){
+	switch ( $error_no ) {
 		case E_ERROR: // 1 //
 		case E_CORE_ERROR: // 16 //
 		case E_COMPILE_ERROR: // 64 //
@@ -133,7 +152,7 @@ function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
 	}
 
 
-	// Group some messages
+	// Group some messages.
 	$search = array(
 		'array_key_exists() expects parameter 2 to be array',
 		'key() expects parameter 1 to be array',
@@ -196,7 +215,7 @@ function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
 		'levenshtein() expects parameter 2 to be string, <em>array/object/resource</em> given',
 	);
 
-	// Group some more messages and make error message links work
+	// Group some more messages and make error message links work.
 	$preg_search  = array(
 		'`^Object of class [A-Za-z]+ could not be converted to (int|double|string)$`',
 		'`^Object of class [A-Za-z]+ to string conversion$`',
@@ -222,7 +241,7 @@ function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
 	$message = '<span class="' . $class . '">' . $type . '</span>: ' . $error_str;
 
 	if ( isset( $GLOBALS['encountered_errors'] ) ) {
-		// Ignore strict warnings (can't avoid having them if I want to keep this sheet working with PHP4)
+		// Ignore strict warnings (can't avoid having them if I want to keep this sheet working with PHP4).
 		if ( $error_no !== E_STRICT ) {
 			$key = array_search( $message, $GLOBALS['encountered_errors'] );
 			if ( $key === false ) {
@@ -259,12 +278,12 @@ function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
 		}
 	}
 
-	return false; // Make sure it plays nice with other error handlers (remove if no other error handlers are set)
+	return false; // Make sure it plays nice with other error handlers (remove if no other error handlers are set).
 }
 
 
 /**
- * Determine the base url to use
+ * Determine the base url to use.
  */
 function determine_base_uri() {
 	$valid_hosts = array(
@@ -287,7 +306,7 @@ function determine_base_uri() {
 
 
 /**
- * Determine the script path part of the base url
+ * Determine the script path part of the base url.
  */
 function determine_script_path() {
 	if ( ! empty( $_SERVER['SCRIPT_NAME'] ) && stripos( $_SERVER['SCRIPT_NAME'], 'index.php' ) !== false ) {
@@ -303,9 +322,16 @@ function determine_script_path() {
 
 
 /**
- * PHP4 compat
+ * PHP4 compat.
  */
 if ( ! function_exists( 'stripos' ) ) {
+	/**
+	 * Make an equivalent to the PHP5 stripos() function available in PHP4.
+	 *
+	 * @param string $haystack
+	 * @param string $needle
+	 * @return int|false
+	 */
 	function stripos( $haystack, $needle ) {
 		$haystack = strtolower( $haystack );
 		$needle   = strtolower( $needle );
@@ -315,7 +341,7 @@ if ( ! function_exists( 'stripos' ) ) {
 
 
 /**
- * Generate dropdown list of available static versions
+ * Generate dropdown list of available static versions.
  */
 function generate_version_dropdown() {
 

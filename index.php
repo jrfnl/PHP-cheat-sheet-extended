@@ -1,9 +1,15 @@
 <?php
+/**
+ * Controller.
+ *
+ * @package PHPCheatsheets
+ */
 
 define( 'APP_DIR', dirname( __FILE__ ) );
 
+
 /**
- * Catch requests for static files (which have not been caught by htaccess)
+ * Catch requests for static files (which have not been caught by htaccess).
  */
 if ( ( isset( $_GET['page'], $_GET['phpversion'] ) && in_array( $_GET['page'], array( 'arithmetic', 'compare', 'test' ), true ) ) && preg_match( '`^php[457](?:\.[0-9]+){2}(?:-[0-9])?$`', $_GET['phpversion'] ) ) {
 	$file = APP_DIR . '/static_results/' . $_GET['page'] . '/' . $_GET['phpversion'] . '.html';
@@ -30,7 +36,7 @@ if ( ( isset( $_GET['page'], $_GET['phpversion'] ) && in_array( $_GET['page'], a
 include_once APP_DIR . '/include/setup-env.php';
 
 /**
- * Determine what has been requested
+ * Determine what has been requested.
  */
 $type       = null;
 $page       = null;
@@ -83,25 +89,25 @@ $class = 'Vartype' . ucfirst( $type );
 $file  = 'class.vartype-' . $type . '.php';
 
 /**
- * Load a cheatsheet page
+ * Load a cheatsheet page.
  */
 if ( isset( $type ) && file_exists( APP_DIR . '/' . $file ) ) {
 	include_once APP_DIR . '/' . $file;
 	$current_tests = new $class();
 
 	if ( isset( $_GET['tab'] ) && $_GET['tab'] !== '' ) {
-		$tab = $_GET['tab']; // wpcs: ok - validation is done before use in VarType::get_test_group() method
+		$tab = $_GET['tab']; // WPCS: ok - validation is done before use in VarType::get_test_group() method.
 	}
 
 	/**
-	 * Only return the table if it's an ajax call
+	 * Only return the table if it's an ajax call.
 	 */
 	if ( isset( $_GET['do'] ) && $_GET['do'] === 'ajax' ) {
 		$current_tests->run_test( $tab );
 	}
 
 	/**
-	 * Return a full page if not
+	 * Return a full page if not.
 	 */
 	else {
 		$tab_title = $current_tests->get_tab_title( $tab );
@@ -109,11 +115,11 @@ if ( isset( $type ) && file_exists( APP_DIR . '/' . $file ) ) {
 		include_once APP_DIR . '/views/header.php';
 		include_once APP_DIR . '/views/notes-legend.php';
 
-		// Hidden feature - pre-load all tabs, slow, but useful for source compare & generating of static files
+		// Hidden feature - pre-load all tabs, slow, but useful for source compare & generating of static files.
 		$all = false;
 		if ( isset( $_GET['all'] ) && $_GET['all'] === '1' ) {
 			$all = true;
-			ini_set( 'max_execution_time', '180' ); // lengthen allowed execution time
+			ini_set( 'max_execution_time', '180' ); // Lengthen allowed execution time.
 		}
 
 		$current_tests->do_page( $all );
@@ -123,7 +129,7 @@ if ( isset( $type ) && file_exists( APP_DIR . '/' . $file ) ) {
 }
 
 /**
- * Load an extraneous page (about, links etc)
+ * Load an extraneous page (about, links etc).
  */
 else {
 	include_once APP_DIR . '/views/header.php';

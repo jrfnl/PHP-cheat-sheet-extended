@@ -1,46 +1,59 @@
 <?php
+/**
+ * Sitemap Generator.
+ *
+ * @package PHPCheatsheets
+ */
 
 define( 'APP_DIR', dirname( dirname( __FILE__ ) ) );
 
-
 /**
- * Generate sitemap files for the phpcheatsheets.com website
+ * Generate static sitemap file for the phpcheatsheets.com website.
  */
 class CheatsheetSitemap {
 
 	/**
-	 * @const Base url for the website
+	 * Base url for the website.
 	 */
 	const BASE_URI = 'http://phpcheatsheets.com/';
 
 	/**
-	 * @const Directory where the static files can be found
+	 * Directory where the static files can be found.
 	 */
 	const STATIC_DIR = 'static_results';
 
 	/**
-	 * @const Default change frequency
+	 * Default change frequency.
 	 */
 	const CHANGE_FREQ = 'monthly';
 
 	/**
-	 * @var array Entries to be added to the sitemap
+	 * Entries to be added to the sitemap.
+	 *
+	 * @var array
 	 */
 	protected $entries = array();
 
 	/**
-	 * @var array Formatted entries to be added to sitemap.xml
+	 * Formatted entries to be added to sitemap.xml.
+	 *
+	 * @var array
 	 */
 	protected $sitemap_entries = array();
 
 	/**
-	 * @var array Formatted entries to be added to ror.xml
+	 * Formatted entries to be added to ror.xml.
+	 *
+	 * @var array
 	 */
 	protected $ror_sitemap_entries = array();
 
 	/**
-	 * @var array Structure of the site to determine the pages to add to the sitemaps
+	 * Structure of the site to determine the pages to add to the sitemaps.
+	 *
 	 * @todo DRY out (duplicate info in index.php)
+	 *
+	 * @var array
 	 */
 	protected $page_locations = array(
 		'compare'            => array(
@@ -77,12 +90,12 @@ class CheatsheetSitemap {
 
 
 	/**
-	 * Create the sitemaps
+	 * Create the sitemaps.
 	 */
 	public function __construct() {
 		$this->get_entries();
 		if ( is_array( $this->entries ) && $this->entries !== array() ) {
-echo 'we have ' . count( $this->entries ) . ' entries' . PHP_EOL;
+			echo 'we have ' . count( $this->entries ) . ' entries' . PHP_EOL;
 			$this->prepare_entries_for_sitemaps();
 			$this->create_sitemap();
 			$this->create_ror_sitemap();
@@ -91,7 +104,7 @@ echo 'we have ' . count( $this->entries ) . ' entries' . PHP_EOL;
 
 
 	/**
-	 * Retrieve the entries which should be added to the sitemaps
+	 * Retrieve the entries which should be added to the sitemaps.
 	 */
 	protected function get_entries() {
 		$this->entries[] = array(
@@ -162,7 +175,7 @@ echo 'we have ' . count( $this->entries ) . ' entries' . PHP_EOL;
 
 
 	/**
-	 * Transform the entry information to xml formatted entry information
+	 * Transform the entry information to xml formatted entry information.
 	 */
 	protected function prepare_entries_for_sitemaps() {
 		$this->order_entries();
@@ -175,18 +188,18 @@ echo 'we have ' . count( $this->entries ) . ' entries' . PHP_EOL;
 
 
 	/**
-	 * Sort the sitemap entries
+	 * Sort the sitemap entries.
 	 */
 	protected function order_entries() {
-		// Obtain a list of columns
+		// Obtain a list of columns.
 		foreach ( $this->entries as $key => $info ) {
 		    $sort_order[ $key ] = $info['sort_order'];
 		    $prio[ $key ]       = $info['prio'];
 		    $url[ $key ]        = $info['url'];
 		}
 
-		// Sort the data with volume descending, edition ascending
-		// Add $data as the last parameter, to sort by the common key
+		// Sort the data with volume descending, edition ascending.
+		// Add $data as the last parameter, to sort by the common key.
 		array_multisort(
 			$sort_order, SORT_ASC,
 			$prio, SORT_DESC,
@@ -197,7 +210,7 @@ echo 'we have ' . count( $this->entries ) . ' entries' . PHP_EOL;
 
 
 	/**
-	 * Save a sitemap file to disk
+	 * Save a sitemap file to disk.
 	 *
 	 * @param string $content
 	 * @param string $filename
@@ -225,7 +238,7 @@ echo 'we have ' . count( $this->entries ) . ' entries' . PHP_EOL;
 
 
 	/**
-	 * Save a gz compressed sitemap file to disk
+	 * Save a gz compressed sitemap file to disk.
 	 *
 	 * @param string $content
 	 * @param string $filename
@@ -249,7 +262,7 @@ echo 'we have ' . count( $this->entries ) . ' entries' . PHP_EOL;
 
 
 	/**
-	 * Create the sitemap.xml file
+	 * Create the sitemap.xml file.
 	 */
 	protected function create_sitemap() {
 		$sitemap = sprintf( '<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="%1$spage/xml-sitemap.xsl"?>
@@ -269,7 +282,7 @@ echo 'we have ' . count( $this->entries ) . ' entries' . PHP_EOL;
 
 
 	/**
-	 * Create the ror.xml file
+	 * Create the ror.xml file.
 	 */
 	protected function create_ror_sitemap() {
 		$sitemap = sprintf( '<?xml version="1.0" encoding="UTF-8"?>
@@ -288,7 +301,7 @@ echo 'we have ' . count( $this->entries ) . ' entries' . PHP_EOL;
 
 
 	/**
-	 * Format a sitemap entry for use in a sitemap.xml file
+	 * Format a sitemap entry for use in a sitemap.xml file.
 	 *
 	 * @param array $entry
 	 */
@@ -311,7 +324,7 @@ echo 'we have ' . count( $this->entries ) . ' entries' . PHP_EOL;
 
 
 	/**
-	 * Format a sitemap entry for use in a ror.xml file
+	 * Format a sitemap entry for use in a ror.xml file.
 	 *
 	 * @param array $entry
 	 */
