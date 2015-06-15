@@ -443,7 +443,7 @@ class VartypeCompare extends Vartype {
 
 
 		$html .= '
-					<th>' . $group_label . $notes . '</th>
+					<th>' . $group_label . $group_notes . '</th>
 				</tr>';
 
 		return $html;
