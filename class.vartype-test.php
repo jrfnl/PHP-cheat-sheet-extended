@@ -1,5 +1,11 @@
 <?php
-// Prevent direct calls to this file
+/**
+ * Variable testing tests.
+ *
+ * @package PHPCheatsheets
+ */
+
+// Prevent direct calls to this file.
 if ( ! defined( 'APP_DIR' ) ) {
 	header( 'Status: 403 Forbidden' );
 	header( 'HTTP/1.1 403 Forbidden' );
@@ -10,12 +16,12 @@ if ( ! defined( 'APP_DIR' ) ) {
 include_once APP_DIR . '/class.vartype.php';
 
 /**
- *
+ * Variable testing tests.
  */
 class VartypeTest extends Vartype {
 
 	/**
-	 * The tests  to run
+	 * The tests to run.
 	 *
 	 * @var array $tests  Multi-dimensional array.
 	 *                    Possible lower level array keys:
@@ -66,7 +72,7 @@ class VartypeTest extends Vartype {
 
 
 		/**
-		 * is_...()
+		 * Test is_...() functions
 		 */
 		'is_array' => array(
 			'title'         => 'is_array()',
@@ -296,7 +302,7 @@ class VartypeTest extends Vartype {
 
 
 		/**
-		 * settype()
+		 * Test settype()
 		 */
 		'settype_array' => array(
 			'title'         => 'settype (&nbsp;$copy, \'array\'&nbsp;)',
@@ -347,8 +353,8 @@ class VartypeTest extends Vartype {
 
 
 		/**
-		 * Using CastToType class
-		 * https://github.com/jrfnl/PHP-cast-to-type.git
+		 * Tests using CastToType class.
+		 * @see https://github.com/jrfnl/PHP-cast-to-type.git
 		 */
 		'cast_to_type_array' => array(
 			'title'         => 'CastToType::_array (&nbsp;$x&nbsp;)',
@@ -504,7 +510,6 @@ class VartypeTest extends Vartype {
 			'arg'           => '$x',
 			'function'      => '$r = round( $x ); if ( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); }',
 		),
-
 
 
 
@@ -765,7 +770,7 @@ class VartypeTest extends Vartype {
 
 
 		/**
-		 * null comparisons
+		 * Test null comparisons
 		 */
 		'null_cmp_loose' => array(
 			'title'         => '== null',
@@ -1083,7 +1088,7 @@ class VartypeTest extends Vartype {
 
 
 		/**
-		 * preg_match()
+		 * Tests using preg_match()
 		 */
 		'preg_int_pos' => array(
 			'title'         => 'preg_match (`^[0-9]+$`)',
@@ -1110,7 +1115,7 @@ class VartypeTest extends Vartype {
 			'function'      => '$valid = preg_match( \'`^[\d-]+$`\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); }',
 		),
 
-		// ##PREG_DECIMAL_POINT## is replaced by the locale specific decimal point character in the class constructor
+		// ##PREG_DECIMAL_POINT## is replaced by the locale specific decimal point character in the class constructor.
 		'preg_float_pos' => array(
 			'title'         => 'preg_match (`^[0-9##PREG_DECIMAL_POINT##]+$`)',
 			'tooltip'       => 'Decimal point character adjusted based on locale',
@@ -1118,7 +1123,7 @@ class VartypeTest extends Vartype {
 			'arg'           => '$x',
 			'function'      => '$valid = preg_match( \'`^[0-9##PREG_DECIMAL_POINT##]+$`\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); }',
 		),
-		// ##PREG_DECIMAL_POINT## is replaced by the locale specific decimal point character in the class constructor
+		// ##PREG_DECIMAL_POINT## is replaced by the locale specific decimal point character in the class constructor.
 		'preg_float' => array(
 			'title'         => 'preg_match (`^[0-9##PREG_DECIMAL_POINT##<span style="color: red;">-</span>]+$`)',
 			'tooltip'       => 'Decimal point character adjusted based on locale',
@@ -1126,7 +1131,7 @@ class VartypeTest extends Vartype {
 			'arg'           => '$x',
 			'function'      => '$valid = preg_match( \'`^[0-9##PREG_DECIMAL_POINT##-]+$`\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); }',
 		),
-		// ##PREG_DECIMAL_POINT## is replaced by the locale specific decimal point character in the class constructor
+		// ##PREG_DECIMAL_POINT## is replaced by the locale specific decimal point character in the class constructor.
 		'preg_digit_float_pos' => array(
 			'title'         => 'preg_match (`^[\d##PREG_DECIMAL_POINT##]+$`)',
 			'tooltip'       => 'Decimal point character adjusted based on locale',
@@ -1134,7 +1139,7 @@ class VartypeTest extends Vartype {
 			'arg'           => '$x',
 			'function'      => '$valid = preg_match( \'`^[\d##PREG_DECIMAL_POINT##]+$`\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); }',
 		),
-		// ##PREG_DECIMAL_POINT## is replaced by the locale specific decimal point character in the class constructor
+		// ##PREG_DECIMAL_POINT## is replaced by the locale specific decimal point character in the class constructor.
 		'preg_digit_float' => array(
 			'title'         => 'preg_match (`^[\d##PREG_DECIMAL_POINT##<span style="color: red;">-</span>]]+$`)',
 			'tooltip'       => 'Decimal point character adjusted based on locale',
@@ -1699,7 +1704,9 @@ else {
 
 
 	/**
-	 * @var array $test_groups Setup the various tests across subsections to be show in individual tabs
+	 * Setup the various tests across subsections to be show in individual tabs.
+	 *
+	 * @var array $test_groups
 	 */
 	var $test_groups = array(
 
@@ -1713,7 +1720,7 @@ else {
 				'bool',
 				'if_var',
 			),
-			'break_at'  => array( 'gettype', 'if_var', ),
+			'break_at'  => array( 'gettype', 'if_var' ),
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
@@ -1738,13 +1745,13 @@ else {
 				'is_object',
 				'is_resource',
 
-				//'is_binary', //PHP7
+				// 'is_binary', // PHP6 ?
 				'is_callable',
 
 				'is_numeric',
 
 			),
-			'break_at'  => array( 'gettype', 'is_null', 'is_string', 'is_resource', 'is_callable', 'is_numeric', ),
+			'break_at'  => array( 'gettype', 'is_null', 'is_string', 'is_resource', 'is_callable', 'is_numeric' ),
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
@@ -1820,10 +1827,10 @@ else {
 				'null_cmp_rv_strict_str',
 				*/
 			),
-			'break_at'  => array( 'cast_to_type_null', 'empty', 'null_cmp_strict_str', 'null_cmp_rv_strict_str', ),
-			//'good'      => array( 'is_null', 'null_cmp_strict', 'null_cmp_rv_strict', ),
+			'break_at'  => array( 'cast_to_type_null', 'empty', 'null_cmp_strict_str', 'null_cmp_rv_strict_str' ),
+			// 'good'      => array( 'is_null', 'null_cmp_strict', 'null_cmp_rv_strict' ),
 			'good'      => array(),
-			//'best'      => array( 'isset', ),
+			// 'best'      => array( 'isset' ),
 			'best'      => array(),
 			'urls'      => array(),
 			'book_url'  => 'http://php.net/types.comparisons',
@@ -1838,7 +1845,7 @@ else {
 				'bool',
 				'filter_combined_bool',
 				'filter_combined_bool_null',
-				//'cast_to_type_bool',
+				// 'cast_to_type_bool',
 				'cast_to_type_bool_not_empty_recurse_arrays',
 
 				'is_bool',
@@ -1846,9 +1853,9 @@ else {
 				'bool_cmp_true_loose',
 				'bool_cmp_true_strict',
 				'bool_cmp_true_loose_int',
-				//'bool_cmp_true_strict_int',
+				// 'bool_cmp_true_strict_int',
 				'bool_cmp_true_loose_str',
-				//'bool_cmp_true_strict_str',
+				// 'bool_cmp_true_strict_str',
 
 				/*
 				'bool_cmp_rv_true_loose',
@@ -1862,9 +1869,9 @@ else {
 				'bool_cmp_false_loose',
 				'bool_cmp_false_strict',
 				'bool_cmp_false_loose_int',
-				//'bool_cmp_false_strict_int',
+				// 'bool_cmp_false_strict_int',
 				'bool_cmp_false_loose_str',
-				//'bool_cmp_false_strict_str',
+				// 'bool_cmp_false_strict_str',
 
 				/*
 				'bool_cmp_rv_false_loose',
@@ -1883,8 +1890,8 @@ else {
 				'if_not_var',
 
 			),
-			'break_at'  => array( 'cast_to_type_bool_not_empty_recurse_arrays', 'is_bool', 'bool_cmp_true_loose_str', 'bool_cmp_rv_true_strict_str', 'bool_cmp_false_loose_str', 'bool_cmp_rv_false_strict_str', 'if_not_var', ),
-			//'good'      => array( 'cast_to_type_bool', 'cast_to_type_bool_not_empty_recurse_arrays', 'filter_combined_bool_null', 'is_bool', 'bool_cmp_true_strict', 'bool_cmp_false_strict', ),
+			'break_at'  => array( 'cast_to_type_bool_not_empty_recurse_arrays', 'is_bool', 'bool_cmp_true_loose_str', 'bool_cmp_rv_true_strict_str', 'bool_cmp_false_loose_str', 'bool_cmp_rv_false_strict_str', 'if_not_var' ),
+			// 'good'      => array( 'cast_to_type_bool', 'cast_to_type_bool_not_empty_recurse_arrays', 'filter_combined_bool_null', 'is_bool', 'bool_cmp_true_strict', 'bool_cmp_false_strict' ),
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
@@ -1902,7 +1909,7 @@ else {
 				'juggle_int',
 				'filter_combined_int',
 				'filter_combined_int_null',
-				//'cast_to_type_int',
+				// 'cast_to_type_int',
 				'cast_to_type_int_not_empty_recurse_arrays',
 
 				'abs',
@@ -1913,8 +1920,8 @@ else {
 				'is_numeric',
 				'preg_int_pos',
 				'preg_int',
-				//'preg_digit_pos',
-				//'preg_digit',
+				// 'preg_digit_pos',
+				// 'preg_digit',
 
 				/*
 				'int_cmp_gt0',
@@ -1928,8 +1935,8 @@ else {
 				*/
 
 			),
-			'break_at'  => array( 'cast_to_type_int_not_empty_recurse_arrays', 'abs', 'preg_int', ),
-			//'good'      => array( 'cast_to_type_int', 'cast_to_type_int_not_empty_recurse_arrays', 'filter_combined_int_null', 'is_int', ),
+			'break_at'  => array( 'cast_to_type_int_not_empty_recurse_arrays', 'abs', 'preg_int' ),
+			// 'good'      => array( 'cast_to_type_int', 'cast_to_type_int_not_empty_recurse_arrays', 'filter_combined_int_null', 'is_int' ),
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
@@ -1948,7 +1955,7 @@ else {
 				'juggle_flt',
 				'filter_combined_float',
 				'filter_combined_float_null',
-				//'cast_to_type_float',
+				// 'cast_to_type_float',
 				'cast_to_type_float_not_empty_recurse_arrays',
 
 				'empty',
@@ -1957,12 +1964,12 @@ else {
 				'is_numeric',
 				'preg_float_pos',
 				'preg_float',
-				//'preg_digit_float_pos',
-				//'preg_digit_float',
+				// 'preg_digit_float_pos',
+				// 'preg_digit_float',
 
 			),
-			'break_at'  => array( 'cast_to_type_float_not_empty_recurse_arrays', 'preg_float', ),
-			//'good'      => array( 'cast_to_type_float', 'cast_to_type_float_not_empty_recurse_arrays', 'filter_combined_float_null', 'is_float', ),
+			'break_at'  => array( 'cast_to_type_float_not_empty_recurse_arrays', 'preg_float' ),
+			// 'good'      => array( 'cast_to_type_float', 'cast_to_type_float_not_empty_recurse_arrays', 'filter_combined_float_null', 'is_float' ),
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
@@ -1995,7 +2002,7 @@ else {
 				'ceil',
 				'round',
 			),
-			'break_at'  => array( 'is_numeric', 'ctype_digit', 'int_cmp_lte0', 'is_infinite', 'round', ),
+			'break_at'  => array( 'is_numeric', 'ctype_digit', 'int_cmp_lte0', 'is_infinite', 'round' ),
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
@@ -2013,12 +2020,12 @@ else {
 				'juggle_str',
 				'filter_combined_string',
 				'filter_combined_string_null',
-				//'cast_to_type_string',
+				// 'cast_to_type_string',
 				'cast_to_type_string_not_empty_recurse_arrays',
 
 			),
-			'break_at'  => array( 'cast_to_type_string_not_empty_recurse_arrays', ),
-			//'good'      => array( 'cast_to_type_string', 'cast_to_type_string_not_empty_recurse_arrays', 'filter_combined_string_null', ),
+			'break_at'  => array( 'cast_to_type_string_not_empty_recurse_arrays' ),
+			// 'good'      => array( 'cast_to_type_string', 'cast_to_type_string_not_empty_recurse_arrays', 'filter_combined_string_null' ),
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
@@ -2035,15 +2042,15 @@ else {
 				'empty',
 				'str_cmp_empty_loose',
 				'str_cmp_empty_strict',
-				//'str_cmp_not_empty_loose',
-				//'str_cmp_not_empty_strict',
+				// 'str_cmp_not_empty_loose',
+				// 'str_cmp_not_empty_strict',
 
 				'ctype_alpha',
 				'preg_alpha',
 				'ctype_alnum',
 				'preg_alnum',
 				'preg_word',
-				//'preg_word_utf8',
+				// 'preg_word_utf8',
 
 				'strlen',
 				'count_chars',
@@ -2054,8 +2061,8 @@ else {
 				'trim',
 
 			),
-			'break_at'  => array( 'is_string', 'str_cmp_empty_strict', 'preg_word', 'mb_strlen', 'char_access', 'trim', ),
-			//'good'      => array( 'is_string', 'ctype_alpha', 'mb_strlen' ),
+			'break_at'  => array( 'is_string', 'str_cmp_empty_strict', 'preg_word', 'mb_strlen', 'char_access', 'trim' ),
+			// 'good'      => array( 'is_string', 'ctype_alpha', 'mb_strlen' ),
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
@@ -2068,12 +2075,12 @@ else {
 			'tests'     => array(
 				'settype_array',
 				'array',
-				//'cast_to_type_array',
+				// 'cast_to_type_array',
 				'cast_to_type_array_not_empty',
 
 			),
-			'break_at'  => array( 'cast_to_type_array_not_empty', ),
-			//'good'      => array( 'cast_to_type_array', 'cast_to_type_array_not_empty', ),
+			'break_at'  => array( 'cast_to_type_array_not_empty' ),
+			// 'good'      => array( 'cast_to_type_array', 'cast_to_type_array_not_empty' ),
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
@@ -2102,8 +2109,7 @@ else {
 
 				'array_filter',
 			),
-			'break_at'  => array( 'count', 'count_mt_0', 'isset_foo', 'array_access_multi_string', 'array_filter', ),
-			//'good'      => array( 'cast_to_type_array', 'cast_to_type_array_not_empty', ),
+			'break_at'  => array( 'count', 'count_mt_0', 'isset_foo', 'array_access_multi_string', 'array_filter' ),
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
@@ -2117,7 +2123,7 @@ else {
 			'tests'     => array(
 				'settype_object',
 				'object',
-				//'cast_to_type_object',
+				// 'cast_to_type_object',
 				'cast_to_type_object_not_empty',
 
 				'is_object',
@@ -2129,8 +2135,8 @@ else {
 				'is_subclass_of',
 
 			),
-			'break_at'  => array( 'cast_to_type_object', 'cast_to_type_object_not_empty', 'instanceof', 'is_subclass_of', ),
-			//'good'      => array( 'cast_to_type_object', 'cast_to_type_object_not_empty', 'is_object' ),
+			'break_at'  => array( 'cast_to_type_object', 'cast_to_type_object_not_empty', 'instanceof', 'is_subclass_of' ),
+			// 'good'      => array( 'cast_to_type_object', 'cast_to_type_object_not_empty', 'is_object' ),
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
@@ -2146,7 +2152,7 @@ else {
 				'get_resource_type',
 
 			),
-			'break_at'  => array( 'is_resource', 'get_resource_type', ),
+			'break_at'  => array( 'is_resource', 'get_resource_type' ),
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
@@ -2171,7 +2177,7 @@ else {
 				'arithmetic_modulus',
 
 			),
-			'break_at'  => array( 'post_decrement', 'arithmetic_modulus', ),
+			'break_at'  => array( 'post_decrement', 'arithmetic_modulus' ),
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
@@ -2182,7 +2188,9 @@ else {
 
 
 	/**
-	 * @var array $ctype_test_group Additional testgroup only to be added if the ctype extension is available
+	 * Additional testgroup only to be added if the ctype extension is available.
+	 *
+	 * @var array $ctype_test_group
 	 */
 	var $ctype_test_group = array(
 		'ctype_extension'      => array(
@@ -2214,7 +2222,9 @@ else {
 
 
 	/**
-	 * @var array $ctype_test_group Additional testgroup only to be added if the filter extension is available
+	 * Additional testgroup only to be added if the filter extension is available.
+	 *
+	 * @var array $ctype_test_group
 	 */
 	var $filter_test_group = array(
 		'filter_extension_bool_int_float'   => array(
@@ -2226,14 +2236,14 @@ else {
 				'filter_combined_int_null_min_max',
 				'filter_combined_int_null_hex_octal',
 				'filter_combined_int_null_sanitize',
-				//'filter_combined_int_null_sanitize_x3',
+				// 'filter_combined_int_null_sanitize_x3',
 
 				'filter_combined_float_null',
 				'filter_combined_flt_null_sanitize',
 				'filter_combined_flt_null_sanitize_allow_x3',
 
 			),
-			'break_at'  => array( 'filter_combined_bool_null', 'filter_combined_int_null_sanitize', 'filter_combined_flt_null_sanitize_allow_x3', ),
+			'break_at'  => array( 'filter_combined_bool_null', 'filter_combined_int_null_sanitize', 'filter_combined_flt_null_sanitize_allow_x3' ),
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
@@ -2251,7 +2261,7 @@ else {
 				'filter_combined_str_null_sanitize_special_chars',
 				'filter_combined_str_null_sanitize_full_special_chars',
 			),
-			'break_at'  => array( 'filter_combined_str_null_sanitize_full_special_chars', ),
+			'break_at'  => array( 'filter_combined_str_null_sanitize_full_special_chars' ),
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
@@ -2262,11 +2272,11 @@ else {
 
 
 	/**
-	 * Constructor
+	 * Constructor.
 	 */
 	function __construct() {
 
-		// Work around some bugs in PHP versions having issues with ctype
+		// Work around some bugs in PHP versions having issues with ctype.
 		if ( extension_loaded( 'ctype' ) && PHP_VERSION_ID !== 40309 ) {
 			if ( PHP_VERSION_ID === 50005 || PHP_VERSION_ID === 50004 ) {
 				unset(
@@ -2283,7 +2293,7 @@ else {
 				$this->test_groups['float_tests']['tests'][9],    // ctype_digit
 				$this->test_groups['numeric_tests']['tests'][1],  // ctype_digit
 				$this->test_groups['string_tests']['tests'][4],   // ctype_alpha
-				$this->test_groups['string_tests']['tests'][6]   // ctype_alnum
+				$this->test_groups['string_tests']['tests'][6]    // ctype_alnum
 			);
 		}
 
@@ -2292,15 +2302,15 @@ else {
 		}
 
 		/**
-		 * Adjust float regex tests to use the correct decimal point character
+		 * Adjust float regex tests to use the correct decimal point character.
 		 */
-		// Try & get decimal point for use in float operations
+		// Try & get decimal point for use in float operations.
 		if ( ! defined( 'DECIMAL_POINT' ) ) {
 			$locale_info = localeconv();
 			define( 'DECIMAL_POINT', $locale_info['decimal_point'] );
 			unset( $locale_info );
 		}
-		// Prep decimal point for use in regex
+		// Prep decimal point for use in regex.
 		if ( defined( 'DECIMAL_POINT' ) ) {
 			$preg_point = preg_quote( DECIMAL_POINT, '`' );
 		}
@@ -2326,7 +2336,7 @@ else {
 
 
 	/**
-	 * PHP4 compatibility constructor
+	 * PHP4 compatibility constructor.
 	 */
 	function VartypeTest() {
 		$this->__construct();
@@ -2334,10 +2344,10 @@ else {
 
 
 	/**
-	 * Work around some really weird bug which I haven't been able to track down yet
+	 * Work around some really weird bug which I haven't been able to track down yet.
 	 *
 	 * Bug details: some semi-random text string is shown for the INF constant on the
-	 * object_test sheet in PHP 5.0.x
+	 * object_test sheet in PHP 5.0.x.
 	 *
 	 * @param string $test_group The current subsection
 	 */
@@ -2352,7 +2362,7 @@ else {
 
 
 	/**
-	 * Run tests using the filter extension
+	 * Run tests using the filter extension.
 	 *
 	 * @param mixed  $value    Value to test
 	 * @param string $expected Expected variable type of the output of the test

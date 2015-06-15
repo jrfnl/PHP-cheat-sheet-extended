@@ -1,5 +1,11 @@
 <?php
-// Prevent direct calls to this file
+/**
+ * HTML content: About page.
+ *
+ * @package PHPCheatsheets
+ */
+
+// Prevent direct calls to this file.
 if ( ! defined( 'APP_DIR' ) ) {
 	header( 'Status: 403 Forbidden' );
 	header( 'HTTP/1.1 403 Forbidden' );
@@ -17,7 +23,7 @@ if ( ! defined( 'APP_DIR' ) ) {
 			<p>
 				<a href="https://twitter.com/jrf_nl" class="twitter-follow-button" data-show-count="false" title="Follow Juliette on Twitter">Follow @jrf_nl</a>
 				<script type="text/javascript">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-				
+
 				<a href="http://nl.linkedin.com/in/julietterf" target="_blank" class="li-button">
 					<img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_liprofile_blue_80x15.png" width="80" height="15" alt="View Juliette Reinders Folmer&#8217;s profile on LinkedIn" />
 				</a>
@@ -33,7 +39,7 @@ if ( ! defined( 'APP_DIR' ) ) {
 			</p>
 
 
-			
+
 			<h3>Want to learn more or test your knowledge ?</h3>
 			<p>
 				Hire me ;-)
@@ -49,12 +55,12 @@ if ( ! defined( 'APP_DIR' ) ) {
 					If you work with PHP, manage a team of programmers or otherwise know people who could benefit from this knowledge, you can hire me to give an extended session at your company or organization.
 				</li>
 			</ul>
-			
-			
 
-	
+
+
 			<div class="important">
 				<p>Found a mistake ? Want more tests ? or more cheatsheets ?</p>
 				<p>Go ahead: open an <a href="https://github.com/jrfnl/PHP-cheat-sheet-extended/issues" title="Open an issue on GitHub">issue</a> or send in a <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" title="Send in a pull request on GitHub">pull request</a>.</p>
 			</div>
 		</div>
+

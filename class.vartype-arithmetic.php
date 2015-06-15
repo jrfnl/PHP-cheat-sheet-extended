@@ -1,5 +1,11 @@
 <?php
-// Prevent direct calls to this file
+/**
+ * Variable Arithmetic tests.
+ *
+ * @package PHPCheatsheets
+ */
+
+// Prevent direct calls to this file.
 if ( ! defined( 'APP_DIR' ) ) {
 	header( 'Status: 403 Forbidden' );
 	header( 'HTTP/1.1 403 Forbidden' );
@@ -10,12 +16,12 @@ if ( ! defined( 'APP_DIR' ) ) {
 include_once APP_DIR . '/class.vartype-compare.php';
 
 /**
- *
+ * Variable Arithmetic tests.
  */
 class VartypeArithmetic extends VartypeCompare {
 
 	/**
-	 * The tests  to run
+	 * The tests to run.
 	 *
 	 * @var array $tests  Multi-dimensional array.
 	 *                    Possible lower level array keys:
@@ -29,7 +35,7 @@ class VartypeArithmetic extends VartypeCompare {
 	var $tests = array(
 
 		/**
-		 * Operator based calculations
+		 * Operator based calculations.
 		 */
 		'negate'         => array(
 			'title'         => 'negate&hellip;',
@@ -91,7 +97,7 @@ class VartypeArithmetic extends VartypeCompare {
 		),
 
 
-		// Doesn't really belong in arithmetic, but for now it's the most logical place anyhow
+		// Doesn't really belong in arithmetic, but for now it's the most logical place anyhow.
 		'concatenate'        => array(
 			'title'         => '.',
 			'tooltip'       => '$a . $b',
@@ -118,7 +124,9 @@ class VartypeArithmetic extends VartypeCompare {
 
 
 	/**
-	 * Calculations with BCMath
+	 * Calculations with BCMath.
+	 *
+	 * Will be added to $tests property from constructor if BCMath is available.
 	 *
 	 * @var array $bcmath_tests  Multi-dimensional array of BC Math related tests.
 	 */
@@ -169,6 +177,7 @@ class VartypeArithmetic extends VartypeCompare {
 				'<p>For this cheat sheet <code>bcscale()</code> has been set to 3. Remember that the default is 0.</p>',
 			),
 		),
+
 		/*
 		'bcpow'          => array(
 			'title'         => 'bcpow()',
@@ -184,7 +193,7 @@ class VartypeArithmetic extends VartypeCompare {
 
 
 	/**
-	 * Constructor
+	 * Constructor.
 	 */
 	function __construct() {
 		if ( PHP_VERSION_ID < 50600 ) {
@@ -199,7 +208,7 @@ class VartypeArithmetic extends VartypeCompare {
 
 
 	/**
-	 * PHP4 Constructor
+	 * PHP4 Constructor.
 	 */
 	function VartypeArithmetic() {
 		$this->__construct();

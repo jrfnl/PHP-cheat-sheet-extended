@@ -1,7 +1,12 @@
 <?php
+/**
+ * Script to autogenerate static HTML files representing the test results on a specific PHP version.
+ *
+ * @package PHPCheatsheets
+ */
 
 /**
- * Allow as much memory as possible by default
+ * Allow as much memory as possible by default.
  */
 if ( extension_loaded( 'suhosin' ) && is_numeric( ini_get( 'suhosin.memory_limit' ) ) ) {
 	$limit = ini_get( 'memory_limit' );
@@ -19,7 +24,7 @@ else {
 
 
 /**
- * Set the environment
+ * Set the environment.
  */
 // One-up as we're in /bin
 define( 'APP_DIR', dirname( dirname( __FILE__ ) ) );
@@ -39,7 +44,7 @@ $success = 0;
 $failure = 0;
 
 /**
- * Interpret expected command line argument(s)
+ * Interpret expected command line argument(s).
  */
 $verbose = 0;
 if ( isset( $argv[1] ) && strpos( $argv[1], 'verbose=' ) === 0 ) {
@@ -53,7 +58,7 @@ if ( isset( $argv[1] ) && strpos( $argv[1], 'verbose=' ) === 0 ) {
 
 
 /**
- * Save the html page to disk
+ * Save the html page to disk.
  *
  * @param string $filename
  * @param string $content
@@ -92,7 +97,7 @@ function save_to_file( $filename, $content ) {
 
 
 /**
- * Make sure the html is up to scratch
+ * Make sure the html is up to scratch.
  *
  * @param string $content
  *
@@ -111,7 +116,7 @@ function fix_content( $content ) {
 		1  => '<body class="static-archive">',
 	);
 
-	// @todo Verify which rules are still needed in the renewed version
+	// @todo Verify which rules are still needed in the renewed version.
 	$regex_search = array(
 		// Make sure there is nothing before the doctype
 		0  => '`^[^<]+<!DOCTYPE html PUBLIC`',
@@ -184,11 +189,11 @@ function fix_content( $content ) {
 
 
 /**
- * Generate the static sheets
+ * Generate the static sheets.
  */
 ignore_user_abort( true );
 
-// Notify user of what we're doing
+// Notify user of what we're doing.
 if ( $verbose > 0 ) {
 	echo PHP_EOL, 'Generating static sheets for PHP ', PHP_VERSION, PHP_EOL;
 	echo '----------------------------------------', PHP_EOL;
@@ -217,7 +222,7 @@ foreach ( $types as $type => $page_title ) {
 	ob_start();
 
 	/**
-	 * Load a cheatsheet page
+	 * Load a cheatsheet page.
 	 */
 	$class = 'Vartype' . ucfirst( $type );
 	$file  = 'class.vartype-' . $type . '.php';

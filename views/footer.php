@@ -1,5 +1,11 @@
 <?php
-// Prevent direct calls to this file
+/**
+ * Template part: Page footer.
+ *
+ * @package PHPCheatsheets
+ */
+
+// Prevent direct calls to this file.
 if ( ! defined( 'APP_DIR' ) ) {
 	header( 'Status: 403 Forbidden' );
 	header( 'HTTP/1.1 403 Forbidden' );

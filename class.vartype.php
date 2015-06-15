@@ -1,5 +1,11 @@
 <?php
-// Prevent direct calls to this file
+/**
+ * Generic variable testing parent class.
+ *
+ * @package PHPCheatsheets
+ */
+
+// Prevent direct calls to this file.
 if ( ! defined( 'APP_DIR' ) ) {
 	header( 'Status: 403 Forbidden' );
 	header( 'HTTP/1.1 403 Forbidden' );
@@ -8,64 +14,78 @@ if ( ! defined( 'APP_DIR' ) ) {
 
 
 /**
- *
+ * Generic variable testing parent class.
  */
 class Vartype {
 
 	/**
-	 * @var array $test_data  Placeholder for test data
+	 * Placeholder for test data.
+	 *
+	 * @var array
 	 */
 	var $test_data = array();
 
 	/**
-	 * @var array $test_legendPlaceholder for test data labels
+	 * Placeholder for test data labels.
+	 *
+	 * @var array
 	 */
 	var $test_legend = array();
 
 	/**
-	 * @var array $test_data_keysPlaceholder for test data key array
+	 * Placeholder for test data key array.
+	 *
+	 * @var array
 	 */
 	var $test_data_keys = array();
 
 
 	/**
-	 * @var array $header_repeatAt which point in the tables to repeat headers
+	 * At which point in the tables to repeat headers.
+	 *
+	 * @var array
 	 */
 	var $header_repeat = array( 's', 'a', 'o', 'p' );
 
 
 	/**
-	 * @var array $tests Tests to be run, add in child class
+	 * Tests to be run, added in child class.
+	 *
+	 * @var array
 	 */
 	var $tests = array();
 
 	/**
-	 * @var array $test_groups
+	 * Placeholder for grouping of the tests.
+	 *
+	 * @var array
 	 */
 	var $test_groups = array();
 
 
 	/**
-	 * @var array $table_notes Placeholder for test notes
+	 * Placeholder for test notes.
+	 *
+	 * @var array
 	 */
 	var $table_notes = array();
 
 
 	/**
-	 * Constructor
+	 * Constructor.
 	 */
 	function __construct() {
 
 		/**
 		 * Replace selected PHP4 specific tests with their PHP5 equivalents to avoid parse errors
-		 * when running the tests in PHP4
+		 * when running the tests in PHP4.
 		 */
 		if ( PHP_VERSION_ID >= 50000 ) {
 			include_once APP_DIR . '/class.vartype-php5.php';
 			$this->tests = VartypePHP5::merge_tests( $this->tests );
 		}
 
-		// Create the actual test functions
+		// Create the actual test functions.
 		foreach ( $this->tests as $key => $array ) {
 			// pr_var( $key, 'Creating test for:', true );
 			$this->tests[ $key ]['test'] = create_function( $array['arg'], $array['function'] );
@@ -74,7 +94,7 @@ class Vartype {
 
 
 	/**
-	 * PHP4 compatibility constructor
+	 * PHP4 compatibility constructor.
 	 */
 	function vartype() {
 		$this->__construct();
@@ -82,9 +102,10 @@ class Vartype {
 
 
 	/**
-	 * Get the tab title for the initial tab for use in the page header
+	 * Get the tab title for the initial tab for use in the page header.
 	 *
 	 * @param string $tab
+	 *
 	 * @return string
 	 */
 	function get_tab_title( $tab ) {
@@ -98,7 +119,7 @@ class Vartype {
 
 
 	/**
-	 * Get a list of all tabs which this class will create
+	 * Get a list of all tabs which this class will create.
 	 *
 	 * Helper function for the sitemap.
 	 *
@@ -110,7 +131,7 @@ class Vartype {
 
 
 	/**
-	 * Generate a cheatsheet page
+	 * Generate a cheatsheet page.
 	 *
 	 * @param bool $all
 	 */
@@ -128,14 +149,14 @@ class Vartype {
 
 
 	/**
-	 * Determine which tests to run
+	 * Determine which tests to run.
 	 *
 	 * @param string|null $test_group
 	 *
 	 * @return string
 	 */
 	function get_test_group( $test_group = null ) {
-		$key = key( $this->test_groups ); // set the first test group as the default if no test group given;
+		$key = key( $this->test_groups ); // Set the first test group as the default if no test group given.
 		if ( isset( $test_group, $this->test_groups[ $test_group ] ) ) {
 			$key = $test_group;
 		}
@@ -144,7 +165,7 @@ class Vartype {
 
 
 	/**
-	 * Run all the tests for one specific testgroup
+	 * Run all the tests for one specific testgroup.
 	 *
 	 * @param string $test_group The current subsection
 	 */
@@ -159,7 +180,7 @@ class Vartype {
 
 
 	/**
-	 * Prepare the test data (the variables) for use in the tests
+	 * Prepare the test data (the variables) for use in the tests.
 	 *
 	 * @param string $test_group The current subsection
 	 */
@@ -171,7 +192,7 @@ class Vartype {
 		$this->test_data   = $test_array;
 		$this->test_legend = $legend_array;
 
-		// Merge test group specific variables into the test array
+		// Merge test group specific variables into the test array.
 		if ( isset( $extra_variables[ $test_group ] ) && $extra_variables[ $test_group ] !== array() ) {
 			$this->test_data = array_merge( $this->test_data, $extra_variables[ $test_group ] );
 		}
@@ -189,7 +210,7 @@ class Vartype {
 
 
 	/**
-	 * Sort the test data via a set order - callback method
+	 * Sort the test data via a set order - callback method.
 	 *
 	 * @param mixed $a
 	 * @param mixed $b
@@ -211,7 +232,8 @@ class Vartype {
 		$secondary_order = array(
 			'e', // empty
 			'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-			'a', 'b', 'c', 'd', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+			'a', 'b', 'c', 'd', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
+			'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
 		);
 
 		$primary_a = array_search( substr( $a, 0, 1 ), $primary_order, true );
@@ -233,7 +255,7 @@ class Vartype {
 
 
 	/**
-	 * Housekeeping
+	 * Housekeeping.
 	 */
 	function clean_up() {
 		if ( isset( $GLOBALS['test_array'], $GLOBALS['test_array']['r1'] ) && is_resource( $GLOBALS['test_array']['r1'] ) ) {
@@ -252,12 +274,11 @@ class Vartype {
 
 
 	/**
-	 * Generate the subsection tabs for the cheatsheet
+	 * Generate the subsection tabs (at the top of the page) for the cheatsheet.
 	 *
 	 * @param bool $all
 	 */
 	function print_tabs( $all = false ) {
-		// Tabs at top of page
 		echo '
 	<ul>';
 
@@ -284,7 +305,7 @@ class Vartype {
 
 
 	/**
-	 * Print all tables for the cheatsheet
+	 * Print all tables for the cheatsheet.
 	 */
 	function print_tables() {
 
@@ -303,7 +324,7 @@ class Vartype {
 
 
 	/**
-	 * Generate the table for one specific subsection of a cheatsheet
+	 * Generate the table for one specific subsection of a cheatsheet.
 	 *
 	 * @param string $test_group The current subsection
 	 */
@@ -395,7 +416,7 @@ class Vartype {
 
 
 	/**
-	 * Generate the first row of the cheatsheet table
+	 * Generate the first row of the cheatsheet table.
 	 *
 	 * @param string $test_group The current subsection
 	 *
@@ -403,7 +424,7 @@ class Vartype {
 	 */
 	function create_table_header( $test_group ) {
 
-		$this->table_notes = array(); // Make sure we start with an empty array
+		$this->table_notes = array(); // Make sure we start with an empty array.
 
 		if ( isset( $this->test_groups[ $test_group ]['book_url'] ) && $this->test_groups[ $test_group ]['book_url'] !== '' ) {
 			$group_label = '<th class="label-col"><a href="' . $this->test_groups[ $test_group ]['book_url'] . '" target="_blank">' . $this->test_groups[ $test_group ]['title'] . '</a></th>';
@@ -468,7 +489,7 @@ class Vartype {
 
 
 	/**
-	 * Generate the html for the table top
+	 * Generate the html for the table top.
 	 *
 	 * @param string $test_group The current subsection
 	 */
@@ -487,7 +508,7 @@ class Vartype {
 
 
 	/**
-	 * Generate a cheatsheet result row
+	 * Generate a cheatsheet result row.
 	 *
 	 * @param mixed  $value      The value this row applies to
 	 * @param string $test_group The current subsection
@@ -539,10 +560,10 @@ class Vartype {
 
 
 	/**
-	 * Get the value to use for the tests
+	 * Get the value to use for the tests.
 	 *
 	 * If in PHP5 and the value is an object, it will clone the object so we'll have a 'clean' object
-	 * for each test (not a reference)
+	 * for each test (not a reference).
 	 *
 	 * @param mixed $value
 	 *
@@ -557,12 +578,12 @@ class Vartype {
 
 
 	/**
-	 * Generate footnotes for any errors encountered
+	 * Generate footnotes for any errors encountered.
 	 *
 	 * @param string $test_group The current subsection
 	 */
 	function print_error_footnotes( $test_group ) {
-		// Encountered errors footnote/appendix
+		// Encountered errors footnote/appendix.
 		if ( count( $GLOBALS['encountered_errors'] ) > 0 ) {
 			echo '
 			<ol id="', $test_group, '-errors" class="error-appendix">';
@@ -578,7 +599,7 @@ class Vartype {
 
 
 	/**
-	 * Generate footnotes for a test subsection if applicable
+	 * Generate footnotes for a test subsection if applicable.
 	 *
 	 * @param string $test_group The current subsection
 	 */
@@ -600,7 +621,7 @@ class Vartype {
 
 
 	/**
-	 * Compare strings, compatible with PHP4
+	 * Compare strings, compatible with PHP4.
 	 *
 	 * @param mixed  $a
 	 * @param mixed  $b

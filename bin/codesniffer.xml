@@ -6,11 +6,11 @@
 	<exclude-pattern>phpcs/*</exclude-pattern>
 	<exclude-pattern>wpcs/*</exclude-pattern>
 
-	<rule ref="WordPress">
-		<exclude name="Generic.Files.LineEndings.InvalidEOLChar" />
+	<rule ref="WordPress-Extra">
 		<exclude name="Squiz.WhiteSpace.SuperfluousWhitespace.EmptyLines" />
 
-		<exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
+		<!-- else on new line is perfectly fine -->
+		<exclude name="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseBrace" />
 
 		<!-- Demanding Yoda conditions is stupid. -->
 		<exclude name="WordPress.PHP.YodaConditions"/>
@@ -18,20 +18,33 @@
 		<!-- WP specific sniffs which should be ignored -->
 		<exclude name="WordPress.WP.EnqueuedResources" />
 		<exclude name="WordPress.XSS.EscapeOutput" />
-		<exclude name="WordPress.VIP.TimezoneChange" />
-		<exclude name="WordPress.VIP.SuperGlobalInputUsage" />
-		<exclude name="WordPress.VIP.ValidatedSanitizedInput"/>
-		<exclude name="WordPress.VIP.RestrictedFunctions.create_function" />
-		<exclude name="WordPress.VIP.FileSystemWritesDisallow"/>
+
 	</rule>
 
-	<!--
-	<rule ref="Generic.WhiteSpace.ScopeIndent">
-		<properties>
-			<property name="indent" value="1"/>
-			<property name="tabIndent" value="true"/>
-		</properties>
+	<rule ref="WordPress.Arrays.ArrayDeclaration.ValueNoNewline">
+		<exclude-pattern>class.vartype.php</exclude-pattern>
 	</rule>
-	-->
+
+
+	<rule ref="WordPress-Docs">
+		<!-- Exclude a number of rules for being over-zealous for this codebase. -->
+		<exclude name="Squiz.Commenting.ClassComment.SpacingBefore"/>
+
+		<exclude name="Squiz.Commenting.FunctionComment.MissingParamComment"/>
+		<exclude name="Squiz.Commenting.FunctionComment.ParamCommentFullStop"/>
+
+		<exclude name="Squiz.Commenting.InlineComment.InvalidEndChar"/>
+		<exclude name="Squiz.Commenting.InlineComment.NotCapital"/>
+		<exclude name="Squiz.Commenting.InlineComment.SpacingAfter"/>
+	</rule>
+
+
+	<!-- exclude the 'empty' index files from some documentation checks -->
+	<rule ref="Squiz.Commenting.FileComment.WrongStyle">
+		<exclude-pattern>*/index.php</exclude-pattern>
+	</rule>
+	<rule ref="Generic.Files.EndFileNewline.NotFound">
+		<exclude-pattern>*/index.php</exclude-pattern>
+	</rule>
 
 </ruleset>

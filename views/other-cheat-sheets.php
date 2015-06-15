@@ -1,5 +1,11 @@
 <?php
-// Prevent direct calls to this file
+/**
+ * HTML content: Other Cheat sheets.
+ *
+ * @package PHPCheatsheets
+ */
+
+// Prevent direct calls to this file.
 if ( ! defined( 'APP_DIR' ) ) {
 	header( 'Status: 403 Forbidden' );
 	header( 'HTTP/1.1 403 Forbidden' );
@@ -39,3 +45,4 @@ if ( ! defined( 'APP_DIR' ) ) {
 			<p>Do you want to host your PHP Cheatsheet on phpcheatsheets.com ? Want to add a cheatsheet to this list ?</p>
 			<p>Just send in a <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">pull request</a>.</p>
 		</div>
+
