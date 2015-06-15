@@ -2287,7 +2287,7 @@ else {
 	function phpcompat_filter_tests() {
 
 		// Work around some bugs in PHP versions having issues with ctype.
-		if ( extension_loaded( 'ctype' ) && PHP_VERSION_ID !== 40309 ) {
+		if ( extension_loaded( 'ctype' ) ) {
 			// Remove some tests which give issues in PHP5.0.x.
 			if ( PHP_VERSION_ID === 50005 || PHP_VERSION_ID === 50004 ) {
 				unset(
@@ -2298,17 +2298,6 @@ else {
 			}
 			// Merge the ctype testgroup.
 			$this->test_groups = array_merge( $this->test_groups, $this->ctype_test_group );
-		}
-		else {
-			// PHP 4.3.9 has issue with all ctype, so don't merge the group and remove uses
-			// in other groups.
-			unset(
-				$this->test_groups['integer_tests']['tests'][10], // ctype_digit
-				$this->test_groups['float_tests']['tests'][9],    // ctype_digit
-				$this->test_groups['numeric_tests']['tests'][1],  // ctype_digit
-				$this->test_groups['string_tests']['tests'][4],   // ctype_alpha
-				$this->test_groups['string_tests']['tests'][6]    // ctype_alnum
-			);
 		}
 
 		if ( extension_loaded( 'filter' ) ) {
