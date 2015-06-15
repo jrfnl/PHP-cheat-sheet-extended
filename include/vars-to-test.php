@@ -138,10 +138,13 @@ $extra_variables['string_tests'] = array(
 	'sz'  => 'Iñtërnâtiônàlizætiøn', // utf-8 / binary string
 );
 
-$extra_variables['array_tests']  = array(
+/*
+	DO NOT change this to a neater version with two assignments!!!
+	If you do, for some obscure reason it breaks the PHP 5.0.x tests cheatsheet.
+ */
+$extra_variables['object_tests'] = $extra_variables['array_tests'] = array(
 	'o1'  => new TestObject(),
 );
-$extra_variables['object_tests'] = $extra_variables['array_tests'];
 
 $extra_variables['object_tests']['a6'] = array(
 	's'  => 'simple',
