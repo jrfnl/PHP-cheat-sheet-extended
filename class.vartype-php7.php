@@ -39,23 +39,6 @@ class VartypePHP7 {
 
 
 	/**
-	 * Overwrite selected entries in the original test array with the above PHP5 specific function code.
-	 *
-	 * @param array $test_array
-	 *
-	 * @return array
-	 */
-	static public function merge_tests( $test_array ) {
-
-		foreach ( self::$tests as $key => $array ) {
-			if ( isset( $test_array[ $key ], $test_array[ $key ]['function'], $array['function'] ) ) {
-				$test_array[ $key ]['function'] = $array['function'];
-			}
-		}
-		return $test_array;
-	}
-
-	/**
 	 * PHP7 compatible version of % arithmetics
 	 *
 	 * @param mixed $a
@@ -73,12 +56,7 @@ class VartypePHP7 {
 		}
 		catch ( Exception $e ) {
 			$message = '<span class="error">(Catchable) Fatal error</span>: ' . $e->getMessage();
-			$key     = array_search( $message, $GLOBALS['encountered_errors'] );
-			if ( $key === false ) {
-				$GLOBALS['encountered_errors'][] = $message;
-				$key                             = array_search( $message, $GLOBALS['encountered_errors'] );
-			}
-			echo '<span class="error">(Catchable) Fatal error <a href="#', $GLOBALS['test'], '-errors">#', ( $key + 1 ), '</a></span>';
+			self::handle_exception( $message );
 		}
 	}
 
@@ -96,12 +74,7 @@ class VartypePHP7 {
 			}
 			catch ( Exception $e ) {
 				$message = '<span class="error">(Catchable) Fatal error</span>: ' . $e->getMessage();
-				$key     = array_search( $message, $GLOBALS['encountered_errors'] );
-				if ( $key === false ) {
-					$GLOBALS['encountered_errors'][] = $message;
-					$key                             = array_search( $message, $GLOBALS['encountered_errors'] );
-				}
-				echo '<span class="error">(Catchable) Fatal error <a href="#', $GLOBALS['test'], '-errors">#', ( $key + 1 ), '</a></span>';
+				self::handle_exception( $message );
 			}
 		}
 		else {
@@ -109,4 +82,16 @@ class VartypePHP7 {
 		}
 	}
 
+
+	/**
+	 * Helper function to handle exceptions from the overloaded functions.
+	 *
+	 * @internal Exception handling is currently the same as for the PHP5 specific code, but added as separate
+	 * method to allow for future adjustment.
+	 *
+	 * @param string $message The error message.
+	 */
+	static public function handle_exception( $message ) {
+		VartypePHP5::handle_exception( $message );
+	}
 }

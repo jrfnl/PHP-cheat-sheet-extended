@@ -234,7 +234,7 @@ function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
 				return;
 			}
 			else if ( $class === 'error' ) {
-				$GLOBALS['has_error'][]['msg'] = ' <span class="error">' . $type . ' (&nbsp;<a href="#' . $GLOBALS['test']. '-errors">#' . ( $key + 1 ) . '</a>&nbsp;)</span>';
+				$GLOBALS['has_error'][]['msg'] = ' <span class="error">' . $type . ' (&nbsp;<a href="#' . $GLOBALS['test'] . '-errors">#' . ( $key + 1 ) . '</a>&nbsp;)</span>';
 				return;
 			}
 			else {

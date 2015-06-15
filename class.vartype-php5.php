@@ -131,24 +131,6 @@ class VartypePHP5 {
 
 
 	/**
-	 * Overwrite selected entries in the original test array with the above PHP5 specific function code.
-	 *
-	 * @param array $test_array
-	 *
-	 * @return array
-	 */
-	static public function merge_tests( $test_array ) {
-
-		foreach ( self::$tests as $key => $array ) {
-			if ( isset( $test_array[ $key ], $test_array[ $key ]['function'], $array['function'] ) ) {
-				$test_array[ $key ]['function'] = $array['function'];
-			}
-		}
-		return $test_array;
-	}
-
-
-	/**
 	 * Ensure we clone an object before using it to avoid contamination by results of previous actions.
 	 *
 	 * @param mixed $value
@@ -175,53 +157,56 @@ class VartypePHP5 {
 
 		if ( ( PHP_VERSION_ID >= 50000 && $function === 'levenshtein' ) && ( ( gettype( $a ) === 'array' || gettype( $a ) === 'resource' ) || ( gettype( $b ) === 'array' || gettype( $b ) === 'resource' ) ) ) {
 			try {
-				$r = $function( $a, $b );
-				if ( is_int( $r ) ) {
-					pr_int( $r );
-				}
-				else {
-					pr_var( $r, '', true, true );
-				}
+				self::compare_strings_helper( $a, $b, $function );
 			}
 			catch ( Exception $e ) {
-				$message = $e->getMessage();
-				$key     = array_search( $message, $GLOBALS['encountered_errors'] );
-				if ( $key === false ) {
-					$GLOBALS['encountered_errors'][] = $message;
-					$key                             = array_search( $message, $GLOBALS['encountered_errors'] );
-				}
-				echo '<span class="error">(Catchable) Fatal error <a href="#', $GLOBALS['test'], '-errors">#', ( $key + 1 ), '</a></span>';
+				self::handle_exception( $e->getMessage() );
 			}
 		}
 		else if ( PHP_VERSION_ID >= 50200 && ( gettype( $a ) === 'object' || gettype( $b ) === 'object' ) ) {
 			try {
-				$r = $function( $a, $b );
-				if ( is_int( $r ) ) {
-					pr_int( $r );
-				}
-				else {
-					pr_var( $r, '', true, true );
-				}
+				self::compare_strings_helper( $a, $b, $function );
 			}
 			catch ( Exception $e ) {
-				$message = $e->getMessage();
-				$key     = array_search( $message, $GLOBALS['encountered_errors'] );
-				if ( $key === false ) {
-					$GLOBALS['encountered_errors'][] = $message;
-					$key                             = array_search( $message, $GLOBALS['encountered_errors'] );
-				}
-				echo '<span class="error">(Catchable) Fatal error <a href="#', $GLOBALS['test'], '-errors">#', ( $key + 1 ), '</a></span>';
+				self::handle_exception( $e->getMessage() );
 			}
 		}
 		else {
-			$r = $function( $a, $b );
-			if ( is_int( $r ) ) {
-				pr_int( $r );
-			}
-			else {
-				pr_var( $r, '', true, true );
-			}
+			self::compare_strings_helper( $a, $b, $function );
 		}
+	}
+
+
+	/**
+	 * Helper function for string comparisons.
+	 *
+	 * @param mixed  $a
+	 * @param mixed  $b
+	 * @param string $function
+	 */
+	static public function compare_strings_helper( $a, $b, $function ) {
+		$r = $function( $a, $b );
+		if ( is_int( $r ) ) {
+			pr_int( $r );
+		}
+		else {
+			pr_var( $r, '', true, true );
+		}
+	}
+
+
+	/**
+	 * Helper function to handle exceptions from the string compare function.
+	 *
+	 * @param string $message The error message.
+	 */
+	static public function handle_exception( $message ) {
+		$key = array_search( $message, $GLOBALS['encountered_errors'] );
+		if ( $key === false ) {
+			$GLOBALS['encountered_errors'][] = $message;
+			$key                             = array_search( $message, $GLOBALS['encountered_errors'] );
+		}
+		echo '<span class="error">(Catchable) Fatal error <a href="#', $GLOBALS['test'], '-errors">#', ( $key + 1 ), '</a></span>';
 	}
 
 

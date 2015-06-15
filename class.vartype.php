@@ -82,7 +82,7 @@ class Vartype {
 		 */
 		if ( PHP_VERSION_ID >= 50000 ) {
 			include_once APP_DIR . '/class.vartype-php5.php';
-			$this->tests = VartypePHP5::merge_tests( $this->tests );
+			$this->merge_tests( VartypePHP5::$tests );
 		}
 
 		/**
@@ -90,7 +90,7 @@ class Vartype {
 		 */
 		if ( PHP_VERSION_ID >= 70000 ) {
 			include_once APP_DIR . '/class.vartype-php7.php';
-			$this->tests = VartypePHP7::merge_tests( $this->tests );
+			$this->merge_tests( VartypePHP7::$tests );
 		}
 
 		// Create the actual test functions.
@@ -106,6 +106,21 @@ class Vartype {
 	 */
 	function vartype() {
 		$this->__construct();
+	}
+
+
+	/**
+	 * Overwrite selected entries in the original test array with PHP-version specific function code.
+	 *
+	 * @param array $overload_tests Array of test entries to use in the overloading.
+	 */
+	function merge_tests( $overload_tests ) {
+
+		foreach ( $overload_tests as $key => $array ) {
+			if ( isset( $this->tests[ $key ], $this->tests[ $key ]['function'], $array['function'] ) ) {
+				$this->tests[ $key ]['function'] = $array['function'];
+			}
+		}
 	}
 
 
@@ -433,34 +448,14 @@ class Vartype {
 	function create_table_header( $test_group ) {
 
 		$this->table_notes = array(); // Make sure we start with an empty array.
-
-		if ( isset( $this->test_groups[ $test_group ]['book_url'] ) && $this->test_groups[ $test_group ]['book_url'] !== '' ) {
-			$group_label = '<th class="label-col"><a href="' . $this->test_groups[ $test_group ]['book_url'] . '" target="_blank">' . $this->test_groups[ $test_group ]['title'] . '</a></th>';
-		}
-		else {
-			$group_label = '<th class="label-col">' . $this->test_groups[ $test_group ]['title'] . '</th>';
-		}
-
+		$group_label       = $this->get_table_header_group_label( $test_group );
 
 		$html = '
 				<tr>
 					' . $group_label;
 
-
-
 		foreach ( $this->test_groups[ $test_group ]['tests'] as $test ) {
-			$class = array();
-			if ( isset( $this->test_groups[ $test_group ]['best'] ) && in_array( $test, $this->test_groups[ $test_group ]['best'] ) ) {
-				$class[] = 'best';
-			}
-			else if ( isset( $this->test_groups[ $test_group ]['good'] ) && in_array( $test, $this->test_groups[ $test_group ]['good'] ) ) {
-				$class[] = 'good';
-			}
-			if ( isset( $this->test_groups[ $test_group ]['break_at'] ) && in_array( $test, $this->test_groups[ $test_group ]['break_at'] ) ) {
-				$class[] = 'end';
-			}
-
-			$class   = ( ( count( $class ) > 0 ) ? ' class="' . implode( ' ', $class ) . '"' : '' );
+			$class   = $this->get_table_header_cell_class( $test_group, $test );
 			$tooltip = ( isset( $this->tests[ $test ]['tooltip'] ) ? ' title="' . htmlspecialchars( $this->tests[ $test ]['tooltip'], ENT_QUOTES, 'UTF-8' ) . '"' : '' );
 
 			$html .= '
@@ -497,6 +492,53 @@ class Vartype {
 
 
 	/**
+	 * Get the - potentially linked - group label (= first cell in the table header).
+	 *
+	 * @param string $test_group
+	 *
+	 * @return string
+	 */
+	function get_table_header_group_label( $test_group ) {
+		$group_label = '';
+
+		if ( isset( $this->test_groups[ $test_group ]['book_url'] ) && $this->test_groups[ $test_group ]['book_url'] !== '' ) {
+			$group_label = '<th class="label-col"><a href="' . $this->test_groups[ $test_group ]['book_url'] . '" target="_blank">' . $this->test_groups[ $test_group ]['title'] . '</a></th>';
+		}
+		else {
+			$group_label = '<th class="label-col">' . $this->test_groups[ $test_group ]['title'] . '</th>';
+		}
+
+		return $group_label;
+	}
+
+
+	/**
+	 * Get the CSS class string to attach to a table header cell.
+	 *
+	 * @param string $test_group
+	 * @param string $test
+	 *
+	 * @return string
+	 */
+	function get_table_header_cell_class( $test_group, $test ) {
+		$class = array();
+		if ( isset( $this->test_groups[ $test_group ]['best'] ) && in_array( $test, $this->test_groups[ $test_group ]['best'] ) ) {
+			$class[] = 'best';
+		}
+		else if ( isset( $this->test_groups[ $test_group ]['good'] ) && in_array( $test, $this->test_groups[ $test_group ]['good'] ) ) {
+			$class[] = 'good';
+		}
+		if ( isset( $this->test_groups[ $test_group ]['break_at'] ) && in_array( $test, $this->test_groups[ $test_group ]['break_at'] ) ) {
+			$class[] = 'end';
+		}
+
+		$class = ( ( count( $class ) > 0 ) ? ' class="' . implode( ' ', $class ) . '"' : '' );
+
+		return $class;
+	}
+
+
+	/**
 	 * Generate the html for the table top.
 	 *
 	 * @param string $test_group The current subsection
@@ -526,44 +568,62 @@ class Vartype {
 		foreach ( $this->test_groups[ $test_group ]['tests'] as $key => $test ) {
 			$GLOBALS['has_error'] = array();
 
-			$class = array( $test );
-			if ( in_array( $test, $this->test_groups[ $test_group ]['best'] ) ) {
-				$class[] = 'best';
-			}
-			else if ( in_array( $test, $this->test_groups[ $test_group ]['good'] ) ) {
-				$class[] = 'good';
-			}
-			if ( in_array( $test, $this->test_groups[ $test_group ]['break_at'] ) ) {
-				$class[] = 'end';
-			}
+			$class = $this->get_table_row_cell_class( $test_group, $test );
 
-			if ( count( $class ) === 0 ) {
-				echo '
-					<td>';
-			}
-			else {
-				echo '
-					<td class="', implode( ' ', $class ), '">';
-			}
-
+			echo '
+					<td' . $class . '>';
 
 			$val = $this->generate_value( $value );
 			$this->tests[ $test ]['test']( $val );
-
-
-			if ( is_array( $GLOBALS['has_error'] ) && count( $GLOBALS['has_error'] ) > 0 ) {
-				foreach ( $GLOBALS['has_error'] as $error ) {
-					if ( isset( $error['msg'] ) && $error['msg'] !== '' ) {
-						echo '<br />', $error['msg'];
-					}
-				}
-			}
+			$this->print_row_cell_error_refs();
 
 			echo '					</td>';
 
 			unset( $class, $GLOBALS['has_error'] );
 		}
 		unset( $test );
+	}
+
+
+	/**
+	 * Get the CSS class string to attach to a table header cell.
+	 *
+	 * @param string $test_group
+	 * @param string $test
+	 *
+	 * @return string
+	 */
+	function get_table_row_cell_class( $test_group, $test ) {
+		$class = array( $test );
+		if ( in_array( $test, $this->test_groups[ $test_group ]['best'] ) ) {
+			$class[] = 'best';
+		}
+		else if ( in_array( $test, $this->test_groups[ $test_group ]['good'] ) ) {
+			$class[] = 'good';
+		}
+		if ( in_array( $test, $this->test_groups[ $test_group ]['break_at'] ) ) {
+			$class[] = 'end';
+		}
+
+		$class = ( ( count( $class ) > 0 ) ? ' class="' . implode( ' ', $class ) . '"' : '' );
+
+		return $class;
+	}
+
+
+	/**
+	 * Print the error reference numbers.
+	 *
+	 * Used in table cells to link to errors which will be displayed as footnotes.
+	 */
+	function print_row_cell_error_refs() {
+		if ( is_array( $GLOBALS['has_error'] ) && count( $GLOBALS['has_error'] ) > 0 ) {
+			foreach ( $GLOBALS['has_error'] as $error ) {
+				if ( isset( $error['msg'] ) && $error['msg'] !== '' ) {
+					echo '<br />', $error['msg'];
+				}
+			}
+		}
 	}
 
 

@@ -518,14 +518,7 @@ class VartypeCompare extends Vartype {
 
 
 			$this->tests[ $test ]['test']( $value1, $value2 );
-
-			if ( is_array( $GLOBALS['has_error'] ) && count( $GLOBALS['has_error'] ) > 0 ) {
-				foreach ( $GLOBALS['has_error'] as $error ) {
-					if ( isset( $error['msg'] ) && $error['msg'] !== '' ) {
-						echo '<br />', $error['msg'];
-					}
-				}
-			}
+			$this->print_row_cell_error_refs();
 
 			echo '					</td>';
 
