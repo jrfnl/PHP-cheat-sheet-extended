@@ -93,7 +93,7 @@ IF NOT EXIST "%_AUTOGEN_SCRIPT_LOCATION%" GOTO :AUTOGEN_SCRIPT_LOCATION_ERROR EL
 ::
 :: Current latest version and popular versions per minor as of Jun 12th, 2015:
 :: PHP minor  Latest    Popular ( ~> 5% )
-:: 4.3        4.3.11    4.3.9
+:: 4.3        4.3.11    4.3.9 (seeing as how low the PHP4 usage has (finally) become, now just including the last version)
 :: 4.4        4.4.9     4.4.9
 :: 5.0        5.0.5     5.0.4
 :: 5.1        5.1.6     5.1.6
@@ -113,6 +113,7 @@ IF NOT EXIST "%_AUTOGEN_SCRIPT_LOCATION%" GOTO :AUTOGEN_SCRIPT_LOCATION_ERROR EL
 ::
 :: No longer included:
 :: Old versions where a release close to it is now more relevant. Redirecting old links to new via .htaccess.
+:: 4.3.9 => 4.3.11
 :: 5.2.4 => 5.2.6
 :: 5.2.8 => 5.2.9
 :: 5.4.6 => 5.4.4
@@ -137,7 +138,7 @@ FOR %%G IN (5.4.42 5.4.39 5.4.36 5.4.33 5.4.20 5.4.16 5.4.11 5.4.4) DO CALL :RUN
 FOR %%G IN (5.3.29 5.3.27 5.3.10 5.3.3 5.3.2) DO CALL :RUN_AUTOGEN_PHP5 %%G
 FOR %%G IN (5.2.17 5.2.9-2 5.2.6) DO CALL :RUN_AUTOGEN_PHP5 %%G
 FOR %%G IN (5.1.6 5.0.5 5.0.4) DO CALL :RUN_AUTOGEN_PHP5 %%G
-FOR %%G IN (4.4.9 4.3.11 4.3.9) DO CALL :RUN_AUTOGEN_PHP4 %%G
+FOR %%G IN (4.4.9 4.3.11) DO CALL :RUN_AUTOGEN_PHP4 %%G
 GOTO :CLOSE
 
 
