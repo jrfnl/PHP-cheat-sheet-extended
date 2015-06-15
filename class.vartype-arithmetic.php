@@ -201,6 +201,8 @@ class VartypeArithmetic extends VartypeCompare {
 		),
 
 		/*
+		Issue #5: https://github.com/jrfnl/PHP-cheat-sheet-extended/issues/5
+
 		'bcpow'          => array(
 			'title'         => 'bcpow()',
 			'url'           => 'http://php.net/bcpow',

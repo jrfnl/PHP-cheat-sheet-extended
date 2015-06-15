@@ -225,7 +225,7 @@ class VartypeTest extends Vartype {
 			'title'         => '(unset)',
 			'url'           => 'http://php.net/language.types.null#language.types.null.casting',
 			'arg'           => '$x',
-			'function'      => 'if ( PHP_VERSION_ID >= 50000 ) { pr_var( (unset) $x, \'\', true, true ); } else { print \'E: (unset) not available (PHP 5+)\'; }',
+			'function'      => 'if ( PHP_VERSION_ID >= 50000 ) { pr_var( (unset) $x, \'\', true, true ); } else { print \'E: not available (PHP 5+)\'; }',
 		),
 		'f_unset' => array(
 			'title'         => 'unset()',
@@ -569,6 +569,7 @@ class VartypeTest extends Vartype {
 		),
 		'char_access' => array(
 			'title'         => '$x{2}',
+			'tooltip'       => 'String character access by index.',
 			'url'           => 'http://www.php.net/manual/en/language.types.string.php#language.types.string.substr',
 			'arg'           => '$x',
 			'function'      => 'if ( ! is_object( $x ) ) { pr_var( $x{2}, \'\', true, true ); } else { $class = get_class( $x ); trigger_error( \'Cannot use object of type \' . $class . \' as array\', E_USER_ERROR ); unset( $class ); }',
@@ -1177,11 +1178,15 @@ class VartypeTest extends Vartype {
 			'arg'           => '$x',
 			'function'      => '$valid = preg_match( \'`^\w+$`\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); }',
 		),
+		// Result depends on locale.
 		'preg_word_utf8' => array(
 			'title'         => 'preg_match (`^\w+$`u)',
 			'url'           => 'http://php.net/preg-match',
 			'arg'           => '$x',
 			'function'      => '$valid = preg_match( \'`^\w+$`u\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); }',
+			'notes'         => array(
+				'<p>What <code>\w</code> matches is locale dependent. The locale for these cheatsheets are set to <code>C</code>. Results with other locales will vary.</p>'
+			),
 		),
 
 
