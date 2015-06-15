@@ -549,7 +549,7 @@ class VartypeCompare extends Vartype {
 			$GLOBALS['has_error'] = array();
 
 			$value2 = $this->test_data[ $key2 ];
-			$class  = $this->get_table_row_cell_class( $key1, $key2, $i );
+			$class  = $this->get_table_cell_class( $key1, $key2, $i );
 
 			echo '
 					<td' . $class . '>';
@@ -574,7 +574,7 @@ class VartypeCompare extends Vartype {
 	 *
 	 * @return string
 	 */
-	function get_table_row_cell_class( $key1, $key2, $index ) {
+	function get_table_cell_class( $key1, $key2, $index ) {
 		$class = array( 'value1-' . $key1, 'value2-' . $key2 );
 		if ( ! isset( $this->test_data_keys[ ( $index + 1 ) ] ) || substr( $key2, 0, 1 ) !== substr( $this->test_data_keys[ ( $index + 1 ) ], 0, 1 ) ) {
 			$class[] = 'end';
