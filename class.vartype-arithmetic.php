@@ -88,12 +88,20 @@ class VartypeArithmetic extends VartypeCompare {
 			'url'           => 'http://php.net/language.operators.arithmetic',
 			'arg'           => '$a, $b',
 			'function'      => '$r = $a % $b; if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); }',
+			'notes'         => array(
+				'<p>Pre-PHP 7, a "<em>Division by zero</em>" error would be emitted as a warning. From PHP 7 onwards, this has been changed to a catchable fatal error.</p>',
+			),
 		),
+
+		// Will be removed from $tests property from constructor if not on PHP 5.6+ to prevent parse errors.
 		'pow_operator'         => array(
 			'title'         => '**',
 			'url'           => 'http://php.net/language.operators.arithmetic',
 			'arg'           => '$a, $b',
 			'function'      => 'if ( PHP_VERSION_ID >= 50600 ) { pr_var( $a ** $b, \'\', true, true ); } else { print \'E: \'**\' operator not available (PHP 5.6+)\'; }',
+			'notes'         => array(
+				'<p>This operator is only available in PHP 5.6.0+.</p>',
+			),
 		),
 
 
