@@ -225,7 +225,7 @@ class VartypeTest extends Vartype {
 			'title'         => '(unset)',
 			'url'           => 'http://php.net/language.types.null#language.types.null.casting',
 			'arg'           => '$x',
-			'function'      => 'if ( PHP_VERSION_ID >= 50000 ) { pr_var( (unset) $x, \'\', true, true ); } else { print \'E: (unset) not available (PHP 5+)\'; }',
+			'function'      => 'if ( PHP_VERSION_ID >= 50000 ) { pr_var( (unset) $x, \'\', true, true ); } else { print \'E: not available (PHP 5+)\'; }',
 		),
 		'f_unset' => array(
 			'title'         => 'unset()',
@@ -569,6 +569,7 @@ class VartypeTest extends Vartype {
 		),
 		'char_access' => array(
 			'title'         => '$x{2}',
+			'tooltip'       => 'String character access by index.',
 			'url'           => 'http://www.php.net/manual/en/language.types.string.php#language.types.string.substr',
 			'arg'           => '$x',
 			'function'      => 'if ( ! is_object( $x ) ) { pr_var( $x{2}, \'\', true, true ); } else { $class = get_class( $x ); trigger_error( \'Cannot use object of type \' . $class . \' as array\', E_USER_ERROR ); unset( $class ); }',
@@ -743,7 +744,7 @@ class VartypeTest extends Vartype {
 			'title'         => 'instanceof TestObject',
 			'url'           => 'http://php.net/language.operators.type',
 			'arg'           => '$x',
-			'function'      => 'print \'E: not available (PHP 5.0+)\';',  // Note: has PHP5 equivalent in class.vartype-php5.php
+			'function'      => 'print \'E: not available (PHP 5.0+)\';', // Note: has PHP5 equivalent in class.vartype-php5.php
 		),
 		'get_class' => array(
 			'title'         => 'get_class()',
@@ -1177,11 +1178,15 @@ class VartypeTest extends Vartype {
 			'arg'           => '$x',
 			'function'      => '$valid = preg_match( \'`^\w+$`\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); }',
 		),
+		// Result depends on locale.
 		'preg_word_utf8' => array(
 			'title'         => 'preg_match (`^\w+$`u)',
 			'url'           => 'http://php.net/preg-match',
 			'arg'           => '$x',
 			'function'      => '$valid = preg_match( \'`^\w+$`u\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); }',
+			'notes'         => array(
+				'<p>What <code>\w</code> matches is locale dependent. The locale for these cheatsheets are set to <code>C</code>. Results with other locales will vary.</p>'
+			),
 		),
 
 
@@ -1762,7 +1767,6 @@ else {
 				'is_callable',
 
 				'is_numeric',
-
 			),
 			'break_at'  => array( 'gettype', 'is_null', 'is_string', 'is_resource', 'is_callable', 'is_numeric' ),
 			'good'      => array(),
@@ -1771,49 +1775,6 @@ else {
 			'book_url'  => 'http://php.net/ref.var',
 			'target'    => null,
 		),
-
-
-		/*
-		'type_casting'	=> array(
-			'title'     => 'Type casting',
-			'tests'     => array(
-				//'gettype',
-				'settype_null',
-				'unset',
-				'f_unset',
-
-				'settype_bool',
-				'bool',
-
-				'settype_int',
-				'int',
-				'intval',
-				'juggle_int',
-
-				'settype_float',
-				'float',
-				'floatval',
-				'juggle_flt',
-
-				'settype_string',
-				'string',
-				'strval',
-				'juggle_str',
-
-				'settype_array',
-				'array',
-
-				'settype_object',
-				'object',
-			),
-			'break_at'  => array( 'gettype', 'f_unset', 'bool', 'juggle_int', 'juggle_flt', 'juggle_str', 'array', 'object' ),
-			'good'      => array(),
-			'best'      => array(),
-			'urls'      => array(),
-			'book_url'  => 'http://php.net/language.types.type-juggling',
-			'target'	=>	null,
-		),
-		*/
 
 
 		'null_tests'       => array(
@@ -1833,18 +1794,9 @@ else {
 				'null_cmp_strict',
 				'null_cmp_loose_str',
 				'null_cmp_strict_str',
-
-				/*
-				'null_cmp_rv_loose',
-				'null_cmp_rv_strict',
-				'null_cmp_rv_loose_str',
-				'null_cmp_rv_strict_str',
-				*/
 			),
 			'break_at'  => array( 'cast_to_type_null', 'empty', 'null_cmp_strict_str', 'null_cmp_rv_strict_str' ),
-			// 'good'      => array( 'is_null', 'null_cmp_strict', 'null_cmp_rv_strict' ),
 			'good'      => array(),
-			// 'best'      => array( 'isset' ),
 			'best'      => array(),
 			'urls'      => array(),
 			'book_url'  => 'http://php.net/types.comparisons',
@@ -1859,7 +1811,6 @@ else {
 				'bool',
 				'filter_combined_bool',
 				'filter_combined_bool_null',
-				// 'cast_to_type_bool',
 				'cast_to_type_bool_not_empty_recurse_arrays',
 
 				'is_bool',
@@ -1867,45 +1818,18 @@ else {
 				'bool_cmp_true_loose',
 				'bool_cmp_true_strict',
 				'bool_cmp_true_loose_int',
-				// 'bool_cmp_true_strict_int',
 				'bool_cmp_true_loose_str',
-				// 'bool_cmp_true_strict_str',
-
-				/*
-				'bool_cmp_rv_true_loose',
-				'bool_cmp_rv_true_strict',
-				'bool_cmp_rv_true_loose_int',
-				'bool_cmp_rv_true_strict_int',
-				'bool_cmp_rv_true_loose_str',
-				'bool_cmp_rv_true_strict_str',
-				*/
 
 				'bool_cmp_false_loose',
 				'bool_cmp_false_strict',
 				'bool_cmp_false_loose_int',
-				// 'bool_cmp_false_strict_int',
 				'bool_cmp_false_loose_str',
-				// 'bool_cmp_false_strict_str',
 
-				/*
-				'bool_cmp_rv_false_loose',
-				'bool_cmp_rv_false_strict',
-				'bool_cmp_rv_false_loose_int',
-				'bool_cmp_rv_false_strict_int',
-				'bool_cmp_rv_false_loose_str',
-				'bool_cmp_rv_false_strict_str',
-				*/
-
-				/*
-				'var',
-				'not_var',
-				*/
 				'if_var',
 				'if_not_var',
 
 			),
 			'break_at'  => array( 'cast_to_type_bool_not_empty_recurse_arrays', 'is_bool', 'bool_cmp_true_loose_str', 'bool_cmp_rv_true_strict_str', 'bool_cmp_false_loose_str', 'bool_cmp_rv_false_strict_str', 'if_not_var' ),
-			// 'good'      => array( 'cast_to_type_bool', 'cast_to_type_bool_not_empty_recurse_arrays', 'filter_combined_bool_null', 'is_bool', 'bool_cmp_true_strict', 'bool_cmp_false_strict' ),
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
@@ -1923,7 +1847,6 @@ else {
 				'juggle_int',
 				'filter_combined_int',
 				'filter_combined_int_null',
-				// 'cast_to_type_int',
 				'cast_to_type_int_not_empty_recurse_arrays',
 
 				'abs',
@@ -1934,30 +1857,14 @@ else {
 				'is_numeric',
 				'preg_int_pos',
 				'preg_int',
-				// 'preg_digit_pos',
-				// 'preg_digit',
-
-				/*
-				'int_cmp_gt0',
-				'int_cmp_gte0',
-				'int_cmp_is0_loose',
-				'int_cmp_is0_strict',
-				'int_cmp_not0_loose',
-				'int_cmp_not0_strict',
-				'int_cmp_lt0',
-				'int_cmp_lte0',
-				*/
-
 			),
 			'break_at'  => array( 'cast_to_type_int_not_empty_recurse_arrays', 'abs', 'preg_int' ),
-			// 'good'      => array( 'cast_to_type_int', 'cast_to_type_int_not_empty_recurse_arrays', 'filter_combined_int_null', 'is_int' ),
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
 			'book_url'  => 'http://php.net/book.var',
 			'target'    => 'i',
 		),
-
 
 
 		'float_tests'      => array(
@@ -1969,7 +1876,6 @@ else {
 				'juggle_flt',
 				'filter_combined_float',
 				'filter_combined_float_null',
-				// 'cast_to_type_float',
 				'cast_to_type_float_not_empty_recurse_arrays',
 
 				'empty',
@@ -1978,12 +1884,8 @@ else {
 				'is_numeric',
 				'preg_float_pos',
 				'preg_float',
-				// 'preg_digit_float_pos',
-				// 'preg_digit_float',
-
 			),
 			'break_at'  => array( 'cast_to_type_float_not_empty_recurse_arrays', 'preg_float' ),
-			// 'good'      => array( 'cast_to_type_float', 'cast_to_type_float_not_empty_recurse_arrays', 'filter_combined_float_null', 'is_float' ),
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
@@ -2034,12 +1936,9 @@ else {
 				'juggle_str',
 				'filter_combined_string',
 				'filter_combined_string_null',
-				// 'cast_to_type_string',
 				'cast_to_type_string_not_empty_recurse_arrays',
-
 			),
 			'break_at'  => array( 'cast_to_type_string_not_empty_recurse_arrays' ),
-			// 'good'      => array( 'cast_to_type_string', 'cast_to_type_string_not_empty_recurse_arrays', 'filter_combined_string_null' ),
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
@@ -2056,8 +1955,6 @@ else {
 				'empty',
 				'str_cmp_empty_loose',
 				'str_cmp_empty_strict',
-				// 'str_cmp_not_empty_loose',
-				// 'str_cmp_not_empty_strict',
 
 				'ctype_alpha',
 				'preg_alpha',
@@ -2073,10 +1970,8 @@ else {
 				'char_access',
 
 				'trim',
-
 			),
 			'break_at'  => array( 'is_string', 'str_cmp_empty_strict', 'preg_word', 'mb_strlen', 'char_access', 'trim' ),
-			// 'good'      => array( 'is_string', 'ctype_alpha', 'mb_strlen' ),
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
@@ -2084,17 +1979,15 @@ else {
 			'target'    => 's',
 		),
 
+
 		'array_casting'     => array(
 			'title'     => 'Array casting',
 			'tests'     => array(
 				'settype_array',
 				'array',
-				// 'cast_to_type_array',
 				'cast_to_type_array_not_empty',
-
 			),
 			'break_at'  => array( 'cast_to_type_array_not_empty' ),
-			// 'good'      => array( 'cast_to_type_array', 'cast_to_type_array_not_empty' ),
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
@@ -2137,7 +2030,6 @@ else {
 			'tests'     => array(
 				'settype_object',
 				'object',
-				// 'cast_to_type_object',
 				'cast_to_type_object_not_empty',
 
 				'is_object',
@@ -2147,10 +2039,8 @@ else {
 				'get_class',
 				'get_parent_class',
 				'is_subclass_of',
-
 			),
 			'break_at'  => array( 'cast_to_type_object', 'cast_to_type_object_not_empty', 'instanceof', 'is_subclass_of' ),
-			// 'good'      => array( 'cast_to_type_object', 'cast_to_type_object_not_empty', 'is_object' ),
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
@@ -2164,7 +2054,6 @@ else {
 			'tests'	     => array(
 				'is_resource',
 				'get_resource_type',
-
 			),
 			'break_at'  => array( 'is_resource', 'get_resource_type' ),
 			'good'      => array(),
@@ -2290,40 +2179,8 @@ else {
 	 */
 	function __construct() {
 
-		// Work around some bugs in PHP versions having issues with ctype.
-		if ( extension_loaded( 'ctype' ) && PHP_VERSION_ID !== 40309 ) {
-			if ( PHP_VERSION_ID === 50005 || PHP_VERSION_ID === 50004 ) {
-				unset(
-					$this->ctype_test_group['ctype_extension']['tests'][6], // ctype_lower
-					$this->ctype_test_group['ctype_extension']['tests'][8], // ctype_cntrl
-					$this->ctype_test_group['ctype_extension']['tests'][9]  // ctype_punct
-				);
-			}
-			$this->test_groups = array_merge( $this->test_groups, $this->ctype_test_group );
-		}
-		else {
-			unset(
-				$this->test_groups['integer_tests']['tests'][10], // ctype_digit
-				$this->test_groups['float_tests']['tests'][9],    // ctype_digit
-				$this->test_groups['numeric_tests']['tests'][1],  // ctype_digit
-				$this->test_groups['string_tests']['tests'][4],   // ctype_alpha
-				$this->test_groups['string_tests']['tests'][6]    // ctype_alnum
-			);
-		}
-
-		if ( extension_loaded( 'filter' ) ) {
-			$this->test_groups = array_merge( $this->test_groups, $this->filter_test_group );
-		}
-
-		// Remove null coalesce test for PHP < 7
-		if ( PHP_VERSION_ID < 70000 ) {
-			unset(
-				$this->tests['null_coalesce'],
-				$this->test_groups['general']['tests'][6],
-				$this->test_groups['null_tests']['tests'][5]
-			);
-		}
-
+		// Make sure the tests presented will be compatible with the install the cheatsheet is running on.
+		$this->phpcompat_filter_tests();
 
 		/**
 		 * Adjust float regex tests to use the correct decimal point character.
@@ -2368,13 +2225,58 @@ else {
 
 
 	/**
+	 * Filter out some tests which would break the cheatsheets and merge some which won't.
+	 */
+	function phpcompat_filter_tests() {
+
+		// Work around some bugs in PHP versions having issues with ctype.
+		if ( extension_loaded( 'ctype' ) && PHP_VERSION_ID !== 40309 ) {
+			// Remove some tests which give issues in PHP5.0.x.
+			if ( PHP_VERSION_ID === 50005 || PHP_VERSION_ID === 50004 ) {
+				unset(
+					$this->ctype_test_group['ctype_extension']['tests'][6], // ctype_lower
+					$this->ctype_test_group['ctype_extension']['tests'][8], // ctype_cntrl
+					$this->ctype_test_group['ctype_extension']['tests'][9]  // ctype_punct
+				);
+			}
+			// Merge the ctype testgroup.
+			$this->test_groups = array_merge( $this->test_groups, $this->ctype_test_group );
+		}
+		else {
+			// PHP 4.3.9 has issue with all ctype, so don't merge the group and remove uses
+			// in other groups.
+			unset(
+				$this->test_groups['integer_tests']['tests'][10], // ctype_digit
+				$this->test_groups['float_tests']['tests'][9],    // ctype_digit
+				$this->test_groups['numeric_tests']['tests'][1],  // ctype_digit
+				$this->test_groups['string_tests']['tests'][4],   // ctype_alpha
+				$this->test_groups['string_tests']['tests'][6]    // ctype_alnum
+			);
+		}
+
+		if ( extension_loaded( 'filter' ) ) {
+			$this->test_groups = array_merge( $this->test_groups, $this->filter_test_group );
+		}
+
+		// Remove null coalesce test for PHP < 7
+		if ( PHP_VERSION_ID < 70000 ) {
+			unset(
+				$this->tests['null_coalesce'],
+				$this->test_groups['general']['tests'][6],
+				$this->test_groups['null_tests']['tests'][5]
+			);
+		}
+	}
+
+
+	/**
 	 * Work around some really weird bug which I haven't been able to track down yet.
 	 *
 	 * Bug details: some semi-random text string is shown for the INF constant on the
 	 * object_test sheet in PHP 5.0.x.
 	 * Similarly a "Fatal error:  Unknown function:  f8()" is shown just before the array_testing group.
 	 *
-	 * @param string $test_group The current subsection
+	 * @param string|null $test_group The current subsection
 	 */
 	function set_test_data( $test_group = null ) {
 		parent::set_test_data( $test_group );

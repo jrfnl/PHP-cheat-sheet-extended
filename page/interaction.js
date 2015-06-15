@@ -103,12 +103,12 @@ ui-icon-circle-minus
 
 				var titleText   = windowTitle.text();
 
-				if( titleText.indexOf( ':: '+oldTitle ) != -1 ) {
+				if( titleText.indexOf( ':: '+oldTitle ) !== -1 ) {
 					titleText = titleText.replace( ':: '+oldTitle, ':: '+tabTitle );
 				}
 				else {
 					var oldTabNoUnderscore = oldTab.replace('_', ' ');
-					if( titleText.indexOf( ':: '+oldTabNoUnderscore ) != -1 ) {
+					if( titleText.indexOf( ':: '+oldTabNoUnderscore ) !== -1 ) {
 						titleText = titleText.replace( ':: '+oldTabNoUnderscore, ':: '+tabTitle );
 					}
 					// This was a generic call, no previous tab selected
@@ -119,9 +119,9 @@ ui-icon-circle-minus
 				}
 
 				// Static sheets
-				if( tabHref.substring( 0, 1 ) == '#' ) {
+				if( tabHref.substring( 0, 1 ) === '#' ) {
 					var oldUri = window.location.href;
-					if( oldUri.indexOf('#') != -1 && window.location.hash === '#'+oldTab ) {
+					if( oldUri.indexOf('#') !== -1 && window.location.hash === '#'+oldTab ) {
 						tabHref = oldUri.replace( window.location.hash, tabHref );
 					}
 					else {
@@ -151,19 +151,17 @@ ui-icon-circle-minus
 				});
 				return true;
 			}
-			else {
-				// Ok, html has already loaded, no need to request it again.
-				return false;
-			}
+			// Ok, html has already loaded, no need to request it again.
+			return false;
 		},
 	    cache: true,
 	    create: function( event, ui ) {
 			/* Set the initial tab value for the dropdown and title bar
 			   Static sheets only (they are the only ones with location hashes) */
 			var tabHash = window.location.hash;
-			if( tabHash && tabHash != '' ) {
+			if( tabHash && tabHash !== '' ) {
 				// Change the initial tab value for the php version dropdown
-				if( formTabField.val() == '' ) {
+				if( formTabField.val() === '' ) {
 					formTabField.val( tabHash.replace( '#', '' ) );
 				}
 				// Add the tab title to the initial window titlebar title

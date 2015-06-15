@@ -57,13 +57,13 @@ RewriteCond %{REQUEST_METHOD} ^(HEAD|TRACE|DELETE|TRACK|DEBUG) [NC]
 RewriteRule ^(.*)$ - [F,L]
 
 # Redirect GET requests from the dropdown to html files
-RewriteCond %{QUERY_STRING} page=(arithmetic|compare|test)&tab=([a-z0-9_-]+)&phpversion=(php[0-9\.-]+) [NC]
+RewriteCond %{QUERY_STRING} page=(arithmetic|compare|test)&tab=([a-z0-9_-]+)&phpversion=(php[0-9\.-]+((alpha|beta|rc)([0-9])?)?) [NC]
 RewriteRule index.php /static_results/%1/%3.html#%2? [NE,R=301,L]
 
-RewriteCond %{QUERY_STRING} page=(arithmetic|compare|test)&tab=&phpversion=(php[0-9\.-]+) [NC]
+RewriteCond %{QUERY_STRING} page=(arithmetic|compare|test)&tab=&phpversion=(php[0-9\.-]+((alpha|beta|rc)([0-9])?)?) [NC]
 RewriteRule index.php /static_results/%1/%2.html? [R=301,L]
 
-RewriteCond %{QUERY_STRING} page=(arithmetic|compare|test)&phpversion=(php[0-9\.-]+) [NC]
+RewriteCond %{QUERY_STRING} page=(arithmetic|compare|test)&phpversion=(php[0-9\.-]+((alpha|beta|rc)([0-9])?)?) [NC]
 RewriteRule index.php /static_results/%1/%2.html? [R=301,L]
 
 

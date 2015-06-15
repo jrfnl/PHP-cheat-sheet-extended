@@ -65,6 +65,25 @@ class TestObjectToString extends TestObject {
 	}
 }
 
+
+/**
+ * Helper function to compare strings, compatible with PHP4.
+ *
+ * @param mixed  $var1
+ * @param mixed  $var2
+ * @param string $function
+ */
+function pc_compare_strings( $var1, $var2, $function ) {
+	$result = $function( $var1, $var2 );
+	if ( is_int( $result ) ) {
+		pr_int( $result );
+	}
+	else {
+		pr_var( $result, '', true, true );
+	}
+}
+
+
 /**
  * Catch errors to display in appendix.
  *
@@ -73,7 +92,7 @@ class TestObjectToString extends TestObject {
  * @param string $error_file
  * @param int    $error_line
  *
- * @return mixed
+ * @return null|false
  */
 function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
 	if ( ! ( error_reporting() & $error_no ) ) {
@@ -219,22 +238,14 @@ function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
 	if ( isset( $GLOBALS['encountered_errors'] ) ) {
 		// Ignore strict warnings (can't avoid having them if I want to keep this sheet working with PHP4).
 		if ( $error_no !== E_STRICT ) {
-			$key = array_search( $message, $GLOBALS['encountered_errors'] );
-			if ( $key === false ) {
-				$GLOBALS['encountered_errors'][] = $message;
-				$key                             = array_search( $message, $GLOBALS['encountered_errors'] );
-			}
+			$key = get_error_key( $message );
 
-			if ( $class === 'notice' ) {
-				$GLOBALS['has_error'][]['msg'] = ' (&nbsp;<span class="notice"><a href="#' . $GLOBALS['test']. '-errors">#' . ( $key + 1 ) . '</a></span>&nbsp;)';
-				return;
-			}
-			else if ( $class === 'warning' ) {
-				$GLOBALS['has_error'][]['msg'] = ' (&nbsp;<span class="warning"><a href="#' . $GLOBALS['test']. '-errors">#' . ( $key + 1 ) . '</a></span>&nbsp;)';
+			if ( $class === 'notice' || $class === 'warning' ) {
+				$GLOBALS['has_error'][]['msg'] = ' (&nbsp;<span class="' . $class . '"><a href="#' . $GLOBALS['test'] . '-errors">#' . ( $key + 1 ) . '</a></span>&nbsp;)';
 				return;
 			}
 			else if ( $class === 'error' ) {
-				$GLOBALS['has_error'][]['msg'] = ' <span class="error">' . $type . ' (&nbsp;<a href="#' . $GLOBALS['test']. '-errors">#' . ( $key + 1 ) . '</a>&nbsp;)</span>';
+				$GLOBALS['has_error'][]['msg'] = ' <span class="error">' . $type . ' (&nbsp;<a href="#' . $GLOBALS['test'] . '-errors">#' . ( $key + 1 ) . '</a>&nbsp;)</span>';
 				return;
 			}
 			else {
@@ -259,11 +270,31 @@ function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
 
 
 /**
+ * Get the index key for an error message and add the error message to the global array if it doesn't exist yet.
+ *
+ * @param string $message
+ *
+ * @return int
+ */
+function get_error_key( $message ) {
+	$key = array_search( $message, $GLOBALS['encountered_errors'] );
+	if ( $key === false ) {
+		$GLOBALS['encountered_errors'][] = $message;
+		$key                             = array_search( $message, $GLOBALS['encountered_errors'] );
+	}
+	return $key;
+}
+
+
+/**
  * Determine the base url to use.
+ *
+ * @return string
  */
 function determine_base_uri() {
 	$valid_hosts = array(
 		'phpcheatsheets.com',
+		'phpcheatsheet.com',
 		'phpcheatsheets.localdev',
 		'localhost',
 	);
@@ -283,6 +314,8 @@ function determine_base_uri() {
 
 /**
  * Determine the script path part of the base url.
+ *
+ * @return string
  */
 function determine_script_path() {
 	if ( ! empty( $_SERVER['SCRIPT_NAME'] ) && stripos( $_SERVER['SCRIPT_NAME'], 'index.php' ) !== false ) {
@@ -306,6 +339,7 @@ if ( ! function_exists( 'stripos' ) ) {
 	 *
 	 * @param string $haystack
 	 * @param string $needle
+	 *
 	 * @return int|false
 	 */
 	function stripos( $haystack, $needle ) {
@@ -318,6 +352,8 @@ if ( ! function_exists( 'stripos' ) ) {
 
 /**
  * Generate dropdown list of available static versions.
+ *
+ * @return string
  */
 function generate_version_dropdown() {
 

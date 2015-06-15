@@ -11,7 +11,7 @@ define( 'APP_DIR', dirname( __FILE__ ) );
 /**
  * Catch requests for static files (which have not been caught by htaccess).
  */
-if ( ( isset( $_GET['page'], $_GET['phpversion'] ) && in_array( $_GET['page'], array( 'arithmetic', 'compare', 'test' ), true ) ) && preg_match( '`^php[457](?:\.[0-9]+){2}(?:-[0-9])?$`', $_GET['phpversion'] ) ) {
+if ( ( isset( $_GET['page'], $_GET['phpversion'] ) && in_array( $_GET['page'], array( 'arithmetic', 'compare', 'test' ), true ) ) && preg_match( '`^php[457](?:\.[0-9]+){2}(?:-[0-9]|(?:alpha|beta|rc)(?:[0-9])?)?$`', $_GET['phpversion'] ) ) {
 	$file = APP_DIR . '/static_results/' . $_GET['page'] . '/' . $_GET['phpversion'] . '.html';
 	if ( is_file( $file ) ) {
 
@@ -20,7 +20,7 @@ if ( ( isset( $_GET['page'], $_GET['phpversion'] ) && in_array( $_GET['page'], a
 			$tab = '#' . $_GET['tab'];
 		}
 
-		$host = $_SERVER['HTTP_HOST'];
+		$host = isset( $_SERVER['HTTP_HOST'] ) ? $_SERVER['HTTP_HOST'] : 'phpcheatsheets.com';
 		$url  = 'http://' . $host . '/static_results/' . $_GET['page'] . '/' . $_GET['phpversion'] . '.html' . $tab;
 		header( "Location: $url", true, 301 );
 		exit;

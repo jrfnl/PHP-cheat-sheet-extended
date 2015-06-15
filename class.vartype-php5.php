@@ -25,7 +25,7 @@ class VartypePHP5 {
 	 *
 	 * @var array $tests  Multi-dimensional array.
 	 */
-	static public $tests = array(
+	public static $tests = array(
 		/**
 		 * String comparison functions.
 		 * @see class.vartype-compare.php
@@ -131,31 +131,13 @@ class VartypePHP5 {
 
 
 	/**
-	 * Overwrite selected entries in the original test array with the above PHP5 specific function code.
-	 *
-	 * @param array $test_array
-	 *
-	 * @return array
-	 */
-	static public function merge_tests( $test_array ) {
-
-		foreach ( self::$tests as $key => $array ) {
-			if ( isset( $test_array[ $key ], $test_array[ $key ]['function'], $array['function'] ) ) {
-				$test_array[ $key ]['function'] = $array['function'];
-			}
-		}
-		return $test_array;
-	}
-
-
-	/**
 	 * Ensure we clone an object before using it to avoid contamination by results of previous actions.
 	 *
 	 * @param mixed $value
 	 *
 	 * @return mixed
 	 */
-	static public function generate_value( $value ) {
+	public static function generate_value( $value ) {
 
 		if ( is_object( $value ) ) {
 			$value = clone $value;
@@ -167,138 +149,157 @@ class VartypePHP5 {
 	/**
 	 * Smarter way to compare strings in PHP5.
 	 *
-	 * @param mixed  $a
-	 * @param mixed  $b
+	 * @param mixed  $var1
+	 * @param mixed  $var2
 	 * @param string $function
 	 */
-	static public function compare_strings( $a, $b, $function ) {
+	public static function compare_strings( $var1, $var2, $function ) {
 
-		if ( ( PHP_VERSION_ID >= 50000 && $function === 'levenshtein' ) && ( ( gettype( $a ) === 'array' || gettype( $a ) === 'resource' ) || ( gettype( $b ) === 'array' || gettype( $b ) === 'resource' ) ) ) {
+		if ( ( PHP_VERSION_ID >= 50000 && $function === 'levenshtein' ) && ( ( gettype( $var1 ) === 'array' || gettype( $var1 ) === 'resource' ) || ( gettype( $var2 ) === 'array' || gettype( $var2 ) === 'resource' ) ) ) {
 			try {
-				$r = $function( $a, $b );
-				if ( is_int( $r ) ) {
-					pr_int( $r );
-				}
-				else {
-					pr_var( $r, '', true, true );
-				}
+				pc_compare_strings( $var1, $var2, $function );
 			}
 			catch ( Exception $e ) {
-				$message = $e->getMessage();
-				$key     = array_search( $message, $GLOBALS['encountered_errors'] );
-				if ( $key === false ) {
-					$GLOBALS['encountered_errors'][] = $message;
-					$key                             = array_search( $message, $GLOBALS['encountered_errors'] );
-				}
-				echo '<span class="error">(Catchable) Fatal error <a href="#', $GLOBALS['test'], '-errors">#', ( $key + 1 ), '</a></span>';
+				self::handle_exception( $e->getMessage() );
 			}
 		}
-		else if ( PHP_VERSION_ID >= 50200 && ( gettype( $a ) === 'object' || gettype( $b ) === 'object' ) ) {
+		else if ( PHP_VERSION_ID >= 50200 && ( gettype( $var1 ) === 'object' || gettype( $var2 ) === 'object' ) ) {
 			try {
-				$r = $function( $a, $b );
-				if ( is_int( $r ) ) {
-					pr_int( $r );
-				}
-				else {
-					pr_var( $r, '', true, true );
-				}
+				pc_compare_strings( $var1, $var2, $function );
 			}
 			catch ( Exception $e ) {
-				$message = $e->getMessage();
-				$key     = array_search( $message, $GLOBALS['encountered_errors'] );
-				if ( $key === false ) {
-					$GLOBALS['encountered_errors'][] = $message;
-					$key                             = array_search( $message, $GLOBALS['encountered_errors'] );
-				}
-				echo '<span class="error">(Catchable) Fatal error <a href="#', $GLOBALS['test'], '-errors">#', ( $key + 1 ), '</a></span>';
+				self::handle_exception( $e->getMessage() );
 			}
 		}
 		else {
-			$r = $function( $a, $b );
-			if ( is_int( $r ) ) {
-				pr_int( $r );
-			}
-			else {
-				pr_var( $r, '', true, true );
-			}
+			pc_compare_strings( $var1, $var2, $function );
 		}
+	}
+
+
+	/**
+	 * Helper function to handle exceptions from the string compare function.
+	 *
+	 * @param string $message The error message.
+	 */
+	public static function handle_exception( $message ) {
+		$key = get_error_key( $message );
+		echo '<span class="error">(Catchable) Fatal error <a href="#', $GLOBALS['test'], '-errors">#', ( $key + 1 ), '</a></span>';
 	}
 
 
 	/**
 	 * Run tests using the filter extension.
 	 *
-	 * @param mixed  $value    Value to test
-	 * @param string $expected Expected variable type of the output of the test
-	 * @param int    $filter   The Filter to apply
-	 * @param mixed  $flags    Which filter flags to apply
-	 * @param mixed  $options  Which options to apply
+	 * @param mixed       $value    Value to test
+	 * @param string|null $expected Expected variable type of the output of the test
+	 * @param int         $filter   The Filter to apply
+	 * @param mixed|null  $flags    Which filter flags to apply
+	 * @param mixed|null  $options  Which options to apply
 	 */
-	static public function filter_combined( $value, $expected = null, $filter = FILTER_DEFAULT, $flags = null, $options = null ) {
+	public static function filter_combined( $value, $expected = null, $filter = FILTER_DEFAULT, $flags = null, $options = null ) {
 
 		if ( function_exists( 'filter_var' ) && function_exists( 'filter_var_array' ) ) {
 			if ( ! is_array( $value ) ) {
-				$opt = array();
-				if ( isset( $flags ) ) {
-					$opt['flags'] = $flags;
-				}
-				if ( isset( $options ) && ( is_array( $options ) && $options !== array() ) ) {
-					$opt['options'] = $options;
-				}
-
-				if ( $opt !== array() ) {
-					$r = filter_var( $value, $filter, $opt );
-				}
-				else {
-					$r = filter_var( $value, $filter );
-				}
-
-				switch ( true ) {
-					case ( $expected === 'bool' && is_bool( $r ) === true ):
-						pr_bool( $r );
-						break;
-
-					case ( $expected === 'int' && is_int( $r ) === true  ):
-						pr_int( $r );
-						break;
-
-					case ( $expected === 'float' && is_float( $r ) === true  ):
-						pr_flt( $r );
-						break;
-
-					case ( $expected === 'string' && is_string( $r ) === true  ):
-						pr_str( $r );
-						break;
-
-					default:
-						pr_var( $r, '', true, true );
-						break;
-				}
+				self::do_filter_var( $value, $expected, $filter, $flags, $options );
 			}
 			else {
-				if ( ! isset( $flags ) && ! isset( $options ) ) {
-					pr_var( filter_var_array( $value, $filter ), '', true, true );
-				}
-				else {
-					$input      = array( 'x' => $value );
-					$filter_def = array(
-						'x' => array(
-							'filter' => $filter,
-						),
-					);
-					if ( isset( $flags ) ) {
-						$filter_def['x']['flags'] = ( FILTER_REQUIRE_ARRAY | $flags );
-					}
-					if ( isset( $options ) && ( is_array( $options ) && $options !== array() ) ) {
-						$filter_def['x']['options'] = $options;
-					}
-					$output = filter_var_array( $input, $filter_def );
-					pr_var( $output['x'], '', true, true );
-				}
+				self::do_filter_var_array( $value, $filter, $flags, $options );
 			}
 		}
 		else {
 			echo 'E: not available (PHP 5.2.0+)';
+		}
+	}
+
+
+	/**
+	 * Helper function: Run tests using the `filter_var()` function.
+	 *
+	 * @param mixed       $value    Value to test
+	 * @param string|null $expected Expected variable type of the output of the test
+	 * @param int         $filter   The Filter to apply
+	 * @param mixed|null  $flags    Which filter flags to apply
+	 * @param mixed|null  $options  Which options to apply
+	 */
+	public static function do_filter_var( $value, $expected = null, $filter = FILTER_DEFAULT, $flags = null, $options = null ) {
+		$opt = array();
+		if ( isset( $flags ) ) {
+			$opt['flags'] = $flags;
+		}
+		if ( isset( $options ) && ( is_array( $options ) && $options !== array() ) ) {
+			$opt['options'] = $options;
+		}
+
+		if ( $opt !== array() ) {
+			$result = filter_var( $value, $filter, $opt );
+		}
+		else {
+			$result = filter_var( $value, $filter );
+		}
+
+		self::print_typed_result( $result, $expected );
+	}
+
+
+	/**
+	 * Helper function: Run tests using the `filter_var_array()` function.
+	 *
+	 * @param mixed      $value   Value to test
+	 * @param int        $filter  The Filter to apply
+	 * @param mixed|null $flags   Which filter flags to apply
+	 * @param mixed|null $options Which options to apply
+	 */
+	public static function do_filter_var_array( $value, $filter = FILTER_DEFAULT, $flags = null, $options = null ) {
+		if ( ! isset( $flags ) && ! isset( $options ) ) {
+			pr_var( filter_var_array( $value, $filter ), '', true, true );
+		}
+		else {
+			$input      = array( 'x' => $value );
+			$filter_def = array(
+				'x' => array(
+					'filter' => $filter,
+				),
+			);
+			if ( isset( $flags ) ) {
+				$filter_def['x']['flags'] = ( FILTER_REQUIRE_ARRAY | $flags );
+			}
+			if ( isset( $options ) && ( is_array( $options ) && $options !== array() ) ) {
+				$filter_def['x']['options'] = $options;
+			}
+			$output = filter_var_array( $input, $filter_def );
+			pr_var( $output['x'], '', true, true );
+		}
+	}
+
+
+	/**
+	 * Helper function to print the filter result.
+	 *
+	 * @param mixed       $result
+	 * @param string|null $expected Expected variable type of the output of the test
+	 */
+	public static function print_typed_result( $result, $expected = null ) {
+		switch ( true ) {
+			case ( $expected === 'bool' && is_bool( $result ) === true ):
+				pr_bool( $result );
+				break;
+
+			case ( $expected === 'int' && is_int( $result ) === true ):
+				pr_int( $result );
+				break;
+
+			case ( $expected === 'float' && is_float( $result ) === true ):
+				pr_flt( $result );
+				break;
+
+			case ( $expected === 'string' && is_string( $result ) === true ):
+				pr_str( $result );
+				break;
+
+			default:
+				pr_var( $result, '', true, true );
+				break;
 		}
 	}
 }

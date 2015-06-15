@@ -59,15 +59,9 @@ $test_array = array(
 	'su'  => '0xCC00F9', // is_numeric, filter_var integer allow hex
 	'sv'  => '0123', // is_numeric, filter_var integer allow octal, integers
 
-
 	'ae'  => array(),
-	// 'a0'  => array( null ),
-	// 'a1'  => array( 1 ),
-	// 'a2'  => array( false ),
 	'a3'  => array( 1 => 'string' ), // with different key -> array + array
 	'a4'  => array( false, 1, 1.3, '123str', 'str123', null ),
-	// 'a5'  => array( 'a' => 'test1', 'b' => 'test2', 'numerical key', 'null' => null ),
-
 
 	'oe'  => new stdClass(),
 	'o2'  => new TestObjectToString(),
@@ -124,7 +118,7 @@ $extra_variables['type_testing'] = array(
 	'si'  => 'is_array', // is_callable
 );
 
-$extra_variables['boolean_tests'] = array(
+$extra_variables['boolean_tests']                         = array(
 	'sq'  => 'on', // filter_var boolean
 	'sr'  => 'off', // filter_var boolean
 	'ss'  => 'yes', // filter_var boolean
@@ -138,6 +132,10 @@ $extra_variables['string_tests'] = array(
 	'sz'  => 'Iñtërnâtiônàlizætiøn', // utf-8 / binary string
 );
 
+/*
+	DO NOT change this to a neater version with two assignments!!!
+	If you do, for some obscure reason it breaks the PHP 5.0.x tests cheatsheet.
+ */
 $extra_variables['object_tests'] = $extra_variables['array_tests'] = array(
 	'o1'  => new TestObject(),
 );

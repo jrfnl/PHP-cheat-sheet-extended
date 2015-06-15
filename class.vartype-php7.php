@@ -24,7 +24,7 @@ class VartypePHP7 {
 	 *
 	 * @var array $tests  Multi-dimensional array.
 	 */
-	static public $tests = array(
+	public static $tests = array(
 		/**
 		 * Functions where errors have been turned into exceptions
 		 * @see class.vartype-arithmetic.php
@@ -39,46 +39,24 @@ class VartypePHP7 {
 
 
 	/**
-	 * Overwrite selected entries in the original test array with the above PHP5 specific function code.
-	 *
-	 * @param array $test_array
-	 *
-	 * @return array
-	 */
-	static public function merge_tests( $test_array ) {
-
-		foreach ( self::$tests as $key => $array ) {
-			if ( isset( $test_array[ $key ], $test_array[ $key ]['function'], $array['function'] ) ) {
-				$test_array[ $key ]['function'] = $array['function'];
-			}
-		}
-		return $test_array;
-	}
-
-	/**
 	 * PHP7 compatible version of % arithmetics
 	 *
-	 * @param mixed $a
-	 * @param mixed $b
+	 * @param mixed $var1
+	 * @param mixed $var2
 	 */
-	static function do_modulus( $a, $b ) {
+	public static function do_modulus( $var1, $var2 ) {
 		try {
-			$r = ( $a % $b );
-			if ( is_bool( $r ) ) {
-				pr_bool( $r );
+			$result = ( $var1 % $var2 );
+			if ( is_bool( $result ) ) {
+				pr_bool( $result );
 			}
 			else {
-				pr_var( $r, '', true, true );
+				pr_var( $result, '', true, true );
 			}
 		}
 		catch ( Exception $e ) {
 			$message = '<span class="error">(Catchable) Fatal error</span>: ' . $e->getMessage();
-			$key     = array_search( $message, $GLOBALS['encountered_errors'] );
-			if ( $key === false ) {
-				$GLOBALS['encountered_errors'][] = $message;
-				$key                             = array_search( $message, $GLOBALS['encountered_errors'] );
-			}
-			echo '<span class="error">(Catchable) Fatal error <a href="#', $GLOBALS['test'], '-errors">#', ( $key + 1 ), '</a></span>';
+			self::handle_exception( $message );
 		}
 	}
 
@@ -86,22 +64,17 @@ class VartypePHP7 {
 	/**
 	 * PHP7 compatible version of intdiv
 	 *
-	 * @param mixed $a
-	 * @param mixed $b
+	 * @param mixed $var1
+	 * @param mixed $var2
 	 */
-	static function do_intdiv( $a, $b ) {
+	public static function do_intdiv( $var1, $var2 ) {
 		if ( function_exists( 'intdiv' ) ) {
 			try {
-				pr_var( intdiv( $a, $b ), '', true, true );
+				pr_var( intdiv( $var1, $var2 ), '', true, true );
 			}
 			catch ( Exception $e ) {
 				$message = '<span class="error">(Catchable) Fatal error</span>: ' . $e->getMessage();
-				$key     = array_search( $message, $GLOBALS['encountered_errors'] );
-				if ( $key === false ) {
-					$GLOBALS['encountered_errors'][] = $message;
-					$key                             = array_search( $message, $GLOBALS['encountered_errors'] );
-				}
-				echo '<span class="error">(Catchable) Fatal error <a href="#', $GLOBALS['test'], '-errors">#', ( $key + 1 ), '</a></span>';
+				self::handle_exception( $message );
 			}
 		}
 		else {
@@ -109,4 +82,16 @@ class VartypePHP7 {
 		}
 	}
 
+
+	/**
+	 * Helper function to handle exceptions from the overloaded functions.
+	 *
+	 * @internal Exception handling is currently the same as for the PHP5 specific code, but added as separate
+	 * method to allow for future adjustment.
+	 *
+	 * @param string $message The error message.
+	 */
+	public static function handle_exception( $message ) {
+		VartypePHP5::handle_exception( $message );
+	}
 }
