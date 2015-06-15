@@ -403,7 +403,7 @@ div#sidebar div#php-version {
 	font-size: 9pt;
 	font-weight: normal;
 	text-align: center;
-	width: 125px;
+	width: 135px;
 	padding: 8px 12px;
 	background-color: #f1f7fa;
 	-webkit-box-shadow: 3px 3px 2px 1px #dddddd;
@@ -581,7 +581,7 @@ td {
 
 
 #accordion {
-	margin-right: 170px;
+	margin-right: 180px;
 	margin-bottom: 10px;
 }
 
