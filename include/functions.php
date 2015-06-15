@@ -238,18 +238,10 @@ function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
 	if ( isset( $GLOBALS['encountered_errors'] ) ) {
 		// Ignore strict warnings (can't avoid having them if I want to keep this sheet working with PHP4).
 		if ( $error_no !== E_STRICT ) {
-			$key = array_search( $message, $GLOBALS['encountered_errors'] );
-			if ( $key === false ) {
-				$GLOBALS['encountered_errors'][] = $message;
-				$key                             = array_search( $message, $GLOBALS['encountered_errors'] );
-			}
+			$key = get_error_key( $message );
 
-			if ( $class === 'notice' ) {
-				$GLOBALS['has_error'][]['msg'] = ' (&nbsp;<span class="notice"><a href="#' . $GLOBALS['test']. '-errors">#' . ( $key + 1 ) . '</a></span>&nbsp;)';
-				return;
-			}
-			else if ( $class === 'warning' ) {
-				$GLOBALS['has_error'][]['msg'] = ' (&nbsp;<span class="warning"><a href="#' . $GLOBALS['test']. '-errors">#' . ( $key + 1 ) . '</a></span>&nbsp;)';
+			if ( $class === 'notice' || $class === 'warning' ) {
+				$GLOBALS['has_error'][]['msg'] = ' (&nbsp;<span class="' . $class . '"><a href="#' . $GLOBALS['test'] . '-errors">#' . ( $key + 1 ) . '</a></span>&nbsp;)';
 				return;
 			}
 			else if ( $class === 'error' ) {
@@ -274,6 +266,23 @@ function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
 	}
 
 	return false; // Make sure it plays nice with other error handlers (remove if no other error handlers are set).
+}
+
+
+/**
+ * Get the index key for an error message and add the error message to the global array if it doesn't exist yet.
+ *
+ * @param string $message
+ *
+ * @return int
+ */
+function get_error_key( $message ) {
+	$key = array_search( $message, $GLOBALS['encountered_errors'] );
+	if ( $key === false ) {
+		$GLOBALS['encountered_errors'][] = $message;
+		$key                             = array_search( $message, $GLOBALS['encountered_errors'] );
+	}
+	return $key;
 }
 
 

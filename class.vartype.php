@@ -278,20 +278,21 @@ class Vartype {
 
 
 	/**
-	 * Housekeeping.
+	 * Housekeeping so the variables can be re-initiated properly.
 	 */
 	function clean_up() {
-		if ( isset( $GLOBALS['test_array'], $GLOBALS['test_array']['r1'] ) && is_resource( $GLOBALS['test_array']['r1'] ) ) {
-			fclose( $GLOBALS['test_array']['r1'] );
-		}
-		if ( isset( $GLOBALS['test_array'], $GLOBALS['test_array']['r2'] ) && is_resource( $GLOBALS['test_array']['r2'] ) ) {
-			imagedestroy( $GLOBALS['test_array']['r2'] );
-		}
-		if ( isset( $this->test_data, $this->test_data['r1'] ) && is_resource( $this->test_data['r1'] ) ) {
-			fclose( $this->test_data['r1'] );
-		}
-		if ( isset( $this->test_data, $this->test_data['r2'] ) && is_resource( $this->test_data['r2'] ) ) {
-			imagedestroy( $this->test_data['r2'] );
+		$clean_this = array(
+			'r1' => 'fclose',
+			'r2' => 'imagedestroy',
+		);
+
+		foreach ( $clean_this as $key => $function ) {
+			if ( isset( $GLOBALS['test_array'], $GLOBALS['test_array'][ $key ] ) && is_resource( $GLOBALS['test_array'][ $key ] ) ) {
+				$function( $GLOBALS['test_array'][ $key ] );
+			}
+			if ( isset( $this->test_data, $this->test_data[ $key ] ) && is_resource( $this->test_data[ $key ] ) ) {
+				$function( $this->test_data[ $key ] );
+			}
 		}
 	}
 
@@ -584,7 +585,7 @@ class Vartype {
 
 
 	/**
-	 * Get the CSS class string to attach to a table header cell.
+	 * Get the CSS class string to attach to a table cell.
 	 *
 	 * @param string $test_group
 	 * @param string $test

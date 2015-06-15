@@ -549,21 +549,10 @@ class VartypeCompare extends Vartype {
 			$GLOBALS['has_error'] = array();
 
 			$value2 = $this->test_data[ $key2 ];
+			$class  = $this->get_table_row_cell_class( $key1, $key2, $i );
 
-			$class = array( 'value1-' . $key1, 'value2-' . $key2 );
-			if ( ! isset( $this->test_data_keys[ ( $i + 1 ) ] ) || substr( $key2, 0, 1 ) !== substr( $this->test_data_keys[ ( $i + 1 ) ], 0, 1 ) ) {
-				$class[] = 'end';
-			}
-
-			if ( count( $class ) === 0 ) {
-				echo '
-					<td>';
-			}
-			else {
-				echo '
-					<td class="', implode( ' ', $class ), '">';
-			}
-
+			echo '
+					<td' . $class . '>';
 
 			$this->tests[ $test ]['test']( $value1, $value2 );
 			$this->print_row_cell_error_refs();
@@ -573,6 +562,27 @@ class VartypeCompare extends Vartype {
 			unset( $GLOBALS['has_error'], $value2, $type, $class );
 		}
 		unset( $i, $key2 );
+	}
+
+
+	/**
+	 * Get the CSS class string to attach to a table cell.
+	 *
+	 * @param string $key1
+	 * @param string $key2
+	 * @param string $index
+	 *
+	 * @return string
+	 */
+	function get_table_row_cell_class( $key1, $key2, $index ) {
+		$class = array( 'value1-' . $key1, 'value2-' . $key2 );
+		if ( ! isset( $this->test_data_keys[ ( $index + 1 ) ] ) || substr( $key2, 0, 1 ) !== substr( $this->test_data_keys[ ( $index + 1 ) ], 0, 1 ) ) {
+			$class[] = 'end';
+		}
+
+		$class = ( ( count( $class ) > 0 ) ? ' class="' . implode( ' ', $class ) . '"' : '' );
+
+		return $class;
 	}
 
 

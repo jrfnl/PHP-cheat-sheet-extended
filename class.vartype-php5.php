@@ -183,11 +183,7 @@ class VartypePHP5 {
 	 * @param string $message The error message.
 	 */
 	public static function handle_exception( $message ) {
-		$key = array_search( $message, $GLOBALS['encountered_errors'] );
-		if ( $key === false ) {
-			$GLOBALS['encountered_errors'][] = $message;
-			$key                             = array_search( $message, $GLOBALS['encountered_errors'] );
-		}
+		$key = get_error_key( $message );
 		echo '<span class="error">(Catchable) Fatal error <a href="#', $GLOBALS['test'], '-errors">#', ( $key + 1 ), '</a></span>';
 	}
 
