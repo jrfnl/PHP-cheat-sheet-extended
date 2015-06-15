@@ -39,6 +39,17 @@ class VartypePHP7 {
 
 
 	/**
+	 * Helper method to retrieve the static variable.
+	 * Needed to prevent parse error in PHP4.. *sigh*.
+	 *
+	 * @return array
+	 */
+	public static function get_tests() {
+		return self::$tests;
+	}
+
+
+	/**
 	 * PHP7 compatible version of % arithmetics
 	 *
 	 * @param mixed $var1

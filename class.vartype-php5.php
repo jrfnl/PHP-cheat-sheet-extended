@@ -128,6 +128,17 @@ class VartypePHP5 {
 			'function'      => '$c = \'TestObject\'; $r = ( $x instanceof $c ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); }',
 		),
 	);
+	
+	
+	/**
+	 * Helper method to retrieve the static variable.
+	 * Needed to prevent parse error in PHP4.. *sigh*.
+	 *
+	 * @return array
+	 */
+	public static function get_tests() {
+		return self::$tests;
+	}
 
 
 	/**
