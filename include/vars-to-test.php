@@ -131,12 +131,12 @@ $extra_variables['filter_extension_bool_int_float']       = $extra_variables['bo
 $extra_variables['filter_extension_bool_int_float']['sl'] = 'AF036C';
 
 
-$extra_variables['integer_tests']                         = array(
+$extra_variables['integer_tests'] = array(
 	'ib'  => '௫', // Tamil digit five.
 	'ic'  => '⁸₈', // Superscript and subscript digit 8.
 );
 
-$extra_variables['float_tests']                         = array(
+$extra_variables['float_tests'] = array(
 	'fa'  => '⅕', // Unicode 1/5.
 );
 
