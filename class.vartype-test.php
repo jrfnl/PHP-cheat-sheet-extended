@@ -1762,7 +1762,6 @@ else {
 				'is_callable',
 
 				'is_numeric',
-
 			),
 			'break_at'  => array( 'gettype', 'is_null', 'is_string', 'is_resource', 'is_callable', 'is_numeric' ),
 			'good'      => array(),
@@ -1771,49 +1770,6 @@ else {
 			'book_url'  => 'http://php.net/ref.var',
 			'target'    => null,
 		),
-
-
-		/*
-		'type_casting'	=> array(
-			'title'     => 'Type casting',
-			'tests'     => array(
-				//'gettype',
-				'settype_null',
-				'unset',
-				'f_unset',
-
-				'settype_bool',
-				'bool',
-
-				'settype_int',
-				'int',
-				'intval',
-				'juggle_int',
-
-				'settype_float',
-				'float',
-				'floatval',
-				'juggle_flt',
-
-				'settype_string',
-				'string',
-				'strval',
-				'juggle_str',
-
-				'settype_array',
-				'array',
-
-				'settype_object',
-				'object',
-			),
-			'break_at'  => array( 'gettype', 'f_unset', 'bool', 'juggle_int', 'juggle_flt', 'juggle_str', 'array', 'object' ),
-			'good'      => array(),
-			'best'      => array(),
-			'urls'      => array(),
-			'book_url'  => 'http://php.net/language.types.type-juggling',
-			'target'	=>	null,
-		),
-		*/
 
 
 		'null_tests'       => array(
@@ -1833,18 +1789,9 @@ else {
 				'null_cmp_strict',
 				'null_cmp_loose_str',
 				'null_cmp_strict_str',
-
-				/*
-				'null_cmp_rv_loose',
-				'null_cmp_rv_strict',
-				'null_cmp_rv_loose_str',
-				'null_cmp_rv_strict_str',
-				*/
 			),
 			'break_at'  => array( 'cast_to_type_null', 'empty', 'null_cmp_strict_str', 'null_cmp_rv_strict_str' ),
-			// 'good'      => array( 'is_null', 'null_cmp_strict', 'null_cmp_rv_strict' ),
 			'good'      => array(),
-			// 'best'      => array( 'isset' ),
 			'best'      => array(),
 			'urls'      => array(),
 			'book_url'  => 'http://php.net/types.comparisons',
@@ -1859,7 +1806,6 @@ else {
 				'bool',
 				'filter_combined_bool',
 				'filter_combined_bool_null',
-				// 'cast_to_type_bool',
 				'cast_to_type_bool_not_empty_recurse_arrays',
 
 				'is_bool',
@@ -1867,45 +1813,18 @@ else {
 				'bool_cmp_true_loose',
 				'bool_cmp_true_strict',
 				'bool_cmp_true_loose_int',
-				// 'bool_cmp_true_strict_int',
 				'bool_cmp_true_loose_str',
-				// 'bool_cmp_true_strict_str',
-
-				/*
-				'bool_cmp_rv_true_loose',
-				'bool_cmp_rv_true_strict',
-				'bool_cmp_rv_true_loose_int',
-				'bool_cmp_rv_true_strict_int',
-				'bool_cmp_rv_true_loose_str',
-				'bool_cmp_rv_true_strict_str',
-				*/
 
 				'bool_cmp_false_loose',
 				'bool_cmp_false_strict',
 				'bool_cmp_false_loose_int',
-				// 'bool_cmp_false_strict_int',
 				'bool_cmp_false_loose_str',
-				// 'bool_cmp_false_strict_str',
 
-				/*
-				'bool_cmp_rv_false_loose',
-				'bool_cmp_rv_false_strict',
-				'bool_cmp_rv_false_loose_int',
-				'bool_cmp_rv_false_strict_int',
-				'bool_cmp_rv_false_loose_str',
-				'bool_cmp_rv_false_strict_str',
-				*/
-
-				/*
-				'var',
-				'not_var',
-				*/
 				'if_var',
 				'if_not_var',
 
 			),
 			'break_at'  => array( 'cast_to_type_bool_not_empty_recurse_arrays', 'is_bool', 'bool_cmp_true_loose_str', 'bool_cmp_rv_true_strict_str', 'bool_cmp_false_loose_str', 'bool_cmp_rv_false_strict_str', 'if_not_var' ),
-			// 'good'      => array( 'cast_to_type_bool', 'cast_to_type_bool_not_empty_recurse_arrays', 'filter_combined_bool_null', 'is_bool', 'bool_cmp_true_strict', 'bool_cmp_false_strict' ),
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
@@ -1923,7 +1842,6 @@ else {
 				'juggle_int',
 				'filter_combined_int',
 				'filter_combined_int_null',
-				// 'cast_to_type_int',
 				'cast_to_type_int_not_empty_recurse_arrays',
 
 				'abs',
@@ -1934,30 +1852,14 @@ else {
 				'is_numeric',
 				'preg_int_pos',
 				'preg_int',
-				// 'preg_digit_pos',
-				// 'preg_digit',
-
-				/*
-				'int_cmp_gt0',
-				'int_cmp_gte0',
-				'int_cmp_is0_loose',
-				'int_cmp_is0_strict',
-				'int_cmp_not0_loose',
-				'int_cmp_not0_strict',
-				'int_cmp_lt0',
-				'int_cmp_lte0',
-				*/
-
 			),
 			'break_at'  => array( 'cast_to_type_int_not_empty_recurse_arrays', 'abs', 'preg_int' ),
-			// 'good'      => array( 'cast_to_type_int', 'cast_to_type_int_not_empty_recurse_arrays', 'filter_combined_int_null', 'is_int' ),
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
 			'book_url'  => 'http://php.net/book.var',
 			'target'    => 'i',
 		),
-
 
 
 		'float_tests'      => array(
@@ -1969,7 +1871,6 @@ else {
 				'juggle_flt',
 				'filter_combined_float',
 				'filter_combined_float_null',
-				// 'cast_to_type_float',
 				'cast_to_type_float_not_empty_recurse_arrays',
 
 				'empty',
@@ -1978,12 +1879,8 @@ else {
 				'is_numeric',
 				'preg_float_pos',
 				'preg_float',
-				// 'preg_digit_float_pos',
-				// 'preg_digit_float',
-
 			),
 			'break_at'  => array( 'cast_to_type_float_not_empty_recurse_arrays', 'preg_float' ),
-			// 'good'      => array( 'cast_to_type_float', 'cast_to_type_float_not_empty_recurse_arrays', 'filter_combined_float_null', 'is_float' ),
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
@@ -2034,12 +1931,9 @@ else {
 				'juggle_str',
 				'filter_combined_string',
 				'filter_combined_string_null',
-				// 'cast_to_type_string',
 				'cast_to_type_string_not_empty_recurse_arrays',
-
 			),
 			'break_at'  => array( 'cast_to_type_string_not_empty_recurse_arrays' ),
-			// 'good'      => array( 'cast_to_type_string', 'cast_to_type_string_not_empty_recurse_arrays', 'filter_combined_string_null' ),
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
@@ -2056,8 +1950,6 @@ else {
 				'empty',
 				'str_cmp_empty_loose',
 				'str_cmp_empty_strict',
-				// 'str_cmp_not_empty_loose',
-				// 'str_cmp_not_empty_strict',
 
 				'ctype_alpha',
 				'preg_alpha',
@@ -2073,10 +1965,8 @@ else {
 				'char_access',
 
 				'trim',
-
 			),
 			'break_at'  => array( 'is_string', 'str_cmp_empty_strict', 'preg_word', 'mb_strlen', 'char_access', 'trim' ),
-			// 'good'      => array( 'is_string', 'ctype_alpha', 'mb_strlen' ),
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
@@ -2084,17 +1974,15 @@ else {
 			'target'    => 's',
 		),
 
+
 		'array_casting'     => array(
 			'title'     => 'Array casting',
 			'tests'     => array(
 				'settype_array',
 				'array',
-				// 'cast_to_type_array',
 				'cast_to_type_array_not_empty',
-
 			),
 			'break_at'  => array( 'cast_to_type_array_not_empty' ),
-			// 'good'      => array( 'cast_to_type_array', 'cast_to_type_array_not_empty' ),
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
@@ -2137,7 +2025,6 @@ else {
 			'tests'     => array(
 				'settype_object',
 				'object',
-				// 'cast_to_type_object',
 				'cast_to_type_object_not_empty',
 
 				'is_object',
@@ -2147,10 +2034,8 @@ else {
 				'get_class',
 				'get_parent_class',
 				'is_subclass_of',
-
 			),
 			'break_at'  => array( 'cast_to_type_object', 'cast_to_type_object_not_empty', 'instanceof', 'is_subclass_of' ),
-			// 'good'      => array( 'cast_to_type_object', 'cast_to_type_object_not_empty', 'is_object' ),
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
@@ -2164,7 +2049,6 @@ else {
 			'tests'	     => array(
 				'is_resource',
 				'get_resource_type',
-
 			),
 			'break_at'  => array( 'is_resource', 'get_resource_type' ),
 			'good'      => array(),
