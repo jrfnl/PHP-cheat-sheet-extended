@@ -163,25 +163,10 @@ function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
 		'count_chars() expects parameter 1 to be string',
 		'mb_strlen() expects parameter 1 to be string',
 		'trim() expects parameter 1 to be string',
-		'is_nan() expects parameter 1 to be double',
-		'is_finite() expects parameter 1 to be double',
-		'is_infinite() expects parameter 1 to be double',
 		'get_class() expects parameter 1 to be object',
 		'get_resource_type() expects parameter 1 to be resource',
-		'fmod() expects parameter 1 to be double',
-		'fmod() expects parameter 2 to be double',
-		'bcadd() expects parameter 1 to be string',
-		'bcadd() expects parameter 2 to be string',
-		'bcsub() expects parameter 1 to be string',
-		'bcsub() expects parameter 2 to be string',
-		'bcmul() expects parameter 1 to be string',
-		'bcmul() expects parameter 2 to be string',
-		'bcdiv() expects parameter 1 to be string',
-		'bcdiv() expects parameter 2 to be string',
-		'bcmod() expects parameter 1 to be string',
-		'bcmod() expects parameter 2 to be string',
-		'levenshtein() expects parameter 1 to be string',
-		'levenshtein() expects parameter 2 to be string',
+		'intdiv() expects parameter 1 to be integer',
+		'intdiv() expects parameter 2 to be integer',
 	);
 
 	$replace = array(
@@ -194,35 +179,26 @@ function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
 		'count_chars() expects parameter 1 to be string, <em>array/object/resource</em> given',
 		'mb_strlen() expects parameter 1 to be string, <em>array/object/resource</em> given',
 		'trim() expects parameter 1 to be string, <em>array/object/resource</em> given',
-		'is_nan() expects parameter 1 to be double, <em>string/array/object/resource</em> given',
-		'is_finite() expects parameter 1 to be double, <em>string/array/object/resource</em> given',
-		'is_infinite() expects parameter 1 to be double, <em>string/array/object/resource</em> given',
 		'get_class() expects parameter 1 to be object, <em>boolean/integer/double/string/array/resource</em> given',
 		'get_resource_type() expects parameter 1 to be resource, <em>null/boolean/integer/double/string/array/object</em> given',
-		'fmod() expects parameter 1 to be double, <em>string/array/object/resource</em> given',
-		'fmod() expects parameter 2 to be double, <em>string/array/object/resource</em> given',
-		'bcadd() expects parameter 1 to be string, <em>array/object/resource</em> given',
-		'bcadd() expects parameter 2 to be string, <em>array/object/resource</em> given',
-		'bcsub() expects parameter 1 to be string, <em>array/object/resource</em> given',
-		'bcsub() expects parameter 2 to be string, <em>array/object/resource</em> given',
-		'bcmul() expects parameter 1 to be string, <em>array/object/resource</em> given',
-		'bcmul() expects parameter 2 to be string, <em>array/object/resource</em> given',
-		'bcdiv() expects parameter 1 to be string, <em>array/object/resource</em> given',
-		'bcdiv() expects parameter 2 to be string, <em>array/object/resource</em> given',
-		'bcmod() expects parameter 1 to be string, <em>array/object/resource</em> given',
-		'bcmod() expects parameter 2 to be string, <em>array/object/resource</em> given',
-		'levenshtein() expects parameter 1 to be string, <em>array/object/resource</em> given',
-		'levenshtein() expects parameter 2 to be string, <em>array/object/resource</em> given',
+		'intdiv() expects parameter 1 to be integer, <em>float/string/array/object/resource</em> given',
+		'intdiv() expects parameter 2 to be integer, <em>float/string/array/object/resource</em> given',
 	);
 
 	// Group some more messages and make error message links work.
 	$preg_search  = array(
-		'`^Object of class [A-Za-z]+ could not be converted to (int|double|string)$`',
+		'`^(bc(?:add|sub|mul|div|mod|comp)|str(?:case|natcase|nat)?cmp|strcoll|similar_text|levenshtein)\(\) expects parameter ([12]) to be string, (?:array|object|resource) given$`',
+		'`^fmod\(\) expects parameter ([12]) to be (double|float), (?:string|array|object|resource) given$`',
+		'`^(is_(?:nan|(?:in)?finite))\(\) expects parameter ([12]) to be (double|float), (?:string|array|object|resource) given$`',
+		'`^Object of class [A-Za-z]+ could not be converted to (int|double|float|string)$`',
 		'`^Object of class [A-Za-z]+ to string conversion$`',
 		'`^Cannot use object of type [A-Za-z]+ as array$`',
 		'`<a href=(["\'])function\.`',
 	);
 	$preg_replace = array(
+		'$1() expects parameter $2 to be string, <em>array/object/resource</em> given',
+		'fmod() expects parameter $1 to be $2, <em>string/array/object/resource</em> given',
+		'$1() expects parameter $2 to be $3, <em>string/array/object/resource</em> given',
 		'Object of class <em>stdClass/TestObject/TestObjectToString</em> could not be converted to $1',
 		'Object of class <em>stdClass/TestObject/TestObjectToString</em> to string conversion',
 		'Cannot use object of type <em>stdClass/TestObject/TestObjectToString</em> as array',
@@ -356,7 +332,7 @@ function generate_version_dropdown() {
 	$optgroup_html_pattern = '
 					<optgroup label="PHP %1$s">%2$s' . "\n\t\t\t\t\t</optgroup>";
 
-	$regex = sprintf( '`^%1$s/static_results/%2$s/php(([457]\.[0-9]+)\.[0-9-]+)\.html$`',
+	$regex = sprintf( '`^%1$s/static_results/%2$s/php(([457]\.[0-9]+)\.[0-9-]+(?:(?:alpha|beta|rc)(?:[0-9])?)?)\.html$`',
 		preg_quote( APP_DIR, '`' ),
 		preg_quote( $GLOBALS['type'], '`' )
 	);

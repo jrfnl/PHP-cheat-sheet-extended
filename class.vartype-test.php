@@ -48,6 +48,18 @@ class VartypeTest extends Vartype {
 		),
 
 
+		// Will be removed from $tests property from constructor if not on PHP 7+ to prevent parse errors.
+		'null_coalesce' => array(
+			'title'         => '$x ?? \'not-set\'',
+			'url'           => 'http://php.net/language.operators.comparison',
+			'arg'           => '$x',
+			'function'      => 'pr_var( $x ?? \'not-set\' );',
+			'notes'         => array(
+				'<p>The Null Coalesce operator is only available in PHP 7.0.0+.</p>',
+			),
+		),
+
+
 
 		'var'           => array(
 			'title'         => '$x',
@@ -1333,7 +1345,7 @@ else {
 			',
 			'url'           => 'http://php.net/filter_var',
 			'arg'           => '$x',
-			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypeTest::filter_combined( $x, \'bool\', FILTER_VALIDATE_BOOLEAN ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
+			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypePHP5::filter_combined( $x, \'bool\', FILTER_VALIDATE_BOOLEAN ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
 		),
 		'filter_combined_bool_null' => array(
 			'title'         => 'filter_var (&hellip;)',
@@ -1347,7 +1359,7 @@ else {
 			',
 			'url'           => 'http://php.net/filter_var',
 			'arg'           => '$x',
-			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypeTest::filter_combined( $x, \'bool\', FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
+			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypePHP5::filter_combined( $x, \'bool\', FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
 			'notes'         => array(
 				'<p>Please note: On some PHP versions <code>filter_var( $x, FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE )</code> where <code>$x = false</code> will incorrectly return <code>null</code>.<br />
 				Also: with the same parameters filter_var() will return <code>false</code> instead of <code>null</code> for most objects.</p>',
@@ -1382,7 +1394,7 @@ else {
 			',
 			'url'           => 'http://php.net/filter_var',
 			'arg'           => '$x',
-			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypeTest::filter_combined( $x, \'float\', FILTER_VALIDATE_FLOAT ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
+			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypePHP5::filter_combined( $x, \'float\', FILTER_VALIDATE_FLOAT ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
 		),
 		'filter_combined_float_null' => array(
 			'title'         => 'filter_var (&hellip;)',
@@ -1396,7 +1408,7 @@ else {
 			',
 			'url'           => 'http://php.net/filter_var',
 			'arg'           => '$x',
-			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypeTest::filter_combined( $x, \'float\', FILTER_VALIDATE_FLOAT, FILTER_NULL_ON_FAILURE ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
+			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypePHP5::filter_combined( $x, \'float\', FILTER_VALIDATE_FLOAT, FILTER_NULL_ON_FAILURE ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
 			'notes'         => array(
 				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
@@ -1413,7 +1425,7 @@ else {
 			',
 			'url'           => 'http://php.net/filter_var',
 			'arg'           => '$x',
-			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypeTest::filter_combined( $x, \'float\', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_NULL_ON_FAILURE ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
+			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypePHP5::filter_combined( $x, \'float\', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_NULL_ON_FAILURE ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
 			'notes'         => array(
 				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
@@ -1432,7 +1444,7 @@ else {
 			',
 			'url'           => 'http://php.net/filter_var',
 			'arg'           => '$x',
-			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypeTest::filter_combined( $x, \'float\', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_NULL_ON_FAILURE|FILTER_FLAG_ALLOW_FRACTION|FILTER_FLAG_ALLOW_THOUSAND|FILTER_FLAG_ALLOW_SCIENTIFIC ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
+			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypePHP5::filter_combined( $x, \'float\', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_NULL_ON_FAILURE|FILTER_FLAG_ALLOW_FRACTION|FILTER_FLAG_ALLOW_THOUSAND|FILTER_FLAG_ALLOW_SCIENTIFIC ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
 			'notes'         => array(
 				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
@@ -1466,7 +1478,7 @@ else {
 			',
 			'url'           => 'http://php.net/filter_var',
 			'arg'           => '$x',
-			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypeTest::filter_combined( $x, \'int\', FILTER_VALIDATE_INT ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
+			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypePHP5::filter_combined( $x, \'int\', FILTER_VALIDATE_INT ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
 		),
 		'filter_combined_int_null' => array(
 			'title'         => 'filter_var (&hellip;)',
@@ -1480,7 +1492,7 @@ else {
 			',
 			'url'           => 'http://php.net/filter_var',
 			'arg'           => '$x',
-			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypeTest::filter_combined( $x, \'int\', FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
+			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypePHP5::filter_combined( $x, \'int\', FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
 			'notes'         => array(
 				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
@@ -1498,7 +1510,7 @@ else {
 			',
 			'url'           => 'http://php.net/filter_var',
 			'arg'           => '$x',
-			'function'      => 'if ( extension_loaded( \'filter\' ) ) { $options = array( \'min_range\' => 1, \'max_range\' => 50 ); VartypeTest::filter_combined( $x, \'int\', FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE, $options ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
+			'function'      => 'if ( extension_loaded( \'filter\' ) ) { $options = array( \'min_range\' => 1, \'max_range\' => 50 ); VartypePHP5::filter_combined( $x, \'int\', FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE, $options ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
 			'notes'         => array(
 				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
@@ -1516,7 +1528,7 @@ else {
 			',
 			'url'           => 'http://php.net/filter_var',
 			'arg'           => '$x',
-			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypeTest::filter_combined( $x, \'int\', FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE|FILTER_FLAG_ALLOW_HEX|FILTER_FLAG_ALLOW_OCTAL ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
+			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypePHP5::filter_combined( $x, \'int\', FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE|FILTER_FLAG_ALLOW_HEX|FILTER_FLAG_ALLOW_OCTAL ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
 			'notes'         => array(
 				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
@@ -1534,7 +1546,7 @@ else {
 			',
 			'url'           => 'http://php.net/filter_var',
 			'arg'           => '$x',
-			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypeTest::filter_combined( $x, \'int\', FILTER_SANITIZE_NUMBER_INT, FILTER_NULL_ON_FAILURE ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
+			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypePHP5::filter_combined( $x, \'int\', FILTER_SANITIZE_NUMBER_INT, FILTER_NULL_ON_FAILURE ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
 			'notes'         => array(
 				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
@@ -1552,7 +1564,7 @@ else {
 			',
 			'url'           => 'http://php.net/filter_var',
 			'arg'           => '$x',
-			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypeTest::filter_combined( $x, \'int\', FILTER_SANITIZE_NUMBER_INT, FILTER_NULL_ON_FAILURE|FILTER_FLAG_ALLOW_HEX|FILTER_FLAG_ALLOW_OCTAL ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
+			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypePHP5::filter_combined( $x, \'int\', FILTER_SANITIZE_NUMBER_INT, FILTER_NULL_ON_FAILURE|FILTER_FLAG_ALLOW_HEX|FILTER_FLAG_ALLOW_OCTAL ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
 			'notes'         => array(
 				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
@@ -1588,7 +1600,7 @@ else {
 			',
 			'url'           => 'http://php.net/filter_var',
 			'arg'           => '$x',
-			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypeTest::filter_combined( $x, \'string\', FILTER_UNSAFE_RAW ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
+			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypePHP5::filter_combined( $x, \'string\', FILTER_UNSAFE_RAW ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
 		),
 		'filter_combined_string_null' => array(
 			'title'         => 'filter_var (&hellip;)',
@@ -1602,7 +1614,7 @@ else {
 			',
 			'url'           => 'http://php.net/filter_var',
 			'arg'           => '$x',
-			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypeTest::filter_combined( $x, \'string\', FILTER_UNSAFE_RAW, FILTER_NULL_ON_FAILURE ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
+			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypePHP5::filter_combined( $x, \'string\', FILTER_UNSAFE_RAW, FILTER_NULL_ON_FAILURE ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
 			'notes'         => array(
 				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
@@ -1621,7 +1633,7 @@ else {
 			',
 			'url'           => 'http://php.net/filter_var',
 			'arg'           => '$x',
-			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypeTest::filter_combined( $x, \'string\', FILTER_SANITIZE_STRING, FILTER_NULL_ON_FAILURE ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
+			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypePHP5::filter_combined( $x, \'string\', FILTER_SANITIZE_STRING, FILTER_NULL_ON_FAILURE ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
 			'notes'         => array(
 				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
@@ -1640,7 +1652,7 @@ else {
 			',
 			'url'           => 'http://php.net/filter_var',
 			'arg'           => '$x',
-			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypeTest::filter_combined( $x, \'string\', FILTER_SANITIZE_STRING, FILTER_NULL_ON_FAILURE|FILTER_FLAG_ENCODE_LOW|FILTER_FLAG_ENCODE_HIGH|FILTER_FLAG_ENCODE_AMP ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
+			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypePHP5::filter_combined( $x, \'string\', FILTER_SANITIZE_STRING, FILTER_NULL_ON_FAILURE|FILTER_FLAG_ENCODE_LOW|FILTER_FLAG_ENCODE_HIGH|FILTER_FLAG_ENCODE_AMP ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
 			'notes'         => array(
 				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
@@ -1658,7 +1670,7 @@ else {
 			',
 			'url'           => 'http://php.net/filter_var',
 			'arg'           => '$x',
-			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypeTest::filter_combined( $x, \'string\', FILTER_SANITIZE_STRING, FILTER_NULL_ON_FAILURE|FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
+			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypePHP5::filter_combined( $x, \'string\', FILTER_SANITIZE_STRING, FILTER_NULL_ON_FAILURE|FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
 			'notes'         => array(
 				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
@@ -1676,7 +1688,7 @@ else {
 			',
 			'url'           => 'http://php.net/filter_var',
 			'arg'           => '$x',
-			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypeTest::filter_combined( $x, \'string\', FILTER_SANITIZE_SPECIAL_CHARS, FILTER_NULL_ON_FAILURE ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
+			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypePHP5::filter_combined( $x, \'string\', FILTER_SANITIZE_SPECIAL_CHARS, FILTER_NULL_ON_FAILURE ); } else { print \'E: not available (PHP 5.2.0+)\'; }',
 			'notes'         => array(
 				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
@@ -1694,7 +1706,7 @@ else {
 			',
 			'url'           => 'http://php.net/filter_var',
 			'arg'           => '$x',
-			'function'      => 'if ( extension_loaded( \'filter\' ) ) { if ( defined( \'FILTER_SANITIZE_FULL_SPECIAL_CHARS\' ) ) { VartypeTest::filter_combined( $x, \'string\', FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_NULL_ON_FAILURE ); } else { print \'E: not available (PHP 5.3.3+)\'; } } else { print \'E: not available (PHP 5.2.0+)\'; }',
+			'function'      => 'if ( extension_loaded( \'filter\' ) ) { if ( defined( \'FILTER_SANITIZE_FULL_SPECIAL_CHARS\' ) ) { VartypePHP5::filter_combined( $x, \'string\', FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_NULL_ON_FAILURE ); } else { print \'E: not available (PHP 5.3.3+)\'; } } else { print \'E: not available (PHP 5.2.0+)\'; }',
 			'notes'         => array(
 				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
@@ -1719,6 +1731,7 @@ else {
 				'isset',
 				'bool',
 				'if_var',
+				'null_coalesce',
 			),
 			'break_at'  => array( 'gettype', 'if_var' ),
 			'good'      => array(),
@@ -1812,6 +1825,7 @@ else {
 				'cast_to_type_null',
 
 				'isset',
+				'null_coalesce',
 				'empty',
 
 				'is_null',
@@ -2301,6 +2315,16 @@ else {
 			$this->test_groups = array_merge( $this->test_groups, $this->filter_test_group );
 		}
 
+		// Remove null coalesce test for PHP < 7
+		if ( PHP_VERSION_ID < 70000 ) {
+			unset(
+				$this->tests['null_coalesce'],
+				$this->test_groups['general']['tests'][6],
+				$this->test_groups['null_tests']['tests'][5]
+			);
+		}
+
+
 		/**
 		 * Adjust float regex tests to use the correct decimal point character.
 		 */
@@ -2348,93 +2372,17 @@ else {
 	 *
 	 * Bug details: some semi-random text string is shown for the INF constant on the
 	 * object_test sheet in PHP 5.0.x.
+	 * Similarly a "Fatal error:  Unknown function:  f8()" is shown just before the array_testing group.
 	 *
 	 * @param string $test_group The current subsection
 	 */
 	function set_test_data( $test_group = null ) {
 		parent::set_test_data( $test_group );
 
-		if ( ( PHP_VERSION_ID >= 50004 && PHP_VERSION_ID <= 50005 ) && $test_group === 'object_tests' ) {
+		if ( ( PHP_VERSION_ID >= 50004 && PHP_VERSION_ID <= 50005 ) || phpversion() === '4.3.11' ) {
 			$key = array_search( 'f8', $this->test_data_keys, true );
 			unset( $this->test_data_keys[ $key ], $this->test_data['f8'] );
 		}
 	}
 
-
-	/**
-	 * Run tests using the filter extension.
-	 *
-	 * @param mixed  $value    Value to test
-	 * @param string $expected Expected variable type of the output of the test
-	 * @param int    $filter   The Filter to apply
-	 * @param mixed  $flags    Which filter flags to apply
-	 * @param mixed  $options  Which options to apply
-	 */
-	function filter_combined( $value, $expected = null, $filter = FILTER_DEFAULT, $flags = null, $options = null ) {
-
-		if ( function_exists( 'filter_var' ) && function_exists( 'filter_var_array' ) ) {
-			if ( ! is_array( $value ) ) {
-				$opt = array();
-				if ( isset( $flags ) ) {
-					$opt['flags'] = $flags;
-				}
-				if ( isset( $options ) && ( is_array( $options ) && $options !== array() ) ) {
-					$opt['options'] = $options;
-				}
-
-				if ( $opt !== array() ) {
-					$r = filter_var( $value, $filter, $opt );
-				}
-				else {
-					$r = filter_var( $value, $filter );
-				}
-
-				switch ( true ) {
-					case ( $expected === 'bool' && is_bool( $r ) === true ):
-						pr_bool( $r );
-						break;
-
-					case ( $expected === 'int' && is_int( $r ) === true  ):
-						pr_int( $r );
-						break;
-
-					case ( $expected === 'float' && is_float( $r ) === true  ):
-						pr_flt( $r );
-						break;
-
-					case ( $expected === 'string' && is_string( $r ) === true  ):
-						pr_str( $r );
-						break;
-
-					default:
-						pr_var( $r, '', true, true );
-						break;
-				}
-			}
-			else {
-				if ( ! isset( $flags ) && ! isset( $options ) ) {
-					pr_var( filter_var_array( $value, $filter ), '', true, true );
-				}
-				else {
-					$input      = array( 'x' => $value );
-					$filter_def = array(
-						'x' => array(
-							'filter' => $filter,
-						),
-					);
-					if ( isset( $flags ) ) {
-						$filter_def['x']['flags'] = ( FILTER_REQUIRE_ARRAY | $flags );
-					}
-					if ( isset( $options ) && ( is_array( $options ) && $options !== array() ) ) {
-						$filter_def['x']['options'] = $options;
-					}
-					$output = filter_var_array( $input, $filter_def );
-					pr_var( $output['x'], '', true, true );
-				}
-			}
-		}
-		else {
-			echo 'E: not available (PHP 5.2.0+)';
-		}
-	}
 }

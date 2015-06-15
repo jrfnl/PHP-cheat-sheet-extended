@@ -85,6 +85,14 @@ class Vartype {
 			$this->tests = VartypePHP5::merge_tests( $this->tests );
 		}
 
+		/**
+		 * Add some PHP7 specific tests.
+		 */
+		if ( PHP_VERSION_ID >= 70000 ) {
+			include_once APP_DIR . '/class.vartype-php7.php';
+			$this->tests = VartypePHP7::merge_tests( $this->tests );
+		}
+
 		// Create the actual test functions.
 		foreach ( $this->tests as $key => $array ) {
 			// pr_var( $key, 'Creating test for:', true );

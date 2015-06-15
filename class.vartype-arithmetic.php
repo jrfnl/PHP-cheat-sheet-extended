@@ -120,6 +120,15 @@ class VartypeArithmetic extends VartypeCompare {
 			'function'      => 'pr_var( pow( $a, $b ), \'\', true, true );',
 		),
 
+		'intdiv'           => array(
+			'title'         => 'intdiv()',
+			'url'           => 'http://php.net/intdiv',
+			'arg'           => '$a, $b',
+			'function'      => 'if ( function_exists( \'intdiv\' ) ) { pr_var( intdiv( $a, $b ), \'\', true, true ); } else { print \'E: not available (PHP 7.0.0+)\'; }',
+			'notes'         => array(
+				'<p>The <em>intdiv()</em> function is only available in PHP 7.0.0+.</p>',
+			),
+		),
 	);
 
 
@@ -198,6 +207,9 @@ class VartypeArithmetic extends VartypeCompare {
 	function __construct() {
 		if ( PHP_VERSION_ID < 50600 ) {
 			unset( $this->tests['pow_operator'] );
+		}
+		if ( PHP_VERSION_ID < 70000 ) {
+			unset( $this->tests['intdiv'] );
 		}
 		if ( extension_loaded( 'bcmath' ) ) {
 			$this->tests = array_merge( $this->tests, $this->bcmath_tests );
