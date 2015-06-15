@@ -24,8 +24,8 @@ RedirectMatch 301 /static_results/(arithmetic|compare|test)/php4\.3\.(0)?9\.html
 # 5.2.(0)4 => 5.2.6
 RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.2\.(0)?4\.html$ http://phpcheatsheets.com/static_results/$1/php5.2.6.html
 
-# 5.2.(0)8 => 5.2.9
-RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.2\.(0)?8\.html$ http://phpcheatsheets.com/static_results/$1/php5.2.9.html
+# 5.2.(0)8 => 5.2.9-2
+RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.2\.(0)?8\.html$ http://phpcheatsheets.com/static_results/$1/php5.2.9-2.html
 
 # 5.3.02 => 5.3.2
 RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.3\.02\.html$ http://phpcheatsheets.com/static_results/$1/php5.3.2.html
