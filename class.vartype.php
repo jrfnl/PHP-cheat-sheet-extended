@@ -72,6 +72,18 @@ class Vartype {
 
 
 	/**
+	 * Helper array to determine which class(es) should be used in table header cells.
+	 *
+	 * @var array Key is where to look in the test_group, value is the classname to add.
+	 */
+	var $table_header_class_map = array(
+		'best'     => 'best',
+		'good'     => 'good',
+		'break_at' => 'end',
+	);
+
+
+	/**
 	 * Constructor.
 	 */
 	function __construct() {
@@ -466,19 +478,7 @@ class Vartype {
 					( ( isset( $this->tests[ $test ]['url'] ) && $this->tests[ $test ]['url'] !== '' ) ? '</a>' : '' );
 
 
-			if ( isset( $this->tests[ $test ]['notes'] ) && ( is_array( $this->tests[ $test ]['notes'] ) && count( $this->tests[ $test ]['notes'] ) > 0 ) ) {
-
-				$this->table_notes = array_merge( $this->table_notes, $this->tests[ $test ]['notes'] );
-				$this->table_notes = array_unique( $this->table_notes );
-
-				foreach ( $this->tests[ $test ]['notes'] as $note ) {
-					$note_id = array_search( $note, $this->table_notes );
-					if ( $note_id !== false ) {
-						$html .= ' <sup><a href="#' . $test_group . '-note' . ( $note_id + 1 ) . '">&Dagger;' . ( $note_id + 1 ) . '</a></sup>';
-					}
-				}
-			}
-
+			$html .= $this->get_table_header_note_indicators( $test, $test_group );
 			$html .= '</th>';
 
 			unset( $class, $tooltip );
@@ -512,6 +512,33 @@ class Vartype {
 
 
 	/**
+	 * Get the notes related to the group label, if any.
+	 *
+	 * @param string $test
+	 * @param string $test_group
+	 *
+	 * @return string
+	 */
+	function get_table_header_note_indicators( $test, $test_group ) {
+		$notes = '';
+
+		if ( isset( $this->tests[ $test ]['notes'] ) && ( is_array( $this->tests[ $test ]['notes'] ) && count( $this->tests[ $test ]['notes'] ) > 0 ) ) {
+
+			$this->table_notes = array_merge( $this->table_notes, $this->tests[ $test ]['notes'] );
+			$this->table_notes = array_unique( $this->table_notes );
+
+			foreach ( $this->tests[ $test ]['notes'] as $note ) {
+				$note_id = array_search( $note, $this->table_notes );
+				if ( $note_id !== false ) {
+					$notes .= ' <sup><a href="#' . $test_group . '-note' . ( $note_id + 1 ) . '">&Dagger;' . ( $note_id + 1 ) . '</a></sup>';
+				}
+			}
+		}
+		return $notes;
+	}
+
+
+	/**
 	 * Get the CSS class string to attach to a table header cell.
 	 *
 	 * @param string $test_group
@@ -521,16 +548,12 @@ class Vartype {
 	 */
 	function get_table_header_cell_class( $test_group, $test ) {
 		$class = array();
-		if ( isset( $this->test_groups[ $test_group ]['best'] ) && in_array( $test, $this->test_groups[ $test_group ]['best'] ) ) {
-			$class[] = 'best';
-		}
-		else if ( isset( $this->test_groups[ $test_group ]['good'] ) && in_array( $test, $this->test_groups[ $test_group ]['good'] ) ) {
-			$class[] = 'good';
-		}
-		if ( isset( $this->test_groups[ $test_group ]['break_at'] ) && in_array( $test, $this->test_groups[ $test_group ]['break_at'] ) ) {
-			$class[] = 'end';
-		}
 
+		foreach ( $this->table_header_class_map as $group_key => $classname ) {
+			if ( isset( $this->test_groups[ $test_group ][ $group_key ] ) && in_array( $test, $this->test_groups[ $test_group ][ $group_key ] ) ) {
+				$class[] = $classname;
+			}
+		}
 		$class = ( ( count( $class ) > 0 ) ? ' class="' . implode( ' ', $class ) . '"' : '' );
 
 		return $class;

@@ -2290,44 +2290,8 @@ else {
 	 */
 	function __construct() {
 
-		// Work around some bugs in PHP versions having issues with ctype.
-		if ( extension_loaded( 'ctype' ) && PHP_VERSION_ID !== 40309 ) {
-			// If necessary, remove some tests which give issues in PHP5.0.x.
-			if ( PHP_VERSION_ID === 50005 || PHP_VERSION_ID === 50004 ) {
-				unset(
-					$this->ctype_test_group['ctype_extension']['tests'][6], // ctype_lower
-					$this->ctype_test_group['ctype_extension']['tests'][8], // ctype_cntrl
-					$this->ctype_test_group['ctype_extension']['tests'][9]  // ctype_punct
-				);
-			}
-			// Merge the ctype testgroup.
-			$this->test_groups = array_merge( $this->test_groups, $this->ctype_test_group );
-		}
-		else {
-			// PHP 4.3.9 has issue with all ctype, so don't merge the group and remove uses
-			// in other groups.
-			unset(
-				$this->test_groups['integer_tests']['tests'][10], // ctype_digit
-				$this->test_groups['float_tests']['tests'][9],    // ctype_digit
-				$this->test_groups['numeric_tests']['tests'][1],  // ctype_digit
-				$this->test_groups['string_tests']['tests'][4],   // ctype_alpha
-				$this->test_groups['string_tests']['tests'][6]    // ctype_alnum
-			);
-		}
-
-		if ( extension_loaded( 'filter' ) ) {
-			$this->test_groups = array_merge( $this->test_groups, $this->filter_test_group );
-		}
-
-		// Remove null coalesce test for PHP < 7
-		if ( PHP_VERSION_ID < 70000 ) {
-			unset(
-				$this->tests['null_coalesce'],
-				$this->test_groups['general']['tests'][6],
-				$this->test_groups['null_tests']['tests'][5]
-			);
-		}
-
+		// Make sure the tests presented will be compatible with the install the cheatsheet is running on.
+		$this->phpcompat_filter_tests();
 
 		/**
 		 * Adjust float regex tests to use the correct decimal point character.
@@ -2368,6 +2332,51 @@ else {
 	 */
 	function VartypeTest() {
 		$this->__construct();
+	}
+
+
+	/**
+	 * Filter out some tests which would break the cheatsheets and merge some which won't.
+	 */
+	function phpcompat_filter_tests() {
+
+		// Work around some bugs in PHP versions having issues with ctype.
+		if ( extension_loaded( 'ctype' ) && PHP_VERSION_ID !== 40309 ) {
+			// Remove some tests which give issues in PHP5.0.x.
+			if ( PHP_VERSION_ID === 50005 || PHP_VERSION_ID === 50004 ) {
+				unset(
+					$this->ctype_test_group['ctype_extension']['tests'][6], // ctype_lower
+					$this->ctype_test_group['ctype_extension']['tests'][8], // ctype_cntrl
+					$this->ctype_test_group['ctype_extension']['tests'][9]  // ctype_punct
+				);
+			}
+			// Merge the ctype testgroup.
+			$this->test_groups = array_merge( $this->test_groups, $this->ctype_test_group );
+		}
+		else {
+			// PHP 4.3.9 has issue with all ctype, so don't merge the group and remove uses
+			// in other groups.
+			unset(
+				$this->test_groups['integer_tests']['tests'][10], // ctype_digit
+				$this->test_groups['float_tests']['tests'][9],    // ctype_digit
+				$this->test_groups['numeric_tests']['tests'][1],  // ctype_digit
+				$this->test_groups['string_tests']['tests'][4],   // ctype_alpha
+				$this->test_groups['string_tests']['tests'][6]    // ctype_alnum
+			);
+		}
+
+		if ( extension_loaded( 'filter' ) ) {
+			$this->test_groups = array_merge( $this->test_groups, $this->filter_test_group );
+		}
+
+		// Remove null coalesce test for PHP < 7
+		if ( PHP_VERSION_ID < 70000 ) {
+			unset(
+				$this->tests['null_coalesce'],
+				$this->test_groups['general']['tests'][6],
+				$this->test_groups['null_tests']['tests'][5]
+			);
+		}
 	}
 
 

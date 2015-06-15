@@ -201,47 +201,74 @@ class VartypePHP5 {
 
 		if ( function_exists( 'filter_var' ) && function_exists( 'filter_var_array' ) ) {
 			if ( ! is_array( $value ) ) {
-				$opt = array();
-				if ( isset( $flags ) ) {
-					$opt['flags'] = $flags;
-				}
-				if ( isset( $options ) && ( is_array( $options ) && $options !== array() ) ) {
-					$opt['options'] = $options;
-				}
-
-				if ( $opt !== array() ) {
-					$result = filter_var( $value, $filter, $opt );
-				}
-				else {
-					$result = filter_var( $value, $filter );
-				}
-
-				self::print_typed_result( $result, $expected );
+				self::do_filter_var( $value, $expected, $filter, $flags, $options );
 			}
 			else {
-				if ( ! isset( $flags ) && ! isset( $options ) ) {
-					pr_var( filter_var_array( $value, $filter ), '', true, true );
-				}
-				else {
-					$input      = array( 'x' => $value );
-					$filter_def = array(
-						'x' => array(
-							'filter' => $filter,
-						),
-					);
-					if ( isset( $flags ) ) {
-						$filter_def['x']['flags'] = ( FILTER_REQUIRE_ARRAY | $flags );
-					}
-					if ( isset( $options ) && ( is_array( $options ) && $options !== array() ) ) {
-						$filter_def['x']['options'] = $options;
-					}
-					$output = filter_var_array( $input, $filter_def );
-					pr_var( $output['x'], '', true, true );
-				}
+				self::do_filter_var_array( $value, $filter, $flags, $options );
 			}
 		}
 		else {
 			echo 'E: not available (PHP 5.2.0+)';
+		}
+	}
+
+
+	/**
+	 * Helper function: Run tests using the `filter_var()` function.
+	 *
+	 * @param mixed       $value    Value to test
+	 * @param string|null $expected Expected variable type of the output of the test
+	 * @param int         $filter   The Filter to apply
+	 * @param mixed|null  $flags    Which filter flags to apply
+	 * @param mixed|null  $options  Which options to apply
+	 */
+	public static function do_filter_var( $value, $expected = null, $filter = FILTER_DEFAULT, $flags = null, $options = null ) {
+		$opt = array();
+		if ( isset( $flags ) ) {
+			$opt['flags'] = $flags;
+		}
+		if ( isset( $options ) && ( is_array( $options ) && $options !== array() ) ) {
+			$opt['options'] = $options;
+		}
+
+		if ( $opt !== array() ) {
+			$result = filter_var( $value, $filter, $opt );
+		}
+		else {
+			$result = filter_var( $value, $filter );
+		}
+
+		self::print_typed_result( $result, $expected );
+	}
+
+
+	/**
+	 * Helper function: Run tests using the `filter_var_array()` function.
+	 *
+	 * @param mixed      $value   Value to test
+	 * @param int        $filter  The Filter to apply
+	 * @param mixed|null $flags   Which filter flags to apply
+	 * @param mixed|null $options Which options to apply
+	 */
+	public static function do_filter_var_array( $value, $filter = FILTER_DEFAULT, $flags = null, $options = null ) {
+		if ( ! isset( $flags ) && ! isset( $options ) ) {
+			pr_var( filter_var_array( $value, $filter ), '', true, true );
+		}
+		else {
+			$input      = array( 'x' => $value );
+			$filter_def = array(
+				'x' => array(
+					'filter' => $filter,
+				),
+			);
+			if ( isset( $flags ) ) {
+				$filter_def['x']['flags'] = ( FILTER_REQUIRE_ARRAY | $flags );
+			}
+			if ( isset( $options ) && ( is_array( $options ) && $options !== array() ) ) {
+				$filter_def['x']['options'] = $options;
+			}
+			$output = filter_var_array( $input, $filter_def );
+			pr_var( $output['x'], '', true, true );
 		}
 	}
 
