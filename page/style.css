@@ -233,6 +233,9 @@ div.head li a:hover {
 	text-decoration: none;
 }
 
+div.head #main-menu ul li a.top-active {
+	background: url("jquery-css/images/ui-bg_gloss-wave_75_2191c0_500x100.png") repeat-x scroll 50% 50% #2191C0;
+}
 
 div.content-wrapper {
 	clear: both;
