@@ -4,12 +4,12 @@ body {
 	padding: 0;
 	background-color: #5C9CCC;
 	color: #000000;
-	font-family: arial,sans-serif;
+	font-family: arial, "arial unicode ms", sans-serif;
 	font-size: 8pt;
 }
 
 .ui-widget {
-	font-family: arial,sans-serif;
+	font-family: arial, "arial unicode ms", sans-serif;
 }
 
 h1 {
@@ -459,7 +459,7 @@ div#sidebar form#choose-version {
 
 table {
 	border-bottom: 1px solid #000000;
-	font-family: verdana, arial, sans-serif;
+	font-family: verdana, arial, "arial unicode ms", sans-serif;
 }
 
 th {
