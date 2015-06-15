@@ -30,6 +30,19 @@ RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.3\.02\.html$ h
 # 5.4.(0)6 => 5.4.4
 RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.4\.(0)?6\.html$ http://phpcheatsheets.com/static_results/$1/php5.4.4.html
 
+# 5.4.35/37 => 5.4.36
+RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.4\.3[57]\.html$ http://phpcheatsheets.com/static_results/$1/php5.4.36.html
+
+# 5.5.18 => 5.5.16
+RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.5\.18\.html$ http://phpcheatsheets.com/static_results/$1/php5.5.16.html
+
+# 5.5.20/21 => 5.5.22
+RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.5\.2[01]\.html$ http://phpcheatsheets.com/static_results/$1/php5.5.22.html
+
+# 5.6.4 => 5.6.5
+RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.6\.4\.html$ http://phpcheatsheets.com/static_results/$1/php5.6.5.html
+
+
 
 # Add 404 directives
 ErrorDocument 403 /index.php?page=error&e=403
