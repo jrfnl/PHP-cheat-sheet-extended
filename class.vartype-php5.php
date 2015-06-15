@@ -131,6 +131,17 @@ class VartypePHP5 {
 
 
 	/**
+	 * Helper method to retrieve the static variable.
+	 * Needed to prevent parse error in PHP4.. *sigh*.
+	 *
+	 * @return array
+	 */
+	public static function get_tests() {
+		return self::$tests;
+	}
+
+
+	/**
 	 * Ensure we clone an object before using it to avoid contamination by results of previous actions.
 	 *
 	 * @param mixed $value

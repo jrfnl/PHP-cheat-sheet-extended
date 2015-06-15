@@ -94,7 +94,7 @@ class Vartype {
 		 */
 		if ( PHP_VERSION_ID >= 50000 ) {
 			include_once APP_DIR . '/class.vartype-php5.php';
-			$this->merge_tests( VartypePHP5::$tests );
+			$this->merge_tests( VartypePHP5::get_tests() );
 		}
 
 		/**
@@ -102,7 +102,7 @@ class Vartype {
 		 */
 		if ( PHP_VERSION_ID >= 70000 ) {
 			include_once APP_DIR . '/class.vartype-php7.php';
-			$this->merge_tests( VartypePHP7::$tests );
+			$this->merge_tests( VartypePHP7::get_tests() );
 		}
 
 		// Create the actual test functions.
