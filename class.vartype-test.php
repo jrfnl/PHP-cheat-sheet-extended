@@ -1115,18 +1115,21 @@ class VartypeTest extends Vartype {
 			'arg'           => '$x',
 			'function'      => '$valid = preg_match( \'`^[0-9-]+$`\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); }',
 		),
+		// Results depend on locale.
 		'preg_digit_pos' => array(
 			'title'         => 'preg_match (`^\d+$`)',
 			'url'           => 'http://php.net/preg-match',
 			'arg'           => '$x',
 			'function'      => '$valid = preg_match( \'`^\d+$`\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); }',
 		),
+		// Results depend on locale.
 		'preg_digit' => array(
 			'title'         => 'preg_match (`^[\d<span style="color: red;">-</span>]+$`)',
 			'url'           => 'http://php.net/preg-match',
 			'arg'           => '$x',
 			'function'      => '$valid = preg_match( \'`^[\d-]+$`\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); }',
 		),
+
 
 		// ##PREG_DECIMAL_POINT## is replaced by the locale specific decimal point character in the class constructor.
 		'preg_float_pos' => array(
@@ -1145,6 +1148,7 @@ class VartypeTest extends Vartype {
 			'function'      => '$valid = preg_match( \'`^[0-9##PREG_DECIMAL_POINT##-]+$`\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); }',
 		),
 		// ##PREG_DECIMAL_POINT## is replaced by the locale specific decimal point character in the class constructor.
+		// Results depend on locale.
 		'preg_digit_float_pos' => array(
 			'title'         => 'preg_match (`^[\d##PREG_DECIMAL_POINT##]+$`)',
 			'tooltip'       => 'Decimal point character adjusted based on locale',
@@ -1153,6 +1157,7 @@ class VartypeTest extends Vartype {
 			'function'      => '$valid = preg_match( \'`^[\d##PREG_DECIMAL_POINT##]+$`\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); }',
 		),
 		// ##PREG_DECIMAL_POINT## is replaced by the locale specific decimal point character in the class constructor.
+		// Results depend on locale.
 		'preg_digit_float' => array(
 			'title'         => 'preg_match (`^[\d##PREG_DECIMAL_POINT##<span style="color: red;">-</span>]]+$`)',
 			'tooltip'       => 'Decimal point character adjusted based on locale',
@@ -1188,6 +1193,49 @@ class VartypeTest extends Vartype {
 				'<p>What <code>\w</code> matches is locale dependent. The locale for these cheatsheets are set to <code>C</code>. Results with other locales will vary.</p>'
 			),
 		),
+
+
+
+		'preg_int_unicode_pos' => array(
+			'title'         => 'preg_match (`^\p{N}+$`u)',
+			'url'           => 'http://php.net/regexp.reference.unicode.php',
+			'arg'           => '$x',
+			'function'      => 'if ( PHP_VERSION_ID >= 50100 ) { $valid = preg_match( \'`^\p{N}+$`u\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); } } else { print \'E: not available (PHP 5.1+)\'; }',
+		),
+		'preg_int_unicode' => array(
+			'title'         => 'preg_match (`^[\p{N}-]+$`u)',
+			'url'           => 'http://php.net/regexp.reference.unicode.php',
+			'arg'           => '$x',
+			'function'      => 'if ( PHP_VERSION_ID >= 50100 ) { $valid = preg_match( \'`^[\p{N}-]+$`u\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); } } else { print \'E: not available (PHP 5.1+)\'; }',
+		),
+		// ##PREG_DECIMAL_POINT## is replaced by the locale specific decimal point character in the class constructor.
+		'preg_number_unicode_pos' => array(
+			'title'         => 'preg_match (`^[\p{N}##PREG_DECIMAL_POINT##]+$`u)',
+			'url'           => 'http://php.net/regexp.reference.unicode.php',
+			'arg'           => '$x',
+			'function'      => 'if ( PHP_VERSION_ID >= 50100 ) { $valid = preg_match( \'`^[\p{N}##PREG_DECIMAL_POINT##]+$`u\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); } } else { print \'E: not available (PHP 5.1+)\'; }',
+		),
+		// ##PREG_DECIMAL_POINT## is replaced by the locale specific decimal point character in the class constructor.
+		'preg_number_unicode' => array(
+			'title'         => 'preg_match (`^[\p{N}##PREG_DECIMAL_POINT##-]+$`u)',
+			'url'           => 'http://php.net/regexp.reference.unicode.php',
+			'arg'           => '$x',
+			'function'      => 'if ( PHP_VERSION_ID >= 50100 ) { $valid = preg_match( \'`^[\p{N}##PREG_DECIMAL_POINT##-]+$`u\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); } } else { print \'E: not available (PHP 5.1+)\'; }',
+		),
+
+		'preg_alpha_unicode' => array(
+			'title'         => 'preg_match (`^\p{L}+$`u)',
+			'url'           => 'http://php.net/regexp.reference.unicode.php',
+			'arg'           => '$x',
+			'function'      => 'if ( PHP_VERSION_ID >= 50100 ) { $valid = preg_match( \'`^\p{L}+$`u\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); } } else { print \'E: not available (PHP 5.1+)\'; }',
+		),
+		'preg_alnum_unicode' => array(
+			'title'         => 'preg_match (`^[\p{L}\p{N}]+$`u)',
+			'url'           => 'http://php.net/regexp.reference.unicode.php',
+			'arg'           => '$x',
+			'function'      => 'if ( PHP_VERSION_ID >= 50100 ) { $valid = preg_match( \'`^[\p{L}\p{N}]+$`u\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); } } else { print \'E: not available (PHP 5.1+)\'; }',
+		),
+
 
 
 		/**
@@ -1853,12 +1901,13 @@ else {
 
 				'empty',
 				'is_int',
-				'ctype_digit',
 				'is_numeric',
+				'ctype_digit',
 				'preg_int_pos',
 				'preg_int',
+				'preg_int_unicode',
 			),
-			'break_at'  => array( 'cast_to_type_int_not_empty_recurse_arrays', 'abs', 'preg_int' ),
+			'break_at'  => array( 'cast_to_type_int_not_empty_recurse_arrays', 'abs', 'preg_int_unicode' ),
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
@@ -1880,12 +1929,13 @@ else {
 
 				'empty',
 				'is_float',
-				'ctype_digit',
 				'is_numeric',
+				'ctype_digit',
 				'preg_float_pos',
 				'preg_float',
+				'preg_number_unicode',
 			),
-			'break_at'  => array( 'cast_to_type_float_not_empty_recurse_arrays', 'preg_float' ),
+			'break_at'  => array( 'cast_to_type_float_not_empty_recurse_arrays', 'preg_number_unicode' ),
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
@@ -1900,6 +1950,8 @@ else {
 				'is_numeric',
 
 				'ctype_digit',
+				'preg_int_unicode',
+				'preg_number_unicode',
 
 				'int_cmp_gt0',
 				'int_cmp_gte0',
@@ -1918,7 +1970,7 @@ else {
 				'ceil',
 				'round',
 			),
-			'break_at'  => array( 'is_numeric', 'ctype_digit', 'int_cmp_lte0', 'is_infinite', 'round' ),
+			'break_at'  => array( 'is_numeric', 'preg_number_unicode', 'int_cmp_lte0', 'is_infinite', 'round' ),
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
@@ -1958,10 +2010,13 @@ else {
 
 				'ctype_alpha',
 				'preg_alpha',
+				'preg_alpha_unicode',
+
 				'ctype_alnum',
 				'preg_alnum',
 				'preg_word',
-				// 'preg_word_utf8',
+				'preg_word_utf8',
+				'preg_alnum_unicode',
 
 				'strlen',
 				'count_chars',
@@ -1971,7 +2026,7 @@ else {
 
 				'trim',
 			),
-			'break_at'  => array( 'is_string', 'str_cmp_empty_strict', 'preg_word', 'mb_strlen', 'char_access', 'trim' ),
+			'break_at'  => array( 'is_string', 'str_cmp_empty_strict', 'preg_alpha_unicode', 'preg_alnum_unicode', 'mb_strlen', 'char_access', 'trim' ),
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
@@ -2204,6 +2259,8 @@ else {
 			'preg_float',
 			'preg_digit_float_pos',
 			'preg_digit_float',
+			'preg_number_unicode_pos',
+			'preg_number_unicode',
 		);
 		foreach ( $targets as $target ) {
 			foreach ( $this->tests[ $target ] as $key => $value ) {

@@ -77,11 +77,14 @@ $legend_array = array(
 	'i8'  => '$x = 0xCC00F9; // hexadecimal integer',
 	'i9'  => '$x = 052; // octal integer',
 	'ia'  => '$x = 0b0111001; // binary integer (PHP5.4+)',
+	'ib'  => '$x = ‏௫‏; // Tamil digit five - entered as string as PHP itself cannot deal with it as an integer',
+	'ic'  => '$x = ⁸₈; // Unicode superscript and subscript digit 8 - entered as strings as PHP itself cannot deal with these as an integers',
 	'f5'  => '$x = acos(8); // = NAN',
 	'f6'  => '$x = NAN; // = not a number',
 	'f7'  => '$x = log(0); // = infinite',
 	'f8'  => '$x = INF; // = infinite',
 	'f9'  => '$x = 1.2345E8; // exponent notation float',
+	'fa'  => '$x = ⅕; // Unicode character representing 1/5 - entered as string as PHP itself cannot deal with it as a float',
 	'sk'  => '$x = "123, \"str\"\r\n";',
 	'sn'  => '$x = "\f\t\r\n";',
 	'sp'  => '$x = "\x7f\t\r\n"',
@@ -127,6 +130,19 @@ $extra_variables['boolean_tests']                         = array(
 $extra_variables['filter_extension_bool_int_float']       = $extra_variables['boolean_tests'];
 $extra_variables['filter_extension_bool_int_float']['sl'] = 'AF036C';
 
+
+$extra_variables['integer_tests']                         = array(
+	'ib'  => '௫', // Tamil digit five.
+	'ic'  => '⁸₈', // Superscript and subscript digit 8.
+);
+
+$extra_variables['float_tests']                         = array(
+	'fa'  => '⅕', // Unicode 1/5.
+);
+
+
+$extra_variables['numeric_tests'] = $extra_variables['integer_tests'];
+$extra_variables['numeric_tests'] = array_merge( $extra_variables['numeric_tests'], $extra_variables['float_tests'] );
 
 $extra_variables['string_tests'] = array(
 	'sz'  => 'Iñtërnâtiônàlizætiøn', // utf-8 / binary string
