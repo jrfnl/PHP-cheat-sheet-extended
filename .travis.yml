@@ -11,12 +11,32 @@ language: php
 # Declare versions of PHP to use. Use one decimal max.
 matrix:
   include:
+    # aliased to 5.2.17
+    - php: '5.2'
+      env: LTPHPFIVEFOUR=1
+    # aliased to 5.3.29
+    - php: '5.3'
+      env: LTPHPFIVEFOUR=1
+    # aliased to a recent 5.4.x version
+    - php: '5.4'
+      env: GTEPHPFIVEFOUR=1
+    # aliased to a recent 5.5.x version
+    - php: '5.5'
+      env: GTEPHPFIVEFOUR=1 SNIFF=1
     # aliased to a recent 5.6.x version
     - php: '5.6'
       env: GTEPHPFIVEFOUR=1
-    # Lowest currently possible in travis
-    - php: '5.2'
-      env: LTPHPFIVEFOUR=1
+    # aliased to a recent 7.x version
+    - php: '7.0'
+      env: GTEPHPFIVEFOUR=1
+    # aliased to a recent hhvm version
+    - php: 'hhvm'
+      env: GTEPHPFIVEFOUR=1
+
+  allow_failures:
+    - php: 'hhvm'
+
+
 
 before_script:
     # Install CodeSniffer for WordPress Coding Standards checks.
@@ -49,4 +69,4 @@ script:
     # -n flag: Do not print warnings (shortcut for --warning-severity=0)
     # --standard: Use WordPress as the standard.
     # --extensions: Only sniff PHP files.
-    - $TRAVIS_BUILD_DIR/phpcs/scripts/phpcs -p -s -v -n . --standard=./bin/codesniffer.xml --extensions=php
+    - if [[ "$SNIFF" == "1" ]]; then $TRAVIS_BUILD_DIR/phpcs/scripts/phpcs -p -s -v -n . --standard=./bin/codesniffer.xml --extensions=php; fi
