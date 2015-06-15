@@ -48,6 +48,18 @@ class VartypeTest extends Vartype {
 		),
 
 
+		// Will be removed from $tests property from constructor if not on PHP 7+ to prevent parse errors.
+		'null_coalesce' => array(
+			'title'         => '$x ?? \'not-set\'',
+			'url'           => 'http://php.net/language.operators.comparison',
+			'arg'           => '$x',
+			'function'      => 'pr_var( $x ?? \'not-set\' );',
+			'notes'         => array(
+				'<p>The Null Coalesce operator is only available in PHP 7.0.0+.</p>',
+			),
+		),
+
+
 
 		'var'           => array(
 			'title'         => '$x',
@@ -1719,6 +1731,7 @@ else {
 				'isset',
 				'bool',
 				'if_var',
+				'null_coalesce',
 			),
 			'break_at'  => array( 'gettype', 'if_var' ),
 			'good'      => array(),
@@ -1812,6 +1825,7 @@ else {
 				'cast_to_type_null',
 
 				'isset',
+				'null_coalesce',
 				'empty',
 
 				'is_null',
@@ -2300,6 +2314,16 @@ else {
 		if ( extension_loaded( 'filter' ) ) {
 			$this->test_groups = array_merge( $this->test_groups, $this->filter_test_group );
 		}
+
+		// Remove null coalesce test for PHP < 7
+		if ( PHP_VERSION_ID < 70000 ) {
+			unset(
+				$this->tests['null_coalesce'],
+				$this->test_groups['general']['tests'][6],
+				$this->test_groups['null_tests']['tests'][5]
+			);
+		}
+
 
 		/**
 		 * Adjust float regex tests to use the correct decimal point character.

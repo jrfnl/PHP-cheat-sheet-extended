@@ -92,6 +92,17 @@ class VartypeCompare extends Vartype {
 			'function'      => 'pr_bool( $a >= $b );',
 		),
 
+		// Will be removed from $tests property from constructor if not on PHP 7+ to prevent parse errors.
+		'spaceship'           => array(
+			'title'         => '&lt;=&gt;',
+			'url'           => 'http://php.net/language.operators.comparison',
+			'arg'           => '$a, $b',
+			'function'      => 'pr_int( $a <=> $b );',
+			'notes'         => array(
+				'<p>The Spaceship operator is only available in PHP 7.0.0+.</p>',
+			),
+		),
+
 
 		/**
 		 * String comparison functions.
@@ -180,6 +191,10 @@ class VartypeCompare extends Vartype {
 	 * Constructor.
 	 */
 	function __construct() {
+		// Remove spaceship comparison for PHP < 7
+		if ( PHP_VERSION_ID < 70000 ) {
+			unset( $this->tests['spaceship'] );
+		}
 		parent::__construct();
 	}
 

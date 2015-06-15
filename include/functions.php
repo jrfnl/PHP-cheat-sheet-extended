@@ -182,6 +182,8 @@ function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
 		'bcmod() expects parameter 2 to be string',
 		'levenshtein() expects parameter 1 to be string',
 		'levenshtein() expects parameter 2 to be string',
+		'intdiv() expects parameter 1 to be integer',
+		'intdiv() expects parameter 2 to be integer',
 	);
 
 	$replace = array(
@@ -213,6 +215,8 @@ function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
 		'bcmod() expects parameter 2 to be string, <em>array/object/resource</em> given',
 		'levenshtein() expects parameter 1 to be string, <em>array/object/resource</em> given',
 		'levenshtein() expects parameter 2 to be string, <em>array/object/resource</em> given',
+		'intdiv() expects parameter 1 to be integer, <em>float/string/array/object/resource</em> given',
+		'intdiv() expects parameter 2 to be integer, <em>float/string/array/object/resource</em> given',
 	);
 
 	// Group some more messages and make error message links work.
