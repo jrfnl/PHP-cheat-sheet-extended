@@ -113,43 +113,43 @@ class VartypeCompare extends Vartype {
 			'title'         => 'strcmp()',
 			'url'           => 'http://php.net/strcmp',
 			'arg'           => '$a, $b',
-			'function'      => 'Vartype::compare_strings( $a, $b, "strcmp" );',
+			'function'      => 'pc_compare_strings( $a, $b, "strcmp" );',
 		),
 		'strcasecmp'    => array(
 			'title'         => 'strcasecmp()',
 			'url'           => 'http://php.net/strcasecmp',
 			'arg'           => '$a, $b',
-			'function'      => 'Vartype::compare_strings( $a, $b, "strcasecmp" );',
+			'function'      => 'pc_compare_strings( $a, $b, "strcasecmp" );',
 		),
 		'strnatcmp'     => array(
 			'title'         => 'strnatcmp()',
 			'url'           => 'http://php.net/strnatcmp',
 			'arg'           => '$a, $b',
-			'function'      => 'Vartype::compare_strings( $a, $b, "strnatcmp" );',
+			'function'      => 'pc_compare_strings( $a, $b, "strnatcmp" );',
 		),
 		'strnatcasecmp' => array(
 			'title'         => 'strnatcasecmp()',
 			'url'           => 'http://php.net/strnatcasecmp',
 			'arg'           => '$a, $b',
-			'function'      => 'Vartype::compare_strings( $a, $b, "strnatcasecmp" );',
+			'function'      => 'pc_compare_strings( $a, $b, "strnatcasecmp" );',
 		),
 		'strcoll'       => array(
 			'title'         => 'strcoll()',
 			'url'           => 'http://php.net/strcoll',
 			'arg'           => '$a, $b',
-			'function'      => 'Vartype::compare_strings( $a, $b, "strcoll" );',
+			'function'      => 'pc_compare_strings( $a, $b, "strcoll" );',
 		),
 		'similar_text'  => array(
 			'title'         => 'similar_text()',
 			'url'           => 'http://php.net/similar_text',
 			'arg'           => '$a, $b',
-			'function'      => 'Vartype::compare_strings( $a, $b, "similar_text" );',
+			'function'      => 'pc_compare_strings( $a, $b, "similar_text" );',
 		),
 		'levenshtein'   => array(
 			'title'         => 'levenshtein()',
 			'url'           => 'http://php.net/levenshtein',
 			'arg'           => '$a, $b',
-			'function'      => 'Vartype::compare_strings( $a, $b, "levenshtein" );',
+			'function'      => 'pc_compare_strings( $a, $b, "levenshtein" );',
 		),
 
 
@@ -299,9 +299,7 @@ class VartypeCompare extends Vartype {
 		echo '
 	<div class="tables">';
 
-
 		$this->set_test_data();
-
 
 		foreach ( $this->tests as $key => $test_settings ) {
 			$GLOBALS['test'] = $key;
@@ -403,39 +401,20 @@ class VartypeCompare extends Vartype {
 	 * @return string
 	 */
 	function create_table_header( $test ) {
-		$tooltip = '';
-		if ( isset( $this->tests[ $test ]['tooltip'] ) && $this->tests[ $test ]['tooltip'] !== '' ) {
-			$tooltip = ' title="' . $this->tests[ $test ]['tooltip'] . '"';
-		}
 
-		if ( isset( $this->tests[ $test ]['url'] ) && $this->tests[ $test ]['url'] !== '' ) {
-			$group_label = '<a href="' . $this->tests[ $test ]['url'] . '" target="_blank"' . $tooltip . '><strong>' . $this->tests[ $test ]['title'] . '</strong></a>';
-		}
-		else {
-			$group_label = '<a href="' . $this->tests[ $test ]['url'] . '" target="_blank"' . $tooltip . '><strong>' . $this->tests[ $test ]['title'] . '</strong></a>';
-		}
-
-		$notes = '';
-		if ( isset( $this->tests[ $test ]['notes'] ) && ( is_array( $this->tests[ $test ]['notes'] ) && count( $this->tests[ $test ]['notes'] ) > 0 ) ) {
-			foreach ( $this->tests[ $test ]['notes'] as $key => $note ) {
-				$notes .= ' <sup><a href="#' . $test . '-note' . ( $key + 1 ) . '">&Dagger;' . ( $key + 1 ) . '</a></sup>';
-			}
-		}
-
+		$group_label = $this->get_table_header_group_label( $test );
+		$group_notes = $this->get_table_header_group_notes( $test );
 
 		$html = '
 				<tr>
-					<th>' . $group_label . $notes . '</th>';
+					<th>' . $group_label . $group_notes . '</th>';
 
 
 		// Top labels
 		foreach ( $this->test_data_keys as $i => $key ) {
-			$value = $this->test_data[ $key ];
 
-			$class = '';
-			if ( ! isset( $this->test_data_keys[ ( $i + 1 ) ] ) || substr( $key, 0, 1 ) !== substr( $this->test_data_keys[ ( $i + 1 ) ], 0, 1 ) ) {
-				$class = ' class="end"';
-			}
+			$value = $this->test_data[ $key ];
+			$class = $this->get_table_header_cell_class( $i, $key );
 
 			$html .= '
 					<th' . $class . '>';
@@ -444,30 +423,13 @@ class VartypeCompare extends Vartype {
 			pr_var( $value, '', false, true, '' );
 			$label = ob_get_clean();
 
-			// @todo: improve upon - preferably in a way that the tooltip is fully HTML capable
-			// at the very least move to separate method (duplicate code).
+			// Add tooltips
 			if ( strpos( $label, 'Object: ' ) !== false ) {
-				$label = str_replace( '&nbsp;', ' ', $label );
-				$label = str_replace( "\n", '', $label );
-				$label = str_replace( 'null', "null\n", $label );
-				$label = str_replace( '<br />', "\n", $label );
-				$label = str_replace( '&lsquo;', "'", $label );
-				$label = str_replace( '&rsquo;', "'", $label );
-				$label = strip_tags( $label );
-				$label = htmlspecialchars( $label, ENT_QUOTES, 'UTF-8' );
-
+				$label = $this->get_table_header_cell_title( $label, true );
 				$html .= '<span title="' . $label . '">Object(&hellip;)</span>';
 			}
 			else if ( strpos( $label, 'Array: ' ) !== false ) {
-				$label = str_replace( '&nbsp;', ' ', $label );
-				$label = str_replace( "\n", '', $label );
-				$label = str_replace( '<br />', "\n", $label );
-				$label = str_replace( '&lsquo;', "'", $label );
-				$label = str_replace( '&rsquo;', "'", $label );
-
-				$label = strip_tags( $label );
-				$label = htmlspecialchars( $label, ENT_QUOTES, 'UTF-8' );
-
+				$label = $this->get_table_header_cell_title( $label, false );
 				$html .= '<span title="' . $label . '">Array(&hellip;)</span>';
 			}
 			else {
@@ -485,6 +447,92 @@ class VartypeCompare extends Vartype {
 				</tr>';
 
 		return $html;
+	}
+
+
+	/**
+	 * Get the - potentially linked - group label (= first cell in the table header).
+	 *
+	 * @param string $test
+	 *
+	 * @return string
+	 */
+	function get_table_header_group_label( $test ) {
+		$tooltip = '';
+		if ( isset( $this->tests[ $test ]['tooltip'] ) && $this->tests[ $test ]['tooltip'] !== '' ) {
+			$tooltip = ' title="' . $this->tests[ $test ]['tooltip'] . '"';
+		}
+
+		if ( isset( $this->tests[ $test ]['url'] ) && $this->tests[ $test ]['url'] !== '' ) {
+			$group_label = '<a href="' . $this->tests[ $test ]['url'] . '" target="_blank"' . $tooltip . '><strong>' . $this->tests[ $test ]['title'] . '</strong></a>';
+		}
+		else {
+			$group_label = '<a href="' . $this->tests[ $test ]['url'] . '" target="_blank"' . $tooltip . '><strong>' . $this->tests[ $test ]['title'] . '</strong></a>';
+		}
+
+		return $group_label;
+	}
+
+
+	/**
+	 * Get the notes related to the group label, if any.
+	 *
+	 * @param string $test
+	 *
+	 * @return string
+	 */
+	function get_table_header_group_notes( $test ) {
+		$notes = '';
+		if ( isset( $this->tests[ $test ]['notes'] ) && ( is_array( $this->tests[ $test ]['notes'] ) && count( $this->tests[ $test ]['notes'] ) > 0 ) ) {
+			foreach ( $this->tests[ $test ]['notes'] as $key => $note ) {
+				$notes .= ' <sup><a href="#' . $test . '-note' . ( $key + 1 ) . '">&Dagger;' . ( $key + 1 ) . '</a></sup>';
+			}
+		}
+		return $notes;
+	}
+
+
+	/**
+	 * Get the CSS class string to attach to a table header cell.
+	 *
+	 * @param string $index
+	 * @param string $key
+	 *
+	 * @return string
+	 */
+	function get_table_header_cell_class( $index, $key ) {
+		$class = '';
+		if ( ! isset( $this->test_data_keys[ ( $index + 1 ) ] ) || substr( $key, 0, 1 ) !== substr( $this->test_data_keys[ ( $index + 1 ) ], 0, 1 ) ) {
+			$class = ' class="end"';
+		}
+
+		return $class;
+	}
+
+
+	/**
+	 * Adjust the cell label to make it usable as a title in a jQuery tooltip.
+	 *
+	 * @todo: improve upon - preferably in a way that the tooltip is fully HTML capable.
+	 *
+	 * @param string $label  Original label
+	 * @param bool   $object Whether this is an object or an array. Defaults to false (= array ).
+	 *
+	 * @return string Adjusted label
+	 */
+	function get_table_header_cell_title( $label, $object = false ) {
+		$label = str_replace( '&nbsp;', ' ', $label );
+		$label = str_replace( "\n", '', $label );
+		if ( $object === true ) {
+			$label = str_replace( 'null', "null\n", $label );
+		}
+		$label = str_replace( '<br />', "\n", $label );
+		$label = str_replace( '&lsquo;', "'", $label );
+		$label = str_replace( '&rsquo;', "'", $label );
+		$label = strip_tags( $label );
+		$label = htmlspecialchars( $label, ENT_QUOTES, 'UTF-8' );
+
+		return $label;
 	}
 
 

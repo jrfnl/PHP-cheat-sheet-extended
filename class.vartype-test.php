@@ -743,7 +743,7 @@ class VartypeTest extends Vartype {
 			'title'         => 'instanceof TestObject',
 			'url'           => 'http://php.net/language.operators.type',
 			'arg'           => '$x',
-			'function'      => 'print \'E: not available (PHP 5.0+)\';',  // Note: has PHP5 equivalent in class.vartype-php5.php
+			'function'      => 'print \'E: not available (PHP 5.0+)\';', // Note: has PHP5 equivalent in class.vartype-php5.php
 		),
 		'get_class' => array(
 			'title'         => 'get_class()',
@@ -2292,6 +2292,7 @@ else {
 
 		// Work around some bugs in PHP versions having issues with ctype.
 		if ( extension_loaded( 'ctype' ) && PHP_VERSION_ID !== 40309 ) {
+			// If necessary, remove some tests which give issues in PHP5.0.x.
 			if ( PHP_VERSION_ID === 50005 || PHP_VERSION_ID === 50004 ) {
 				unset(
 					$this->ctype_test_group['ctype_extension']['tests'][6], // ctype_lower
@@ -2299,9 +2300,12 @@ else {
 					$this->ctype_test_group['ctype_extension']['tests'][9]  // ctype_punct
 				);
 			}
+			// Merge the ctype testgroup.
 			$this->test_groups = array_merge( $this->test_groups, $this->ctype_test_group );
 		}
 		else {
+			// PHP 4.3.9 has issue with all ctype, so don't merge the group and remove uses
+			// in other groups.
 			unset(
 				$this->test_groups['integer_tests']['tests'][10], // ctype_digit
 				$this->test_groups['float_tests']['tests'][9],    // ctype_digit

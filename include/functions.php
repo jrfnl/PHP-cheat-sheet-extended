@@ -65,6 +65,25 @@ class TestObjectToString extends TestObject {
 	}
 }
 
+
+/**
+ * Helper function to compare strings, compatible with PHP4.
+ *
+ * @param mixed  $var1
+ * @param mixed  $var2
+ * @param string $function
+ */
+function pc_compare_strings( $var1, $var2, $function ) {
+	$result = $function( $var1, $var2 );
+	if ( is_int( $result ) ) {
+		pr_int( $result );
+	}
+	else {
+		pr_var( $result, '', true, true );
+	}
+}
+
+
 /**
  * Catch errors to display in appendix.
  *

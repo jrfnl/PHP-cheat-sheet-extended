@@ -157,7 +157,7 @@ class VartypePHP5 {
 
 		if ( ( PHP_VERSION_ID >= 50000 && $function === 'levenshtein' ) && ( ( gettype( $var1 ) === 'array' || gettype( $var1 ) === 'resource' ) || ( gettype( $var2 ) === 'array' || gettype( $var2 ) === 'resource' ) ) ) {
 			try {
-				self::compare_strings_helper( $var1, $var2, $function );
+				pc_compare_strings( $var1, $var2, $function );
 			}
 			catch ( Exception $e ) {
 				self::handle_exception( $e->getMessage() );
@@ -165,32 +165,14 @@ class VartypePHP5 {
 		}
 		else if ( PHP_VERSION_ID >= 50200 && ( gettype( $var1 ) === 'object' || gettype( $var2 ) === 'object' ) ) {
 			try {
-				self::compare_strings_helper( $var1, $var2, $function );
+				pc_compare_strings( $var1, $var2, $function );
 			}
 			catch ( Exception $e ) {
 				self::handle_exception( $e->getMessage() );
 			}
 		}
 		else {
-			self::compare_strings_helper( $var1, $var2, $function );
-		}
-	}
-
-
-	/**
-	 * Helper function for string comparisons.
-	 *
-	 * @param mixed  $var1
-	 * @param mixed  $var2
-	 * @param string $function
-	 */
-	public static function compare_strings_helper( $var1, $var2, $function ) {
-		$result = $function( $var1, $var2 );
-		if ( is_int( $result ) ) {
-			pr_int( $result );
-		}
-		else {
-			pr_var( $result, '', true, true );
+			pc_compare_strings( $var1, $var2, $function );
 		}
 	}
 
@@ -238,27 +220,7 @@ class VartypePHP5 {
 					$result = filter_var( $value, $filter );
 				}
 
-				switch ( true ) {
-					case ( $expected === 'bool' && is_bool( $result ) === true ):
-						pr_bool( $result );
-						break;
-
-					case ( $expected === 'int' && is_int( $result ) === true  ):
-						pr_int( $result );
-						break;
-
-					case ( $expected === 'float' && is_float( $result ) === true  ):
-						pr_flt( $result );
-						break;
-
-					case ( $expected === 'string' && is_string( $result ) === true  ):
-						pr_str( $result );
-						break;
-
-					default:
-						pr_var( $result, '', true, true );
-						break;
-				}
+				self::print_typed_result( $result, $expected );
 			}
 			else {
 				if ( ! isset( $flags ) && ! isset( $options ) ) {
@@ -284,6 +246,37 @@ class VartypePHP5 {
 		}
 		else {
 			echo 'E: not available (PHP 5.2.0+)';
+		}
+	}
+
+
+	/**
+	 * Helper function to print the filter result.
+	 *
+	 * @param mixed       $result
+	 * @param string|null $expected Expected variable type of the output of the test
+	 */
+	public static function print_typed_result( $result, $expected = null ) {
+		switch ( true ) {
+			case ( $expected === 'bool' && is_bool( $result ) === true ):
+				pr_bool( $result );
+				break;
+
+			case ( $expected === 'int' && is_int( $result ) === true ):
+				pr_int( $result );
+				break;
+
+			case ( $expected === 'float' && is_float( $result ) === true ):
+				pr_flt( $result );
+				break;
+
+			case ( $expected === 'string' && is_string( $result ) === true ):
+				pr_str( $result );
+				break;
+
+			default:
+				pr_var( $result, '', true, true );
+				break;
 		}
 	}
 }

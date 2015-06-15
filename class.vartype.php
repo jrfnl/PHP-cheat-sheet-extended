@@ -205,7 +205,7 @@ class Vartype {
 	/**
 	 * Prepare the test data (the variables) for use in the tests.
 	 *
-	 * @param string $test_group The current subsection
+	 * @param string|null $test_group The current subsection
 	 */
 	function set_test_data( $test_group = null ) {
 
@@ -685,21 +685,4 @@ class Vartype {
 		$this->table_notes = array(); // Reset property
 	}
 
-
-	/**
-	 * Compare strings, compatible with PHP4.
-	 *
-	 * @param mixed  $var1
-	 * @param mixed  $var2
-	 * @param string $function
-	 */
-	function compare_strings( $var1, $var2, $function ) {
-		$result = $function( $var1, $var2 );
-		if ( is_int( $result ) ) {
-			pr_int( $result );
-		}
-		else {
-			pr_var( $result, '', true, true );
-		}
-	}
 }
