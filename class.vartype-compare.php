@@ -161,6 +161,10 @@ class VartypeCompare extends Vartype {
 			'url'           => 'http://php.net/bccomp',
 			'arg'           => '$a, $b',
 			'function'      => 'if ( extension_loaded( \'bcmath\' ) ) { $r = bccomp( $a, $b ); if ( is_int( $r ) ) { pr_int( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'E: bcmath extension not installed\'; }',
+			'notes'         => array(
+				'<p>Remember that the default <code>bcscale()</code> is 0 !</p>',
+				'<p>For a reliable implementation of all the BCMath functions which avoids a number of the common pitfalls, see <a href="https://gist.github.com/jrfnl/8449978" target="_blank">this example function</a> (gist).</p>',
+			),
 		),
 		'min'           => array(
 			'title'         => 'min()',

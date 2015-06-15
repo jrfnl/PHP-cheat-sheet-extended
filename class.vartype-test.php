@@ -1194,7 +1194,7 @@ class VartypeTest extends Vartype {
 			'arg'           => '$x',
 			'function'      => 'pr_bool( ctype_alnum( $x ) );',
 			'notes'         => array(
-				'<p>Important: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
+				'<p><strong>Important</strong>: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
 				In any other case, integers are interpreted as a string containing the decimal digits of the integer.</p>',
 			),
 		),
@@ -1204,7 +1204,7 @@ class VartypeTest extends Vartype {
 			'arg'           => '$x',
 			'function'      => 'pr_bool( ctype_alpha( $x ) );',
 			'notes'         => array(
-				'<p>Important: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
+				'<p><strong>Important</strong>: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
 				In any other case, integers are interpreted as a string containing the decimal digits of the integer.</p>',
 			),
 
@@ -1215,7 +1215,7 @@ class VartypeTest extends Vartype {
 			'arg'           => '$x',
 			'function'      => 'pr_bool( ctype_cntrl( $x ) );',
 			'notes'         => array(
-				'<p>Important: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
+				'<p><strong>Important</strong>: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
 				In any other case, integers are interpreted as a string containing the decimal digits of the integer.</p>',
 			),
 
@@ -1226,7 +1226,7 @@ class VartypeTest extends Vartype {
 			'arg'           => '$x',
 			'function'      => 'pr_bool( ctype_digit( $x ) );',
 			'notes'         => array(
-				'<p>Important: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
+				'<p><strong>Important</strong>: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
 				In any other case, integers are interpreted as a string containing the decimal digits of the integer.</p>',
 			),
 
@@ -1237,7 +1237,7 @@ class VartypeTest extends Vartype {
 			'arg'           => '$x',
 			'function'      => 'pr_bool( ctype_graph( $x ) );',
 			'notes'         => array(
-				'<p>Important: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
+				'<p><strong>Important</strong>: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
 				In any other case, integers are interpreted as a string containing the decimal digits of the integer.</p>',
 			),
 
@@ -1248,7 +1248,7 @@ class VartypeTest extends Vartype {
 			'arg'           => '$x',
 			'function'      => 'pr_bool( ctype_lower( $x ) );',
 			'notes'         => array(
-				'<p>Important: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
+				'<p><strong>Important</strong>: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
 				In any other case, integers are interpreted as a string containing the decimal digits of the integer.</p>',
 			),
 
@@ -1259,7 +1259,7 @@ class VartypeTest extends Vartype {
 			'arg'           => '$x',
 			'function'      => 'pr_bool( ctype_print( $x ) );',
 			'notes'         => array(
-				'<p>Important: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
+				'<p><strong>Important</strong>: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
 				In any other case, integers are interpreted as a string containing the decimal digits of the integer.</p>',
 			),
 
@@ -1270,7 +1270,7 @@ class VartypeTest extends Vartype {
 			'arg'           => '$x',
 			'function'      => 'pr_bool( ctype_punct( $x ) );',
 			'notes'         => array(
-				'<p>Important: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
+				'<p><strong>Important</strong>: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
 				In any other case, integers are interpreted as a string containing the decimal digits of the integer.</p>',
 			),
 
@@ -1281,7 +1281,7 @@ class VartypeTest extends Vartype {
 			'arg'           => '$x',
 			'function'      => 'pr_bool( ctype_space( $x ) );',
 			'notes'         => array(
-				'<p>Important: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
+				'<p><strong>Important</strong>: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
 				In any other case, integers are interpreted as a string containing the decimal digits of the integer.</p>',
 			),
 
@@ -1292,7 +1292,7 @@ class VartypeTest extends Vartype {
 			'arg'           => '$x',
 			'function'      => 'pr_bool( ctype_upper( $x ) );',
 			'notes'         => array(
-				'<p>Important: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
+				'<p><strong>Important</strong>: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
 				In any other case, integers are interpreted as a string containing the decimal digits of the integer.</p>',
 			),
 
@@ -1303,7 +1303,7 @@ class VartypeTest extends Vartype {
 			'arg'           => '$x',
 			'function'      => 'pr_bool( ctype_xdigit( $x ) );',
 			'notes'         => array(
-				'<p>Important: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
+				'<p><strong>Important</strong>: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
 				In any other case, integers are interpreted as a string containing the decimal digits of the integer.</p>',
 			),
 

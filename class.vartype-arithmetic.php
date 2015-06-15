@@ -88,12 +88,20 @@ class VartypeArithmetic extends VartypeCompare {
 			'url'           => 'http://php.net/language.operators.arithmetic',
 			'arg'           => '$a, $b',
 			'function'      => '$r = $a % $b; if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); }',
+			'notes'         => array(
+				'<p>Pre-PHP 7, a "<em>Division by zero</em>" error would be emitted as a warning. From PHP 7 onwards, this has been changed to a catchable fatal error.</p>',
+			),
 		),
+
+		// Will be removed from $tests property from constructor if not on PHP 5.6+ to prevent parse errors.
 		'pow_operator'         => array(
 			'title'         => '**',
 			'url'           => 'http://php.net/language.operators.arithmetic',
 			'arg'           => '$a, $b',
 			'function'      => 'if ( PHP_VERSION_ID >= 50600 ) { pr_var( $a ** $b, \'\', true, true ); } else { print \'E: \'**\' operator not available (PHP 5.6+)\'; }',
+			'notes'         => array(
+				'<p>This operator is only available in PHP 5.6.0+.</p>',
+			),
 		),
 
 
@@ -148,6 +156,7 @@ class VartypeArithmetic extends VartypeCompare {
 			'function'      => '$r = bcadd( $a, $b ); if ( is_string( $r ) ) { pr_str( $r ); } else { pr_var ( $r, \'\', true, true ); }',
 			'notes'         => array(
 				'<p>For this cheat sheet <code>bcscale()</code> has been set to 3. Remember that the default is 0.</p>',
+				'<p>For a reliable implementation of all the BCMath functions which avoids a number of the common pitfalls, see <a href="https://gist.github.com/jrfnl/8449978" target="_blank">this example function</a> (gist).</p>',
 			),
 		),
 		'bcsub'          => array(
@@ -157,6 +166,7 @@ class VartypeArithmetic extends VartypeCompare {
 			'function'      => '$r = bcsub( $a, $b ); if ( is_string( $r ) ) { pr_str( $r ); } else { pr_var ( $r, \'\', true, true ); }',
 			'notes'         => array(
 				'<p>For this cheat sheet <code>bcscale()</code> has been set to 3. Remember that the default is 0.</p>',
+				'<p>For a reliable implementation of all the BCMath functions which avoids a number of the common pitfalls, see <a href="https://gist.github.com/jrfnl/8449978" target="_blank">this example function</a> (gist).</p>',
 			),
 		),
 		'bcmul'          => array(
@@ -166,6 +176,7 @@ class VartypeArithmetic extends VartypeCompare {
 			'function'      => '$r = bcmul( $a, $b ); if ( is_string( $r ) ) { pr_str( $r ); } else { pr_var ( $r, \'\', true, true ); }',
 			'notes'         => array(
 				'<p>For this cheat sheet <code>bcscale()</code> has been set to 3. Remember that the default is 0.</p>',
+				'<p>For a reliable implementation of all the BCMath functions which avoids a number of the common pitfalls, see <a href="https://gist.github.com/jrfnl/8449978" target="_blank">this example function</a> (gist).</p>',
 			),
 		),
 		'bcdiv'          => array(
@@ -175,6 +186,7 @@ class VartypeArithmetic extends VartypeCompare {
 			'function'      => '$r = bcdiv( $a, $b ); if ( is_string( $r ) ) { pr_str( $r ); } else { pr_var ( $r, \'\', true, true ); }',
 			'notes'         => array(
 				'<p>For this cheat sheet <code>bcscale()</code> has been set to 3. Remember that the default is 0.</p>',
+				'<p>For a reliable implementation of all the BCMath functions which avoids a number of the common pitfalls, see <a href="https://gist.github.com/jrfnl/8449978" target="_blank">this example function</a> (gist).</p>',
 			),
 		),
 		'bcmod'          => array(
@@ -184,6 +196,7 @@ class VartypeArithmetic extends VartypeCompare {
 			'function'      => '$r = bcmod( $a, $b ); if ( is_string( $r ) ) { pr_str( $r ); } else { pr_var ( $r, \'\', true, true ); }',
 			'notes'         => array(
 				'<p>For this cheat sheet <code>bcscale()</code> has been set to 3. Remember that the default is 0.</p>',
+				'<p>For a reliable implementation of all the BCMath functions which avoids a number of the common pitfalls, see <a href="https://gist.github.com/jrfnl/8449978" target="_blank">this example function</a> (gist).</p>',
 			),
 		),
 
@@ -195,6 +208,7 @@ class VartypeArithmetic extends VartypeCompare {
 			'function'      => 'if ( $a != 0 && is_infinite( pow( $a, $b ) ) === false ) { $r = bcpow( $a, $b ); if ( is_string( $r ) ) { pr_str( $r ); } else { pr_var ( $r, \'\', true, true ); } } else { trigger_error( \'would result in INF and will normally exhaust memory\', E_USER_ERROR ); }',
 			'notes'         => array(
 				'<p>For this cheat sheet <code>bcscale()</code> has been set to 3. Remember that the default is 0.</p>',
+				'<p>For a reliable implementation of all the BCMath functions which avoids a number of the common pitfalls, see <a href="https://gist.github.com/jrfnl/8449978" target="_blank">this example function</a> (gist).</p>',
 			),
 		),
 		*/

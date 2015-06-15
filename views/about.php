@@ -45,7 +45,7 @@ if ( ! defined( 'APP_DIR' ) ) {
 				Hire me ;-)
 			</p>
 			<p>
-				Based on some of the gotcha&#8217;s I came across, I created <em>The Big &#8220;Why equal doesn&#8217;t equal&#8222; quiz</em>, a talk which I&#8217;ve presented at a number of PHP conferences and meetings.
+				Based on some of the gotcha&#8217;s I came across, I created <em>The Big &#8220;Why equal doesn&#8217;t equal&#8222; quiz</em>, a talk which I&#8217;ve presented at numerous PHP conferences and meetings.
 			</p>
 			<ul>
 				<li>
