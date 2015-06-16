@@ -83,19 +83,26 @@
 						<option value="live">PHP 5.4.13</option>
 					</optgroup>
 					
+					<optgroup label="PHP 7.0">
+						<option value="php7.0.0alpha1">PHP 7.0.0alpha1</option>
+					</optgroup>
 					<optgroup label="PHP 5.6">
+						<option value="php5.6.10">PHP 5.6.10</option>
+
+						<option value="php5.6.8">PHP 5.6.8</option>
+
 						<option value="php5.6.5">PHP 5.6.5</option>
 
-						<option value="php5.6.4">PHP 5.6.4</option>
-
 						<option value="php5.6.2">PHP 5.6.2</option>
+
+						<option value="php5.6.0">PHP 5.6.0</option>
 					</optgroup>
 					<optgroup label="PHP 5.5">
-						<option value="php5.5.21">PHP 5.5.21</option>
+						<option value="php5.5.26">PHP 5.5.26</option>
 
-						<option value="php5.5.20">PHP 5.5.20</option>
+						<option value="php5.5.24">PHP 5.5.24</option>
 
-						<option value="php5.5.18">PHP 5.5.18</option>
+						<option value="php5.5.22">PHP 5.5.22</option>
 
 						<option value="php5.5.16">PHP 5.5.16</option>
 
@@ -104,9 +111,11 @@
 						<option value="php5.5.3">PHP 5.5.3</option>
 					</optgroup>
 					<optgroup label="PHP 5.4">
-						<option value="php5.4.37">PHP 5.4.37</option>
+						<option value="php5.4.42">PHP 5.4.42</option>
 
-						<option value="php5.4.35">PHP 5.4.35</option>
+						<option value="php5.4.39">PHP 5.4.39</option>
+
+						<option value="php5.4.36">PHP 5.4.36</option>
 
 						<option value="php5.4.33">PHP 5.4.33</option>
 
@@ -149,8 +158,6 @@
 					</optgroup>
 					<optgroup label="PHP 4.3">
 						<option value="php4.3.11">PHP 4.3.11</option>
-
-						<option value="php4.3.9">PHP 4.3.9</option>
 					</optgroup>
 				</select>
 			</form>			</div>
@@ -193,6 +200,12 @@
 						<th id="var-legend-ia">ia</th>
 						<td><code>$x = 0b0111001; // binary integer (PHP5.4+)</code></td>
 					</tr>					<tr>
+						<th id="var-legend-ib">ib</th>
+						<td><code>$x = ‏௫‏; // Tamil digit five - entered as string as PHP itself cannot deal with it as an integer</code></td>
+					</tr>					<tr>
+						<th id="var-legend-ic">ic</th>
+						<td><code>$x = ⁸₈; // Unicode superscript and subscript digit 8 - entered as strings as PHP itself cannot deal with these as an integers</code></td>
+					</tr>					<tr>
 						<th id="var-legend-f5">f5</th>
 						<td><code>$x = acos(8); // = NAN</code></td>
 					</tr>					<tr>
@@ -207,6 +220,9 @@
 					</tr>					<tr>
 						<th id="var-legend-f9">f9</th>
 						<td><code>$x = 1.2345E8; // exponent notation float</code></td>
+					</tr>					<tr>
+						<th id="var-legend-fa">fa</th>
+						<td><code>$x = ⅕; // Unicode character representing 1/5 - entered as string as PHP itself cannot deal with it as a float</code></td>
 					</tr>					<tr>
 						<th id="var-legend-sk">sk</th>
 						<td><code>$x = "123, \"str\"\r\n";</code></td>
@@ -2841,7 +2857,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -2870,7 +2886,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -2899,7 +2915,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -2928,7 +2944,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -2957,7 +2973,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -2986,7 +3002,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -3015,7 +3031,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -3044,7 +3060,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -3073,7 +3089,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -3102,7 +3118,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -3131,7 +3147,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -3160,7 +3176,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -3189,7 +3205,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -3218,7 +3234,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -3247,7 +3263,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -3276,7 +3292,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -3305,7 +3321,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -3334,7 +3350,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -3363,7 +3379,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -3392,7 +3408,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -3421,7 +3437,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -3450,7 +3466,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -3479,7 +3495,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -3508,7 +3524,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -3537,7 +3553,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -3566,7 +3582,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -3595,7 +3611,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -3624,7 +3640,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -3653,7 +3669,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -3682,7 +3698,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -3711,7 +3727,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -3740,7 +3756,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -3769,7 +3785,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -3798,7 +3814,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -3827,7 +3843,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -3856,7 +3872,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -3885,7 +3901,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -3914,7 +3930,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -3942,7 +3958,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -3973,7 +3989,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -4013,7 +4029,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -4056,7 +4072,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -4102,7 +4118,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -4142,7 +4158,7 @@
 					</th>
 					<td class="settype_null"><span class="vt-null">null</span>
 					</td>
-					<td class="unset">E: (unset) not available (PHP 5+)					</td>
+					<td class="unset">E: not available (PHP 5+)					</td>
 					<td class="f_unset"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="notice"><a href="#null_tests-errors">#2</a></span>&nbsp;)					</td>
 					<td class="cast_to_type_null end"><span class="vt-null">null</span>
@@ -6184,10 +6200,11 @@ else {
 					<th class="end"><a href="http://php.net/abs" target="_blank">abs()</a></th>
 					<th><a href="http://php.net/empty" target="_blank">empty()</a></th>
 					<th><a href="http://php.net/is_int" target="_blank">is_int()</a></th>
-					<th><a href="http://php.net/ctype_digit" target="_blank">ctype_digit()</a> <sup><a href="#integer_tests-note3">&Dagger;3</a></sup></th>
 					<th><a href="http://php.net/is_numeric" target="_blank">is_numeric()</a></th>
+					<th><a href="http://php.net/ctype_digit" target="_blank">ctype_digit()</a> <sup><a href="#integer_tests-note3">&Dagger;3</a></sup></th>
 					<th><a href="http://php.net/preg-match" target="_blank">preg_match (`^[0-9]+$`)</a></th>
-					<th class="end"><a href="http://php.net/preg-match" target="_blank">preg_match (`^[0-9<span style="color: red;">-</span>]+$`)</a></th>
+					<th><a href="http://php.net/preg-match" target="_blank">preg_match (`^[0-9<span style="color: red;">-</span>]+$`)</a></th>
+					<th class="end"><a href="http://php.net/regexp.reference.unicode.php" target="_blank">preg_match (`^[\p{N}-]+$`u)</a></th>
 					<th class="label-col"><a href="http://php.net/book.var" target="_blank">Integers</a></th>
 				</tr>
 		</thead>
@@ -6218,10 +6235,11 @@ else {
 					<th class="end"><a href="http://php.net/abs" target="_blank">abs()</a></th>
 					<th><a href="http://php.net/empty" target="_blank">empty()</a></th>
 					<th><a href="http://php.net/is_int" target="_blank">is_int()</a></th>
-					<th><a href="http://php.net/ctype_digit" target="_blank">ctype_digit()</a> <sup><a href="#integer_tests-note3">&Dagger;3</a></sup></th>
 					<th><a href="http://php.net/is_numeric" target="_blank">is_numeric()</a></th>
+					<th><a href="http://php.net/ctype_digit" target="_blank">ctype_digit()</a> <sup><a href="#integer_tests-note3">&Dagger;3</a></sup></th>
 					<th><a href="http://php.net/preg-match" target="_blank">preg_match (`^[0-9]+$`)</a></th>
-					<th class="end"><a href="http://php.net/preg-match" target="_blank">preg_match (`^[0-9<span style="color: red;">-</span>]+$`)</a></th>
+					<th><a href="http://php.net/preg-match" target="_blank">preg_match (`^[0-9<span style="color: red;">-</span>]+$`)</a></th>
+					<th class="end"><a href="http://php.net/regexp.reference.unicode.php" target="_blank">preg_match (`^[\p{N}-]+$`u)</a></th>
 					<th class="label-col"><a href="http://php.net/book.var" target="_blank">Integers</a></th>
 				</tr>
 		</tfoot>
@@ -6248,14 +6266,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-false">false</span>
+					<td class="preg_int"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-null"><b><i>null</i></b> :  ( = <i>NULL</i> )</span><br />
 
 					</th>
@@ -6282,14 +6301,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-false">false</span>
+					<td class="preg_int"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-null"><b><i>null</i></b> :  ( = <i>NULL</i> )</span><br />
 
 					</th>
@@ -6316,14 +6336,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-false">false</span>
+					<td class="preg_int"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-bool"><b><i>bool</i></b> :  ( = <i class="vt-b-false">false</i> )</span><br />
 
 					</th>
@@ -6350,14 +6371,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-true">true</span>
+					<td class="preg_int"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-bool"><b><i>bool</i></b> : 1 ( = <i class="vt-b-true">true</i> )</span><br />
 
 					</th>
@@ -6384,14 +6406,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-true">true</span>
+					<td class="preg_int"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-int"><b><i>int</i></b> : 1</span><br />
 
 					</th>
@@ -6418,14 +6441,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-true">true</span>
+					<td class="preg_int"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-int"><b><i>int</i></b> : <span class="vt-int-0">0</span></span><br />
 
 					</th>
@@ -6452,14 +6476,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-true">true</span>
+					<td class="preg_int"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-int"><b><i>int</i></b> : -1</span><br />
 
 					</th>
@@ -6486,14 +6511,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-true">true</span>
+					<td class="preg_int"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-int"><b><i>int</i></b> : 42</span><br />
 
 					</th>
@@ -6520,14 +6546,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-true">true</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-true">true</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-true">true</span>
+					<td class="preg_int"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th><sup class="fright"><a href="#var-legend-i8">&dagger;i8</a></sup>$x = <span class="vt-int"><b><i>int</i></b> : 13369593</span><br />
 
 					</th>
@@ -6554,15 +6581,86 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-true">true</span>
+					<td class="preg_int"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th><sup class="fright"><a href="#var-legend-i9">&dagger;i9</a></sup>$x = <span class="vt-int"><b><i>int</i></b> : 42</span><br />
+
+					</th>
+				</tr>
+				<tr class="target">
+					<th><sup class="fright"><a href="#var-legend-ib">&dagger;ib</a></sup>$x = <span class="vt-string"><b><i>string[3]</i></b> : &lsquo;௫&rsquo;</span><br />
+
+					</th>
+					<td class="settype_int"><span class="vt-int-0">0</span>
+					</td>
+					<td class="int"><span class="vt-int-0">0</span>
+					</td>
+					<td class="intval"><span class="vt-int-0">0</span>
+					</td>
+					<td class="juggle_int"><span class="vt-int-0">0</span>
+					</td>
+					<td class="filter_combined_int">E: not available (PHP 5.2.0+)					</td>
+					<td class="filter_combined_int_null">E: not available (PHP 5.2.0+)					</td>
+					<td class="cast_to_type_int_not_empty_recurse_arrays end"><span class="vt-null">null</span>
+					</td>
+					<td class="abs end"><span class="vt-int"><span class="vt-int-0">0</span></span><br />
+					</td>
+					<td class="empty"><span class="vt-b-false">false</span>
+					</td>
+					<td class="is_int"><span class="vt-b-false">false</span>
+					</td>
+					<td class="is_numeric"><span class="vt-b-false">false</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
+					</td>
+					<td class="preg_int_pos"><span class="vt-b-false">false</span>
+					</td>
+					<td class="preg_int"><span class="vt-b-false">false</span>
+					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
+					<th><sup class="fright"><a href="#var-legend-ib">&dagger;ib</a></sup>$x = <span class="vt-string"><b><i>string[3]</i></b> : &lsquo;௫&rsquo;</span><br />
+
+					</th>
+				</tr>
+				<tr class="target">
+					<th><sup class="fright"><a href="#var-legend-ic">&dagger;ic</a></sup>$x = <span class="vt-string"><b><i>string[6]</i></b> : &lsquo;⁸₈&rsquo;</span><br />
+
+					</th>
+					<td class="settype_int"><span class="vt-int-0">0</span>
+					</td>
+					<td class="int"><span class="vt-int-0">0</span>
+					</td>
+					<td class="intval"><span class="vt-int-0">0</span>
+					</td>
+					<td class="juggle_int"><span class="vt-int-0">0</span>
+					</td>
+					<td class="filter_combined_int">E: not available (PHP 5.2.0+)					</td>
+					<td class="filter_combined_int_null">E: not available (PHP 5.2.0+)					</td>
+					<td class="cast_to_type_int_not_empty_recurse_arrays end"><span class="vt-null">null</span>
+					</td>
+					<td class="abs end"><span class="vt-int"><span class="vt-int-0">0</span></span><br />
+					</td>
+					<td class="empty"><span class="vt-b-false">false</span>
+					</td>
+					<td class="is_int"><span class="vt-b-false">false</span>
+					</td>
+					<td class="is_numeric"><span class="vt-b-false">false</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
+					</td>
+					<td class="preg_int_pos"><span class="vt-b-false">false</span>
+					</td>
+					<td class="preg_int"><span class="vt-b-false">false</span>
+					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
+					<th><sup class="fright"><a href="#var-legend-ic">&dagger;ic</a></sup>$x = <span class="vt-string"><b><i>string[6]</i></b> : &lsquo;⁸₈&rsquo;</span><br />
 
 					</th>
 				</tr>
@@ -6588,14 +6686,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-false">false</span>
+					<td class="preg_int"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-float"><b><i>float</i></b> : 1.3</span><br />
 
 					</th>
@@ -6622,14 +6721,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-false">false</span>
+					<td class="preg_int"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-float"><b><i>float</i></b> : 0.005</span><br />
 
 					</th>
@@ -6656,14 +6756,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-true">true</span>
+					<td class="preg_int"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-float"><b><i>float</i></b> : 0</span><br />
 
 					</th>
@@ -6690,14 +6791,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-false">false</span>
+					<td class="preg_int"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-float"><b><i>float</i></b> : -1.3</span><br />
 
 					</th>
@@ -6724,14 +6826,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-false">false</span>
+					<td class="preg_int"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th><sup class="fright"><a href="#var-legend-f5">&dagger;f5</a></sup>$x = <span class="vt-float"><b><i>float</i></b> : -1.#IND</span><br />
 
 					</th>
@@ -6758,14 +6861,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-true">true</span>
+					<td class="preg_int"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th><sup class="fright"><a href="#var-legend-f6">&dagger;f6</a></sup>$x = <span class="vt-float"><b><i>float</i></b> : 0</span><br />
 
 					</th>
@@ -6792,14 +6896,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-false">false</span>
+					<td class="preg_int"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th><sup class="fright"><a href="#var-legend-f7">&dagger;f7</a></sup>$x = <span class="vt-float"><b><i>float</i></b> : -1.#INF</span><br />
 
 					</th>
@@ -6826,14 +6931,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-false">false</span>
+					<td class="preg_int"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th><sup class="fright"><a href="#var-legend-f8">&dagger;f8</a></sup>$x = <span class="vt-float"><b><i>float</i></b> : 1.#INF</span><br />
 
 					</th>
@@ -6860,14 +6966,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-true">true</span>
+					<td class="preg_int"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th><sup class="fright"><a href="#var-legend-f9">&dagger;f9</a></sup>$x = <span class="vt-float"><b><i>float</i></b> : 123450000</span><br />
 
 					</th>
@@ -6894,14 +7001,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-false">false</span>
+					<td class="preg_int"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[0]</i></b> : &lsquo;&rsquo;</span><br />
 
 					</th>
@@ -6928,14 +7036,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-false">false</span>
+					<td class="preg_int"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[1]</i></b> : &lsquo; &rsquo;</span><br />
 
 					</th>
@@ -6962,14 +7071,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-false">false</span>
+					<td class="preg_int"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[2]</i></b> : &lsquo; 1&rsquo;</span><br />
 
 					</th>
@@ -6996,14 +7106,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-false">false</span>
+					<td class="preg_int"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[3]</i></b> : &lsquo; 3 &rsquo;</span><br />
 
 					</th>
@@ -7030,14 +7141,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-true">true</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-true">true</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-true">true</span>
+					<td class="preg_int"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[1]</i></b> : &lsquo;1&rsquo;</span><br />
 
 					</th>
@@ -7064,14 +7176,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-true">true</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-true">true</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-true">true</span>
+					<td class="preg_int"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[1]</i></b> : &lsquo;0&rsquo;</span><br />
 
 					</th>
@@ -7098,14 +7211,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-true">true</span>
+					<td class="preg_int"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[2]</i></b> : &lsquo;-1&rsquo;</span><br />
 
 					</th>
@@ -7132,14 +7246,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-true">true</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-true">true</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-true">true</span>
+					<td class="preg_int"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[2]</i></b> : &lsquo;42&rsquo;</span><br />
 
 					</th>
@@ -7166,14 +7281,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-false">false</span>
+					<td class="preg_int"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[3]</i></b> : &lsquo;1.3&rsquo;</span><br />
 
 					</th>
@@ -7200,14 +7316,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-false">false</span>
+					<td class="preg_int"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[3]</i></b> : &lsquo;0.0&rsquo;</span><br />
 
 					</th>
@@ -7234,14 +7351,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-false">false</span>
+					<td class="preg_int"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[6]</i></b> : &lsquo;-1.305&rsquo;</span><br />
 
 					</th>
@@ -7268,14 +7386,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-false">false</span>
+					<td class="preg_int"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[4]</i></b> : &lsquo;true&rsquo;</span><br />
 
 					</th>
@@ -7302,14 +7421,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-false">false</span>
+					<td class="preg_int"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[5]</i></b> : &lsquo;false&rsquo;</span><br />
 
 					</th>
@@ -7336,14 +7456,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-false">false</span>
+					<td class="preg_int"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[4]</i></b> : &lsquo;null&rsquo;</span><br />
 
 					</th>
@@ -7370,14 +7491,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-false">false</span>
+					<td class="preg_int"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[6]</i></b> : &lsquo;123str&rsquo;</span><br />
 
 					</th>
@@ -7404,14 +7526,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-false">false</span>
+					<td class="preg_int"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[6]</i></b> : &lsquo;str123&rsquo;</span><br />
 
 					</th>
@@ -7438,14 +7561,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-false">false</span>
+					<td class="preg_int"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[10]</i></b> : &lsquo;123, &quot;str&quot;&rsquo;</span><br />
 
 					</th>
@@ -7472,14 +7596,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-false">false</span>
+					<td class="preg_int"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[8]</i></b> : &lsquo;0xCC00F9&rsquo;</span><br />
 
 					</th>
@@ -7506,14 +7631,15 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-true">true</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-true">true</span>
 					</td>
 					<td class="preg_int_pos"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_int end"><span class="vt-b-true">true</span>
+					<td class="preg_int"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[4]</i></b> : &lsquo;0123&rsquo;</span><br />
 
 					</th>
@@ -7538,12 +7664,13 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
 					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
+					</td>
 					<td class="preg_int_pos">Error<br /> (&nbsp;<span class="warning"><a href="#integer_tests-errors">#3</a></span>&nbsp;)					</td>
-					<td class="preg_int end">Error<br /> (&nbsp;<span class="warning"><a href="#integer_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_int">Error<br /> (&nbsp;<span class="warning"><a href="#integer_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = array()<br />
 					</th>
 				</tr>
@@ -7574,12 +7701,13 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
 					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
+					</td>
 					<td class="preg_int_pos">Error<br /> (&nbsp;<span class="warning"><a href="#integer_tests-errors">#3</a></span>&nbsp;)					</td>
-					<td class="preg_int end">Error<br /> (&nbsp;<span class="warning"><a href="#integer_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_int">Error<br /> (&nbsp;<span class="warning"><a href="#integer_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = Array: (<br />
 &nbsp;&nbsp;&nbsp;&nbsp;[1 <b class="vt-int"><i>(int)</i></b>] => <span class="vt-string"><b><i>string[6]</i></b> : &lsquo;string&rsquo;</span><br />
 )<br />
@@ -7624,12 +7752,13 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
 					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
+					</td>
 					<td class="preg_int_pos">Error<br /> (&nbsp;<span class="warning"><a href="#integer_tests-errors">#3</a></span>&nbsp;)					</td>
-					<td class="preg_int end">Error<br /> (&nbsp;<span class="warning"><a href="#integer_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_int">Error<br /> (&nbsp;<span class="warning"><a href="#integer_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = Array: (<br />
 &nbsp;&nbsp;&nbsp;&nbsp;[0 <b class="vt-int"><i>(int)</i></b>] => <span class="vt-bool"><b><i>bool</i></b> :  ( = <i class="vt-b-false">false</i> )</span><br />
 &nbsp;&nbsp;&nbsp;&nbsp;[1 <b class="vt-int"><i>(int)</i></b>] => <span class="vt-int"><b><i>int</i></b> : 1</span><br />
@@ -7669,12 +7798,13 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
 					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
+					</td>
 					<td class="preg_int_pos">Error<br /> (&nbsp;<span class="warning"><a href="#integer_tests-errors">#3</a></span>&nbsp;)					</td>
-					<td class="preg_int end">Error<br /> (&nbsp;<span class="warning"><a href="#integer_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_int">Error<br /> (&nbsp;<span class="warning"><a href="#integer_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = Object: 
 (<br />
 &nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: stdClass (<br />
@@ -7717,12 +7847,13 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
 					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
+					</td>
 					<td class="preg_int_pos">Error<br /> (&nbsp;<span class="warning"><a href="#integer_tests-errors">#3</a></span>&nbsp;)					</td>
-					<td class="preg_int end">Error<br /> (&nbsp;<span class="warning"><a href="#integer_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_int">Error<br /> (&nbsp;<span class="warning"><a href="#integer_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = Object: 
 (<br />
 &nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: testobjecttostring (<br />
@@ -7760,12 +7891,13 @@ else {
 					</td>
 					<td class="is_int"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
 					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
+					</td>
 					<td class="preg_int_pos">Error<br /> (&nbsp;<span class="warning"><a href="#integer_tests-errors">#3</a></span>&nbsp;)					</td>
-					<td class="preg_int end">Error<br /> (&nbsp;<span class="warning"><a href="#integer_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_int">Error<br /> (&nbsp;<span class="warning"><a href="#integer_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_int_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #119 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
@@ -7784,7 +7916,7 @@ else {
 				<sup>&Dagger; 2</sup> <p>Uses an <a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">external library</a></p>
 			</div>
 			<div id="integer_tests-note3" class="note-appendix">
-				<sup>&Dagger; 3</sup> <p>Important: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
+				<sup>&Dagger; 3</sup> <p><strong>Important</strong>: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
 				In any other case, integers are interpreted as a string containing the decimal digits of the integer.</p>
 			</div>
 		</div><!-- end of div#integer_tests -->
@@ -7816,10 +7948,11 @@ else {
 					<th class="end"><a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">CastToType::_float (&nbsp;$x, false, false&nbsp;)</a> <sup><a href="#float_tests-note2">&Dagger;2</a></sup></th>
 					<th><a href="http://php.net/empty" target="_blank">empty()</a></th>
 					<th><a href="http://php.net/is_float" target="_blank">is_float()</a></th>
-					<th><a href="http://php.net/ctype_digit" target="_blank">ctype_digit()</a> <sup><a href="#float_tests-note3">&Dagger;3</a></sup></th>
 					<th><a href="http://php.net/is_numeric" target="_blank">is_numeric()</a></th>
+					<th><a href="http://php.net/ctype_digit" target="_blank">ctype_digit()</a> <sup><a href="#float_tests-note3">&Dagger;3</a></sup></th>
 					<th><a href="http://php.net/preg-match" target="_blank" title="Decimal point character adjusted based on locale">preg_match (`^[0-9\.]+$`)</a></th>
-					<th class="end"><a href="http://php.net/preg-match" target="_blank" title="Decimal point character adjusted based on locale">preg_match (`^[0-9\.<span style="color: red;">-</span>]+$`)</a></th>
+					<th><a href="http://php.net/preg-match" target="_blank" title="Decimal point character adjusted based on locale">preg_match (`^[0-9\.<span style="color: red;">-</span>]+$`)</a></th>
+					<th class="end"><a href="http://php.net/regexp.reference.unicode.php" target="_blank">preg_match (`^[\p{N}\.-]+$`u)</a></th>
 					<th class="label-col"><a href="http://php.net/book.var" target="_blank">Floats</a></th>
 				</tr>
 		</thead>
@@ -7849,10 +7982,11 @@ else {
 					<th class="end"><a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">CastToType::_float (&nbsp;$x, false, false&nbsp;)</a> <sup><a href="#float_tests-note2">&Dagger;2</a></sup></th>
 					<th><a href="http://php.net/empty" target="_blank">empty()</a></th>
 					<th><a href="http://php.net/is_float" target="_blank">is_float()</a></th>
-					<th><a href="http://php.net/ctype_digit" target="_blank">ctype_digit()</a> <sup><a href="#float_tests-note3">&Dagger;3</a></sup></th>
 					<th><a href="http://php.net/is_numeric" target="_blank">is_numeric()</a></th>
+					<th><a href="http://php.net/ctype_digit" target="_blank">ctype_digit()</a> <sup><a href="#float_tests-note3">&Dagger;3</a></sup></th>
 					<th><a href="http://php.net/preg-match" target="_blank" title="Decimal point character adjusted based on locale">preg_match (`^[0-9\.]+$`)</a></th>
-					<th class="end"><a href="http://php.net/preg-match" target="_blank" title="Decimal point character adjusted based on locale">preg_match (`^[0-9\.<span style="color: red;">-</span>]+$`)</a></th>
+					<th><a href="http://php.net/preg-match" target="_blank" title="Decimal point character adjusted based on locale">preg_match (`^[0-9\.<span style="color: red;">-</span>]+$`)</a></th>
+					<th class="end"><a href="http://php.net/regexp.reference.unicode.php" target="_blank">preg_match (`^[\p{N}\.-]+$`u)</a></th>
 					<th class="label-col"><a href="http://php.net/book.var" target="_blank">Floats</a></th>
 				</tr>
 		</tfoot>
@@ -7877,14 +8011,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-false">false</span>
+					<td class="preg_float"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-null"><b><i>null</i></b> :  ( = <i>NULL</i> )</span><br />
 
 					</th>
@@ -7909,14 +8044,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-false">false</span>
+					<td class="preg_float"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-null"><b><i>null</i></b> :  ( = <i>NULL</i> )</span><br />
 
 					</th>
@@ -7941,14 +8077,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-false">false</span>
+					<td class="preg_float"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-bool"><b><i>bool</i></b> :  ( = <i class="vt-b-false">false</i> )</span><br />
 
 					</th>
@@ -7973,14 +8110,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-true">true</span>
+					<td class="preg_float"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-bool"><b><i>bool</i></b> : 1 ( = <i class="vt-b-true">true</i> )</span><br />
 
 					</th>
@@ -8005,14 +8143,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-true">true</span>
+					<td class="preg_float"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-int"><b><i>int</i></b> : 1</span><br />
 
 					</th>
@@ -8037,14 +8176,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-true">true</span>
+					<td class="preg_float"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-int"><b><i>int</i></b> : <span class="vt-int-0">0</span></span><br />
 
 					</th>
@@ -8069,14 +8209,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-true">true</span>
+					<td class="preg_float"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-int"><b><i>int</i></b> : -1</span><br />
 
 					</th>
@@ -8101,14 +8242,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-true">true</span>
+					<td class="preg_float"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-int"><b><i>int</i></b> : 42</span><br />
 
 					</th>
@@ -8133,14 +8275,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-true">true</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-true">true</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-true">true</span>
+					<td class="preg_float"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th><sup class="fright"><a href="#var-legend-i8">&dagger;i8</a></sup>$x = <span class="vt-int"><b><i>int</i></b> : 13369593</span><br />
 
 					</th>
@@ -8165,14 +8308,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-true">true</span>
+					<td class="preg_float"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th><sup class="fright"><a href="#var-legend-i9">&dagger;i9</a></sup>$x = <span class="vt-int"><b><i>int</i></b> : 42</span><br />
 
 					</th>
@@ -8197,14 +8341,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-true">true</span>
+					<td class="preg_float"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-float"><b><i>float</i></b> : 1.3</span><br />
 
 					</th>
@@ -8229,14 +8374,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-true">true</span>
+					<td class="preg_float"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-float"><b><i>float</i></b> : 0.005</span><br />
 
 					</th>
@@ -8261,14 +8407,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-true">true</span>
+					<td class="preg_float"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-float"><b><i>float</i></b> : 0</span><br />
 
 					</th>
@@ -8293,14 +8440,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-true">true</span>
+					<td class="preg_float"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-float"><b><i>float</i></b> : -1.3</span><br />
 
 					</th>
@@ -8325,14 +8473,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-false">false</span>
+					<td class="preg_float"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th><sup class="fright"><a href="#var-legend-f5">&dagger;f5</a></sup>$x = <span class="vt-float"><b><i>float</i></b> : -1.#IND</span><br />
 
 					</th>
@@ -8357,14 +8506,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-true">true</span>
+					<td class="preg_float"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th><sup class="fright"><a href="#var-legend-f6">&dagger;f6</a></sup>$x = <span class="vt-float"><b><i>float</i></b> : 0</span><br />
 
 					</th>
@@ -8389,14 +8539,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-false">false</span>
+					<td class="preg_float"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th><sup class="fright"><a href="#var-legend-f7">&dagger;f7</a></sup>$x = <span class="vt-float"><b><i>float</i></b> : -1.#INF</span><br />
 
 					</th>
@@ -8421,14 +8572,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-false">false</span>
+					<td class="preg_float"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th><sup class="fright"><a href="#var-legend-f8">&dagger;f8</a></sup>$x = <span class="vt-float"><b><i>float</i></b> : 1.#INF</span><br />
 
 					</th>
@@ -8453,15 +8605,49 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-true">true</span>
+					<td class="preg_float"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th><sup class="fright"><a href="#var-legend-f9">&dagger;f9</a></sup>$x = <span class="vt-float"><b><i>float</i></b> : 123450000</span><br />
+
+					</th>
+				</tr>
+				<tr class="target">
+					<th><sup class="fright"><a href="#var-legend-fa">&dagger;fa</a></sup>$x = <span class="vt-string"><b><i>string[3]</i></b> : &lsquo;⅕&rsquo;</span><br />
+
+					</th>
+					<td class="settype_float"><span class="vt-float">0</span>
+					</td>
+					<td class="float"><span class="vt-float">0</span>
+					</td>
+					<td class="floatval"><span class="vt-float">0</span>
+					</td>
+					<td class="juggle_flt"><span class="vt-float">0</span>
+					</td>
+					<td class="filter_combined_float">E: not available (PHP 5.2.0+)					</td>
+					<td class="filter_combined_float_null">E: not available (PHP 5.2.0+)					</td>
+					<td class="cast_to_type_float_not_empty_recurse_arrays end"><span class="vt-null">null</span>
+					</td>
+					<td class="empty"><span class="vt-b-false">false</span>
+					</td>
+					<td class="is_float"><span class="vt-b-false">false</span>
+					</td>
+					<td class="is_numeric"><span class="vt-b-false">false</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
+					</td>
+					<td class="preg_float_pos"><span class="vt-b-false">false</span>
+					</td>
+					<td class="preg_float"><span class="vt-b-false">false</span>
+					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
+					<th><sup class="fright"><a href="#var-legend-fa">&dagger;fa</a></sup>$x = <span class="vt-string"><b><i>string[3]</i></b> : &lsquo;⅕&rsquo;</span><br />
 
 					</th>
 				</tr>
@@ -8485,14 +8671,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-false">false</span>
+					<td class="preg_float"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[0]</i></b> : &lsquo;&rsquo;</span><br />
 
 					</th>
@@ -8517,14 +8704,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-false">false</span>
+					<td class="preg_float"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[1]</i></b> : &lsquo; &rsquo;</span><br />
 
 					</th>
@@ -8549,14 +8737,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-false">false</span>
+					<td class="preg_float"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[2]</i></b> : &lsquo; 1&rsquo;</span><br />
 
 					</th>
@@ -8581,14 +8770,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-false">false</span>
+					<td class="preg_float"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[3]</i></b> : &lsquo; 3 &rsquo;</span><br />
 
 					</th>
@@ -8613,14 +8803,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-true">true</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-true">true</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-true">true</span>
+					<td class="preg_float"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[1]</i></b> : &lsquo;1&rsquo;</span><br />
 
 					</th>
@@ -8645,14 +8836,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-true">true</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-true">true</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-true">true</span>
+					<td class="preg_float"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[1]</i></b> : &lsquo;0&rsquo;</span><br />
 
 					</th>
@@ -8677,14 +8869,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-true">true</span>
+					<td class="preg_float"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[2]</i></b> : &lsquo;-1&rsquo;</span><br />
 
 					</th>
@@ -8709,14 +8902,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-true">true</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-true">true</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-true">true</span>
+					<td class="preg_float"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[2]</i></b> : &lsquo;42&rsquo;</span><br />
 
 					</th>
@@ -8741,14 +8935,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-true">true</span>
+					<td class="preg_float"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[3]</i></b> : &lsquo;1.3&rsquo;</span><br />
 
 					</th>
@@ -8773,14 +8968,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-true">true</span>
+					<td class="preg_float"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[3]</i></b> : &lsquo;0.0&rsquo;</span><br />
 
 					</th>
@@ -8805,14 +9001,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-true">true</span>
+					<td class="preg_float"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[6]</i></b> : &lsquo;-1.305&rsquo;</span><br />
 
 					</th>
@@ -8837,14 +9034,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-false">false</span>
+					<td class="preg_float"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[4]</i></b> : &lsquo;true&rsquo;</span><br />
 
 					</th>
@@ -8869,14 +9067,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-false">false</span>
+					<td class="preg_float"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[5]</i></b> : &lsquo;false&rsquo;</span><br />
 
 					</th>
@@ -8901,14 +9100,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-false">false</span>
+					<td class="preg_float"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[4]</i></b> : &lsquo;null&rsquo;</span><br />
 
 					</th>
@@ -8933,14 +9133,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-false">false</span>
+					<td class="preg_float"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[6]</i></b> : &lsquo;123str&rsquo;</span><br />
 
 					</th>
@@ -8965,14 +9166,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-false">false</span>
+					<td class="preg_float"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[6]</i></b> : &lsquo;str123&rsquo;</span><br />
 
 					</th>
@@ -8997,14 +9199,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-false">false</span>
+					<td class="preg_float"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[10]</i></b> : &lsquo;123, &quot;str&quot;&rsquo;</span><br />
 
 					</th>
@@ -9029,14 +9232,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-false">false</span>
+					<td class="preg_float"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[8]</i></b> : &lsquo;0xCC00F9&rsquo;</span><br />
 
 					</th>
@@ -9061,14 +9265,15 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-true">true</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-true">true</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-true">true</span>
 					</td>
 					<td class="preg_float_pos"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_float end"><span class="vt-b-true">true</span>
+					<td class="preg_float"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = <span class="vt-string"><b><i>string[4]</i></b> : &lsquo;0123&rsquo;</span><br />
 
 					</th>
@@ -9091,12 +9296,13 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
 					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
+					</td>
 					<td class="preg_float_pos">Error<br /> (&nbsp;<span class="warning"><a href="#float_tests-errors">#3</a></span>&nbsp;)					</td>
-					<td class="preg_float end">Error<br /> (&nbsp;<span class="warning"><a href="#float_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_float">Error<br /> (&nbsp;<span class="warning"><a href="#float_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = array()<br />
 					</th>
 				</tr>
@@ -9125,12 +9331,13 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
 					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
+					</td>
 					<td class="preg_float_pos">Error<br /> (&nbsp;<span class="warning"><a href="#float_tests-errors">#3</a></span>&nbsp;)					</td>
-					<td class="preg_float end">Error<br /> (&nbsp;<span class="warning"><a href="#float_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_float">Error<br /> (&nbsp;<span class="warning"><a href="#float_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = Array: (<br />
 &nbsp;&nbsp;&nbsp;&nbsp;[1 <b class="vt-int"><i>(int)</i></b>] => <span class="vt-string"><b><i>string[6]</i></b> : &lsquo;string&rsquo;</span><br />
 )<br />
@@ -9173,12 +9380,13 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
 					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
+					</td>
 					<td class="preg_float_pos">Error<br /> (&nbsp;<span class="warning"><a href="#float_tests-errors">#3</a></span>&nbsp;)					</td>
-					<td class="preg_float end">Error<br /> (&nbsp;<span class="warning"><a href="#float_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_float">Error<br /> (&nbsp;<span class="warning"><a href="#float_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = Array: (<br />
 &nbsp;&nbsp;&nbsp;&nbsp;[0 <b class="vt-int"><i>(int)</i></b>] => <span class="vt-bool"><b><i>bool</i></b> :  ( = <i class="vt-b-false">false</i> )</span><br />
 &nbsp;&nbsp;&nbsp;&nbsp;[1 <b class="vt-int"><i>(int)</i></b>] => <span class="vt-int"><b><i>int</i></b> : 1</span><br />
@@ -9216,12 +9424,13 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
 					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
+					</td>
 					<td class="preg_float_pos">Error<br /> (&nbsp;<span class="warning"><a href="#float_tests-errors">#3</a></span>&nbsp;)					</td>
-					<td class="preg_float end">Error<br /> (&nbsp;<span class="warning"><a href="#float_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_float">Error<br /> (&nbsp;<span class="warning"><a href="#float_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = Object: 
 (<br />
 &nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: stdClass (<br />
@@ -9262,12 +9471,13 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
 					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
+					</td>
 					<td class="preg_float_pos">Error<br /> (&nbsp;<span class="warning"><a href="#float_tests-errors">#3</a></span>&nbsp;)					</td>
-					<td class="preg_float end">Error<br /> (&nbsp;<span class="warning"><a href="#float_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_float">Error<br /> (&nbsp;<span class="warning"><a href="#float_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<th>$x = Object: 
 (<br />
 &nbsp;&nbsp;&nbsp;&nbsp;<b><i>Class</i></b>: testobjecttostring (<br />
@@ -9284,16 +9494,16 @@ else {
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #166 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #168 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
-					<td class="settype_float"><span class="vt-float">166</span>
+					<td class="settype_float"><span class="vt-float">168</span>
 					</td>
-					<td class="float"><span class="vt-float">166</span>
+					<td class="float"><span class="vt-float">168</span>
 					</td>
-					<td class="floatval"><span class="vt-float">166</span>
+					<td class="floatval"><span class="vt-float">168</span>
 					</td>
-					<td class="juggle_flt"><span class="vt-float">166</span>
+					<td class="juggle_flt"><span class="vt-float">168</span>
 					</td>
 					<td class="filter_combined_float">E: not available (PHP 5.2.0+)					</td>
 					<td class="filter_combined_float_null">E: not available (PHP 5.2.0+)					</td>
@@ -9303,13 +9513,14 @@ else {
 					</td>
 					<td class="is_float"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit"><span class="vt-b-false">false</span>
-					</td>
 					<td class="is_numeric"><span class="vt-b-false">false</span>
 					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
+					</td>
 					<td class="preg_float_pos">Error<br /> (&nbsp;<span class="warning"><a href="#float_tests-errors">#3</a></span>&nbsp;)					</td>
-					<td class="preg_float end">Error<br /> (&nbsp;<span class="warning"><a href="#float_tests-errors">#3</a></span>&nbsp;)					</td>
-					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #166 ( = <i>RESOURCE</i> )</span><br />
+					<td class="preg_float">Error<br /> (&nbsp;<span class="warning"><a href="#float_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
+					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #168 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -9327,7 +9538,7 @@ else {
 				<sup>&Dagger; 2</sup> <p>Uses an <a href="https://github.com/jrfnl/PHP-cast-to-type.git" target="_blank">external library</a></p>
 			</div>
 			<div id="float_tests-note3" class="note-appendix">
-				<sup>&Dagger; 3</sup> <p>Important: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
+				<sup>&Dagger; 3</sup> <p><strong>Important</strong>: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
 				In any other case, integers are interpreted as a string containing the decimal digits of the integer.</p>
 			</div>
 		</div><!-- end of div#float_tests -->
@@ -9337,7 +9548,9 @@ else {
 				<tr>
 					<th class="label-col"><a href="http://php.net/book.var" target="_blank">Numeric tests</a></th>
 					<th class="end"><a href="http://php.net/is_numeric" target="_blank">is_numeric()</a></th>
-					<th class="end"><a href="http://php.net/ctype_digit" target="_blank">ctype_digit()</a> <sup><a href="#numeric_tests-note1">&Dagger;1</a></sup></th>
+					<th><a href="http://php.net/ctype_digit" target="_blank">ctype_digit()</a> <sup><a href="#numeric_tests-note1">&Dagger;1</a></sup></th>
+					<th><a href="http://php.net/regexp.reference.unicode.php" target="_blank">preg_match (`^[\p{N}-]+$`u)</a></th>
+					<th class="end"><a href="http://php.net/regexp.reference.unicode.php" target="_blank">preg_match (`^[\p{N}\.-]+$`u)</a></th>
 					<th>&gt;&nbsp;0</th>
 					<th>&gt;=&nbsp;0</th>
 					<th>==&nbsp;0</th>
@@ -9359,7 +9572,9 @@ else {
 				<tr>
 					<th class="label-col"><a href="http://php.net/book.var" target="_blank">Numeric tests</a></th>
 					<th class="end"><a href="http://php.net/is_numeric" target="_blank">is_numeric()</a></th>
-					<th class="end"><a href="http://php.net/ctype_digit" target="_blank">ctype_digit()</a> <sup><a href="#numeric_tests-note1">&Dagger;1</a></sup></th>
+					<th><a href="http://php.net/ctype_digit" target="_blank">ctype_digit()</a> <sup><a href="#numeric_tests-note1">&Dagger;1</a></sup></th>
+					<th><a href="http://php.net/regexp.reference.unicode.php" target="_blank">preg_match (`^[\p{N}-]+$`u)</a></th>
+					<th class="end"><a href="http://php.net/regexp.reference.unicode.php" target="_blank">preg_match (`^[\p{N}\.-]+$`u)</a></th>
 					<th>&gt;&nbsp;0</th>
 					<th>&gt;=&nbsp;0</th>
 					<th>==&nbsp;0</th>
@@ -9384,8 +9599,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-false">false</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -9424,8 +9641,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-false">false</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -9464,8 +9683,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-false">false</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -9504,8 +9725,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-true">true</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -9544,8 +9767,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-true">true</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -9584,8 +9809,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-false">false</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -9624,8 +9851,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-false">false</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-false">false</span>
@@ -9664,8 +9893,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-true">true</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -9704,8 +9935,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-true">true</span>
+					<td class="ctype_digit"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-true">true</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -9744,8 +9977,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-true">true</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -9778,14 +10013,100 @@ else {
 
 					</th>
 				</tr>
+				<tr>
+					<th><sup class="fright"><a href="#var-legend-ib">&dagger;ib</a></sup>$x = <span class="vt-string"><b><i>string[3]</i></b> : &lsquo;௫&rsquo;</span><br />
+
+					</th>
+					<td class="is_numeric end"><span class="vt-b-false">false</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
+					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
+					<td class="int_cmp_gt0"><span class="vt-b-false">false</span>
+					</td>
+					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
+					</td>
+					<td class="int_cmp_is0_loose"><span class="vt-b-true">true</span>
+					</td>
+					<td class="int_cmp_is0_strict"><span class="vt-b-false">false</span>
+					</td>
+					<td class="int_cmp_not0_loose"><span class="vt-b-false">false</span>
+					</td>
+					<td class="int_cmp_not0_strict"><span class="vt-b-true">true</span>
+					</td>
+					<td class="int_cmp_lt0"><span class="vt-b-false">false</span>
+					</td>
+					<td class="int_cmp_lte0 end"><span class="vt-b-true">true</span>
+					</td>
+					<td class="is_nan"><span class="vt-null">null</span>
+<br /> (&nbsp;<span class="warning"><a href="#numeric_tests-errors">#2</a></span>&nbsp;)					</td>
+					<td class="is_finite"><span class="vt-null">null</span>
+<br /> (&nbsp;<span class="warning"><a href="#numeric_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="is_infinite end"><span class="vt-null">null</span>
+<br /> (&nbsp;<span class="warning"><a href="#numeric_tests-errors">#4</a></span>&nbsp;)					</td>
+					<td class="floor"><span class="vt-float">0</span>
+					</td>
+					<td class="ceil"><span class="vt-float">0</span>
+					</td>
+					<td class="round end"><span class="vt-float">0</span>
+					</td>
+					<th><sup class="fright"><a href="#var-legend-ib">&dagger;ib</a></sup>$x = <span class="vt-string"><b><i>string[3]</i></b> : &lsquo;௫&rsquo;</span><br />
+
+					</th>
+				</tr>
+				<tr>
+					<th><sup class="fright"><a href="#var-legend-ic">&dagger;ic</a></sup>$x = <span class="vt-string"><b><i>string[6]</i></b> : &lsquo;⁸₈&rsquo;</span><br />
+
+					</th>
+					<td class="is_numeric end"><span class="vt-b-false">false</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
+					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
+					<td class="int_cmp_gt0"><span class="vt-b-false">false</span>
+					</td>
+					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
+					</td>
+					<td class="int_cmp_is0_loose"><span class="vt-b-true">true</span>
+					</td>
+					<td class="int_cmp_is0_strict"><span class="vt-b-false">false</span>
+					</td>
+					<td class="int_cmp_not0_loose"><span class="vt-b-false">false</span>
+					</td>
+					<td class="int_cmp_not0_strict"><span class="vt-b-true">true</span>
+					</td>
+					<td class="int_cmp_lt0"><span class="vt-b-false">false</span>
+					</td>
+					<td class="int_cmp_lte0 end"><span class="vt-b-true">true</span>
+					</td>
+					<td class="is_nan"><span class="vt-null">null</span>
+<br /> (&nbsp;<span class="warning"><a href="#numeric_tests-errors">#2</a></span>&nbsp;)					</td>
+					<td class="is_finite"><span class="vt-null">null</span>
+<br /> (&nbsp;<span class="warning"><a href="#numeric_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="is_infinite end"><span class="vt-null">null</span>
+<br /> (&nbsp;<span class="warning"><a href="#numeric_tests-errors">#4</a></span>&nbsp;)					</td>
+					<td class="floor"><span class="vt-float">0</span>
+					</td>
+					<td class="ceil"><span class="vt-float">0</span>
+					</td>
+					<td class="round end"><span class="vt-float">0</span>
+					</td>
+					<th><sup class="fright"><a href="#var-legend-ic">&dagger;ic</a></sup>$x = <span class="vt-string"><b><i>string[6]</i></b> : &lsquo;⁸₈&rsquo;</span><br />
+
+					</th>
+				</tr>
 				<tr class="new-var-type">
 					<th>$x = <span class="vt-float"><b><i>float</i></b> : 1.3</span><br />
 
 					</th>
 					<td class="is_numeric end"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-true">true</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -9824,8 +10145,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-true">true</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -9864,8 +10187,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-false">false</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -9904,8 +10229,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-false">false</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-false">false</span>
@@ -9944,8 +10271,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-false">false</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -9984,8 +10313,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-false">false</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -10024,8 +10355,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-false">false</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-false">false</span>
@@ -10064,8 +10397,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-true">true</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -10104,8 +10439,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-true">true</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -10138,14 +10475,58 @@ else {
 
 					</th>
 				</tr>
+				<tr>
+					<th><sup class="fright"><a href="#var-legend-fa">&dagger;fa</a></sup>$x = <span class="vt-string"><b><i>string[3]</i></b> : &lsquo;⅕&rsquo;</span><br />
+
+					</th>
+					<td class="is_numeric end"><span class="vt-b-false">false</span>
+					</td>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
+					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
+					<td class="int_cmp_gt0"><span class="vt-b-false">false</span>
+					</td>
+					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
+					</td>
+					<td class="int_cmp_is0_loose"><span class="vt-b-true">true</span>
+					</td>
+					<td class="int_cmp_is0_strict"><span class="vt-b-false">false</span>
+					</td>
+					<td class="int_cmp_not0_loose"><span class="vt-b-false">false</span>
+					</td>
+					<td class="int_cmp_not0_strict"><span class="vt-b-true">true</span>
+					</td>
+					<td class="int_cmp_lt0"><span class="vt-b-false">false</span>
+					</td>
+					<td class="int_cmp_lte0 end"><span class="vt-b-true">true</span>
+					</td>
+					<td class="is_nan"><span class="vt-null">null</span>
+<br /> (&nbsp;<span class="warning"><a href="#numeric_tests-errors">#2</a></span>&nbsp;)					</td>
+					<td class="is_finite"><span class="vt-null">null</span>
+<br /> (&nbsp;<span class="warning"><a href="#numeric_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="is_infinite end"><span class="vt-null">null</span>
+<br /> (&nbsp;<span class="warning"><a href="#numeric_tests-errors">#4</a></span>&nbsp;)					</td>
+					<td class="floor"><span class="vt-float">0</span>
+					</td>
+					<td class="ceil"><span class="vt-float">0</span>
+					</td>
+					<td class="round end"><span class="vt-float">0</span>
+					</td>
+					<th><sup class="fright"><a href="#var-legend-fa">&dagger;fa</a></sup>$x = <span class="vt-string"><b><i>string[3]</i></b> : &lsquo;⅕&rsquo;</span><br />
+
+					</th>
+				</tr>
 				<tr class="new-var-type">
 					<th>$x = <span class="vt-string"><b><i>string[0]</i></b> : &lsquo;&rsquo;</span><br />
 
 					</th>
 					<td class="is_numeric end"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-false">false</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -10184,8 +10565,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-false">false</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -10224,8 +10607,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-true">true</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -10264,8 +10649,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-true">true</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -10304,8 +10691,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-true">true</span>
+					<td class="ctype_digit"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-true">true</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -10344,8 +10733,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-true">true</span>
+					<td class="ctype_digit"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-false">false</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -10384,8 +10775,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-false">false</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-false">false</span>
@@ -10424,8 +10817,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-true">true</span>
+					<td class="ctype_digit"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-true">true</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -10464,8 +10859,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-true">true</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -10504,8 +10901,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-false">false</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -10544,8 +10943,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-false">false</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-false">false</span>
@@ -10584,8 +10985,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-false">false</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -10624,8 +11027,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-false">false</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -10664,8 +11069,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-false">false</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -10704,8 +11111,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-true">true</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -10744,8 +11153,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-false">false</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -10784,8 +11195,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-true">true</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -10824,8 +11237,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-true">true</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -10864,8 +11279,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-true">true</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-true">true</span>
+					<td class="ctype_digit"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-true">true</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -10903,8 +11320,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-true">true</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -10945,8 +11364,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-true">true</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -10996,8 +11417,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-true">true</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -11050,8 +11473,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-true">true</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -11107,8 +11532,10 @@ else {
 					</th>
 					<td class="is_numeric end"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-true">true</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -11153,13 +11580,15 @@ else {
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #213 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #216 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="is_numeric end"><span class="vt-b-false">false</span>
 					</td>
-					<td class="ctype_digit end"><span class="vt-b-false">false</span>
+					<td class="ctype_digit"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_int_unicode">E: not available (PHP 5.1+)					</td>
+					<td class="preg_number_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="int_cmp_gt0"><span class="vt-b-true">true</span>
 					</td>
 					<td class="int_cmp_gte0"><span class="vt-b-true">true</span>
@@ -11182,13 +11611,13 @@ else {
 <br /> (&nbsp;<span class="warning"><a href="#numeric_tests-errors">#3</a></span>&nbsp;)					</td>
 					<td class="is_infinite end"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="warning"><a href="#numeric_tests-errors">#4</a></span>&nbsp;)					</td>
-					<td class="floor"><span class="vt-float">213</span>
+					<td class="floor"><span class="vt-float">216</span>
 					</td>
-					<td class="ceil"><span class="vt-float">213</span>
+					<td class="ceil"><span class="vt-float">216</span>
 					</td>
-					<td class="round end"><span class="vt-float">213</span>
+					<td class="round end"><span class="vt-float">216</span>
 					</td>
-					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #213 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #216 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -11201,7 +11630,7 @@ else {
 				<li><span class="warning">Warning</span>: is_infinite() expects parameter 1 to be double, <em>string/array/object/resource</em> given</li>
 			</ol>
 			<div id="numeric_tests-note1" class="note-appendix">
-				<sup>&Dagger; 1</sup> <p>Important: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
+				<sup>&Dagger; 1</sup> <p><strong>Important</strong>: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
 				In any other case, integers are interpreted as a string containing the decimal digits of the integer.</p>
 			</div>
 		</div><!-- end of div#numeric_tests -->
@@ -12188,22 +12617,22 @@ else {
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #216 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #219 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
-					<td class="settype_string"><span class="vt-string">&lsquo;Resource id #216&rsquo;</span>
+					<td class="settype_string"><span class="vt-string">&lsquo;Resource id #219&rsquo;</span>
 					</td>
-					<td class="string"><span class="vt-string">&lsquo;Resource id #216&rsquo;</span>
+					<td class="string"><span class="vt-string">&lsquo;Resource id #219&rsquo;</span>
 					</td>
-					<td class="strval"><span class="vt-string">&lsquo;Resource id #216&rsquo;</span>
+					<td class="strval"><span class="vt-string">&lsquo;Resource id #219&rsquo;</span>
 					</td>
-					<td class="juggle_str"><span class="vt-string">&lsquo;Resource id #216 &rsquo;</span>
+					<td class="juggle_str"><span class="vt-string">&lsquo;Resource id #219 &rsquo;</span>
 					</td>
 					<td class="filter_combined_string">E: not available (PHP 5.2.0+)					</td>
 					<td class="filter_combined_string_null">E: not available (PHP 5.2.0+)					</td>
 					<td class="cast_to_type_string_not_empty_recurse_arrays end"><span class="vt-null">null</span>
 					</td>
-					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #216 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #219 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -12238,13 +12667,16 @@ else {
 					<th class="end">===&nbsp;''</th>
 					<th><a href="http://php.net/ctype_alpha" target="_blank">ctype_alpha()</a> <sup><a href="#string_tests-note1">&Dagger;1</a></sup></th>
 					<th><a href="http://php.net/preg-match" target="_blank">preg_match (`^[A-Za-z]+$`)</a></th>
+					<th class="end"><a href="http://php.net/regexp.reference.unicode.php" target="_blank">preg_match (`^\p{L}+$`u)</a></th>
 					<th><a href="http://php.net/ctype_alnum" target="_blank">ctype_alnum()</a> <sup><a href="#string_tests-note1">&Dagger;1</a></sup></th>
 					<th><a href="http://php.net/preg-match" target="_blank">preg_match (`^[A-Za-z0-9]+$`)</a></th>
-					<th class="end"><a href="http://php.net/preg-match" target="_blank">preg_match (`^\w+$`)</a></th>
+					<th><a href="http://php.net/preg-match" target="_blank">preg_match (`^\w+$`)</a></th>
+					<th><a href="http://php.net/preg-match" target="_blank">preg_match (`^\w+$`u)</a> <sup><a href="#string_tests-note2">&Dagger;2</a></sup></th>
+					<th class="end"><a href="http://php.net/regexp.reference.unicode.php" target="_blank">preg_match (`^[\p{L}\p{N}]+$`u)</a></th>
 					<th><a href="http://php.net/strlen" target="_blank">strlen()</a></th>
 					<th><a href="http://php.net/count_chars" target="_blank" title="array_sum( count_chars( $x, 1 ) )">count_chars (&hellip;)</a></th>
 					<th class="end"><a href="http://php.net/mb-strlen" target="_blank">mb_strlen()</a></th>
-					<th class="end"><a href="http://www.php.net/manual/en/language.types.string.php#language.types.string.substr" target="_blank">$x{2}</a></th>
+					<th class="end"><a href="http://www.php.net/manual/en/language.types.string.php#language.types.string.substr" target="_blank" title="String character access by index.">$x{2}</a></th>
 					<th class="end"><a href="http://php.net/trim" target="_blank">trim()</a></th>
 					<th class="label-col"><a href="http://php.net/book.strings" target="_blank">String tests</a></th>
 				</tr>
@@ -12258,13 +12690,16 @@ else {
 					<th class="end">===&nbsp;''</th>
 					<th><a href="http://php.net/ctype_alpha" target="_blank">ctype_alpha()</a> <sup><a href="#string_tests-note1">&Dagger;1</a></sup></th>
 					<th><a href="http://php.net/preg-match" target="_blank">preg_match (`^[A-Za-z]+$`)</a></th>
+					<th class="end"><a href="http://php.net/regexp.reference.unicode.php" target="_blank">preg_match (`^\p{L}+$`u)</a></th>
 					<th><a href="http://php.net/ctype_alnum" target="_blank">ctype_alnum()</a> <sup><a href="#string_tests-note1">&Dagger;1</a></sup></th>
 					<th><a href="http://php.net/preg-match" target="_blank">preg_match (`^[A-Za-z0-9]+$`)</a></th>
-					<th class="end"><a href="http://php.net/preg-match" target="_blank">preg_match (`^\w+$`)</a></th>
+					<th><a href="http://php.net/preg-match" target="_blank">preg_match (`^\w+$`)</a></th>
+					<th><a href="http://php.net/preg-match" target="_blank">preg_match (`^\w+$`u)</a> <sup><a href="#string_tests-note2">&Dagger;2</a></sup></th>
+					<th class="end"><a href="http://php.net/regexp.reference.unicode.php" target="_blank">preg_match (`^[\p{L}\p{N}]+$`u)</a></th>
 					<th><a href="http://php.net/strlen" target="_blank">strlen()</a></th>
 					<th><a href="http://php.net/count_chars" target="_blank" title="array_sum( count_chars( $x, 1 ) )">count_chars (&hellip;)</a></th>
 					<th class="end"><a href="http://php.net/mb-strlen" target="_blank">mb_strlen()</a></th>
-					<th class="end"><a href="http://www.php.net/manual/en/language.types.string.php#language.types.string.substr" target="_blank">$x{2}</a></th>
+					<th class="end"><a href="http://www.php.net/manual/en/language.types.string.php#language.types.string.substr" target="_blank" title="String character access by index.">$x{2}</a></th>
 					<th class="end"><a href="http://php.net/trim" target="_blank">trim()</a></th>
 					<th class="label-col"><a href="http://php.net/book.strings" target="_blank">String tests</a></th>
 				</tr>
@@ -12286,12 +12721,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-false">false</span>
+					<td class="preg_word"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-false">false</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int-0">0</span>
 					</td>
 					<td class="count_chars"><span class="vt-int"><span class="vt-int-0">0</span></span><br />
@@ -12322,12 +12761,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-false">false</span>
+					<td class="preg_word"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-false">false</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int-0">0</span>
 					</td>
 					<td class="count_chars"><span class="vt-int"><span class="vt-int-0">0</span></span><br />
@@ -12358,12 +12801,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-false">false</span>
+					<td class="preg_word"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-false">false</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int-0">0</span>
 					</td>
 					<td class="count_chars"><span class="vt-int"><span class="vt-int-0">0</span></span><br />
@@ -12394,12 +12841,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-true">true</span>
+					<td class="preg_word"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-true">true</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">1</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">1</span><br />
@@ -12430,12 +12881,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-true">true</span>
+					<td class="preg_word"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-true">true</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">1</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">1</span><br />
@@ -12466,12 +12921,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-true">true</span>
+					<td class="preg_word"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-true">true</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">1</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">1</span><br />
@@ -12502,12 +12961,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-false">false</span>
+					<td class="preg_word"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-false">false</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">2</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">2</span><br />
@@ -12538,12 +13001,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-true">true</span>
+					<td class="preg_word"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-true">true</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">2</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">2</span><br />
@@ -12574,12 +13041,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-true">true</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-true">true</span>
+					<td class="preg_word"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-true">true</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">8</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">8</span><br />
@@ -12610,12 +13081,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-true">true</span>
+					<td class="preg_word"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-true">true</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">2</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">2</span><br />
@@ -12646,12 +13121,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-false">false</span>
+					<td class="preg_word"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-false">false</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">3</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">3</span><br />
@@ -12682,12 +13161,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-false">false</span>
+					<td class="preg_word"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-false">false</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">5</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">5</span><br />
@@ -12718,12 +13201,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-true">true</span>
+					<td class="preg_word"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-true">true</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">1</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">1</span><br />
@@ -12754,12 +13241,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-false">false</span>
+					<td class="preg_word"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-false">false</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">4</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">4</span><br />
@@ -12790,12 +13281,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-false">false</span>
+					<td class="preg_word"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-false">false</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">7</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">7</span><br />
@@ -12826,12 +13321,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-true">true</span>
+					<td class="preg_word"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-true">true</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">1</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">1</span><br />
@@ -12862,12 +13361,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-false">false</span>
+					<td class="preg_word"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-false">false</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">7</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">7</span><br />
@@ -12898,12 +13401,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-false">false</span>
+					<td class="preg_word"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-false">false</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">6</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">6</span><br />
@@ -12934,12 +13441,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-true">true</span>
+					<td class="preg_word"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-true">true</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">9</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">9</span><br />
@@ -12970,12 +13481,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-false">false</span>
+					<td class="preg_word"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-false">false</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int-0">0</span>
 					</td>
 					<td class="count_chars"><span class="vt-int"><span class="vt-int-0">0</span></span><br />
@@ -13006,12 +13521,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-false">false</span>
+					<td class="preg_word"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-false">false</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">1</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">1</span><br />
@@ -13042,12 +13561,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-false">false</span>
+					<td class="preg_word"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-false">false</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">2</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">2</span><br />
@@ -13078,12 +13601,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-false">false</span>
+					<td class="preg_word"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-false">false</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">3</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">3</span><br />
@@ -13114,12 +13641,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-true">true</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-true">true</span>
+					<td class="preg_word"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-true">true</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">1</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">1</span><br />
@@ -13150,12 +13681,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-true">true</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-true">true</span>
+					<td class="preg_word"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-true">true</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">1</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">1</span><br />
@@ -13186,12 +13721,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-false">false</span>
+					<td class="preg_word"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-false">false</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">2</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">2</span><br />
@@ -13222,12 +13761,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-true">true</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-true">true</span>
+					<td class="preg_word"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-true">true</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">2</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">2</span><br />
@@ -13258,12 +13801,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-false">false</span>
+					<td class="preg_word"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-false">false</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">3</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">3</span><br />
@@ -13294,12 +13841,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-false">false</span>
+					<td class="preg_word"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-false">false</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">3</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">3</span><br />
@@ -13330,12 +13881,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-false">false</span>
+					<td class="preg_word"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-false">false</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">6</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">6</span><br />
@@ -13366,12 +13921,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-true">true</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-true">true</span>
+					<td class="preg_word"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-true">true</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">4</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">4</span><br />
@@ -13402,12 +13961,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-true">true</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-true">true</span>
+					<td class="preg_word"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-true">true</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">5</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">5</span><br />
@@ -13438,12 +14001,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-true">true</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-true">true</span>
+					<td class="preg_word"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-true">true</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">4</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">4</span><br />
@@ -13474,12 +14041,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-true">true</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-true">true</span>
+					<td class="preg_word"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-true">true</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">6</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">6</span><br />
@@ -13510,12 +14081,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-true">true</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-true">true</span>
+					<td class="preg_word"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-true">true</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">6</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">6</span><br />
@@ -13546,12 +14121,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-false">false</span>
+					<td class="preg_word"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-false">false</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">10</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">10</span><br />
@@ -13582,12 +14161,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-true">true</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-true">true</span>
+					<td class="preg_word"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-true">true</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">8</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">8</span><br />
@@ -13618,12 +14201,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-true">true</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-true">true</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-true">true</span>
+					<td class="preg_word"><span class="vt-b-true">true</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-true">true</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">4</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">4</span><br />
@@ -13654,12 +14241,16 @@ else {
 					</td>
 					<td class="preg_alpha"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alnum"><span class="vt-b-false">false</span>
 					</td>
-					<td class="preg_word end"><span class="vt-b-false">false</span>
+					<td class="preg_word"><span class="vt-b-false">false</span>
 					</td>
+					<td class="preg_word_utf8"><span class="vt-b-false">false</span>
+					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">27</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">27</span><br />
@@ -13688,10 +14279,13 @@ else {
 					<td class="ctype_alpha"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alpha">Error<br /> (&nbsp;<span class="warning"><a href="#string_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alnum">Error<br /> (&nbsp;<span class="warning"><a href="#string_tests-errors">#3</a></span>&nbsp;)					</td>
-					<td class="preg_word end">Error<br /> (&nbsp;<span class="warning"><a href="#string_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_word">Error<br /> (&nbsp;<span class="warning"><a href="#string_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_word_utf8">Error<br /> (&nbsp;<span class="warning"><a href="#string_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">5</span>
 <br /> (&nbsp;<span class="notice"><a href="#string_tests-errors">#4</a></span>&nbsp;)					</td>
 					<td class="count_chars"><span class="vt-int">5</span><br />
@@ -13723,10 +14317,13 @@ else {
 					<td class="ctype_alpha"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alpha">Error<br /> (&nbsp;<span class="warning"><a href="#string_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alnum">Error<br /> (&nbsp;<span class="warning"><a href="#string_tests-errors">#3</a></span>&nbsp;)					</td>
-					<td class="preg_word end">Error<br /> (&nbsp;<span class="warning"><a href="#string_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_word">Error<br /> (&nbsp;<span class="warning"><a href="#string_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_word_utf8">Error<br /> (&nbsp;<span class="warning"><a href="#string_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">5</span>
 <br /> (&nbsp;<span class="notice"><a href="#string_tests-errors">#4</a></span>&nbsp;)					</td>
 					<td class="count_chars"><span class="vt-int">5</span><br />
@@ -13767,10 +14364,13 @@ else {
 					<td class="ctype_alpha"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alpha">Error<br /> (&nbsp;<span class="warning"><a href="#string_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alnum">Error<br /> (&nbsp;<span class="warning"><a href="#string_tests-errors">#3</a></span>&nbsp;)					</td>
-					<td class="preg_word end">Error<br /> (&nbsp;<span class="warning"><a href="#string_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_word">Error<br /> (&nbsp;<span class="warning"><a href="#string_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_word_utf8">Error<br /> (&nbsp;<span class="warning"><a href="#string_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">5</span>
 <br /> (&nbsp;<span class="notice"><a href="#string_tests-errors">#4</a></span>&nbsp;)					</td>
 					<td class="count_chars"><span class="vt-int">5</span><br />
@@ -13814,10 +14414,13 @@ else {
 					<td class="ctype_alpha"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alpha">Error<br /> (&nbsp;<span class="warning"><a href="#string_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alnum">Error<br /> (&nbsp;<span class="warning"><a href="#string_tests-errors">#3</a></span>&nbsp;)					</td>
-					<td class="preg_word end">Error<br /> (&nbsp;<span class="warning"><a href="#string_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_word">Error<br /> (&nbsp;<span class="warning"><a href="#string_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_word_utf8">Error<br /> (&nbsp;<span class="warning"><a href="#string_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">6</span>
 <br /> (&nbsp;<span class="notice"><a href="#string_tests-errors">#7</a></span>&nbsp;)					</td>
 					<td class="count_chars"><span class="vt-int">6</span><br />
@@ -13863,10 +14466,13 @@ else {
 					<td class="ctype_alpha"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alpha">Error<br /> (&nbsp;<span class="warning"><a href="#string_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alnum">Error<br /> (&nbsp;<span class="warning"><a href="#string_tests-errors">#3</a></span>&nbsp;)					</td>
-					<td class="preg_word end">Error<br /> (&nbsp;<span class="warning"><a href="#string_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_word">Error<br /> (&nbsp;<span class="warning"><a href="#string_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_word_utf8">Error<br /> (&nbsp;<span class="warning"><a href="#string_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">6</span>
 <br /> (&nbsp;<span class="notice"><a href="#string_tests-errors">#7</a></span>&nbsp;)					</td>
 					<td class="count_chars"><span class="vt-int">6</span><br />
@@ -13892,7 +14498,7 @@ else {
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #263 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #266 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="is_string end"><span class="vt-b-false">false</span>
@@ -13906,10 +14512,13 @@ else {
 					<td class="ctype_alpha"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alpha">Error<br /> (&nbsp;<span class="warning"><a href="#string_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_alpha_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="ctype_alnum"><span class="vt-b-false">false</span>
 					</td>
 					<td class="preg_alnum">Error<br /> (&nbsp;<span class="warning"><a href="#string_tests-errors">#3</a></span>&nbsp;)					</td>
-					<td class="preg_word end">Error<br /> (&nbsp;<span class="warning"><a href="#string_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_word">Error<br /> (&nbsp;<span class="warning"><a href="#string_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_word_utf8">Error<br /> (&nbsp;<span class="warning"><a href="#string_tests-errors">#3</a></span>&nbsp;)					</td>
+					<td class="preg_alnum_unicode end">E: not available (PHP 5.1+)					</td>
 					<td class="strlen"><span class="vt-int">16</span>
 					</td>
 					<td class="count_chars"><span class="vt-int">16</span><br />
@@ -13918,9 +14527,9 @@ else {
 					</td>
 					<td class="char_access end"><span class="vt-null">null</span>
 					</td>
-					<td class="trim end"><span class="vt-string">&lsquo;Resource id #263&rsquo;</span><br />
+					<td class="trim end"><span class="vt-string">&lsquo;Resource id #266&rsquo;</span><br />
 					</td>
-					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #263 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #266 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -13937,8 +14546,11 @@ else {
 				<li><span class="error">Fatal error</span>: Cannot use object of type <em>stdClass/TestObject/TestObjectToString</em> as array</li>
 			</ol>
 			<div id="string_tests-note1" class="note-appendix">
-				<sup>&Dagger; 1</sup> <p>Important: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
+				<sup>&Dagger; 1</sup> <p><strong>Important</strong>: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
 				In any other case, integers are interpreted as a string containing the decimal digits of the integer.</p>
+			</div>
+			<div id="string_tests-note2" class="note-appendix">
+				<sup>&Dagger; 2</sup> <p>What <code>\w</code> matches is locale dependent. The locale for these cheatsheets are set to <code>C</code>. Results with other locales will vary.</p>
 			</div>
 		</div><!-- end of div#string_tests -->
 		<div id="array_casting">
@@ -14983,25 +15595,25 @@ else {
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #266 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #269 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="settype_array">Array: (<br />
-&nbsp;&nbsp;[0] => <span class="vt-resource">Resource id #266</span><br />
+&nbsp;&nbsp;[0] => <span class="vt-resource">Resource id #269</span><br />
 )<br />
 
 					</td>
 					<td class="array">Array: (<br />
-&nbsp;&nbsp;[0] => <span class="vt-resource">Resource id #266</span><br />
+&nbsp;&nbsp;[0] => <span class="vt-resource">Resource id #269</span><br />
 )<br />
 
 					</td>
 					<td class="cast_to_type_array_not_empty end">Array: (<br />
-&nbsp;&nbsp;[0] => <span class="vt-resource">Resource id #266</span><br />
+&nbsp;&nbsp;[0] => <span class="vt-resource">Resource id #269</span><br />
 )<br />
 
 					</td>
-					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #266 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #269 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -16530,7 +17142,7 @@ else {
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #313 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #316 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="is_array"><span class="vt-b-false">false</span>
@@ -16557,7 +17169,7 @@ else {
 					</td>
 					<td class="array_filter end"><span class="vt-null">null</span>
 <br /> (&nbsp;<span class="warning"><a href="#array_tests-errors">#5</a></span>&nbsp;)					</td>
-					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #313 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #316 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -18513,13 +19125,13 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #316 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #319 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="settype_object">Object: 
 (<br />
 &nbsp;&nbsp;<b><i>Class</i></b>: stdClass (<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: scalar = <span class="vt-resource">Resource id #316</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: scalar = <span class="vt-resource">Resource id #319</span><br />
 &nbsp;&nbsp;)<br />
 
 )<br />
@@ -18528,7 +19140,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					<td class="object">Object: 
 (<br />
 &nbsp;&nbsp;<b><i>Class</i></b>: stdClass (<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: scalar = <span class="vt-resource">Resource id #316</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<b><i>property</i></b>: scalar = <span class="vt-resource">Resource id #319</span><br />
 &nbsp;&nbsp;)<br />
 
 )<br />
@@ -18547,7 +19159,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="is_subclass_of end"><span class="vt-b-false">false</span>
 					</td>
-					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #316 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #319 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -19150,26 +19762,26 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</th>
 				</tr>
 				<tr class="new-var-type target">
-					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #365 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #368 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="is_resource end"><span class="vt-b-true">true</span>
 					</td>
 					<td class="get_resource_type end"><span class="vt-string">&lsquo;stream&rsquo;</span>
 					</td>
-					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #365 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #368 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
 				<tr class="target">
-					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #366 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #369 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="is_resource end"><span class="vt-b-true">true</span>
 					</td>
 					<td class="get_resource_type end"><span class="vt-string">&lsquo;gd&rsquo;</span>
 					</td>
-					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #366 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #369 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -20557,30 +21169,30 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #368 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #371 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
-					<td class="pre_increment"><span class="vt-resource">Resource id #368</span><br />
+					<td class="pre_increment"><span class="vt-resource">Resource id #371</span><br />
 					</td>
-					<td class="post_increment"><span class="vt-resource">Resource id #368</span><br />
+					<td class="post_increment"><span class="vt-resource">Resource id #371</span><br />
 					</td>
-					<td class="pre_decrement"><span class="vt-resource">Resource id #368</span><br />
+					<td class="pre_decrement"><span class="vt-resource">Resource id #371</span><br />
 					</td>
-					<td class="post_decrement end"><span class="vt-resource">Resource id #368</span><br />
+					<td class="post_decrement end"><span class="vt-resource">Resource id #371</span><br />
 					</td>
-					<td class="arithmetic_negate"><span class="vt-int">-368</span><br />
+					<td class="arithmetic_negate"><span class="vt-int">-371</span><br />
 					</td>
-					<td class="juggle_int"><span class="vt-int">368</span>
+					<td class="juggle_int"><span class="vt-int">371</span>
 					</td>
-					<td class="arithmetic_subtract"><span class="vt-int">368</span><br />
+					<td class="arithmetic_subtract"><span class="vt-int">371</span><br />
 					</td>
-					<td class="arithmetic_multiply"><span class="vt-int">368</span><br />
+					<td class="arithmetic_multiply"><span class="vt-int">371</span><br />
 					</td>
-					<td class="arithmetic_divide"><span class="vt-int">368</span><br />
+					<td class="arithmetic_divide"><span class="vt-int">371</span><br />
 					</td>
 					<td class="arithmetic_modulus end"><span class="vt-int"><span class="vt-int-0">0</span></span><br />
 					</td>
-					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #368 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #371 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -22312,7 +22924,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</th>
 				</tr>
 				<tr class="new-var-type">
-					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #371 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #374 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 					<td class="ctype_digit"><span class="vt-b-false">false</span>
@@ -22337,7 +22949,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 					</td>
 					<td class="ctype_space end"><span class="vt-b-false">false</span>
 					</td>
-					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #371 ( = <i>RESOURCE</i> )</span><br />
+					<th>$x = <span class="vt-resource"><b><i>resource</i></b> : Resource id #374 ( = <i>RESOURCE</i> )</span><br />
 
 					</th>
 				</tr>
@@ -22347,7 +22959,7 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 				<li><span class="notice">Notice</span>: Undefined index:  notset</li>
 			</ol>
 			<div id="ctype_extension-note1" class="note-appendix">
-				<sup>&Dagger; 1</sup> <p>Important: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
+				<sup>&Dagger; 1</sup> <p><strong>Important</strong>: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
 				In any other case, integers are interpreted as a string containing the decimal digits of the integer.</p>
 			</div>
 		</div><!-- end of div#ctype_extension -->
@@ -22370,10 +22982,10 @@ Array: &nbsp;&nbsp;&nbsp;&nbsp;(<br />
 
 		<div id="paypal-donate">
 			<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-				<input type="hidden" name="cmd" value="_s-xclick">
-				<input type="hidden" name="hosted_button_id" value="8HS8MNK72DLH2">
-				<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-				<img alt="" border="0" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1">
+				<input type="hidden" name="cmd" value="_s-xclick" />
+				<input type="hidden" name="hosted_button_id" value="8HS8MNK72DLH2" />
+				<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" />
+				<img alt="" border="0" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1" />
 			</form>
 		</div>
 
