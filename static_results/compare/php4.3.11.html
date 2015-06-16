@@ -83,19 +83,26 @@
 						<option value="live">PHP 5.4.13</option>
 					</optgroup>
 					
+					<optgroup label="PHP 7.0">
+						<option value="php7.0.0alpha1">PHP 7.0.0alpha1</option>
+					</optgroup>
 					<optgroup label="PHP 5.6">
+						<option value="php5.6.10">PHP 5.6.10</option>
+
+						<option value="php5.6.8">PHP 5.6.8</option>
+
 						<option value="php5.6.5">PHP 5.6.5</option>
 
-						<option value="php5.6.4">PHP 5.6.4</option>
-
 						<option value="php5.6.2">PHP 5.6.2</option>
+
+						<option value="php5.6.0">PHP 5.6.0</option>
 					</optgroup>
 					<optgroup label="PHP 5.5">
-						<option value="php5.5.21">PHP 5.5.21</option>
+						<option value="php5.5.26">PHP 5.5.26</option>
 
-						<option value="php5.5.20">PHP 5.5.20</option>
+						<option value="php5.5.24">PHP 5.5.24</option>
 
-						<option value="php5.5.18">PHP 5.5.18</option>
+						<option value="php5.5.22">PHP 5.5.22</option>
 
 						<option value="php5.5.16">PHP 5.5.16</option>
 
@@ -104,9 +111,11 @@
 						<option value="php5.5.3">PHP 5.5.3</option>
 					</optgroup>
 					<optgroup label="PHP 5.4">
-						<option value="php5.4.37">PHP 5.4.37</option>
+						<option value="php5.4.42">PHP 5.4.42</option>
 
-						<option value="php5.4.35">PHP 5.4.35</option>
+						<option value="php5.4.39">PHP 5.4.39</option>
+
+						<option value="php5.4.36">PHP 5.4.36</option>
 
 						<option value="php5.4.33">PHP 5.4.33</option>
 
@@ -149,7 +158,6 @@
 					</optgroup>
 					<optgroup label="PHP 4.3">
 						<option value="php4.3.11" selected="selected">PHP 4.3.11</option>
-						<option value="php4.3.9">PHP 4.3.9</option>
 					</optgroup>
 				</select>
 			</form>			</div>
@@ -192,6 +200,12 @@
 						<th id="var-legend-ia">ia</th>
 						<td><code>$x = 0b0111001; // binary integer (PHP5.4+)</code></td>
 					</tr>					<tr>
+						<th id="var-legend-ib">ib</th>
+						<td><code>$x = ‏௫‏; // Tamil digit five - entered as string as PHP itself cannot deal with it as an integer</code></td>
+					</tr>					<tr>
+						<th id="var-legend-ic">ic</th>
+						<td><code>$x = ⁸₈; // Unicode superscript and subscript digit 8 - entered as strings as PHP itself cannot deal with these as an integers</code></td>
+					</tr>					<tr>
 						<th id="var-legend-f5">f5</th>
 						<td><code>$x = acos(8); // = NAN</code></td>
 					</tr>					<tr>
@@ -206,6 +220,9 @@
 					</tr>					<tr>
 						<th id="var-legend-f9">f9</th>
 						<td><code>$x = 1.2345E8; // exponent notation float</code></td>
+					</tr>					<tr>
+						<th id="var-legend-fa">fa</th>
+						<td><code>$x = ⅕; // Unicode character representing 1/5 - entered as string as PHP itself cannot deal with it as a float</code></td>
 					</tr>					<tr>
 						<th id="var-legend-sk">sk</th>
 						<td><code>$x = "123, \"str\"\r\n";</code></td>
@@ -72521,7 +72538,7 @@
 		<table id="bccomp-table" cellpadding="0" cellspacing="0" border="0">
 		<thead>
 				<tr>
-					<th><a href="http://php.net/bccomp" target="_blank"><strong>bccomp()</strong></a></th>
+					<th><a href="http://php.net/bccomp" target="_blank"><strong>bccomp()</strong></a> <sup><a href="#bccomp-note1">&Dagger;1</a></sup> <sup><a href="#bccomp-note2">&Dagger;2</a></sup></th>
 					<th><span class="vt-null">null</span>
 					</th>
 					<th class="end"><span class="vt-null">null</span>
@@ -72629,12 +72646,12 @@
 ">Object(&hellip;)</span>					</th>
 					<th class="end"><span class="vt-resource">Resource id #14</span><br />
 					</th>
-					<th><a href="http://php.net/bccomp" target="_blank"><strong>bccomp()</strong></a></th>
+					<th><a href="http://php.net/bccomp" target="_blank"><strong>bccomp()</strong></a> <sup><a href="#bccomp-note1">&Dagger;1</a></sup> <sup><a href="#bccomp-note2">&Dagger;2</a></sup></th>
 				</tr>
 		</thead>
 		<tfoot>
 				<tr>
-					<th><a href="http://php.net/bccomp" target="_blank"><strong>bccomp()</strong></a></th>
+					<th><a href="http://php.net/bccomp" target="_blank"><strong>bccomp()</strong></a> <sup><a href="#bccomp-note1">&Dagger;1</a></sup> <sup><a href="#bccomp-note2">&Dagger;2</a></sup></th>
 					<th><span class="vt-null">null</span>
 					</th>
 					<th class="end"><span class="vt-null">null</span>
@@ -72742,7 +72759,7 @@
 ">Object(&hellip;)</span>					</th>
 					<th class="end"><span class="vt-resource">Resource id #14</span><br />
 					</th>
-					<th><a href="http://php.net/bccomp" target="_blank"><strong>bccomp()</strong></a></th>
+					<th><a href="http://php.net/bccomp" target="_blank"><strong>bccomp()</strong></a> <sup><a href="#bccomp-note1">&Dagger;1</a></sup> <sup><a href="#bccomp-note2">&Dagger;2</a></sup></th>
 				</tr>
 		</tfoot>
 		<tbody>
@@ -77031,6 +77048,12 @@
 				<li><span class="notice">Notice</span>: Array to string conversion</li>
 				<li><span class="notice">Notice</span>: Object to string conversion</li>
 			</ol>
+			<div id="bccomp-note1" class="note-appendix">
+				<sup>&Dagger; 1</sup> <p>Remember that the default <code>bcscale()</code> is 0 !</p>
+			</div>
+			<div id="bccomp-note2" class="note-appendix">
+				<sup>&Dagger; 2</sup> <p>For a reliable implementation of all the BCMath functions which avoids a number of the common pitfalls, see <a href="https://gist.github.com/jrfnl/8449978" target="_blank">this example function</a> (gist).</p>
+			</div>
 		</div>
 		<div id="min">
 		<table id="min-table" cellpadding="0" cellspacing="0" border="0">
@@ -88466,10 +88489,10 @@
 
 		<div id="paypal-donate">
 			<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-				<input type="hidden" name="cmd" value="_s-xclick">
-				<input type="hidden" name="hosted_button_id" value="8HS8MNK72DLH2">
-				<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-				<img alt="" border="0" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1">
+				<input type="hidden" name="cmd" value="_s-xclick" />
+				<input type="hidden" name="hosted_button_id" value="8HS8MNK72DLH2" />
+				<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" />
+				<img alt="" border="0" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1" />
 			</form>
 		</div>
 
