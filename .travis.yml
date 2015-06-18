@@ -10,6 +10,8 @@ language: php
 
 # Declare versions of PHP to use. Use one decimal max.
 matrix:
+  fast_finish: true
+
   include:
     # aliased to 5.2.17
     - php: '5.2'
