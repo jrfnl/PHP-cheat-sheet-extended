@@ -127,7 +127,7 @@ function fix_content( $content ) {
 		8  => '`Array: \(<br />\s+\)<br />\s+`',
 		9  => '`<t([dh])([^>]*)?>array\(\)<br />\s+</t\1>`',
 		// Make sure the correct PHP version nr for the live sheets is shown in the version dropdown
-		10 => '`<option value="live"(?: selected="selected")?\s*>PHP [0-9\.-]+</option>`',
+		10 => '`<option value="live"(?: selected="selected")?\s*>PHP [0-9\.-]+(?:(?:alpha|beta|rc)(?:[0-9])?)?</option>`',
 		// Make chosen PHP version persistent
 		12 => '`<a href="http://([a-z\.-]+)/(arithmetic|compare|test)/" class="top-link(?: top-active)?">`',
 		// Make sure any potential links to php.net are properly linked
