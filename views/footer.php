@@ -37,7 +37,7 @@ if ( ! defined( 'APP_DIR' ) ) {
 			</form>
 		</div>
 
-		<p id="call-to-donate">You can show your appreciation for the effort which has gone into creating these cheatsheets by giving a donation to the <a href="http://remembermewhenimgone.org/" title="Visit the Remember me when I'm gone project">Remember me when I&#39;m gone</a> non-profit project. Thanks!
+		<p id="call-to-donate">Like what you see ? Find this useful ? You can show your appreciation for the effort which has gone into creating these cheatsheets by giving a donation to the <a href="http://remembermewhenimgone.org/" title="Visit the Remember me when I'm gone project">Remember me when I&#39;m gone</a> non-profit project. Thanks!
 		</p>
 
 		<p id="copyright">&copy; 2006-<?php echo date( 'Y' ); ?> <a href="<?php echo BASE_URI; ?>about/">Advies en zo, Meedenken en -doen</a></p>
