@@ -354,7 +354,7 @@ function pr_bool( $var ) {
 /**
  * Shortcut function to print an integer variable.
  *
- * Will print 0 value in red, other values in green.
+ * Will print 0 value in red, other values in blue.
  *
  * @param int $var
  */

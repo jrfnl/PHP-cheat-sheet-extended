@@ -2320,7 +2320,7 @@ else {
 	 *
 	 * Bug details: some semi-random text string is shown for the INF constant on the
 	 * object_test sheet in PHP 5.0.x.
-	 * Similarly a "Fatal error:  Unknown function:  f8()" is shown just before the array_testing group.
+	 * Similarly a "Fatal error:  Unknown function:  f8()" is shown just before the array_testing group in 4.3.11.
 	 *
 	 * @param string|null $test_group The current subsection
 	 */
