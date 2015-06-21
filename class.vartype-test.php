@@ -2300,7 +2300,7 @@ else {
 			$this->test_groups = array_merge( $this->test_groups, $this->ctype_test_group );
 		}
 
-		if ( extension_loaded( 'filter' ) ) {
+		if ( extension_loaded( 'filter' ) && function_exists( 'filter_var' ) && defined( 'FILTER_NULL_ON_FAILURE' ) ) {
 			$this->test_groups = array_merge( $this->test_groups, $this->filter_test_group );
 		}
 
