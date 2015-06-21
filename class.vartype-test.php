@@ -207,7 +207,7 @@ class VartypeTest extends Vartype {
 			'title'         => '(int)',
 			'url'           => 'http://php.net/language.types.integer#language.types.integer.casting',
 			'arg'           => '$x',
-			'function'      => 'pr_int( (int) $x );',
+			'function'      => '$r = (int) $x; if ( is_int( $r ) ) { pr_int( $r ); } else { pr_var( $r, \'\', true, true ); }',
 		),
 		'object' => array(
 			'title'         => '(object)',
@@ -242,19 +242,19 @@ class VartypeTest extends Vartype {
 			'title'         => 'floatval()',
 			'url'           => 'http://php.net/floatval',
 			'arg'           => '$x',
-			'function'      => 'if ( function_exists( \'floatval\' ) ) { pr_flt( floatval( $x ) ); } else { pr_flt( doubleval( $x ) ); }',
+			'function'      => '$r = floatval( $x ); if ( is_float( $r ) ) { pr_flt( $r ); } else if ( is_int( $r ) ) { pr_int( $r ); } else { pr_var( $r, \'\', true, true ); }',
 		),
 		'intval' => array(
 			'title'         => 'intval()',
 			'url'           => 'http://php.net/intval',
 			'arg'           => '$x',
-			'function'      => 'pr_int( intval( $x ) );',
+			'function'      => '$r = intval( $x ); if ( is_int( $r ) ) { pr_int( $r ); } else { pr_var( $r, \'\', true, true ); }',
 		),
 		'strval' => array(
 			'title'         => 'strval()',
 			'url'           => 'http://php.net/strval',
 			'arg'           => '$x',
-			'function'      => 'pr_str( strval( $x ) );',
+			'function'      => '$r = strval( $x ); if ( is_string( $r ) ) { pr_str( $r ); } else { pr_var( $r, \'\', true, true ); }',
 		),
 
 
@@ -338,7 +338,7 @@ class VartypeTest extends Vartype {
 			'title'         => 'settype (&nbsp;$copy, \'int\'&nbsp;)',
 			'url'           => 'http://php.net/settype',
 			'arg'           => '$x',
-			'function'      => '$pass = settype( $x, \'integer\' ); if ( $pass === true ) { pr_int( $x ); } else { print \'FAILED\'; }',
+			'function'      => '$pass = settype( $x, \'integer\' ); if ( $pass === true ) { if ( is_int( $x ) ) { pr_int( $x ); } else { pr_var( $x, \'\', true, true ); } } else { print \'FAILED\'; }',
 		),
 		'settype_null' => array(
 			'title'         => 'settype (&nbsp;$copy, \'null\'&nbsp;)',
@@ -1245,7 +1245,7 @@ class VartypeTest extends Vartype {
 			'title'         => 'ctype_alnum()',
 			'url'           => 'http://php.net/ctype_alnum',
 			'arg'           => '$x',
-			'function'      => 'pr_bool( ctype_alnum( $x ) );',
+			'function'      => '$r = ctype_alnum( $x ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'         => array(
 				'<p><strong>Important</strong>: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
 				In any other case, integers are interpreted as a string containing the decimal digits of the integer.</p>',
@@ -1255,7 +1255,7 @@ class VartypeTest extends Vartype {
 			'title'         => 'ctype_alpha()',
 			'url'           => 'http://php.net/ctype_alpha',
 			'arg'           => '$x',
-			'function'      => 'pr_bool( ctype_alpha( $x ) );',
+			'function'      => '$r = ctype_alpha( $x ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'         => array(
 				'<p><strong>Important</strong>: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
 				In any other case, integers are interpreted as a string containing the decimal digits of the integer.</p>',
@@ -1266,7 +1266,7 @@ class VartypeTest extends Vartype {
 			'title'         => 'ctype_cntrl()',
 			'url'           => 'http://php.net/ctype_cntrl',
 			'arg'           => '$x',
-			'function'      => 'pr_bool( ctype_cntrl( $x ) );',
+			'function'      => '$r = ctype_cntrl( $x ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'         => array(
 				'<p><strong>Important</strong>: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
 				In any other case, integers are interpreted as a string containing the decimal digits of the integer.</p>',
@@ -1277,7 +1277,7 @@ class VartypeTest extends Vartype {
 			'title'         => 'ctype_digit()',
 			'url'           => 'http://php.net/ctype_digit',
 			'arg'           => '$x',
-			'function'      => 'pr_bool( ctype_digit( $x ) );',
+			'function'      => '$r = ctype_digit( $x ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'         => array(
 				'<p><strong>Important</strong>: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
 				In any other case, integers are interpreted as a string containing the decimal digits of the integer.</p>',
@@ -1288,7 +1288,7 @@ class VartypeTest extends Vartype {
 			'title'         => 'ctype_graph()',
 			'url'           => 'http://php.net/ctype_graph',
 			'arg'           => '$x',
-			'function'      => 'pr_bool( ctype_graph( $x ) );',
+			'function'      => '$r = ctype_graph( $x ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'         => array(
 				'<p><strong>Important</strong>: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
 				In any other case, integers are interpreted as a string containing the decimal digits of the integer.</p>',
@@ -1299,7 +1299,7 @@ class VartypeTest extends Vartype {
 			'title'         => 'ctype_lower()',
 			'url'           => 'http://php.net/ctype_lower',
 			'arg'           => '$x',
-			'function'      => 'pr_bool( ctype_lower( $x ) );',
+			'function'      => '$r = ctype_lower( $x ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'         => array(
 				'<p><strong>Important</strong>: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
 				In any other case, integers are interpreted as a string containing the decimal digits of the integer.</p>',
@@ -1310,7 +1310,7 @@ class VartypeTest extends Vartype {
 			'title'         => 'ctype_print()',
 			'url'           => 'http://php.net/ctype_print',
 			'arg'           => '$x',
-			'function'      => 'pr_bool( ctype_print( $x ) );',
+			'function'      => '$r = ctype_print( $x ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'         => array(
 				'<p><strong>Important</strong>: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
 				In any other case, integers are interpreted as a string containing the decimal digits of the integer.</p>',
@@ -1321,7 +1321,7 @@ class VartypeTest extends Vartype {
 			'title'         => 'ctype_punct()',
 			'url'           => 'http://php.net/ctype_punct',
 			'arg'           => '$x',
-			'function'      => 'pr_bool( ctype_punct( $x ) );',
+			'function'      => '$r = ctype_punct( $x ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'         => array(
 				'<p><strong>Important</strong>: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
 				In any other case, integers are interpreted as a string containing the decimal digits of the integer.</p>',
@@ -1332,7 +1332,7 @@ class VartypeTest extends Vartype {
 			'title'         => 'ctype_space()',
 			'url'           => 'http://php.net/ctype_space',
 			'arg'           => '$x',
-			'function'      => 'pr_bool( ctype_space( $x ) );',
+			'function'      => '$r = ctype_space( $x ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'         => array(
 				'<p><strong>Important</strong>: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
 				In any other case, integers are interpreted as a string containing the decimal digits of the integer.</p>',
@@ -1343,7 +1343,7 @@ class VartypeTest extends Vartype {
 			'title'         => 'ctype_upper()',
 			'url'           => 'http://php.net/ctype_upper',
 			'arg'           => '$x',
-			'function'      => 'pr_bool( ctype_upper( $x ) );',
+			'function'      => '$r = ctype_upper( $x ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'         => array(
 				'<p><strong>Important</strong>: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
 				In any other case, integers are interpreted as a string containing the decimal digits of the integer.</p>',
@@ -1354,7 +1354,7 @@ class VartypeTest extends Vartype {
 			'title'         => 'ctype_xdigit()',
 			'url'           => 'http://php.net/ctype_xdigit',
 			'arg'           => '$x',
-			'function'      => 'pr_bool( ctype_xdigit( $x ) );',
+			'function'      => '$r = ctype_xdigit( $x ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'         => array(
 				'<p><strong>Important</strong>: Integers between -128 and 255 are interpreted as the ASCII value pointing to a character (negative values have 256 added in order to allow characters in the Extended ASCII range).<br />
 				In any other case, integers are interpreted as a string containing the decimal digits of the integer.</p>',
