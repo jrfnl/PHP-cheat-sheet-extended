@@ -25,6 +25,11 @@ if ( ! defined( 'E_STRICT' ) ) {
 error_reporting( E_ALL & ~E_STRICT );
 ini_set( 'log_errors', false );
 
+// Make sure constant is available to prevent error messages about it now being defined (in 5.1).
+if ( ! defined( 'FILTER_NULL_ON_FAILURE' ) ) {
+	define( 'FILTER_NULL_ON_FAILURE', 0x8000000 );
+}
+
 // Set up variable printing & error handling.
 include_once APP_DIR . '/include/xvardump.php';
 include_once APP_DIR . '/include/functions.php';

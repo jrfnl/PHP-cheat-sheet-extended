@@ -2,6 +2,7 @@ filter:
     excluded_paths:
         - 'bin/*'
         - 'page/jquery*'
+        - 'include/PHP-cast-to-type/*'
 checks:
     php:
         fix_php_opening_tag: false

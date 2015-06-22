@@ -118,20 +118,22 @@ function fix_content( $content ) {
 
 	// @todo Verify which rules are still needed in the renewed version.
 	$regex_search = array(
-		// Make sure there is nothing before the doctype
+		// Make sure there is nothing before the doctype.
 		0  => '`^[^<]+<!DOCTYPE html PUBLIC`',
-		// Make sure any potential links to php.net are properly linked
+		// Make sure any potential links to php.net are properly linked.
 		5  => '`<a href=(["\'])function\.`',
-		// Tidy up html whitespace around array prints
+		// Tidy up html whitespace around array prints.
 		7  => '`<th><span title="Array: \(\s+\)\s+">Array\(&hellip;\)</span>\s+</th>`',
 		8  => '`Array: \(<br />\s+\)<br />\s+`',
 		9  => '`<t([dh])([^>]*)?>array\(\)<br />\s+</t\1>`',
-		// Make sure the correct PHP version nr for the live sheets is shown in the version dropdown
+		// Make sure the correct PHP version nr for the live sheets is shown in the version dropdown.
 		10 => '`<option value="live"(?: selected="selected")?\s*>PHP [0-9\.-]+(?:(?:alpha|beta|rc)(?:[0-9])?)?</option>`',
-		// Make chosen PHP version persistent
+		// Make chosen PHP version persistent.
 		12 => '`<a href="http://([a-z\.-]+)/(arithmetic|compare|test)/" class="top-link(?: top-active)?">`',
-		// Make sure any potential links to php.net are properly linked
+		// Make sure any potential links to php.net are properly linked.
 		13  => '`\[(http://php\.net/manual/([^\]]+))\]`',
+		// HTML attributes should be using double quotes.
+		14  => '`<a href=\'([^\']+)\'`',
 	);
 
 	$regex_replace = array(
@@ -143,6 +145,7 @@ function fix_content( $content ) {
 		10 => '<option value="live">PHP 5.4.13</option>', // IMPORTANT! Change this if the PHP version on the server changes!!
 		12 => '<a href="http://$1/index.php?page=$2&amp;phpversion=php' . PHP_VERSION . '" class="top-link$3">',
 		13 => '[<a href="$1">$2</a>]',
+		14 => '<a href="$1"',
 	);
 
 

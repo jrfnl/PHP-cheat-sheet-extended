@@ -34,7 +34,7 @@ $test_array = array(
 	'f5'  => acos( 8 ), // is_nan
 	'f6'  => NAN, // is_nan
 	'f7'  => log( 0 ), // is_infinite
-	'f8'  => INF, // is_infinite
+	'f8'  => INF, // is_infinite => gets removed for 5.0 & 4.3 tests in `set_test_data()` as problematic.
 	'f9'  => 1.2345E8, // exponent notation float
 
 	'se'  => '',

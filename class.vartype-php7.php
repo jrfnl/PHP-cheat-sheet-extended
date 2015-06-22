@@ -26,7 +26,7 @@ class VartypePHP7 {
 	 */
 	public static $tests = array(
 		/**
-		 * Functions where errors have been turned into exceptions
+		 * Functions where errors have been turned into exceptions.
 		 * @see class.vartype-arithmetic.php
 		 */
 		'modulus'        => array(
@@ -50,7 +50,7 @@ class VartypePHP7 {
 
 
 	/**
-	 * PHP7 compatible version of % arithmetics
+	 * PHP7 compatible version of % arithmetics.
 	 *
 	 * @param mixed $var1
 	 * @param mixed $var2
@@ -73,7 +73,7 @@ class VartypePHP7 {
 
 
 	/**
-	 * PHP7 compatible version of intdiv
+	 * Test intdiv.
 	 *
 	 * @param mixed $var1
 	 * @param mixed $var2
@@ -95,7 +95,7 @@ class VartypePHP7 {
 
 
 	/**
-	 * Helper function to handle exceptions from the overloaded functions.
+	 * Helper function to handle exceptions from overloaded functions.
 	 *
 	 * @internal Exception handling is currently the same as for the PHP5 specific code, but added as separate
 	 * method to allow for future adjustment.

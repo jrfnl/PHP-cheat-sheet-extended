@@ -403,7 +403,7 @@ class Vartype {
 				if ( isset( $this->test_groups[ $test_group ]['target'] ) && $this->test_groups[ $test_group ]['target'] === $type ) {
 					$class[] = 'target';
 				}
-				unset( $type, $hr_key );
+
 
 				if ( count( $class ) > 0 ) {
 					echo '
@@ -415,24 +415,19 @@ class Vartype {
 				}
 
 
+				$label = get_var( $value, '', true );
+
 				echo '
-					<th>', $legend, '$x = ';
-				pr_var( $value, '', true );
-				echo '
+					<th>', $legend, '$x = ', $label, '
 					</th>';
 
 				$this->print_row_cells( $value, $test_group );
 
 				echo '
-					<th>', $legend, '$x = ';
-				pr_var( $value, '', true );
-				echo '
+					<th>', $legend, '$x = ', $label, '
 					</th>
 				</tr>';
-
-				unset( $value, $label, $type, $hr_key, $class );
 			}
-			unset( $key, $last_key );
 
 			echo '
 			</tbody>
