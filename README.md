@@ -36,8 +36,8 @@ In general, a balance is sought between significance and variety.
 
 
 #### Credits:
-[Elephpant photo](http://www.flickr.com/photos/jakobwesthoff/3231273333/) by Jacob Westhoff.
-[Sad Elephpant photo](http://www.flickr.com/photos/gluek/100179589/) by Gluek.
+* [Elephpant photo](http://www.flickr.com/photos/jakobwesthoff/3231273333/) by Jacob Westhoff.
+* [Sad Elephpant photo](http://www.flickr.com/photos/gluek/100179589/) by Gluek.
 
 
 #### Changelog:
