@@ -368,7 +368,7 @@ function generate_version_dropdown() {
 	$optgroup_html_pattern = '
 					<optgroup label="PHP %1$s">%2$s' . "\n\t\t\t\t\t</optgroup>";
 
-	$regex = sprintf( '`^%1$s/static_results/%2$s/php(([457]\.[0-9]+)\.[0-9-]+(?:(?:alpha|beta|rc)(?:[0-9])?)?)\.html$`',
+	$regex = sprintf( '`^%1$s/static_results/%2$s/php(([457]\.[0-9]+)\.[0-9-]+(?:(?:alpha|beta|RC)(?:[0-9])?)?)\.html$`',
 		preg_quote( APP_DIR, '`' ),
 		preg_quote( $GLOBALS['type'], '`' )
 	);
