@@ -703,5 +703,4 @@ class Vartype {
 		}
 		$this->table_notes = array(); // Reset property
 	}
-
 }
