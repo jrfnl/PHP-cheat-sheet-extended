@@ -37,8 +37,8 @@ set_error_handler( 'do_handle_errors' );
 
 // Make sure version id constant is available.
 if ( ! defined( 'PHP_VERSION_ID' ) ) {
-	$version = PHP_VERSION;
-	define( 'PHP_VERSION_ID', (int) ( $version{0} * 10000 + $version{2} * 100 + $version{4} ) );
+	$version = explode( '.', PHP_VERSION );
+	define( 'PHP_VERSION_ID', (int) ( $version[0] * 10000 + $version[1] * 100 + $version[2] ) );
 	unset( $version );
 }
 
