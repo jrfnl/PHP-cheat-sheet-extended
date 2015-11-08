@@ -151,7 +151,7 @@ class CheatsheetSitemap {
 				$available = glob( APP_DIR . '/' . self::STATIC_DIR . '/' . $key . '/php*.html' );
 				usort( $available, 'version_compare' );
 
-				$regex = sprintf( '`^%1$s/(%2$s/%3$s/php([457]\.[0-9]+\.[0-9-]+(?:(?:alpha|beta|rc)(?:[0-9])?)?)\.html)$`',
+				$regex = sprintf( '`^%1$s/(%2$s/%3$s/php([457]\.[0-9]+\.[0-9-]+(?:(?:alpha|beta|RC)(?:[0-9])?)?)\.html)$`',
 					preg_quote( APP_DIR, '`' ),
 					preg_quote( self::STATIC_DIR, '`' ),
 					preg_quote( $key, '`' )

@@ -65,7 +65,7 @@ class VartypePHP7 {
 				pr_var( $result, '', true, true );
 			}
 		}
-		catch ( Exception $e ) {
+		catch ( Error $e ) {
 			$message = '<span class="error">(Catchable) Fatal error</span>: ' . $e->getMessage();
 			self::handle_exception( $message );
 		}
@@ -83,7 +83,7 @@ class VartypePHP7 {
 			try {
 				pr_var( intdiv( $var1, $var2 ), '', true, true );
 			}
-			catch ( Exception $e ) {
+			catch ( Error $e ) {
 				$message = '<span class="error">(Catchable) Fatal error</span>: ' . $e->getMessage();
 				self::handle_exception( $message );
 			}
