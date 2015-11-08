@@ -36,11 +36,19 @@ In general, a balance is sought between significance and variety.
 
 
 #### Credits:
-[Elephpant photo](http://www.flickr.com/photos/jakobwesthoff/3231273333/) by Jacob Westhoff.
-[Sad Elephpant photo](http://www.flickr.com/photos/gluek/100179589/) by Gluek.
+* [Elephpant photo](http://www.flickr.com/photos/jakobwesthoff/3231273333/) by Jacob Westhoff.
+* [Sad Elephpant photo](http://www.flickr.com/photos/gluek/100179589/) by Gluek.
 
 
 #### Changelog:
+
+##### 1.3.1 (Nov 2015): PHP 7 is nearly upon us!
+* Renewed static sheets based on currently available and most used versions:
+	- Added static sheets for **PHP 7.0.0-RC6**, 5.6.15, 5.6.13, 5.6.11, 5.6.9, 5.6.7, 5.5.30, 5.5.28, 5.5.21, 5.4.45, 5.4.27, 5.4.41, 5.4.43.
+	- Removed static sheet generation for PHP 7.0.0-alpha1, 5.6.10, 5.6.8, 5.6.5, 5.6.2, 5.5.24, 5.5.22, 5.4.42, 5.4.33, 5.4.20, 5.4.11.
+* Fixed "division by zero" error catching for PHP7 as the Exception hierarchy changed in PHP7-alpha2.
+* Some other minor improvements.
+
 
 ##### 1.3 (Jun 2015): Get ready for PHP 7!
 * New tests:
