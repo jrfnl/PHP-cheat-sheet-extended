@@ -11,12 +11,6 @@ Options -Indexes -MultiViews
 </FilesMatch>
 
 
-# Do not remove or modify this block! Added by PHP Switcher from cPanel to use an alternate PHP version.
-<IfModule mod_suphp.c>
-  AddHandler application/x-httpd-php-5.4.13 .php
-</IfModule>
-
-
 # Redirects for files which no longer exist
 # 4.3.(0)9 => 4.3.11
 RedirectMatch 301 /static_results/(arithmetic|compare|test)/php4\.3\.(0)?9\.html$ http://phpcheatsheets.com/static_results/$1/php4.3.11.html
