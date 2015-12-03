@@ -46,6 +46,7 @@ In general, a balance is sought between significance and variety.
 * Renewed static sheets:
 	- Added static sheets for **PHP 7.0.0**.
 	- Removed static sheet generation for PHP 7.0.0-RC6.
+* Fixed static sheets to display the correct 'live' version (moved to server running PHP 5.6.8 - was 5.4.13).
 
 
 ##### 1.3.1 (Nov 2015): PHP 7 is nearly upon us!
