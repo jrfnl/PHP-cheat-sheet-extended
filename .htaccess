@@ -57,8 +57,8 @@ RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.6\.8\.html$ ht
 # 5.6.10 => 5.6.11
 RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.6\.10\.html$ http://phpcheatsheets.com/static_results/$1/php5.6.11.html
 
-# 7.0.0alpha1 => 7.0.0RC6
-RedirectMatch 301 /static_results/(arithmetic|compare|test)/php7\.0\.0alpha1\.html$ http://phpcheatsheets.com/static_results/$1/php7.0.0RC6.html
+# 7.0.0alpha1/RC6 => 7.0.0
+RedirectMatch 301 /static_results/(arithmetic|compare|test)/php7\.0\.0(alpha1|RC[1-8])\.html$ http://phpcheatsheets.com/static_results/$1/php7.0.0.html
 
 
 # Add 404 directives
