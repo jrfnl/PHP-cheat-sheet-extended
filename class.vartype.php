@@ -12,7 +12,6 @@ if ( ! defined( 'APP_DIR' ) ) {
 	exit();
 }
 
-
 /**
  * Generic variable testing parent class.
  */
@@ -107,7 +106,6 @@ class Vartype {
 
 		// Create the actual test functions.
 		foreach ( $this->tests as $key => $array ) {
-			// pr_var( $key, 'Creating test for:', true );
 			$this->tests[ $key ]['test'] = create_function( $array['arg'], $array['function'] );
 		}
 	}
@@ -186,7 +184,7 @@ class Vartype {
 	/**
 	 * Determine which tests to run.
 	 *
-	 * @param string|null $test_group The current subsection
+	 * @param string|null $test_group The current subsection.
 	 *
 	 * @return string
 	 */
@@ -202,7 +200,7 @@ class Vartype {
 	/**
 	 * Run all the tests for one specific testgroup.
 	 *
-	 * @param string|null $test_group The current subsection
+	 * @param string|null $test_group The current subsection.
 	 */
 	function run_test( $test_group = null ) {
 
@@ -217,7 +215,7 @@ class Vartype {
 	/**
 	 * Prepare the test data (the variables) for use in the tests.
 	 *
-	 * @param string|null $test_group The current subsection
+	 * @param string|null $test_group The current subsection.
 	 */
 	function set_test_data( $test_group = null ) {
 
@@ -254,18 +252,18 @@ class Vartype {
 	 */
 	function sort_test_data( $var_a, $var_b ) {
 		$primary_order   = array(
-			'n', // null
-			'b', // boolean
-			'i', // integer
-			'f', // float
-			's', // string
-			'a', // array
-			'o', // object
-			'r', // resource
-			'p', // SPL_Types object
+			'n', // Type null.
+			'b', // Type boolean.
+			'i', // Type integer.
+			'f', // Type float.
+			's', // Type string.
+			'a', // Type array.
+			'o', // Type object.
+			'r', // Type resource.
+			'p', // Type SPL_Types object.
 		);
 		$secondary_order = array(
-			'e', // empty
+			'e', // Empty.
 			'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
 			'a', 'b', 'c', 'd', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
 			'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
@@ -362,7 +360,7 @@ class Vartype {
 	/**
 	 * Generate the table for one specific subsection of a cheatsheet.
 	 *
-	 * @param string $test_group The current subsection
+	 * @param string $test_group The current subsection.
 	 */
 	function print_table( $test_group ) {
 
@@ -449,7 +447,7 @@ class Vartype {
 	/**
 	 * Generate the first row of the cheatsheet table.
 	 *
-	 * @param string $test_group The current subsection
+	 * @param string $test_group The current subsection.
 	 *
 	 * @return string
 	 */
@@ -490,7 +488,7 @@ class Vartype {
 	/**
 	 * Get the - potentially linked - group label (= first cell in the table header).
 	 *
-	 * @param string $test_group
+	 * @param string $test_group The current subsection.
 	 *
 	 * @return string
 	 */
@@ -545,7 +543,7 @@ class Vartype {
 		$class = array();
 
 		foreach ( $this->table_header_class_map as $group_key => $classname ) {
-			if ( isset( $this->test_groups[ $test_group ][ $group_key ] ) && in_array( $test, $this->test_groups[ $test_group ][ $group_key ] ) ) {
+			if ( isset( $this->test_groups[ $test_group ][ $group_key ] ) && in_array( $test, $this->test_groups[ $test_group ][ $group_key ], true ) ) {
 				$class[] = $classname;
 			}
 		}
@@ -558,7 +556,7 @@ class Vartype {
 	/**
 	 * Generate the html for the table top.
 	 *
-	 * @param string $test_group The current subsection
+	 * @param string $test_group The current subsection.
 	 */
 	function print_tabletop( $test_group ) {
 
@@ -577,8 +575,8 @@ class Vartype {
 	/**
 	 * Generate a cheatsheet result row.
 	 *
-	 * @param mixed  $value      The value this row applies to
-	 * @param string $test_group The current subsection
+	 * @param mixed  $value      The value this row applies to.
+	 * @param string $test_group The current subsection.
 	 */
 	function print_row_cells( $value, $test_group ) {
 
@@ -612,13 +610,13 @@ class Vartype {
 	 */
 	function get_table_row_cell_class( $test_group, $test ) {
 		$class = array( $test );
-		if ( in_array( $test, $this->test_groups[ $test_group ]['best'] ) ) {
+		if ( in_array( $test, $this->test_groups[ $test_group ]['best'], true ) ) {
 			$class[] = 'best';
 		}
-		else if ( in_array( $test, $this->test_groups[ $test_group ]['good'] ) ) {
+		else if ( in_array( $test, $this->test_groups[ $test_group ]['good'], true ) ) {
 			$class[] = 'good';
 		}
-		if ( in_array( $test, $this->test_groups[ $test_group ]['break_at'] ) ) {
+		if ( in_array( $test, $this->test_groups[ $test_group ]['break_at'], true ) ) {
 			$class[] = 'end';
 		}
 
@@ -665,7 +663,7 @@ class Vartype {
 	/**
 	 * Generate footnotes for any errors encountered.
 	 *
-	 * @param string $test_group The current subsection
+	 * @param string $test_group The current subsection.
 	 */
 	function print_error_footnotes( $test_group ) {
 		// Encountered errors footnote/appendix.
@@ -686,7 +684,7 @@ class Vartype {
 	/**
 	 * Generate footnotes for a test subsection if applicable.
 	 *
-	 * @param string $test_group The current subsection
+	 * @param string $test_group The current subsection.
 	 */
 	function print_other_footnotes( $test_group ) {
 		if ( is_array( $this->table_notes ) && count( $this->table_notes ) > 0 ) {
@@ -701,6 +699,6 @@ class Vartype {
 				);
 			}
 		}
-		$this->table_notes = array(); // Reset property
+		$this->table_notes = array(); // Reset property.
 	}
 }

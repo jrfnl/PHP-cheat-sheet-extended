@@ -160,7 +160,7 @@ class VartypeTest extends Vartype {
 		),
 
 
-		// Float specific
+		// Float specific.
 		'is_nan' => array(
 			'title'         => 'is_nan()',
 			'url'           => 'http://php.net/is_nan',
@@ -183,7 +183,7 @@ class VartypeTest extends Vartype {
 
 
 		/**
-		 * Type casting
+		 * Type casting.
 		 */
 		'array' => array(
 			'title'         => '(array)',
@@ -259,7 +259,7 @@ class VartypeTest extends Vartype {
 
 
 		/**
-		 * Loose type juggling
+		 * Loose type juggling.
 		 */
 		'juggle_int' => array(
 			'title'         => '$x&nbsp;+&nbsp;0',
@@ -281,7 +281,7 @@ class VartypeTest extends Vartype {
 				else {
 					trigger_error( \'Unsupported operand types\', E_USER_ERROR );
 				}
-			', // Note: has PHP5 equivalent in class.vartype-php5.php
+			', // Note: has PHP5 equivalent in class.vartype-php5.php.
 		),
 		'juggle_flt' => array(
 			'title'         => '$x&nbsp;+&nbsp;0.0',
@@ -303,7 +303,7 @@ class VartypeTest extends Vartype {
 				else {
 					trigger_error( \'Unsupported operand types\', E_USER_ERROR );
 				}
-			', // Note: has PHP5 equivalent in class.vartype-php5.php
+			', // Note: has PHP5 equivalent in class.vartype-php5.php.
 		),
 		'juggle_str' => array(
 			'title'         => '$x&nbsp;.&nbsp;\'\'',
@@ -732,7 +732,7 @@ class VartypeTest extends Vartype {
 
 
 		/**
-		 * Some object related functions
+		 * Some object related functions.
 		 */
 		'is_a' => array(
 			'title'         => 'is_a (&nbsp;$x, \'TestObject\'&nbsp;)',
@@ -744,7 +744,7 @@ class VartypeTest extends Vartype {
 			'title'         => 'instanceof TestObject',
 			'url'           => 'http://php.net/language.operators.type',
 			'arg'           => '$x',
-			'function'      => 'print "E: not available (PHP 5.0+)\n";', // Note: has PHP5 equivalent in class.vartype-php5.php
+			'function'      => 'print "E: not available (PHP 5.0+)\n";', // Note: has PHP5 equivalent in class.vartype-php5.php.
 		),
 		'get_class' => array(
 			'title'         => 'get_class()',
@@ -768,7 +768,7 @@ class VartypeTest extends Vartype {
 
 
 		/**
-		 * Resource specific functions
+		 * Resource specific functions.
 		 */
 		'get_resource_type' => array(
 			'title'         => 'get_resource_type()',
@@ -783,7 +783,7 @@ class VartypeTest extends Vartype {
 
 
 		/**
-		 * Test null comparisons
+		 * Test null comparisons.
 		 */
 		'null_cmp_loose' => array(
 			'title'         => '== null',
@@ -829,7 +829,7 @@ class VartypeTest extends Vartype {
 
 
 		/**
-		 * Boolean comparisons
+		 * Boolean comparisons.
 		 */
 		'bool_cmp_true_loose' => array(
 			'title'         => '== true',
@@ -957,7 +957,7 @@ class VartypeTest extends Vartype {
 
 
 		/**
-		 * Comparisons with int 0
+		 * Comparisons with int 0.
 		 */
 		'int_cmp_gt0' => array(
 			'title'         => '&gt;&nbsp;0',
@@ -1002,7 +1002,7 @@ class VartypeTest extends Vartype {
 
 
 		/**
-		 * Comparisons with empty string
+		 * Comparisons with empty string.
 		 */
 		'str_cmp_empty_loose' => array(
 			'title'         => '==&nbsp;\'\'',
@@ -1027,7 +1027,7 @@ class VartypeTest extends Vartype {
 
 
 		/**
-		 * Arithmetic operations
+		 * Arithmetic operations.
 		 */
 		'pre_increment'		=> array(
 			'title'         => '$x = ++$x',
@@ -1101,7 +1101,7 @@ class VartypeTest extends Vartype {
 
 
 		/**
-		 * Tests using preg_match()
+		 * Tests using preg_match().
 		 */
 		'preg_int_pos' => array(
 			'title'         => 'preg_match (`^[0-9]+$`)',
@@ -1239,7 +1239,7 @@ class VartypeTest extends Vartype {
 
 
 		/**
-		 * CTYPE extension
+		 * CTYPE extension.
 		 */
 		'ctype_alnum' => array(
 			'title'         => 'ctype_alnum()',
@@ -1368,10 +1368,10 @@ class VartypeTest extends Vartype {
 
 
 		/**
-		 * FILTER extension
+		 * FILTER extension.
 		 */
 
-		// Boolean filters
+		// Boolean filters.
 		'filter_var_bool' => array(
 			'title'         => 'filter_var (&hellip;)',
 			'tooltip'       => 'filter_var( $x, FILTER_VALIDATE_BOOLEAN )',
@@ -1420,7 +1420,7 @@ else {
 			),
 		),
 
-		// Float filters
+		// Float filters.
 		'filter_var_float' => array(
 			'title'         => 'filter_var (&hellip;)',
 			'tooltip'       => 'filter_var( $x, FILTER_VALIDATE_FLOAT )',
@@ -1504,7 +1504,7 @@ else {
 		),
 
 
-		// Integer filters
+		// Integer filters.
 		'filter_var_int' => array(
 			'title'         => 'filter_var (&hellip;)',
 			'tooltip'       => 'filter_var( $x, FILTER_VALIDATE_INT )',
@@ -1626,7 +1626,7 @@ else {
 
 
 
-		// String filters
+		// String filters.
 		'filter_var_string' => array(
 			'title'         => 'filter_var (&hellip;)',
 			'tooltip'       => 'filter_var( $x, FILTER_UNSAFE_RAW )',
@@ -2162,11 +2162,11 @@ else {
 				'ctype_graph',
 				'ctype_print',
 
-				'ctype_lower', // Has issues on PHP 5.0.5
+				'ctype_lower', // Has issues on PHP 5.0.5.
 				'ctype_upper',
 
-				'ctype_cntrl', // Has issues on PHP 5.0.5
-				'ctype_punct', // Has issues on PHP 5.0.5
+				'ctype_cntrl', // Has issues on PHP 5.0.5.
+				'ctype_punct', // Has issues on PHP 5.0.5.
 				'ctype_space',
 			),
 			'break_at'  => array( 'ctype_xdigit', 'ctype_print', 'ctype_upper', 'ctype_space' ),
@@ -2194,7 +2194,7 @@ else {
 				'filter_combined_int_null_min_max',
 				'filter_combined_int_null_hex_octal',
 				'filter_combined_int_null_sanitize',
-				// 'filter_combined_int_null_sanitize_x3',
+				/* 'filter_combined_int_null_sanitize_x3', */
 
 				'filter_combined_float_null',
 				'filter_combined_flt_null_sanitize',
@@ -2291,9 +2291,9 @@ else {
 			// Remove some tests which give issues in PHP5.0.x.
 			if ( PHP_VERSION_ID === 50005 || PHP_VERSION_ID === 50004 ) {
 				unset(
-					$this->ctype_test_group['ctype_extension']['tests'][6], // ctype_lower
-					$this->ctype_test_group['ctype_extension']['tests'][8], // ctype_cntrl
-					$this->ctype_test_group['ctype_extension']['tests'][9]  // ctype_punct
+					$this->ctype_test_group['ctype_extension']['tests'][6], // Function ctype_lower().
+					$this->ctype_test_group['ctype_extension']['tests'][8], // Function ctype_cntrl().
+					$this->ctype_test_group['ctype_extension']['tests'][9]  // Function ctype_punct().
 				);
 			}
 			// Merge the ctype testgroup.
@@ -2304,7 +2304,7 @@ else {
 			$this->test_groups = array_merge( $this->test_groups, $this->filter_test_group );
 		}
 
-		// Remove null coalesce test for PHP < 7
+		// Remove null coalesce test for PHP < 7.
 		if ( PHP_VERSION_ID < 70000 ) {
 			unset(
 				$this->tests['null_coalesce'],
@@ -2322,7 +2322,7 @@ else {
 	 * object_test sheet in PHP 5.0.x.
 	 * Similarly a "Fatal error:  Unknown function:  f8()" is shown just before the array_testing group in 4.3.11.
 	 *
-	 * @param string|null $test_group The current subsection
+	 * @param string|null $test_group The current subsection.
 	 */
 	function set_test_data( $test_group = null ) {
 		parent::set_test_data( $test_group );

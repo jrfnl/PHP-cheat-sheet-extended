@@ -195,7 +195,7 @@ class VartypeCompare extends Vartype {
 	 * Constructor.
 	 */
 	function __construct() {
-		// Remove spaceship comparison for PHP < 7
+		// Remove spaceship comparison for PHP < 7.
 		if ( PHP_VERSION_ID < 70000 ) {
 			unset( $this->tests['spaceship'] );
 		}
@@ -316,7 +316,7 @@ class VartypeCompare extends Vartype {
 	/**
 	 * Generate the table for one specific subsection of a comparison cheatsheet.
 	 *
-	 * @param string $test The current subsection
+	 * @param string $test The current subsection.
 	 */
 	function print_table( $test ) {
 
@@ -396,7 +396,7 @@ class VartypeCompare extends Vartype {
 	/**
 	 * Generate the first row of the cheatsheet table.
 	 *
-	 * @param string $test The current subsection
+	 * @param string $test The current subsection.
 	 *
 	 * @return string
 	 */
@@ -410,7 +410,7 @@ class VartypeCompare extends Vartype {
 					<th>' . $group_label . $group_notes . '</th>';
 
 
-		// Top labels
+		// Top labels.
 		foreach ( $this->test_data_keys as $i => $key ) {
 
 			$value = $this->test_data[ $key ];
@@ -423,7 +423,7 @@ class VartypeCompare extends Vartype {
 			pr_var( $value, '', false, true, '' );
 			$label = ob_get_clean();
 
-			// Add tooltips
+			// Add tooltips.
 			if ( strpos( $label, 'Object: ' ) !== false ) {
 				$label = $this->get_table_header_cell_title( $label, true );
 				$html .= '<span title="' . $label . '">Object(&hellip;)</span>';
@@ -515,7 +515,7 @@ class VartypeCompare extends Vartype {
 	 *
 	 * @todo: improve upon - preferably in a way that the tooltip is fully HTML capable.
 	 *
-	 * @param string $label  Original label
+	 * @param string $label  Original label.
 	 * @param bool   $object Whether this is an object or an array. Defaults to false (= array ).
 	 *
 	 * @return string Adjusted label
@@ -539,9 +539,9 @@ class VartypeCompare extends Vartype {
 	/**
 	 * Generate a cheatsheet result row.
 	 *
-	 * @param mixed  $value1 The value this row applies to
-	 * @param string $key1   The array key reference to that value in the testdata array
-	 * @param string $test   The current subsection
+	 * @param mixed  $value1 The value this row applies to.
+	 * @param string $key1   The array key reference to that value in the testdata array.
+	 * @param string $test   The current subsection.
 	 */
 	function print_compare_row_cells( $value1, $key1, $test ) {
 
@@ -589,7 +589,7 @@ class VartypeCompare extends Vartype {
 	/**
 	 * Generate footnotes for a test subsection if applicable.
 	 *
-	 * @param string $test The current subsection
+	 * @param string $test The current subsection.
 	 */
 	function print_other_footnotes( $test ) {
 		if ( isset( $this->tests[ $test ]['notes'] ) && ( is_array( $this->tests[ $test ]['notes'] ) && count( $this->tests[ $test ]['notes'] ) > 0 ) ) {

@@ -3,10 +3,10 @@
 	<description>PHP Cheatsheets rules for PHP_CodeSniffer</description>
 	
 	<exclude-pattern>include/PHP-cast-to-type/*</exclude-pattern>
-	<exclude-pattern>phpcs/*</exclude-pattern>
-	<exclude-pattern>wpcs/*</exclude-pattern>
 
-	<rule ref="WordPress-Extra">
+	<rule ref="WordPress">
+		<exclude name="WordPress.VIP" />
+
 		<exclude name="Squiz.WhiteSpace.SuperfluousWhitespace.EmptyLines" />
 
 		<!-- else on new line is perfectly fine -->
@@ -18,6 +18,16 @@
 		<!-- WP specific sniffs which should be ignored -->
 		<exclude name="WordPress.WP.EnqueuedResources" />
 		<exclude name="WordPress.XSS.EscapeOutput" />
+		
+		<!-- Exclude a number of rules for being over-zealous for this codebase. -->
+		<!--<exclude name="Squiz.Commenting.ClassComment.SpacingBefore"/>-->
+
+		<exclude name="Squiz.Commenting.FunctionComment.MissingParamComment"/>
+		<!--<exclude name="Squiz.Commenting.FunctionComment.ParamCommentFullStop"/>
+
+		<exclude name="Squiz.Commenting.InlineComment.InvalidEndChar"/>
+		<exclude name="Squiz.Commenting.InlineComment.NotCapital"/>
+		<exclude name="Squiz.Commenting.InlineComment.SpacingAfter"/>-->
 
 	</rule>
 
@@ -25,26 +35,12 @@
 		<exclude-pattern>class.vartype.php</exclude-pattern>
 	</rule>
 
-
-	<rule ref="WordPress-Docs">
-		<!-- Exclude a number of rules for being over-zealous for this codebase. -->
-		<exclude name="Squiz.Commenting.ClassComment.SpacingBefore"/>
-
-		<exclude name="Squiz.Commenting.FunctionComment.MissingParamComment"/>
-		<exclude name="Squiz.Commenting.FunctionComment.ParamCommentFullStop"/>
-
-		<exclude name="Squiz.Commenting.InlineComment.InvalidEndChar"/>
-		<exclude name="Squiz.Commenting.InlineComment.NotCapital"/>
-		<exclude name="Squiz.Commenting.InlineComment.SpacingAfter"/>
-	</rule>
-
-
 	<!-- exclude the 'empty' index files from some documentation checks -->
 	<rule ref="Squiz.Commenting.FileComment.WrongStyle">
 		<exclude-pattern>*/index.php</exclude-pattern>
 	</rule>
-	<rule ref="Generic.Files.EndFileNewline.NotFound">
+	<rule ref="Squiz.Commenting.InlineComment.SpacingAfter">
 		<exclude-pattern>*/index.php</exclude-pattern>
-	</rule>
+	</rule>-->
 
 </ruleset>

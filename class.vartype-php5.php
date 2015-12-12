@@ -12,7 +12,6 @@ if ( ! defined( 'APP_DIR' ) ) {
 	exit();
 }
 
-
 /**
  * Overload some tests when using PHP5.
  *
@@ -202,11 +201,11 @@ class VartypePHP5 {
 	/**
 	 * Run tests using the filter extension.
 	 *
-	 * @param mixed       $value    Value to test
-	 * @param string|null $expected Expected variable type of the output of the test
-	 * @param int         $filter   The Filter to apply
-	 * @param mixed|null  $flags    Which filter flags to apply
-	 * @param mixed|null  $options  Which options to apply
+	 * @param mixed       $value    Value to test.
+	 * @param string|null $expected Expected variable type of the output of the test.
+	 * @param int         $filter   The Filter to apply.
+	 * @param mixed|null  $flags    Which filter flags to apply.
+	 * @param mixed|null  $options  Which options to apply.
 	 */
 	public static function filter_combined( $value, $expected = null, $filter = FILTER_DEFAULT, $flags = null, $options = null ) {
 
@@ -227,11 +226,11 @@ class VartypePHP5 {
 	/**
 	 * Helper function: Run tests using the `filter_var()` function.
 	 *
-	 * @param mixed       $value    Value to test
-	 * @param string|null $expected Expected variable type of the output of the test
-	 * @param int         $filter   The Filter to apply
-	 * @param mixed|null  $flags    Which filter flags to apply
-	 * @param mixed|null  $options  Which options to apply
+	 * @param mixed       $value    Value to test.
+	 * @param string|null $expected Expected variable type of the output of the test.
+	 * @param int         $filter   The Filter to apply.
+	 * @param mixed|null  $flags    Which filter flags to apply.
+	 * @param mixed|null  $options  Which options to apply.
 	 */
 	public static function do_filter_var( $value, $expected = null, $filter = FILTER_DEFAULT, $flags = null, $options = null ) {
 		$opt = array();
@@ -256,10 +255,10 @@ class VartypePHP5 {
 	/**
 	 * Helper function: Run tests using the `filter_var_array()` function.
 	 *
-	 * @param mixed      $value   Value to test
-	 * @param int        $filter  The Filter to apply
-	 * @param mixed|null $flags   Which filter flags to apply
-	 * @param mixed|null $options Which options to apply
+	 * @param mixed      $value   Value to test.
+	 * @param int        $filter  The Filter to apply.
+	 * @param mixed|null $flags   Which filter flags to apply.
+	 * @param mixed|null $options Which options to apply.
 	 */
 	public static function do_filter_var_array( $value, $filter = FILTER_DEFAULT, $flags = null, $options = null ) {
 		if ( ! isset( $flags ) && ! isset( $options ) ) {
@@ -288,7 +287,7 @@ class VartypePHP5 {
 	 * Helper function to print the filter result.
 	 *
 	 * @param mixed       $result
-	 * @param string|null $expected Expected variable type of the output of the test
+	 * @param string|null $expected Expected variable type of the output of the test.
 	 */
 	public static function print_typed_result( $result, $expected = null ) {
 		switch ( true ) {

@@ -26,12 +26,12 @@ else {
 /**
  * Set the environment.
  */
-// One-up as we're in /bin
+// One-up as we're in /bin.
 define( 'APP_DIR', dirname( dirname( __FILE__ ) ) );
 
 include_once APP_DIR . '/include/setup-env.php';
 
-// Overrule some variables
+// Overrule some variables.
 $min     = '.min';
 $autogen = true;
 
@@ -106,7 +106,7 @@ function save_to_file( $filename, $content ) {
 function fix_content( $content ) {
 
 	$search = array(
-		// Make sure there are no references to the local version left
+		// Make sure there are no references to the local version left.
 		0  => '://phpcheatsheets.localdev/',
 		1  => '<body>',
 	);
@@ -182,7 +182,7 @@ function fix_content( $content ) {
 			unset( $key, $regex, $count );
 		}
 		else {
-			// The $count parameter does not exist pre-PHP 5.1.0
+			// The $count parameter does not exist pre-PHP 5.1.0.
 			$content = preg_replace( $regex_search, $regex_replace, $content );
 		}
 	}

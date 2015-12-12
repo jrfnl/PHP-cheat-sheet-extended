@@ -393,7 +393,7 @@ function generate_version_dropdown() {
 			);
 		}
 	}
-	// Add last group
+	// Add last group.
 	if ( $options !== array() ) {
 		$options_html .= sprintf( $optgroup_html_pattern, $optgroup, implode( "\n", $options ) );
 	}

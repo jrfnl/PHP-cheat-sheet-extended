@@ -225,10 +225,10 @@ function pr_var( $var, $title = '', $escape = true, $short = false, $space = '',
 /**
  * Internal function to print debug info on an object.
  *
- * @param object $obj    Object to print debug info on
- * @param bool   $escape @see pr_var()
- * @param bool   $short  @see pr_var()
- * @param string $space  @see pr_var()
+ * @param object $obj    Object to print debug info on.
+ * @param bool   $escape @see pr_var().
+ * @param bool   $short  @see pr_var().
+ * @param string $space  @see pr_var().
  *
  * @internal
  * @uses pr_var()

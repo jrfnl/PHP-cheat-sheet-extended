@@ -81,7 +81,7 @@ if ( isset( $_GET['page'] ) ) {
 }
 
 
-// Send headers
+// Send headers.
 header( 'Content-type: text/html; charset=utf-8' );
 
 
