@@ -99,10 +99,10 @@ IF NOT EXIST "%_AUTOGEN_SCRIPT_LOCATION%" GOTO :AUTOGEN_SCRIPT_LOCATION_ERROR EL
 :: 5.1        5.1.6     5.1.6
 :: 5.2        5.2.17    5.2.17, 5.2.6, 5.2.9
 :: 5.3        5.3.29    5.3.29, 5.3.3, 5.3.28, 5.3.10, 5.3.27 (v28 not included in run as 27 + 29 are)
-:: 5.4        5.4.45    5.4.45, 5.4.43, 5.4.44, 5.4.41, 5.4.42, 5.4.39, 5.4.36, / 5.4.40, 5.4.16, 5.4.38, 5.4.37, 5.4.35, 5.4.4 (v44, v42, v40, v38, v37, v35 not included in run as 36, 39, 41 and 43 are)
-:: 5.5        5.5.30    5.5.9, 5.5.30, 5.5.29, 5.5.28, 5.5.26, 5.5.27, 5.5.25, 5.5.22, 5.5.21 (v29, v27, v25, and v22 not included in run as 21, 26, 28 and 30 are)
-:: 5.6        5.6.15    5.6.13, 5.6.14, 5.6.12, 5.6.9, 5.6.11, 5.6.10, 5.6.7, 5.6.0, 5.6.8, 5.6.2 (v14, v12, v10 not included as 15, 13 and 11 are)
-:: 7.0        7.0.0
+:: 5.4        5.4.45    5.4.45, 5.4.43, 5.4.16, 5.4.41, 5.4.44, 5.4.36, 5.4.39, 5.4.42, 5.4.4 (v44, v43, v42, v39 not included in run as 41 and 36 are)
+:: 5.5        5.5.33    5.5.9, 5.5.30, 5.5.31, 5.5.32, 5.5.29, 5.5.28, 5.5.22 (v31, v32, v29 and v21 not included in run as 22, 28, 30 and 33 are)
+:: 5.6        5.6.19    5.6.18, 5.6.17, 5.6.16, 5.6.14, 5.6.15, 5.6.13, 5.6.12, 5.6.0, 5.6.11, 5.6.9 (v14, v12, v10 not included as 15, 13 and 11 are)
+:: 7.0        7.0.4     7.0.3, 7.0.2, 7.0.0
 ::
 :: Ubuntu LTS versions: 5.3.2 (U 10.04), 5.3.10 (U 12.04), 5.5.9 (U 14.04)
 :: Debian main releases: 5.3.3 (D 6), 5.4.4 (D 7), 5.6.7 (D 8)
@@ -119,16 +119,20 @@ IF NOT EXIST "%_AUTOGEN_SCRIPT_LOCATION%" GOTO :AUTOGEN_SCRIPT_LOCATION_ERROR EL
 :: 5.4.33 => 5.4.36
 :: 5.4.35 => 5.4.36
 :: 5.4.37 => 5.4.36
-:: 5.4.42 => 5.4.43
+:: 5.4.39 => 5.4.41
+:: 5.4.42 => 5.4.41
+:: 5.4.43 => 5.4.45
 :: 5.5.18 => 5.5.16
-:: 5.5.20 => 5.5.21
-:: 5.5.22 => 5.5.21
-:: 5.5.24 => 5.5.26
+:: 5.5.20 => 5.5.22
+:: 5.5.21 => 5.5.22
+:: 5.5.24 => 5.5.22
+:: 5.5.26 => 5.5.28
 :: 5.6.2 => 5.6.0
 :: 5.6.4 => 5.6.7
 :: 5.6.5 => 5.6.7
 :: 5.6.8 => 5.6.9
-:: 5.6.10 => 5.6.11
+:: 5.6.10 => 5.6.9
+:: 5.6.11 => 5.6.13
 :: 7.0.0alpha1 => 7.0.0
 :: 7.0.0RC6 => 7.0.0
 ::
@@ -136,10 +140,10 @@ IF NOT EXIST "%_AUTOGEN_SCRIPT_LOCATION%" GOTO :AUTOGEN_SCRIPT_LOCATION_ERROR EL
 
 :: Run autogen for various PHP versions
 :RUN_AUTOGEN
-FOR %%G IN (7.0.0) DO CALL :RUN_AUTOGEN_PHP5 %%G
-FOR %%G IN (5.6.15 5.6.13 5.6.11 5.6.9 5.6.7 5.6.0) DO CALL :RUN_AUTOGEN_PHP5 %%G
-FOR %%G IN (5.5.30 5.5.28 5.5.26 5.5.21 5.5.16 5.5.9 5.5.3) DO CALL :RUN_AUTOGEN_PHP5 %%G
-FOR %%G IN (5.4.45 5.4.43 5.4.41 5.4.39 5.4.36 5.4.27 5.4.16 5.4.4) DO CALL :RUN_AUTOGEN_PHP5 %%G
+FOR %%G IN (7.0.4 7.0.2 7.0.0) DO CALL :RUN_AUTOGEN_PHP5 %%G
+FOR %%G IN (5.6.19 5.6.17 5.6.15 5.6.13 5.6.9 5.6.7 5.6.0) DO CALL :RUN_AUTOGEN_PHP5 %%G
+FOR %%G IN (5.5.33 5.5.30 5.5.28 5.5.22 5.5.16 5.5.9 5.5.3) DO CALL :RUN_AUTOGEN_PHP5 %%G
+FOR %%G IN (5.4.45 5.4.41 5.4.36 5.4.27 5.4.16 5.4.4) DO CALL :RUN_AUTOGEN_PHP5 %%G
 FOR %%G IN (5.3.29 5.3.27 5.3.10 5.3.3 5.3.2) DO CALL :RUN_AUTOGEN_PHP5 %%G
 FOR %%G IN (5.2.17 5.2.9-2 5.2.6) DO CALL :RUN_AUTOGEN_PHP5 %%G
 FOR %%G IN (5.1.6 5.0.5 5.0.4) DO CALL :RUN_AUTOGEN_PHP5 %%G
