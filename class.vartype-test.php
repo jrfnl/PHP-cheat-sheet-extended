@@ -366,6 +366,7 @@ class VartypeTest extends Vartype {
 
 		/**
 		 * Tests using CastToType class.
+		 *
 		 * @see https://github.com/jrfnl/PHP-cast-to-type.git
 		 */
 		'cast_to_type_array' => array(

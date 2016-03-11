@@ -27,6 +27,7 @@ class VartypePHP5 {
 	public static $tests = array(
 		/**
 		 * String comparison functions.
+		 *
 		 * @see class.vartype-compare.php
 		 */
 		'strcmp'        => array(
@@ -55,6 +56,7 @@ class VartypePHP5 {
 
 		/**
 		 * Loose type juggling.
+		 *
 		 * @see class.vartype-test.php
 		 */
 		'juggle_int'    => array(
@@ -121,6 +123,7 @@ class VartypePHP5 {
 
 		/**
 		 * Some object related functions.
+		 *
 		 * @see class.vartype-test.php
 		 */
 		'instanceof'    => array(

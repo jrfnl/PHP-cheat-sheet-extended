@@ -7,973 +7,991 @@
 
 	<url>
 		<loc>http://phpcheatsheets.com/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>1</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/arithmetic/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.85</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/compare/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.85</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/test/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.85</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/about/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/other-cheat-sheets/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/arithmetic/bcadd/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/arithmetic/bcdiv/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/arithmetic/bcmod/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/arithmetic/bcmul/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/arithmetic/bcsub/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/arithmetic/concatenate/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/arithmetic/divide/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/arithmetic/fmod/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/arithmetic/modulus/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/arithmetic/multiply/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/arithmetic/negate/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/arithmetic/negate_strict/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/arithmetic/pow/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/arithmetic/subtract/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/arithmetic/sum/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/compare/bccomp/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/compare/equal/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/compare/equal_strict/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/compare/greater_than/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/compare/greater_than_or_equal/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/compare/less_than/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/compare/less_than_or_equal/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/compare/levenshtein/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/compare/max/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/compare/min/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/compare/not_equal/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/compare/not_equal2/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/compare/not_equal_strict/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/compare/similar_text/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/compare/strcasecmp/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/compare/strcmp/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/compare/strcoll/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/compare/strnatcasecmp/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/compare/strnatcmp/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/test/arithmetic/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/test/array_casting/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/test/array_tests/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/test/boolean_tests/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/test/ctype_extension/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/test/filter_extension_bool_int_float/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/test/filter_extension_strings/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/test/float_tests/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/test/general/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/test/integer_tests/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/test/null_tests/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/test/numeric_tests/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/test/object_tests/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/test/resource_tests/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/test/string_casting/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/test/string_tests/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/test/type_testing/</loc>
-		<lastmod>2015-12-03T22:43:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:11:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/arithmetic/php4.3.11.html</loc>
-		<lastmod>2015-12-03T22:32:45+01:00</lastmod>
+		<lastmod>2015-12-03T23:17:56+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/arithmetic/php4.4.9.html</loc>
-		<lastmod>2015-12-03T22:32:45+01:00</lastmod>
+		<lastmod>2015-12-03T23:17:56+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.0.4.html</loc>
-		<lastmod>2015-12-03T22:42:59+01:00</lastmod>
+		<lastmod>2016-03-11T06:10:54+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.0.5.html</loc>
-		<lastmod>2015-12-03T22:42:51+01:00</lastmod>
+		<lastmod>2016-03-11T06:10:24+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.1.6.html</loc>
-		<lastmod>2015-12-03T22:42:43+01:00</lastmod>
+		<lastmod>2016-03-11T06:10:13+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.2.6.html</loc>
-		<lastmod>2015-12-03T22:42:36+01:00</lastmod>
+		<lastmod>2016-03-11T06:10:05+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.2.9-2.html</loc>
-		<lastmod>2015-12-03T22:42:27+01:00</lastmod>
+		<lastmod>2016-03-11T06:09:55+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.2.17.html</loc>
-		<lastmod>2015-12-03T22:42:14+01:00</lastmod>
+		<lastmod>2016-03-11T06:09:41+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.3.2.html</loc>
-		<lastmod>2015-12-03T22:42:03+01:00</lastmod>
+		<lastmod>2016-03-11T06:09:31+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.3.3.html</loc>
-		<lastmod>2015-12-03T22:41:54+01:00</lastmod>
+		<lastmod>2016-03-11T06:09:21+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.3.10.html</loc>
-		<lastmod>2015-12-03T22:41:45+01:00</lastmod>
+		<lastmod>2016-03-11T06:09:12+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.3.27.html</loc>
-		<lastmod>2015-12-03T22:41:36+01:00</lastmod>
+		<lastmod>2016-03-11T06:09:02+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.3.29.html</loc>
-		<lastmod>2015-12-03T22:41:18+01:00</lastmod>
+		<lastmod>2016-03-11T06:08:43+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.4.4.html</loc>
-		<lastmod>2015-12-03T22:41:01+01:00</lastmod>
+		<lastmod>2016-03-11T06:08:28+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.4.16.html</loc>
-		<lastmod>2015-12-03T22:40:52+01:00</lastmod>
+		<lastmod>2016-03-11T06:08:20+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.4.27.html</loc>
-		<lastmod>2015-12-03T22:40:36+01:00</lastmod>
+		<lastmod>2016-03-11T06:08:03+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.4.36.html</loc>
-		<lastmod>2015-12-03T22:40:20+01:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.4</priority>
-	</url>
-	<url>
-		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.4.39.html</loc>
-		<lastmod>2015-12-03T22:40:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:07:47+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.4.41.html</loc>
-		<lastmod>2015-12-03T22:39:49+01:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.4</priority>
-	</url>
-	<url>
-		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.4.43.html</loc>
-		<lastmod>2015-12-03T22:39:33+01:00</lastmod>
+		<lastmod>2016-03-11T06:07:30+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.4.45.html</loc>
-		<lastmod>2015-12-03T22:39:17+01:00</lastmod>
+		<lastmod>2016-03-11T06:07:14+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.5.3.html</loc>
-		<lastmod>2015-12-03T22:39:01+01:00</lastmod>
+		<lastmod>2016-03-11T06:06:57+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.5.9.html</loc>
-		<lastmod>2015-12-03T22:38:47+01:00</lastmod>
+		<lastmod>2016-03-11T06:06:42+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.5.16.html</loc>
-		<lastmod>2015-12-03T22:38:32+01:00</lastmod>
+		<lastmod>2016-03-11T06:06:26+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
-		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.5.21.html</loc>
-		<lastmod>2015-12-03T22:38:17+01:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.4</priority>
-	</url>
-	<url>
-		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.5.26.html</loc>
-		<lastmod>2015-12-03T22:38:02+01:00</lastmod>
+		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.5.22.html</loc>
+		<lastmod>2016-03-11T06:06:10+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.5.28.html</loc>
-		<lastmod>2015-12-03T22:37:47+01:00</lastmod>
+		<lastmod>2016-03-11T06:05:53+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.5.30.html</loc>
-		<lastmod>2015-12-03T22:37:32+01:00</lastmod>
+		<lastmod>2016-03-11T06:05:37+01:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.4</priority>
+	</url>
+	<url>
+		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.5.33.html</loc>
+		<lastmod>2016-03-11T06:05:21+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.6.0.html</loc>
-		<lastmod>2015-12-03T22:37:17+01:00</lastmod>
+		<lastmod>2016-03-11T06:05:04+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.6.7.html</loc>
-		<lastmod>2015-12-03T22:37:01+01:00</lastmod>
+		<lastmod>2016-03-11T06:04:48+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.6.9.html</loc>
-		<lastmod>2015-12-03T22:36:46+01:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.4</priority>
-	</url>
-	<url>
-		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.6.11.html</loc>
-		<lastmod>2015-12-03T22:36:31+01:00</lastmod>
+		<lastmod>2016-03-11T06:04:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.6.13.html</loc>
-		<lastmod>2015-12-03T22:36:16+01:00</lastmod>
+		<lastmod>2016-03-11T06:04:16+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.6.15.html</loc>
-		<lastmod>2015-12-03T22:36:00+01:00</lastmod>
+		<lastmod>2016-03-11T06:03:59+01:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.4</priority>
+	</url>
+	<url>
+		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.6.17.html</loc>
+		<lastmod>2016-03-11T06:03:42+01:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.4</priority>
+	</url>
+	<url>
+		<loc>http://phpcheatsheets.com/static_results/arithmetic/php5.6.19.html</loc>
+		<lastmod>2016-03-11T06:03:26+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/arithmetic/php7.0.0.html</loc>
-		<lastmod>2015-12-03T22:35:45+01:00</lastmod>
+		<lastmod>2016-03-11T06:03:11+01:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.4</priority>
+	</url>
+	<url>
+		<loc>http://phpcheatsheets.com/static_results/arithmetic/php7.0.2.html</loc>
+		<lastmod>2016-03-11T06:03:04+01:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.4</priority>
+	</url>
+	<url>
+		<loc>http://phpcheatsheets.com/static_results/arithmetic/php7.0.4.html</loc>
+		<lastmod>2016-03-11T06:02:57+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/compare/php4.3.11.html</loc>
-		<lastmod>2015-12-03T22:32:45+01:00</lastmod>
+		<lastmod>2015-12-03T23:17:57+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/compare/php4.4.9.html</loc>
-		<lastmod>2015-12-03T22:32:46+01:00</lastmod>
+		<lastmod>2015-12-03T23:17:58+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/compare/php5.0.4.html</loc>
-		<lastmod>2015-12-03T22:42:56+01:00</lastmod>
+		<lastmod>2016-03-11T06:10:50+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/compare/php5.0.5.html</loc>
-		<lastmod>2015-12-03T22:42:48+01:00</lastmod>
+		<lastmod>2016-03-11T06:10:20+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/compare/php5.1.6.html</loc>
-		<lastmod>2015-12-03T22:42:40+01:00</lastmod>
+		<lastmod>2016-03-11T06:10:10+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/compare/php5.2.6.html</loc>
-		<lastmod>2015-12-03T22:42:32+01:00</lastmod>
+		<lastmod>2016-03-11T06:10:01+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/compare/php5.2.9-2.html</loc>
-		<lastmod>2015-12-03T22:42:23+01:00</lastmod>
+		<lastmod>2016-03-11T06:09:51+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/compare/php5.2.17.html</loc>
-		<lastmod>2015-12-03T22:42:10+01:00</lastmod>
+		<lastmod>2016-03-11T06:09:37+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/compare/php5.3.2.html</loc>
-		<lastmod>2015-12-03T22:41:59+01:00</lastmod>
+		<lastmod>2016-03-11T06:09:27+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/compare/php5.3.3.html</loc>
-		<lastmod>2015-12-03T22:41:51+01:00</lastmod>
+		<lastmod>2016-03-11T06:09:18+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/compare/php5.3.10.html</loc>
-		<lastmod>2015-12-03T22:41:42+01:00</lastmod>
+		<lastmod>2016-03-11T06:09:08+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/compare/php5.3.27.html</loc>
-		<lastmod>2015-12-03T22:41:28+01:00</lastmod>
+		<lastmod>2016-03-11T06:08:54+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/compare/php5.3.29.html</loc>
-		<lastmod>2015-12-03T22:41:09+01:00</lastmod>
+		<lastmod>2016-03-11T06:08:36+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/compare/php5.4.4.html</loc>
-		<lastmod>2015-12-03T22:40:57+01:00</lastmod>
+		<lastmod>2016-03-11T06:08:25+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/compare/php5.4.16.html</loc>
-		<lastmod>2015-12-03T22:40:44+01:00</lastmod>
+		<lastmod>2016-03-11T06:08:12+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/compare/php5.4.27.html</loc>
-		<lastmod>2015-12-03T22:40:29+01:00</lastmod>
+		<lastmod>2016-03-11T06:07:56+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/compare/php5.4.36.html</loc>
-		<lastmod>2015-12-03T22:40:13+01:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.4</priority>
-	</url>
-	<url>
-		<loc>http://phpcheatsheets.com/static_results/compare/php5.4.39.html</loc>
-		<lastmod>2015-12-03T22:39:58+01:00</lastmod>
+		<lastmod>2016-03-11T06:07:40+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/compare/php5.4.41.html</loc>
-		<lastmod>2015-12-03T22:39:42+01:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.4</priority>
-	</url>
-	<url>
-		<loc>http://phpcheatsheets.com/static_results/compare/php5.4.43.html</loc>
-		<lastmod>2015-12-03T22:39:26+01:00</lastmod>
+		<lastmod>2016-03-11T06:07:24+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/compare/php5.4.45.html</loc>
-		<lastmod>2015-12-03T22:39:11+01:00</lastmod>
+		<lastmod>2016-03-11T06:07:07+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/compare/php5.5.3.html</loc>
-		<lastmod>2015-12-03T22:38:55+01:00</lastmod>
+		<lastmod>2016-03-11T06:06:51+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/compare/php5.5.9.html</loc>
-		<lastmod>2015-12-03T22:38:41+01:00</lastmod>
+		<lastmod>2016-03-11T06:06:35+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/compare/php5.5.16.html</loc>
-		<lastmod>2015-12-03T22:38:25+01:00</lastmod>
+		<lastmod>2016-03-11T06:06:19+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
-		<loc>http://phpcheatsheets.com/static_results/compare/php5.5.21.html</loc>
-		<lastmod>2015-12-03T22:38:10+01:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.4</priority>
-	</url>
-	<url>
-		<loc>http://phpcheatsheets.com/static_results/compare/php5.5.26.html</loc>
-		<lastmod>2015-12-03T22:37:55+01:00</lastmod>
+		<loc>http://phpcheatsheets.com/static_results/compare/php5.5.22.html</loc>
+		<lastmod>2016-03-11T06:06:02+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/compare/php5.5.28.html</loc>
-		<lastmod>2015-12-03T22:37:41+01:00</lastmod>
+		<lastmod>2016-03-11T06:05:46+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/compare/php5.5.30.html</loc>
-		<lastmod>2015-12-03T22:37:25+01:00</lastmod>
+		<lastmod>2016-03-11T06:05:30+01:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.4</priority>
+	</url>
+	<url>
+		<loc>http://phpcheatsheets.com/static_results/compare/php5.5.33.html</loc>
+		<lastmod>2016-03-11T06:05:14+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/compare/php5.6.0.html</loc>
-		<lastmod>2015-12-03T22:37:10+01:00</lastmod>
+		<lastmod>2016-03-11T06:04:57+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/compare/php5.6.7.html</loc>
-		<lastmod>2015-12-03T22:36:54+01:00</lastmod>
+		<lastmod>2016-03-11T06:04:41+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/compare/php5.6.9.html</loc>
-		<lastmod>2015-12-03T22:36:39+01:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.4</priority>
-	</url>
-	<url>
-		<loc>http://phpcheatsheets.com/static_results/compare/php5.6.11.html</loc>
-		<lastmod>2015-12-03T22:36:24+01:00</lastmod>
+		<lastmod>2016-03-11T06:04:25+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/compare/php5.6.13.html</loc>
-		<lastmod>2015-12-03T22:36:09+01:00</lastmod>
+		<lastmod>2016-03-11T06:04:08+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/compare/php5.6.15.html</loc>
-		<lastmod>2015-12-03T22:35:52+01:00</lastmod>
+		<lastmod>2016-03-11T06:03:52+01:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.4</priority>
+	</url>
+	<url>
+		<loc>http://phpcheatsheets.com/static_results/compare/php5.6.17.html</loc>
+		<lastmod>2016-03-11T06:03:35+01:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.4</priority>
+	</url>
+	<url>
+		<loc>http://phpcheatsheets.com/static_results/compare/php5.6.19.html</loc>
+		<lastmod>2016-03-11T06:03:18+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/compare/php7.0.0.html</loc>
-		<lastmod>2015-12-03T22:35:44+01:00</lastmod>
+		<lastmod>2016-03-11T06:03:08+01:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.4</priority>
+	</url>
+	<url>
+		<loc>http://phpcheatsheets.com/static_results/compare/php7.0.2.html</loc>
+		<lastmod>2016-03-11T06:03:01+01:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.4</priority>
+	</url>
+	<url>
+		<loc>http://phpcheatsheets.com/static_results/compare/php7.0.4.html</loc>
+		<lastmod>2016-03-11T06:02:55+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/test/php4.3.11.html</loc>
-		<lastmod>2015-12-03T22:32:46+01:00</lastmod>
+		<lastmod>2015-12-03T23:17:59+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/test/php4.4.9.html</loc>
-		<lastmod>2015-12-03T22:32:46+01:00</lastmod>
+		<lastmod>2015-12-03T23:17:59+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/test/php5.0.4.html</loc>
-		<lastmod>2015-12-03T22:43:01+01:00</lastmod>
+		<lastmod>2015-12-03T23:18:00+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/test/php5.0.5.html</loc>
-		<lastmod>2015-12-03T22:42:53+01:00</lastmod>
+		<lastmod>2015-12-03T23:18:00+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/test/php5.1.6.html</loc>
-		<lastmod>2015-12-03T22:42:44+01:00</lastmod>
+		<lastmod>2016-03-11T06:10:15+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/test/php5.2.6.html</loc>
-		<lastmod>2015-12-03T22:42:38+01:00</lastmod>
+		<lastmod>2016-03-11T06:10:07+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/test/php5.2.9-2.html</loc>
-		<lastmod>2015-12-03T22:42:28+01:00</lastmod>
+		<lastmod>2016-03-11T06:09:57+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/test/php5.2.17.html</loc>
-		<lastmod>2015-12-03T22:42:15+01:00</lastmod>
+		<lastmod>2016-03-11T06:09:42+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/test/php5.3.2.html</loc>
-		<lastmod>2015-12-03T22:42:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:09:32+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/test/php5.3.3.html</loc>
-		<lastmod>2015-12-03T22:41:56+01:00</lastmod>
+		<lastmod>2016-03-11T06:09:23+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/test/php5.3.10.html</loc>
-		<lastmod>2015-12-03T22:41:47+01:00</lastmod>
+		<lastmod>2016-03-11T06:09:13+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/test/php5.3.27.html</loc>
-		<lastmod>2015-12-03T22:41:38+01:00</lastmod>
+		<lastmod>2016-03-11T06:09:04+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/test/php5.3.29.html</loc>
-		<lastmod>2015-12-03T22:41:20+01:00</lastmod>
+		<lastmod>2016-03-11T06:08:46+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/test/php5.4.4.html</loc>
-		<lastmod>2015-12-03T22:41:02+01:00</lastmod>
+		<lastmod>2016-03-11T06:08:29+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/test/php5.4.16.html</loc>
-		<lastmod>2015-12-03T22:40:54+01:00</lastmod>
+		<lastmod>2016-03-11T06:08:22+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/test/php5.4.27.html</loc>
-		<lastmod>2015-12-03T22:40:38+01:00</lastmod>
+		<lastmod>2016-03-11T06:08:05+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/test/php5.4.36.html</loc>
-		<lastmod>2015-12-03T22:40:22+01:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.4</priority>
-	</url>
-	<url>
-		<loc>http://phpcheatsheets.com/static_results/test/php5.4.39.html</loc>
-		<lastmod>2015-12-03T22:40:07+01:00</lastmod>
+		<lastmod>2016-03-11T06:07:49+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/test/php5.4.41.html</loc>
-		<lastmod>2015-12-03T22:39:51+01:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.4</priority>
-	</url>
-	<url>
-		<loc>http://phpcheatsheets.com/static_results/test/php5.4.43.html</loc>
-		<lastmod>2015-12-03T22:39:35+01:00</lastmod>
+		<lastmod>2016-03-11T06:07:33+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/test/php5.4.45.html</loc>
-		<lastmod>2015-12-03T22:39:19+01:00</lastmod>
+		<lastmod>2016-03-11T06:07:16+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/test/php5.5.3.html</loc>
-		<lastmod>2015-12-03T22:39:04+01:00</lastmod>
+		<lastmod>2016-03-11T06:06:59+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/test/php5.5.9.html</loc>
-		<lastmod>2015-12-03T22:38:49+01:00</lastmod>
+		<lastmod>2016-03-11T06:06:44+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/test/php5.5.16.html</loc>
-		<lastmod>2015-12-03T22:38:34+01:00</lastmod>
+		<lastmod>2016-03-11T06:06:28+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
-		<loc>http://phpcheatsheets.com/static_results/test/php5.5.21.html</loc>
-		<lastmod>2015-12-03T22:38:19+01:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.4</priority>
-	</url>
-	<url>
-		<loc>http://phpcheatsheets.com/static_results/test/php5.5.26.html</loc>
-		<lastmod>2015-12-03T22:38:04+01:00</lastmod>
+		<loc>http://phpcheatsheets.com/static_results/test/php5.5.22.html</loc>
+		<lastmod>2016-03-11T06:06:12+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/test/php5.5.28.html</loc>
-		<lastmod>2015-12-03T22:37:49+01:00</lastmod>
+		<lastmod>2016-03-11T06:05:55+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/test/php5.5.30.html</loc>
-		<lastmod>2015-12-03T22:37:34+01:00</lastmod>
+		<lastmod>2016-03-11T06:05:39+01:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.4</priority>
+	</url>
+	<url>
+		<loc>http://phpcheatsheets.com/static_results/test/php5.5.33.html</loc>
+		<lastmod>2016-03-11T06:05:23+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/test/php5.6.0.html</loc>
-		<lastmod>2015-12-03T22:37:19+01:00</lastmod>
+		<lastmod>2016-03-11T06:05:07+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/test/php5.6.7.html</loc>
-		<lastmod>2015-12-03T22:37:03+01:00</lastmod>
+		<lastmod>2016-03-11T06:04:50+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/test/php5.6.9.html</loc>
-		<lastmod>2015-12-03T22:36:48+01:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.4</priority>
-	</url>
-	<url>
-		<loc>http://phpcheatsheets.com/static_results/test/php5.6.11.html</loc>
-		<lastmod>2015-12-03T22:36:33+01:00</lastmod>
+		<lastmod>2016-03-11T06:04:34+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/test/php5.6.13.html</loc>
-		<lastmod>2015-12-03T22:36:18+01:00</lastmod>
+		<lastmod>2016-03-11T06:04:18+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/test/php5.6.15.html</loc>
-		<lastmod>2015-12-03T22:36:03+01:00</lastmod>
+		<lastmod>2016-03-11T06:04:01+01:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.4</priority>
+	</url>
+	<url>
+		<loc>http://phpcheatsheets.com/static_results/test/php5.6.17.html</loc>
+		<lastmod>2016-03-11T06:03:44+01:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.4</priority>
+	</url>
+	<url>
+		<loc>http://phpcheatsheets.com/static_results/test/php5.6.19.html</loc>
+		<lastmod>2016-03-11T06:03:28+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
 	<url>
 		<loc>http://phpcheatsheets.com/static_results/test/php7.0.0.html</loc>
-		<lastmod>2015-12-03T22:35:45+01:00</lastmod>
+		<lastmod>2016-03-11T06:03:11+01:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.4</priority>
+	</url>
+	<url>
+		<loc>http://phpcheatsheets.com/static_results/test/php7.0.2.html</loc>
+		<lastmod>2016-03-11T06:03:05+01:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.4</priority>
+	</url>
+	<url>
+		<loc>http://phpcheatsheets.com/static_results/test/php7.0.4.html</loc>
+		<lastmod>2016-03-11T06:02:58+01:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
