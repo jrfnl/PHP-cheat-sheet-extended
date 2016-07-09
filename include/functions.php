@@ -304,7 +304,7 @@ function determine_base_uri() {
 	if ( isset( $_SERVER['HTTP_HOST'] ) && in_array( $_SERVER['HTTP_HOST'], $valid_hosts, true ) ) {
 		$base_uri = 'http://' . $_SERVER['HTTP_HOST'] . determine_script_path();
 	}
-	elseif ( isset( $_SERVER['SERVER_NAME'] ) && in_array( $_SERVER['SERVER_NAME'], $valid_hosts, true ) ) {
+	else if ( isset( $_SERVER['SERVER_NAME'] ) && in_array( $_SERVER['SERVER_NAME'], $valid_hosts, true ) ) {
 		$base_uri = 'http://' . $_SERVER['SERVER_NAME'] . determine_script_path();
 	}
 

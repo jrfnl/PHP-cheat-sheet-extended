@@ -11,6 +11,8 @@
 
 		<!-- else on new line is perfectly fine -->
 		<exclude name="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseBrace" />
+		<!-- just like using else if... -->
+		<exclude name="PSR2.ControlStructures.ElseIfDeclaration.NotAllowed" />
 
 		<!-- Demanding Yoda conditions is stupid. -->
 		<exclude name="WordPress.PHP.YodaConditions"/>
