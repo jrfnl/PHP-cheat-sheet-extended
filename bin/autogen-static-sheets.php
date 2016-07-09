@@ -245,7 +245,7 @@ foreach ( $types as $type => $page_title ) {
 	}
 
 	$static_page = ob_get_clean();
-	$filename    = SAVE_DIR . '/' . $type .'/php' . PHP_VERSION . '.html';
+	$filename    = SAVE_DIR . '/' . $type . '/php' . PHP_VERSION . '.html';
 
 	save_to_file( $filename, $static_page );
 }
