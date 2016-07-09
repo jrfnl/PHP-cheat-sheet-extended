@@ -28,7 +28,7 @@ Static versions of the cheatsheets are generated using a variety of PHP versions
 
 These PHP versions will include:
 * [Always] Latest release for each minor PHP version at the time of (re-)generation of the static sheets.
-* [Always] The PHP versions included in [Ubuntu](http://distrowatch.com/table.php?distribution=Ubuntu), [Debian](http://distrowatch.com/table.php?distribution=debian) and [CentOS](http://distrowatch.com/table.php?distribution=centos)  LTS releases.
+* [Always] The PHP versions included in the last three [Ubuntu](http://distrowatch.com/table.php?distribution=Ubuntu), [Debian](http://distrowatch.com/table.php?distribution=debian) and [CentOS](http://distrowatch.com/table.php?distribution=centos) LTS releases.
 * [Selectively] Popular minor releases based on [worldwide usage statistics](http://w3techs.com/technologies/details/pl-php/all/all) at the time of (re-)generation of the static sheets.
 * [Selectively] Previously included versions if no other close minor release will be included.
 
@@ -42,7 +42,12 @@ In general, a balance is sought between significance and variety.
 
 #### Changelog:
 
-##### 1.3.2.1 (Mar x 2016)
+##### 1.3.4 (Jul 9 2016): What will PHP 7.1 bring ?
+* Renewed static sheets:
+	- Added static sheets for PHP 7.1.0-alpha3, 7.0.8, 7.0.6, 5.6.23, 5.6.20, 5.6.16, 5.5.37
+	- Removed static sheet generation for PHP 7.0.2, 5.6.19, 5.6.17, 5.6.15, 5.6.9, 5.5.28, 5.3.2.
+
+##### 1.3.3 (Mar 11 2016)
 * Renewed static sheets:
 	- Added static sheets for PHP 7.0.4, 7.0.2, 5.6.19, 5.6.17, 5.5.33, 5.5.22.
 	- Removed static sheet generation for PHP 5.6.11, 5.5.26, 5.5.21, 5.4.43, 5.4.39.

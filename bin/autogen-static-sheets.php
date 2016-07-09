@@ -68,7 +68,7 @@ function save_to_file( $filename, $content ) {
 
 	if ( $content !== false && is_string( $content ) && $content !== '' ) {
 
-		if ( strpos( $content, '</body>' ) !== false && strpos( $content, '\Blueshoes extended\PHP-cheat-sheet-extended' ) === false ) {
+		if ( strpos( $content, '</body>' ) !== false && ( strpos( $content, '\Blueshoes extended\PHP-cheat-sheet-extended' ) === false || strpos( $content, '\Blueshoes extended\PHP-cheat-sheet-extended\quiz' ) !== false ) ) {
 			$content = fix_content( $content );
 
 			if ( file_put_contents( $filename, $content ) !== false ) {
