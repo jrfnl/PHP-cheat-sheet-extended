@@ -5,24 +5,24 @@ PHP-cheat-sheet-extended
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/jrfnl/PHP-cheat-sheet-extended/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/jrfnl/PHP-cheat-sheet-extended/?branch=master)
 
 
-### View these cheat sheets live at [PHPCheatsheets.com](http://phpcheatsheets.com/)
+## View these cheat sheets live at [PHPCheatsheets.com](http://phpcheatsheets.com/)
 
 
-#### Much extended version of the [Blueshoes PHP cheat sheet](http://www.blueshoes.org/en/developer/php_cheat_sheet/) for variable type juggling.
+### Much extended version of the [Blueshoes PHP cheat sheet](http://www.blueshoes.org/en/developer/php_cheat_sheet/) for variable type juggling.
 
 
-##### Features:
+#### Features:
 * Lots of extra variables being tested.
 * Lots of extra comparisons and tests.
 * Variable arithmetic.
 * Results available for a wide variety of PHP versions.
 
 
-##### Contributing:
+#### Contributing:
 Suggestions for additional test variables, additional comparisons, tests or other improvements are very welcome. Just [open an issue](https://github.com/jrfnl/PHP-cheat-sheet-extended/issues) or send in a [pull request](https://github.com/jrfnl/PHP-cheat-sheet-extended/pulls) for it.
 
 
-##### About the static versions of the sheets:
+#### About the static versions of the sheets:
 
 Static versions of the cheatsheets are generated using a variety of PHP versions.
 
@@ -35,36 +35,36 @@ These PHP versions will include:
 In general, a balance is sought between significance and variety.
 
 
-#### Credits:
+### Credits:
 * [Elephpant photo](http://www.flickr.com/photos/jakobwesthoff/3231273333/) by Jacob Westhoff.
 * [Sad Elephpant photo](http://www.flickr.com/photos/gluek/100179589/) by Gluek.
 
 
-#### Changelog:
+### Changelog:
 
-##### 1.3.5 (Dec 3 2016): PHP 7.1 has been released: new arithmetic exceptions
+#### 1.3.5 (Dec 3 2016): PHP 7.1 has been released: new arithmetic exceptions
 * Renewed static sheets:
 	- Added static sheets for PHP 7.1.0, 7.0.13, 7.0.10, 5.6.28, 5.6.25, 5.5.38, 5.5.35.
 	- Removed static sheet generation for PHP 7.1.0-alpha3, 7.0.8, 7.0.6, 5.6.23, 5.6.13, 5.5.37, 5.5.33, 5.5.3.
 
-##### 1.3.4 (Jul 9 2016): What will PHP 7.1 bring ?
+#### 1.3.4 (Jul 9 2016): What will PHP 7.1 bring ?
 * Renewed static sheets:
 	- Added static sheets for PHP 7.1.0-alpha3, 7.0.8, 7.0.6, 5.6.23, 5.6.20, 5.6.16, 5.5.37
 	- Removed static sheet generation for PHP 7.0.2, 5.6.19, 5.6.17, 5.6.15, 5.6.9, 5.5.28, 5.3.2.
 
-##### 1.3.3 (Mar 11 2016)
+#### 1.3.3 (Mar 11 2016)
 * Renewed static sheets:
 	- Added static sheets for PHP 7.0.4, 7.0.2, 5.6.19, 5.6.17, 5.5.33, 5.5.22.
 	- Removed static sheet generation for PHP 5.6.11, 5.5.26, 5.5.21, 5.4.43, 5.4.39.
 
-##### 1.3.2 (Dec 3 2015): PHP 7 is here!
+#### 1.3.2 (Dec 3 2015): PHP 7 is here!
 * Renewed static sheets:
 	- Added static sheets for **PHP 7.0.0**.
 	- Removed static sheet generation for PHP 7.0.0-RC6.
 * Fixed static sheets to display the correct 'live' version (moved to server running PHP 5.6.8 - was 5.4.13).
 
 
-##### 1.3.1 (Nov 2015): PHP 7 is nearly upon us!
+#### 1.3.1 (Nov 2015): PHP 7 is nearly upon us!
 * Renewed static sheets based on currently available and most used versions:
 	- Added static sheets for **PHP 7.0.0-RC6**, 5.6.15, 5.6.13, 5.6.11, 5.6.9, 5.6.7, 5.5.30, 5.5.28, 5.5.21, 5.4.45, 5.4.27, 5.4.41, 5.4.43.
 	- Removed static sheet generation for PHP 7.0.0-alpha1, 5.6.10, 5.6.8, 5.6.5, 5.6.2, 5.5.24, 5.5.22, 5.4.42, 5.4.33, 5.4.20, 5.4.11.
@@ -72,7 +72,7 @@ In general, a balance is sought between significance and variety.
 * Some other minor improvements.
 
 
-##### 1.3 (Jun 2015): Get ready for PHP 7!
+#### 1.3 (Jun 2015): Get ready for PHP 7!
 * New tests:
 	- `<=>` in variable comparisons (PHP7+ only).
 	- `$x ?? ...` in variable tests (PHP7+ only).
@@ -95,11 +95,11 @@ Also:
 * Tidying up.
 
 
-##### 1.2.0.1 (Feb 2015)
+#### 1.2.0.1 (Feb 2015)
 * Added sitemaps.
 
 
-##### 1.2 (Feb 2015)
+#### 1.2 (Feb 2015)
 * New tests:
 	- `pow()` in variable arithmetic.
 	- `**` (PHP 5.6+) in variable arithmetic.
@@ -126,7 +126,7 @@ Also:
 * General tidying up.
 
 
-##### 1.1 (Feb 2014) - move to own domain.
+#### 1.1 (Feb 2014) - move to own domain.
 * New tests:
 	- `abs()` in variable testing.
 * New pages:
@@ -140,4 +140,4 @@ Also:
 * Cleaned up HTML.
 
 
-##### 1.0 (Sep 2013) - first public version.
+#### 1.0 (Sep 2013) - first public version.
