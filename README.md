@@ -42,6 +42,11 @@ In general, a balance is sought between significance and variety.
 
 #### Changelog:
 
+##### 1.3.5 (Dec 3 2016): PHP 7.1 has been released: new arithmetic exceptions
+* Renewed static sheets:
+	- Added static sheets for PHP 7.1.0, 7.0.13, 7.0.10, 5.6.28, 5.6.25, 5.5.38, 5.5.35.
+	- Removed static sheet generation for PHP 7.1.0-alpha3, 7.0.8, 7.0.6, 5.6.23, 5.6.13, 5.5.37, 5.5.33, 5.5.3.
+
 ##### 1.3.4 (Jul 9 2016): What will PHP 7.1 bring ?
 * Renewed static sheets:
 	- Added static sheets for PHP 7.1.0-alpha3, 7.0.8, 7.0.6, 5.6.23, 5.6.20, 5.6.16, 5.5.37
