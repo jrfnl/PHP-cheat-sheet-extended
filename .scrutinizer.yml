@@ -177,7 +177,6 @@ checks:
         no_new_wrappers: true
         no_obj_calls: true
         no_new_func: true
-        no_new: true
         no_nested_ternary: true
         no_negated_in_lhs: true
         no_native_reassign: true
