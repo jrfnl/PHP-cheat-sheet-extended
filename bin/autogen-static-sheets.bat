@@ -91,7 +91,7 @@ IF NOT EXIST "%_AUTOGEN_SCRIPT_LOCATION%" GOTO :AUTOGEN_SCRIPT_LOCATION_ERROR EL
 ::---------------------------------------------------------------------------------
 :: Basis for PHP versions used:
 ::
-:: Current latest version and popular versions per minor as of Nov 5th, 2015:
+:: Current latest version and popular versions per minor as of Dec 3rd, 2016:
 :: PHP minor  Latest    Popular ( ~> 5% )
 :: 4.3        4.3.11    4.3.9 (seeing as how low the PHP4 usage has (finally) become, now just including the last version)
 :: 4.4        4.4.9     4.4.9
@@ -268,8 +268,8 @@ GOTO :SITEMAPS
 
 :: Regen sitemap files
 :SITEMAPS
-SET "_CURRENT_PHP_CLI=%_LOCAL_PHP_BIN_DIR%\php5.5.20\php.exe"
-SET "_CURRENT_PHP_INI=%_LOCAL_PHP_BIN_DIR%\php5.5.20\php.ini"
+SET "_CURRENT_PHP_CLI=%_LOCAL_PHP_BIN_DIR%\php5.6.28\php.exe"
+SET "_CURRENT_PHP_INI=%_LOCAL_PHP_BIN_DIR%\php5.6.28\php.ini"
 
 ECHO(
 ECHO(

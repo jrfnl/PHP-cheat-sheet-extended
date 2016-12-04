@@ -46,6 +46,7 @@ In general, a balance is sought between significance and variety.
 * Renewed static sheets:
 	- Added static sheets for PHP 7.1.0, 7.0.13, 7.0.10, 5.6.28, 5.6.25, 5.5.38, 5.5.35.
 	- Removed static sheet generation for PHP 7.1.0-alpha3, 7.0.8, 7.0.6, 5.6.23, 5.6.13, 5.5.37, 5.5.33, 5.5.3.
+* The cheatsheets for PHP 4 are no longer actively maintained (regenerated) except for the version switcher menu.
 
 #### 1.3.4 (Jul 9 2016): What will PHP 7.1 bring ?
 * Renewed static sheets:
