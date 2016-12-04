@@ -139,6 +139,13 @@
 			<ror:resourceOf>sitemap</ror:resourceOf>
 		</item>
 		<item>
+			<link>http://phpcheatsheets.com/arithmetic/pow_operator/</link>
+			<title>PHP Arithmetic Operations Cheatsheet :: **</title>
+			<ror:updatePeriod>monthly</ror:updatePeriod>
+			<ror:sortOrder>3</ror:sortOrder>
+			<ror:resourceOf>sitemap</ror:resourceOf>
+		</item>
+		<item>
 			<link>http://phpcheatsheets.com/arithmetic/subtract/</link>
 			<title>PHP Arithmetic Operations Cheatsheet :: -</title>
 			<ror:updatePeriod>monthly</ror:updatePeriod>
@@ -531,13 +538,6 @@
 			<ror:resourceOf>sitemap</ror:resourceOf>
 		</item>
 		<item>
-			<link>http://phpcheatsheets.com/static_results/arithmetic/php5.5.3.html</link>
-			<title>PHP Arithmetic Operations Cheatsheet for PHP 5.5.3</title>
-			<ror:updatePeriod>monthly</ror:updatePeriod>
-			<ror:sortOrder>4</ror:sortOrder>
-			<ror:resourceOf>sitemap</ror:resourceOf>
-		</item>
-		<item>
 			<link>http://phpcheatsheets.com/static_results/arithmetic/php5.5.9.html</link>
 			<title>PHP Arithmetic Operations Cheatsheet for PHP 5.5.9</title>
 			<ror:updatePeriod>monthly</ror:updatePeriod>
@@ -566,15 +566,15 @@
 			<ror:resourceOf>sitemap</ror:resourceOf>
 		</item>
 		<item>
-			<link>http://phpcheatsheets.com/static_results/arithmetic/php5.5.33.html</link>
-			<title>PHP Arithmetic Operations Cheatsheet for PHP 5.5.33</title>
+			<link>http://phpcheatsheets.com/static_results/arithmetic/php5.5.35.html</link>
+			<title>PHP Arithmetic Operations Cheatsheet for PHP 5.5.35</title>
 			<ror:updatePeriod>monthly</ror:updatePeriod>
 			<ror:sortOrder>4</ror:sortOrder>
 			<ror:resourceOf>sitemap</ror:resourceOf>
 		</item>
 		<item>
-			<link>http://phpcheatsheets.com/static_results/arithmetic/php5.5.37.html</link>
-			<title>PHP Arithmetic Operations Cheatsheet for PHP 5.5.37</title>
+			<link>http://phpcheatsheets.com/static_results/arithmetic/php5.5.38.html</link>
+			<title>PHP Arithmetic Operations Cheatsheet for PHP 5.5.38</title>
 			<ror:updatePeriod>monthly</ror:updatePeriod>
 			<ror:sortOrder>4</ror:sortOrder>
 			<ror:resourceOf>sitemap</ror:resourceOf>
@@ -594,13 +594,6 @@
 			<ror:resourceOf>sitemap</ror:resourceOf>
 		</item>
 		<item>
-			<link>http://phpcheatsheets.com/static_results/arithmetic/php5.6.13.html</link>
-			<title>PHP Arithmetic Operations Cheatsheet for PHP 5.6.13</title>
-			<ror:updatePeriod>monthly</ror:updatePeriod>
-			<ror:sortOrder>4</ror:sortOrder>
-			<ror:resourceOf>sitemap</ror:resourceOf>
-		</item>
-		<item>
 			<link>http://phpcheatsheets.com/static_results/arithmetic/php5.6.16.html</link>
 			<title>PHP Arithmetic Operations Cheatsheet for PHP 5.6.16</title>
 			<ror:updatePeriod>monthly</ror:updatePeriod>
@@ -615,8 +608,15 @@
 			<ror:resourceOf>sitemap</ror:resourceOf>
 		</item>
 		<item>
-			<link>http://phpcheatsheets.com/static_results/arithmetic/php5.6.23.html</link>
-			<title>PHP Arithmetic Operations Cheatsheet for PHP 5.6.23</title>
+			<link>http://phpcheatsheets.com/static_results/arithmetic/php5.6.25.html</link>
+			<title>PHP Arithmetic Operations Cheatsheet for PHP 5.6.25</title>
+			<ror:updatePeriod>monthly</ror:updatePeriod>
+			<ror:sortOrder>4</ror:sortOrder>
+			<ror:resourceOf>sitemap</ror:resourceOf>
+		</item>
+		<item>
+			<link>http://phpcheatsheets.com/static_results/arithmetic/php5.6.28.html</link>
+			<title>PHP Arithmetic Operations Cheatsheet for PHP 5.6.28</title>
 			<ror:updatePeriod>monthly</ror:updatePeriod>
 			<ror:sortOrder>4</ror:sortOrder>
 			<ror:resourceOf>sitemap</ror:resourceOf>
@@ -636,22 +636,22 @@
 			<ror:resourceOf>sitemap</ror:resourceOf>
 		</item>
 		<item>
-			<link>http://phpcheatsheets.com/static_results/arithmetic/php7.0.6.html</link>
-			<title>PHP Arithmetic Operations Cheatsheet for PHP 7.0.6</title>
+			<link>http://phpcheatsheets.com/static_results/arithmetic/php7.0.10.html</link>
+			<title>PHP Arithmetic Operations Cheatsheet for PHP 7.0.10</title>
 			<ror:updatePeriod>monthly</ror:updatePeriod>
 			<ror:sortOrder>4</ror:sortOrder>
 			<ror:resourceOf>sitemap</ror:resourceOf>
 		</item>
 		<item>
-			<link>http://phpcheatsheets.com/static_results/arithmetic/php7.0.8.html</link>
-			<title>PHP Arithmetic Operations Cheatsheet for PHP 7.0.8</title>
+			<link>http://phpcheatsheets.com/static_results/arithmetic/php7.0.13.html</link>
+			<title>PHP Arithmetic Operations Cheatsheet for PHP 7.0.13</title>
 			<ror:updatePeriod>monthly</ror:updatePeriod>
 			<ror:sortOrder>4</ror:sortOrder>
 			<ror:resourceOf>sitemap</ror:resourceOf>
 		</item>
 		<item>
-			<link>http://phpcheatsheets.com/static_results/arithmetic/php7.1.0alpha3.html</link>
-			<title>PHP Arithmetic Operations Cheatsheet for PHP 7.1.0alpha3</title>
+			<link>http://phpcheatsheets.com/static_results/arithmetic/php7.1.0.html</link>
+			<title>PHP Arithmetic Operations Cheatsheet for PHP 7.1.0</title>
 			<ror:updatePeriod>monthly</ror:updatePeriod>
 			<ror:sortOrder>4</ror:sortOrder>
 			<ror:resourceOf>sitemap</ror:resourceOf>
@@ -783,13 +783,6 @@
 			<ror:resourceOf>sitemap</ror:resourceOf>
 		</item>
 		<item>
-			<link>http://phpcheatsheets.com/static_results/compare/php5.5.3.html</link>
-			<title>PHP Variable Comparison Cheatsheet for PHP 5.5.3</title>
-			<ror:updatePeriod>monthly</ror:updatePeriod>
-			<ror:sortOrder>4</ror:sortOrder>
-			<ror:resourceOf>sitemap</ror:resourceOf>
-		</item>
-		<item>
 			<link>http://phpcheatsheets.com/static_results/compare/php5.5.9.html</link>
 			<title>PHP Variable Comparison Cheatsheet for PHP 5.5.9</title>
 			<ror:updatePeriod>monthly</ror:updatePeriod>
@@ -818,15 +811,15 @@
 			<ror:resourceOf>sitemap</ror:resourceOf>
 		</item>
 		<item>
-			<link>http://phpcheatsheets.com/static_results/compare/php5.5.33.html</link>
-			<title>PHP Variable Comparison Cheatsheet for PHP 5.5.33</title>
+			<link>http://phpcheatsheets.com/static_results/compare/php5.5.35.html</link>
+			<title>PHP Variable Comparison Cheatsheet for PHP 5.5.35</title>
 			<ror:updatePeriod>monthly</ror:updatePeriod>
 			<ror:sortOrder>4</ror:sortOrder>
 			<ror:resourceOf>sitemap</ror:resourceOf>
 		</item>
 		<item>
-			<link>http://phpcheatsheets.com/static_results/compare/php5.5.37.html</link>
-			<title>PHP Variable Comparison Cheatsheet for PHP 5.5.37</title>
+			<link>http://phpcheatsheets.com/static_results/compare/php5.5.38.html</link>
+			<title>PHP Variable Comparison Cheatsheet for PHP 5.5.38</title>
 			<ror:updatePeriod>monthly</ror:updatePeriod>
 			<ror:sortOrder>4</ror:sortOrder>
 			<ror:resourceOf>sitemap</ror:resourceOf>
@@ -846,13 +839,6 @@
 			<ror:resourceOf>sitemap</ror:resourceOf>
 		</item>
 		<item>
-			<link>http://phpcheatsheets.com/static_results/compare/php5.6.13.html</link>
-			<title>PHP Variable Comparison Cheatsheet for PHP 5.6.13</title>
-			<ror:updatePeriod>monthly</ror:updatePeriod>
-			<ror:sortOrder>4</ror:sortOrder>
-			<ror:resourceOf>sitemap</ror:resourceOf>
-		</item>
-		<item>
 			<link>http://phpcheatsheets.com/static_results/compare/php5.6.16.html</link>
 			<title>PHP Variable Comparison Cheatsheet for PHP 5.6.16</title>
 			<ror:updatePeriod>monthly</ror:updatePeriod>
@@ -867,8 +853,15 @@
 			<ror:resourceOf>sitemap</ror:resourceOf>
 		</item>
 		<item>
-			<link>http://phpcheatsheets.com/static_results/compare/php5.6.23.html</link>
-			<title>PHP Variable Comparison Cheatsheet for PHP 5.6.23</title>
+			<link>http://phpcheatsheets.com/static_results/compare/php5.6.25.html</link>
+			<title>PHP Variable Comparison Cheatsheet for PHP 5.6.25</title>
+			<ror:updatePeriod>monthly</ror:updatePeriod>
+			<ror:sortOrder>4</ror:sortOrder>
+			<ror:resourceOf>sitemap</ror:resourceOf>
+		</item>
+		<item>
+			<link>http://phpcheatsheets.com/static_results/compare/php5.6.28.html</link>
+			<title>PHP Variable Comparison Cheatsheet for PHP 5.6.28</title>
 			<ror:updatePeriod>monthly</ror:updatePeriod>
 			<ror:sortOrder>4</ror:sortOrder>
 			<ror:resourceOf>sitemap</ror:resourceOf>
@@ -888,22 +881,22 @@
 			<ror:resourceOf>sitemap</ror:resourceOf>
 		</item>
 		<item>
-			<link>http://phpcheatsheets.com/static_results/compare/php7.0.6.html</link>
-			<title>PHP Variable Comparison Cheatsheet for PHP 7.0.6</title>
+			<link>http://phpcheatsheets.com/static_results/compare/php7.0.10.html</link>
+			<title>PHP Variable Comparison Cheatsheet for PHP 7.0.10</title>
 			<ror:updatePeriod>monthly</ror:updatePeriod>
 			<ror:sortOrder>4</ror:sortOrder>
 			<ror:resourceOf>sitemap</ror:resourceOf>
 		</item>
 		<item>
-			<link>http://phpcheatsheets.com/static_results/compare/php7.0.8.html</link>
-			<title>PHP Variable Comparison Cheatsheet for PHP 7.0.8</title>
+			<link>http://phpcheatsheets.com/static_results/compare/php7.0.13.html</link>
+			<title>PHP Variable Comparison Cheatsheet for PHP 7.0.13</title>
 			<ror:updatePeriod>monthly</ror:updatePeriod>
 			<ror:sortOrder>4</ror:sortOrder>
 			<ror:resourceOf>sitemap</ror:resourceOf>
 		</item>
 		<item>
-			<link>http://phpcheatsheets.com/static_results/compare/php7.1.0alpha3.html</link>
-			<title>PHP Variable Comparison Cheatsheet for PHP 7.1.0alpha3</title>
+			<link>http://phpcheatsheets.com/static_results/compare/php7.1.0.html</link>
+			<title>PHP Variable Comparison Cheatsheet for PHP 7.1.0</title>
 			<ror:updatePeriod>monthly</ror:updatePeriod>
 			<ror:sortOrder>4</ror:sortOrder>
 			<ror:resourceOf>sitemap</ror:resourceOf>
@@ -1035,13 +1028,6 @@
 			<ror:resourceOf>sitemap</ror:resourceOf>
 		</item>
 		<item>
-			<link>http://phpcheatsheets.com/static_results/test/php5.5.3.html</link>
-			<title>PHP Variable Testing Cheatsheet for PHP 5.5.3</title>
-			<ror:updatePeriod>monthly</ror:updatePeriod>
-			<ror:sortOrder>4</ror:sortOrder>
-			<ror:resourceOf>sitemap</ror:resourceOf>
-		</item>
-		<item>
 			<link>http://phpcheatsheets.com/static_results/test/php5.5.9.html</link>
 			<title>PHP Variable Testing Cheatsheet for PHP 5.5.9</title>
 			<ror:updatePeriod>monthly</ror:updatePeriod>
@@ -1070,15 +1056,15 @@
 			<ror:resourceOf>sitemap</ror:resourceOf>
 		</item>
 		<item>
-			<link>http://phpcheatsheets.com/static_results/test/php5.5.33.html</link>
-			<title>PHP Variable Testing Cheatsheet for PHP 5.5.33</title>
+			<link>http://phpcheatsheets.com/static_results/test/php5.5.35.html</link>
+			<title>PHP Variable Testing Cheatsheet for PHP 5.5.35</title>
 			<ror:updatePeriod>monthly</ror:updatePeriod>
 			<ror:sortOrder>4</ror:sortOrder>
 			<ror:resourceOf>sitemap</ror:resourceOf>
 		</item>
 		<item>
-			<link>http://phpcheatsheets.com/static_results/test/php5.5.37.html</link>
-			<title>PHP Variable Testing Cheatsheet for PHP 5.5.37</title>
+			<link>http://phpcheatsheets.com/static_results/test/php5.5.38.html</link>
+			<title>PHP Variable Testing Cheatsheet for PHP 5.5.38</title>
 			<ror:updatePeriod>monthly</ror:updatePeriod>
 			<ror:sortOrder>4</ror:sortOrder>
 			<ror:resourceOf>sitemap</ror:resourceOf>
@@ -1098,13 +1084,6 @@
 			<ror:resourceOf>sitemap</ror:resourceOf>
 		</item>
 		<item>
-			<link>http://phpcheatsheets.com/static_results/test/php5.6.13.html</link>
-			<title>PHP Variable Testing Cheatsheet for PHP 5.6.13</title>
-			<ror:updatePeriod>monthly</ror:updatePeriod>
-			<ror:sortOrder>4</ror:sortOrder>
-			<ror:resourceOf>sitemap</ror:resourceOf>
-		</item>
-		<item>
 			<link>http://phpcheatsheets.com/static_results/test/php5.6.16.html</link>
 			<title>PHP Variable Testing Cheatsheet for PHP 5.6.16</title>
 			<ror:updatePeriod>monthly</ror:updatePeriod>
@@ -1119,8 +1098,15 @@
 			<ror:resourceOf>sitemap</ror:resourceOf>
 		</item>
 		<item>
-			<link>http://phpcheatsheets.com/static_results/test/php5.6.23.html</link>
-			<title>PHP Variable Testing Cheatsheet for PHP 5.6.23</title>
+			<link>http://phpcheatsheets.com/static_results/test/php5.6.25.html</link>
+			<title>PHP Variable Testing Cheatsheet for PHP 5.6.25</title>
+			<ror:updatePeriod>monthly</ror:updatePeriod>
+			<ror:sortOrder>4</ror:sortOrder>
+			<ror:resourceOf>sitemap</ror:resourceOf>
+		</item>
+		<item>
+			<link>http://phpcheatsheets.com/static_results/test/php5.6.28.html</link>
+			<title>PHP Variable Testing Cheatsheet for PHP 5.6.28</title>
 			<ror:updatePeriod>monthly</ror:updatePeriod>
 			<ror:sortOrder>4</ror:sortOrder>
 			<ror:resourceOf>sitemap</ror:resourceOf>
@@ -1140,22 +1126,22 @@
 			<ror:resourceOf>sitemap</ror:resourceOf>
 		</item>
 		<item>
-			<link>http://phpcheatsheets.com/static_results/test/php7.0.6.html</link>
-			<title>PHP Variable Testing Cheatsheet for PHP 7.0.6</title>
+			<link>http://phpcheatsheets.com/static_results/test/php7.0.10.html</link>
+			<title>PHP Variable Testing Cheatsheet for PHP 7.0.10</title>
 			<ror:updatePeriod>monthly</ror:updatePeriod>
 			<ror:sortOrder>4</ror:sortOrder>
 			<ror:resourceOf>sitemap</ror:resourceOf>
 		</item>
 		<item>
-			<link>http://phpcheatsheets.com/static_results/test/php7.0.8.html</link>
-			<title>PHP Variable Testing Cheatsheet for PHP 7.0.8</title>
+			<link>http://phpcheatsheets.com/static_results/test/php7.0.13.html</link>
+			<title>PHP Variable Testing Cheatsheet for PHP 7.0.13</title>
 			<ror:updatePeriod>monthly</ror:updatePeriod>
 			<ror:sortOrder>4</ror:sortOrder>
 			<ror:resourceOf>sitemap</ror:resourceOf>
 		</item>
 		<item>
-			<link>http://phpcheatsheets.com/static_results/test/php7.1.0alpha3.html</link>
-			<title>PHP Variable Testing Cheatsheet for PHP 7.1.0alpha3</title>
+			<link>http://phpcheatsheets.com/static_results/test/php7.1.0.html</link>
+			<title>PHP Variable Testing Cheatsheet for PHP 7.1.0</title>
 			<ror:updatePeriod>monthly</ror:updatePeriod>
 			<ror:sortOrder>4</ror:sortOrder>
 			<ror:resourceOf>sitemap</ror:resourceOf>
