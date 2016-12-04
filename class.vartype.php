@@ -521,7 +521,7 @@ class Vartype {
 			$this->table_notes = array_unique( $this->table_notes );
 
 			foreach ( $this->tests[ $test ]['notes'] as $note ) {
-				$note_id = array_search( $note, $this->table_notes );
+				$note_id = array_search( $note, $this->table_notes, true );
 				if ( $note_id !== false ) {
 					$notes .= ' <sup><a href="#' . $test_group . '-note' . ( $note_id + 1 ) . '">&Dagger;' . ( $note_id + 1 ) . '</a></sup>';
 				}

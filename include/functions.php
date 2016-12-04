@@ -277,10 +277,10 @@ function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
  * @return int
  */
 function get_error_key( $message ) {
-	$key = array_search( $message, $GLOBALS['encountered_errors'] );
+	$key = array_search( $message, $GLOBALS['encountered_errors'], true );
 	if ( $key === false ) {
 		$GLOBALS['encountered_errors'][] = $message;
-		$key                             = array_search( $message, $GLOBALS['encountered_errors'] );
+		$key                             = array_search( $message, $GLOBALS['encountered_errors'], true );
 	}
 	return $key;
 }
