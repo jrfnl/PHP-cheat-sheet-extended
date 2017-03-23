@@ -268,7 +268,9 @@ class VartypePHP5 {
 			pr_var( filter_var_array( $value, $filter ), '', true, true );
 		}
 		else {
-			$input      = array( 'x' => $value );
+			$input      = array(
+				'x' => $value,
+			);
 			$filter_def = array(
 				'x' => array(
 					'filter' => $filter,

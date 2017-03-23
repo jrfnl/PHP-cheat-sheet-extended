@@ -4,9 +4,37 @@
 	
 	<exclude-pattern>include/PHP-cast-to-type/*</exclude-pattern>
 
-	<rule ref="WordPress">
-		<exclude name="WordPress.VIP" />
+	<!-- PHP cross-version compatibility -->
+	<config name="testVersion" value="4.3-99.0"/>
+	<rule ref="PHPCompatibility"/>
 
+	<!-- Selectively exclude certain files from certain checks after manual verification. -->
+	<!-- These issues are either accompanied by a work-around... -->
+	<rule ref="PHPCompatibility.PHP.NewFunctionParameters.preg_replace_countFound">
+		<exclude-pattern>bin/autogen-static-sheets.php</exclude-pattern>
+	</rule>
+	<rule ref="PHPCompatibility.PHP.NewFunctions.filter_varFound">
+		<exclude-pattern>class.vartype-php5.php</exclude-pattern>
+	</rule>
+	<rule ref="PHPCompatibility.PHP.NewFunctions.filter_var_arrayFound">
+		<exclude-pattern>class.vartype-php5.php</exclude-pattern>
+	</rule>
+	<rule ref="PHPCompatibility.PHP.NewFunctions.intdivFound">
+		<exclude-pattern>class.vartype-php7.php</exclude-pattern>
+	</rule>
+	<!-- ... or explicitely part of the cheatsheets to demonstrate behaviour changes in PHP. -->
+	<rule ref="PHPCompatibility.PHP.NewMagicMethods.__tostringFound">
+		<exclude-pattern>include/functions.php</exclude-pattern>
+	</rule>
+	<rule ref="PHPCompatibility.PHP.ValidIntegers.BinaryIntegerFound">
+		<exclude-pattern>include/vars-to-test-php54.php</exclude-pattern>
+	</rule>
+	<rule ref="PHPCompatibility.PHP.ValidIntegers.HexNumericStringFound">
+		<exclude-pattern>include/vars-to-test.php</exclude-pattern>
+	</rule>
+
+
+	<rule ref="WordPress">
 		<exclude name="Squiz.WhiteSpace.SuperfluousWhitespace.EmptyLines" />
 
 		<!-- else on new line is perfectly fine -->
@@ -14,13 +42,22 @@
 		<!-- just like using else if... -->
 		<exclude name="PSR2.ControlStructures.ElseIfDeclaration.NotAllowed" />
 
+		<!-- Syntax is already being checked on travis build. -->
+		<exclude name="Generic.PHP.Syntax"/>
+
 		<!-- Demanding Yoda conditions is stupid. -->
 		<exclude name="WordPress.PHP.YodaConditions"/>
 
 		<!-- WP specific sniffs which should be ignored -->
-		<exclude name="WordPress.WP.EnqueuedResources" />
+		<exclude name="WordPress.VIP" />
+		<exclude name="WordPress.WP" />
 		<exclude name="WordPress.XSS.EscapeOutput" />
-		
+		<exclude name="WordPress.Files.FileName.InvalidClassFileName" />
+		<exclude name="WordPress.CSRF.NonceVerification" />
+		<exclude name="WordPress.PHP.DevelopmentFunctions" />
+		<exclude name="WordPress.PHP.DiscouragedPHPFunctions.runtime_configuration_ini_set" />
+		<exclude name="WordPress.PHP.DiscouragedPHPFunctions.runtime_configuration_error_reporting" />
+
 		<!-- Exclude a number of rules for being over-zealous for this codebase. -->
 		<!--<exclude name="Squiz.Commenting.ClassComment.SpacingBefore"/>-->
 
@@ -31,11 +68,18 @@
 		<exclude name="Squiz.Commenting.InlineComment.NotCapital"/>
 		<exclude name="Squiz.Commenting.InlineComment.SpacingAfter"/>-->
 
+		<exclude name="Squiz.Commenting.LongConditionClosingComment"/>
+
 	</rule>
 
 	<rule ref="WordPress.Arrays.ArrayDeclaration.ValueNoNewline">
 		<exclude-pattern>class.vartype.php</exclude-pattern>
 	</rule>
+
+	<rule ref="Squiz.PHP.DisallowMultipleAssignments">
+		<exclude-pattern>/include/vars-to-test.php</exclude-pattern>
+	</rule>
+
 
 	<!-- exclude the 'empty' index files from some documentation checks -->
 	<rule ref="Squiz.Commenting.FileComment.WrongStyle">

@@ -78,8 +78,11 @@ RedirectMatch 301 /static_results/(arithmetic|compare|test)/php7\.0\.0(alpha1|RC
 # 7.0.2/6 => 7.0.4
 RedirectMatch 301 /static_results/(arithmetic|compare|test)/php7\.0\.[26]\.html$ http://phpcheatsheets.com/static_results/$1/php7.0.4.html
 
-# 7.0.8 => 7.0.10
-RedirectMatch 301 /static_results/(arithmetic|compare|test)/php7\.0\.8\.html$ http://phpcheatsheets.com/static_results/$1/php7.0.10.html
+# 7.0.8 => 7.0.12
+RedirectMatch 301 /static_results/(arithmetic|compare|test)/php7\.0\.8\.html$ http://phpcheatsheets.com/static_results/$1/php7.0.12.html
+
+# 7.0.10/13 => 7.0.12
+RedirectMatch 301 /static_results/(arithmetic|compare|test)/php7\.0\.1[03]\.html$ http://phpcheatsheets.com/static_results/$1/php7.0.12.html
 
 # 7.1.0alpha3 => 7.1.0
 RedirectMatch 301 /static_results/(arithmetic|compare|test)/php7\.1\.0alpha3\.html$ http://phpcheatsheets.com/static_results/$1/php7.1.0.html

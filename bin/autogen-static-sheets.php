@@ -11,7 +11,13 @@
 if ( extension_loaded( 'suhosin' ) && is_numeric( ini_get( 'suhosin.memory_limit' ) ) ) {
 	$limit = ini_get( 'memory_limit' );
 	if ( preg_match( '(^(\d+)([BKMGT]))', $limit, $match ) ) {
-		$shift = array( 'B' => 0, 'K' => 10, 'M' => 20, 'G' => 30, 'T' => 40 );
+		$shift = array(
+			'B' => 0,
+			'K' => 10,
+			'M' => 20,
+			'G' => 30,
+			'T' => 40,
+		);
 		$limit = ( $match[1] * ( 1 << $shift[ $match[2] ] ) );
 	}
 	if ( ini_get( 'suhosin.memory_limit' ) > $limit && $limit > -1 ) {
@@ -142,7 +148,7 @@ function fix_content( $content ) {
 		7  => '<th>array()<br />					</th>',
 		8  => 'array()<br />',
 		9  => '<t$1$2>array()<br /></t$1>',
-		10 => '<option value="live">PHP 5.6.23</option>', // IMPORTANT! Change this if the PHP version on the server changes!!
+		10 => '<option value="live">PHP 5.6.30</option>', // IMPORTANT! Change this if the PHP version on the server changes!!
 		12 => '<a href="http://$1/index.php?page=$2&amp;phpversion=php' . PHP_VERSION . '" class="top-link$3">',
 		13 => '[<a href="$1">$2</a>]',
 		14 => '<a href="$1"',
