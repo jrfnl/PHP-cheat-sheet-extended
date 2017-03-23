@@ -60,8 +60,17 @@ $test_array = array(
 	'sv'  => '0123', // Testing is_numeric, filter_var integer allow octal, integers.
 
 	'ae'  => array(),
-	'a3'  => array( 1 => 'string' ), // With different key -> array + array.
-	'a4'  => array( false, 1, 1.3, '123str', 'str123', null ),
+	'a3'  => array( // With different key -> array + array.
+		1 => 'string',
+	),
+	'a4'  => array(
+		false,
+		1,
+		1.3,
+		'123str',
+		'str123',
+		null,
+	),
 
 	'oe'  => new stdClass(),
 	'o2'  => new TestObjectToString(),

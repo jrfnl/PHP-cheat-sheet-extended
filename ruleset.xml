@@ -42,13 +42,22 @@
 		<!-- just like using else if... -->
 		<exclude name="PSR2.ControlStructures.ElseIfDeclaration.NotAllowed" />
 
+		<!-- Syntax is already being checked on travis build. -->
+		<exclude name="Generic.PHP.Syntax"/>
+
 		<!-- Demanding Yoda conditions is stupid. -->
 		<exclude name="WordPress.PHP.YodaConditions"/>
 
 		<!-- WP specific sniffs which should be ignored -->
-		<exclude name="WordPress.WP.EnqueuedResources" />
+		<exclude name="WordPress.VIP" />
+		<exclude name="WordPress.WP" />
 		<exclude name="WordPress.XSS.EscapeOutput" />
-		
+		<exclude name="WordPress.Files.FileName.InvalidClassFileName" />
+		<exclude name="WordPress.CSRF.NonceVerification" />
+		<exclude name="WordPress.PHP.DevelopmentFunctions" />
+		<exclude name="WordPress.PHP.DiscouragedPHPFunctions.runtime_configuration_ini_set" />
+		<exclude name="WordPress.PHP.DiscouragedPHPFunctions.runtime_configuration_error_reporting" />
+
 		<!-- Exclude a number of rules for being over-zealous for this codebase. -->
 		<!--<exclude name="Squiz.Commenting.ClassComment.SpacingBefore"/>-->
 
@@ -59,11 +68,18 @@
 		<exclude name="Squiz.Commenting.InlineComment.NotCapital"/>
 		<exclude name="Squiz.Commenting.InlineComment.SpacingAfter"/>-->
 
+		<exclude name="Squiz.Commenting.LongConditionClosingComment"/>
+
 	</rule>
 
 	<rule ref="WordPress.Arrays.ArrayDeclaration.ValueNoNewline">
 		<exclude-pattern>class.vartype.php</exclude-pattern>
 	</rule>
+
+	<rule ref="Squiz.PHP.DisallowMultipleAssignments">
+		<exclude-pattern>/include/vars-to-test.php</exclude-pattern>
+	</rule>
+
 
 	<!-- exclude the 'empty' index files from some documentation checks -->
 	<rule ref="Squiz.Commenting.FileComment.WrongStyle">
