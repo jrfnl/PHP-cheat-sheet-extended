@@ -44,10 +44,13 @@ matrix:
 before_script:
     - export PHPCS_DIR=/tmp/phpcs
     - export WPCS_DIR=/tmp/wpcs
+    - export PHPCOMPAT_DIR=/tmp/wpcs/PHPCompatibility
     # Install CodeSniffer for WordPress Coding Standards checks.
     - if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/squizlabs/PHP_CodeSniffer.git $PHPCS_DIR; fi
     # Install WordPress Coding Standards.
     - if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git $WPCS_DIR; fi
+    # Install PHPCompatibility Standards in a subdirectory of WPCS so we only need to run installed_paths once.
+    - if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/wimg/PHPCompatibility.git $PHPCOMPAT_DIR; fi
     # Hop into CodeSniffer directory.
     - if [[ "$SNIFF" == "1" ]]; then cd $PHPCS_DIR; fi
     # Set install path for WordPress Coding Standards.
