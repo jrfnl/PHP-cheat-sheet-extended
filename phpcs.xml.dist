@@ -1,7 +1,10 @@
 <?xml version="1.0"?>
 <ruleset name="PHP Cheatsheets">
 	<description>PHP Cheatsheets rules for PHP_CodeSniffer</description>
-	
+
+	<arg value="sp"/>
+	<arg name="extensions" value="php"/>
+
 	<exclude-pattern>include/PHP-cast-to-type/*</exclude-pattern>
 
 	<!-- PHP cross-version compatibility -->
@@ -20,6 +23,12 @@
 		<exclude-pattern>class.vartype-php5.php</exclude-pattern>
 	</rule>
 	<rule ref="PHPCompatibility.PHP.NewFunctions.intdivFound">
+		<exclude-pattern>class.vartype-php7.php</exclude-pattern>
+	</rule>
+	<rule ref="PHPCompatibility.PHP.NewClasses.exceptionFound">
+		<exclude-pattern>class.vartype-php5.php</exclude-pattern>
+	</rule>
+	<rule ref="PHPCompatibility.PHP.NewClasses.errorFound">
 		<exclude-pattern>class.vartype-php7.php</exclude-pattern>
 	</rule>
 	<!-- ... or explicitely part of the cheatsheets to demonstrate behaviour changes in PHP. -->
@@ -72,7 +81,13 @@
 
 	</rule>
 
-	<rule ref="WordPress.Arrays.ArrayDeclaration.ValueNoNewline">
+	<!-- Temporarily downgraded to warning because of a bug in the sniff which shouldn't break the build.
+		 https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1064 -->
+	<rule ref="WordPress.Arrays.ArrayIndentation.MultiLineArrayItemNotAligned">
+		<type>warning</type>
+	</rule>
+
+	<rule ref="WordPress.Arrays.ArrayDeclarationSpacing.ArrayItemNoNewLine">
 		<exclude-pattern>class.vartype.php</exclude-pattern>
 	</rule>
 
