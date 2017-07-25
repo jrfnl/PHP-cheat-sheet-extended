@@ -10,7 +10,7 @@
  * Only use those if you know what you are receiving and don't need variable typing info.
  *
  * @package xvardump
- * @author	Juliette Reinders Folmer, {@link http://www.adviesenzo.nl/ Advies en zo} -
+ * @author  Juliette Reinders Folmer, {@link http://www.adviesenzo.nl/ Advies en zo} -
  *  <xvardump@adviesenzo.nl>
  *
  * @version   1.7
@@ -265,7 +265,7 @@ function object_info( $obj, $escape, $short, $space ) {
 /**
  * Function to dump all defined variables.
  *
- * @uses	pr_var()
+ * @uses pr_var()
  */
 function dump_all() {
 	$var = get_defined_vars();

@@ -1030,69 +1030,69 @@ class VartypeTest extends Vartype {
 		/**
 		 * Arithmetic operations.
 		 */
-		'pre_increment'		=> array(
+		'pre_increment'     => array(
 			'title'         => '$x = ++$x',
 			'url'           => 'http://php.net/language.operators.increment',
 			'arg'           => '$x',
 			'function'      => '$r = ++$x; if ( is_int( $r ) ) { pr_int( $r ); } else if ( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'         => array(
-				'<p>Please take note: using the in-/decrementors on SplInt and SplFloat objects may give unexpected (inconsistent) results....</p>'
+				'<p>Please take note: using the in-/decrementors on SplInt and SplFloat objects may give unexpected (inconsistent) results....</p>',
 			),
 		),
-		'post_increment'		=> array(
+		'post_increment'    => array(
 			'title'         => '$x = $x++',
 			'url'           => 'http://php.net/language.operators.increment',
 			'arg'           => '$x',
 			'function'      => '$r = $x++; if ( is_int( $r ) ) { pr_int( $r ); } else if ( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'         => array(
-				'<p>Please take note: using the in-/decrementors on SplInt and SplFloat objects may give unexpected (inconsistent) results....</p>'
+				'<p>Please take note: using the in-/decrementors on SplInt and SplFloat objects may give unexpected (inconsistent) results....</p>',
 			),
 		),
-		'pre_decrement'		=> array(
+		'pre_decrement'     => array(
 			'title'         => '$x = --$x',
 			'url'           => 'http://php.net/language.operators.increment',
 			'arg'           => '$x',
 			'function'      => '$r = --$x; if ( is_int( $r ) ) { pr_int( $r ); } else if ( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'         => array(
-				'<p>Please take note: using the in-/decrementors on SplInt and SplFloat objects may give unexpected (inconsistent) results....</p>'
+				'<p>Please take note: using the in-/decrementors on SplInt and SplFloat objects may give unexpected (inconsistent) results....</p>',
 			),
 		),
-		'post_decrement'		=> array(
+		'post_decrement'    => array(
 			'title'         => '$x = $x--',
 			'url'           => 'http://php.net/language.operators.increment',
 			'arg'           => '$x',
 			'function'      => '$r = $x--; if ( is_int( $r ) ) { pr_int( $r ); } else if ( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'         => array(
-				'<p>Please take note: using the in-/decrementors on SplInt and SplFloat objects may give unexpected (inconsistent) results....</p>'
+				'<p>Please take note: using the in-/decrementors on SplInt and SplFloat objects may give unexpected (inconsistent) results....</p>',
 			),
 		),
 
 
-		'arithmetic_negate'		=> array(
+		'arithmetic_negate'   => array(
 			'title'         => '-$x',
 			'url'           => 'http://php.net/language.operators.arithmetic',
 			'arg'           => '$x',
 			'function'      => 'if ( ! is_array( $x ) && ( PHP_VERSION_ID > 50005 || ! is_object( $x ) ) ) { pr_var( -$x, \'\', true, true ); } else { trigger_error( \'Unsupported operand types\', E_USER_ERROR ); }',
 		),
-		'arithmetic_subtract'	=> array(
+		'arithmetic_subtract' => array(
 			'title'         => '$x&nbsp;-&nbsp;0',
 			'url'           => 'http://php.net/language.operators.arithmetic',
 			'arg'           => '$x',
 			'function'      => 'if ( ! is_array( $x ) && ( PHP_VERSION_ID > 50005 || ! is_object( $x ) ) ) { pr_var( $x - 0, \'\', true, true ); } else { trigger_error( \'Unsupported operand types\', E_USER_ERROR ); }',
 		),
-		'arithmetic_multiply'	=> array(
+		'arithmetic_multiply' => array(
 			'title'         => '$x&nbsp;*&nbsp;1',
 			'url'           => 'http://php.net/language.operators.arithmetic',
 			'arg'           => '$x',
 			'function'      => 'if ( ! is_array( $x ) && ( PHP_VERSION_ID > 50005 || ! is_object( $x ) ) ) { pr_var( $x * 1, \'\', true, true ); } else { trigger_error( \'Unsupported operand types\', E_USER_ERROR ); }',
 		),
-		'arithmetic_divide'		=> array(
+		'arithmetic_divide'   => array(
 			'title'         => '$x&nbsp;/&nbsp;1',
 			'url'           => 'http://php.net/language.operators.arithmetic',
 			'arg'           => '$x',
 			'function'      => 'if ( ! is_array( $x ) && ( PHP_VERSION_ID > 50005 || ! is_object( $x ) ) ) { pr_var( $x / 1, \'\', true, true ); } else { trigger_error( \'Unsupported operand types\', E_USER_ERROR ); }',
 		),
-		'arithmetic_modulus'	=> array(
+		'arithmetic_modulus'  => array(
 			'title'         => '$x&nbsp;%&nbsp;1',
 			'url'           => 'http://php.net/language.operators.arithmetic',
 			'arg'           => '$x',
@@ -1191,7 +1191,7 @@ class VartypeTest extends Vartype {
 			'arg'           => '$x',
 			'function'      => '$valid = preg_match( \'`^\w+$`u\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); }',
 			'notes'         => array(
-				'<p>What <code>\w</code> matches is locale dependent. The locale for these cheatsheets are set to <code>C</code>. Results with other locales will vary.</p>'
+				'<p>What <code>\w</code> matches is locale dependent. The locale for these cheatsheets are set to <code>C</code>. Results with other locales will vary.</p>',
 			),
 		),
 
@@ -1982,7 +1982,7 @@ else {
 
 		'string_casting'    => array(
 			'title'     => 'String casting',
-			'tests'	    => array(
+			'tests'     => array(
 				'settype_string',
 				'string',
 				'strval',
@@ -2107,7 +2107,7 @@ else {
 
 		'resource_tests'  => array(
 			'title'      => 'Resources',
-			'tests'	     => array(
+			'tests'      => array(
 				'is_resource',
 				'get_resource_type',
 			),
@@ -2122,7 +2122,7 @@ else {
 
 		'arithmetic' => array(
 			'title'     => 'Basic Arithmetic',
-			'tests'	    => array(
+			'tests'     => array(
 				'pre_increment',
 				'post_increment',
 				'pre_decrement',
@@ -2188,7 +2188,7 @@ else {
 	var $filter_test_group = array(
 		'filter_extension_bool_int_float'   => array(
 			'title'     => 'Filter Extension - bool/int/float',
-			'tests'	    => array(
+			'tests'     => array(
 				'filter_combined_bool_null',
 
 				'filter_combined_int_null',
@@ -2212,7 +2212,7 @@ else {
 
 		'filter_extension_strings'   => array(
 			'title'     => 'Filter Extension - string',
-			'tests'	    => array(
+			'tests'     => array(
 				'filter_combined_string_null',
 				'filter_combined_str_null_sanitize',
 				'filter_combined_str_null_sanitize_encode',

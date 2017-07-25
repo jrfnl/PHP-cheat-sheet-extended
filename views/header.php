@@ -19,7 +19,8 @@ if ( ! defined( 'APP_DIR' ) ) {
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <?php
-if ( isset( $GLOBALS['autogen'] ) && $GLOBALS['autogen'] === true ) : ?>
+if ( isset( $GLOBALS['autogen'] ) && $GLOBALS['autogen'] === true ) :
+?>
 	<!-- This static cheatsheet was AUTO-GENERATED with PHP <?php echo htmlspecialchars( PHP_VERSION, ENT_QUOTES, 'UTF-8' ), ' - ', date( 'r' ); ?>-->
 
 <?php
@@ -46,15 +47,18 @@ if ( isset( $type ) ) {
 <?php
 unset( $meta_title );
 
-if ( isset( $GLOBALS['type'] ) || isset( $GLOBALS['page'] ) ) : ?>
+if ( isset( $GLOBALS['type'] ) || isset( $GLOBALS['page'] ) ) :
+?>
 	<link type="text/css" rel="stylesheet" href="<?php echo BASE_URI; ?>page/jquery-css/jquery-ui<?php echo $GLOBALS['min']; ?>.css" />
 	<link type="text/css" rel="stylesheet" href="<?php echo BASE_URI; ?>page/jquery-css/jquery-ui.theme<?php echo $GLOBALS['min']; ?>.css" />
 <?php
-endif; ?>
+endif;
+?>
 	<link type="text/css" rel="stylesheet" href="<?php echo BASE_URI; ?>page/style<?php echo $GLOBALS['min']; ?>.css" />
 
 <?php
-if ( isset( $GLOBALS['type'] ) || isset( $GLOBALS['page'] ) ) : ?>
+if ( isset( $GLOBALS['type'] ) || isset( $GLOBALS['page'] ) ) :
+?>
 	<!-- jQuery via CDN with local fall-back -->
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script type="text/javascript">(window.jQuery) || document.write('\x3Cscript type="text/javascript" src="<?php echo BASE_URI; ?>page/jquery-css/jquery-1.11.2<?php echo $GLOBALS['min']; ?>.js">\x3C/script>')</script>
@@ -68,7 +72,8 @@ if ( isset( $GLOBALS['type'] ) || isset( $GLOBALS['page'] ) ) : ?>
 	<!-- custom js -->
 	<script type="text/javascript" src="<?php echo BASE_URI; ?>page/interaction<?php echo $GLOBALS['min']; ?>.js"></script>
 <?php
-endif; ?>
+endif;
+?>
 
 
 	<link rel="start" href="http://phpcheatsheets.com/index.php" />
@@ -78,49 +83,57 @@ endif; ?>
 
 </head>
 <?php
-if ( ! isset( $GLOBALS['autogen'] ) || $GLOBALS['autogen'] !== true ) : ?>
+if ( ! isset( $GLOBALS['autogen'] ) || $GLOBALS['autogen'] !== true ) :
+?>
 <body>
 <?php
-else : ?>
+else :
+?>
 <body class="static-archive">
 <?php
-endif; ?>
+endif;
+?>
 
 <div class="head">
 
 <?php
-if ( isset( $GLOBALS['type'] ) ) : ?>
+if ( isset( $GLOBALS['type'] ) ) :
+?>
 	<div id="too-much">
 		<a href="http://www.google.com/search?q=fluffy+animals&amp;tbm=isch" target="_blank"><img src="<?php echo BASE_URI; ?>page/images/jakobwesthoff_3231273333_2473ef9cdf_s.jpg" width="75" height="75" alt="Fluffy ElePHPant" /></a>
 		<p>Too much ?</p>
 		<p><a href="http://www.google.com/search?q=fluffy+animals&amp;tbm=isch" target="_blank">Take a break and rest your eyes</a>.</p>
 	</div>
 <?php
-endif; ?>
+endif;
+?>
 	<a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" class="forkme" title="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png">&nbsp;</a>
 
 	<h1><a href="<?php echo BASE_URI; ?>"><img src="<?php echo BASE_URI; ?>page/images/php-med-trans.png" width="95" height="51" alt="PHP" /> Cheatsheets</a></h1>
 
 <?php
-if ( isset( $GLOBALS['type'] ) || isset( $GLOBALS['page'] ) ) : ?>
+if ( isset( $GLOBALS['type'] ) || isset( $GLOBALS['page'] ) ) :
+?>
 	<div id="main-menu">
 		<ul>
-			<li><a href="<?php echo BASE_URI; ?>compare/" class="top-link<?php if ( isset( $GLOBALS['type'] ) && $GLOBALS['type'] === 'compare' ) { echo ' top-active'; } ?>">Variable Comparisons</a></li>
-			<li><a href="<?php echo BASE_URI; ?>arithmetic/" class="top-link<?php if ( isset( $GLOBALS['type'] ) && $GLOBALS['type'] === 'arithmetic' ) { echo ' top-active'; } ?>">Variable Arithmetics</a></li>
-			<li><a href="<?php echo BASE_URI; ?>test/" class="top-link<?php if ( isset( $GLOBALS['type'] ) && $GLOBALS['type'] === 'test' ) { echo ' top-active'; } ?>">Variable Testing</a></li>
-			<li><a href="<?php echo BASE_URI; ?>other-cheat-sheets/" class="top-link<?php if ( isset( $GLOBALS['page'] ) && $GLOBALS['page'] === 'other-cheat-sheets' ) { echo ' top-active'; } ?>">More cheatsheets</a></li>
-			<li class="top-link-small"><a href="<?php echo BASE_URI; ?>about/" class="top-link<?php if ( isset( $GLOBALS['page'] ) && $GLOBALS['page'] === 'about' ) { echo ' top-active'; } ?>">About</a></li>
+			<li><a href="<?php echo BASE_URI; ?>compare/" class="top-link<?php echo ( ( isset( $GLOBALS['type'] ) && $GLOBALS['type'] === 'compare' ) ? ' top-active' : '' ); ?>">Variable Comparisons</a></li>
+			<li><a href="<?php echo BASE_URI; ?>arithmetic/" class="top-link<?php echo ( ( isset( $GLOBALS['type'] ) && $GLOBALS['type'] === 'arithmetic' ) ? ' top-active' : '' ); ?>">Variable Arithmetics</a></li>
+			<li><a href="<?php echo BASE_URI; ?>test/" class="top-link<?php echo ( ( isset( $GLOBALS['type'] ) && $GLOBALS['type'] === 'test' ) ? ' top-active' : '' ); ?>">Variable Testing</a></li>
+			<li><a href="<?php echo BASE_URI; ?>other-cheat-sheets/" class="top-link<?php echo ( ( isset( $GLOBALS['page'] ) && $GLOBALS['page'] === 'other-cheat-sheets' ) ? ' top-active' : '' ); ?>">More cheatsheets</a></li>
+			<li class="top-link-small"><a href="<?php echo BASE_URI; ?>about/" class="top-link<?php echo ( ( isset( $GLOBALS['page'] ) && $GLOBALS['page'] === 'about' ) ? ' top-active' : '' ); ?>">About</a></li>
 		</ul>
 	</div>
 <?php
-endif; ?>
+endif;
+?>
 </div>
 
 <div class="content-wrapper">
 	<div class="content">
 
 <?php
-if ( isset( $GLOBALS['type'] ) || isset( $GLOBALS['page'] ) ) : ?>
+if ( isset( $GLOBALS['type'] ) || isset( $GLOBALS['page'] ) ) :
+?>
 	<h2><?php echo htmlspecialchars( $GLOBALS['page_title'], ENT_QUOTES, 'UTF-8' ); ?></h2>
 
 <?php

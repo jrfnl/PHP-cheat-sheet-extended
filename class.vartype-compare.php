@@ -185,7 +185,7 @@ class VartypeCompare extends Vartype {
 			'notes'         => array(
 				'<p><strong>Please note:</strong> <code>min() / max()</code> will evaluate a non-numeric string as 0 if compared to integer, but still return the string if it\'s seen as the numerically lowest/highest value.</p>',
 				'<p><code>max()</code> returns the numerically highest of the parameter values. If multiple values can be considered of the same size, the one that is listed first will be returned.<br />
-				 If <code>max()</code> is given multiple arrays, the longest array is returned. If all the arrays have the same length, <code>max()</code> will use lexicographic ordering to find the return value.</p>',
+				If <code>max()</code> is given multiple arrays, the longest array is returned. If all the arrays have the same length, <code>max()</code> will use lexicographic ordering to find the return value.</p>',
 			),
 		),
 	);

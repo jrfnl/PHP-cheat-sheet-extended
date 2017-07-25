@@ -193,9 +193,9 @@ class CheatsheetSitemap {
 	protected function order_entries() {
 		// Obtain a list of columns.
 		foreach ( $this->entries as $key => $info ) {
-		    $sort_order[ $key ] = $info['sort_order'];
-		    $prio[ $key ]       = $info['prio'];
-		    $url[ $key ]        = $info['url'];
+			$sort_order[ $key ] = $info['sort_order'];
+			$prio[ $key ]       = $info['prio'];
+			$url[ $key ]        = $info['url'];
 		}
 
 		// Sort the data with volume descending, edition ascending.
@@ -352,4 +352,4 @@ class CheatsheetSitemap {
 	}
 }
 
-new CheatsheetSitemap;
+new CheatsheetSitemap();
