@@ -42,6 +42,11 @@ In general, a balance is sought between significance and variety.
 
 ### Changelog:
 
+#### 1.3.7 (July 26 2017): PHP 7.2 beta 1 release
+* Renewed static sheets:
+	- Added static sheets for PHP 7.2.0beta1, 7.1.7, 7.0.21, 7.0.19, 7.0,14, 5.6.31
+	- Removed static sheet generation for PHP  7.0.12, 7.0.0, 5.6.30, 5.6.0, 5.2.9-2.
+
 #### 1.3.6 (March 23 2017)
 * Renewed static sheets:
 	- Added static sheets for PHP 7.1.3, 7.0.17, 7.0,12, 5.6.30

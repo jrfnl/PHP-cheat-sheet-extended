@@ -106,7 +106,7 @@ class Vartype {
 
 		// Create the actual test functions.
 		foreach ( $this->tests as $key => $array ) {
-			$this->tests[ $key ]['test'] = create_function( $array['arg'], $array['function'] );
+			$this->tests[ $key ]['test'] = @create_function( $array['arg'], $array['function'] );
 		}
 	}
 
