@@ -610,7 +610,7 @@ class VartypeTest extends Vartype {
 						Used on its own, it will show a warning if $array is not an array</li>
 				</ul>
 				<p>
-					This said, we can concluded that to avoid warnings and undesired results you will always have to use an <code>is_array()</code> first.<br />
+					This said, we can conclude that to avoid warnings and undesired results you will always have to use an <code>is_array()</code> first.<br />
 					Also note that <code>isset()</code> is faster than <code>array_key_exists()</code>, but as said above, will return false if no value has been assigned.
 				</p>',
 			),
