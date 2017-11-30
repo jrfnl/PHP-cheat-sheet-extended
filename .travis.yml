@@ -85,3 +85,5 @@ script:
     - if [[ "$SNIFF" == "1" ]]; then jscs .; fi
     # Check code style against custom ruleset.
     - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/bin/phpcs . --runtime-set ignore_warnings_on_exit 1; fi
+    # Test the build script.
+    - php -f "./bin/autogen-static-sheets.php" verbose=1
