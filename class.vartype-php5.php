@@ -25,7 +25,8 @@ class VartypePHP5 {
 	 * @var array $tests  Multi-dimensional array.
 	 */
 	public static $tests = array(
-		/**
+
+		/*
 		 * String comparison functions.
 		 *
 		 * @see class.vartype-compare.php
@@ -54,7 +55,7 @@ class VartypePHP5 {
 
 
 
-		/**
+		/*
 		 * Loose type juggling.
 		 *
 		 * @see class.vartype-test.php
@@ -121,7 +122,7 @@ class VartypePHP5 {
 		),
 
 
-		/**
+		/*
 		 * Some object related functions.
 		 *
 		 * @see class.vartype-test.php

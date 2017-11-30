@@ -25,7 +25,8 @@ class VartypePHP7 {
 	 * @var array $tests  Multi-dimensional array.
 	 */
 	public static $tests = array(
-		/**
+
+		/*
 		 * Functions where errors have been turned into exceptions.
 		 *
 		 * @see class.vartype-arithmetic.php
