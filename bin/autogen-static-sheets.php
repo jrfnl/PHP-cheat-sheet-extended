@@ -148,7 +148,7 @@ function fix_content( $content ) {
 		7  => '<th>array()<br />					</th>',
 		8  => 'array()<br />',
 		9  => '<t$1$2>array()<br /></t$1>',
-		10 => '<option value="live">PHP 5.6.31</option>', // IMPORTANT! Change this if the PHP version on the server changes!!
+		10 => '<option value="live">PHP 5.6.32</option>', // IMPORTANT! Change this if the PHP version on the server changes!!
 		12 => '<a href="http://$1/index.php?page=$2&amp;phpversion=php' . PHP_VERSION . '" class="top-link$3">',
 		13 => '[<a href="$1">$2</a>]',
 		14 => '<a href="$1"',
