@@ -30,9 +30,9 @@ matrix:
     - php: '5.6'
       env: GTEPHPFIVEFOUR=1
     - php: '7.0'
-      env: GTEPHPFIVEFOUR=1 SNIFF=1
-    - php: '7.1'
       env: GTEPHPFIVEFOUR=1
+    - php: '7.1'
+      env: GTEPHPFIVEFOUR=1 SNIFF=1
     - php: '7.2'
       env: GTEPHPFIVEFOUR=1
     - php: 'hhvm'
@@ -53,8 +53,7 @@ before_install:
     # Install CodeSniffer for WordPress Coding Standards checks.
     - if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/squizlabs/PHP_CodeSniffer.git $PHPCS_DIR; fi
     # Install WordPress Coding Standards.
-    # Temporarily set to `develop` to benefit from PHPCS 3.x compatibility. Move back to `master` once released.
-    - if [[ "$SNIFF" == "1" ]]; then git clone -b develop --depth 1 https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git $WPCS_DIR; fi
+    - if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git $WPCS_DIR; fi
     # Install PHPCompatibility Standards in a subdirectory of WPCS so we only need to run installed_paths once.
     - if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/wimg/PHPCompatibility.git $PHPCOMPAT_DIR; fi
     # Hop into CodeSniffer directory.
