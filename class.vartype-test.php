@@ -83,7 +83,7 @@ class VartypeTest extends Vartype {
 		),
 
 
-		/**
+		/*
 		 * Test is_...() functions
 		 */
 		'is_array' => array(
@@ -182,7 +182,7 @@ class VartypeTest extends Vartype {
 
 
 
-		/**
+		/*
 		 * Type casting.
 		 */
 		'array' => array(
@@ -235,7 +235,7 @@ class VartypeTest extends Vartype {
 		),
 
 
-		/**
+		/*
 		 * ...val()
 		 */
 		'floatval' => array(
@@ -258,7 +258,7 @@ class VartypeTest extends Vartype {
 		),
 
 
-		/**
+		/*
 		 * Loose type juggling.
 		 */
 		'juggle_int' => array(
@@ -313,7 +313,7 @@ class VartypeTest extends Vartype {
 		),
 
 
-		/**
+		/*
 		 * Test settype()
 		 */
 		'settype_array' => array(
@@ -364,7 +364,7 @@ class VartypeTest extends Vartype {
 		),
 
 
-		/**
+		/*
 		 * Tests using CastToType class.
 		 *
 		 * @see https://github.com/jrfnl/PHP-cast-to-type.git
@@ -491,7 +491,7 @@ class VartypeTest extends Vartype {
 
 
 
-		/**
+		/*
 		 * Absolute numbers
 		 */
 		'abs' => array(
@@ -502,7 +502,7 @@ class VartypeTest extends Vartype {
 		),
 
 
-		/**
+		/*
 		 * Some rounding functions
 		 */
 		'floor' => array(
@@ -527,7 +527,7 @@ class VartypeTest extends Vartype {
 
 
 
-		/**
+		/*
 		 * Some string related functions
 		 */
 		'empty' => array(
@@ -578,7 +578,7 @@ class VartypeTest extends Vartype {
 
 
 
-		/**
+		/*
 		 * Some array related functions
 		 */
 		'count' => array(
@@ -610,7 +610,7 @@ class VartypeTest extends Vartype {
 						Used on its own, it will show a warning if $array is not an array</li>
 				</ul>
 				<p>
-					This said, we can concluded that to avoid warnings and undesired results you will always have to use an <code>is_array()</code> first.<br />
+					This said, we can conclude that to avoid warnings and undesired results you will always have to use an <code>is_array()</code> first.<br />
 					Also note that <code>isset()</code> is faster than <code>array_key_exists()</code>, but as said above, will return false if no value has been assigned.
 				</p>',
 			),
@@ -732,7 +732,7 @@ class VartypeTest extends Vartype {
 		),
 
 
-		/**
+		/*
 		 * Some object related functions.
 		 */
 		'is_a' => array(
@@ -768,7 +768,7 @@ class VartypeTest extends Vartype {
 
 
 
-		/**
+		/*
 		 * Resource specific functions.
 		 */
 		'get_resource_type' => array(
@@ -783,7 +783,7 @@ class VartypeTest extends Vartype {
 
 
 
-		/**
+		/*
 		 * Test null comparisons.
 		 */
 		'null_cmp_loose' => array(
@@ -829,7 +829,7 @@ class VartypeTest extends Vartype {
 		),
 
 
-		/**
+		/*
 		 * Boolean comparisons.
 		 */
 		'bool_cmp_true_loose' => array(
@@ -957,7 +957,7 @@ class VartypeTest extends Vartype {
 		),
 
 
-		/**
+		/*
 		 * Comparisons with int 0.
 		 */
 		'int_cmp_gt0' => array(
@@ -1002,7 +1002,7 @@ class VartypeTest extends Vartype {
 		),
 
 
-		/**
+		/*
 		 * Comparisons with empty string.
 		 */
 		'str_cmp_empty_loose' => array(
@@ -1027,7 +1027,7 @@ class VartypeTest extends Vartype {
 		),
 
 
-		/**
+		/*
 		 * Arithmetic operations.
 		 */
 		'pre_increment'     => array(
@@ -1100,8 +1100,7 @@ class VartypeTest extends Vartype {
 		),
 
 
-
-		/**
+		/*
 		 * Tests using preg_match().
 		 */
 		'preg_int_pos' => array(
@@ -1238,8 +1237,7 @@ class VartypeTest extends Vartype {
 		),
 
 
-
-		/**
+		/*
 		 * CTYPE extension.
 		 */
 		'ctype_alnum' => array(
@@ -1368,7 +1366,7 @@ class VartypeTest extends Vartype {
 
 
 
-		/**
+		/*
 		 * FILTER extension.
 		 */
 

@@ -9,7 +9,15 @@
 
 	<!-- PHP cross-version compatibility -->
 	<config name="testVersion" value="4.3-99.0"/>
-	<rule ref="PHPCompatibility"/>
+	<rule ref="PHPCompatibility">
+		<!-- Exclude notices about constants which are back-filled. -->
+		<exclude name="PHPCompatibility.PHP.NewConstants.php_eolFound"/>
+		<exclude name="PHPCompatibility.PHP.NewConstants.php_version_idFound"/>
+		<exclude name="PHPCompatibility.PHP.NewConstants.e_strictFound"/>
+		<exclude name="PHPCompatibility.PHP.NewConstants.e_recoverable_errorFound"/>
+		<exclude name="PHPCompatibility.PHP.NewConstants.e_deprecatedFound"/>
+		<exclude name="PHPCompatibility.PHP.NewConstants.e_user_deprecatedFound"/>
+	</rule>
 
 	<!-- Selectively exclude certain files from certain checks after manual verification. -->
 	<!-- These issues are either accompanied by a work-around... -->
@@ -40,6 +48,10 @@
 	</rule>
 	<rule ref="PHPCompatibility.PHP.ValidIntegers.HexNumericStringFound">
 		<exclude-pattern>include/vars-to-test.php</exclude-pattern>
+	</rule>
+	<!-- Sitemaps are being generated in PHP 5.6. -->
+	<rule ref="PHPCompatibility.PHP.NewConstants.sort_naturalFound">
+		<exclude-pattern>bin/generate-sitemaps.php</exclude-pattern>
 	</rule>
 
 
@@ -78,6 +90,13 @@
 		<exclude name="Squiz.Commenting.InlineComment.SpacingAfter"/>-->
 
 		<exclude name="Squiz.Commenting.LongConditionClosingComment"/>
+
+		<!-- Declaring scope would break PHP4 compatibility. -->
+		<exclude name="Squiz.Scope.MemberVarScope"/>
+		<exclude name="Squiz.Scope.MethodScope"/>
+
+		<!-- More PHP4 compatibility. -->
+		<exclude name="WordPress.PHP.RestrictedPHPFunctions.create_function_create_function"/>
 
 	</rule>
 

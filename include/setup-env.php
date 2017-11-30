@@ -42,6 +42,11 @@ if ( ! defined( 'PHP_VERSION_ID' ) ) {
 	unset( $version );
 }
 
+// Make sure EOL is available.
+if ( ! defined( 'PHP_EOL' ) ) {
+	define( 'PHP_EOL', "\n" );
+}
+
 // Use C locale for Ctype functions.
 setlocale( LC_CTYPE, 'C' );
 
