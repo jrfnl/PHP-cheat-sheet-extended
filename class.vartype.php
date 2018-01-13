@@ -106,6 +106,8 @@ class Vartype {
 
 		// Create the actual test functions.
 		foreach ( $this->tests as $key => $array ) {
+			// The cheatsheets are still compatible with PHP < 5.3, so there is no way round this.
+			// phpcs:ignore PHPCompatibility.PHP.DeprecatedFunctions.create_functionDeprecated,WordPress.PHP.RestrictedPHPFunctions.create_function_create_function,Generic.PHP.NoSilencedErrors.Discouraged
 			$this->tests[ $key ]['test'] = @create_function( $array['arg'], $array['function'] );
 		}
 	}
@@ -262,12 +264,15 @@ class Vartype {
 			'r', // Type resource.
 			'p', // Type SPL_Types object.
 		);
+
+		// phpcs:disable WordPress.Arrays.ArrayDeclarationSpacing.ArrayItemNoNewLine -- for readability.
 		$secondary_order = array(
 			'e', // Empty.
 			'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
 			'a', 'b', 'c', 'd', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
 			'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
 		);
+		// phpcs:enable WordPress.Arrays.ArrayDeclarationSpacing.ArrayItemNoNewLine
 
 		$primary_a = array_search( substr( $var_a, 0, 1 ), $primary_order, true );
 		$primary_b = array_search( substr( $var_b, 0, 1 ), $primary_order, true );

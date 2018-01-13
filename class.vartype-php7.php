@@ -3,6 +3,10 @@
  * PHP 7+ tests.
  *
  * @package PHPCheatsheets
+ *
+ * Select PHPCS exclusions: this file is only included when on PHP 7+.
+ * @phpcs:disable PHPCompatibility.PHP.NewFunctions.intdivFound
+ * @phpcs:disable PHPCompatibility.PHP.NewClasses.errorFound
  */
 
 // Prevent direct calls to this file.

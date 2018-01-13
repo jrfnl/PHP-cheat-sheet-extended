@@ -179,6 +179,7 @@ function fix_content( $content ) {
 
 		if ( PHP_VERSION_ID >= 50100 ) {
 			foreach ( $regex_search as $key => $regex ) {
+				// phpcs:ignore PHPCompatibility.PHP.NewFunctionParameters.preg_replace_countFound -- wrapped in version check.
 				$content = preg_replace( $regex, $regex_replace[ $key ], $content, -1, $count );
 
 				if ( $count > 0 ) {

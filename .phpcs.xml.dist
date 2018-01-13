@@ -22,26 +22,8 @@
 	</rule>
 
 	<!-- Selectively exclude certain files from certain checks after manual verification. -->
-	<!-- These issues are either accompanied by a work-around... -->
-	<rule ref="PHPCompatibility.PHP.NewFunctionParameters.preg_replace_countFound">
-		<exclude-pattern>bin/autogen-static-sheets.php</exclude-pattern>
-	</rule>
-	<rule ref="PHPCompatibility.PHP.NewFunctions.filter_varFound">
-		<exclude-pattern>class.vartype-php5.php</exclude-pattern>
-	</rule>
-	<rule ref="PHPCompatibility.PHP.NewFunctions.filter_var_arrayFound">
-		<exclude-pattern>class.vartype-php5.php</exclude-pattern>
-	</rule>
-	<rule ref="PHPCompatibility.PHP.NewFunctions.intdivFound">
-		<exclude-pattern>class.vartype-php7.php</exclude-pattern>
-	</rule>
-	<rule ref="PHPCompatibility.PHP.NewClasses.exceptionFound">
-		<exclude-pattern>class.vartype-php5.php</exclude-pattern>
-	</rule>
-	<rule ref="PHPCompatibility.PHP.NewClasses.errorFound">
-		<exclude-pattern>class.vartype-php7.php</exclude-pattern>
-	</rule>
-	<!-- ... or explicitely part of the cheatsheets to demonstrate behaviour changes in PHP. -->
+	<!-- These are not issues, but explicitely part of the cheatsheets
+	     to demonstrate behaviour changes in PHP. -->
 	<rule ref="PHPCompatibility.PHP.NewMagicMethods.__tostringFound">
 		<exclude-pattern>include/functions.php</exclude-pattern>
 	</rule>
@@ -86,10 +68,6 @@
 		<!-- Declaring scope would break PHP4 compatibility. -->
 		<exclude name="Squiz.Scope.MemberVarScope"/>
 		<exclude name="Squiz.Scope.MethodScope"/>
-
-		<!-- More PHP4 compatibility. -->
-		<exclude name="WordPress.PHP.RestrictedPHPFunctions.create_function_create_function"/>
-
 	</rule>
 
 	<rule ref="WordPress.Arrays.MultipleStatementAlignment">
@@ -104,14 +82,6 @@
 
 		<!-- Partially addressed, not going to change this all now. Wait for refactor. -->
 		<exclude name="WordPress.Arrays.MultipleStatementAlignment.DoubleArrowNotAligned"/>
-	</rule>
-
-	<rule ref="WordPress.Arrays.ArrayDeclarationSpacing.ArrayItemNoNewLine">
-		<exclude-pattern>class.vartype.php</exclude-pattern>
-	</rule>
-
-	<rule ref="Squiz.PHP.DisallowMultipleAssignments">
-		<exclude-pattern>/include/vars-to-test.php</exclude-pattern>
 	</rule>
 
 

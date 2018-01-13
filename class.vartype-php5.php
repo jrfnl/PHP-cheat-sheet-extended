@@ -3,6 +3,13 @@
  * PHP 5+ tests.
  *
  * @package PHPCheatsheets
+ *
+ * Select PHPCS exclusions: this file is only included when on PHP 5+.
+ * @phpcs:disable PHPCompatibility.PHP.NewClasses.exceptionFound
+ *
+ * Select PHPCS exclusions: the calls to these functions are wrapped in a function_exists() check.
+ * @phpcs:disable PHPCompatibility.PHP.NewFunctions.filter_varFound
+ * @phpcs:disable PHPCompatibility.PHP.NewFunctions.filter_var_arrayFound
  */
 
 // Prevent direct calls to this file.
