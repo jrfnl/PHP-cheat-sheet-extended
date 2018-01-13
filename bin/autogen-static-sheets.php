@@ -260,9 +260,16 @@ unset( $type, $page_title, $class, $file, $current_tests, $tab, $static_page, $f
 
 ignore_user_abort( false );
 
+$exit_code = ( $failure > 0 ) ? $failure : 0;
+
 if ( $GLOBALS['verbose'] > 0 ) {
-	echo "\nexit code";
-	var_dump( ( ( $success * 10 ) + $failure ) );
+	var_dump(
+		array(
+			'success'  => $success,
+			'failures' => $failure,
+		)
+	);
+	echo "\nexit code" . $exit_code;
 }
 
-exit( ( $success * 10 ) + $failure );
+exit( $exit_code );
