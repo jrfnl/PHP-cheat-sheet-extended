@@ -38,7 +38,7 @@ class VartypePHP7 {
 		'modulus'        => array(
 			'function'      => 'VartypePHP7::do_modulus( $a, $b );',
 		),
-		'intdiv'           => array(
+		'intdiv'         => array(
 			'function'      => 'VartypePHP7::do_intdiv( $a, $b );',
 		),
 	);

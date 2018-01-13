@@ -253,7 +253,7 @@ class Vartype {
 	 * @return int
 	 */
 	function sort_test_data( $var_a, $var_b ) {
-		$primary_order   = array(
+		$primary_order = array(
 			'n', // Type null.
 			'b', // Type boolean.
 			'i', // Type integer.

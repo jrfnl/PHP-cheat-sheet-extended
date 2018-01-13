@@ -13,7 +13,7 @@ if ( ! defined( 'APP_DIR' ) ) {
 }
 
 
-include_once APP_DIR . '/class.vartype.php';
+require_once APP_DIR . '/class.vartype.php';
 
 /**
  * Variable comparison tests.
@@ -61,31 +61,31 @@ class VartypeCompare extends Vartype {
 			'arg'           => '$a, $b',
 			'function'      => 'pr_bool( $a <> $b );',
 		),
-		'not_equal_strict'  => array(
+		'not_equal_strict' => array(
 			'title'         => '!==',
 			'url'           => 'http://php.net/language.operators.comparison',
 			'arg'           => '$a, $b',
 			'function'      => 'pr_bool( $a !== $b );',
 		),
-		'less_than'            => array(
+		'less_than'     => array(
 			'title'         => '&lt;',
 			'url'           => 'http://php.net/language.operators.comparison',
 			'arg'           => '$a, $b',
 			'function'      => 'pr_bool( $a < $b );',
 		),
-		'greater_than'            => array(
+		'greater_than'  => array(
 			'title'         => '&gt;',
 			'url'           => 'http://php.net/language.operators.comparison',
 			'arg'           => '$a, $b',
 			'function'      => 'pr_bool( $a > $b );',
 		),
-		'less_than_or_equal'           => array(
+		'less_than_or_equal' => array(
 			'title'         => '&lt;=',
 			'url'           => 'http://php.net/language.operators.comparison',
 			'arg'           => '$a, $b',
 			'function'      => 'pr_bool( $a <= $b );',
 		),
-		'greater_than_or_equal'           => array(
+		'greater_than_or_equal' => array(
 			'title'         => '&gt;=',
 			'url'           => 'http://php.net/language.operators.comparison',
 			'arg'           => '$a, $b',
@@ -93,7 +93,7 @@ class VartypeCompare extends Vartype {
 		),
 
 		// Will be removed from $tests property from constructor if not on PHP 7+ to prevent parse errors.
-		'spaceship'           => array(
+		'spaceship'     => array(
 			'title'         => '&lt;=&gt;',
 			'url'           => 'http://php.net/language.operators.comparison',
 			'arg'           => '$a, $b',

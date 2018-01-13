@@ -33,7 +33,7 @@ if ( ( isset( $_GET['page'], $_GET['phpversion'] ) && in_array( $_GET['page'], a
 }
 
 
-include_once APP_DIR . '/include/setup-env.php';
+require_once APP_DIR . '/include/setup-env.php';
 
 /**
  * Determine what has been requested.

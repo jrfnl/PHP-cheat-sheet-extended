@@ -13,7 +13,7 @@ if ( ! defined( 'APP_DIR' ) ) {
 }
 
 
-include_once APP_DIR . '/class.vartype.php';
+require_once APP_DIR . '/class.vartype.php';
 
 /**
  * Variable testing tests.
@@ -33,14 +33,14 @@ class VartypeTest extends Vartype {
 	 *                    - Notes     Array of notes on this test
 	 */
 	var $tests = array(
-		'gettype'       => array(
+		'gettype' => array(
 			'title'         => 'gettype()',
 			'url'           => 'http://php.net/gettype',
 			'arg'           => '$x',
 			'function'      => 'pr_str( gettype( $x ) );',
 		),
 
-		'isset'         => array(
+		'isset' => array(
 			'title'         => 'isset()',
 			'url'           => 'http://php.net/isset',
 			'arg'           => '$x',
@@ -61,22 +61,22 @@ class VartypeTest extends Vartype {
 
 
 
-		'var'           => array(
+		'var' => array(
 			'title'         => '$x',
 			'arg'           => '$x',
 			'function'      => 'pr_bool( $x );',
 		),
-		'not_var'       => array(
+		'not_var' => array(
 			'title'         => '!$x',
 			'arg'           => '$x',
 			'function'      => 'pr_bool( ! $x );',
 		),
-		'if_var'        => array(
+		'if_var' => array(
 			'title'         => 'if(&nbsp;$x&nbsp;) {..}',
 			'arg'           => '$x',
 			'function'      => 'if ( $x ) { pr_bool( true ); } else { pr_bool( false ); }',
 		),
-		'if_not_var'    => array(
+		'if_not_var' => array(
 			'title'         => 'if(&nbsp;!&nbsp;$x&nbsp;) {..}',
 			'arg'           => '$x',
 			'function'      => 'if ( ! $x ) { pr_bool( true ); } else { pr_bool( false ); }',
@@ -1030,7 +1030,7 @@ class VartypeTest extends Vartype {
 		/*
 		 * Arithmetic operations.
 		 */
-		'pre_increment'     => array(
+		'pre_increment' => array(
 			'title'         => '$x = ++$x',
 			'url'           => 'http://php.net/language.operators.increment',
 			'arg'           => '$x',
@@ -1039,7 +1039,7 @@ class VartypeTest extends Vartype {
 				'<p>Please take note: using the in-/decrementors on SplInt and SplFloat objects may give unexpected (inconsistent) results....</p>',
 			),
 		),
-		'post_increment'    => array(
+		'post_increment' => array(
 			'title'         => '$x = $x++',
 			'url'           => 'http://php.net/language.operators.increment',
 			'arg'           => '$x',
@@ -1048,7 +1048,7 @@ class VartypeTest extends Vartype {
 				'<p>Please take note: using the in-/decrementors on SplInt and SplFloat objects may give unexpected (inconsistent) results....</p>',
 			),
 		),
-		'pre_decrement'     => array(
+		'pre_decrement' => array(
 			'title'         => '$x = --$x',
 			'url'           => 'http://php.net/language.operators.increment',
 			'arg'           => '$x',
@@ -1057,7 +1057,7 @@ class VartypeTest extends Vartype {
 				'<p>Please take note: using the in-/decrementors on SplInt and SplFloat objects may give unexpected (inconsistent) results....</p>',
 			),
 		),
-		'post_decrement'    => array(
+		'post_decrement' => array(
 			'title'         => '$x = $x--',
 			'url'           => 'http://php.net/language.operators.increment',
 			'arg'           => '$x',
@@ -1068,7 +1068,7 @@ class VartypeTest extends Vartype {
 		),
 
 
-		'arithmetic_negate'   => array(
+		'arithmetic_negate' => array(
 			'title'         => '-$x',
 			'url'           => 'http://php.net/language.operators.arithmetic',
 			'arg'           => '$x',
@@ -1086,13 +1086,13 @@ class VartypeTest extends Vartype {
 			'arg'           => '$x',
 			'function'      => 'if ( ! is_array( $x ) && ( PHP_VERSION_ID > 50005 || ! is_object( $x ) ) ) { pr_var( $x * 1, \'\', true, true ); } else { trigger_error( \'Unsupported operand types\', E_USER_ERROR ); }',
 		),
-		'arithmetic_divide'   => array(
+		'arithmetic_divide' => array(
 			'title'         => '$x&nbsp;/&nbsp;1',
 			'url'           => 'http://php.net/language.operators.arithmetic',
 			'arg'           => '$x',
 			'function'      => 'if ( ! is_array( $x ) && ( PHP_VERSION_ID > 50005 || ! is_object( $x ) ) ) { pr_var( $x / 1, \'\', true, true ); } else { trigger_error( \'Unsupported operand types\', E_USER_ERROR ); }',
 		),
-		'arithmetic_modulus'  => array(
+		'arithmetic_modulus' => array(
 			'title'         => '$x&nbsp;%&nbsp;1',
 			'url'           => 'http://php.net/language.operators.arithmetic',
 			'arg'           => '$x',
@@ -1387,7 +1387,7 @@ class VartypeTest extends Vartype {
 		),
 		'filter_combined_bool' => array(
 			'title'         => 'filter_var (&hellip;)',
-			'tooltip' => '
+			'tooltip'       => '
 if( ! is_array( $x ) ) {
 	filter_var( $x, FILTER_VALIDATE_BOOLEAN );
 }
@@ -1401,7 +1401,7 @@ else {
 		),
 		'filter_combined_bool_null' => array(
 			'title'         => 'filter_var (&hellip;)',
-			'tooltip' => '
+			'tooltip'       => '
 if( ! is_array( $x ) ) {
 	filter_var( $x, FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE );
 }
@@ -1774,7 +1774,7 @@ else {
 	 */
 	var $test_groups = array(
 
-		'general'    => array(
+		'general'        => array(
 			'title'     => 'General typing',
 			'tests'     => array(
 				'gettype',
@@ -1793,7 +1793,7 @@ else {
 			'target'    => null,
 		),
 
-		'type_testing'  => array(
+		'type_testing'   => array(
 			'title'     => 'is_&hellip;()',
 			'tests'     => array(
 				'gettype',
@@ -1824,7 +1824,7 @@ else {
 		),
 
 
-		'null_tests'       => array(
+		'null_tests'     => array(
 			'title'     => 'Null',
 			'tests'     => array(
 				'settype_null',
@@ -1851,7 +1851,7 @@ else {
 		),
 
 
-		'boolean_tests'       => array(
+		'boolean_tests'  => array(
 			'title'     => 'Boolean',
 			'tests'     => array(
 				'settype_bool',
@@ -1885,7 +1885,7 @@ else {
 		),
 
 
-		'integer_tests'    => array(
+		'integer_tests'  => array(
 			'title'     => 'Integers',
 			'tests'     => array(
 				'settype_int',
@@ -1915,7 +1915,7 @@ else {
 		),
 
 
-		'float_tests'      => array(
+		'float_tests'    => array(
 			'title'     => 'Floats',
 			'tests'     => array(
 				'settype_float',
@@ -1943,7 +1943,7 @@ else {
 		),
 
 
-		'numeric_tests'    => array(
+		'numeric_tests'  => array(
 			'title'     => 'Numeric tests',
 			'tests'     => array(
 				'is_numeric',
@@ -1978,7 +1978,7 @@ else {
 		),
 
 
-		'string_casting'    => array(
+		'string_casting' => array(
 			'title'     => 'String casting',
 			'tests'     => array(
 				'settype_string',
@@ -1998,7 +1998,7 @@ else {
 		),
 
 
-		'string_tests'    => array(
+		'string_tests'   => array(
 			'title'     => 'String tests',
 			'tests'     => array(
 				'is_string',
@@ -2034,7 +2034,7 @@ else {
 		),
 
 
-		'array_casting'     => array(
+		'array_casting'  => array(
 			'title'     => 'Array casting',
 			'tests'     => array(
 				'settype_array',
@@ -2050,7 +2050,7 @@ else {
 		),
 
 
-		'array_tests'     => array(
+		'array_tests'    => array(
 			'title'     => 'Array testing',
 			'tests'     => array(
 				'is_array',
@@ -2079,7 +2079,7 @@ else {
 		),
 
 
-		'object_tests'     => array(
+		'object_tests'   => array(
 			'title'     => 'Objects',
 			'tests'     => array(
 				'settype_object',
@@ -2103,9 +2103,9 @@ else {
 		),
 
 
-		'resource_tests'  => array(
-			'title'      => 'Resources',
-			'tests'      => array(
+		'resource_tests' => array(
+			'title'     => 'Resources',
+			'tests'     => array(
 				'is_resource',
 				'get_resource_type',
 			),
@@ -2118,7 +2118,7 @@ else {
 		),
 
 
-		'arithmetic' => array(
+		'arithmetic'     => array(
 			'title'     => 'Basic Arithmetic',
 			'tests'     => array(
 				'pre_increment',
@@ -2150,7 +2150,7 @@ else {
 	 * @var array $ctype_test_group
 	 */
 	var $ctype_test_group = array(
-		'ctype_extension'      => array(
+		'ctype_extension' => array(
 			'title'     => 'CType Extension',
 			'tests'     => array(
 				'ctype_digit',
@@ -2184,7 +2184,7 @@ else {
 	 * @var array $ctype_test_group
 	 */
 	var $filter_test_group = array(
-		'filter_extension_bool_int_float'   => array(
+		'filter_extension_bool_int_float' => array(
 			'title'     => 'Filter Extension - bool/int/float',
 			'tests'     => array(
 				'filter_combined_bool_null',
@@ -2208,7 +2208,7 @@ else {
 			'target'    => '',
 		),
 
-		'filter_extension_strings'   => array(
+		'filter_extension_strings' => array(
 			'title'     => 'Filter Extension - string',
 			'tests'     => array(
 				'filter_combined_string_null',

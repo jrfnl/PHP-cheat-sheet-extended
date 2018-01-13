@@ -35,7 +35,7 @@ else {
 // One-up as we're in /bin.
 define( 'APP_DIR', dirname( dirname( __FILE__ ) ) );
 
-include_once APP_DIR . '/include/setup-env.php';
+require_once APP_DIR . '/include/setup-env.php';
 
 // Overrule some variables.
 $min     = '.min';
@@ -137,9 +137,9 @@ function fix_content( $content ) {
 		// Make chosen PHP version persistent.
 		12 => '`<a href="http://([a-z\.-]+)/(arithmetic|compare|test)/" class="top-link(?: top-active)?">`',
 		// Make sure any potential links to php.net are properly linked.
-		13  => '`\[(http://php\.net/manual/([^\]]+))\]`',
+		13 => '`\[(http://php\.net/manual/([^\]]+))\]`',
 		// HTML attributes should be using double quotes.
-		14  => '`<a href=\'([^\']+)\'`',
+		14 => '`<a href=\'([^\']+)\'`',
 	);
 
 	$regex_replace = array(
