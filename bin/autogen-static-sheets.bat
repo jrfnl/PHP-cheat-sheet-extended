@@ -52,7 +52,6 @@ IF "%_SITEMAPS_SCRIPT_LOCATION%" == "" SET "_SITEMAPS_SCRIPT_LOCATION=./path/to/
 
 :: Start the timer, initialize the counters
 SET start=%time%
-SET _FILE_SUCCESS=0
 SET _FILE_FAILURE=0
 SET _PHP_SUCCESS=0
 SET _PHP_FAILURE=0
@@ -235,12 +234,12 @@ ECHO ===========================================
 GOTO :END
 
 
-:: This will work as long as there are less than 10 files to be written. If this ever would become more
-:: the logic for the counters has to be revisited.
 :KEEP_COUNT
 IF %ERRORLEVEL% GTR 0 (
-	SET /A "_FILE_SUCCESS+=(%ERRORLEVEL% / 10)"
-	SET /A "_FILE_FAILURE+=(%ERRORLEVEL% %% 10)"
+	SET /A "_FILE_FAILURE+=%ERRORLEVEL%"
+	SET /A "_PHP_SUCCESS+=1"
+)
+IF %ERRORLEVEL% == 0 (
 	SET /A "_PHP_SUCCESS+=1"
 )
 GOTO :EOF
@@ -273,7 +272,7 @@ IF %_FILE_FAILURE% GTR 0 (
 ECHO(
 ECHO(
 ECHO +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-ECHO SUCCESSFULLY generated %_FILE_SUCCESS% files in %_PHP_SUCCESS% PHP flavors. %_FILE_FAIL_MSG%
+ECHO SUCCESSFULLY generated files in %_PHP_SUCCESS% PHP flavors. %_FILE_FAIL_MSG%
 IF %_PHP_FAILURE% GTR 0 (
 	ECHO PHP flavors ^(versions^) requested, but NOT FOUND on your system: %_PHP_FAILURE%.
 )
