@@ -72,21 +72,21 @@ function get_var( $var, $title = '', $escape = true, $short = false, $space = ''
  * values of the associated CONSTANTS at the top of this file.
  *
  * @param mixed  $var      The variable to print the debug info for.
- * @param string $title    (optional) If set, prefaces the debug info with
+ * @param string $title    Optional. If set, prefaces the debug info with
  *                         a header containing this title.
  *                         Useful if you want to print several states of the
  *                         same variable and you want to keep track of which state
  *                         you are at.
- * @param bool   $escape   (optional) Whether or not to escape html entities in
+ * @param bool   $escape   Optional. Whether or not to escape html entities in
  *                         the $var.
  *                         Useful if the $var contains html and you want to see
  *                         the source value.
  *                         Defaults to true.
- * @param bool   $short    (optional) Whether to limit the debug info to color coding.
+ * @param bool   $short    Optional. Whether to limit the debug info to color coding.
  *                         Defaults to false.
- * @param string $space    (optional) Internal variable needed to create the proper
+ * @param string $space    Optional. Internal variable needed to create the proper
  *                         spacing for display of arrays and objects.
- * @param bool   $in_array (optional) Internal pointer for whether or not to use
+ * @param bool   $in_array Optional. Internal pointer for whether or not to use
  *                         breaks when using short annotation which would give issues
  *                         when displaying arrays.
  *
@@ -226,9 +226,11 @@ function pr_var( $var, $title = '', $escape = true, $short = false, $space = '',
  * Internal function to print debug info on an object.
  *
  * @param object $obj    Object to print debug info on.
- * @param bool   $escape @see pr_var().
- * @param bool   $short  @see pr_var().
- * @param string $space  @see pr_var().
+ * @param bool   $escape Whether or not to escape html entities in
+ *                       the $var. {@see pr_var()}.
+ * @param bool   $short  Whether to limit the debug info to color coding. {@see pr_var()}.
+ * @param string $space  Internal variable needed to create the proper spacing
+ *                       for display of arrays and objects. {@see pr_var()}.
  *
  * @internal
  * @uses pr_var()

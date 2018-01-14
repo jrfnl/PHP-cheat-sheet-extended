@@ -161,6 +161,7 @@ $extra_variables['string_tests'] = array(
 	DO NOT change this to a neater version with two assignments!!!
 	If you do, for some obscure reason it breaks the PHP 5.0.x tests cheatsheet.
  */
+// phpcs:ignore Squiz.PHP.DisallowMultipleAssignments -- see comment above.
 $extra_variables['object_tests'] = $extra_variables['array_tests'] = array(
 	'o1'  => new TestObject(),
 );

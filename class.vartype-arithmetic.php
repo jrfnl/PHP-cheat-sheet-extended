@@ -13,7 +13,7 @@ if ( ! defined( 'APP_DIR' ) ) {
 }
 
 
-include_once APP_DIR . '/class.vartype-compare.php';
+require_once APP_DIR . '/class.vartype-compare.php';
 
 /**
  * Variable Arithmetic tests.
@@ -94,7 +94,7 @@ class VartypeArithmetic extends VartypeCompare {
 		),
 
 		// Will be removed from $tests property from constructor if not on PHP 5.6+ to prevent parse errors.
-		'pow_operator'         => array(
+		'pow_operator'   => array(
 			'title'         => '**',
 			'url'           => 'http://php.net/language.operators.arithmetic',
 			'arg'           => '$a, $b',
@@ -106,7 +106,7 @@ class VartypeArithmetic extends VartypeCompare {
 
 
 		// Doesn't really belong in arithmetic, but for now it's the most logical place anyhow.
-		'concatenate'        => array(
+		'concatenate'    => array(
 			'title'         => '.',
 			'tooltip'       => '$a . $b',
 			'url'           => 'http://php.net/language.operators.string.php',
@@ -128,7 +128,7 @@ class VartypeArithmetic extends VartypeCompare {
 			'function'      => 'pr_var( pow( $a, $b ), \'\', true, true );',
 		),
 
-		'intdiv'           => array(
+		'intdiv'         => array(
 			'title'         => 'intdiv()',
 			'url'           => 'http://php.net/intdiv',
 			'arg'           => '$a, $b',

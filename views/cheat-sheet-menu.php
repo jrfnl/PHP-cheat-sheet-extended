@@ -28,7 +28,6 @@ if ( ! defined( 'APP_DIR' ) ) {
 				</a>
 			</p>
 		</div>
-		
 
 		<div class="important">
 			<h3>Please note: these cheat sheets are generated live with PHP <?php echo htmlspecialchars( PHP_VERSION, ENT_QUOTES, 'UTF-8' ); ?>.</h3>

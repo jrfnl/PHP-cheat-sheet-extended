@@ -31,8 +31,8 @@ if ( ! defined( 'FILTER_NULL_ON_FAILURE' ) ) {
 }
 
 // Set up variable printing & error handling.
-include_once APP_DIR . '/include/xvardump.php';
-include_once APP_DIR . '/include/functions.php';
+require_once APP_DIR . '/include/xvardump.php';
+require_once APP_DIR . '/include/functions.php';
 set_error_handler( 'do_handle_errors' );
 
 // Make sure version id constant is available.
