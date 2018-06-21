@@ -41,7 +41,7 @@ if ( ! defined( 'APP_DIR' ) ) {
 <?php
 include APP_DIR . '/include/vars-to-test.php';
 if ( is_array( $legend_array ) && $legend_array !== array() ) :
-?>
+	?>
 
 			<h3>Notes on some variables:</h3>
 			<div>
@@ -52,19 +52,19 @@ if ( is_array( $legend_array ) && $legend_array !== array() ) :
 						<th>How the variable is defined:</th>
 					</tr>
 
-<?php
-foreach ( $legend_array as $k => $v ) :
-?>
+	<?php
+	foreach ( $legend_array as $k => $v ) :
+		?>
 					<tr>
 						<th id="var-legend-<?php echo $k; ?>"><?php echo $k; ?></th>
 						<td><code><?php echo $v; ?></code></td>
 					</tr>
-<?php
-endforeach;
-?>
+		<?php
+	endforeach;
+	?>
 				</table>
 			</div>
-<?php
+	<?php
 endif;
 ?>
 
