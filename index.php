@@ -21,7 +21,7 @@ if ( ( isset( $_GET['page'], $_GET['phpversion'] ) && in_array( $_GET['page'], a
 		}
 
 		$host = isset( $_SERVER['HTTP_HOST'] ) ? $_SERVER['HTTP_HOST'] : 'phpcheatsheets.com';
-		$url  = 'http://' . $host . '/static_results/' . $_GET['page'] . '/' . $_GET['phpversion'] . '.html' . $tab;
+		$url  = 'https://' . $host . '/static_results/' . $_GET['page'] . '/' . $_GET['phpversion'] . '.html' . $tab;
 		header( "Location: $url", true, 301 );
 		exit;
 	}

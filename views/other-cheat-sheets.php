@@ -43,6 +43,6 @@ if ( ! defined( 'APP_DIR' ) ) {
 
 		<div class="important">
 			<p>Do you want to host your PHP Cheatsheet on phpcheatsheets.com ? Want to add a cheatsheet to this list ?</p>
-			<p>Just send in a <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">pull request</a>.</p>
+			<p>Just send in a <a href="https://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">pull request</a>.</p>
 		</div>
 

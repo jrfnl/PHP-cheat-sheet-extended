@@ -7,7 +7,7 @@ sudo: false
 dist: trusty
 
 # Declare project language.
-# @link http://about.travis-ci.org/docs/user/languages/php/
+# @link https://docs.travis-ci.com/user/languages/php/
 language: php
 
 # Declare versions of PHP to use. Use one decimal max.

@@ -14,7 +14,7 @@ if ( ! defined( 'APP_DIR' ) ) {
 	exit();
 }
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+		"https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en">
 <head>
 	<meta http-equiv="Charset" content="utf-8" />
@@ -62,11 +62,11 @@ endif;
 if ( isset( $GLOBALS['type'] ) || isset( $GLOBALS['page'] ) ) :
 ?>
 	<!-- jQuery via CDN with local fall-back -->
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script type="text/javascript">(window.jQuery) || document.write('\x3Cscript type="text/javascript" src="<?php echo BASE_URI; ?>page/jquery-css/jquery-1.11.2<?php echo $GLOBALS['min']; ?>.js">\x3C/script>')</script>
 
 	<!-- jQueryUI via CDN with local fall-back -->
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 	<script type="text/javascript">(window.jQuery.ui) || document.write('\x3Cscript type="text/javascript" src="<?php echo BASE_URI; ?>page/jquery-css/jquery-ui-1.11.2<?php echo $GLOBALS['min']; ?>.js">\x3C/script>')</script>
 
 	<!-- floating table headers -->
@@ -78,10 +78,10 @@ endif;
 ?>
 
 
-	<link rel="start" href="http://phpcheatsheets.com/index.php" />
-	<link rel="shortcut icon" href="http://phpcheatsheets.com/favicon.ico" />
-	<link rel="bookmark icon" href="http://phpcheatsheets.com/favicon.ico" />
-	<link rel="icon" href="http://phpcheatsheets.com/favicon.ico" type="image/ico" />
+	<link rel="start" href="https://phpcheatsheets.com/index.php" />
+	<link rel="shortcut icon" href="https://phpcheatsheets.com/favicon.ico" />
+	<link rel="bookmark icon" href="https://phpcheatsheets.com/favicon.ico" />
+	<link rel="icon" href="https://phpcheatsheets.com/favicon.ico" type="image/ico" />
 
 </head>
 <?php
@@ -102,14 +102,14 @@ endif;
 if ( isset( $GLOBALS['type'] ) ) :
 ?>
 	<div id="too-much">
-		<a href="http://www.google.com/search?q=fluffy+animals&amp;tbm=isch" target="_blank"><img src="<?php echo BASE_URI; ?>page/images/jakobwesthoff_3231273333_2473ef9cdf_s.jpg" width="75" height="75" alt="Fluffy ElePHPant" /></a>
+		<a href="https://www.google.com/search?tbm=isch&amp;q=fluffy+cuddly+animals" target="_blank"><img src="<?php echo BASE_URI; ?>page/images/jakobwesthoff_3231273333_2473ef9cdf_s.jpg" width="75" height="75" alt="Fluffy ElePHPant" /></a>
 		<p>Too much ?</p>
-		<p><a href="http://www.google.com/search?q=fluffy+animals&amp;tbm=isch" target="_blank">Take a break and rest your eyes</a>.</p>
+		<p><a href="https://www.google.com/search?tbm=isch&amp;q=fluffy+cuddly+animals" target="_blank">Take a break and rest your eyes</a>.</p>
 	</div>
 <?php
 endif;
 ?>
-	<a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" class="forkme" title="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png">&nbsp;</a>
+	<a href="https://github.com/jrfnl/PHP-cheat-sheet-extended" class="forkme" title="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png">&nbsp;</a>
 
 	<h1><a href="<?php echo BASE_URI; ?>"><img src="<?php echo BASE_URI; ?>page/images/php-med-trans.png" width="95" height="51" alt="PHP" /> Cheatsheets</a></h1>
 

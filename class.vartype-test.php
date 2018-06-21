@@ -35,14 +35,14 @@ class VartypeTest extends Vartype {
 	var $tests = array(
 		'gettype' => array(
 			'title'         => 'gettype()',
-			'url'           => 'http://php.net/gettype',
+			'url'           => 'https://php.net/gettype',
 			'arg'           => '$x',
 			'function'      => 'pr_str( gettype( $x ) );',
 		),
 
 		'isset' => array(
 			'title'         => 'isset()',
-			'url'           => 'http://php.net/isset',
+			'url'           => 'https://php.net/isset',
 			'arg'           => '$x',
 			'function'      => 'pr_bool( isset( $x ) );',
 		),
@@ -51,7 +51,7 @@ class VartypeTest extends Vartype {
 		// Will be removed from $tests property from constructor if not on PHP 7+ to prevent parse errors.
 		'null_coalesce' => array(
 			'title'         => '$x ?? \'not-set\'',
-			'url'           => 'http://php.net/language.operators.comparison',
+			'url'           => 'https://php.net/language.operators.comparison',
 			'arg'           => '$x',
 			'function'      => 'pr_var( $x ?? \'not-set\' );',
 			'notes'         => array(
@@ -88,73 +88,73 @@ class VartypeTest extends Vartype {
 		 */
 		'is_array' => array(
 			'title'         => 'is_array()',
-			'url'           => 'http://php.net/is_array',
+			'url'           => 'https://php.net/is_array',
 			'arg'           => '$x',
 			'function'      => 'pr_bool( is_array( $x ) );',
 		),
 		'is_binary' => array(
 			'title'         => 'is_binary()',
-			'url'           => 'http://php.net/is_binary',
+			'url'           => 'https://php.net/is_binary',
 			'arg'           => '$x',
 			'function'      => 'if ( function_exists( \'is_binary\' ) ) { pr_bool( is_binary( $x ) ); } else { print "E: not available (PHP 6.0.0+)\n"; }',
 		),
 		'is_bool' => array(
 			'title'         => 'is_bool()',
-			'url'           => 'http://php.net/is_bool',
+			'url'           => 'https://php.net/is_bool',
 			'arg'           => '$x',
 			'function'      => 'pr_bool( is_bool( $x ) );',
 		),
 		'is_callable' => array(
 			'title'         => 'is_callable()',
-			'url'           => 'http://php.net/is_callable',
+			'url'           => 'https://php.net/is_callable',
 			'arg'           => '$x',
 			'function'      => 'if ( function_exists( \'is_callable\' ) ) { pr_bool( is_callable( $x ) ); } else { print "E: not available (PHP 4.0.6+)\n"; }',
 		),
 		'is_float' => array(
 			'title'         => 'is_float()',
-			'url'           => 'http://php.net/is_float',
+			'url'           => 'https://php.net/is_float',
 			'arg'           => '$x',
 			'function'      => 'pr_bool( is_float( $x ) );',
 		),
 		'is_int' => array(
 			'title'         => 'is_int()',
-			'url'           => 'http://php.net/is_int',
+			'url'           => 'https://php.net/is_int',
 			'arg'           => '$x',
 			'function'      => 'pr_bool( is_int( $x ) );',
 		),
 		'is_null' => array(
 			'title'         => 'is_null()',
-			'url'           => 'http://php.net/is_null',
+			'url'           => 'https://php.net/is_null',
 			'arg'           => '$x',
 			'function'      => 'if ( function_exists( \'is_null\' ) ) { pr_bool( is_null( $x ) ); } else { print "E: not available (PHP 4.0.4+)\n"; }',
 		),
 		'is_numeric' => array(
 			'title'         => 'is_numeric()',
-			'url'           => 'http://php.net/is_numeric',
+			'url'           => 'https://php.net/is_numeric',
 			'arg'           => '$x',
 			'function'      => 'pr_bool( is_numeric( $x ) );',
 		),
 		'is_object' => array(
 			'title'         => 'is_object()',
-			'url'           => 'http://php.net/is_object',
+			'url'           => 'https://php.net/is_object',
 			'arg'           => '$x',
 			'function'      => 'pr_bool( is_object( $x ) );',
 		),
 		'is_resource' => array(
 			'title'         => 'is_resource()',
-			'url'           => 'http://php.net/is_resource',
+			'url'           => 'https://php.net/is_resource',
 			'arg'           => '$x',
 			'function'      => 'pr_bool( is_resource( $x ) );',
 		),
 		'is_scalar' => array(
 			'title'         => 'is_scalar()',
-			'url'           => 'http://php.net/is_scalar',
+			'url'           => 'https://php.net/is_scalar',
 			'arg'           => '$x',
 			'function'      => 'if ( function_exists( \'is_scalar\' ) ) { pr_bool( is_scalar( $x ) ); } else { print "E: not available (PHP 4.0.5+)\n"; }',
 		),
 		'is_string' => array(
 			'title'         => 'is_string()',
-			'url'           => 'http://php.net/is_string',
+			'url'           => 'https://php.net/is_string',
 			'arg'           => '$x',
 			'function'      => 'pr_bool( is_string( $x ) );',
 		),
@@ -163,19 +163,19 @@ class VartypeTest extends Vartype {
 		// Float specific.
 		'is_nan' => array(
 			'title'         => 'is_nan()',
-			'url'           => 'http://php.net/is_nan',
+			'url'           => 'https://php.net/is_nan',
 			'arg'           => '$x',
 			'function'      => 'if ( function_exists( \'is_nan\' ) ) { $r = is_nan( $x ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print "E: not available (PHP 4.2.0+)\n"; }',
 		),
 		'is_finite' => array(
 			'title'         => 'is_finite()',
-			'url'           => 'http://php.net/is_finite',
+			'url'           => 'https://php.net/is_finite',
 			'arg'           => '$x',
 			'function'      => 'if ( function_exists( \'is_finite\' ) ) { $r = is_finite( $x ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print "E: not available (PHP 4.2.0+)\n"; }',
 		),
 		'is_infinite' => array(
 			'title'         => 'is_infinite()',
-			'url'           => 'http://php.net/is_infinite',
+			'url'           => 'https://php.net/is_infinite',
 			'arg'           => '$x',
 			'function'      => 'if ( function_exists( \'is_infinite\' ) ) { $r = is_infinite( $x ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print "E: not available (PHP 4.2.0+)\n"; }',
 		),
@@ -184,13 +184,13 @@ class VartypeTest extends Vartype {
 		// Array related.
 		'is_iterable' => array(
 			'title'         => 'is_iterable()',
-			'url'           => 'http://php.net/is_iterable',
+			'url'           => 'https://php.net/is_iterable',
 			'arg'           => '$x',
 			'function'      => 'if ( function_exists( \'is_iterable\' ) ) { pr_bool( is_iterable( $x ) ); } else { print "E: not available (PHP 7.1.0+)\n"; }',
 		),
 		'is_countable' => array(
 			'title'         => 'is_countable()',
-			'url'           => 'http://php.net/is_countable',
+			'url'           => 'https://php.net/is_countable',
 			'arg'           => '$x',
 			'function'      => 'if ( function_exists( \'is_countable\' ) ) { pr_bool( is_countable( $x ) ); } else { print "E: not available (PHP 7.3.0+)\n"; }',
 		),
@@ -201,49 +201,49 @@ class VartypeTest extends Vartype {
 		 */
 		'array' => array(
 			'title'         => '(array)',
-			'url'           => 'http://php.net/language.types.array#language.types.array.casting',
+			'url'           => 'https://php.net/language.types.array#language.types.array.casting',
 			'arg'           => '$x',
 			'function'      => 'pr_var( (array) $x, \'\', true, true );',
 		),
 		'bool' => array(
 			'title'         => '(bool)',
-			'url'           => 'http://php.net/language.types.boolean#language.types.boolean.casting',
+			'url'           => 'https://php.net/language.types.boolean#language.types.boolean.casting',
 			'arg'           => '$x',
 			'function'      => 'pr_bool( (bool) $x );',
 		),
 		'float' => array(
 			'title'         => '(float)',
-			'url'           => 'http://php.net/language.types.float#language.types.float.casting',
+			'url'           => 'https://php.net/language.types.float#language.types.float.casting',
 			'arg'           => '$x',
 			'function'      => 'pr_flt( (float) $x );',
 		),
 		'int' => array(
 			'title'         => '(int)',
-			'url'           => 'http://php.net/language.types.integer#language.types.integer.casting',
+			'url'           => 'https://php.net/language.types.integer#language.types.integer.casting',
 			'arg'           => '$x',
 			'function'      => '$r = (int) $x; if ( is_int( $r ) ) { pr_int( $r ); } else { pr_var( $r, \'\', true, true ); }',
 		),
 		'object' => array(
 			'title'         => '(object)',
-			'url'           => 'http://php.net/language.types.object#language.types.object.casting',
+			'url'           => 'https://php.net/language.types.object#language.types.object.casting',
 			'arg'           => '$x',
 			'function'      => 'pr_var( (object) $x, \'\', true, true );',
 		),
 		'string' => array(
 			'title'         => '(string)',
-			'url'           => 'http://php.net/language.types.string#language.types.string.casting',
+			'url'           => 'https://php.net/language.types.string#language.types.string.casting',
 			'arg'           => '$x',
 			'function'      => 'pr_str( (string) $x );',
 		),
 		'unset' => array(
 			'title'         => '(unset)',
-			'url'           => 'http://php.net/language.types.null#language.types.null.casting',
+			'url'           => 'https://php.net/language.types.null#language.types.null.casting',
 			'arg'           => '$x',
 			'function'      => 'if ( PHP_VERSION_ID >= 50000 ) { pr_var( (unset) $x, \'\', true, true ); } else { print "E: not available (PHP 5+)\n"; }',
 		),
 		'f_unset' => array(
 			'title'         => 'unset()',
-			'url'           => 'http://php.net/unset',
+			'url'           => 'https://php.net/unset',
 			'arg'           => '$x',
 			'function'      => 'unset( $x ); pr_var( $x, \'\', true, true );',
 		),
@@ -254,19 +254,19 @@ class VartypeTest extends Vartype {
 		 */
 		'floatval' => array(
 			'title'         => 'floatval()',
-			'url'           => 'http://php.net/floatval',
+			'url'           => 'https://php.net/floatval',
 			'arg'           => '$x',
 			'function'      => '$r = floatval( $x ); if ( is_float( $r ) ) { pr_flt( $r ); } else if ( is_int( $r ) ) { pr_int( $r ); } else { pr_var( $r, \'\', true, true ); }',
 		),
 		'intval' => array(
 			'title'         => 'intval()',
-			'url'           => 'http://php.net/intval',
+			'url'           => 'https://php.net/intval',
 			'arg'           => '$x',
 			'function'      => '$r = intval( $x ); if ( is_int( $r ) ) { pr_int( $r ); } else { pr_var( $r, \'\', true, true ); }',
 		),
 		'strval' => array(
 			'title'         => 'strval()',
-			'url'           => 'http://php.net/strval',
+			'url'           => 'https://php.net/strval',
 			'arg'           => '$x',
 			'function'      => '$r = strval( $x ); if ( is_string( $r ) ) { pr_str( $r ); } else { pr_var( $r, \'\', true, true ); }',
 		),
@@ -277,7 +277,7 @@ class VartypeTest extends Vartype {
 		 */
 		'juggle_int' => array(
 			'title'         => '$x&nbsp;+&nbsp;0',
-			'url'           => 'http://php.net/language.types.type-juggling',
+			'url'           => 'https://php.net/language.types.type-juggling',
 			'arg'           => '$x',
 			'function'      => '
 				if ( ! is_array( $x ) && ( PHP_VERSION_ID > 50005 || ! is_object( $x ) ) ) {
@@ -299,7 +299,7 @@ class VartypeTest extends Vartype {
 		),
 		'juggle_flt' => array(
 			'title'         => '$x&nbsp;+&nbsp;0.0',
-			'url'           => 'http://php.net/language.types.type-juggling',
+			'url'           => 'https://php.net/language.types.type-juggling',
 			'arg'           => '$x',
 			'function'      => '
 				if ( ! is_array( $x ) && ( PHP_VERSION_ID > 50005 || ! is_object( $x ) ) ) {
@@ -321,7 +321,7 @@ class VartypeTest extends Vartype {
 		),
 		'juggle_str' => array(
 			'title'         => '$x&nbsp;.&nbsp;\'\'',
-			'url'           => 'http://php.net/language.types.type-juggling',
+			'url'           => 'https://php.net/language.types.type-juggling',
 			'arg'           => '$x',
 			'function'      => 'pr_str( $x . \' \' );',
 		),
@@ -332,43 +332,43 @@ class VartypeTest extends Vartype {
 		 */
 		'settype_array' => array(
 			'title'         => 'settype (&nbsp;$copy, \'array\'&nbsp;)',
-			'url'           => 'http://php.net/settype',
+			'url'           => 'https://php.net/settype',
 			'arg'           => '$x',
 			'function'      => '$pass = settype( $x, \'array\' ); if ( $pass === true ) { pr_var( $x, \'\', true, true ); } else { print \'FAILED\'; }',
 		),
 		'settype_bool' => array(
 			'title'         => 'settype (&nbsp;$copy, \'bool\'&nbsp;)',
-			'url'           => 'http://php.net/settype',
+			'url'           => 'https://php.net/settype',
 			'arg'           => '$x',
 			'function'      => '$pass = settype( $x, \'boolean\' ); if ( $pass === true ) { pr_bool( $x ); } else { print \'FAILED\'; }',
 		),
 		'settype_float' => array(
 			'title'         => 'settype (&nbsp;$copy, \'float\'&nbsp;)',
-			'url'           => 'http://php.net/settype',
+			'url'           => 'https://php.net/settype',
 			'arg'           => '$x',
 			'function'      => 'if ( PHP_VERSION_ID >= 40200 ) { $pass = settype( $x, \'float\' ); } else { $pass = settype( $x, \'double\' ); } if ( $pass === true ) { pr_flt( $x ); } else { print \'FAILED\'; }',
 		),
 		'settype_int' => array(
 			'title'         => 'settype (&nbsp;$copy, \'int\'&nbsp;)',
-			'url'           => 'http://php.net/settype',
+			'url'           => 'https://php.net/settype',
 			'arg'           => '$x',
 			'function'      => '$pass = settype( $x, \'integer\' ); if ( $pass === true ) { if ( is_int( $x ) ) { pr_int( $x ); } else { pr_var( $x, \'\', true, true ); } } else { print \'FAILED\'; }',
 		),
 		'settype_null' => array(
 			'title'         => 'settype (&nbsp;$copy, \'null\'&nbsp;)',
-			'url'           => 'http://php.net/settype',
+			'url'           => 'https://php.net/settype',
 			'arg'           => '$x',
 			'function'      => 'if ( PHP_VERSION_ID >= 40200 ) { $pass = settype( $x, \'null\' ); if ( $pass === true ) { pr_var( $x, \'\', true, true ); } else { print \'FAILED\'; } } else { print "E: not available (PHP 4.2.0+)\n"; }',
 		),
 		'settype_object' => array(
 			'title'         => 'settype (&nbsp;$copy, \'object\'&nbsp;)',
-			'url'           => 'http://php.net/settype',
+			'url'           => 'https://php.net/settype',
 			'arg'           => '$x',
 			'function'      => '$pass = settype( $x, \'object\' ); if ( $pass === true ) { pr_var( $x, \'\', true, true ); } else { print \'FAILED\'; }',
 		),
 		'settype_string' => array(
 			'title'         => 'settype (&nbsp;$copy, \'string\'&nbsp;)',
-			'url'           => 'http://php.net/settype',
+			'url'           => 'https://php.net/settype',
 			'arg'           => '$x',
 			'function'      => '$pass = settype( $x, \'string\' ); if ( $pass === true ) { pr_str( $x ); } else { print \'FAILED\'; }',
 			'notes'         => array(
@@ -510,7 +510,7 @@ class VartypeTest extends Vartype {
 		 */
 		'abs' => array(
 			'title'         => 'abs()',
-			'url'           => 'http://php.net/abs',
+			'url'           => 'https://php.net/abs',
 			'arg'           => '$x',
 			'function'      => '$r = abs( $x ); if ( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); }',
 		),
@@ -521,19 +521,19 @@ class VartypeTest extends Vartype {
 		 */
 		'floor' => array(
 			'title'         => 'floor()',
-			'url'           => 'http://php.net/floor',
+			'url'           => 'https://php.net/floor',
 			'arg'           => '$x',
 			'function'      => '$r = floor( $x ); if ( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); }',
 		),
 		'ceil' => array(
 			'title'         => 'ceil()',
-			'url'           => 'http://php.net/ceil',
+			'url'           => 'https://php.net/ceil',
 			'arg'           => '$x',
 			'function'      => '$r = ceil( $x ); if ( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); }',
 		),
 		'round' => array(
 			'title'         => 'round()',
-			'url'           => 'http://php.net/round',
+			'url'           => 'https://php.net/round',
 			'arg'           => '$x',
 			'function'      => '$r = round( $x ); if ( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); }',
 		),
@@ -546,46 +546,46 @@ class VartypeTest extends Vartype {
 		 */
 		'empty' => array(
 			'title'         => 'empty()',
-			'url'           => 'http://php.net/empty',
+			'url'           => 'https://php.net/empty',
 			'arg'           => '$x',
 			'function'      => 'pr_bool( empty( $x ) );',
 		),
 		'strlen' => array(
 			'title'         => 'strlen()',
-			'url'           => 'http://php.net/strlen',
+			'url'           => 'https://php.net/strlen',
 			'arg'           => '$x',
 			'function'      => '$r = strlen( $x ); if ( is_int( $r ) ) { pr_int( $r ); } else { pr_var( $r, \'\', true, true ); }',
 		),
 		'count_chars' => array(
 			'title'         => 'count_chars (&hellip;)',
 			'tooltip'       => 'array_sum( count_chars( $x, 1 ) )',
-			'url'           => 'http://php.net/count_chars',
+			'url'           => 'https://php.net/count_chars',
 			'arg'           => '$x',
 			'function'      => 'pr_var( array_sum( count_chars( $x, 1 ) ), \'\', true, true );',
 		),
 		'str_shuffle' => array(
 			'title'         => 'str_shuffle (&nbsp;$x&nbsp;)',
-			'url'           => 'http://php.net/str_shuffle',
+			'url'           => 'https://php.net/str_shuffle',
 			'arg'           => '$x',
 			'function'      => 'pr_var( str_shuffle( $x ), \'\', true, true );',
 		),
 
 		'mb_strlen' => array(
 			'title'         => 'mb_strlen()',
-			'url'           => 'http://php.net/mb-strlen',
+			'url'           => 'https://php.net/mb-strlen',
 			'arg'           => '$x',
 			'function'      => 'if ( function_exists( \'mb_strlen\' ) ) { $r = mb_strlen( $x, \'UTF-8\' ); if ( is_int( $r ) ) { pr_int( $r ); } else if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'E: mbstring extension not installed\'; }',
 		),
 		'trim' => array(
 			'title'         => 'trim()',
-			'url'           => 'http://php.net/trim',
+			'url'           => 'https://php.net/trim',
 			'arg'           => '$x',
 			'function'      => 'pr_var( trim( $x ), \'\', true, true );',
 		),
 		'char_access' => array(
 			'title'         => '$x{2}',
 			'tooltip'       => 'String character access by index.',
-			'url'           => 'http://www.php.net/manual/en/language.types.string.php#language.types.string.substr',
+			'url'           => 'https://php.net/manual/en/language.types.string.php#language.types.string.substr',
 			'arg'           => '$x',
 			'function'      => 'if ( ! is_object( $x ) ) { pr_var( $x{2}, \'\', true, true ); } else { $class = get_class( $x ); trigger_error( \'Cannot use object of type \' . $class . \' as array\', E_USER_ERROR ); unset( $class ); }',
 		),
@@ -597,19 +597,19 @@ class VartypeTest extends Vartype {
 		 */
 		'count' => array(
 			'title'         => 'count()',
-			'url'           => 'http://php.net/count',
+			'url'           => 'https://php.net/count',
 			'arg'           => '$x',
 			'function'      => 'pr_int( count( $x ) );',
 		),
 		'count_mt_0' => array(
 			'title'         => 'count()&nbsp;>&nbsp;0',
-			'url'           => 'http://php.net/count',
+			'url'           => 'https://php.net/count',
 			'arg'           => '$x',
 			'function'      => 'pr_bool( ( count( $x ) > 0 ) );',
 		),
 		'isset_0' => array(
 			'title'         => 'isset (&nbsp;$x[0]&nbsp;)',
-			'url'           => 'http://php.net/isset',
+			'url'           => 'https://php.net/isset',
 			'arg'           => '$x',
 			'function'      => 'if ( ! is_object( $x ) ) { pr_bool( isset( $x[0] ) ); } else { $class = get_class( $x ); trigger_error( \'Cannot use object of type \' . $class . \' as array\', E_USER_ERROR ); unset( $class ); }',
 			'notes'         => array(
@@ -632,7 +632,7 @@ class VartypeTest extends Vartype {
 
 		'isset_foo' => array(
 			'title'         => 'isset (&nbsp;$x[\'foo\']&nbsp;)',
-			'url'           => 'http://php.net/isset',
+			'url'           => 'https://php.net/isset',
 			'arg'           => '$x',
 			'function'      => 'if ( ! is_object( $x ) ) { pr_bool( isset( $x[\'foo\'] ) ); } else { $class = get_class( $x ); trigger_error( \'Cannot use object of type \' . $class . \' as array\', E_USER_ERROR ); unset( $class ); }',
 			'notes'         => array(
@@ -655,7 +655,7 @@ class VartypeTest extends Vartype {
 
 		'array_key_exists' => array(
 			'title'         => 'array_key_exists (&nbsp;0,&nbsp;$x&nbsp;)',
-			'url'           => 'http://php.net/array_key_exists',
+			'url'           => 'https://php.net/array_key_exists',
 			'arg'           => '$x',
 			'function'      => 'if ( function_exists( \'array_key_exists\' ) ) { $r = array_key_exists( 0, $x ); if ( is_bool( $r ) ) { pr_bool( array_key_exists( 0, $x ) ); } else { pr_var( $r, \'\', true, true ); } } else { print "E: not available (PHP 4.0.7+)\n"; }',
 			'notes'         => array(
@@ -678,25 +678,25 @@ class VartypeTest extends Vartype {
 		),
 		'in_array' => array(
 			'title'         => 'in_array (&nbsp;\'s\', $x&nbsp;)',
-			'url'           => 'http://php.net/in_array',
+			'url'           => 'https://php.net/in_array',
 			'arg'           => '$x',
 			'function'      => 'pr_bool( in_array( \'s\', $x ) );',
 		),
 		'array_count_values' => array(
 			'title'         => 'array_count_values()',
-			'url'           => 'http://php.net/array_count_values',
+			'url'           => 'https://php.net/array_count_values',
 			'arg'           => '$x',
 			'function'      => 'pr_var( array_count_values( $x ), \'\', true, true );',
 		),
 		'array_access_simple_string' => array(
 			'title'         => '$x[\'foo\']',
-			'url'           => 'http://www.php.net/manual/en/language.types.array.php',
+			'url'           => 'https://php.net/manual/en/language.types.array.php',
 			'arg'           => '$x',
 			'function'      => 'if ( ! is_object( $x ) ) { pr_var( $x[\'foo\'], \'\', true, true ); } else { $class = get_class( $x ); trigger_error( \'Cannot use object of type \' . $class . \' as array\', E_USER_ERROR ); unset( $class ); }',
 		),
 		'array_access_multi_string' => array(
 			'title'         => '$x[\'foo\'][\'bar\']',
-			'url'           => 'http://www.php.net/manual/en/language.types.array.php',
+			'url'           => 'https://php.net/manual/en/language.types.array.php',
 			'arg'           => '$x',
 			'function'      => 'if ( ! is_object( $x ) ) { if ( ! is_string( $x ) || ( is_string( $x ) && ( PHP_VERSION_ID > 50350 || PHP_VERSION_ID < 50000 ) ) ) { pr_var( $x[\'foo\'][\'bar\'], \'\', true, true ); } else { trigger_error( \'Cannot use string offset as an array\', E_USER_ERROR ); } } else { $class = get_class( $x ); trigger_error( \'Cannot use object of type \' . $class . \' as array\', E_USER_ERROR ); unset( $class ); }',
 		),
@@ -704,43 +704,43 @@ class VartypeTest extends Vartype {
 
 		'array_filter' => array(
 			'title'         => 'array_filter()',
-			'url'           => 'http://php.net/array_filter',
+			'url'           => 'https://php.net/array_filter',
 			'arg'           => '$x',
 			'function'      => 'pr_var( array_filter( $x ), \'\', true, true );',
 		),
 		'array_flip' => array(
 			'title'         => 'array_flip()',
-			'url'           => 'http://php.net/array_flip',
+			'url'           => 'https://php.net/array_flip',
 			'arg'           => '$x',
 			'function'      => 'pr_var( array_flip( $x ), \'\', true, true );',
 		),
 		'array_reverse' => array(
 			'title'         => 'array_reverse()',
-			'url'           => 'http://php.net/array_reverse',
+			'url'           => 'https://php.net/array_reverse',
 			'arg'           => '$x',
 			'function'      => 'pr_var( array_reverse( $x ), \'\', true, true );',
 		),
 		'current' => array(
 			'title'         => 'current()',
-			'url'           => 'http://php.net/current',
+			'url'           => 'https://php.net/current',
 			'arg'           => '$x',
 			'function'      => 'pr_var( current( $x ), \'\', true, true );',
 		),
 		'key' => array(
 			'title'         => 'key()',
-			'url'           => 'http://php.net/key',
+			'url'           => 'https://php.net/key',
 			'arg'           => '$x',
 			'function'      => 'pr_var( key( $x ), \'\', true, true );',
 		),
 		'shuffle' => array(
 			'title'         => 'shuffle (&nbsp;$copy&nbsp;)',
-			'url'           => 'http://php.net/shuffle',
+			'url'           => 'https://php.net/shuffle',
 			'arg'           => '$x',
 			'function'      => '$pass = shuffle( $x ); if ( $pass === true) { pr_var( $x, \'\', true, true ); } else { print \'FAILED\'; }',
 		),
 		'sort' => array(
 			'title'         => 'sort (&nbsp;$copy&nbsp;)',
-			'url'           => 'http://php.net/sort',
+			'url'           => 'https://php.net/sort',
 			'arg'           => '$x',
 			'function'      => '$pass = sort( $x ); if ( $pass === true) { pr_var( $x, \'\', true, true ); } else { print \'FAILED\'; }',
 		),
@@ -751,31 +751,31 @@ class VartypeTest extends Vartype {
 		 */
 		'is_a' => array(
 			'title'         => 'is_a (&nbsp;$x, \'TestObject\'&nbsp;)',
-			'url'           => 'http://php.net/is_a',
+			'url'           => 'https://php.net/is_a',
 			'arg'           => '$x',
 			'function'      => '$c = \'TestObject\'; $r = is_a( $x, $c ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); }',
 		),
 		'instanceof' => array(
 			'title'         => 'instanceof TestObject',
-			'url'           => 'http://php.net/language.operators.type',
+			'url'           => 'https://php.net/language.operators.type',
 			'arg'           => '$x',
 			'function'      => 'print "E: not available (PHP 5.0+)\n";', // Note: has PHP5 equivalent in class.vartype-php5.php.
 		),
 		'get_class' => array(
 			'title'         => 'get_class()',
-			'url'           => 'http://php.net/get_class',
+			'url'           => 'https://php.net/get_class',
 			'arg'           => '$x',
 			'function'      => '$r = get_class( $x ); if ( ! is_bool( $r ) ) { pr_var( $r, \'\', true, true ); } else { pr_bool( $r ); }',
 		),
 		'get_parent_class' => array(
 			'title'         => 'get_parent_class()',
-			'url'           => 'http://php.net/get_parent_class',
+			'url'           => 'https://php.net/get_parent_class',
 			'arg'           => '$x',
 			'function'      => '$r = get_parent_class( $x ); if ( ! is_bool( $r ) ) { pr_var( $r, \'\', true, true ); } else { pr_bool( $r ); }',
 		),
 		'is_subclass_of' => array(
 			'title'         => 'is_subclass_of (&nbsp;$x, \'TestObject\'&nbsp;)',
-			'url'           => 'http://php.net/is_subclass_of',
+			'url'           => 'https://php.net/is_subclass_of',
 			'arg'           => '$x',
 			'function'      => '$c = \'TestObject\'; $r = is_subclass_of( $x, $c  ); if ( is_bool( $r ) ) { pr_bool( $r, \'\', true, true ); } else { pr_var( $r, \'\', true, true ); }',
 		),
@@ -787,7 +787,7 @@ class VartypeTest extends Vartype {
 		 */
 		'get_resource_type' => array(
 			'title'         => 'get_resource_type()',
-			'url'           => 'http://php.net/get_resource_type',
+			'url'           => 'https://php.net/get_resource_type',
 			'arg'           => '$x',
 			'function'      => 'if ( function_exists( \'get_resource_type\' ) ) { $r = get_resource_type( $x ); if ( is_string( $r ) ) { pr_str( $r ); } else if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); } } else {print "E: not available (PHP 4.0.2+)\n"; }',
 		),
@@ -1046,7 +1046,7 @@ class VartypeTest extends Vartype {
 		 */
 		'pre_increment' => array(
 			'title'         => '$x = ++$x',
-			'url'           => 'http://php.net/language.operators.increment',
+			'url'           => 'https://php.net/language.operators.increment',
 			'arg'           => '$x',
 			'function'      => '$r = ++$x; if ( is_int( $r ) ) { pr_int( $r ); } else if ( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'         => array(
@@ -1055,7 +1055,7 @@ class VartypeTest extends Vartype {
 		),
 		'post_increment' => array(
 			'title'         => '$x = $x++',
-			'url'           => 'http://php.net/language.operators.increment',
+			'url'           => 'https://php.net/language.operators.increment',
 			'arg'           => '$x',
 			'function'      => '$r = $x++; if ( is_int( $r ) ) { pr_int( $r ); } else if ( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'         => array(
@@ -1064,7 +1064,7 @@ class VartypeTest extends Vartype {
 		),
 		'pre_decrement' => array(
 			'title'         => '$x = --$x',
-			'url'           => 'http://php.net/language.operators.increment',
+			'url'           => 'https://php.net/language.operators.increment',
 			'arg'           => '$x',
 			'function'      => '$r = --$x; if ( is_int( $r ) ) { pr_int( $r ); } else if ( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'         => array(
@@ -1073,7 +1073,7 @@ class VartypeTest extends Vartype {
 		),
 		'post_decrement' => array(
 			'title'         => '$x = $x--',
-			'url'           => 'http://php.net/language.operators.increment',
+			'url'           => 'https://php.net/language.operators.increment',
 			'arg'           => '$x',
 			'function'      => '$r = $x--; if ( is_int( $r ) ) { pr_int( $r ); } else if ( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'         => array(
@@ -1084,31 +1084,31 @@ class VartypeTest extends Vartype {
 
 		'arithmetic_negate' => array(
 			'title'         => '-$x',
-			'url'           => 'http://php.net/language.operators.arithmetic',
+			'url'           => 'https://php.net/language.operators.arithmetic',
 			'arg'           => '$x',
 			'function'      => 'if ( ! is_array( $x ) && ( PHP_VERSION_ID > 50005 || ! is_object( $x ) ) ) { pr_var( -$x, \'\', true, true ); } else { trigger_error( \'Unsupported operand types\', E_USER_ERROR ); }',
 		),
 		'arithmetic_subtract' => array(
 			'title'         => '$x&nbsp;-&nbsp;0',
-			'url'           => 'http://php.net/language.operators.arithmetic',
+			'url'           => 'https://php.net/language.operators.arithmetic',
 			'arg'           => '$x',
 			'function'      => 'if ( ! is_array( $x ) && ( PHP_VERSION_ID > 50005 || ! is_object( $x ) ) ) { pr_var( $x - 0, \'\', true, true ); } else { trigger_error( \'Unsupported operand types\', E_USER_ERROR ); }',
 		),
 		'arithmetic_multiply' => array(
 			'title'         => '$x&nbsp;*&nbsp;1',
-			'url'           => 'http://php.net/language.operators.arithmetic',
+			'url'           => 'https://php.net/language.operators.arithmetic',
 			'arg'           => '$x',
 			'function'      => 'if ( ! is_array( $x ) && ( PHP_VERSION_ID > 50005 || ! is_object( $x ) ) ) { pr_var( $x * 1, \'\', true, true ); } else { trigger_error( \'Unsupported operand types\', E_USER_ERROR ); }',
 		),
 		'arithmetic_divide' => array(
 			'title'         => '$x&nbsp;/&nbsp;1',
-			'url'           => 'http://php.net/language.operators.arithmetic',
+			'url'           => 'https://php.net/language.operators.arithmetic',
 			'arg'           => '$x',
 			'function'      => 'if ( ! is_array( $x ) && ( PHP_VERSION_ID > 50005 || ! is_object( $x ) ) ) { pr_var( $x / 1, \'\', true, true ); } else { trigger_error( \'Unsupported operand types\', E_USER_ERROR ); }',
 		),
 		'arithmetic_modulus' => array(
 			'title'         => '$x&nbsp;%&nbsp;1',
-			'url'           => 'http://php.net/language.operators.arithmetic',
+			'url'           => 'https://php.net/language.operators.arithmetic',
 			'arg'           => '$x',
 			'function'      => 'pr_var( $x % 1, \'\', true, true );',
 		),
@@ -1119,27 +1119,27 @@ class VartypeTest extends Vartype {
 		 */
 		'preg_int_pos' => array(
 			'title'         => 'preg_match (`^[0-9]+$`)',
-			'url'           => 'http://php.net/preg-match',
+			'url'           => 'https://php.net/preg-match',
 			'arg'           => '$x',
 			'function'      => '$valid = preg_match( \'`^[0-9]+$`\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); }',
 		),
 		'preg_int' => array(
 			'title'         => 'preg_match (`^[0-9<span style="color: red;">-</span>]+$`)',
-			'url'           => 'http://php.net/preg-match',
+			'url'           => 'https://php.net/preg-match',
 			'arg'           => '$x',
 			'function'      => '$valid = preg_match( \'`^[0-9-]+$`\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); }',
 		),
 		// Results depend on locale.
 		'preg_digit_pos' => array(
 			'title'         => 'preg_match (`^\d+$`)',
-			'url'           => 'http://php.net/preg-match',
+			'url'           => 'https://php.net/preg-match',
 			'arg'           => '$x',
 			'function'      => '$valid = preg_match( \'`^\d+$`\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); }',
 		),
 		// Results depend on locale.
 		'preg_digit' => array(
 			'title'         => 'preg_match (`^[\d<span style="color: red;">-</span>]+$`)',
-			'url'           => 'http://php.net/preg-match',
+			'url'           => 'https://php.net/preg-match',
 			'arg'           => '$x',
 			'function'      => '$valid = preg_match( \'`^[\d-]+$`\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); }',
 		),
@@ -1149,7 +1149,7 @@ class VartypeTest extends Vartype {
 		'preg_float_pos' => array(
 			'title'         => 'preg_match (`^[0-9##PREG_DECIMAL_POINT##]+$`)',
 			'tooltip'       => 'Decimal point character adjusted based on locale',
-			'url'           => 'http://php.net/preg-match',
+			'url'           => 'https://php.net/preg-match',
 			'arg'           => '$x',
 			'function'      => '$valid = preg_match( \'`^[0-9##PREG_DECIMAL_POINT##]+$`\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); }',
 		),
@@ -1157,7 +1157,7 @@ class VartypeTest extends Vartype {
 		'preg_float' => array(
 			'title'         => 'preg_match (`^[0-9##PREG_DECIMAL_POINT##<span style="color: red;">-</span>]+$`)',
 			'tooltip'       => 'Decimal point character adjusted based on locale',
-			'url'           => 'http://php.net/preg-match',
+			'url'           => 'https://php.net/preg-match',
 			'arg'           => '$x',
 			'function'      => '$valid = preg_match( \'`^[0-9##PREG_DECIMAL_POINT##-]+$`\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); }',
 		),
@@ -1166,7 +1166,7 @@ class VartypeTest extends Vartype {
 		'preg_digit_float_pos' => array(
 			'title'         => 'preg_match (`^[\d##PREG_DECIMAL_POINT##]+$`)',
 			'tooltip'       => 'Decimal point character adjusted based on locale',
-			'url'           => 'http://php.net/preg-match',
+			'url'           => 'https://php.net/preg-match',
 			'arg'           => '$x',
 			'function'      => '$valid = preg_match( \'`^[\d##PREG_DECIMAL_POINT##]+$`\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); }',
 		),
@@ -1175,32 +1175,32 @@ class VartypeTest extends Vartype {
 		'preg_digit_float' => array(
 			'title'         => 'preg_match (`^[\d##PREG_DECIMAL_POINT##<span style="color: red;">-</span>]]+$`)',
 			'tooltip'       => 'Decimal point character adjusted based on locale',
-			'url'           => 'http://php.net/preg-match',
+			'url'           => 'https://php.net/preg-match',
 			'arg'           => '$x',
 			'function'      => '$valid = preg_match( \'`^[\d##PREG_DECIMAL_POINT##-]+$`\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); }',
 		),
 		'preg_alpha' => array(
 			'title'         => 'preg_match (`^[A-Za-z]+$`)',
-			'url'           => 'http://php.net/preg-match',
+			'url'           => 'https://php.net/preg-match',
 			'arg'           => '$x',
 			'function'      => '$valid = preg_match( \'`^[A-Za-z]+$`\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); }',
 		),
 		'preg_alnum' => array(
 			'title'         => 'preg_match (`^[A-Za-z0-9]+$`)',
-			'url'           => 'http://php.net/preg-match',
+			'url'           => 'https://php.net/preg-match',
 			'arg'           => '$x',
 			'function'      => '$valid = preg_match( \'`^[A-Za-z0-9]+$`\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); }',
 		),
 		'preg_word' => array(
 			'title'         => 'preg_match (`^\w+$`)',
-			'url'           => 'http://php.net/preg-match',
+			'url'           => 'https://php.net/preg-match',
 			'arg'           => '$x',
 			'function'      => '$valid = preg_match( \'`^\w+$`\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); }',
 		),
 		// Result depends on locale.
 		'preg_word_utf8' => array(
 			'title'         => 'preg_match (`^\w+$`u)',
-			'url'           => 'http://php.net/preg-match',
+			'url'           => 'https://php.net/preg-match',
 			'arg'           => '$x',
 			'function'      => '$valid = preg_match( \'`^\w+$`u\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); }',
 			'notes'         => array(
@@ -1212,40 +1212,40 @@ class VartypeTest extends Vartype {
 
 		'preg_int_unicode_pos' => array(
 			'title'         => 'preg_match (`^\p{N}+$`u)',
-			'url'           => 'http://php.net/regexp.reference.unicode.php',
+			'url'           => 'https://php.net/regexp.reference.unicode.php',
 			'arg'           => '$x',
 			'function'      => 'if ( PHP_VERSION_ID >= 50100 ) { $valid = preg_match( \'`^\p{N}+$`u\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); } } else { print "E: not available (PHP 5.1+)\n"; }',
 		),
 		'preg_int_unicode' => array(
 			'title'         => 'preg_match (`^[\p{N}-]+$`u)',
-			'url'           => 'http://php.net/regexp.reference.unicode.php',
+			'url'           => 'https://php.net/regexp.reference.unicode.php',
 			'arg'           => '$x',
 			'function'      => 'if ( PHP_VERSION_ID >= 50100 ) { $valid = preg_match( \'`^[\p{N}-]+$`u\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); } } else { print "E: not available (PHP 5.1+)\n"; }',
 		),
 		// ##PREG_DECIMAL_POINT## is replaced by the locale specific decimal point character in the class constructor.
 		'preg_number_unicode_pos' => array(
 			'title'         => 'preg_match (`^[\p{N}##PREG_DECIMAL_POINT##]+$`u)',
-			'url'           => 'http://php.net/regexp.reference.unicode.php',
+			'url'           => 'https://php.net/regexp.reference.unicode.php',
 			'arg'           => '$x',
 			'function'      => 'if ( PHP_VERSION_ID >= 50100 ) { $valid = preg_match( \'`^[\p{N}##PREG_DECIMAL_POINT##]+$`u\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); } } else { print "E: not available (PHP 5.1+)\n"; }',
 		),
 		// ##PREG_DECIMAL_POINT## is replaced by the locale specific decimal point character in the class constructor.
 		'preg_number_unicode' => array(
 			'title'         => 'preg_match (`^[\p{N}##PREG_DECIMAL_POINT##-]+$`u)',
-			'url'           => 'http://php.net/regexp.reference.unicode.php',
+			'url'           => 'https://php.net/regexp.reference.unicode.php',
 			'arg'           => '$x',
 			'function'      => 'if ( PHP_VERSION_ID >= 50100 ) { $valid = preg_match( \'`^[\p{N}##PREG_DECIMAL_POINT##-]+$`u\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); } } else { print "E: not available (PHP 5.1+)\n"; }',
 		),
 
 		'preg_alpha_unicode' => array(
 			'title'         => 'preg_match (`^\p{L}+$`u)',
-			'url'           => 'http://php.net/regexp.reference.unicode.php',
+			'url'           => 'https://php.net/regexp.reference.unicode.php',
 			'arg'           => '$x',
 			'function'      => 'if ( PHP_VERSION_ID >= 50100 ) { $valid = preg_match( \'`^\p{L}+$`u\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); } } else { print "E: not available (PHP 5.1+)\n"; }',
 		),
 		'preg_alnum_unicode' => array(
 			'title'         => 'preg_match (`^[\p{L}\p{N}]+$`u)',
-			'url'           => 'http://php.net/regexp.reference.unicode.php',
+			'url'           => 'https://php.net/regexp.reference.unicode.php',
 			'arg'           => '$x',
 			'function'      => 'if ( PHP_VERSION_ID >= 50100 ) { $valid = preg_match( \'`^[\p{L}\p{N}]+$`u\', $x ); if ( $valid === 1 ) { pr_bool( true ); } else if ( $valid === 0 ) { pr_bool( false ); } else if ( $valid === false ) { print \'Error\'; } else { pr_var( $valid, \'\', true, true ); } } else { print "E: not available (PHP 5.1+)\n"; }',
 		),
@@ -1256,7 +1256,7 @@ class VartypeTest extends Vartype {
 		 */
 		'ctype_alnum' => array(
 			'title'         => 'ctype_alnum()',
-			'url'           => 'http://php.net/ctype_alnum',
+			'url'           => 'https://php.net/ctype_alnum',
 			'arg'           => '$x',
 			'function'      => '$r = ctype_alnum( $x ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'         => array(
@@ -1266,7 +1266,7 @@ class VartypeTest extends Vartype {
 		),
 		'ctype_alpha' => array(
 			'title'         => 'ctype_alpha()',
-			'url'           => 'http://php.net/ctype_alpha',
+			'url'           => 'https://php.net/ctype_alpha',
 			'arg'           => '$x',
 			'function'      => '$r = ctype_alpha( $x ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'         => array(
@@ -1277,7 +1277,7 @@ class VartypeTest extends Vartype {
 		),
 		'ctype_cntrl' => array(
 			'title'         => 'ctype_cntrl()',
-			'url'           => 'http://php.net/ctype_cntrl',
+			'url'           => 'https://php.net/ctype_cntrl',
 			'arg'           => '$x',
 			'function'      => '$r = ctype_cntrl( $x ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'         => array(
@@ -1288,7 +1288,7 @@ class VartypeTest extends Vartype {
 		),
 		'ctype_digit' => array(
 			'title'         => 'ctype_digit()',
-			'url'           => 'http://php.net/ctype_digit',
+			'url'           => 'https://php.net/ctype_digit',
 			'arg'           => '$x',
 			'function'      => '$r = ctype_digit( $x ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'         => array(
@@ -1299,7 +1299,7 @@ class VartypeTest extends Vartype {
 		),
 		'ctype_graph' => array(
 			'title'         => 'ctype_graph()',
-			'url'           => 'http://php.net/ctype_graph',
+			'url'           => 'https://php.net/ctype_graph',
 			'arg'           => '$x',
 			'function'      => '$r = ctype_graph( $x ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'         => array(
@@ -1310,7 +1310,7 @@ class VartypeTest extends Vartype {
 		),
 		'ctype_lower' => array(
 			'title'         => 'ctype_lower()',
-			'url'           => 'http://php.net/ctype_lower',
+			'url'           => 'https://php.net/ctype_lower',
 			'arg'           => '$x',
 			'function'      => '$r = ctype_lower( $x ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'         => array(
@@ -1321,7 +1321,7 @@ class VartypeTest extends Vartype {
 		),
 		'ctype_print' => array(
 			'title'         => 'ctype_print()',
-			'url'           => 'http://php.net/ctype_print',
+			'url'           => 'https://php.net/ctype_print',
 			'arg'           => '$x',
 			'function'      => '$r = ctype_print( $x ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'         => array(
@@ -1332,7 +1332,7 @@ class VartypeTest extends Vartype {
 		),
 		'ctype_punct' => array(
 			'title'         => 'ctype_punct()',
-			'url'           => 'http://php.net/ctype_punct',
+			'url'           => 'https://php.net/ctype_punct',
 			'arg'           => '$x',
 			'function'      => '$r = ctype_punct( $x ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'         => array(
@@ -1343,7 +1343,7 @@ class VartypeTest extends Vartype {
 		),
 		'ctype_space' => array(
 			'title'         => 'ctype_space()',
-			'url'           => 'http://php.net/ctype_space',
+			'url'           => 'https://php.net/ctype_space',
 			'arg'           => '$x',
 			'function'      => '$r = ctype_space( $x ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'         => array(
@@ -1354,7 +1354,7 @@ class VartypeTest extends Vartype {
 		),
 		'ctype_upper' => array(
 			'title'         => 'ctype_upper()',
-			'url'           => 'http://php.net/ctype_upper',
+			'url'           => 'https://php.net/ctype_upper',
 			'arg'           => '$x',
 			'function'      => '$r = ctype_upper( $x ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'         => array(
@@ -1365,7 +1365,7 @@ class VartypeTest extends Vartype {
 		),
 		'ctype_xdigit' => array(
 			'title'         => 'ctype_xdigit()',
-			'url'           => 'http://php.net/ctype_xdigit',
+			'url'           => 'https://php.net/ctype_xdigit',
 			'arg'           => '$x',
 			'function'      => '$r = ctype_xdigit( $x ); if ( is_bool( $r ) ) { pr_bool( $r ); } else { pr_var( $r, \'\', true, true ); }',
 			'notes'         => array(
@@ -1388,14 +1388,14 @@ class VartypeTest extends Vartype {
 		'filter_var_bool' => array(
 			'title'         => 'filter_var (&hellip;)',
 			'tooltip'       => 'filter_var( $x, FILTER_VALIDATE_BOOLEAN )',
-			'url'           => 'http://php.net/filter_var',
+			'url'           => 'https://php.net/filter_var',
 			'arg'           => '$x',
 			'function'      => 'if ( function_exists( \'filter_var\' ) ) { pr_bool( filter_var( $x, FILTER_VALIDATE_BOOLEAN ), \'\', true, true ); } else { print "E: not available (PHP 5.2.0+)\n"; }',
 		),
 		'filter_var_array_bool' => array(
 			'title'         => 'filter_var_array (&hellip;)',
 			'tooltip'       => 'filter_var_array( $x, FILTER_VALIDATE_BOOLEAN )',
-			'url'           => 'http://php.net/filter_var_array',
+			'url'           => 'https://php.net/filter_var_array',
 			'arg'           => '$x',
 			'function'      => 'if ( function_exists( \'filter_var_array\' ) ) { pr_var( filter_var_array( $x, FILTER_VALIDATE_BOOLEAN ), \'\', true, true ); } else { print "E: not available (PHP 5.2.0+)\n"; }',
 		),
@@ -1409,7 +1409,7 @@ else {
 	filter_var_array( $x, FILTER_VALIDATE_BOOLEAN );
 }
 			',
-			'url'           => 'http://php.net/filter_var',
+			'url'           => 'https://php.net/filter_var',
 			'arg'           => '$x',
 			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypePHP5::filter_combined( $x, \'bool\', FILTER_VALIDATE_BOOLEAN ); } else { print "E: not available (PHP 5.2.0+)\n"; }',
 		),
@@ -1423,13 +1423,13 @@ else {
 	filter_var_array( $x, FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE ); // = Simplified... see note
 }
 			',
-			'url'           => 'http://php.net/filter_var',
+			'url'           => 'https://php.net/filter_var',
 			'arg'           => '$x',
 			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypePHP5::filter_combined( $x, \'bool\', FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE ); } else { print "E: not available (PHP 5.2.0+)\n"; }',
 			'notes'         => array(
 				'<p>Please note: On some PHP versions <code>filter_var( $x, FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE )</code> where <code>$x = false</code> will incorrectly return <code>null</code>.<br />
 				Also: with the same parameters filter_var() will return <code>false</code> instead of <code>null</code> for most objects.</p>',
-				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
+				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="https://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
 		),
 
@@ -1437,14 +1437,14 @@ else {
 		'filter_var_float' => array(
 			'title'         => 'filter_var (&hellip;)',
 			'tooltip'       => 'filter_var( $x, FILTER_VALIDATE_FLOAT )',
-			'url'           => 'http://php.net/filter_var',
+			'url'           => 'https://php.net/filter_var',
 			'arg'           => '$x',
 			'function'      => 'if ( function_exists( \'filter_var\' ) ) { $r = filter_var( $x, FILTER_VALIDATE_FLOAT ); if ( is_float( $r ) ) { pr_flt( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print "E: not available (PHP 5.2.0+)\n"; }',
 		),
 		'filter_var_array_float' => array(
 			'title'         => 'filter_var_array (&hellip;)',
 			'tooltip'       => 'filter_var_array( $x, FILTER_VALIDATE_FLOAT )',
-			'url'           => 'http://php.net/filter_var_array',
+			'url'           => 'https://php.net/filter_var_array',
 			'arg'           => '$x',
 			'function'      => 'if ( function_exists( \'filter_var_array\' ) ) { pr_var( filter_var_array( $x, FILTER_VALIDATE_FLOAT ), \'\', true, true ); } else { print "E: not available (PHP 5.2.0+)\n"; }',
 		),
@@ -1458,7 +1458,7 @@ else {
 	filter_var_array( $x, FILTER_VALIDATE_FLOAT );
 }
 			',
-			'url'           => 'http://php.net/filter_var',
+			'url'           => 'https://php.net/filter_var',
 			'arg'           => '$x',
 			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypePHP5::filter_combined( $x, \'float\', FILTER_VALIDATE_FLOAT ); } else { print "E: not available (PHP 5.2.0+)\n"; }',
 		),
@@ -1472,11 +1472,11 @@ else {
 	filter_var_array( $x, FILTER_VALIDATE_FLOAT, FILTER_NULL_ON_FAILURE ); // = Simplified... see note
 }
 			',
-			'url'           => 'http://php.net/filter_var',
+			'url'           => 'https://php.net/filter_var',
 			'arg'           => '$x',
 			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypePHP5::filter_combined( $x, \'float\', FILTER_VALIDATE_FLOAT, FILTER_NULL_ON_FAILURE ); } else { print "E: not available (PHP 5.2.0+)\n"; }',
 			'notes'         => array(
-				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
+				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="https://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
 		),
 		'filter_combined_flt_null_sanitize' => array(
@@ -1489,11 +1489,11 @@ else {
 	filter_var_array( $x, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_NULL_ON_FAILURE ); // = Simplified... see note
 }
 			',
-			'url'           => 'http://php.net/filter_var',
+			'url'           => 'https://php.net/filter_var',
 			'arg'           => '$x',
 			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypePHP5::filter_combined( $x, \'float\', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_NULL_ON_FAILURE ); } else { print "E: not available (PHP 5.2.0+)\n"; }',
 			'notes'         => array(
-				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
+				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="https://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
 		),
 
@@ -1508,11 +1508,11 @@ else {
 	filter_var_array( $x, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_NULL_ON_FAILURE|FILTER_FLAG_ALLOW_FRACTION| FILTER_FLAG_ALLOW_THOUSAND|FILTER_FLAG_ALLOW_SCIENTIFIC ); // = Simplified... see note
 }
 			',
-			'url'           => 'http://php.net/filter_var',
+			'url'           => 'https://php.net/filter_var',
 			'arg'           => '$x',
 			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypePHP5::filter_combined( $x, \'float\', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_NULL_ON_FAILURE|FILTER_FLAG_ALLOW_FRACTION|FILTER_FLAG_ALLOW_THOUSAND|FILTER_FLAG_ALLOW_SCIENTIFIC ); } else { print "E: not available (PHP 5.2.0+)\n"; }',
 			'notes'         => array(
-				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
+				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="https://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
 		),
 
@@ -1521,14 +1521,14 @@ else {
 		'filter_var_int' => array(
 			'title'         => 'filter_var (&hellip;)',
 			'tooltip'       => 'filter_var( $x, FILTER_VALIDATE_INT )',
-			'url'           => 'http://php.net/filter_var',
+			'url'           => 'https://php.net/filter_var',
 			'arg'           => '$x',
 			'function'      => 'if ( function_exists( \'filter_var\' ) ) { $r = filter_var( $x, FILTER_VALIDATE_INT ); if ( is_int( $r ) ) { pr_int( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print "E: not available (PHP 5.2.0+)\n"; }',
 		),
 		'filter_var_array_int' => array(
 			'title'         => 'filter_var_array (&hellip;)',
 			'tooltip'       => 'filter_var_array( $x, FILTER_VALIDATE_INT )',
-			'url'           => 'http://php.net/filter_var_array',
+			'url'           => 'https://php.net/filter_var_array',
 			'arg'           => '$x',
 			'function'      => 'if ( function_exists( \'filter_var_array\' ) ) { pr_var( filter_var_array( $x, FILTER_VALIDATE_INT ), \'\', true, true ); } else { print "E: not available (PHP 5.2.0+)\n"; }',
 		),
@@ -1542,7 +1542,7 @@ else {
 	filter_var_array( $x, FILTER_VALIDATE_INT );
 }
 			',
-			'url'           => 'http://php.net/filter_var',
+			'url'           => 'https://php.net/filter_var',
 			'arg'           => '$x',
 			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypePHP5::filter_combined( $x, \'int\', FILTER_VALIDATE_INT ); } else { print "E: not available (PHP 5.2.0+)\n"; }',
 		),
@@ -1556,11 +1556,11 @@ else {
 	filter_var_array( $x, FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE ); // = Simplified... see note
 }
 			',
-			'url'           => 'http://php.net/filter_var',
+			'url'           => 'https://php.net/filter_var',
 			'arg'           => '$x',
 			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypePHP5::filter_combined( $x, \'int\', FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE ); } else { print "E: not available (PHP 5.2.0+)\n"; }',
 			'notes'         => array(
-				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
+				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="https://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
 		),
 		'filter_combined_int_null_min_max' => array(
@@ -1574,11 +1574,11 @@ else {
 	filter_var_array( $x, FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE, $options ); // = Simplified... see note
 }
 			',
-			'url'           => 'http://php.net/filter_var',
+			'url'           => 'https://php.net/filter_var',
 			'arg'           => '$x',
 			'function'      => 'if ( extension_loaded( \'filter\' ) ) { $options = array( \'min_range\' => 1, \'max_range\' => 50 ); VartypePHP5::filter_combined( $x, \'int\', FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE, $options ); } else { print "E: not available (PHP 5.2.0+)\n"; }',
 			'notes'         => array(
-				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
+				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="https://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
 		),
 
@@ -1592,11 +1592,11 @@ else {
 	filter_var_array( $x, FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE| FILTER_FLAG_ALLOW_HEX|FILTER_FLAG_ALLOW_OCTAL ); // = Simplified... see note
 }
 			',
-			'url'           => 'http://php.net/filter_var',
+			'url'           => 'https://php.net/filter_var',
 			'arg'           => '$x',
 			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypePHP5::filter_combined( $x, \'int\', FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE|FILTER_FLAG_ALLOW_HEX|FILTER_FLAG_ALLOW_OCTAL ); } else { print "E: not available (PHP 5.2.0+)\n"; }',
 			'notes'         => array(
-				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
+				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="https://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
 		),
 
@@ -1610,11 +1610,11 @@ else {
 	filter_var_array( $x, FILTER_SANITIZE_NUMBER_INT, FILTER_NULL_ON_FAILURE ); // = Simplified... see note
 }
 			',
-			'url'           => 'http://php.net/filter_var',
+			'url'           => 'https://php.net/filter_var',
 			'arg'           => '$x',
 			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypePHP5::filter_combined( $x, \'int\', FILTER_SANITIZE_NUMBER_INT, FILTER_NULL_ON_FAILURE ); } else { print "E: not available (PHP 5.2.0+)\n"; }',
 			'notes'         => array(
-				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
+				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="https://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
 		),
 
@@ -1628,11 +1628,11 @@ else {
 	filter_var_array( $x, FILTER_SANITIZE_NUMBER_INT, FILTER_NULL_ON_FAILURE| FILTER_FLAG_ALLOW_HEX|FILTER_FLAG_ALLOW_OCTAL ); // = Simplified... see note
 }
 			',
-			'url'           => 'http://php.net/filter_var',
+			'url'           => 'https://php.net/filter_var',
 			'arg'           => '$x',
 			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypePHP5::filter_combined( $x, \'int\', FILTER_SANITIZE_NUMBER_INT, FILTER_NULL_ON_FAILURE|FILTER_FLAG_ALLOW_HEX|FILTER_FLAG_ALLOW_OCTAL ); } else { print "E: not available (PHP 5.2.0+)\n"; }',
 			'notes'         => array(
-				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
+				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="https://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
 		),
 
@@ -1643,14 +1643,14 @@ else {
 		'filter_var_string' => array(
 			'title'         => 'filter_var (&hellip;)',
 			'tooltip'       => 'filter_var( $x, FILTER_UNSAFE_RAW )',
-			'url'           => 'http://php.net/filter_var',
+			'url'           => 'https://php.net/filter_var',
 			'arg'           => '$x',
 			'function'      => 'if ( function_exists( \'filter_var\' ) ) { $r = filter_var( $x, FILTER_UNSAFE_RAW ); if ( is_string( $r ) ) { pr_str( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print "E: not available (PHP 5.2.0+)\n"; }',
 		),
 		'filter_var_array_string' => array(
 			'title'         => 'filter_var_array (&hellip;)',
 			'tooltip'       => 'filter_var_array( $x, FILTER_UNSAFE_RAW )',
-			'url'           => 'http://php.net/filter_var_array',
+			'url'           => 'https://php.net/filter_var_array',
 			'arg'           => '$x',
 			'function'      => 'if ( function_exists( \'filter_var_array\' ) ) { pr_var( filter_var_array( $x, FILTER_UNSAFE_RAW ), \'\', true, true ); } else { print "E: not available (PHP 5.2.0+)\n"; }',
 		),
@@ -1664,7 +1664,7 @@ else {
 	filter_var_array( $x, FILTER_UNSAFE_RAW );
 }
 			',
-			'url'           => 'http://php.net/filter_var',
+			'url'           => 'https://php.net/filter_var',
 			'arg'           => '$x',
 			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypePHP5::filter_combined( $x, \'string\', FILTER_UNSAFE_RAW ); } else { print "E: not available (PHP 5.2.0+)\n"; }',
 		),
@@ -1678,11 +1678,11 @@ else {
 	filter_var_array( $x, FILTER_UNSAFE_RAW, FILTER_NULL_ON_FAILURE ); // = Simplified... see note
 }
 			',
-			'url'           => 'http://php.net/filter_var',
+			'url'           => 'https://php.net/filter_var',
 			'arg'           => '$x',
 			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypePHP5::filter_combined( $x, \'string\', FILTER_UNSAFE_RAW, FILTER_NULL_ON_FAILURE ); } else { print "E: not available (PHP 5.2.0+)\n"; }',
 			'notes'         => array(
-				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
+				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="https://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
 		),
 
@@ -1697,11 +1697,11 @@ else {
 	filter_var_array( $x, FILTER_SANITIZE_STRING, FILTER_NULL_ON_FAILURE ); // = Simplified... see note
 }
 			',
-			'url'           => 'http://php.net/filter_var',
+			'url'           => 'https://php.net/filter_var',
 			'arg'           => '$x',
 			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypePHP5::filter_combined( $x, \'string\', FILTER_SANITIZE_STRING, FILTER_NULL_ON_FAILURE ); } else { print "E: not available (PHP 5.2.0+)\n"; }',
 			'notes'         => array(
-				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
+				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="https://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
 		),
 
@@ -1716,11 +1716,11 @@ else {
 	filter_var_array( $x, FILTER_SANITIZE_STRING, FILTER_NULL_ON_FAILURE| FILTER_FLAG_ENCODE_LOW|FILTER_FLAG_ENCODE_HIGH|FILTER_FLAG_ENCODE_AMP ); // = Simplified... see note
 }
 			',
-			'url'           => 'http://php.net/filter_var',
+			'url'           => 'https://php.net/filter_var',
 			'arg'           => '$x',
 			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypePHP5::filter_combined( $x, \'string\', FILTER_SANITIZE_STRING, FILTER_NULL_ON_FAILURE|FILTER_FLAG_ENCODE_LOW|FILTER_FLAG_ENCODE_HIGH|FILTER_FLAG_ENCODE_AMP ); } else { print "E: not available (PHP 5.2.0+)\n"; }',
 			'notes'         => array(
-				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
+				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="https://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
 		),
 
@@ -1734,11 +1734,11 @@ else {
 	filter_var_array( $x, FILTER_SANITIZE_STRING, FILTER_NULL_ON_FAILURE| FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH ); // = Simplified... see note
 }
 			',
-			'url'           => 'http://php.net/filter_var',
+			'url'           => 'https://php.net/filter_var',
 			'arg'           => '$x',
 			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypePHP5::filter_combined( $x, \'string\', FILTER_SANITIZE_STRING, FILTER_NULL_ON_FAILURE|FILTER_FLAG_STRIP_LOW|FILTER_FLAG_STRIP_HIGH ); } else { print "E: not available (PHP 5.2.0+)\n"; }',
 			'notes'         => array(
-				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
+				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="https://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
 		),
 
@@ -1752,11 +1752,11 @@ else {
 	filter_var_array( $x, FILTER_SANITIZE_SPECIAL_CHARS, FILTER_NULL_ON_FAILURE ); // = Simplified... see note
 }
 			',
-			'url'           => 'http://php.net/filter_var',
+			'url'           => 'https://php.net/filter_var',
 			'arg'           => '$x',
 			'function'      => 'if ( extension_loaded( \'filter\' ) ) { VartypePHP5::filter_combined( $x, \'string\', FILTER_SANITIZE_SPECIAL_CHARS, FILTER_NULL_ON_FAILURE ); } else { print "E: not available (PHP 5.2.0+)\n"; }',
 			'notes'         => array(
-				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
+				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="https://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
 		),
 
@@ -1770,11 +1770,11 @@ else {
 	filter_var_array( $x, FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_NULL_ON_FAILURE ); // = Simplified... see note
 }
 			',
-			'url'           => 'http://php.net/filter_var',
+			'url'           => 'https://php.net/filter_var',
 			'arg'           => '$x',
 			'function'      => 'if ( extension_loaded( \'filter\' ) && defined( \'FILTER_SANITIZE_FULL_SPECIAL_CHARS\' ) ) { VartypePHP5::filter_combined( $x, \'string\', FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_NULL_ON_FAILURE ); } else { print "E: not available (PHP 5.3.3+)\n"; }',
 			'notes'         => array(
-				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
+				'<p>The code snippet is simplified for brevity. Please refer to the source of this file on <a href="https://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a> for full details on how to use filter_var_array().</p>',
 			),
 		),
 
@@ -1803,7 +1803,7 @@ else {
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
-			'book_url'  => 'http://php.net/types.comparisons',
+			'book_url'  => 'https://php.net/types.comparisons',
 			'target'    => null,
 		),
 
@@ -1836,7 +1836,7 @@ else {
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
-			'book_url'  => 'http://php.net/ref.var',
+			'book_url'  => 'https://php.net/ref.var',
 			'target'    => null,
 		),
 
@@ -1863,7 +1863,7 @@ else {
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
-			'book_url'  => 'http://php.net/types.comparisons',
+			'book_url'  => 'https://php.net/types.comparisons',
 			'target'    => 'n',
 		),
 
@@ -1897,7 +1897,7 @@ else {
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
-			'book_url'  => 'http://php.net/types.comparisons',
+			'book_url'  => 'https://php.net/types.comparisons',
 			'target'    => 'b',
 		),
 
@@ -1927,7 +1927,7 @@ else {
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
-			'book_url'  => 'http://php.net/book.var',
+			'book_url'  => 'https://php.net/book.var',
 			'target'    => 'i',
 		),
 
@@ -1955,7 +1955,7 @@ else {
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
-			'book_url'  => 'http://php.net/book.var',
+			'book_url'  => 'https://php.net/book.var',
 			'target'    => 'f',
 		),
 
@@ -1990,7 +1990,7 @@ else {
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
-			'book_url'  => 'http://php.net/book.var',
+			'book_url'  => 'https://php.net/book.var',
 			'target'    => '',
 		),
 
@@ -2010,7 +2010,7 @@ else {
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
-			'book_url'  => 'http://php.net/book.strings',
+			'book_url'  => 'https://php.net/book.strings',
 			'target'    => 's',
 		),
 
@@ -2046,7 +2046,7 @@ else {
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
-			'book_url'  => 'http://php.net/book.strings',
+			'book_url'  => 'https://php.net/book.strings',
 			'target'    => 's',
 		),
 
@@ -2062,7 +2062,7 @@ else {
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
-			'book_url'  => 'http://php.net/book.array',
+			'book_url'  => 'https://php.net/book.array',
 			'target'    => 'a',
 		),
 
@@ -2093,7 +2093,7 @@ else {
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
-			'book_url'  => 'http://php.net/book.array',
+			'book_url'  => 'https://php.net/book.array',
 			'target'    => 'a',
 		),
 
@@ -2117,7 +2117,7 @@ else {
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
-			'book_url'  => 'http://php.net/book.classobj',
+			'book_url'  => 'https://php.net/book.classobj',
 			'target'    => 'o',
 		),
 
@@ -2157,7 +2157,7 @@ else {
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
-			'book_url'  => 'http://php.net/language.operators.arithmetic',
+			'book_url'  => 'https://php.net/language.operators.arithmetic',
 			'target'    => '',
 		),
 	);
@@ -2191,7 +2191,7 @@ else {
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
-			'book_url'  => 'http://php.net/book.ctype',
+			'book_url'  => 'https://php.net/book.ctype',
 			'target'    => 's',
 		),
 	);
@@ -2223,7 +2223,7 @@ else {
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
-			'book_url'  => 'http://php.net/book.filter',
+			'book_url'  => 'https://php.net/book.filter',
 			'target'    => '',
 		),
 
@@ -2241,7 +2241,7 @@ else {
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
-			'book_url'  => 'http://php.net/book.filter',
+			'book_url'  => 'https://php.net/book.filter',
 			'target'    => '',
 		),
 	);

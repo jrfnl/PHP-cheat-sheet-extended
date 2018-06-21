@@ -224,7 +224,7 @@ function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
 		'Object of class <em>stdClass/TestObject/TestObjectToString</em> could not be converted to $1',
 		'Object of class <em>stdClass/TestObject/TestObjectToString</em> to string conversion',
 		'Cannot use object of type <em>stdClass/TestObject/TestObjectToString</em> as array',
-		'<a href=$1http://php.net/function.',
+		'<a href=$1https://php.net/function.',
 	);
 
 	foreach ( $search as $k => $s ) {
@@ -302,13 +302,13 @@ function determine_base_uri() {
 		'localhost',
 	);
 
-	$base_uri = 'http://phpcheatsheets.com/';
+	$base_uri = 'https://phpcheatsheets.com/';
 
 	if ( isset( $_SERVER['HTTP_HOST'] ) && in_array( $_SERVER['HTTP_HOST'], $valid_hosts, true ) ) {
-		$base_uri = 'http://' . $_SERVER['HTTP_HOST'] . determine_script_path();
+		$base_uri = 'https://' . $_SERVER['HTTP_HOST'] . determine_script_path();
 	}
 	else if ( isset( $_SERVER['SERVER_NAME'] ) && in_array( $_SERVER['SERVER_NAME'], $valid_hosts, true ) ) {
-		$base_uri = 'http://' . $_SERVER['SERVER_NAME'] . determine_script_path();
+		$base_uri = 'https://' . $_SERVER['SERVER_NAME'] . determine_script_path();
 	}
 
 	return $base_uri;

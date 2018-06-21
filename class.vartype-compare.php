@@ -39,55 +39,55 @@ class VartypeCompare extends Vartype {
 		 */
 		'equal'         => array(
 			'title'         => '==',
-			'url'           => 'http://php.net/language.operators.comparison',
+			'url'           => 'https://php.net/language.operators.comparison',
 			'arg'           => '$a, $b',
 			'function'      => 'pr_bool( $a == $b );',
 		),
 		'equal_strict'  => array(
 			'title'         => '===',
-			'url'           => 'http://php.net/language.operators.comparison',
+			'url'           => 'https://php.net/language.operators.comparison',
 			'arg'           => '$a, $b',
 			'function'      => 'pr_bool( $a === $b );',
 		),
 		'not_equal'     => array(
 			'title'         => '!=',
-			'url'           => 'http://php.net/language.operators.comparison',
+			'url'           => 'https://php.net/language.operators.comparison',
 			'arg'           => '$a, $b',
 			'function'      => 'pr_bool( $a != $b );',
 		),
 		'not_equal2'    => array(
 			'title'         => '&lt;&gt;',
-			'url'           => 'http://php.net/language.operators.comparison',
+			'url'           => 'https://php.net/language.operators.comparison',
 			'arg'           => '$a, $b',
 			'function'      => 'pr_bool( $a <> $b );',
 		),
 		'not_equal_strict' => array(
 			'title'         => '!==',
-			'url'           => 'http://php.net/language.operators.comparison',
+			'url'           => 'https://php.net/language.operators.comparison',
 			'arg'           => '$a, $b',
 			'function'      => 'pr_bool( $a !== $b );',
 		),
 		'less_than'     => array(
 			'title'         => '&lt;',
-			'url'           => 'http://php.net/language.operators.comparison',
+			'url'           => 'https://php.net/language.operators.comparison',
 			'arg'           => '$a, $b',
 			'function'      => 'pr_bool( $a < $b );',
 		),
 		'greater_than'  => array(
 			'title'         => '&gt;',
-			'url'           => 'http://php.net/language.operators.comparison',
+			'url'           => 'https://php.net/language.operators.comparison',
 			'arg'           => '$a, $b',
 			'function'      => 'pr_bool( $a > $b );',
 		),
 		'less_than_or_equal' => array(
 			'title'         => '&lt;=',
-			'url'           => 'http://php.net/language.operators.comparison',
+			'url'           => 'https://php.net/language.operators.comparison',
 			'arg'           => '$a, $b',
 			'function'      => 'pr_bool( $a <= $b );',
 		),
 		'greater_than_or_equal' => array(
 			'title'         => '&gt;=',
-			'url'           => 'http://php.net/language.operators.comparison',
+			'url'           => 'https://php.net/language.operators.comparison',
 			'arg'           => '$a, $b',
 			'function'      => 'pr_bool( $a >= $b );',
 		),
@@ -95,7 +95,7 @@ class VartypeCompare extends Vartype {
 		// Will be removed from $tests property from constructor if not on PHP 7+ to prevent parse errors.
 		'spaceship'     => array(
 			'title'         => '&lt;=&gt;',
-			'url'           => 'http://php.net/language.operators.comparison',
+			'url'           => 'https://php.net/language.operators.comparison',
 			'arg'           => '$a, $b',
 			'function'      => 'pr_int( $a <=> $b );',
 			'notes'         => array(
@@ -111,43 +111,43 @@ class VartypeCompare extends Vartype {
 		 */
 		'strcmp'        => array(
 			'title'         => 'strcmp()',
-			'url'           => 'http://php.net/strcmp',
+			'url'           => 'https://php.net/strcmp',
 			'arg'           => '$a, $b',
 			'function'      => 'pc_compare_strings( $a, $b, "strcmp" );',
 		),
 		'strcasecmp'    => array(
 			'title'         => 'strcasecmp()',
-			'url'           => 'http://php.net/strcasecmp',
+			'url'           => 'https://php.net/strcasecmp',
 			'arg'           => '$a, $b',
 			'function'      => 'pc_compare_strings( $a, $b, "strcasecmp" );',
 		),
 		'strnatcmp'     => array(
 			'title'         => 'strnatcmp()',
-			'url'           => 'http://php.net/strnatcmp',
+			'url'           => 'https://php.net/strnatcmp',
 			'arg'           => '$a, $b',
 			'function'      => 'pc_compare_strings( $a, $b, "strnatcmp" );',
 		),
 		'strnatcasecmp' => array(
 			'title'         => 'strnatcasecmp()',
-			'url'           => 'http://php.net/strnatcasecmp',
+			'url'           => 'https://php.net/strnatcasecmp',
 			'arg'           => '$a, $b',
 			'function'      => 'pc_compare_strings( $a, $b, "strnatcasecmp" );',
 		),
 		'strcoll'       => array(
 			'title'         => 'strcoll()',
-			'url'           => 'http://php.net/strcoll',
+			'url'           => 'https://php.net/strcoll',
 			'arg'           => '$a, $b',
 			'function'      => 'pc_compare_strings( $a, $b, "strcoll" );',
 		),
 		'similar_text'  => array(
 			'title'         => 'similar_text()',
-			'url'           => 'http://php.net/similar_text',
+			'url'           => 'https://php.net/similar_text',
 			'arg'           => '$a, $b',
 			'function'      => 'pc_compare_strings( $a, $b, "similar_text" );',
 		),
 		'levenshtein'   => array(
 			'title'         => 'levenshtein()',
-			'url'           => 'http://php.net/levenshtein',
+			'url'           => 'https://php.net/levenshtein',
 			'arg'           => '$a, $b',
 			'function'      => 'pc_compare_strings( $a, $b, "levenshtein" );',
 		),
@@ -158,7 +158,7 @@ class VartypeCompare extends Vartype {
 		 */
 		'bccomp'        => array(
 			'title'         => 'bccomp()',
-			'url'           => 'http://php.net/bccomp',
+			'url'           => 'https://php.net/bccomp',
 			'arg'           => '$a, $b',
 			'function'      => 'if ( extension_loaded( \'bcmath\' ) ) { $r = bccomp( $a, $b ); if ( is_int( $r ) ) { pr_int( $r ); } else { pr_var( $r, \'\', true, true ); } } else { print \'E: bcmath extension not installed\'; }',
 			'notes'         => array(
@@ -168,7 +168,7 @@ class VartypeCompare extends Vartype {
 		),
 		'min'           => array(
 			'title'         => 'min()',
-			'url'           => 'http://php.net/min',
+			'url'           => 'https://php.net/min',
 			'arg'           => '$a, $b',
 			'function'      => 'pr_var( min( $a, $b ), \'\', true, true );',
 			'notes'         => array(
@@ -179,7 +179,7 @@ class VartypeCompare extends Vartype {
 
 		'max'           => array(
 			'title'         => 'max()',
-			'url'           => 'http://php.net/max',
+			'url'           => 'https://php.net/max',
 			'arg'           => '$a, $b',
 			'function'      => 'pr_var( max( $a, $b ), \'\', true, true );',
 			'notes'         => array(
@@ -195,7 +195,7 @@ class VartypeCompare extends Vartype {
 		 */
 		'version_compare' => array(
 			'title'         => 'version_compare()',
-			'url'           => 'http://php.net/version_compare',
+			'url'           => 'https://php.net/version_compare',
 			'arg'           => '$a, $b',
 			'function'      => 'pr_var( version_compare( $a, $b ), \'\', true, true );',
 		),

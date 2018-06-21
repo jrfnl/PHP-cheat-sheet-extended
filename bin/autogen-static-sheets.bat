@@ -244,7 +244,7 @@ IF %ERRORLEVEL% == 0 (
 )
 GOTO :EOF
 
-:: Timer script liberally copied from http://stackoverflow.com/questions/673523/
+:: Timer script liberally copied from https://stackoverflow.com/questions/673523/
 :CLOSE
 SET end=%time%
 SET options="tokens=1-4 delims=:."

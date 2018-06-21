@@ -135,21 +135,21 @@ function fix_content( $content ) {
 		// Make sure the correct PHP version nr for the live sheets is shown in the version dropdown.
 		10 => '`<option value="live"(?: selected="selected")?\s*>PHP [0-9\.-]+(?:(?:alpha|beta|RC)(?:[0-9])?)?</option>`',
 		// Make chosen PHP version persistent.
-		12 => '`<a href="http://([a-z\.-]+)/(arithmetic|compare|test)/" class="top-link(?: top-active)?">`',
+		12 => '`<a href="http[s]?://([a-z\.-]+)/(arithmetic|compare|test)/" class="top-link(?: top-active)?">`',
 		// Make sure any potential links to php.net are properly linked.
-		13 => '`\[(http://php\.net/manual/([^\]]+))\]`',
+		13 => '`\[(http[s]?://php\.net/manual/([^\]]+))\]`',
 		// HTML attributes should be using double quotes.
 		14 => '`<a href=\'([^\']+)\'`',
 	);
 
 	$regex_replace = array(
 		0  => '<!DOCTYPE html PUBLIC',
-		5  => '<a href=$1http://php.net/function.',
+		5  => '<a href=$1https://php.net/function.',
 		7  => '<th>array()<br />					</th>',
 		8  => 'array()<br />',
 		9  => '<t$1$2>array()<br /></t$1>',
 		10 => '<option value="live">PHP 5.6.32</option>', // IMPORTANT! Change this if the PHP version on the server changes!!
-		12 => '<a href="http://$1/index.php?page=$2&amp;phpversion=php' . PHP_VERSION . '" class="top-link$3">',
+		12 => '<a href="https://$1/index.php?page=$2&amp;phpversion=php' . PHP_VERSION . '" class="top-link$3">',
 		13 => '[<a href="$1">$2</a>]',
 		14 => '<a href="$1"',
 	);

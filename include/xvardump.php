@@ -10,13 +10,13 @@
  * Only use those if you know what you are receiving and don't need variable typing info.
  *
  * @package xvardump
- * @author  Juliette Reinders Folmer, {@link http://www.adviesenzo.nl/ Advies en zo} -
+ * @author  Juliette Reinders Folmer, {@link https://www.adviesenzo.nl/ Advies en zo} -
  *  <xvardump@adviesenzo.nl>
  *
  * @version   1.7
  * @since     2009-09-30 // Last changed: by Juliette Reinders Folmer
  * @copyright Advies en zo, Meedenken en -doen �2005-2009
- * @license   http://www.opensource.org/licenses/lgpl-license.php GNU Lesser General Public License
+ * @license   https://www.opensource.org/licenses/lgpl-license.php GNU Lesser General Public License
  * @license   http://opensource.org/licenses/academic Academic Free License Version 1.2
  * @example   example/example.php
  */
