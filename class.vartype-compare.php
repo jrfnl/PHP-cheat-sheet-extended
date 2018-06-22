@@ -188,6 +188,17 @@ class VartypeCompare extends Vartype {
 				If <code>max()</code> is given multiple arrays, the longest array is returned. If all the arrays have the same length, <code>max()</code> will use lexicographic ordering to find the return value.</p>',
 			),
 		),
+
+		/*
+		 * Version compare.
+		 * Expects string input.
+		 */
+		'version_compare' => array(
+			'title'         => 'version_compare()',
+			'url'           => 'http://php.net/version_compare',
+			'arg'           => '$a, $b',
+			'function'      => 'pr_var( version_compare( $a, $b ), \'\', true, true );',
+		),
 	);
 
 
