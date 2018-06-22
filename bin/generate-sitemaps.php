@@ -203,6 +203,7 @@ class CheatsheetSitemap {
 		array_multisort(
 			$sort_order, SORT_ASC,
 			$prio, SORT_DESC,
+			// phpcs:ignore PHPCompatibility.PHP.NewConstants.sort_naturalFound -- Sitemaps are generated on high PHP, so no issue.
 			$url, SORT_ASC, SORT_NATURAL,
 			$this->entries
 		);

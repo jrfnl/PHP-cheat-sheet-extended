@@ -56,6 +56,7 @@ $test_array = array(
 	'sg'  => 'str123',
 	'sh'  => '123, "str"',
 
+	// phpcs:ignore PHPCompatibility.PHP.ValidIntegers.HexNumericStringFound -- Used for demo purposes.
 	'su'  => '0xCC00F9', // Testing is_numeric, filter_var integer allow hex.
 	'sv'  => '0123', // Testing is_numeric, filter_var integer allow octal, integers.
 
