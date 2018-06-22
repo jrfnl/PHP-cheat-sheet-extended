@@ -181,6 +181,20 @@ class VartypeTest extends Vartype {
 		),
 
 
+		// Array related.
+		'is_iterable' => array(
+			'title'         => 'is_iterable()',
+			'url'           => 'http://php.net/is_iterable',
+			'arg'           => '$x',
+			'function'      => 'if ( function_exists( \'is_iterable\' ) ) { pr_bool( is_iterable( $x ) ); } else { print "E: not available (PHP 7.1.0+)\n"; }',
+		),
+		'is_countable' => array(
+			'title'         => 'is_countable()',
+			'url'           => 'http://php.net/is_countable',
+			'arg'           => '$x',
+			'function'      => 'if ( function_exists( \'is_countable\' ) ) { pr_bool( is_countable( $x ) ); } else { print "E: not available (PHP 7.3.0+)\n"; }',
+		),
+
 
 		/*
 		 * Type casting.
@@ -1814,8 +1828,11 @@ else {
 				'is_callable',
 
 				'is_numeric',
+
+				'is_iterable',
+				'is_countable',
 			),
-			'break_at'  => array( 'gettype', 'is_null', 'is_string', 'is_resource', 'is_callable', 'is_numeric' ),
+			'break_at'  => array( 'gettype', 'is_null', 'is_string', 'is_resource', 'is_callable', 'is_numeric', 'is_countable' ),
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
@@ -2058,6 +2075,8 @@ else {
 
 				'empty',
 				'count_mt_0',
+				'is_iterable',
+				'is_countable',
 
 				'isset_0',
 				'array_key_exists',
@@ -2070,7 +2089,7 @@ else {
 
 				'array_filter',
 			),
-			'break_at'  => array( 'count', 'count_mt_0', 'isset_foo', 'array_access_multi_string', 'array_filter' ),
+			'break_at'  => array( 'count', 'is_countable', 'isset_foo', 'array_access_multi_string', 'array_filter' ),
 			'good'      => array(),
 			'best'      => array(),
 			'urls'      => array(),
