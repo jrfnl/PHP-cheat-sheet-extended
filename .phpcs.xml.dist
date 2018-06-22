@@ -21,24 +21,6 @@
 		<exclude name="PHPCompatibility.PHP.NewConstants.e_user_deprecatedFound"/>
 	</rule>
 
-	<!-- Selectively exclude certain files from certain checks after manual verification. -->
-	<!-- These are not issues, but explicitely part of the cheatsheets
-	     to demonstrate behaviour changes in PHP. -->
-	<rule ref="PHPCompatibility.PHP.NewMagicMethods.__tostringFound">
-		<exclude-pattern>include/functions.php</exclude-pattern>
-	</rule>
-	<rule ref="PHPCompatibility.PHP.ValidIntegers.BinaryIntegerFound">
-		<exclude-pattern>include/vars-to-test-php54.php</exclude-pattern>
-	</rule>
-	<rule ref="PHPCompatibility.PHP.ValidIntegers.HexNumericStringFound">
-		<exclude-pattern>include/vars-to-test.php</exclude-pattern>
-	</rule>
-	<!-- Sitemaps are being generated in PHP 5.6. -->
-	<rule ref="PHPCompatibility.PHP.NewConstants.sort_naturalFound">
-		<exclude-pattern>bin/generate-sitemaps.php</exclude-pattern>
-	</rule>
-
-
 	<rule ref="WordPress">
 		<exclude name="Squiz.WhiteSpace.SuperfluousWhitespace.EmptyLines" />
 

@@ -3,6 +3,8 @@
  * Define additional PHP 5.4+ test variables.
  *
  * @package PHPCheatsheets
+ *
+ * @phpcs:disable PHPCompatibility.PHP.ValidIntegers.BinaryIntegerFound -- This file is targetting PHP 5.4+.
  */
 
 // Prevent direct calls to this file.
@@ -12,6 +14,4 @@ if ( ! defined( 'APP_DIR' ) ) {
 	exit();
 }
 
-
 $test_array['ia'] = 0b0111001; // Binary integer 57 - legend set in vars-to-test.php.
-

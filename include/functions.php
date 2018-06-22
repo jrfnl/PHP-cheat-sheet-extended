@@ -59,10 +59,13 @@ class TestObjectToString extends TestObject {
 	 * Example __toString method.
 	 *
 	 * @return string
+	 *
+	 * @phpcs:disable PHPCompatibility.PHP.NewMagicMethods.__tostringFound -- Used for demo purposes.
 	 */
 	function __toString() {
 		return $this->test3;
 	}
+	// phpcs:enable
 }
 
 
