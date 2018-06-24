@@ -14,17 +14,17 @@ if ( ! defined( 'APP_DIR' ) ) {
 ?>
 
 		<div class="about">
-			<a href="http://www.flickr.com/photos/87233981@N00/2870136931"><img src="<?php echo BASE_URI; ?>page/images/juliette_by_chris.png" width="181" height="120" alt="Juliette Reinders Folmer, photo by Chris Shiflett" class="about-me" /></a>
+			<a href="https://www.flickr.com/photos/87233981@N00/2870136931"><img src="<?php echo BASE_URI; ?>page/images/juliette_by_chris.png" width="181" height="120" alt="Juliette Reinders Folmer, photo by Chris Shiflett" class="about-me" /></a>
 
 			<h3>Who&#8217;s behind this ?</h3>
 			<p>
-				My name is Juliette Reinders Folmer. I&#8217;m a business consultant who just happens to have a knack for programming. I&#8217;m self-employed, operating under the name &#8220;<a href="http://adviesenzo.nl/">Advies en zo</a>&#8222; and am based in Amsterdam, The Netherlands.
+				My name is Juliette Reinders Folmer. I&#8217;m a business consultant who just happens to have a knack for programming. I&#8217;m self-employed, operating under the name &#8220;<a href="https://adviesenzo.nl/">Advies en zo</a>&#8222; and am based in Amsterdam, The Netherlands.
 			</p>
 			<p>
 				<a href="https://twitter.com/jrf_nl" class="twitter-follow-button" data-show-count="false" title="Follow Juliette on Twitter">Follow @jrf_nl</a>
 				<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-				<a href="http://nl.linkedin.com/in/julietterf" target="_blank" class="li-button">
+				<a href="https://nl.linkedin.com/in/julietterf" target="_blank" class="li-button">
 					<img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_liprofile_blue_80x15.png" width="80" height="15" alt="View Juliette Reinders Folmer&#8217;s profile on LinkedIn" />
 				</a>
 			</p>
@@ -60,7 +60,7 @@ if ( ! defined( 'APP_DIR' ) ) {
 
 			<div class="important">
 				<p>Found a mistake ? Want more tests ? or more cheatsheets ?</p>
-				<p>Go ahead: open an <a href="https://github.com/jrfnl/PHP-cheat-sheet-extended/issues" title="Open an issue on GitHub">issue</a> or send in a <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" title="Send in a pull request on GitHub">pull request</a>.</p>
+				<p>Go ahead: open an <a href="https://github.com/jrfnl/PHP-cheat-sheet-extended/issues" title="Open an issue on GitHub">issue</a> or send in a <a href="https://github.com/jrfnl/PHP-cheat-sheet-extended" title="Send in a pull request on GitHub">pull request</a>.</p>
 			</div>
 		</div>
 

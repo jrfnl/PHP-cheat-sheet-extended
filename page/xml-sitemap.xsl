@@ -73,7 +73,7 @@
 					<h1>XML Sitemap</h1>
 					<p class="expl">
 						This is an XML Sitemap, meant for consumption by search engines.<br/>
-						You can find more information about XML sitemaps on <a href="http://sitemaps.org">sitemaps.org</a>.
+						You can find more information about XML sitemaps on <a href="https://sitemaps.org">sitemaps.org</a>.
 					</p>
 					<p class="expl">
 							This XML Sitemap contains <xsl:value-of select="count(sitemap:urlset/sitemap:url)"/> URLs.

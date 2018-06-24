@@ -15,7 +15,7 @@ class CheatsheetSitemap {
 	/**
 	 * Base url for the website.
 	 */
-	const BASE_URI = 'http://phpcheatsheets.com/';
+	const BASE_URI = 'https://phpcheatsheets.com/';
 
 	/**
 	 * Directory where the static files can be found.
@@ -268,10 +268,10 @@ class CheatsheetSitemap {
 	protected function create_sitemap() {
 		$sitemap = sprintf( '<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="%1$spage/xml-sitemap.xsl"?>
 <urlset
-		xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-			http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+		xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
+		xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="https://www.sitemaps.org/schemas/sitemap/0.9
+			https://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 %2$s
 </urlset>',
 			self::BASE_URI,

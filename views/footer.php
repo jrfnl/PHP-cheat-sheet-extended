@@ -23,10 +23,10 @@ if ( ! defined( 'APP_DIR' ) ) {
 			<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 			<script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
-			<script type="IN/Share" data-url="http://phpcheatsheets.com/" data-counter="right"></script>
+			<script type="IN/Share" data-url="https://phpcheatsheets.com/" data-counter="right"></script>
 
 		</p>
-		<p id="license">This PHP cheat sheet collection is inspired by the <a href="http://www.blueshoes.org/en/developer/php_cheat_sheet/" target="_blank">Blueshoes cheat sheet</a> and licensed under the <a href="http://www.gnu.org/licenses/gpl.html" target="_blank">GPLv3</a> software license. You can view and fork the source on <a href="http://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a>. Pull requests welcome.</p>
+		<p id="license">This PHP cheat sheet collection is inspired by the <a href="http://www.blueshoes.org/en/developer/php_cheat_sheet/" target="_blank">Blueshoes cheat sheet</a> and licensed under the <a href="https://www.gnu.org/licenses/gpl.html" target="_blank">GPLv3</a> software license. You can view and fork the source on <a href="https://github.com/jrfnl/PHP-cheat-sheet-extended" target="_blank">GitHub</a>. Pull requests welcome.</p>
 
 		<div id="paypal-donate">
 			<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
