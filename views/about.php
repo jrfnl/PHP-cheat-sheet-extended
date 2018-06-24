@@ -22,7 +22,7 @@ if ( ! defined( 'APP_DIR' ) ) {
 			</p>
 			<p>
 				<a href="https://twitter.com/jrf_nl" class="twitter-follow-button" data-show-count="false" title="Follow Juliette on Twitter">Follow @jrf_nl</a>
-				<script type="text/javascript">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+				<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 				<a href="http://nl.linkedin.com/in/julietterf" target="_blank" class="li-button">
 					<img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_liprofile_blue_80x15.png" width="80" height="15" alt="View Juliette Reinders Folmer&#8217;s profile on LinkedIn" />
