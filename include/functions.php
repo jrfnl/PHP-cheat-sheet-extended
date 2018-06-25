@@ -189,8 +189,6 @@ function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
 		'trim() expects parameter 1 to be string',
 		'get_class() expects parameter 1 to be object',
 		'get_resource_type() expects parameter 1 to be resource',
-		'intdiv() expects parameter 1 to be integer',
-		'intdiv() expects parameter 2 to be integer',
 	);
 
 	$replace = array(
@@ -205,8 +203,6 @@ function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
 		'trim() expects parameter 1 to be string, <em>array/object/resource</em> given',
 		'get_class() expects parameter 1 to be object, <em>boolean/integer/double/string/array/resource</em> given',
 		'get_resource_type() expects parameter 1 to be resource, <em>null/boolean/integer/double/string/array/object</em> given',
-		'intdiv() expects parameter 1 to be integer, <em>float/string/array/object/resource</em> given',
-		'intdiv() expects parameter 2 to be integer, <em>float/string/array/object/resource</em> given',
 	);
 
 	// Group some more messages and make error message links work.
@@ -214,10 +210,11 @@ function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
 		'`^(bc(?:add|sub|mul|div|mod|comp)|str(?:case|natcase|nat)?cmp|strcoll|similar_text|levenshtein)\(\) expects parameter ([12]) to be string, (?:array|object|resource) given$`',
 		'`^fmod\(\) expects parameter ([12]) to be (double|float), (?:string|array|object|resource) given$`',
 		'`^(is_(?:nan|(?:in)?finite))\(\) expects parameter ([12]) to be (double|float), (?:string|array|object|resource) given$`',
-		'`^Object of class [A-Za-z]+ could not be converted to (int|double|float|string)$`',
+		'`^Object of class [A-Za-z]+ could not be converted to (int|double|float|string|number)$`',
 		'`^Object of class [A-Za-z]+ to string conversion$`',
 		'`^Cannot use object of type [A-Za-z]+ as array$`',
 		'`<a href=(["\'])function\.`',
+		'`^intdiv\(\) expects parameter ([12]) to be int(eger)?, (?:float|string|array|object|resource) given$`',
 	);
 	$preg_replace = array(
 		'$1() expects parameter $2 to be string, <em>array/object/resource</em> given',
@@ -227,6 +224,7 @@ function do_handle_errors( $error_no, $error_str, $error_file, $error_line ) {
 		'Object of class <em>stdClass/TestObject/TestObjectToString</em> to string conversion',
 		'Cannot use object of type <em>stdClass/TestObject/TestObjectToString</em> as array',
 		'<a href=$1https://php.net/function.',
+		'intdiv() expects parameter $1 to be int$2, <em>float/string/array/object/resource</em> given',
 	);
 
 	foreach ( $search as $k => $s ) {
