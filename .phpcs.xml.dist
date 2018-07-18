@@ -5,6 +5,12 @@
 	<arg value="sp"/>
 	<arg name="extensions" value="php"/>
 
+	<!-- Strip the filepaths down to the relevant bit. -->
+	<arg name="basepath" value="./"/>
+
+	<!-- Check 8 files simultanously. -->
+	<arg name="parallel" value="8"/>
+
 	<file>.</file>
 
 	<exclude-pattern>include/PHP-cast-to-type/*</exclude-pattern>
@@ -36,11 +42,10 @@
 		<exclude name="WordPress.PHP.YodaConditions"/>
 
 		<!-- WP specific sniffs which should be ignored -->
+		<exclude name="WordPress.Security" />
 		<exclude name="WordPress.VIP" />
 		<exclude name="WordPress.WP" />
-		<exclude name="WordPress.XSS.EscapeOutput" />
 		<exclude name="WordPress.Files.FileName.InvalidClassFileName" />
-		<exclude name="WordPress.CSRF.NonceVerification" />
 		<exclude name="WordPress.PHP.DevelopmentFunctions" />
 		<exclude name="WordPress.PHP.DiscouragedPHPFunctions" />
 

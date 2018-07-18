@@ -107,7 +107,7 @@ class Vartype {
 		// Create the actual test functions.
 		foreach ( $this->tests as $key => $array ) {
 			// The cheatsheets are still compatible with PHP < 5.3, so there is no way round this.
-			// phpcs:ignore PHPCompatibility.PHP.DeprecatedFunctions.create_functionDeprecated,WordPress.PHP.RestrictedPHPFunctions.create_function_create_function,Generic.PHP.NoSilencedErrors.Discouraged
+			// phpcs:ignore PHPCompatibility.PHP.DeprecatedFunctions.create_functionDeprecated,Generic.PHP.DeprecatedFunctions.Deprecated,WordPress.PHP.RestrictedPHPFunctions.create_function_create_function,Generic.PHP.NoSilencedErrors.Discouraged
 			$this->tests[ $key ]['test'] = @create_function( $array['arg'], $array['function'] );
 		}
 	}
