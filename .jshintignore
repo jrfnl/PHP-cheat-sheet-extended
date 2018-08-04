@@ -1,3 +1,4 @@
 page/jquery-css/**.js
 page/jquery.thfloat-0.7.2.js
 page/**.min.js
+vendor/

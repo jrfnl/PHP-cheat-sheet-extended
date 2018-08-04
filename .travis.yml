@@ -6,6 +6,13 @@ sudo: false
 
 dist: trusty
 
+cache:
+  directories:
+    # Cache directory for older Composer versions.
+    - $HOME/.composer/cache/files
+    # Cache directory for more recent Composer versions.
+    - $HOME/.cache/composer/files
+
 # Declare project language.
 # @link https://docs.travis-ci.com/user/languages/php/
 language: php
@@ -47,25 +54,8 @@ before_install:
     # Speed up build time by disabling Xdebug.
     # https://johnblackbourn.com/reducing-travis-ci-build-times-for-wordpress-projects/
     - if [[ $TRAVIS_PHP_VERSION != "nightly" ]]; then phpenv config-rm xdebug.ini; fi
-    # Set up environment variables.
-    - export PHPCS_DIR=/tmp/phpcs
-    - export WPCS_DIR=/tmp/wpcs
-    - export PHPCOMPAT_DIR=/tmp/phpcompatibility
-    # Install CodeSniffer for WordPress Coding Standards checks.
-    - if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/squizlabs/PHP_CodeSniffer.git $PHPCS_DIR; fi
-    # Install WordPress Coding Standards.
-    - if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git $WPCS_DIR; fi
-    # Install PHPCompatibility Standards in a subdirectory of WPCS so we only need to run installed_paths once.
-    - if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/PHPCompatibility/PHPCompatibility.git $PHPCOMPAT_DIR; fi
-    # Hop into CodeSniffer directory.
-    - if [[ "$SNIFF" == "1" ]]; then cd $PHPCS_DIR; fi
-    # Set install path for PHP_CodeSniffer.
-    # @link https://github.com/squizlabs/PHP_CodeSniffer/blob/4237c2fc98cc838730b76ee9cee316f99286a2a7/CodeSniffer.php#L1941
-    - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/bin/phpcs --config-set installed_paths $WPCS_DIR,$PHPCOMPAT_DIR; fi
-    # Hop back into project dir.
-    - if [[ "$SNIFF" == "1" ]]; then cd $TRAVIS_BUILD_DIR; fi
-    # After CodeSniffer install you should refresh your path.
-    - if [[ "$SNIFF" == "1" ]]; then phpenv rehash; fi
+    # Install PHP_CodeSniffer and external standards.
+    - if [[ "$SNIFF" == "1" ]]; then composer install --dev --no-suggest; fi
     # Install JSCS: JavaScript Code Style checker
     # @link http://jscs.info/
     - if [[ "$SNIFF" == "1" ]]; then npm install -g jscs; fi
@@ -77,13 +67,13 @@ before_install:
 # All commands must exit with code 0 on success. Anything else is considered failure.
 script:
     # Search for PHP syntax errors.
-    - if [[ "$GTEPHPFIVEFOUR" == "1" ]]; then find -L . -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l; fi
-    - if [[ "$LTPHPFIVEFOUR" == "1" ]]; then find -L . \( -name "*php54.php" \) -prune -o -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l; fi
+    - if [[ "$GTEPHPFIVEFOUR" == "1" ]]; then find -L . -path ./vendor -prune -o -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l; fi
+    - if [[ "$LTPHPFIVEFOUR" == "1" ]]; then find -L . -path ./vendor -prune -o \( -name "*php54.php" \) -prune -o -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l; fi
     # Run JSHint.
     - if [[ "$SNIFF" == "1" ]]; then jshint .; fi
     # Run through JavaScript Code Style checker.
     - if [[ "$SNIFF" == "1" ]]; then jscs .; fi
     # Check code style against custom ruleset.
-    - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/bin/phpcs --runtime-set ignore_warnings_on_exit 1; fi
+    - if [[ "$SNIFF" == "1" ]]; then $(pwd)/vendor/bin/phpcs --runtime-set ignore_warnings_on_exit 1; fi
     # Test the build script.
     - php -f "./bin/autogen-static-sheets.php" verbose=1

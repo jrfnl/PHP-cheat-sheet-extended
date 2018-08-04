@@ -13,7 +13,8 @@
 
 	<file>.</file>
 
-	<exclude-pattern>include/PHP-cast-to-type/*</exclude-pattern>
+	<exclude-pattern>/include/PHP-cast-to-type/*</exclude-pattern>
+	<exclude-pattern>/vendor/*</exclude-pattern>
 
 	<!-- PHP cross-version compatibility -->
 	<config name="testVersion" value="4.3-"/>
