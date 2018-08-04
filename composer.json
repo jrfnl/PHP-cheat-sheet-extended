@@ -1,0 +1,28 @@
+{
+	"name"       : "jrfnl/phpcheatsheets",
+	"description": "PHP Cheatsheets",
+	"keywords"   : ["php", "variable types", "type juggling"],
+	"license"    : "GPL-3.0-or-later",
+	"authors"    : [
+		{
+			"name"    : "Juliette Reinders Folmer",
+			"homepage": "https://phpcheatsheets.com/"
+
+		}
+	],
+	"require"    : {
+		"php" : ">=4.3"
+	},
+	"require-dev" : {
+		"php" : ">=5.4",
+		"roave/security-advisories": "dev-master",
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.4.3",
+		"wp-coding-standards/wpcs": "^1.0.0",
+		"phpcompatibility/php-compatibility": "^8"
+	},
+	"minimum-stability" : "RC",
+	"support"    : {
+		"issues": "https://github.com/jrfnl/PHP-cheat-sheet-extended/issues",
+		"source": "https://github.com/jrfnl/PHP-cheat-sheet-extended"
+	}
+}
