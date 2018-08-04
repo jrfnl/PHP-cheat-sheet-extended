@@ -163,6 +163,11 @@ class VartypePHP5 {
 		if ( is_object( $value ) ) {
 			$value = clone $value;
 		}
+
+		if ( is_array( $value ) || is_object( $value ) ) {
+			reset( $value );
+		}
+
 		return $value;
 	}
 
