@@ -605,7 +605,8 @@ class VartypeCompare extends Vartype {
 	function print_other_footnotes( $test ) {
 		if ( isset( $this->tests[ $test ]['notes'] ) && ( is_array( $this->tests[ $test ]['notes'] ) && count( $this->tests[ $test ]['notes'] ) > 0 ) ) {
 			foreach ( $this->tests[ $test ]['notes'] as $key => $note ) {
-				printf( '
+				printf(
+					'
 			<div id="%1$s-note%2$s" class="note-appendix">
 				<sup>&Dagger; %2$s</sup> %3$s
 			</div>',
