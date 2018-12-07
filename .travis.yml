@@ -42,6 +42,8 @@ matrix:
       env: GTEPHPFIVEFOUR=1
     - php: '7.2'
       env: GTEPHPFIVEFOUR=1 SNIFF=1
+    - php: '7.3'
+      env: GTEPHPFIVEFOUR=1
     - php: 'nightly'
       env: GTEPHPFIVEFOUR=1
 
@@ -53,7 +55,7 @@ matrix:
 before_install:
     # Speed up build time by disabling Xdebug.
     # https://johnblackbourn.com/reducing-travis-ci-build-times-for-wordpress-projects/
-    - if [[ $TRAVIS_PHP_VERSION != "nightly" ]]; then phpenv config-rm xdebug.ini; fi
+    - phpenv config-rm xdebug.ini || echo 'No xdebug config.'
     # Install PHP_CodeSniffer and external standards.
     - if [[ "$SNIFF" == "1" ]]; then composer install --dev --no-suggest; fi
     # Install JSCS: JavaScript Code Style checker
