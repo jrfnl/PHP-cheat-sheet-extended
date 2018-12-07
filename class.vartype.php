@@ -107,7 +107,7 @@ class Vartype {
 		// Create the actual test functions.
 		foreach ( $this->tests as $key => $array ) {
 			// The cheatsheets are still compatible with PHP < 5.3, so there is no way round this.
-			// phpcs:ignore PHPCompatibility.PHP.DeprecatedFunctions.create_functionDeprecated,Generic.PHP.DeprecatedFunctions.Deprecated,WordPress.PHP.RestrictedPHPFunctions.create_function_create_function,Generic.PHP.NoSilencedErrors.Discouraged
+			// phpcs:ignore PHPCompatibility.FunctionUse.RemovedFunctions.create_functionDeprecated,Generic.PHP.DeprecatedFunctions.Deprecated,WordPress.PHP.RestrictedPHPFunctions.create_function_create_function,WordPress.PHP.NoSilencedErrors.Discouraged
 			$this->tests[ $key ]['test'] = @create_function( $array['arg'], $array['function'] );
 		}
 	}
@@ -694,7 +694,8 @@ class Vartype {
 	function print_other_footnotes( $test_group ) {
 		if ( is_array( $this->table_notes ) && count( $this->table_notes ) > 0 ) {
 			foreach ( $this->table_notes as $key => $note ) {
-				printf( '
+				printf(
+					'
 			<div id="%1$s-note%2$s" class="note-appendix">
 				<sup>&Dagger; %2$s</sup> %3$s
 			</div>',

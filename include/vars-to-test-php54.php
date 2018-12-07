@@ -4,7 +4,7 @@
  *
  * @package PHPCheatsheets
  *
- * @phpcs:disable PHPCompatibility.PHP.ValidIntegers.BinaryIntegerFound -- This file is targetting PHP 5.4+.
+ * @phpcs:disable PHPCompatibility.Miscellaneous.ValidIntegers.BinaryIntegerFound -- This file is targetting PHP 5.4+.
  */
 
 // Prevent direct calls to this file.

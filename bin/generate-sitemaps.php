@@ -151,7 +151,8 @@ class CheatsheetSitemap {
 				$available = glob( APP_DIR . '/' . self::STATIC_DIR . '/' . $key . '/php*.html' );
 				usort( $available, 'version_compare' );
 
-				$regex = sprintf( '`^%1$s/(%2$s/%3$s/php([457]\.[0-9]+\.[0-9-]+(?:(?:alpha|beta|RC)(?:[0-9])?)?)\.html)$`',
+				$regex = sprintf(
+					'`^%1$s/(%2$s/%3$s/php([457]\.[0-9]+\.[0-9-]+(?:(?:alpha|beta|RC)(?:[0-9])?)?)\.html)$`',
 					preg_quote( APP_DIR, '`' ),
 					preg_quote( self::STATIC_DIR, '`' ),
 					preg_quote( $key, '`' )
@@ -201,10 +202,14 @@ class CheatsheetSitemap {
 		// Sort the data with volume descending, edition ascending.
 		// Add $data as the last parameter, to sort by the common key.
 		array_multisort(
-			$sort_order, SORT_ASC,
-			$prio, SORT_DESC,
-			// phpcs:ignore PHPCompatibility.PHP.NewConstants.sort_naturalFound -- Sitemaps are generated on high PHP, so no issue.
-			$url, SORT_ASC, SORT_NATURAL,
+			$sort_order,
+			SORT_ASC,
+			$prio,
+			SORT_DESC,
+			$url,
+			SORT_ASC,
+			// phpcs:ignore PHPCompatibility.Constants.NewConstants.sort_naturalFound -- Sitemaps are generated on high PHP, so no issue.
+			SORT_NATURAL,
 			$this->entries
 		);
 	}
@@ -266,7 +271,8 @@ class CheatsheetSitemap {
 	 * Create the sitemap.xml file.
 	 */
 	protected function create_sitemap() {
-		$sitemap = sprintf( '<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="%1$spage/xml-sitemap.xsl"?>
+		$sitemap = sprintf(
+			'<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="%1$spage/xml-sitemap.xsl"?>
 <urlset
 		xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
 		xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
@@ -286,7 +292,8 @@ class CheatsheetSitemap {
 	 * Create the ror.xml file.
 	 */
 	protected function create_ror_sitemap() {
-		$sitemap = sprintf( '<?xml version="1.0" encoding="UTF-8"?>
+		$sitemap = sprintf(
+			'<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:ror="http://rorweb.com/0.1/">
 	<channel>
 		<title>ROR Sitemap for %1$s</title>
@@ -309,7 +316,8 @@ class CheatsheetSitemap {
 	protected function add_sitemap_entry( $entry ) {
 		$last_mod = ( isset( $entry['last_mod'] ) ? $entry['last_mod'] : time() );
 
-		$this->sitemap_entries[] = sprintf( '
+		$this->sitemap_entries[] = sprintf(
+			'
 	<url>
 		<loc>%1$s</loc>
 		<lastmod>%2$s</lastmod>
@@ -336,7 +344,8 @@ class CheatsheetSitemap {
 			<description>' . $entry['description'] . '</description>';
 		}
 
-		$this->ror_sitemap_entries[] = sprintf( '
+		$this->ror_sitemap_entries[] = sprintf(
+			'
 		<item>
 			<link>%1$s</link>
 			<title>%2$s</title>%3$s

@@ -20,12 +20,12 @@
 	<config name="testVersion" value="4.3-"/>
 	<rule ref="PHPCompatibility">
 		<!-- Exclude notices about constants which are back-filled. -->
-		<exclude name="PHPCompatibility.PHP.NewConstants.php_eolFound"/>
-		<exclude name="PHPCompatibility.PHP.NewConstants.php_version_idFound"/>
-		<exclude name="PHPCompatibility.PHP.NewConstants.e_strictFound"/>
-		<exclude name="PHPCompatibility.PHP.NewConstants.e_recoverable_errorFound"/>
-		<exclude name="PHPCompatibility.PHP.NewConstants.e_deprecatedFound"/>
-		<exclude name="PHPCompatibility.PHP.NewConstants.e_user_deprecatedFound"/>
+		<exclude name="PHPCompatibility.Constants.NewConstants.php_eolFound"/>
+		<exclude name="PHPCompatibility.Constants.NewConstants.php_version_idFound"/>
+		<exclude name="PHPCompatibility.Constants.NewConstants.e_strictFound"/>
+		<exclude name="PHPCompatibility.Constants.NewConstants.e_recoverable_errorFound"/>
+		<exclude name="PHPCompatibility.Constants.NewConstants.e_deprecatedFound"/>
+		<exclude name="PHPCompatibility.Constants.NewConstants.e_user_deprecatedFound"/>
 	</rule>
 
 	<rule ref="WordPress">

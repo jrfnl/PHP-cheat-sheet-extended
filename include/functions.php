@@ -3,6 +3,8 @@
  * Some generic functions and mock objects for test variables.
  *
  * @package PHPCheatsheets
+ *
+ * @phpcs:disable Generic.Files.OneClassPerFile
  */
 
 // Prevent direct calls to this file.
@@ -60,7 +62,7 @@ class TestObjectToString extends TestObject {
 	 *
 	 * @return string
 	 *
-	 * @phpcs:disable PHPCompatibility.PHP.NewMagicMethods.__tostringFound -- Used for demo purposes.
+	 * @phpcs:disable PHPCompatibility.FunctionNameRestrictions.NewMagicMethods.__tostringFound -- Used for demo purposes.
 	 */
 	function __toString() {
 		return $this->test3;
@@ -371,7 +373,8 @@ function generate_version_dropdown() {
 	$optgroup_html_pattern = '
 					<optgroup label="PHP %1$s">%2$s' . "\n\t\t\t\t\t</optgroup>";
 
-	$regex = sprintf( '`^%1$s/static_results/%2$s/php(([457]\.[0-9]+)\.[0-9-]+(?:(?:alpha|beta|RC)(?:[0-9])?)?)\.html$`',
+	$regex = sprintf(
+		'`^%1$s/static_results/%2$s/php(([457]\.[0-9]+)\.[0-9-]+(?:(?:alpha|beta|RC)(?:[0-9])?)?)\.html$`',
 		preg_quote( APP_DIR, '`' ),
 		preg_quote( $GLOBALS['type'], '`' )
 	);
@@ -389,7 +392,8 @@ function generate_version_dropdown() {
 			if ( ( isset( $GLOBALS['autogen'] ) && $GLOBALS['autogen'] === true ) && $match[1] === PHP_VERSION ) {
 				$selected = ' selected="selected"';
 			}
-			$options[] = sprintf( '
+			$options[] = sprintf(
+				'
 						<option value="php%1$s"%2$s>PHP %1$s</option>',
 				htmlspecialchars( $match[1], ENT_QUOTES, 'UTF-8' ),
 				$selected
@@ -401,7 +405,8 @@ function generate_version_dropdown() {
 		$options_html .= sprintf( $optgroup_html_pattern, $optgroup, implode( "\n", $options ) );
 	}
 
-	$dropdown = sprintf( '
+	$dropdown = sprintf(
+		'
 			<form action="%6$sindex.php" method="get" id="choose-version">
 				<input type="hidden" name="page" value="%1$s" />
 				<input type="hidden" id="phpv-tab" name="tab" value="%2$s" />
