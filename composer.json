@@ -18,7 +18,7 @@
 		"roave/security-advisories": "dev-master",
 		"dealerdirect/phpcodesniffer-composer-installer": "^0.4.3",
 		"wp-coding-standards/wpcs": "^1.0.0",
-		"phpcompatibility/php-compatibility": "^8"
+		"phpcompatibility/php-compatibility": "^9"
 	},
 	"minimum-stability" : "RC",
 	"support"    : {

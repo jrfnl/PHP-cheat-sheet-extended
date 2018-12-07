@@ -60,7 +60,7 @@ class TestObjectToString extends TestObject {
 	 *
 	 * @return string
 	 *
-	 * @phpcs:disable PHPCompatibility.PHP.NewMagicMethods.__tostringFound -- Used for demo purposes.
+	 * @phpcs:disable PHPCompatibility.FunctionNameRestrictions.NewMagicMethods.__tostringFound -- Used for demo purposes.
 	 */
 	function __toString() {
 		return $this->test3;
