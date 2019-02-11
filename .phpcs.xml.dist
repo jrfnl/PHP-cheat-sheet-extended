@@ -44,7 +44,6 @@
 
 		<!-- WP specific sniffs which should be ignored -->
 		<exclude name="WordPress.Security" />
-		<exclude name="WordPress.VIP" />
 		<exclude name="WordPress.WP" />
 		<exclude name="WordPress.Files.FileName.InvalidClassFileName" />
 		<exclude name="WordPress.PHP.DevelopmentFunctions" />
@@ -54,7 +53,7 @@
 		<exclude name="Squiz.Commenting.FunctionComment.MissingParamComment"/>
 
 		<!-- Declaring scope would break PHP4 compatibility. -->
-		<exclude name="Squiz.Scope.MemberVarScope"/>
+		<exclude name="PSR2.Classes.PropertyDeclaration"/>
 		<exclude name="Squiz.Scope.MethodScope"/>
 	</rule>
 
