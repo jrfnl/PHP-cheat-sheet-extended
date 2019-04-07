@@ -48,6 +48,7 @@
 		<exclude name="WordPress.Files.FileName.InvalidClassFileName" />
 		<exclude name="WordPress.PHP.DevelopmentFunctions" />
 		<exclude name="WordPress.PHP.DiscouragedPHPFunctions" />
+		<exclude name="WordPress.PHP.IniSet" />
 
 		<!-- Exclude a number of rules for being over-zealous for this codebase. -->
 		<exclude name="Squiz.Commenting.FunctionComment.MissingParamComment"/>

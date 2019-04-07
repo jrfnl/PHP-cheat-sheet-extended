@@ -1,9 +1,6 @@
 # Travis CI (MIT License) configuration file
 # @link https://travis-ci.org/
 
-# Use new container based environment
-sudo: false
-
 dist: trusty
 
 cache:

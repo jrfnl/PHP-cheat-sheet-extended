@@ -270,7 +270,7 @@ if ( $GLOBALS['verbose'] > 0 ) {
 			'failures' => $failure,
 		)
 	);
-	echo "\nexit code" . $exit_code;
+	echo "\nexit code " . $exit_code;
 }
 
 exit( $exit_code );
