@@ -42,14 +42,36 @@ In general, a balance is sought between significance and variety.
 
 ### Changelog:
 
+#### 1.4.0 (April 9 2019): PHP 7.3 and more
+* New tests:
+	- `is_iterable()` in variable tests (PHP 7.1+ only).
+	- `is_countable()` in variable tests (PHP 7.3+ only).
+	- `version_compare()` in variable comparisons.
+* Renewed static sheets:
+	- Added static sheets for PHP 7.3.4, 7.3.0, 7.2.17, 7.2.13, 7.2.6, 7.2.3, 7.1.28, 7.1.18, 7.1.5, 7.0.33, 7.0.27, 5.6.40, 5.6.30
+	- Removed static sheet generation for PHP 7.2.0, 7.1.12, 7.1.7, 7.1.0, 7.0.26, 7.0.21, 7.0.14, 5.6.32, 5.6.29, 5.6.25, 5.5.16, 5.4.41, 5.3.27, 5.2.6, 5.0.4
+* Updated CastToType submodule to v 2.0.1.
+* Account for Exception text changes in PHP 7.3.
+* Bugfix: arrays and objects are now reset before each test.
+
+Also:
+* The website is now available over SSL.
+* Minor language fixes.
+* Updated the code for the social media and donate buttons.
+* Removed the tablesorting feature from the `sitemap.xml` file.
+* Minor tweaks to the Travis tests.
+* General housekeeping/CS fixes.
+
+**Note**: This will be the last version with support for PHP < 5.4.
+
 #### 1.3.8 (November 30 2017): PHP 7.2 has landed
 * Renewed static sheets:
 	- Added static sheets for PHP 7.2.0, 7.1.12, 7.0.26, 5.6.32, 5.6.29, 5.6.21
-	- Removed static sheet generation for PHP 7.2.0beta1, 7.1.3, 7.0.17, 5.6.31, 5.6.28, 5.6.20, 5.5.35, 5.4.36
+	- Removed static sheet generation for PHP 7.2.0-beta1, 7.1.3, 7.0.17, 5.6.31, 5.6.28, 5.6.20, 5.5.35, 5.4.36
 
 #### 1.3.7 (July 26 2017): PHP 7.2 beta 1 release
 * Renewed static sheets:
-	- Added static sheets for PHP 7.2.0beta1, 7.1.7, 7.0.21, 7.0.19, 7.0,14, 5.6.31
+	- Added static sheets for PHP 7.2.0-beta1, 7.1.7, 7.0.21, 7.0.19, 7.0,14, 5.6.31
 	- Removed static sheet generation for PHP  7.0.12, 7.0.0, 5.6.30, 5.6.0, 5.2.9-2.
 
 #### 1.3.6 (March 23 2017)
