@@ -23,11 +23,17 @@ RewriteRule (.*) https://%{SERVER_NAME}/$1 [R=301,L]
 # 4.3.(0)9 => 4.3.11
 RedirectMatch 301 /static_results/(arithmetic|compare|test)/php4\.3\.(0)?9\.html$ https://phpcheatsheets.com/static_results/$1/php4.3.11.html
 
-# 5.2.(0)4/8/9/9-2 => 5.2.6
-RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.2\.(0)?[489](-2)?\.html$ https://phpcheatsheets.com/static_results/$1/php5.2.6.html
+# 5.0.4 => 5.0.5
+RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.0\.4\.html$ https://phpcheatsheets.com/static_results/$1/php5.0.5.html
+
+# 5.2.(0)4/6/8/9/9-2 => 5.2.17
+RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.2\.(0)?[4689](-2)?\.html$ https://phpcheatsheets.com/static_results/$1/php5.2.17.html
 
 # 5.3.02 / 5.3.2 => 5.3.3
 RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.3\.(0)?2\.html$ https://phpcheatsheets.com/static_results/$1/php5.3.3.html
+
+# 5.3.27 => 5.3.29
+RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.3\.27\.html$ https://phpcheatsheets.com/static_results/$1/php5.3.29.html
 
 # 5.4.(0)6 => 5.4.4
 RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.4\.(0)?6\.html$ https://phpcheatsheets.com/static_results/$1/php5.4.4.html
@@ -35,32 +41,20 @@ RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.4\.(0)?6\.html
 # 5.4.11/20 => 5.4.16
 RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.4\.(11|20)\.html$ https://phpcheatsheets.com/static_results/$1/php5.4.16.html
 
-# 5.4.33 => 5.4.27
-RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.4\.33\.html$ https://phpcheatsheets.com/static_results/$1/php5.4.27.html
+# 5.4.33/35 => 5.4.27
+RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.4\.3[35]\.html$ https://phpcheatsheets.com/static_results/$1/php5.4.27.html
 
-# 5.4.35/36/37 => 5.4.41
-RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.4\.3[567]\.html$ https://phpcheatsheets.com/static_results/$1/php5.4.36.html
-
-# 5.4.39/42 => 5.4.41
-RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.4\.(39|42)\.html$ https://phpcheatsheets.com/static_results/$1/php5.4.41.html
-
-# 5.4.43 => 5.4.45
-RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.4\.43\.html$ https://phpcheatsheets.com/static_results/$1/php5.4.45.html
+# 5.4.36/37/39/41/42/43 => 5.4.45
+RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.4\.(3[679]|4[123])\.html$ https://phpcheatsheets.com/static_results/$1/php5.4.45.html
 
 # 5.5.3 => 5.5.9
 RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.5\.3\.html$ https://phpcheatsheets.com/static_results/$1/php5.5.9.html
 
-# 5.5.18 => 5.5.16
-RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.5\.18\.html$ https://phpcheatsheets.com/static_results/$1/php5.5.16.html
+# 5.5.16/18/20/21/24 => 5.5.22
+RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.5\.(1[68]|2[014])\.html$ https://phpcheatsheets.com/static_results/$1/php5.5.22.html
 
-# 5.5.20/21/24 => 5.5.22
-RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.5\.2[014]\.html$ https://phpcheatsheets.com/static_results/$1/php5.5.22.html
-
-# 5.5.26/28 => 5.5.30
-RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.5\.2[68]\.html$ https://phpcheatsheets.com/static_results/$1/php5.5.30.html
-
-# 5.5.33 => 5.5.30
-RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.5\.33\.html$ https://phpcheatsheets.com/static_results/$1/php5.5.30.html
+# 5.5.26/28/33 => 5.5.30
+RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.5\.(2[68]|33)\.html$ https://phpcheatsheets.com/static_results/$1/php5.5.30.html
 
 # 5.5.35/37 => 5.5.38
 RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.5\.3[57]\.html$ https://phpcheatsheets.com/static_results/$1/php5.5.38.html
@@ -71,38 +65,32 @@ RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.6\.[024589]\.h
 # 5.6.10/11/13/15/17 => 5.6.16
 RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.6\.1[01357]\.html$ https://phpcheatsheets.com/static_results/$1/php5.6.16.html
 
-# 5.6.19/20 => 5.6.21
-RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.6\.(19|20)\.html$ https://phpcheatsheets.com/static_results/$1/php5.6.21.html
+# 5.6.19/20/23/25 => 5.6.21
+RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.6\.(19|20|23|25)\.html$ https://phpcheatsheets.com/static_results/$1/php5.6.21.html
 
-# 5.6.23 => 5.6.25
-RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.6\.23\.html$ https://phpcheatsheets.com/static_results/$1/php5.6.25.html
-
-# 5.6.28 => 5.6.29
-RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.6\.28\.html$ https://phpcheatsheets.com/static_results/$1/php5.6.29.html
-
-# 5.6.30/31 => 5.6.32
-RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.6\.3[01]\.html$ https://phpcheatsheets.com/static_results/$1/php5.6.32.html
+# 5.6.28/29/31/32 => 5.6.30
+RedirectMatch 301 /static_results/(arithmetic|compare|test)/php5\.6\.(2[89]|3[12])\.html$ https://phpcheatsheets.com/static_results/$1/php5.6.30.html
 
 # 7.0.0alpha1/RC6 => 7.0.4
 RedirectMatch 301 /static_results/(arithmetic|compare|test)/php7\.0\.0(alpha1|RC[1-8])\.html$ https://phpcheatsheets.com/static_results/$1/php7.0.4.html
 
-# 7.0.0/2/6/8 => 7.0.4
-RedirectMatch 301 /static_results/(arithmetic|compare|test)/php7\.0\.[0268]\.html$ https://phpcheatsheets.com/static_results/$1/php7.0.4.html
+# 7.0.0/2/6/8/10 => 7.0.4
+RedirectMatch 301 /static_results/(arithmetic|compare|test)/php7\.0\.([0268]|10)\.html$ https://phpcheatsheets.com/static_results/$1/php7.0.4.html
 
-# 7.0.10/12/13 => 7.0.14
-RedirectMatch 301 /static_results/(arithmetic|compare|test)/php7\.0\.1[023]\.html$ https://phpcheatsheets.com/static_results/$1/php7.0.14.html
+# 7.0.12/13/14/17/21 => 7.0.19
+RedirectMatch 301 /static_results/(arithmetic|compare|test)/php7\.0\.(1[2347]|21)\.html$ https://phpcheatsheets.com/static_results/$1/php7.0.19.html
 
-# 7.0.17 => 7.0.19
-RedirectMatch 301 /static_results/(arithmetic|compare|test)/php7\.0\.17\.html$ https://phpcheatsheets.com/static_results/$1/php7.0.19.html
+# 7.0.26 => 7.0.27
+RedirectMatch 301 /static_results/(arithmetic|compare|test)/php7\.0\.26\.html$ https://phpcheatsheets.com/static_results/$1/php7.0.27.html
 
-# 7.1.0alpha3 => 7.1.0
-RedirectMatch 301 /static_results/(arithmetic|compare|test)/php7\.1\.0alpha3\.html$ https://phpcheatsheets.com/static_results/$1/php7.1.0.html
+# 7.1.0alpha3 /7.1.0/3/7 => 7.1.5
+RedirectMatch 301 /static_results/(arithmetic|compare|test)/php7\.1\.(0alpha3|0|3|7)\.html$ https://phpcheatsheets.com/static_results/$1/php7.1.5.html
 
-# 7.1.3 => 7.1.7
-RedirectMatch 301 /static_results/(arithmetic|compare|test)/php7\.1\.3\.html$ https://phpcheatsheets.com/static_results/$1/php7.1.7.html
+# 7.1.12 => 7.1.18
+RedirectMatch 301 /static_results/(arithmetic|compare|test)/php7\.1\.12\.html$ https://phpcheatsheets.com/static_results/$1/php7.1.18.html
 
-# 7.2.0beta1 => 7.2.0
-RedirectMatch 301 /static_results/(arithmetic|compare|test)/php7\.1\.0beta1\.html$ https://phpcheatsheets.com/static_results/$1/php7.2.0.html
+# 7.2.0beta1/7.2.0 => 7.2.3
+RedirectMatch 301 /static_results/(arithmetic|compare|test)/php7\.2\.(0|0beta1)\.html$ https://phpcheatsheets.com/static_results/$1/php7.2.3.html
 
 
 # Add 404 directives
