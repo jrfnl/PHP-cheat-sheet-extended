@@ -102,9 +102,9 @@ endif;
 if ( isset( $GLOBALS['type'] ) ) :
 ?>
 	<div id="too-much">
-		<a href="https://www.google.com/search?tbm=isch&amp;q=fluffy+cuddly+animals" target="_blank"><img src="<?php echo BASE_URI; ?>page/images/jakobwesthoff_3231273333_2473ef9cdf_s.jpg" width="75" height="75" alt="Fluffy ElePHPant" /></a>
+		<a href="https://www.google.com/search?tbm=isch&amp;q=cute+animals" target="_blank"><img src="<?php echo BASE_URI; ?>page/images/jakobwesthoff_3231273333_2473ef9cdf_s.jpg" width="75" height="75" alt="Fluffy ElePHPant" /></a>
 		<p>Too much ?</p>
-		<p><a href="https://www.google.com/search?tbm=isch&amp;q=fluffy+cuddly+animals" target="_blank">Take a break and rest your eyes</a>.</p>
+		<p><a href="https://www.google.com/search?tbm=isch&amp;q=cute+animals" target="_blank">Take a break and rest your eyes</a>.</p>
 	</div>
 <?php
 endif;
